@@ -10,4 +10,4 @@ make ez dawkiny
 
 cd /Firmware
 ./teensy/teensy.64bit &
-
+```
