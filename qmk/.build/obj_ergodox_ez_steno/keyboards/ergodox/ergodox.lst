@@ -1,0 +1,197 @@
+   1               		.file	"ergodox.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               	.global	hand_swap_config
+  11               		.section	.rodata.hand_swap_config,"a",@progbits
+  14               	hand_swap_config:
+  15 0000 00        		.byte	0
+  16 0001 0D        		.byte	13
+  17 0002 01        		.byte	1
+  18 0003 0D        		.byte	13
+  19 0004 02        		.byte	2
+  20 0005 0D        		.byte	13
+  21 0006 03        		.byte	3
+  22 0007 0D        		.byte	13
+  23 0008 04        		.byte	4
+  24 0009 0D        		.byte	13
+  25 000a 05        		.byte	5
+  26 000b 0D        		.byte	13
+  27 000c 00        		.byte	0
+  28 000d 0C        		.byte	12
+  29 000e 01        		.byte	1
+  30 000f 0C        		.byte	12
+  31 0010 02        		.byte	2
+  32 0011 0C        		.byte	12
+  33 0012 03        		.byte	3
+  34 0013 0C        		.byte	12
+  35 0014 04        		.byte	4
+  36 0015 0C        		.byte	12
+  37 0016 05        		.byte	5
+  38 0017 0C        		.byte	12
+  39 0018 00        		.byte	0
+  40 0019 0B        		.byte	11
+  41 001a 01        		.byte	1
+  42 001b 0B        		.byte	11
+  43 001c 02        		.byte	2
+  44 001d 0B        		.byte	11
+  45 001e 03        		.byte	3
+  46 001f 0B        		.byte	11
+  47 0020 04        		.byte	4
+  48 0021 0B        		.byte	11
+  49 0022 05        		.byte	5
+  50 0023 0B        		.byte	11
+  51 0024 00        		.byte	0
+  52 0025 0A        		.byte	10
+  53 0026 01        		.byte	1
+  54 0027 0A        		.byte	10
+  55 0028 02        		.byte	2
+  56 0029 0A        		.byte	10
+  57 002a 03        		.byte	3
+  58 002b 0A        		.byte	10
+  59 002c 04        		.byte	4
+  60 002d 0A        		.byte	10
+  61 002e 05        		.byte	5
+  62 002f 0A        		.byte	10
+  63 0030 00        		.byte	0
+  64 0031 09        		.byte	9
+  65 0032 01        		.byte	1
+  66 0033 09        		.byte	9
+  67 0034 02        		.byte	2
+  68 0035 09        		.byte	9
+  69 0036 03        		.byte	3
+  70 0037 09        		.byte	9
+  71 0038 04        		.byte	4
+  72 0039 09        		.byte	9
+  73 003a 05        		.byte	5
+  74 003b 09        		.byte	9
+  75 003c 00        		.byte	0
+  76 003d 08        		.byte	8
+  77 003e 01        		.byte	1
+  78 003f 08        		.byte	8
+  79 0040 02        		.byte	2
+  80 0041 08        		.byte	8
+  81 0042 03        		.byte	3
+  82 0043 08        		.byte	8
+  83 0044 04        		.byte	4
+  84 0045 08        		.byte	8
+  85 0046 05        		.byte	5
+  86 0047 08        		.byte	8
+  87 0048 00        		.byte	0
+  88 0049 07        		.byte	7
+  89 004a 01        		.byte	1
+  90 004b 07        		.byte	7
+  91 004c 02        		.byte	2
+  92 004d 07        		.byte	7
+  93 004e 03        		.byte	3
+  94 004f 07        		.byte	7
+  95 0050 04        		.byte	4
+  96 0051 07        		.byte	7
+  97 0052 05        		.byte	5
+  98 0053 07        		.byte	7
+  99 0054 00        		.byte	0
+ 100 0055 06        		.byte	6
+ 101 0056 01        		.byte	1
+ 102 0057 06        		.byte	6
+ 103 0058 02        		.byte	2
+ 104 0059 06        		.byte	6
+ 105 005a 03        		.byte	3
+ 106 005b 06        		.byte	6
+ 107 005c 04        		.byte	4
+ 108 005d 06        		.byte	6
+ 109 005e 05        		.byte	5
+ 110 005f 06        		.byte	6
+ 111 0060 00        		.byte	0
+ 112 0061 05        		.byte	5
+ 113 0062 01        		.byte	1
+ 114 0063 05        		.byte	5
+ 115 0064 02        		.byte	2
+ 116 0065 05        		.byte	5
+ 117 0066 03        		.byte	3
+ 118 0067 05        		.byte	5
+ 119 0068 04        		.byte	4
+ 120 0069 05        		.byte	5
+ 121 006a 05        		.byte	5
+ 122 006b 05        		.byte	5
+ 123 006c 00        		.byte	0
+ 124 006d 04        		.byte	4
+ 125 006e 01        		.byte	1
+ 126 006f 04        		.byte	4
+ 127 0070 02        		.byte	2
+ 128 0071 04        		.byte	4
+ 129 0072 03        		.byte	3
+ 130 0073 04        		.byte	4
+ 131 0074 04        		.byte	4
+ 132 0075 04        		.byte	4
+ 133 0076 05        		.byte	5
+ 134 0077 04        		.byte	4
+ 135 0078 00        		.byte	0
+ 136 0079 03        		.byte	3
+ 137 007a 01        		.byte	1
+ 138 007b 03        		.byte	3
+ 139 007c 02        		.byte	2
+ 140 007d 03        		.byte	3
+ 141 007e 03        		.byte	3
+ 142 007f 03        		.byte	3
+ 143 0080 04        		.byte	4
+ 144 0081 03        		.byte	3
+ 145 0082 05        		.byte	5
+ 146 0083 03        		.byte	3
+ 147 0084 00        		.byte	0
+ 148 0085 02        		.byte	2
+ 149 0086 01        		.byte	1
+ 150 0087 02        		.byte	2
+ 151 0088 02        		.byte	2
+ 152 0089 02        		.byte	2
+ 153 008a 03        		.byte	3
+ 154 008b 02        		.byte	2
+ 155 008c 04        		.byte	4
+ 156 008d 02        		.byte	2
+ 157 008e 05        		.byte	5
+ 158 008f 02        		.byte	2
+ 159 0090 00        		.byte	0
+ 160 0091 01        		.byte	1
+ 161 0092 01        		.byte	1
+ 162 0093 01        		.byte	1
+ 163 0094 02        		.byte	2
+ 164 0095 01        		.byte	1
+ 165 0096 03        		.byte	3
+ 166 0097 01        		.byte	1
+ 167 0098 04        		.byte	4
+ 168 0099 01        		.byte	1
+ 169 009a 05        		.byte	5
+ 170 009b 01        		.byte	1
+ 171 009c 00        		.byte	0
+ 172 009d 00        		.byte	0
+ 173 009e 01        		.byte	1
+ 174 009f 00        		.byte	0
+ 175 00a0 02        		.byte	2
+ 176 00a1 00        		.byte	0
+ 177 00a2 03        		.byte	3
+ 178 00a3 00        		.byte	0
+ 179 00a4 04        		.byte	4
+ 180 00a5 00        		.byte	0
+ 181 00a6 05        		.byte	5
+ 182 00a7 00        		.byte	0
+ 183               		.text
+ 184               	.Letext0:
+ 185               		.file 1 "./tmk_core/common/keyboard.h"
+ 186               		.file 2 "/usr/lib/avr/include/stdint.h"
+ 187               		.file 3 "keyboards/ergodox/ergodox.c"
+ 188               		.file 4 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 ergodox.c
+     /tmp/ccE4Cl3X.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccE4Cl3X.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccE4Cl3X.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccE4Cl3X.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccE4Cl3X.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccE4Cl3X.s:14     .rodata.hand_swap_config:0000000000000000 hand_swap_config
+
+UNDEFINED SYMBOLS
+__do_copy_data

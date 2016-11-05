@@ -1,0 +1,611 @@
+   1               		.file	"process_unicode.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.section	.text.hex_to_keycode,"ax",@progbits
+  11               		.weak	hex_to_keycode
+  13               	hex_to_keycode:
+  14               	.LFB107:
+  15               		.file 1 "quantum/process_keycode/process_unicode.c"
+   1:quantum/process_keycode/process_unicode.c **** #include "process_unicode.h"
+   2:quantum/process_keycode/process_unicode.c **** 
+   3:quantum/process_keycode/process_unicode.c **** static uint8_t input_mode;
+   4:quantum/process_keycode/process_unicode.c **** 
+   5:quantum/process_keycode/process_unicode.c **** __attribute__((weak))
+   6:quantum/process_keycode/process_unicode.c **** uint16_t hex_to_keycode(uint8_t hex)
+   7:quantum/process_keycode/process_unicode.c **** {
+  16               		.loc 1 7 0
+  17               		.cfi_startproc
+  18               	.LVL0:
+  19               	/* prologue: function */
+  20               	/* frame size = 0 */
+  21               	/* stack size = 0 */
+  22               	.L__stack_usage = 0
+  23 0000 282F      		mov r18,r24
+   8:quantum/process_keycode/process_unicode.c ****   if (hex == 0x0) {
+  24               		.loc 1 8 0
+  25 0002 8823      		tst r24
+  26 0004 01F0      		breq .L4
+  27 0006 90E0      		ldi r25,0
+   9:quantum/process_keycode/process_unicode.c ****     return KC_0;
+  10:quantum/process_keycode/process_unicode.c ****   } else if (hex < 0xA) {
+  28               		.loc 1 10 0
+  29 0008 2A30      		cpi r18,lo8(10)
+  30 000a 00F4      		brsh .L3
+  11:quantum/process_keycode/process_unicode.c ****     return KC_1 + (hex - 0x1);
+  31               		.loc 1 11 0
+  32 000c 4D96      		adiw r24,29
+  33               	.LVL1:
+  34 000e 0895      		ret
+  35               	.L3:
+  12:quantum/process_keycode/process_unicode.c ****   } else {
+  13:quantum/process_keycode/process_unicode.c ****     return KC_A + (hex - 0xA);
+  36               		.loc 1 13 0
+  37 0010 0697      		sbiw r24,6
+  38 0012 0895      		ret
+  39               	.L4:
+   9:quantum/process_keycode/process_unicode.c ****   } else if (hex < 0xA) {
+  40               		.loc 1 9 0
+  41 0014 87E2      		ldi r24,lo8(39)
+  42 0016 90E0      		ldi r25,0
+  14:quantum/process_keycode/process_unicode.c ****   }
+  15:quantum/process_keycode/process_unicode.c **** }
+  43               		.loc 1 15 0
+  44 0018 0895      		ret
+  45               		.cfi_endproc
+  46               	.LFE107:
+  48               		.section	.text.set_unicode_input_mode,"ax",@progbits
+  49               	.global	set_unicode_input_mode
+  51               	set_unicode_input_mode:
+  52               	.LFB108:
+  16:quantum/process_keycode/process_unicode.c **** 
+  17:quantum/process_keycode/process_unicode.c **** void set_unicode_input_mode(uint8_t os_target)
+  18:quantum/process_keycode/process_unicode.c **** {
+  53               		.loc 1 18 0
+  54               		.cfi_startproc
+  55               	.LVL2:
+  56               	/* prologue: function */
+  57               	/* frame size = 0 */
+  58               	/* stack size = 0 */
+  59               	.L__stack_usage = 0
+  19:quantum/process_keycode/process_unicode.c ****   input_mode = os_target;
+  60               		.loc 1 19 0
+  61 0000 8093 0000 		sts input_mode,r24
+  62 0004 0895      		ret
+  63               		.cfi_endproc
+  64               	.LFE108:
+  66               		.section	.text.get_unicode_input_mode,"ax",@progbits
+  67               	.global	get_unicode_input_mode
+  69               	get_unicode_input_mode:
+  70               	.LFB109:
+  20:quantum/process_keycode/process_unicode.c **** }
+  21:quantum/process_keycode/process_unicode.c **** 
+  22:quantum/process_keycode/process_unicode.c **** uint8_t get_unicode_input_mode(void) {
+  71               		.loc 1 22 0
+  72               		.cfi_startproc
+  73               	/* prologue: function */
+  74               	/* frame size = 0 */
+  75               	/* stack size = 0 */
+  76               	.L__stack_usage = 0
+  23:quantum/process_keycode/process_unicode.c ****   return input_mode;
+  24:quantum/process_keycode/process_unicode.c **** }
+  77               		.loc 1 24 0
+  78 0000 8091 0000 		lds r24,input_mode
+  79 0004 0895      		ret
+  80               		.cfi_endproc
+  81               	.LFE109:
+  83               		.section	.text.unicode_input_start,"ax",@progbits
+  84               		.weak	unicode_input_start
+  86               	unicode_input_start:
+  87               	.LFB110:
+  25:quantum/process_keycode/process_unicode.c **** 
+  26:quantum/process_keycode/process_unicode.c **** __attribute__((weak))
+  27:quantum/process_keycode/process_unicode.c **** void unicode_input_start (void) {
+  88               		.loc 1 27 0
+  89               		.cfi_startproc
+  90               	/* prologue: function */
+  91               	/* frame size = 0 */
+  92               	/* stack size = 0 */
+  93               	.L__stack_usage = 0
+  28:quantum/process_keycode/process_unicode.c ****   switch(input_mode) {
+  94               		.loc 1 28 0
+  95 0000 8091 0000 		lds r24,input_mode
+  96 0004 8130      		cpi r24,lo8(1)
+  97 0006 01F0      		breq .L10
+  98 0008 00F0      		brlo .L11
+  99 000a 8230      		cpi r24,lo8(2)
+ 100 000c 01F4      		brne .L9
+  29:quantum/process_keycode/process_unicode.c ****   case UC_OSX:
+  30:quantum/process_keycode/process_unicode.c ****     register_code(KC_LALT);
+  31:quantum/process_keycode/process_unicode.c ****     break;
+  32:quantum/process_keycode/process_unicode.c ****   case UC_LNX:
+  33:quantum/process_keycode/process_unicode.c ****     register_code(KC_LCTL);
+  34:quantum/process_keycode/process_unicode.c ****     register_code(KC_LSFT);
+  35:quantum/process_keycode/process_unicode.c ****     register_code(KC_U);
+  36:quantum/process_keycode/process_unicode.c ****     unregister_code(KC_U);
+  37:quantum/process_keycode/process_unicode.c ****     unregister_code(KC_LSFT);
+  38:quantum/process_keycode/process_unicode.c ****     unregister_code(KC_LCTL);
+  39:quantum/process_keycode/process_unicode.c ****     break;
+  40:quantum/process_keycode/process_unicode.c ****   case UC_WIN:
+  41:quantum/process_keycode/process_unicode.c ****     register_code(KC_LALT);
+ 101               		.loc 1 41 0
+ 102 000e 82EE      		ldi r24,lo8(-30)
+ 103 0010 0E94 0000 		call register_code
+ 104               	.LVL3:
+  42:quantum/process_keycode/process_unicode.c ****     register_code(KC_PPLS);
+ 105               		.loc 1 42 0
+ 106 0014 87E5      		ldi r24,lo8(87)
+ 107 0016 0E94 0000 		call register_code
+ 108               	.LVL4:
+  43:quantum/process_keycode/process_unicode.c ****     unregister_code(KC_PPLS);
+ 109               		.loc 1 43 0
+ 110 001a 87E5      		ldi r24,lo8(87)
+ 111 001c 00C0      		rjmp .L13
+ 112               	.L11:
+  30:quantum/process_keycode/process_unicode.c ****     break;
+ 113               		.loc 1 30 0
+ 114 001e 82EE      		ldi r24,lo8(-30)
+ 115 0020 0E94 0000 		call register_code
+ 116               	.LVL5:
+  31:quantum/process_keycode/process_unicode.c ****   case UC_LNX:
+ 117               		.loc 1 31 0
+ 118 0024 00C0      		rjmp .L9
+ 119               	.L10:
+  33:quantum/process_keycode/process_unicode.c ****     register_code(KC_LSFT);
+ 120               		.loc 1 33 0
+ 121 0026 80EE      		ldi r24,lo8(-32)
+ 122 0028 0E94 0000 		call register_code
+ 123               	.LVL6:
+  34:quantum/process_keycode/process_unicode.c ****     register_code(KC_U);
+ 124               		.loc 1 34 0
+ 125 002c 81EE      		ldi r24,lo8(-31)
+ 126 002e 0E94 0000 		call register_code
+ 127               	.LVL7:
+  35:quantum/process_keycode/process_unicode.c ****     unregister_code(KC_U);
+ 128               		.loc 1 35 0
+ 129 0032 88E1      		ldi r24,lo8(24)
+ 130 0034 0E94 0000 		call register_code
+ 131               	.LVL8:
+  36:quantum/process_keycode/process_unicode.c ****     unregister_code(KC_LSFT);
+ 132               		.loc 1 36 0
+ 133 0038 88E1      		ldi r24,lo8(24)
+ 134 003a 0E94 0000 		call unregister_code
+ 135               	.LVL9:
+  37:quantum/process_keycode/process_unicode.c ****     unregister_code(KC_LCTL);
+ 136               		.loc 1 37 0
+ 137 003e 81EE      		ldi r24,lo8(-31)
+ 138 0040 0E94 0000 		call unregister_code
+ 139               	.LVL10:
+  38:quantum/process_keycode/process_unicode.c ****     break;
+ 140               		.loc 1 38 0
+ 141 0044 80EE      		ldi r24,lo8(-32)
+ 142               	.L13:
+ 143               		.loc 1 43 0
+ 144 0046 0E94 0000 		call unregister_code
+ 145               	.LVL11:
+ 146               	.L9:
+ 147               	.LBB4:
+ 148               	.LBB5:
+ 149               		.file 2 "/usr/lib/avr/include/util/delay.h"
+   1:/usr/lib/avr/include/util/delay.h **** /* Copyright (c) 2002, Marek Michalkiewicz
+   2:/usr/lib/avr/include/util/delay.h ****    Copyright (c) 2004,2005,2007 Joerg Wunsch
+   3:/usr/lib/avr/include/util/delay.h ****    Copyright (c) 2007  Florin-Viorel Petrov
+   4:/usr/lib/avr/include/util/delay.h ****    All rights reserved.
+   5:/usr/lib/avr/include/util/delay.h **** 
+   6:/usr/lib/avr/include/util/delay.h ****    Redistribution and use in source and binary forms, with or without
+   7:/usr/lib/avr/include/util/delay.h ****    modification, are permitted provided that the following conditions are met:
+   8:/usr/lib/avr/include/util/delay.h **** 
+   9:/usr/lib/avr/include/util/delay.h ****    * Redistributions of source code must retain the above copyright
+  10:/usr/lib/avr/include/util/delay.h ****      notice, this list of conditions and the following disclaimer.
+  11:/usr/lib/avr/include/util/delay.h **** 
+  12:/usr/lib/avr/include/util/delay.h ****    * Redistributions in binary form must reproduce the above copyright
+  13:/usr/lib/avr/include/util/delay.h ****      notice, this list of conditions and the following disclaimer in
+  14:/usr/lib/avr/include/util/delay.h ****      the documentation and/or other materials provided with the
+  15:/usr/lib/avr/include/util/delay.h ****      distribution.
+  16:/usr/lib/avr/include/util/delay.h **** 
+  17:/usr/lib/avr/include/util/delay.h ****    * Neither the name of the copyright holders nor the names of
+  18:/usr/lib/avr/include/util/delay.h ****      contributors may be used to endorse or promote products derived
+  19:/usr/lib/avr/include/util/delay.h ****      from this software without specific prior written permission.
+  20:/usr/lib/avr/include/util/delay.h **** 
+  21:/usr/lib/avr/include/util/delay.h ****   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  22:/usr/lib/avr/include/util/delay.h ****   AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  23:/usr/lib/avr/include/util/delay.h ****   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  24:/usr/lib/avr/include/util/delay.h ****   ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+  25:/usr/lib/avr/include/util/delay.h ****   LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  26:/usr/lib/avr/include/util/delay.h ****   CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  27:/usr/lib/avr/include/util/delay.h ****   SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  28:/usr/lib/avr/include/util/delay.h ****   INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  29:/usr/lib/avr/include/util/delay.h ****   CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  30:/usr/lib/avr/include/util/delay.h ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  31:/usr/lib/avr/include/util/delay.h ****   POSSIBILITY OF SUCH DAMAGE. */
+  32:/usr/lib/avr/include/util/delay.h **** 
+  33:/usr/lib/avr/include/util/delay.h **** /* $Id$ */
+  34:/usr/lib/avr/include/util/delay.h **** 
+  35:/usr/lib/avr/include/util/delay.h **** #ifndef _UTIL_DELAY_H_
+  36:/usr/lib/avr/include/util/delay.h **** #define _UTIL_DELAY_H_ 1
+  37:/usr/lib/avr/include/util/delay.h **** 
+  38:/usr/lib/avr/include/util/delay.h **** #ifndef __HAS_DELAY_CYCLES
+  39:/usr/lib/avr/include/util/delay.h **** #define __HAS_DELAY_CYCLES 1
+  40:/usr/lib/avr/include/util/delay.h **** #endif
+  41:/usr/lib/avr/include/util/delay.h **** 
+  42:/usr/lib/avr/include/util/delay.h **** #include <inttypes.h>
+  43:/usr/lib/avr/include/util/delay.h **** #include <util/delay_basic.h>
+  44:/usr/lib/avr/include/util/delay.h **** #include <math.h>
+  45:/usr/lib/avr/include/util/delay.h **** 
+  46:/usr/lib/avr/include/util/delay.h **** /** \file */
+  47:/usr/lib/avr/include/util/delay.h **** /** \defgroup util_delay <util/delay.h>: Convenience functions for busy-wait delay loops
+  48:/usr/lib/avr/include/util/delay.h ****     \code
+  49:/usr/lib/avr/include/util/delay.h ****     #define F_CPU 1000000UL  // 1 MHz
+  50:/usr/lib/avr/include/util/delay.h ****     //#define F_CPU 14.7456E6
+  51:/usr/lib/avr/include/util/delay.h ****     #include <util/delay.h>
+  52:/usr/lib/avr/include/util/delay.h ****     \endcode
+  53:/usr/lib/avr/include/util/delay.h **** 
+  54:/usr/lib/avr/include/util/delay.h ****     \note As an alternative method, it is possible to pass the
+  55:/usr/lib/avr/include/util/delay.h ****     F_CPU macro down to the compiler from the Makefile.
+  56:/usr/lib/avr/include/util/delay.h ****     Obviously, in that case, no \c \#define statement should be
+  57:/usr/lib/avr/include/util/delay.h ****     used.
+  58:/usr/lib/avr/include/util/delay.h **** 
+  59:/usr/lib/avr/include/util/delay.h ****     The functions in this header file are wrappers around the basic
+  60:/usr/lib/avr/include/util/delay.h ****     busy-wait functions from <util/delay_basic.h>.  They are meant as
+  61:/usr/lib/avr/include/util/delay.h ****     convenience functions where actual time values can be specified
+  62:/usr/lib/avr/include/util/delay.h ****     rather than a number of cycles to wait for.  The idea behind is
+  63:/usr/lib/avr/include/util/delay.h ****     that compile-time constant expressions will be eliminated by
+  64:/usr/lib/avr/include/util/delay.h ****     compiler optimization so floating-point expressions can be used
+  65:/usr/lib/avr/include/util/delay.h ****     to calculate the number of delay cycles needed based on the CPU
+  66:/usr/lib/avr/include/util/delay.h ****     frequency passed by the macro F_CPU.
+  67:/usr/lib/avr/include/util/delay.h **** 
+  68:/usr/lib/avr/include/util/delay.h ****     \note In order for these functions to work as intended, compiler
+  69:/usr/lib/avr/include/util/delay.h ****     optimizations <em>must</em> be enabled, and the delay time
+  70:/usr/lib/avr/include/util/delay.h ****     <em>must</em> be an expression that is a known constant at
+  71:/usr/lib/avr/include/util/delay.h ****     compile-time.  If these requirements are not met, the resulting
+  72:/usr/lib/avr/include/util/delay.h ****     delay will be much longer (and basically unpredictable), and
+  73:/usr/lib/avr/include/util/delay.h ****     applications that otherwise do not use floating-point calculations
+  74:/usr/lib/avr/include/util/delay.h ****     will experience severe code bloat by the floating-point library
+  75:/usr/lib/avr/include/util/delay.h ****     routines linked into the application.
+  76:/usr/lib/avr/include/util/delay.h **** 
+  77:/usr/lib/avr/include/util/delay.h ****     The functions available allow the specification of microsecond, and
+  78:/usr/lib/avr/include/util/delay.h ****     millisecond delays directly, using the application-supplied macro
+  79:/usr/lib/avr/include/util/delay.h ****     F_CPU as the CPU clock frequency (in Hertz).
+  80:/usr/lib/avr/include/util/delay.h **** 
+  81:/usr/lib/avr/include/util/delay.h **** */
+  82:/usr/lib/avr/include/util/delay.h **** 
+  83:/usr/lib/avr/include/util/delay.h **** #if !defined(__DOXYGEN__)
+  84:/usr/lib/avr/include/util/delay.h **** static inline void _delay_us(double __us) __attribute__((always_inline));
+  85:/usr/lib/avr/include/util/delay.h **** static inline void _delay_ms(double __ms) __attribute__((always_inline));
+  86:/usr/lib/avr/include/util/delay.h **** #endif
+  87:/usr/lib/avr/include/util/delay.h **** 
+  88:/usr/lib/avr/include/util/delay.h **** #ifndef F_CPU
+  89:/usr/lib/avr/include/util/delay.h **** /* prevent compiler error by supplying a default */
+  90:/usr/lib/avr/include/util/delay.h **** # warning "F_CPU not defined for <util/delay.h>"
+  91:/usr/lib/avr/include/util/delay.h **** # define F_CPU 1000000UL
+  92:/usr/lib/avr/include/util/delay.h **** #endif
+  93:/usr/lib/avr/include/util/delay.h **** 
+  94:/usr/lib/avr/include/util/delay.h **** #ifndef __OPTIMIZE__
+  95:/usr/lib/avr/include/util/delay.h **** # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+  96:/usr/lib/avr/include/util/delay.h **** #endif
+  97:/usr/lib/avr/include/util/delay.h **** 
+  98:/usr/lib/avr/include/util/delay.h **** #if __HAS_DELAY_CYCLES && defined(__OPTIMIZE__) && \
+  99:/usr/lib/avr/include/util/delay.h ****   !defined(__DELAY_BACKWARD_COMPATIBLE__) &&	   \
+ 100:/usr/lib/avr/include/util/delay.h ****   __STDC_HOSTED__
+ 101:/usr/lib/avr/include/util/delay.h **** #  include <math.h>
+ 102:/usr/lib/avr/include/util/delay.h **** #endif
+ 103:/usr/lib/avr/include/util/delay.h **** 
+ 104:/usr/lib/avr/include/util/delay.h **** /**
+ 105:/usr/lib/avr/include/util/delay.h ****    \ingroup util_delay
+ 106:/usr/lib/avr/include/util/delay.h **** 
+ 107:/usr/lib/avr/include/util/delay.h ****    Perform a delay of \c __ms milliseconds, using _delay_loop_2().
+ 108:/usr/lib/avr/include/util/delay.h **** 
+ 109:/usr/lib/avr/include/util/delay.h ****    The macro F_CPU is supposed to be defined to a
+ 110:/usr/lib/avr/include/util/delay.h ****    constant defining the CPU clock frequency (in Hertz).
+ 111:/usr/lib/avr/include/util/delay.h **** 
+ 112:/usr/lib/avr/include/util/delay.h ****    The maximal possible delay is 262.14 ms / F_CPU in MHz.
+ 113:/usr/lib/avr/include/util/delay.h **** 
+ 114:/usr/lib/avr/include/util/delay.h ****    When the user request delay which exceed the maximum possible one,
+ 115:/usr/lib/avr/include/util/delay.h ****    _delay_ms() provides a decreased resolution functionality. In this
+ 116:/usr/lib/avr/include/util/delay.h ****    mode _delay_ms() will work with a resolution of 1/10 ms, providing
+ 117:/usr/lib/avr/include/util/delay.h ****    delays up to 6.5535 seconds (independent from CPU frequency).  The
+ 118:/usr/lib/avr/include/util/delay.h ****    user will not be informed about decreased resolution.
+ 119:/usr/lib/avr/include/util/delay.h **** 
+ 120:/usr/lib/avr/include/util/delay.h ****    If the avr-gcc toolchain has __builtin_avr_delay_cycles(unsigned long)
+ 121:/usr/lib/avr/include/util/delay.h ****    support, maximal possible delay is 4294967.295 ms/ F_CPU in MHz. For
+ 122:/usr/lib/avr/include/util/delay.h ****    values greater than the maximal possible delay, overflows results in
+ 123:/usr/lib/avr/include/util/delay.h ****    no delay i.e., 0ms.
+ 124:/usr/lib/avr/include/util/delay.h **** 
+ 125:/usr/lib/avr/include/util/delay.h ****    Conversion of __us into clock cycles may not always result in integer.
+ 126:/usr/lib/avr/include/util/delay.h ****    By default, the clock cycles rounded up to next integer. This ensures that
+ 127:/usr/lib/avr/include/util/delay.h ****    the user gets atleast __us microseconds of delay.
+ 128:/usr/lib/avr/include/util/delay.h **** 
+ 129:/usr/lib/avr/include/util/delay.h ****    Alternatively, user can define __DELAY_ROUND_DOWN__ and __DELAY_ROUND_CLOSEST__
+ 130:/usr/lib/avr/include/util/delay.h ****    to round down and round to closest integer.
+ 131:/usr/lib/avr/include/util/delay.h **** 
+ 132:/usr/lib/avr/include/util/delay.h ****    Note: The new implementation of _delay_ms(double __ms) with 
+ 133:/usr/lib/avr/include/util/delay.h ****     __builtin_avr_delay_cycles(unsigned long) support is not backward compatible. 
+ 134:/usr/lib/avr/include/util/delay.h ****    User can define __DELAY_BACKWARD_COMPATIBLE__ to get a backward compatible delay.
+ 135:/usr/lib/avr/include/util/delay.h ****    Also, the backward compatible
+ 136:/usr/lib/avr/include/util/delay.h ****    algorithm will be chosen if the code is compiled in a <em>freestanding
+ 137:/usr/lib/avr/include/util/delay.h ****    environment</em> (GCC option \c -ffreestanding), as the math functions
+ 138:/usr/lib/avr/include/util/delay.h ****    required for rounding are not available to the compiler then.
+ 139:/usr/lib/avr/include/util/delay.h **** 
+ 140:/usr/lib/avr/include/util/delay.h ****  */
+ 141:/usr/lib/avr/include/util/delay.h **** void
+ 142:/usr/lib/avr/include/util/delay.h **** _delay_ms(double __ms)
+ 143:/usr/lib/avr/include/util/delay.h **** {
+ 144:/usr/lib/avr/include/util/delay.h **** 	double __tmp ; 
+ 145:/usr/lib/avr/include/util/delay.h **** #if __HAS_DELAY_CYCLES && defined(__OPTIMIZE__) && \
+ 146:/usr/lib/avr/include/util/delay.h ****   !defined(__DELAY_BACKWARD_COMPATIBLE__) &&	   \
+ 147:/usr/lib/avr/include/util/delay.h ****   __STDC_HOSTED__
+ 148:/usr/lib/avr/include/util/delay.h **** 	uint32_t __ticks_dc;
+ 149:/usr/lib/avr/include/util/delay.h **** 	extern void __builtin_avr_delay_cycles(unsigned long);
+ 150:/usr/lib/avr/include/util/delay.h **** 	__tmp = ((F_CPU) / 1e3) * __ms;
+ 151:/usr/lib/avr/include/util/delay.h **** 
+ 152:/usr/lib/avr/include/util/delay.h **** 	#if defined(__DELAY_ROUND_DOWN__)
+ 153:/usr/lib/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)fabs(__tmp);
+ 154:/usr/lib/avr/include/util/delay.h **** 
+ 155:/usr/lib/avr/include/util/delay.h **** 	#elif defined(__DELAY_ROUND_CLOSEST__)
+ 156:/usr/lib/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(fabs(__tmp)+0.5);
+ 157:/usr/lib/avr/include/util/delay.h **** 
+ 158:/usr/lib/avr/include/util/delay.h **** 	#else
+ 159:/usr/lib/avr/include/util/delay.h **** 		//round up by default
+ 160:/usr/lib/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+ 161:/usr/lib/avr/include/util/delay.h **** 	#endif
+ 162:/usr/lib/avr/include/util/delay.h **** 
+ 163:/usr/lib/avr/include/util/delay.h **** 	__builtin_avr_delay_cycles(__ticks_dc);
+ 150               		.loc 2 163 0
+ 151 004a 8FE3      		ldi r24,lo8(-25537)
+ 152 004c 9CE9      		ldi r25,hi8(-25537)
+ 153 004e 0197      	1:	sbiw r24,1
+ 154 0050 01F4      		brne 1b
+ 155 0052 00C0      		rjmp .
+ 156 0054 0000      		nop
+ 157 0056 0895      		ret
+ 158               	.LBE5:
+ 159               	.LBE4:
+ 160               		.cfi_endproc
+ 161               	.LFE110:
+ 163               		.section	.text.unicode_input_finish,"ax",@progbits
+ 164               		.weak	unicode_input_finish
+ 166               	unicode_input_finish:
+ 167               	.LFB111:
+  44:quantum/process_keycode/process_unicode.c ****     break;
+  45:quantum/process_keycode/process_unicode.c ****   }
+  46:quantum/process_keycode/process_unicode.c ****   wait_ms(UNICODE_TYPE_DELAY);
+  47:quantum/process_keycode/process_unicode.c **** }
+  48:quantum/process_keycode/process_unicode.c **** 
+  49:quantum/process_keycode/process_unicode.c **** __attribute__((weak))
+  50:quantum/process_keycode/process_unicode.c **** void unicode_input_finish (void) {
+ 168               		.loc 1 50 0
+ 169               		.cfi_startproc
+ 170               	/* prologue: function */
+ 171               	/* frame size = 0 */
+ 172               	/* stack size = 0 */
+ 173               	.L__stack_usage = 0
+  51:quantum/process_keycode/process_unicode.c ****   switch(input_mode) {
+ 174               		.loc 1 51 0
+ 175 0000 8091 0000 		lds r24,input_mode
+ 176 0004 8130      		cpi r24,lo8(1)
+ 177 0006 01F0      		breq .L16
+ 178 0008 00F0      		brlo .L17
+ 179 000a 8230      		cpi r24,lo8(2)
+ 180 000c 01F4      		brne .L21
+ 181               	.L17:
+  52:quantum/process_keycode/process_unicode.c ****   case UC_OSX:
+  53:quantum/process_keycode/process_unicode.c ****   case UC_WIN:
+  54:quantum/process_keycode/process_unicode.c ****     unregister_code(KC_LALT);
+ 182               		.loc 1 54 0
+ 183 000e 82EE      		ldi r24,lo8(-30)
+ 184 0010 00C0      		rjmp .L22
+ 185               	.L16:
+  55:quantum/process_keycode/process_unicode.c ****     break;
+  56:quantum/process_keycode/process_unicode.c ****   case UC_LNX:
+  57:quantum/process_keycode/process_unicode.c ****     register_code(KC_SPC);
+ 186               		.loc 1 57 0
+ 187 0012 8CE2      		ldi r24,lo8(44)
+ 188 0014 0E94 0000 		call register_code
+ 189               	.LVL12:
+  58:quantum/process_keycode/process_unicode.c ****     unregister_code(KC_SPC);
+ 190               		.loc 1 58 0
+ 191 0018 8CE2      		ldi r24,lo8(44)
+ 192               	.L22:
+ 193 001a 0C94 0000 		jmp unregister_code
+ 194               	.LVL13:
+ 195               	.L21:
+ 196 001e 0895      		ret
+ 197               		.cfi_endproc
+ 198               	.LFE111:
+ 200               		.section	.text.register_hex,"ax",@progbits
+ 201               	.global	register_hex
+ 203               	register_hex:
+ 204               	.LFB112:
+  59:quantum/process_keycode/process_unicode.c ****     break;
+  60:quantum/process_keycode/process_unicode.c ****   }
+  61:quantum/process_keycode/process_unicode.c **** }
+  62:quantum/process_keycode/process_unicode.c **** 
+  63:quantum/process_keycode/process_unicode.c **** void register_hex(uint16_t hex) {
+ 205               		.loc 1 63 0
+ 206               		.cfi_startproc
+ 207               	.LVL14:
+ 208 0000 EF92      		push r14
+ 209               	.LCFI0:
+ 210               		.cfi_def_cfa_offset 3
+ 211               		.cfi_offset 14, -2
+ 212 0002 FF92      		push r15
+ 213               	.LCFI1:
+ 214               		.cfi_def_cfa_offset 4
+ 215               		.cfi_offset 15, -3
+ 216 0004 1F93      		push r17
+ 217               	.LCFI2:
+ 218               		.cfi_def_cfa_offset 5
+ 219               		.cfi_offset 17, -4
+ 220 0006 CF93      		push r28
+ 221               	.LCFI3:
+ 222               		.cfi_def_cfa_offset 6
+ 223               		.cfi_offset 28, -5
+ 224 0008 DF93      		push r29
+ 225               	.LCFI4:
+ 226               		.cfi_def_cfa_offset 7
+ 227               		.cfi_offset 29, -6
+ 228               	/* prologue: function */
+ 229               	/* frame size = 0 */
+ 230               	/* stack size = 5 */
+ 231               	.L__stack_usage = 5
+ 232 000a 7C01      		movw r14,r24
+ 233               	.LVL15:
+ 234               		.loc 1 63 0
+ 235 000c CCE0      		ldi r28,lo8(12)
+ 236 000e D0E0      		ldi r29,0
+ 237               	.LVL16:
+ 238               	.L24:
+ 239               	.LBB6:
+ 240               	.LBB7:
+  64:quantum/process_keycode/process_unicode.c ****   for(int i = 3; i >= 0; i--) {
+  65:quantum/process_keycode/process_unicode.c ****     uint8_t digit = ((hex >> (i*4)) & 0xF);
+ 241               		.loc 1 65 0 discriminator 3
+ 242 0010 9701      		movw r18,r14
+ 243 0012 0C2E      		mov r0,r28
+ 244 0014 00C0      		rjmp 2f
+ 245               		1:
+ 246 0016 3695      		lsr r19
+ 247 0018 2795      		ror r18
+ 248               		2:
+ 249 001a 0A94      		dec r0
+ 250 001c 02F4      		brpl 1b
+ 251 001e 122F      		mov r17,r18
+ 252 0020 1F70      		andi r17,lo8(15)
+ 253               	.LVL17:
+  66:quantum/process_keycode/process_unicode.c ****     register_code(hex_to_keycode(digit));
+ 254               		.loc 1 66 0 discriminator 3
+ 255 0022 812F      		mov r24,r17
+ 256 0024 0E94 0000 		call hex_to_keycode
+ 257               	.LVL18:
+ 258 0028 0E94 0000 		call register_code
+ 259               	.LVL19:
+  67:quantum/process_keycode/process_unicode.c ****     unregister_code(hex_to_keycode(digit));
+ 260               		.loc 1 67 0 discriminator 3
+ 261 002c 812F      		mov r24,r17
+ 262 002e 0E94 0000 		call hex_to_keycode
+ 263               	.LVL20:
+ 264 0032 0E94 0000 		call unregister_code
+ 265               	.LVL21:
+ 266 0036 2497      		sbiw r28,4
+ 267               	.LBE7:
+  64:quantum/process_keycode/process_unicode.c ****   for(int i = 3; i >= 0; i--) {
+ 268               		.loc 1 64 0 discriminator 3
+ 269 0038 CC3F      		cpi r28,-4
+ 270 003a 8FEF      		ldi r24,-1
+ 271 003c D807      		cpc r29,r24
+ 272 003e 01F4      		brne .L24
+ 273               	/* epilogue start */
+ 274               	.LBE6:
+  68:quantum/process_keycode/process_unicode.c ****   }
+  69:quantum/process_keycode/process_unicode.c **** }
+ 275               		.loc 1 69 0
+ 276 0040 DF91      		pop r29
+ 277 0042 CF91      		pop r28
+ 278 0044 1F91      		pop r17
+ 279               	.LVL22:
+ 280 0046 FF90      		pop r15
+ 281 0048 EF90      		pop r14
+ 282               	.LVL23:
+ 283 004a 0895      		ret
+ 284               		.cfi_endproc
+ 285               	.LFE112:
+ 287               		.section	.text.process_unicode,"ax",@progbits
+ 288               	.global	process_unicode
+ 290               	process_unicode:
+ 291               	.LFB113:
+  70:quantum/process_keycode/process_unicode.c **** 
+  71:quantum/process_keycode/process_unicode.c **** bool process_unicode(uint16_t keycode, keyrecord_t *record) {
+ 292               		.loc 1 71 0
+ 293               		.cfi_startproc
+ 294               	.LVL24:
+ 295 0000 CF93      		push r28
+ 296               	.LCFI5:
+ 297               		.cfi_def_cfa_offset 3
+ 298               		.cfi_offset 28, -2
+ 299 0002 DF93      		push r29
+ 300               	.LCFI6:
+ 301               		.cfi_def_cfa_offset 4
+ 302               		.cfi_offset 29, -3
+ 303               	/* prologue: function */
+ 304               	/* frame size = 0 */
+ 305               	/* stack size = 2 */
+ 306               	.L__stack_usage = 2
+  72:quantum/process_keycode/process_unicode.c ****   if (keycode > QK_UNICODE && record->event.pressed) {
+ 307               		.loc 1 72 0
+ 308 0004 8130      		cpi r24,1
+ 309 0006 20E8      		ldi r18,-128
+ 310 0008 9207      		cpc r25,r18
+ 311 000a 00F0      		brlo .L27
+ 312               		.loc 1 72 0 is_stmt 0 discriminator 1
+ 313 000c FB01      		movw r30,r22
+ 314 000e 2281      		ldd r18,Z+2
+ 315 0010 2223      		tst r18
+ 316 0012 01F0      		breq .L27
+ 317 0014 EC01      		movw r28,r24
+ 318               	.LVL25:
+ 319               	.LBB8:
+  73:quantum/process_keycode/process_unicode.c ****     uint16_t unicode = keycode & 0x7FFF;
+  74:quantum/process_keycode/process_unicode.c ****     unicode_input_start();
+ 320               		.loc 1 74 0 is_stmt 1
+ 321 0016 0E94 0000 		call unicode_input_start
+ 322               	.LVL26:
+  75:quantum/process_keycode/process_unicode.c ****     register_hex(unicode);
+ 323               		.loc 1 75 0
+ 324 001a CE01      		movw r24,r28
+ 325 001c 9F77      		andi r25,127
+ 326               	.LVL27:
+ 327 001e 0E94 0000 		call register_hex
+ 328               	.LVL28:
+  76:quantum/process_keycode/process_unicode.c ****     unicode_input_finish();
+ 329               		.loc 1 76 0
+ 330 0022 0E94 0000 		call unicode_input_finish
+ 331               	.LVL29:
+ 332               	.L27:
+ 333               	.LBE8:
+  77:quantum/process_keycode/process_unicode.c ****   }
+  78:quantum/process_keycode/process_unicode.c ****   return true;
+  79:quantum/process_keycode/process_unicode.c **** }
+ 334               		.loc 1 79 0
+ 335 0026 81E0      		ldi r24,lo8(1)
+ 336               	/* epilogue start */
+ 337 0028 DF91      		pop r29
+ 338 002a CF91      		pop r28
+ 339 002c 0895      		ret
+ 340               		.cfi_endproc
+ 341               	.LFE113:
+ 343               		.section	.bss.input_mode,"aw",@nobits
+ 346               	input_mode:
+ 347 0000 00        		.zero	1
+ 348               		.text
+ 349               	.Letext0:
+ 350               		.file 3 "/usr/lib/avr/include/stdint.h"
+ 351               		.file 4 "./tmk_core/common/keyboard.h"
+ 352               		.file 5 "./tmk_core/common/action.h"
+ 353               		.file 6 "./tmk_core/common/keycode.h"
+ 354               		.file 7 "./quantum/keymap.h"
+ 355               		.file 8 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 process_unicode.c
+     /tmp/cccZXW6m.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cccZXW6m.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cccZXW6m.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cccZXW6m.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cccZXW6m.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cccZXW6m.s:13     .text.hex_to_keycode:0000000000000000 hex_to_keycode
+     /tmp/cccZXW6m.s:51     .text.set_unicode_input_mode:0000000000000000 set_unicode_input_mode
+     /tmp/cccZXW6m.s:346    .bss.input_mode:0000000000000000 input_mode
+     /tmp/cccZXW6m.s:69     .text.get_unicode_input_mode:0000000000000000 get_unicode_input_mode
+     /tmp/cccZXW6m.s:86     .text.unicode_input_start:0000000000000000 unicode_input_start
+     /tmp/cccZXW6m.s:166    .text.unicode_input_finish:0000000000000000 unicode_input_finish
+     /tmp/cccZXW6m.s:203    .text.register_hex:0000000000000000 register_hex
+     /tmp/cccZXW6m.s:290    .text.process_unicode:0000000000000000 process_unicode
+
+UNDEFINED SYMBOLS
+register_code
+unregister_code
+__do_clear_bss
