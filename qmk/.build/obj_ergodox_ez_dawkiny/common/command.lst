@@ -1931,21 +1931,21 @@
  916               		.file 14 "./tmk_core/common/action_layer.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 command.c
-     /tmp/ccoKHxVE.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccoKHxVE.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccoKHxVE.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccoKHxVE.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccoKHxVE.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccoKHxVE.s:12     .text.mousekey_param_inc:0000000000000000 mousekey_param_inc
-     /tmp/ccoKHxVE.s:182    .text.mousekey_param_dec:0000000000000000 mousekey_param_dec
-     /tmp/ccoKHxVE.s:301    .text.command_common:0000000000000000 command_common
-     /tmp/ccoKHxVE.s:901    .bss.command_state:0000000000000000 command_state
-     /tmp/ccoKHxVE.s:579    .text.command_extra:0000000000000000 command_extra
-     /tmp/ccoKHxVE.s:598    .text.command_console_extra:0000000000000000 command_console_extra
-     /tmp/ccoKHxVE.s:617    .text.numkey2num:0000000000000000 numkey2num
-     /tmp/ccoKHxVE.s:881    .rodata.CSWTCH.46:0000000000000000 CSWTCH.46
-     /tmp/ccoKHxVE.s:648    .text.command_proc:0000000000000000 command_proc
-     /tmp/ccoKHxVE.s:895    .bss.mousekey_param:0000000000000000 mousekey_param
+     /tmp/ccaPLmLE.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccaPLmLE.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccaPLmLE.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccaPLmLE.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccaPLmLE.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccaPLmLE.s:12     .text.mousekey_param_inc:0000000000000000 mousekey_param_inc
+     /tmp/ccaPLmLE.s:182    .text.mousekey_param_dec:0000000000000000 mousekey_param_dec
+     /tmp/ccaPLmLE.s:301    .text.command_common:0000000000000000 command_common
+     /tmp/ccaPLmLE.s:901    .bss.command_state:0000000000000000 command_state
+     /tmp/ccaPLmLE.s:579    .text.command_extra:0000000000000000 command_extra
+     /tmp/ccaPLmLE.s:598    .text.command_console_extra:0000000000000000 command_console_extra
+     /tmp/ccaPLmLE.s:617    .text.numkey2num:0000000000000000 numkey2num
+     /tmp/ccaPLmLE.s:881    .rodata.CSWTCH.46:0000000000000000 CSWTCH.46
+     /tmp/ccaPLmLE.s:648    .text.command_proc:0000000000000000 command_proc
+     /tmp/ccaPLmLE.s:895    .bss.mousekey_param:0000000000000000 mousekey_param
 
 UNDEFINED SYMBOLS
 mk_delay

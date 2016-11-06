@@ -34,8 +34,8 @@
   20:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |  Tab   |   Q  |   W  |   E  |   R  |   T  |      |           |      |   Y  |   U  |   I  |   O
   21:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |--------+------+------+------+------+------|  =   |           |  <-  |------+------+------+----
   22:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |   ~    |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L
-  23:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |--------+------+------+------+------+------|      |           |CtrlF5|------+------+------+----
-  24:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .
+  23:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |--------+------+------+------+------+------|  Tg  |           |CtrlF5|------+------+------+----
+  24:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * | LShift |   Z  |   X  |   C  |   V  |   B  | Npad |           |      |   N  |   M  |   ,  |   .
   25:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * `--------+------+------+------+------+-------------'           `-------------+------+------+----
   26:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *   |LCtrl |CtlAlt|Wn/Cmd| App |  LAlt |                                       | RAlt | RCtl |  [ 
   27:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *   `----------------------------------'                                      `-------------------
@@ -57,7 +57,7 @@
   43:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_ESC,   KC_1,          KC_2,    KC_3,         KC_4,    KC_5,  TG(LKEY),
   44:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_TAB,   KC_Q,          KC_W,    KC_E,         KC_R,    KC_T,  KC_EQUAL,
   45:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_GRV,   KC_A,          KC_S,    KC_D,         KC_F,    KC_G,
-  46:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_LSFT,  KC_Z,          KC_X,    KC_C,         KC_V,    KC_B,  LT(NPAD, TG(NPAD)),
+  46:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_LSFT,  KC_Z,          KC_X,    KC_C,         KC_V,    KC_B,  KC_FN2,
   47:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_LCTRL, LCTL(KC_LALT), KC_LGUI, KC_APP,      KC_LALT,
   48:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                         KC_HOME, KC_END,
   49:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                                  KC_PGUP,
@@ -86,7 +86,7 @@
   72:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *   | EPRM |      |      |      |      |                                       |      |      |    
   73:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *   `----------------------------------'                                       `------------------
   74:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                        ,-------------.       ,-------------.
-  75:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                        | SFHm | SFEd  |       | Left | Right|
+  75:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                        | SFHm | SFEd |       | Left | Right|
   76:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 ,------|------|------|       |------+--------+------.
   77:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 |      |      | PgUp |       |  Up  |        |      |
   78:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 | Space|Backsp|------|       |------|  Del   |Enter |
@@ -100,7 +100,7 @@
   86:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_TRNS,KC_TRNS,         KC_TRNS,        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
   87:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_TRNS,KC_TRNS,         KC_TRNS,     KC_TRNS, KC_TRNS,KC_TRNS,
   88:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_TRNS,KC_TRNS,   KC_TRNS, KC_TRNS,  KC_TRNS,KC_TRNS, KC_TRNS,
-  89:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****           EPRM,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
+  89:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_LCTRL,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
   90:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                        	       LSFT(KC_HOME),    LSFT(KC_END),
   91:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                                  KC_PGUP,
   92:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                KC_SPC,  KC_BSPC, KC_PGDN,
@@ -128,7 +128,7 @@
  114:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *   | EPRM |      |      |      |      |                                       |   0  |   .  | Lef
  115:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *   `----------------------------------'                                       `------------------
  116:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                        ,-------------.       ,-------------.
- 117:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                        | Home | End  |       | Left | Right|
+ 117:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                        | Home | End  |       | CtLf | CtRt |
  118:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 ,------|------|------|       |------+--------+------.
  119:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 |      |      | PgUp |       |  Up  |        |      |
  120:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 | Space|Backsp|------|       |------|  Del   |Enter |
@@ -148,11 +148,11 @@
  134:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                KC_SPC,  KC_BSPC, KC_PGDN,
  135:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        // right hand
  136:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_PLUS,
- 137:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_TRNS, KC_7,    KC_8,    KC_9,    KC_LBRC, KC_RBRC, KC_MINUS, 
+ 137:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_COMM, KC_7,    KC_8,    KC_9,    KC_LBRC, KC_RBRC, KC_MINUS, 
  138:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                 KC_4,    KC_5,    KC_6,    KC_LPRN, KC_RPRN, KC_ASTR,
  139:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_TRNS, KC_1,    KC_2,    KC_3,    KC_COMM, KC_UP,   KC_SLSH,
  140:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                 KC_0,    KC_DOT,  KC_LEFT, KC_DOWN, KC_RGHT,
- 141:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_LEFT,     KC_RGHT,
+ 141:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        LCTL(KC_LEFT),     LCTL(KC_RGHT),
  142:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_UP,
  143:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_DOWN,     KC_DELT,  KC_ENT
  144:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     ),
@@ -251,70 +251,71 @@
  237:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** };
  238:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
  239:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** const uint16_t PROGMEM fn_actions[] = {
- 240:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     [1] = ACTION_LAYER_TAP_TOGGLE(MAGI)                // FN1 - Momentary Layer 1 (Magic Layer)~
- 241:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** };
- 242:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
- 243:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
- 244:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** {
-  16               		.loc 1 244 0
+ 240:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     [1] = ACTION_LAYER_TAP_TOGGLE(MAGI),                // FN1 - Momentary Layer 1 (Magic Layer)~
+ 241:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     [2] = ACTION_LAYER_TAP_TOGGLE(NPAD),                // FN2 - Momentary Layer 2 (Numpad Layer)~
+ 242:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** };
+ 243:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
+ 244:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
+ 245:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** {
+  16               		.loc 1 245 0
   17               		.cfi_startproc
   18               	.LVL0:
   19               	/* prologue: function */
   20               	/* frame size = 0 */
   21               	/* stack size = 0 */
   22               	.L__stack_usage = 0
- 245:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****   // MACRODOWN only works in this function
- 246:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****       switch(id) {
-  23               		.loc 1 246 0
+ 246:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****   // MACRODOWN only works in this function
+ 247:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****       switch(id) {
+  23               		.loc 1 247 0
   24 0000 6623      		tst r22
   25 0002 01F0      		breq .L3
   26 0004 6130      		cpi r22,lo8(1)
   27 0006 01F0      		breq .L4
   28 0008 00C0      		rjmp .L2
   29               	.L3:
- 247:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         case 0:
- 248:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         if (record->event.pressed) {
-  30               		.loc 1 248 0
+ 248:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         case 0:
+ 249:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         if (record->event.pressed) {
+  30               		.loc 1 249 0
   31 000a FC01      		movw r30,r24
   32 000c 8281      		ldd r24,Z+2
   33               	.LVL1:
   34 000e 8823      		tst r24
   35 0010 01F0      		breq .L2
- 249:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****           SEND_STRING (QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION);
-  36               		.loc 1 249 0
+ 250:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****           SEND_STRING (QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION);
+  36               		.loc 1 250 0
   37 0012 80E0      		ldi r24,lo8(__c.5228)
   38 0014 90E0      		ldi r25,hi8(__c.5228)
   39 0016 00C0      		rjmp .L11
   40               	.LVL2:
   41               	.L4:
- 250:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         }
- 251:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         break;
- 252:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         case 1:
- 253:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         if (record->event.pressed) { // For resetting EEPROM
-  42               		.loc 1 253 0
+ 251:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         }
+ 252:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         break;
+ 253:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         case 1:
+ 254:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         if (record->event.pressed) { // For resetting EEPROM
+  42               		.loc 1 254 0
   43 0018 FC01      		movw r30,r24
   44 001a 8281      		ldd r24,Z+2
   45               	.LVL3:
   46 001c 8823      		tst r24
   47 001e 01F0      		breq .L2
- 254:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****           SEND_STRING ( "<-" );
-  48               		.loc 1 254 0
+ 255:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****           SEND_STRING ( "<-" );
+  48               		.loc 1 255 0
   49 0020 80E0      		ldi r24,lo8(__c.5232)
   50 0022 90E0      		ldi r25,hi8(__c.5232)
   51               	.L11:
   52 0024 0E94 0000 		call send_string
   53               	.LVL4:
   54               	.L2:
- 255:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         }
- 256:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         break;
- 257:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** //        case REQL:
- 258:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** //            return (record->event.pressed ?
- 259:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** //                    MACRO( T(LSFT(KC_COMMA)), T(KC_MINUS), END) : // For resetting EEPROM
- 260:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** //                    MACRO_NONE ) ;
- 261:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     }
- 262:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     return MACRO_NONE;
- 263:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** };
-  55               		.loc 1 263 0
+ 256:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         }
+ 257:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         break;
+ 258:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** //        case REQL:
+ 259:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** //            return (record->event.pressed ?
+ 260:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** //                    MACRO( T(LSFT(KC_COMMA)), T(KC_MINUS), END) : // For resetting EEPROM
+ 261:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** //                    MACRO_NONE ) ;
+ 262:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     }
+ 263:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     return MACRO_NONE;
+ 264:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** };
+  55               		.loc 1 264 0
   56 0028 80E0      		ldi r24,0
   57 002a 90E0      		ldi r25,0
   58 002c 0895      		ret
@@ -324,10 +325,10 @@
   63               	.global	matrix_init_user
   65               	matrix_init_user:
   66               	.LFB125:
- 264:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
- 265:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** // Runs just one time when the keyboard initializes.
- 266:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** void matrix_init_user(void) {
-  67               		.loc 1 266 0
+ 265:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
+ 266:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** // Runs just one time when the keyboard initializes.
+ 267:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** void matrix_init_user(void) {
+  67               		.loc 1 267 0
   68               		.cfi_startproc
   69               	/* prologue: function */
   70               	/* frame size = 0 */
@@ -340,21 +341,21 @@
   78               	.global	matrix_scan_user
   80               	matrix_scan_user:
   81               	.LFB126:
- 267:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
- 268:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** };
- 269:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
+ 268:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
+ 269:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** };
  270:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
- 271:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** // Runs constantly in the background, in a loop.
- 272:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** void matrix_scan_user(void) {
-  82               		.loc 1 272 0
+ 271:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
+ 272:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** // Runs constantly in the background, in a loop.
+ 273:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** void matrix_scan_user(void) {
+  82               		.loc 1 273 0
   83               		.cfi_startproc
   84               	/* prologue: function */
   85               	/* frame size = 0 */
   86               	/* stack size = 0 */
   87               	.L__stack_usage = 0
- 273:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
- 274:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     uint8_t layer = biton32(layer_state);
-  88               		.loc 1 274 0
+ 274:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
+ 275:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     uint8_t layer = biton32(layer_state);
+  88               		.loc 1 275 0
   89 0000 6091 0000 		lds r22,layer_state
   90 0004 7091 0000 		lds r23,layer_state+1
   91 0008 8091 0000 		lds r24,layer_state+2
@@ -436,13 +437,13 @@
  121 0022 2F98      		cbi 0x5,7
  122               	.LBE27:
  123               	.LBE26:
- 275:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
- 276:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     ergodox_board_led_off();
- 277:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     ergodox_right_led_1_off();
- 278:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     ergodox_right_led_2_off();
- 279:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     ergodox_right_led_3_off();
- 280:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     switch (layer) {
- 124               		.loc 1 280 0
+ 276:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
+ 277:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     ergodox_board_led_off();
+ 278:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     ergodox_right_led_1_off();
+ 279:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     ergodox_right_led_2_off();
+ 280:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     ergodox_right_led_3_off();
+ 281:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     switch (layer) {
+ 124               		.loc 1 281 0
  125 0024 8230      		cpi r24,lo8(2)
  126 0026 01F0      		breq .L21
  127 0028 00F4      		brsh .L17
@@ -501,465 +502,466 @@
  179 0000 3C2D 00   		.string	"<-"
  180               		.section	.progmem.data.__c.5228,"a",@progbits
  183               	__c.5228:
- 184 0000 6572 676F 		.string	"ergodox/dawkiny @ d87a48-dirty"
+ 184 0000 6572 676F 		.string	"ergodox/dawkiny @ 3d553f-dirty"
  184      646F 782F 
  184      6461 776B 
  184      696E 7920 
- 184      4020 6438 
+ 184      4020 3364 
  185               	.global	fn_actions
  186               		.section	.progmem.data.fn_actions,"a",@progbits
  189               	fn_actions:
  190 0000 0000      		.zero	2
  191 0002 F0A1      		.word	-24080
- 192               	.global	keymaps
- 193               		.section	.progmem.data.keymaps,"a",@progbits
- 196               	keymaps:
- 197 0000 2900      		.word	41
- 198 0002 2B00      		.word	43
- 199 0004 3500      		.word	53
- 200 0006 E100      		.word	225
- 201 0008 E000      		.word	224
- 202 000a 0000      		.word	0
- 203 000c 1E00      		.word	30
- 204 000e 1400      		.word	20
- 205 0010 0400      		.word	4
- 206 0012 1D00      		.word	29
- 207 0014 E201      		.word	482
- 208 0016 4E00      		.word	78
- 209 0018 1F00      		.word	31
- 210 001a 1A00      		.word	26
- 211 001c 1600      		.word	22
- 212 001e 1B00      		.word	27
- 213 0020 E300      		.word	227
- 214 0022 2A00      		.word	42
- 215 0024 2000      		.word	32
- 216 0026 0800      		.word	8
- 217 0028 0700      		.word	7
- 218 002a 0600      		.word	6
- 219 002c 6500      		.word	101
- 220 002e 2C00      		.word	44
- 221 0030 2100      		.word	33
- 222 0032 1500      		.word	21
- 223 0034 0900      		.word	9
- 224 0036 1900      		.word	25
- 225 0038 E200      		.word	226
- 226 003a 4B00      		.word	75
- 227 003c 2200      		.word	34
- 228 003e 1700      		.word	23
- 229 0040 0A00      		.word	10
- 230 0042 0500      		.word	5
- 231 0044 0000      		.word	0
- 232 0046 4A00      		.word	74
- 233 0048 0353      		.word	21251
- 234 004a 2E00      		.word	46
- 235 004c 0000      		.word	0
- 236 004e 0253      		.word	21250
- 237 0050 0000      		.word	0
- 238 0052 4D00      		.word	77
- 239 0054 2300      		.word	35
- 240 0056 0130      		.word	12289
- 241 0058 0000      		.word	0
- 242 005a 3E01      		.word	318
- 243 005c 0000      		.word	0
- 244 005e 5000      		.word	80
- 245 0060 2400      		.word	36
- 246 0062 1C00      		.word	28
- 247 0064 0B00      		.word	11
- 248 0066 1100      		.word	17
- 249 0068 0000      		.word	0
- 250 006a 4F00      		.word	79
- 251 006c 2500      		.word	37
- 252 006e 1800      		.word	24
- 253 0070 0D00      		.word	13
- 254 0072 1000      		.word	16
- 255 0074 E600      		.word	230
- 256 0076 5200      		.word	82
- 257 0078 2600      		.word	38
- 258 007a 0C00      		.word	12
- 259 007c 0E00      		.word	14
- 260 007e 3600      		.word	54
- 261 0080 E400      		.word	228
- 262 0082 2800      		.word	40
- 263 0084 2700      		.word	39
- 264 0086 1200      		.word	18
- 265 0088 0F00      		.word	15
- 266 008a 3700      		.word	55
- 267 008c 2F00      		.word	47
- 268 008e 4C00      		.word	76
- 269 0090 2D00      		.word	45
- 270 0092 1300      		.word	19
- 271 0094 3300      		.word	51
- 272 0096 3800      		.word	56
- 273 0098 3000      		.word	48
- 274 009a 5100      		.word	81
- 275 009c 2E02      		.word	558
- 276 009e 3100      		.word	49
- 277 00a0 3400      		.word	52
- 278 00a2 E500      		.word	229
- 279 00a4 C100      		.word	193
- 280 00a6 0000      		.word	0
- 281 00a8 2900      		.word	41
- 282 00aa 0100      		.word	1
- 283 00ac 0100      		.word	1
- 284 00ae 0100      		.word	1
- 285 00b0 0130      		.word	12289
- 286 00b2 0000      		.word	0
- 287 00b4 3A00      		.word	58
- 288 00b6 0100      		.word	1
- 289 00b8 0100      		.word	1
- 290 00ba 0100      		.word	1
- 291 00bc 0100      		.word	1
- 292 00be 4E00      		.word	78
- 293 00c0 3B00      		.word	59
- 294 00c2 0100      		.word	1
- 295 00c4 0100      		.word	1
- 296 00c6 0100      		.word	1
- 297 00c8 0100      		.word	1
- 298 00ca 2A00      		.word	42
- 299 00cc 3C00      		.word	60
- 300 00ce 0100      		.word	1
- 301 00d0 0100      		.word	1
- 302 00d2 0100      		.word	1
- 303 00d4 0100      		.word	1
- 304 00d6 2C00      		.word	44
- 305 00d8 3D00      		.word	61
- 306 00da 0100      		.word	1
- 307 00dc 0100      		.word	1
- 308 00de 0100      		.word	1
- 309 00e0 0100      		.word	1
- 310 00e2 4B00      		.word	75
- 311 00e4 3E00      		.word	62
- 312 00e6 0100      		.word	1
- 313 00e8 0100      		.word	1
- 314 00ea 0100      		.word	1
- 315 00ec 0000      		.word	0
- 316 00ee 4A02      		.word	586
- 317 00f0 3F00      		.word	63
- 318 00f2 0100      		.word	1
- 319 00f4 0000      		.word	0
- 320 00f6 0100      		.word	1
- 321 00f8 0000      		.word	0
- 322 00fa 4D02      		.word	589
- 323 00fc 4000      		.word	64
- 324 00fe 0100      		.word	1
- 325 0100 0000      		.word	0
- 326 0102 0100      		.word	1
- 327 0104 0000      		.word	0
- 328 0106 5000      		.word	80
- 329 0108 4100      		.word	65
- 330 010a 0100      		.word	1
- 331 010c 0100      		.word	1
- 332 010e 0100      		.word	1
- 333 0110 0000      		.word	0
- 334 0112 4F00      		.word	79
- 335 0114 4200      		.word	66
- 336 0116 0100      		.word	1
- 337 0118 0100      		.word	1
- 338 011a 0100      		.word	1
- 339 011c 0100      		.word	1
- 340 011e 5200      		.word	82
- 341 0120 4300      		.word	67
- 342 0122 0100      		.word	1
- 343 0124 0100      		.word	1
- 344 0126 0100      		.word	1
- 345 0128 0100      		.word	1
- 346 012a 2800      		.word	40
- 347 012c 4400      		.word	68
- 348 012e 0100      		.word	1
- 349 0130 0100      		.word	1
- 350 0132 0100      		.word	1
- 351 0134 3600      		.word	54
- 352 0136 4C00      		.word	76
- 353 0138 4500      		.word	69
- 354 013a 0100      		.word	1
- 355 013c 0100      		.word	1
- 356 013e 0100      		.word	1
- 357 0140 0100      		.word	1
- 358 0142 5100      		.word	81
- 359 0144 0100      		.word	1
- 360 0146 0100      		.word	1
- 361 0148 0100      		.word	1
- 362 014a 0100      		.word	1
- 363 014c 0100      		.word	1
- 364 014e 0000      		.word	0
- 365 0150 2900      		.word	41
- 366 0152 0100      		.word	1
- 367 0154 0100      		.word	1
- 368 0156 0100      		.word	1
- 369 0158 0130      		.word	12289
- 370 015a 0000      		.word	0
- 371 015c 3A00      		.word	58
- 372 015e 1E02      		.word	542
- 373 0160 2002      		.word	544
- 374 0162 2202      		.word	546
- 375 0164 0100      		.word	1
- 376 0166 4E00      		.word	78
- 377 0168 3B00      		.word	59
- 378 016a 1F02      		.word	543
- 379 016c 2102      		.word	545
- 380 016e 2302      		.word	547
- 381 0170 0100      		.word	1
- 382 0172 2A00      		.word	42
- 383 0174 3C00      		.word	60
- 384 0176 2F02      		.word	559
- 385 0178 2602      		.word	550
- 386 017a 2F00      		.word	47
- 387 017c 0100      		.word	1
- 388 017e 2C00      		.word	44
- 389 0180 3D00      		.word	61
- 390 0182 3002      		.word	560
- 391 0184 2702      		.word	551
- 392 0186 3000      		.word	48
- 393 0188 0100      		.word	1
- 394 018a 4B00      		.word	75
- 395 018c 3E00      		.word	62
- 396 018e 3102      		.word	561
- 397 0190 3500      		.word	53
- 398 0192 3502      		.word	565
- 399 0194 0000      		.word	0
- 400 0196 4A00      		.word	74
- 401 0198 3F00      		.word	63
- 402 019a 0100      		.word	1
- 403 019c 0000      		.word	0
- 404 019e 0100      		.word	1
- 405 01a0 0000      		.word	0
- 406 01a2 4D00      		.word	77
- 407 01a4 4000      		.word	64
- 408 01a6 0100      		.word	1
- 409 01a8 0000      		.word	0
- 410 01aa 0100      		.word	1
- 411 01ac 0000      		.word	0
- 412 01ae 5000      		.word	80
- 413 01b0 4100      		.word	65
- 414 01b2 2400      		.word	36
- 415 01b4 2100      		.word	33
- 416 01b6 1E00      		.word	30
- 417 01b8 0000      		.word	0
- 418 01ba 4F00      		.word	79
- 419 01bc 4200      		.word	66
- 420 01be 2500      		.word	37
- 421 01c0 2200      		.word	34
- 422 01c2 1F00      		.word	31
- 423 01c4 2700      		.word	39
- 424 01c6 5200      		.word	82
- 425 01c8 4300      		.word	67
- 426 01ca 2600      		.word	38
- 427 01cc 2300      		.word	35
- 428 01ce 2000      		.word	32
- 429 01d0 3700      		.word	55
- 430 01d2 2800      		.word	40
- 431 01d4 4400      		.word	68
- 432 01d6 2F00      		.word	47
- 433 01d8 2602      		.word	550
- 434 01da 3600      		.word	54
- 435 01dc 5000      		.word	80
- 436 01de 4C00      		.word	76
- 437 01e0 4500      		.word	69
- 438 01e2 3000      		.word	48
- 439 01e4 2702      		.word	551
- 440 01e6 5200      		.word	82
- 441 01e8 5100      		.word	81
- 442 01ea 5100      		.word	81
- 443 01ec 2E02      		.word	558
- 444 01ee 2D00      		.word	45
- 445 01f0 2502      		.word	549
- 446 01f2 3800      		.word	56
- 447 01f4 4F00      		.word	79
- 448 01f6 0000      		.word	0
- 449 01f8 2900      		.word	41
- 450 01fa 2B00      		.word	43
- 451 01fc 3500      		.word	53
- 452 01fe E100      		.word	225
- 453 0200 E000      		.word	224
- 454 0202 0000      		.word	0
- 455 0204 1E00      		.word	30
- 456 0206 1400      		.word	20
- 457 0208 0400      		.word	4
- 458 020a 1D00      		.word	29
- 459 020c E201      		.word	482
- 460 020e 4E00      		.word	78
- 461 0210 1F00      		.word	31
- 462 0212 1A00      		.word	26
- 463 0214 1600      		.word	22
- 464 0216 1B00      		.word	27
- 465 0218 E300      		.word	227
- 466 021a 2A00      		.word	42
- 467 021c 2000      		.word	32
- 468 021e 0800      		.word	8
- 469 0220 0700      		.word	7
- 470 0222 0600      		.word	6
- 471 0224 6500      		.word	101
- 472 0226 2C00      		.word	44
- 473 0228 2100      		.word	33
- 474 022a 1500      		.word	21
- 475 022c 0900      		.word	9
- 476 022e 1900      		.word	25
- 477 0230 E200      		.word	226
- 478 0232 4B00      		.word	75
- 479 0234 2200      		.word	34
- 480 0236 1700      		.word	23
- 481 0238 0A00      		.word	10
- 482 023a 0500      		.word	5
- 483 023c 0000      		.word	0
- 484 023e 4A00      		.word	74
- 485 0240 0353      		.word	21251
- 486 0242 2E00      		.word	46
- 487 0244 0000      		.word	0
- 488 0246 0253      		.word	21250
- 489 0248 0000      		.word	0
- 490 024a 4D00      		.word	77
- 491 024c 2300      		.word	35
- 492 024e 0130      		.word	12289
- 493 0250 0000      		.word	0
- 494 0252 3E01      		.word	318
- 495 0254 0000      		.word	0
- 496 0256 5000      		.word	80
- 497 0258 2400      		.word	36
- 498 025a 1C00      		.word	28
- 499 025c 0B00      		.word	11
- 500 025e 1100      		.word	17
- 501 0260 0000      		.word	0
- 502 0262 4F00      		.word	79
- 503 0264 2500      		.word	37
- 504 0266 1800      		.word	24
- 505 0268 0D00      		.word	13
- 506 026a 1000      		.word	16
- 507 026c E600      		.word	230
- 508 026e 5200      		.word	82
- 509 0270 2600      		.word	38
- 510 0272 0C00      		.word	12
- 511 0274 0E00      		.word	14
- 512 0276 3600      		.word	54
- 513 0278 2C02      		.word	556
- 514 027a 2800      		.word	40
- 515 027c 2700      		.word	39
- 516 027e 1200      		.word	18
- 517 0280 0F00      		.word	15
- 518 0282 3700      		.word	55
- 519 0284 2F00      		.word	47
- 520 0286 4C00      		.word	76
- 521 0288 2D00      		.word	45
- 522 028a 1300      		.word	19
- 523 028c 3300      		.word	51
- 524 028e 3800      		.word	56
- 525 0290 3000      		.word	48
- 526 0292 5100      		.word	81
- 527 0294 2E02      		.word	558
- 528 0296 3100      		.word	49
- 529 0298 3400      		.word	52
- 530 029a E500      		.word	229
- 531 029c C100      		.word	193
- 532 029e 0000      		.word	0
- 533 02a0 2900      		.word	41
- 534 02a2 2B00      		.word	43
- 535 02a4 3500      		.word	53
- 536 02a6 E100      		.word	225
- 537 02a8 E000      		.word	224
- 538 02aa 0000      		.word	0
- 539 02ac 1E00      		.word	30
- 540 02ae 1400      		.word	20
- 541 02b0 0400      		.word	4
- 542 02b2 1D00      		.word	29
- 543 02b4 E201      		.word	482
- 544 02b6 4E00      		.word	78
- 545 02b8 1F00      		.word	31
- 546 02ba 1A00      		.word	26
- 547 02bc 1600      		.word	22
- 548 02be 1B00      		.word	27
- 549 02c0 E300      		.word	227
- 550 02c2 2A00      		.word	42
- 551 02c4 2000      		.word	32
- 552 02c6 0800      		.word	8
- 553 02c8 0700      		.word	7
- 554 02ca 0600      		.word	6
- 555 02cc 6500      		.word	101
- 556 02ce 2C00      		.word	44
- 557 02d0 2100      		.word	33
- 558 02d2 1500      		.word	21
- 559 02d4 0900      		.word	9
- 560 02d6 1900      		.word	25
- 561 02d8 E200      		.word	226
- 562 02da 4B00      		.word	75
- 563 02dc 2200      		.word	34
- 564 02de 1700      		.word	23
- 565 02e0 0A00      		.word	10
- 566 02e2 0500      		.word	5
- 567 02e4 0000      		.word	0
- 568 02e6 4A00      		.word	74
- 569 02e8 0353      		.word	21251
- 570 02ea 2E00      		.word	46
- 571 02ec 0000      		.word	0
- 572 02ee 0253      		.word	21250
- 573 02f0 0000      		.word	0
- 574 02f2 4D00      		.word	77
- 575 02f4 2300      		.word	35
- 576 02f6 0130      		.word	12289
- 577 02f8 0000      		.word	0
- 578 02fa 3E01      		.word	318
- 579 02fc 0000      		.word	0
- 580 02fe 5000      		.word	80
- 581 0300 2400      		.word	36
- 582 0302 1C00      		.word	28
- 583 0304 0B00      		.word	11
- 584 0306 1100      		.word	17
- 585 0308 0000      		.word	0
- 586 030a 4F00      		.word	79
- 587 030c 2500      		.word	37
- 588 030e 1800      		.word	24
- 589 0310 0D00      		.word	13
- 590 0312 1000      		.word	16
- 591 0314 E600      		.word	230
- 592 0316 5200      		.word	82
- 593 0318 2600      		.word	38
- 594 031a 0C00      		.word	12
- 595 031c 0E00      		.word	14
- 596 031e 3600      		.word	54
- 597 0320 2C02      		.word	556
- 598 0322 2800      		.word	40
- 599 0324 2700      		.word	39
- 600 0326 1200      		.word	18
- 601 0328 0F00      		.word	15
- 602 032a 3700      		.word	55
- 603 032c 2F00      		.word	47
- 604 032e 4C00      		.word	76
- 605 0330 2D00      		.word	45
- 606 0332 1300      		.word	19
- 607 0334 3300      		.word	51
- 608 0336 3800      		.word	56
- 609 0338 3000      		.word	48
- 610 033a 5100      		.word	81
- 611 033c 2E02      		.word	558
- 612 033e 3100      		.word	49
- 613 0340 3400      		.word	52
- 614 0342 E500      		.word	229
- 615 0344 C100      		.word	193
- 616 0346 0000      		.word	0
- 617               		.text
- 618               	.Letext0:
- 619               		.file 3 "/usr/lib/avr/include/stdint.h"
- 620               		.file 4 "./tmk_core/common/keyboard.h"
- 621               		.file 5 "./tmk_core/common/keycode.h"
- 622               		.file 6 "./tmk_core/common/action_code.h"
- 623               		.file 7 "./tmk_core/common/action_macro.h"
- 624               		.file 8 "./tmk_core/common/action.h"
- 625               		.file 9 "./quantum/keymap.h"
- 626               		.file 10 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.h"
- 627               		.file 11 "./quantum/quantum.h"
- 628               		.file 12 "./tmk_core/common/util.h"
+ 192 0004 F0A2      		.word	-23824
+ 193               	.global	keymaps
+ 194               		.section	.progmem.data.keymaps,"a",@progbits
+ 197               	keymaps:
+ 198 0000 2900      		.word	41
+ 199 0002 2B00      		.word	43
+ 200 0004 3500      		.word	53
+ 201 0006 E100      		.word	225
+ 202 0008 E000      		.word	224
+ 203 000a 0000      		.word	0
+ 204 000c 1E00      		.word	30
+ 205 000e 1400      		.word	20
+ 206 0010 0400      		.word	4
+ 207 0012 1D00      		.word	29
+ 208 0014 E201      		.word	482
+ 209 0016 4E00      		.word	78
+ 210 0018 1F00      		.word	31
+ 211 001a 1A00      		.word	26
+ 212 001c 1600      		.word	22
+ 213 001e 1B00      		.word	27
+ 214 0020 E300      		.word	227
+ 215 0022 2A00      		.word	42
+ 216 0024 2000      		.word	32
+ 217 0026 0800      		.word	8
+ 218 0028 0700      		.word	7
+ 219 002a 0600      		.word	6
+ 220 002c 6500      		.word	101
+ 221 002e 2C00      		.word	44
+ 222 0030 2100      		.word	33
+ 223 0032 1500      		.word	21
+ 224 0034 0900      		.word	9
+ 225 0036 1900      		.word	25
+ 226 0038 E200      		.word	226
+ 227 003a 4B00      		.word	75
+ 228 003c 2200      		.word	34
+ 229 003e 1700      		.word	23
+ 230 0040 0A00      		.word	10
+ 231 0042 0500      		.word	5
+ 232 0044 0000      		.word	0
+ 233 0046 4A00      		.word	74
+ 234 0048 0353      		.word	21251
+ 235 004a 2E00      		.word	46
+ 236 004c 0000      		.word	0
+ 237 004e C200      		.word	194
+ 238 0050 0000      		.word	0
+ 239 0052 4D00      		.word	77
+ 240 0054 2300      		.word	35
+ 241 0056 0130      		.word	12289
+ 242 0058 0000      		.word	0
+ 243 005a 3E01      		.word	318
+ 244 005c 0000      		.word	0
+ 245 005e 5000      		.word	80
+ 246 0060 2400      		.word	36
+ 247 0062 1C00      		.word	28
+ 248 0064 0B00      		.word	11
+ 249 0066 1100      		.word	17
+ 250 0068 0000      		.word	0
+ 251 006a 4F00      		.word	79
+ 252 006c 2500      		.word	37
+ 253 006e 1800      		.word	24
+ 254 0070 0D00      		.word	13
+ 255 0072 1000      		.word	16
+ 256 0074 E600      		.word	230
+ 257 0076 5200      		.word	82
+ 258 0078 2600      		.word	38
+ 259 007a 0C00      		.word	12
+ 260 007c 0E00      		.word	14
+ 261 007e 3600      		.word	54
+ 262 0080 E400      		.word	228
+ 263 0082 2800      		.word	40
+ 264 0084 2700      		.word	39
+ 265 0086 1200      		.word	18
+ 266 0088 0F00      		.word	15
+ 267 008a 3700      		.word	55
+ 268 008c 2F00      		.word	47
+ 269 008e 4C00      		.word	76
+ 270 0090 2D00      		.word	45
+ 271 0092 1300      		.word	19
+ 272 0094 3300      		.word	51
+ 273 0096 3800      		.word	56
+ 274 0098 3000      		.word	48
+ 275 009a 5100      		.word	81
+ 276 009c 2E02      		.word	558
+ 277 009e 3100      		.word	49
+ 278 00a0 3400      		.word	52
+ 279 00a2 E500      		.word	229
+ 280 00a4 C100      		.word	193
+ 281 00a6 0000      		.word	0
+ 282 00a8 2900      		.word	41
+ 283 00aa 0100      		.word	1
+ 284 00ac 0100      		.word	1
+ 285 00ae 0100      		.word	1
+ 286 00b0 E000      		.word	224
+ 287 00b2 0000      		.word	0
+ 288 00b4 3A00      		.word	58
+ 289 00b6 0100      		.word	1
+ 290 00b8 0100      		.word	1
+ 291 00ba 0100      		.word	1
+ 292 00bc 0100      		.word	1
+ 293 00be 4E00      		.word	78
+ 294 00c0 3B00      		.word	59
+ 295 00c2 0100      		.word	1
+ 296 00c4 0100      		.word	1
+ 297 00c6 0100      		.word	1
+ 298 00c8 0100      		.word	1
+ 299 00ca 2A00      		.word	42
+ 300 00cc 3C00      		.word	60
+ 301 00ce 0100      		.word	1
+ 302 00d0 0100      		.word	1
+ 303 00d2 0100      		.word	1
+ 304 00d4 0100      		.word	1
+ 305 00d6 2C00      		.word	44
+ 306 00d8 3D00      		.word	61
+ 307 00da 0100      		.word	1
+ 308 00dc 0100      		.word	1
+ 309 00de 0100      		.word	1
+ 310 00e0 0100      		.word	1
+ 311 00e2 4B00      		.word	75
+ 312 00e4 3E00      		.word	62
+ 313 00e6 0100      		.word	1
+ 314 00e8 0100      		.word	1
+ 315 00ea 0100      		.word	1
+ 316 00ec 0000      		.word	0
+ 317 00ee 4A02      		.word	586
+ 318 00f0 3F00      		.word	63
+ 319 00f2 0100      		.word	1
+ 320 00f4 0000      		.word	0
+ 321 00f6 0100      		.word	1
+ 322 00f8 0000      		.word	0
+ 323 00fa 4D02      		.word	589
+ 324 00fc 4000      		.word	64
+ 325 00fe 0100      		.word	1
+ 326 0100 0000      		.word	0
+ 327 0102 0100      		.word	1
+ 328 0104 0000      		.word	0
+ 329 0106 5000      		.word	80
+ 330 0108 4100      		.word	65
+ 331 010a 0100      		.word	1
+ 332 010c 0100      		.word	1
+ 333 010e 0100      		.word	1
+ 334 0110 0000      		.word	0
+ 335 0112 4F00      		.word	79
+ 336 0114 4200      		.word	66
+ 337 0116 0100      		.word	1
+ 338 0118 0100      		.word	1
+ 339 011a 0100      		.word	1
+ 340 011c 0100      		.word	1
+ 341 011e 5200      		.word	82
+ 342 0120 4300      		.word	67
+ 343 0122 0100      		.word	1
+ 344 0124 0100      		.word	1
+ 345 0126 0100      		.word	1
+ 346 0128 0100      		.word	1
+ 347 012a 2800      		.word	40
+ 348 012c 4400      		.word	68
+ 349 012e 0100      		.word	1
+ 350 0130 0100      		.word	1
+ 351 0132 0100      		.word	1
+ 352 0134 3600      		.word	54
+ 353 0136 4C00      		.word	76
+ 354 0138 4500      		.word	69
+ 355 013a 0100      		.word	1
+ 356 013c 0100      		.word	1
+ 357 013e 0100      		.word	1
+ 358 0140 0100      		.word	1
+ 359 0142 5100      		.word	81
+ 360 0144 0100      		.word	1
+ 361 0146 0100      		.word	1
+ 362 0148 0100      		.word	1
+ 363 014a 0100      		.word	1
+ 364 014c 0100      		.word	1
+ 365 014e 0000      		.word	0
+ 366 0150 2900      		.word	41
+ 367 0152 0100      		.word	1
+ 368 0154 0100      		.word	1
+ 369 0156 0100      		.word	1
+ 370 0158 0130      		.word	12289
+ 371 015a 0000      		.word	0
+ 372 015c 3A00      		.word	58
+ 373 015e 1E02      		.word	542
+ 374 0160 2002      		.word	544
+ 375 0162 2202      		.word	546
+ 376 0164 0100      		.word	1
+ 377 0166 4E00      		.word	78
+ 378 0168 3B00      		.word	59
+ 379 016a 1F02      		.word	543
+ 380 016c 2102      		.word	545
+ 381 016e 2302      		.word	547
+ 382 0170 0100      		.word	1
+ 383 0172 2A00      		.word	42
+ 384 0174 3C00      		.word	60
+ 385 0176 2F02      		.word	559
+ 386 0178 2602      		.word	550
+ 387 017a 2F00      		.word	47
+ 388 017c 0100      		.word	1
+ 389 017e 2C00      		.word	44
+ 390 0180 3D00      		.word	61
+ 391 0182 3002      		.word	560
+ 392 0184 2702      		.word	551
+ 393 0186 3000      		.word	48
+ 394 0188 0100      		.word	1
+ 395 018a 4B00      		.word	75
+ 396 018c 3E00      		.word	62
+ 397 018e 3102      		.word	561
+ 398 0190 3500      		.word	53
+ 399 0192 3502      		.word	565
+ 400 0194 0000      		.word	0
+ 401 0196 4A00      		.word	74
+ 402 0198 3F00      		.word	63
+ 403 019a 0100      		.word	1
+ 404 019c 0000      		.word	0
+ 405 019e 0100      		.word	1
+ 406 01a0 0000      		.word	0
+ 407 01a2 4D00      		.word	77
+ 408 01a4 4000      		.word	64
+ 409 01a6 3600      		.word	54
+ 410 01a8 0000      		.word	0
+ 411 01aa 0100      		.word	1
+ 412 01ac 0000      		.word	0
+ 413 01ae 5001      		.word	336
+ 414 01b0 4100      		.word	65
+ 415 01b2 2400      		.word	36
+ 416 01b4 2100      		.word	33
+ 417 01b6 1E00      		.word	30
+ 418 01b8 0000      		.word	0
+ 419 01ba 4F01      		.word	335
+ 420 01bc 4200      		.word	66
+ 421 01be 2500      		.word	37
+ 422 01c0 2200      		.word	34
+ 423 01c2 1F00      		.word	31
+ 424 01c4 2700      		.word	39
+ 425 01c6 5200      		.word	82
+ 426 01c8 4300      		.word	67
+ 427 01ca 2600      		.word	38
+ 428 01cc 2300      		.word	35
+ 429 01ce 2000      		.word	32
+ 430 01d0 3700      		.word	55
+ 431 01d2 2800      		.word	40
+ 432 01d4 4400      		.word	68
+ 433 01d6 2F00      		.word	47
+ 434 01d8 2602      		.word	550
+ 435 01da 3600      		.word	54
+ 436 01dc 5000      		.word	80
+ 437 01de 4C00      		.word	76
+ 438 01e0 4500      		.word	69
+ 439 01e2 3000      		.word	48
+ 440 01e4 2702      		.word	551
+ 441 01e6 5200      		.word	82
+ 442 01e8 5100      		.word	81
+ 443 01ea 5100      		.word	81
+ 444 01ec 2E02      		.word	558
+ 445 01ee 2D00      		.word	45
+ 446 01f0 2502      		.word	549
+ 447 01f2 3800      		.word	56
+ 448 01f4 4F00      		.word	79
+ 449 01f6 0000      		.word	0
+ 450 01f8 2900      		.word	41
+ 451 01fa 2B00      		.word	43
+ 452 01fc 3500      		.word	53
+ 453 01fe E100      		.word	225
+ 454 0200 E000      		.word	224
+ 455 0202 0000      		.word	0
+ 456 0204 1E00      		.word	30
+ 457 0206 1400      		.word	20
+ 458 0208 0400      		.word	4
+ 459 020a 1D00      		.word	29
+ 460 020c E201      		.word	482
+ 461 020e 4E00      		.word	78
+ 462 0210 1F00      		.word	31
+ 463 0212 1A00      		.word	26
+ 464 0214 1600      		.word	22
+ 465 0216 1B00      		.word	27
+ 466 0218 E300      		.word	227
+ 467 021a 2A00      		.word	42
+ 468 021c 2000      		.word	32
+ 469 021e 0800      		.word	8
+ 470 0220 0700      		.word	7
+ 471 0222 0600      		.word	6
+ 472 0224 6500      		.word	101
+ 473 0226 2C00      		.word	44
+ 474 0228 2100      		.word	33
+ 475 022a 1500      		.word	21
+ 476 022c 0900      		.word	9
+ 477 022e 1900      		.word	25
+ 478 0230 E200      		.word	226
+ 479 0232 4B00      		.word	75
+ 480 0234 2200      		.word	34
+ 481 0236 1700      		.word	23
+ 482 0238 0A00      		.word	10
+ 483 023a 0500      		.word	5
+ 484 023c 0000      		.word	0
+ 485 023e 4A00      		.word	74
+ 486 0240 0353      		.word	21251
+ 487 0242 2E00      		.word	46
+ 488 0244 0000      		.word	0
+ 489 0246 0253      		.word	21250
+ 490 0248 0000      		.word	0
+ 491 024a 4D00      		.word	77
+ 492 024c 2300      		.word	35
+ 493 024e 0130      		.word	12289
+ 494 0250 0000      		.word	0
+ 495 0252 3E01      		.word	318
+ 496 0254 0000      		.word	0
+ 497 0256 5000      		.word	80
+ 498 0258 2400      		.word	36
+ 499 025a 1C00      		.word	28
+ 500 025c 0B00      		.word	11
+ 501 025e 1100      		.word	17
+ 502 0260 0000      		.word	0
+ 503 0262 4F00      		.word	79
+ 504 0264 2500      		.word	37
+ 505 0266 1800      		.word	24
+ 506 0268 0D00      		.word	13
+ 507 026a 1000      		.word	16
+ 508 026c E600      		.word	230
+ 509 026e 5200      		.word	82
+ 510 0270 2600      		.word	38
+ 511 0272 0C00      		.word	12
+ 512 0274 0E00      		.word	14
+ 513 0276 3600      		.word	54
+ 514 0278 2C02      		.word	556
+ 515 027a 2800      		.word	40
+ 516 027c 2700      		.word	39
+ 517 027e 1200      		.word	18
+ 518 0280 0F00      		.word	15
+ 519 0282 3700      		.word	55
+ 520 0284 2F00      		.word	47
+ 521 0286 4C00      		.word	76
+ 522 0288 2D00      		.word	45
+ 523 028a 1300      		.word	19
+ 524 028c 3300      		.word	51
+ 525 028e 3800      		.word	56
+ 526 0290 3000      		.word	48
+ 527 0292 5100      		.word	81
+ 528 0294 2E02      		.word	558
+ 529 0296 3100      		.word	49
+ 530 0298 3400      		.word	52
+ 531 029a E500      		.word	229
+ 532 029c C100      		.word	193
+ 533 029e 0000      		.word	0
+ 534 02a0 2900      		.word	41
+ 535 02a2 2B00      		.word	43
+ 536 02a4 3500      		.word	53
+ 537 02a6 E100      		.word	225
+ 538 02a8 E000      		.word	224
+ 539 02aa 0000      		.word	0
+ 540 02ac 1E00      		.word	30
+ 541 02ae 1400      		.word	20
+ 542 02b0 0400      		.word	4
+ 543 02b2 1D00      		.word	29
+ 544 02b4 E201      		.word	482
+ 545 02b6 4E00      		.word	78
+ 546 02b8 1F00      		.word	31
+ 547 02ba 1A00      		.word	26
+ 548 02bc 1600      		.word	22
+ 549 02be 1B00      		.word	27
+ 550 02c0 E300      		.word	227
+ 551 02c2 2A00      		.word	42
+ 552 02c4 2000      		.word	32
+ 553 02c6 0800      		.word	8
+ 554 02c8 0700      		.word	7
+ 555 02ca 0600      		.word	6
+ 556 02cc 6500      		.word	101
+ 557 02ce 2C00      		.word	44
+ 558 02d0 2100      		.word	33
+ 559 02d2 1500      		.word	21
+ 560 02d4 0900      		.word	9
+ 561 02d6 1900      		.word	25
+ 562 02d8 E200      		.word	226
+ 563 02da 4B00      		.word	75
+ 564 02dc 2200      		.word	34
+ 565 02de 1700      		.word	23
+ 566 02e0 0A00      		.word	10
+ 567 02e2 0500      		.word	5
+ 568 02e4 0000      		.word	0
+ 569 02e6 4A00      		.word	74
+ 570 02e8 0353      		.word	21251
+ 571 02ea 2E00      		.word	46
+ 572 02ec 0000      		.word	0
+ 573 02ee 0253      		.word	21250
+ 574 02f0 0000      		.word	0
+ 575 02f2 4D00      		.word	77
+ 576 02f4 2300      		.word	35
+ 577 02f6 0130      		.word	12289
+ 578 02f8 0000      		.word	0
+ 579 02fa 3E01      		.word	318
+ 580 02fc 0000      		.word	0
+ 581 02fe 5000      		.word	80
+ 582 0300 2400      		.word	36
+ 583 0302 1C00      		.word	28
+ 584 0304 0B00      		.word	11
+ 585 0306 1100      		.word	17
+ 586 0308 0000      		.word	0
+ 587 030a 4F00      		.word	79
+ 588 030c 2500      		.word	37
+ 589 030e 1800      		.word	24
+ 590 0310 0D00      		.word	13
+ 591 0312 1000      		.word	16
+ 592 0314 E600      		.word	230
+ 593 0316 5200      		.word	82
+ 594 0318 2600      		.word	38
+ 595 031a 0C00      		.word	12
+ 596 031c 0E00      		.word	14
+ 597 031e 3600      		.word	54
+ 598 0320 2C02      		.word	556
+ 599 0322 2800      		.word	40
+ 600 0324 2700      		.word	39
+ 601 0326 1200      		.word	18
+ 602 0328 0F00      		.word	15
+ 603 032a 3700      		.word	55
+ 604 032c 2F00      		.word	47
+ 605 032e 4C00      		.word	76
+ 606 0330 2D00      		.word	45
+ 607 0332 1300      		.word	19
+ 608 0334 3300      		.word	51
+ 609 0336 3800      		.word	56
+ 610 0338 3000      		.word	48
+ 611 033a 5100      		.word	81
+ 612 033c 2E02      		.word	558
+ 613 033e 3100      		.word	49
+ 614 0340 3400      		.word	52
+ 615 0342 E500      		.word	229
+ 616 0344 C100      		.word	193
+ 617 0346 0000      		.word	0
+ 618               		.text
+ 619               	.Letext0:
+ 620               		.file 3 "/usr/lib/avr/include/stdint.h"
+ 621               		.file 4 "./tmk_core/common/keyboard.h"
+ 622               		.file 5 "./tmk_core/common/keycode.h"
+ 623               		.file 6 "./tmk_core/common/action_code.h"
+ 624               		.file 7 "./tmk_core/common/action_macro.h"
+ 625               		.file 8 "./tmk_core/common/action.h"
+ 626               		.file 9 "./quantum/keymap.h"
+ 627               		.file 10 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.h"
+ 628               		.file 11 "./quantum/quantum.h"
+ 629               		.file 12 "./tmk_core/common/util.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 keymap.c
-     /tmp/ccqpVs7z.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccqpVs7z.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccqpVs7z.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccqpVs7z.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccqpVs7z.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccqpVs7z.s:13     .text.action_get_macro:0000000000000000 action_get_macro
-     /tmp/ccqpVs7z.s:183    .progmem.data.__c.5228:0000000000000000 __c.5228
-     /tmp/ccqpVs7z.s:178    .progmem.data.__c.5232:0000000000000000 __c.5232
-     /tmp/ccqpVs7z.s:65     .text.matrix_init_user:0000000000000000 matrix_init_user
-     /tmp/ccqpVs7z.s:80     .text.matrix_scan_user:0000000000000000 matrix_scan_user
-     /tmp/ccqpVs7z.s:189    .progmem.data.fn_actions:0000000000000000 fn_actions
-     /tmp/ccqpVs7z.s:196    .progmem.data.keymaps:0000000000000000 keymaps
+     /tmp/ccro4q0B.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccro4q0B.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccro4q0B.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccro4q0B.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccro4q0B.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccro4q0B.s:13     .text.action_get_macro:0000000000000000 action_get_macro
+     /tmp/ccro4q0B.s:183    .progmem.data.__c.5228:0000000000000000 __c.5228
+     /tmp/ccro4q0B.s:178    .progmem.data.__c.5232:0000000000000000 __c.5232
+     /tmp/ccro4q0B.s:65     .text.matrix_init_user:0000000000000000 matrix_init_user
+     /tmp/ccro4q0B.s:80     .text.matrix_scan_user:0000000000000000 matrix_scan_user
+     /tmp/ccro4q0B.s:189    .progmem.data.fn_actions:0000000000000000 fn_actions
+     /tmp/ccro4q0B.s:197    .progmem.data.keymaps:0000000000000000 keymaps
 
 UNDEFINED SYMBOLS
 send_string
