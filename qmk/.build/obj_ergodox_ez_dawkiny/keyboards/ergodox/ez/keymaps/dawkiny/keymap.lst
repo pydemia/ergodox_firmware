@@ -121,7 +121,7 @@
  107:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |--------+------+------+------+------+-------------|           |------+------+------+------+----
  108:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |        |   !  |   @  |   {  |   }  |   |  |      |           |      |   7  |   8  |   9  |  {[
  109:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
- 110:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |        |   #  |   $  |   (  |   )  |   `  |------|           |------|   4  |   5  |   6  |  ( 
+ 110:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |        |   #  |   $  |   (  |   )  |   `  |------|           |------|   4  |   5  |   6  |  { 
  111:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
  112:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |        |   %  |   ^  |   [  |   ]  |   ~  |      |           |      |   1  |   2  |   3  |   ,
  113:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * `--------+------+------+------+------+-------------'           `-------------+------+------+----
@@ -149,7 +149,7 @@
  135:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        // right hand
  136:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_PLUS,
  137:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_COMM, KC_7,    KC_8,    KC_9,    KC_LBRC, KC_RBRC, KC_MINUS, 
- 138:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                 KC_4,    KC_5,    KC_6,    KC_LPRN, KC_RPRN, KC_ASTR,
+ 138:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                 KC_4,    KC_5,    KC_6,    KC_LCBR, KC_RCBR, KC_ASTR,
  139:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_TRNS, KC_1,    KC_2,    KC_3,    KC_COMM, KC_UP,   KC_SLSH,
  140:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                 KC_0,    KC_DOT,  KC_LEFT, KC_DOWN, KC_RGHT,
  141:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        LCTL(KC_LEFT),     LCTL(KC_RGHT),
@@ -502,11 +502,11 @@
  179 0000 3C2D 00   		.string	"<-"
  180               		.section	.progmem.data.__c.5228,"a",@progbits
  183               	__c.5228:
- 184 0000 6572 676F 		.string	"ergodox/dawkiny @ 3d553f-dirty"
+ 184 0000 6572 676F 		.string	"ergodox/dawkiny @ ed4a8c-dirty"
  184      646F 782F 
  184      6461 776B 
  184      696E 7920 
- 184      4020 3364 
+ 184      4020 6564 
  185               	.global	fn_actions
  186               		.section	.progmem.data.fn_actions,"a",@progbits
  189               	fn_actions:
@@ -752,13 +752,13 @@
  431 01d2 2800      		.word	40
  432 01d4 4400      		.word	68
  433 01d6 2F00      		.word	47
- 434 01d8 2602      		.word	550
+ 434 01d8 2F02      		.word	559
  435 01da 3600      		.word	54
  436 01dc 5000      		.word	80
  437 01de 4C00      		.word	76
  438 01e0 4500      		.word	69
  439 01e2 3000      		.word	48
- 440 01e4 2702      		.word	551
+ 440 01e4 3002      		.word	560
  441 01e6 5200      		.word	82
  442 01e8 5100      		.word	81
  443 01ea 5100      		.word	81
@@ -950,18 +950,18 @@
  629               		.file 12 "./tmk_core/common/util.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 keymap.c
-     /tmp/ccro4q0B.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccro4q0B.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccro4q0B.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccro4q0B.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccro4q0B.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccro4q0B.s:13     .text.action_get_macro:0000000000000000 action_get_macro
-     /tmp/ccro4q0B.s:183    .progmem.data.__c.5228:0000000000000000 __c.5228
-     /tmp/ccro4q0B.s:178    .progmem.data.__c.5232:0000000000000000 __c.5232
-     /tmp/ccro4q0B.s:65     .text.matrix_init_user:0000000000000000 matrix_init_user
-     /tmp/ccro4q0B.s:80     .text.matrix_scan_user:0000000000000000 matrix_scan_user
-     /tmp/ccro4q0B.s:189    .progmem.data.fn_actions:0000000000000000 fn_actions
-     /tmp/ccro4q0B.s:197    .progmem.data.keymaps:0000000000000000 keymaps
+     /tmp/ccJCeUoL.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccJCeUoL.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccJCeUoL.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccJCeUoL.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccJCeUoL.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccJCeUoL.s:13     .text.action_get_macro:0000000000000000 action_get_macro
+     /tmp/ccJCeUoL.s:183    .progmem.data.__c.5228:0000000000000000 __c.5228
+     /tmp/ccJCeUoL.s:178    .progmem.data.__c.5232:0000000000000000 __c.5232
+     /tmp/ccJCeUoL.s:65     .text.matrix_init_user:0000000000000000 matrix_init_user
+     /tmp/ccJCeUoL.s:80     .text.matrix_scan_user:0000000000000000 matrix_scan_user
+     /tmp/ccJCeUoL.s:189    .progmem.data.fn_actions:0000000000000000 fn_actions
+     /tmp/ccJCeUoL.s:197    .progmem.data.keymaps:0000000000000000 keymaps
 
 UNDEFINED SYMBOLS
 send_string
