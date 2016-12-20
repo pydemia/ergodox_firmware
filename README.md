@@ -4,13 +4,17 @@
 ## Edit Keymap
 
 ```sh
-gedit /Firmware/qmk/keyboards/ergodox/ez/dawkiny/keymap.c
+gedit /Firmware/qmk/keyboards/ergodox/ez/keymaps/dawkiny/keymap.c
 cd /Firmware/qmk/keyboards/ergodox/
 make ez dawkiny
 
 cd /Firmware
 ./teensy/teensy.64bit &
 ```
+
+![make](https://github.com/dawkiny/Firmware/edit/master/make_and_teensy.png)
+---
+
 
 ## Layers
 ```
