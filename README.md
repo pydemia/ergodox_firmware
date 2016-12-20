@@ -11,6 +11,8 @@ make ez dawkiny
 cd /Firmware
 ./teensy/teensy.64bit &
 ```
+
+![make_and_teensy](https://github.com/dawkiny/Firmware/edit/master/make_and_teensy.png)
 <p align="center">
   <img src="https://github.com/dawkiny/Firmware/edit/master/make_and_teensy.png" width="350"/>
 </p>
