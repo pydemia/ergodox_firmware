@@ -54,7 +54,7 @@
   40:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** //Meh: MEH_T(KC_NO)
   41:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** [WKEY] = KEYMAP(  // layer 0 : default
   42:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         // left hand
-  43:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_ESC,   KC_1,          KC_2,    KC_3,         KC_4,    KC_5,  TG(LKEY),
+  43:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_ESC,   KC_1,          KC_2,    KC_3,         KC_4,    KC_5,  LCTL(KC_F5),         // TG(
   44:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_TAB,   KC_Q,          KC_W,    KC_E,         KC_R,    KC_T,  KC_EQUAL,
   45:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_GRV,   KC_A,          KC_S,    KC_D,         KC_F,    KC_G,
   46:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_LSFT,  KC_Z,          KC_X,    KC_C,         KC_V,    KC_B,  KC_FN2,
@@ -64,7 +64,7 @@
   50:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                KC_SPC,  KC_BSPC, KC_PGDN,
   51:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         // right hand
   52:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_6,                KC_7,           KC_8,     KC_9,                 KC_0,                 
-  53:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         M(1),            KC_Y,           KC_U,     KC_I,                 KC_O,                 KC_P
+  53:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         M(1),         	     KC_Y,           KC_U,     KC_I,                 KC_O,                 K
   54:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                              KC_H,           KC_J,     KC_K,                 KC_L,                 
   55:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         LCTL(KC_F5),         KC_N,           KC_M,     KC_COMM,              KC_DOT,               
   56:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                              KC_RALT,        KC_RCTL,  KC_LBRC,              KC_RBRC,              
@@ -77,9 +77,9 @@
   63:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * ,--------------------------------------------------.           ,--------------------------------
   64:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |  ESC   |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |           |  F7  |  F8  |  F9  |  F10 |  F1
   65:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |--------+------+------+------+------+-------------|           |------+------+------+------+----
-  66:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |        |      |      |      |      |      |      |           |      |      |      |      |  {[
+  66:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |        |      |      |  Up  |      |      |      |           |      |      |      |      |  {[
   67:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
-  68:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |        |      |      |      |      |      |------|           |------|      |      |      |   (
+  68:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |        |      | Left | Down | Rght |      |------|           |------|      |      |      |   (
   69:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
   70:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |        |      |      |      |      |      |      |           |      |      |      |      |    
   71:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * `--------+------+------+------+------+-------------'           `-------------+------+------+----
@@ -97,9 +97,9 @@
   83:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** [MAGI] = KEYMAP(
   84:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        // left hand
   85:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_ESC,   KC_F1,           KC_F2,        KC_F3,   KC_F4,  KC_F5,   KC_F6,
-  86:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_TRNS,KC_TRNS,         KC_TRNS,        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-  87:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_TRNS,KC_TRNS,         KC_TRNS,     KC_TRNS, KC_TRNS,KC_TRNS,
-  88:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_TRNS,KC_TRNS,   KC_TRNS, KC_TRNS,  KC_TRNS,KC_TRNS, KC_TRNS,
+  86:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_TRNS,KC_TRNS,         KC_TRNS,        KC_UP,	 KC_TRNS, KC_TRNS, KC_TRNS,
+  87:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_TRNS,KC_TRNS,         KC_LEFT,     	KC_DOWN, KC_RGHT, KC_TRNS,
+  88:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_TRNS,KC_TRNS,   KC_TRNS, KC_TRNS,  	KC_TRNS, KC_TRNS, KC_TRNS,
   89:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_LCTRL,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
   90:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                        	       LSFT(KC_HOME),    LSFT(KC_END),
   91:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                                  KC_PGUP,
@@ -119,252 +119,269 @@
  105:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * ,--------------------------------------------------.           ,--------------------------------
  106:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |Version |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |           |  F7  |  F8  |  F9  |  F10 |  F1
  107:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |--------+------+------+------+------+-------------|           |------+------+------+------+----
- 108:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |        |   !  |   @  |   {  |   }  |   |  |      |           |      |   7  |   8  |   9  |  {[
+ 108:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |        |      |   @  | DtFmt|   {  |   }  |      |           |   ~  |   7  |   8  |   9  |  {[
  109:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
- 110:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |        |   #  |   $  |   (  |   )  |   `  |------|           |------|   4  |   5  |   6  |  { 
+ 110:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |        |   #  |   $  |      |   (  |   )  |------|           |------|   4  |   5  |   6  |  { 
  111:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
- 112:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |        |   %  |   ^  |   [  |   ]  |   ~  |      |           |      |   1  |   2  |   3  |   ,
+ 112:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |        |   %  |   ^  |      |   [  |   ]  |      |           |      |   1  |   2  |   3  |   ,
  113:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * `--------+------+------+------+------+-------------'           `-------------+------+------+----
  114:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *   | EPRM |      |      |      |      |                                       |   0  |   .  | Lef
  115:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *   `----------------------------------'                                       `------------------
  116:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                        ,-------------.       ,-------------.
- 117:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                        | Home | End  |       | CtLf | CtRt |
+ 117:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                        | Left | Right|       | CtLf | CtRt  |
  118:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 ,------|------|------|       |------+--------+------.
- 119:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 |      |      | PgUp |       |  Up  |        |      |
- 120:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 | Space|Backsp|------|       |------|  Del   |Enter |
- 121:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 |      |ace   | PgDn |       | Down |        |      |
- 122:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 `--------------------'       `----------------------'
+ 119:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 |      |      |  Up  |       | PgUp |        |      |
+ 120:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 | Enter|  Del |------|       |------|  Back  |Space |
+ 121:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 |      |      | Down |       | PgDn | Space  |      |
+ 122:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 `--------------------'       `----------------------' 
  123:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  */
  124:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** // SYMBOLS M(0) = Version
  125:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** [NPAD] = KEYMAP(
  126:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        // left hand
  127:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_ESC,   KC_F1,  KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,
- 128:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_TRNS, KC_EXLM, KC_AT,   KC_LCBR, KC_RCBR, KC_PIPE, KC_TRNS,
- 129:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_TRNS, KC_HASH, KC_DLR,  KC_LPRN, KC_RPRN, KC_GRV,
- 130:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_TRNS, KC_PERC, KC_CIRC, KC_LBRC, KC_RBRC, KC_TILD, KC_TRNS,
+ 128:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_TRNS, KC_TRNS, KC_AT,   M(2),    KC_LCBR, KC_RCBR, KC_TRNS,
+ 129:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_TRNS, KC_HASH, KC_DLR,  KC_TRNS, KC_LPRN, KC_RPRN,
+ 130:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_TRNS, KC_PERC, KC_CIRC, KC_TRNS, KC_LBRC, KC_RBRC, KC_TRNS,
  131:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****           EPRM, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
- 132:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                        			KC_HOME, KC_END,
- 133:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                                  KC_PGUP,
- 134:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                KC_SPC,  KC_BSPC, KC_PGDN,
- 135:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        // right hand
- 136:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_PLUS,
- 137:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_COMM, KC_7,    KC_8,    KC_9,    KC_LBRC, KC_RBRC, KC_MINUS, 
- 138:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                 KC_4,    KC_5,    KC_6,    KC_LCBR, KC_RCBR, KC_ASTR,
- 139:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_TRNS, KC_1,    KC_2,    KC_3,    KC_COMM, KC_UP,   KC_SLSH,
- 140:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                 KC_0,    KC_DOT,  KC_LEFT, KC_DOWN, KC_RGHT,
- 141:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        LCTL(KC_LEFT),     LCTL(KC_RGHT),
- 142:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_UP,
- 143:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_DOWN,     KC_DELT,  KC_ENT
- 144:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     ),
- 145:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** /* Keymap 3: Linux Key layer
- 146:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *
- 147:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * ,--------------------------------------------------.           ,--------------------------------
- 148:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |  Esc   |   1  |   2  |   3  |   4  |   5  | TgLk |           |   6  |   7  |   8  |   9  |   0
- 149:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |--------+------+------+------+------+-------------|           |------+------+------+------+----
- 150:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |  Tab   |   Q  |   W  |   E  |   R  |   T  |      |           |      |   Y  |   U  |   I  |   O
- 151:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |--------+------+------+------+------+------|  =   |           |  <-  |------+------+------+----
- 152:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |   ~    |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L
- 153:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |--------+------+------+------+------+------|      |           |CtrlF5|------+------+------+----
- 154:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .
- 155:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * `--------+------+------+------+------+-------------'           `-------------+------+------+----
- 156:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *   |LCtrl |CtlAlt|Wn/Cmd| App |  LAlt |                                       | RAlt | RCtl |  [ 
- 157:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *   `----------------------------------'                                      `-------------------
- 158:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                        ,-------------.       ,-------------.
- 159:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                        | Home | End  |       | Left | Right|
- 160:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 ,------|------|------|       |------+--------+------.
- 161:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 |      |      | PgUp |       |  Up  |        |      |
- 162:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 | Space|Backsp|------|       |------|  Del   |Enter |
- 163:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 |      |ace   | PgDn |       | Down |        |      |
- 164:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 `--------------------'       `----------------------'
- 165:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  */
- 166:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** // If it accepts an argument (i.e, is a function), it doesn't need KC_.
- 167:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** // Otherwise, it needs KC_*
- 168:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
- 169:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** //Hyper: ALL_T(KC_NO)
- 170:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** //Meh: MEH_T(KC_NO)
- 171:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** [LKEY] = KEYMAP(  // layer 0 : default
- 172:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         // left hand
- 173:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_ESC,   KC_1,          KC_2,    KC_3,         KC_4,    KC_5,  TG(LKEY),
- 174:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_TAB,   KC_Q,          KC_W,    KC_E,         KC_R,    KC_T,  KC_EQUAL,
- 175:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_GRV,   KC_A,          KC_S,    KC_D,         KC_F,    KC_G,
- 176:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_LSFT,  KC_Z,          KC_X,    KC_C,         KC_V,    KC_B,  LT(NPAD, TG(NPAD)),
- 177:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_LCTRL, LCTL(KC_LALT), KC_LGUI, KC_APP,      KC_LALT,
- 178:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                         KC_HOME, KC_END,
- 179:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                                  KC_PGUP,
- 180:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                KC_SPC,  KC_BSPC, KC_PGDN,
- 181:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         // right hand
- 182:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_6,                KC_7,           KC_8,     KC_9,                 KC_0,                 
- 183:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         M(1),            KC_Y,           KC_U,     KC_I,                 KC_O,                 KC_P
- 184:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                              KC_H,           KC_J,     KC_K,                 KC_L,                 
- 185:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         LCTL(KC_F5),         KC_N,           KC_M,     KC_COMM,              KC_DOT,               
- 186:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                              KC_RALT,        LSFT(KC_SPC),  KC_LBRC,              KC_RBRC,         
- 187:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_LEFT,     KC_RGHT, 
- 188:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_UP,
- 189:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_DOWN,     KC_DELT,  KC_ENT
- 190:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     ),
- 191:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** /* Keymap 4: PPT layer
- 192:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *
- 193:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * ,--------------------------------------------------.           ,--------------------------------
- 194:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |  Esc   |   1  |   2  |   3  |   4  |   5  | TgLk |           |   6  |   7  |   8  |   9  |   0
- 195:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |--------+------+------+------+------+-------------|           |------+------+------+------+----
- 196:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |  Tab   |   Q  |   W  |   E  |   R  |   T  |      |           |      |   Y  |   U  |   I  |   O
- 197:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |--------+------+------+------+------+------|  =   |           |  <-  |------+------+------+----
- 198:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |   ~    |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L
- 199:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |--------+------+------+------+------+------|      |           |CtrlF5|------+------+------+----
- 200:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .
- 201:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * `--------+------+------+------+------+-------------'           `-------------+------+------+----
- 202:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *   |LCtrl |CtlAlt|Wn/Cmd| App |  LAlt |                                       | RAlt | RCtl |  [ 
- 203:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *   `----------------------------------'                                      `-------------------
- 204:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                        ,-------------.       ,-------------.
- 205:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                        | Home | End  |       | Left | Right|
- 206:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 ,------|------|------|       |------+--------+------.
- 207:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 |      |      | PgUp |       |  Up  |        |      |
- 208:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 | Space|Backsp|------|       |------|  Del   |Enter |
- 209:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 |      |ace   | PgDn |       | Down |        |      |
- 210:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 `--------------------'       `----------------------'
- 211:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  */
- 212:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** // If it accepts an argument (i.e, is a function), it doesn't need KC_.
- 213:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** // Otherwise, it needs KC_*
- 214:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
- 215:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** //Hyper: ALL_T(KC_NO)
- 216:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** //Meh: MEH_T(KC_NO)
- 217:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** [PPTK] = KEYMAP(  // layer 0 : default
- 218:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         // left hand
- 219:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_ESC,   KC_1,          KC_2,    KC_3,         KC_4,    KC_5,  TG(LKEY),
- 220:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_TAB,   KC_Q,          KC_W,    KC_E,         KC_R,    KC_T,  KC_EQUAL,
- 221:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_GRV,   KC_A,          KC_S,    KC_D,         KC_F,    KC_G,
- 222:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_LSFT,  KC_Z,          KC_X,    KC_C,         KC_V,    KC_B,  LT(NPAD, TG(NPAD)),
- 223:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_LCTRL, LCTL(KC_LALT), KC_LGUI, KC_APP,      KC_LALT,
- 224:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                         KC_HOME, KC_END,
- 225:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                                  KC_PGUP,
- 226:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                KC_SPC,  KC_BSPC, KC_PGDN,
- 227:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         // right hand
- 228:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_6,                KC_7,           KC_8,     KC_9,                 KC_0,                 
- 229:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         M(1),            KC_Y,           KC_U,     KC_I,                 KC_O,                 KC_P
- 230:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                              KC_H,           KC_J,     KC_K,                 KC_L,                 
- 231:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         LCTL(KC_F5),         KC_N,           KC_M,     KC_COMM,              KC_DOT,               
- 232:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                              KC_RALT,        LSFT(KC_SPC),  KC_LBRC,              KC_RBRC,         
- 233:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_LEFT,     KC_RGHT, 
- 234:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_UP,
- 235:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_DOWN,     KC_DELT,  KC_ENT
- 236:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     ),
- 237:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** };
- 238:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
- 239:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** const uint16_t PROGMEM fn_actions[] = {
- 240:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     [1] = ACTION_LAYER_TAP_TOGGLE(MAGI),                // FN1 - Momentary Layer 1 (Magic Layer)~
- 241:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     [2] = ACTION_LAYER_TAP_TOGGLE(NPAD),                // FN2 - Momentary Layer 2 (Numpad Layer)~
- 242:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** };
- 243:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
- 244:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
- 245:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** {
-  16               		.loc 1 245 0
+ 132:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                         KC_LEFT, KC_RGHT,
+ 133:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                                  KC_UP,
+ 134:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                KC_ENT,  KC_DELT, KC_DOWN,
+ 135:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
+ 136:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        // right hand
+ 137:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_PLUS,
+ 138:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_TILD, KC_7,    KC_8,    KC_9,    KC_LBRC, KC_RBRC, KC_MINUS, 
+ 139:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                 KC_4,    KC_5,    KC_6,    KC_LCBR, KC_RCBR, KC_ASTR,
+ 140:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_TRNS, KC_1,    KC_2,    KC_3,    KC_COMM, KC_UP,   KC_SLSH,
+ 141:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                 KC_0,    KC_DOT,  KC_LEFT, KC_DOWN, KC_RGHT,
+ 142:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        LCTL(KC_LEFT),     LCTL(KC_RGHT),
+ 143:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_PGUP,
+ 144:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_PGDN,     KC_BSPC,  KC_SPC
+ 145:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     ),
+ 146:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** /* Keymap 3: Linux Key layer
+ 147:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *
+ 148:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * ,--------------------------------------------------.           ,--------------------------------
+ 149:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |  Esc   |   1  |   2  |   3  |   4  |   5  | TgLk |           |   6  |   7  |   8  |   9  |   0
+ 150:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |--------+------+------+------+------+-------------|           |------+------+------+------+----
+ 151:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |  Tab   |   Q  |   W  |   E  |   R  |   T  |      |           |      |   Y  |   U  |   I  |   O
+ 152:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |--------+------+------+------+------+------|  =   |           |  <-  |------+------+------+----
+ 153:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |   ~    |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L
+ 154:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |--------+------+------+------+------+------|      |           |CtrlF5|------+------+------+----
+ 155:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .
+ 156:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * `--------+------+------+------+------+-------------'           `-------------+------+------+----
+ 157:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *   |LCtrl |CtlAlt|Wn/Cmd| App |  LAlt |                                       | RAlt | RCtl |  [ 
+ 158:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *   `----------------------------------'                                      `-------------------
+ 159:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                        ,-------------.       ,-------------.
+ 160:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                        | Home | End  |       | CtLf | CtRt |
+ 161:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 ,------|------|------|       |------+--------+------.
+ 162:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 |      |      | PgUp |       |  Up  |        |      |
+ 163:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 | Space|Backsp|------|       |------|  Del   |Enter |
+ 164:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 |      |ace   | PgDn |       | Down |        |      |
+ 165:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 `--------------------'       `----------------------'
+ 166:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  */
+ 167:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** // If it accepts an argument (i.e, is a function), it doesn't need KC_.
+ 168:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** // Otherwise, it needs KC_*
+ 169:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
+ 170:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** //Hyper: ALL_T(KC_NO)
+ 171:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** //Meh: MEH_T(KC_NO)
+ 172:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** [LKEY] = KEYMAP(  // layer 0 : default
+ 173:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         // left hand
+ 174:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_ESC,   KC_1,          KC_2,    KC_3,         KC_4,    KC_5,  TG(LKEY),
+ 175:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_TAB,   KC_Q,          KC_W,    KC_E,         KC_R,    KC_T,  KC_EQUAL,
+ 176:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_GRV,   KC_A,          KC_S,    KC_D,         KC_F,    KC_G,
+ 177:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_LSFT,  KC_Z,          KC_X,    KC_C,         KC_V,    KC_B,  LT(NPAD, TG(NPAD)),
+ 178:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_LCTRL, LCTL(KC_LALT), KC_LGUI, KC_APP,      KC_LALT,
+ 179:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                        			KC_HOME, KC_END,
+ 180:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                                  KC_PGUP,
+ 181:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                KC_SPC,  KC_DELT, KC_PGDN,
+ 182:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         // right hand
+ 183:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_6,                KC_7,           KC_8,     KC_9,                 KC_0,                 
+ 184:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         M(1),            KC_Y,           KC_U,     KC_I,                 KC_O,                 KC_P
+ 185:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                              KC_H,           KC_J,     KC_K,                 KC_L,                 
+ 186:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         LCTL(KC_F5),         KC_N,           KC_M,     KC_COMM,              KC_DOT,               
+ 187:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                              KC_RALT,        LSFT(KC_SPC),  KC_LBRC,              KC_RBRC,         
+ 188:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_HOME,     KC_END, 
+ 189:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_PGUP,
+ 190:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_PGDN,     KC_DELT,  KC_ENT
+ 191:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     ),
+ 192:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** /* Keymap 4: PPT layer
+ 193:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *
+ 194:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * ,--------------------------------------------------.           ,--------------------------------
+ 195:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |  Esc   |   1  |   2  |   3  |   4  |   5  | TgLk |           |   6  |   7  |   8  |   9  |   0
+ 196:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |--------+------+------+------+------+-------------|           |------+------+------+------+----
+ 197:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |  Tab   |   Q  |   W  |   E  |   R  |   T  |      |           |      |   Y  |   U  |   I  |   O
+ 198:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |--------+------+------+------+------+------|  =   |           |  <-  |------+------+------+----
+ 199:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |   ~    |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L
+ 200:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * |--------+------+------+------+------+------|      |           |CtrlF5|------+------+------+----
+ 201:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .
+ 202:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * `--------+------+------+------+------+-------------'           `-------------+------+------+----
+ 203:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *   |LCtrl |CtlAlt|Wn/Cmd| App |  LAlt |                                       | RAlt | RCtl |  [ 
+ 204:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *   `----------------------------------'                                      `-------------------
+ 205:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                        ,-------------.       ,-------------.
+ 206:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                        | Home | End  |       | Left | Right|
+ 207:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 ,------|------|------|       |------+--------+------.
+ 208:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 |      |      | PgUp |       |  Up  |        |      |
+ 209:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 | Space|Backsp|------|       |------|  Del   |Enter |
+ 210:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 |      |ace   | PgDn |       | Down |        |      |
+ 211:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  *                                 `--------------------'       `----------------------'
+ 212:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  */
+ 213:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** // If it accepts an argument (i.e, is a function), it doesn't need KC_.
+ 214:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** // Otherwise, it needs KC_*
+ 215:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
+ 216:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** //Hyper: ALL_T(KC_NO)
+ 217:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** //Meh: MEH_T(KC_NO)
+ 218:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** [PPTK] = KEYMAP(  // layer 0 : default
+ 219:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         // left hand
+ 220:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_ESC,   KC_1,          KC_2,    KC_3,         KC_4,    KC_5,  TG(LKEY),
+ 221:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_TAB,   KC_Q,          KC_W,    KC_E,         KC_R,    KC_T,  KC_EQUAL,
+ 222:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_GRV,   KC_A,          KC_S,    KC_D,         KC_F,    KC_G,
+ 223:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_LSFT,  KC_Z,          KC_X,    KC_C,         KC_V,    KC_B,  LT(NPAD, TG(NPAD)),
+ 224:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_LCTRL, LCTL(KC_LALT), KC_LGUI, KC_APP,      KC_LALT,
+ 225:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                         KC_HOME, KC_END,
+ 226:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                                  KC_PGUP,
+ 227:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                KC_SPC,  KC_BSPC, KC_PGDN,
+ 228:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         // right hand
+ 229:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_6,                KC_7,           KC_8,     KC_9,                 KC_0,                 
+ 230:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         M(1),            KC_Y,           KC_U,     KC_I,                 KC_O,                 KC_P
+ 231:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                              KC_H,           KC_J,     KC_K,                 KC_L,                 
+ 232:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         LCTL(KC_F5),         KC_N,           KC_M,     KC_COMM,              KC_DOT,               
+ 233:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                              KC_RALT,        LSFT(KC_SPC),  KC_LBRC,              KC_RBRC,         
+ 234:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_LEFT,     KC_RGHT, 
+ 235:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_UP,
+ 236:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_DOWN,     KC_DELT,  KC_ENT
+ 237:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     ),
+ 238:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** };
+ 239:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
+ 240:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** const uint16_t PROGMEM fn_actions[] = {
+ 241:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     [1] = ACTION_LAYER_TAP_TOGGLE(MAGI),                // FN1 - Momentary Layer 1 (Magic Layer)~
+ 242:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     [2] = ACTION_LAYER_TAP_TOGGLE(NPAD),                // FN2 - Momentary Layer 2 (Numpad Layer)~
+ 243:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** };
+ 244:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
+ 245:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
+ 246:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** {
+  16               		.loc 1 246 0
   17               		.cfi_startproc
   18               	.LVL0:
   19               	/* prologue: function */
   20               	/* frame size = 0 */
   21               	/* stack size = 0 */
   22               	.L__stack_usage = 0
- 246:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****   // MACRODOWN only works in this function
- 247:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****       switch(id) {
-  23               		.loc 1 247 0
-  24 0000 6623      		tst r22
-  25 0002 01F0      		breq .L3
-  26 0004 6130      		cpi r22,lo8(1)
-  27 0006 01F0      		breq .L4
-  28 0008 00C0      		rjmp .L2
-  29               	.L3:
- 248:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         case 0:
- 249:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         if (record->event.pressed) {
-  30               		.loc 1 249 0
-  31 000a FC01      		movw r30,r24
-  32 000c 8281      		ldd r24,Z+2
-  33               	.LVL1:
-  34 000e 8823      		tst r24
-  35 0010 01F0      		breq .L2
- 250:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****           SEND_STRING (QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION);
-  36               		.loc 1 250 0
-  37 0012 80E0      		ldi r24,lo8(__c.5228)
-  38 0014 90E0      		ldi r25,hi8(__c.5228)
-  39 0016 00C0      		rjmp .L11
-  40               	.LVL2:
-  41               	.L4:
- 251:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         }
- 252:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         break;
- 253:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         case 1:
- 254:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         if (record->event.pressed) { // For resetting EEPROM
-  42               		.loc 1 254 0
-  43 0018 FC01      		movw r30,r24
+  23 0000 FC01      		movw r30,r24
+ 247:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****   // MACRODOWN only works in this function
+ 248:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****       switch(id) {
+  24               		.loc 1 248 0
+  25 0002 6130      		cpi r22,lo8(1)
+  26 0004 01F0      		breq .L3
+  27 0006 00F0      		brlo .L4
+  28 0008 6230      		cpi r22,lo8(2)
+  29 000a 01F0      		breq .L5
+  30 000c 00C0      		rjmp .L2
+  31               	.L4:
+ 249:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         case 0:
+ 250:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         if (record->event.pressed) {
+  32               		.loc 1 250 0
+  33 000e 8281      		ldd r24,Z+2
+  34               	.LVL1:
+  35 0010 8823      		tst r24
+  36 0012 01F0      		breq .L2
+ 251:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****           SEND_STRING (QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION);
+  37               		.loc 1 251 0
+  38 0014 80E0      		ldi r24,lo8(__c.5228)
+  39 0016 90E0      		ldi r25,hi8(__c.5228)
+  40 0018 00C0      		rjmp .L15
+  41               	.LVL2:
+  42               	.L3:
+ 252:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         }
+ 253:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         break;
+ 254:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         case 1:
+ 255:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         if (record->event.pressed) { // For resetting EEPROM
+  43               		.loc 1 255 0
   44 001a 8281      		ldd r24,Z+2
   45               	.LVL3:
   46 001c 8823      		tst r24
   47 001e 01F0      		breq .L2
- 255:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****           SEND_STRING ( "<-" );
-  48               		.loc 1 255 0
+ 256:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****           SEND_STRING ( "<-" );
+  48               		.loc 1 256 0
   49 0020 80E0      		ldi r24,lo8(__c.5232)
   50 0022 90E0      		ldi r25,hi8(__c.5232)
-  51               	.L11:
-  52 0024 0E94 0000 		call send_string
-  53               	.LVL4:
-  54               	.L2:
- 256:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         }
- 257:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         break;
- 258:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** //        case REQL:
- 259:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** //            return (record->event.pressed ?
- 260:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** //                    MACRO( T(LSFT(KC_COMMA)), T(KC_MINUS), END) : // For resetting EEPROM
- 261:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** //                    MACRO_NONE ) ;
- 262:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     }
- 263:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     return MACRO_NONE;
- 264:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** };
-  55               		.loc 1 264 0
-  56 0028 80E0      		ldi r24,0
-  57 002a 90E0      		ldi r25,0
-  58 002c 0895      		ret
-  59               		.cfi_endproc
-  60               	.LFE124:
-  62               		.section	.text.matrix_init_user,"ax",@progbits
-  63               	.global	matrix_init_user
-  65               	matrix_init_user:
-  66               	.LFB125:
- 265:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
- 266:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** // Runs just one time when the keyboard initializes.
- 267:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** void matrix_init_user(void) {
-  67               		.loc 1 267 0
-  68               		.cfi_startproc
-  69               	/* prologue: function */
-  70               	/* frame size = 0 */
-  71               	/* stack size = 0 */
-  72               	.L__stack_usage = 0
-  73 0000 0895      		ret
-  74               		.cfi_endproc
-  75               	.LFE125:
-  77               		.section	.text.matrix_scan_user,"ax",@progbits
-  78               	.global	matrix_scan_user
-  80               	matrix_scan_user:
-  81               	.LFB126:
- 268:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
- 269:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** };
- 270:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
+  51 0024 00C0      		rjmp .L15
+  52               	.LVL4:
+  53               	.L5:
+ 257:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         }
+ 258:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         break;
+ 259:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         case 2:
+ 260:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         if (record->event.pressed) { // For resetting EEPROM
+  54               		.loc 1 260 0
+  55 0026 8281      		ldd r24,Z+2
+  56               	.LVL5:
+  57 0028 8823      		tst r24
+  58 002a 01F0      		breq .L2
+ 261:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****           SEND_STRING ( "'%Y%m%d%H%M%S%f'" );
+  59               		.loc 1 261 0
+  60 002c 80E0      		ldi r24,lo8(__c.5235)
+  61 002e 90E0      		ldi r25,hi8(__c.5235)
+  62               	.L15:
+  63 0030 0E94 0000 		call send_string
+  64               	.LVL6:
+  65               	.L2:
+ 262:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         }
+ 263:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         break;
+ 264:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** //        case REQL:
+ 265:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** //            return (record->event.pressed ?
+ 266:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** //                    MACRO( T(LSFT(KC_COMMA)), T(KC_MINUS), END) : // For resetting EEPROM
+ 267:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** //                    MACRO_NONE ) ;
+ 268:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     }
+ 269:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     return MACRO_NONE;
+ 270:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** };
+  66               		.loc 1 270 0
+  67 0034 80E0      		ldi r24,0
+  68 0036 90E0      		ldi r25,0
+  69 0038 0895      		ret
+  70               		.cfi_endproc
+  71               	.LFE124:
+  73               		.section	.text.matrix_init_user,"ax",@progbits
+  74               	.global	matrix_init_user
+  76               	matrix_init_user:
+  77               	.LFB125:
  271:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
- 272:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** // Runs constantly in the background, in a loop.
- 273:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** void matrix_scan_user(void) {
-  82               		.loc 1 273 0
-  83               		.cfi_startproc
-  84               	/* prologue: function */
-  85               	/* frame size = 0 */
-  86               	/* stack size = 0 */
-  87               	.L__stack_usage = 0
+ 272:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** // Runs just one time when the keyboard initializes.
+ 273:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** void matrix_init_user(void) {
+  78               		.loc 1 273 0
+  79               		.cfi_startproc
+  80               	/* prologue: function */
+  81               	/* frame size = 0 */
+  82               	/* stack size = 0 */
+  83               	.L__stack_usage = 0
+  84 0000 0895      		ret
+  85               		.cfi_endproc
+  86               	.LFE125:
+  88               		.section	.text.matrix_scan_user,"ax",@progbits
+  89               	.global	matrix_scan_user
+  91               	matrix_scan_user:
+  92               	.LFB126:
  274:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
- 275:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     uint8_t layer = biton32(layer_state);
-  88               		.loc 1 275 0
-  89 0000 6091 0000 		lds r22,layer_state
-  90 0004 7091 0000 		lds r23,layer_state+1
-  91 0008 8091 0000 		lds r24,layer_state+2
-  92 000c 9091 0000 		lds r25,layer_state+3
-  93 0010 0E94 0000 		call biton32
-  94               	.LVL5:
-  95               	.LBB20:
-  96               	.LBB21:
-  97               		.file 2 "keyboards/ergodox/ez/ez.h"
+ 275:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** };
+ 276:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
+ 277:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
+ 278:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** // Runs constantly in the background, in a loop.
+ 279:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** void matrix_scan_user(void) {
+  93               		.loc 1 279 0
+  94               		.cfi_startproc
+  95               	/* prologue: function */
+  96               	/* frame size = 0 */
+  97               	/* stack size = 0 */
+  98               	.L__stack_usage = 0
+ 280:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
+ 281:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     uint8_t layer = biton32(layer_state);
+  99               		.loc 1 281 0
+ 100 0000 6091 0000 		lds r22,layer_state
+ 101 0004 7091 0000 		lds r23,layer_state+1
+ 102 0008 8091 0000 		lds r24,layer_state+2
+ 103 000c 9091 0000 		lds r25,layer_state+3
+ 104 0010 0E94 0000 		call biton32
+ 105               	.LVL7:
+ 106               	.LBB20:
+ 107               	.LBB21:
+ 108               		.file 2 "keyboards/ergodox/ez/ez.h"
    1:keyboards/ergodox/ez/ez.h **** #ifndef ERGODOX_EZ_H
    2:keyboards/ergodox/ez/ez.h **** #define ERGODOX_EZ_H
    3:keyboards/ergodox/ez/ez.h **** 
@@ -408,560 +425,568 @@
   41:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_on(uint8_t led) { DDRB |= (1<<(led+4)); PORTB |= (1<<(led+4)); }
   42:keyboards/ergodox/ez/ez.h **** 
   43:keyboards/ergodox/ez/ez.h **** inline void ergodox_board_led_off(void)     { DDRD &= ~(1<<6); PORTD &= ~(1<<6); }
-  98               		.loc 2 43 0
-  99 0014 5698      		cbi 0xa,6
- 100 0016 5E98      		cbi 0xb,6
- 101               	.LBE21:
- 102               	.LBE20:
- 103               	.LBB22:
- 104               	.LBB23:
+ 109               		.loc 2 43 0
+ 110 0014 5698      		cbi 0xa,6
+ 111 0016 5E98      		cbi 0xb,6
+ 112               	.LBE21:
+ 113               	.LBE20:
+ 114               	.LBB22:
+ 115               	.LBB23:
   44:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_1_off(void)   { DDRB &= ~(1<<5); PORTB &= ~(1<<5); }
- 105               		.loc 2 44 0
- 106 0018 2598      		cbi 0x4,5
- 107 001a 2D98      		cbi 0x5,5
- 108               	.LBE23:
- 109               	.LBE22:
- 110               	.LBB24:
- 111               	.LBB25:
+ 116               		.loc 2 44 0
+ 117 0018 2598      		cbi 0x4,5
+ 118 001a 2D98      		cbi 0x5,5
+ 119               	.LBE23:
+ 120               	.LBE22:
+ 121               	.LBB24:
+ 122               	.LBB25:
   45:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_2_off(void)   { DDRB &= ~(1<<6); PORTB &= ~(1<<6); }
- 112               		.loc 2 45 0
- 113 001c 2698      		cbi 0x4,6
- 114 001e 2E98      		cbi 0x5,6
- 115               	.LBE25:
- 116               	.LBE24:
- 117               	.LBB26:
- 118               	.LBB27:
+ 123               		.loc 2 45 0
+ 124 001c 2698      		cbi 0x4,6
+ 125 001e 2E98      		cbi 0x5,6
+ 126               	.LBE25:
+ 127               	.LBE24:
+ 128               	.LBB26:
+ 129               	.LBB27:
   46:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_3_off(void)   { DDRB &= ~(1<<7); PORTB &= ~(1<<7); }
- 119               		.loc 2 46 0
- 120 0020 2798      		cbi 0x4,7
- 121 0022 2F98      		cbi 0x5,7
- 122               	.LBE27:
- 123               	.LBE26:
- 276:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
- 277:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     ergodox_board_led_off();
- 278:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     ergodox_right_led_1_off();
- 279:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     ergodox_right_led_2_off();
- 280:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     ergodox_right_led_3_off();
- 281:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     switch (layer) {
- 124               		.loc 1 281 0
- 125 0024 8230      		cpi r24,lo8(2)
- 126 0026 01F0      		breq .L21
- 127 0028 00F4      		brsh .L17
- 128 002a 8130      		cpi r24,lo8(1)
- 129 002c 01F0      		breq .L18
- 130 002e 0895      		ret
- 131               	.L17:
- 132 0030 8330      		cpi r24,lo8(3)
- 133 0032 01F0      		breq .L19
- 134 0034 8430      		cpi r24,lo8(4)
- 135 0036 01F0      		breq .L20
- 136 0038 0895      		ret
- 137               	.L18:
- 138               	.LBB28:
- 139               	.LBB29:
+ 130               		.loc 2 46 0
+ 131 0020 2798      		cbi 0x4,7
+ 132 0022 2F98      		cbi 0x5,7
+ 133               	.LBE27:
+ 134               	.LBE26:
+ 282:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** 
+ 283:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     ergodox_board_led_off();
+ 284:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     ergodox_right_led_1_off();
+ 285:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     ergodox_right_led_2_off();
+ 286:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     ergodox_right_led_3_off();
+ 287:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****     switch (layer) {
+ 135               		.loc 1 287 0
+ 136 0024 8230      		cpi r24,lo8(2)
+ 137 0026 01F0      		breq .L25
+ 138 0028 00F4      		brsh .L21
+ 139 002a 8130      		cpi r24,lo8(1)
+ 140 002c 01F0      		breq .L22
+ 141 002e 0895      		ret
+ 142               	.L21:
+ 143 0030 8330      		cpi r24,lo8(3)
+ 144 0032 01F0      		breq .L23
+ 145 0034 8430      		cpi r24,lo8(4)
+ 146 0036 01F0      		breq .L24
+ 147 0038 0895      		ret
+ 148               	.L22:
+ 149               	.LBB28:
+ 150               	.LBB29:
   38:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_2_on(void)    { DDRB |=  (1<<6); PORTB |=  (1<<6); }
- 140               		.loc 2 38 0
- 141 003a 259A      		sbi 0x4,5
- 142 003c 2D9A      		sbi 0x5,5
- 143 003e 0895      		ret
- 144               	.L19:
- 145               	.LBE29:
- 146               	.LBE28:
- 147               	.LBB30:
- 148               	.LBB31:
+ 151               		.loc 2 38 0
+ 152 003a 259A      		sbi 0x4,5
+ 153 003c 2D9A      		sbi 0x5,5
+ 154 003e 0895      		ret
+ 155               	.L23:
+ 156               	.LBE29:
+ 157               	.LBE28:
+ 158               	.LBB30:
+ 159               	.LBB31:
   40:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_on(uint8_t led) { DDRB |= (1<<(led+4)); PORTB |= (1<<(led+4)); }
- 149               		.loc 2 40 0
- 150 0040 279A      		sbi 0x4,7
- 151 0042 2F9A      		sbi 0x5,7
- 152 0044 0895      		ret
- 153               	.L20:
- 154               	.LBE31:
- 155               	.LBE30:
- 156               	.LBB32:
- 157               	.LBB33:
+ 160               		.loc 2 40 0
+ 161 0040 279A      		sbi 0x4,7
+ 162 0042 2F9A      		sbi 0x5,7
+ 163 0044 0895      		ret
+ 164               	.L24:
+ 165               	.LBE31:
+ 166               	.LBE30:
+ 167               	.LBB32:
+ 168               	.LBB33:
   38:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_2_on(void)    { DDRB |=  (1<<6); PORTB |=  (1<<6); }
- 158               		.loc 2 38 0
- 159 0046 259A      		sbi 0x4,5
- 160 0048 2D9A      		sbi 0x5,5
- 161               	.L21:
- 162               	.LBE33:
- 163               	.LBE32:
- 164               	.LBB34:
- 165               	.LBB35:
+ 169               		.loc 2 38 0
+ 170 0046 259A      		sbi 0x4,5
+ 171 0048 2D9A      		sbi 0x5,5
+ 172               	.L25:
+ 173               	.LBE33:
+ 174               	.LBE32:
+ 175               	.LBB34:
+ 176               	.LBB35:
   39:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_3_on(void)    { DDRB |=  (1<<7); PORTB |=  (1<<7); }
- 166               		.loc 2 39 0
- 167 004a 269A      		sbi 0x4,6
- 168 004c 2E9A      		sbi 0x5,6
- 169 004e 0895      		ret
- 170               	.LBE35:
- 171               	.LBE34:
- 172               		.cfi_endproc
- 173               	.LFE126:
- 175               		.section	.progmem.data.__c.5232,"a",@progbits
- 178               	__c.5232:
- 179 0000 3C2D 00   		.string	"<-"
- 180               		.section	.progmem.data.__c.5228,"a",@progbits
- 183               	__c.5228:
- 184 0000 6572 676F 		.string	"ergodox/dawkiny @ ed4a8c-dirty"
- 184      646F 782F 
- 184      6461 776B 
- 184      696E 7920 
- 184      4020 6564 
- 185               	.global	fn_actions
- 186               		.section	.progmem.data.fn_actions,"a",@progbits
- 189               	fn_actions:
- 190 0000 0000      		.zero	2
- 191 0002 F0A1      		.word	-24080
- 192 0004 F0A2      		.word	-23824
- 193               	.global	keymaps
- 194               		.section	.progmem.data.keymaps,"a",@progbits
- 197               	keymaps:
- 198 0000 2900      		.word	41
- 199 0002 2B00      		.word	43
- 200 0004 3500      		.word	53
- 201 0006 E100      		.word	225
- 202 0008 E000      		.word	224
- 203 000a 0000      		.word	0
- 204 000c 1E00      		.word	30
- 205 000e 1400      		.word	20
- 206 0010 0400      		.word	4
- 207 0012 1D00      		.word	29
- 208 0014 E201      		.word	482
- 209 0016 4E00      		.word	78
- 210 0018 1F00      		.word	31
- 211 001a 1A00      		.word	26
- 212 001c 1600      		.word	22
- 213 001e 1B00      		.word	27
- 214 0020 E300      		.word	227
- 215 0022 2A00      		.word	42
- 216 0024 2000      		.word	32
- 217 0026 0800      		.word	8
- 218 0028 0700      		.word	7
- 219 002a 0600      		.word	6
- 220 002c 6500      		.word	101
- 221 002e 2C00      		.word	44
- 222 0030 2100      		.word	33
- 223 0032 1500      		.word	21
- 224 0034 0900      		.word	9
- 225 0036 1900      		.word	25
- 226 0038 E200      		.word	226
- 227 003a 4B00      		.word	75
- 228 003c 2200      		.word	34
- 229 003e 1700      		.word	23
- 230 0040 0A00      		.word	10
- 231 0042 0500      		.word	5
- 232 0044 0000      		.word	0
- 233 0046 4A00      		.word	74
- 234 0048 0353      		.word	21251
- 235 004a 2E00      		.word	46
- 236 004c 0000      		.word	0
- 237 004e C200      		.word	194
- 238 0050 0000      		.word	0
- 239 0052 4D00      		.word	77
- 240 0054 2300      		.word	35
- 241 0056 0130      		.word	12289
- 242 0058 0000      		.word	0
- 243 005a 3E01      		.word	318
- 244 005c 0000      		.word	0
- 245 005e 5000      		.word	80
- 246 0060 2400      		.word	36
- 247 0062 1C00      		.word	28
- 248 0064 0B00      		.word	11
- 249 0066 1100      		.word	17
- 250 0068 0000      		.word	0
- 251 006a 4F00      		.word	79
- 252 006c 2500      		.word	37
- 253 006e 1800      		.word	24
- 254 0070 0D00      		.word	13
- 255 0072 1000      		.word	16
- 256 0074 E600      		.word	230
- 257 0076 5200      		.word	82
- 258 0078 2600      		.word	38
- 259 007a 0C00      		.word	12
- 260 007c 0E00      		.word	14
- 261 007e 3600      		.word	54
- 262 0080 E400      		.word	228
- 263 0082 2800      		.word	40
- 264 0084 2700      		.word	39
- 265 0086 1200      		.word	18
- 266 0088 0F00      		.word	15
- 267 008a 3700      		.word	55
- 268 008c 2F00      		.word	47
- 269 008e 4C00      		.word	76
- 270 0090 2D00      		.word	45
- 271 0092 1300      		.word	19
- 272 0094 3300      		.word	51
- 273 0096 3800      		.word	56
- 274 0098 3000      		.word	48
- 275 009a 5100      		.word	81
- 276 009c 2E02      		.word	558
- 277 009e 3100      		.word	49
- 278 00a0 3400      		.word	52
- 279 00a2 E500      		.word	229
- 280 00a4 C100      		.word	193
- 281 00a6 0000      		.word	0
- 282 00a8 2900      		.word	41
- 283 00aa 0100      		.word	1
- 284 00ac 0100      		.word	1
- 285 00ae 0100      		.word	1
- 286 00b0 E000      		.word	224
- 287 00b2 0000      		.word	0
- 288 00b4 3A00      		.word	58
- 289 00b6 0100      		.word	1
- 290 00b8 0100      		.word	1
- 291 00ba 0100      		.word	1
- 292 00bc 0100      		.word	1
- 293 00be 4E00      		.word	78
- 294 00c0 3B00      		.word	59
- 295 00c2 0100      		.word	1
- 296 00c4 0100      		.word	1
- 297 00c6 0100      		.word	1
- 298 00c8 0100      		.word	1
- 299 00ca 2A00      		.word	42
- 300 00cc 3C00      		.word	60
- 301 00ce 0100      		.word	1
- 302 00d0 0100      		.word	1
- 303 00d2 0100      		.word	1
- 304 00d4 0100      		.word	1
- 305 00d6 2C00      		.word	44
- 306 00d8 3D00      		.word	61
- 307 00da 0100      		.word	1
- 308 00dc 0100      		.word	1
- 309 00de 0100      		.word	1
- 310 00e0 0100      		.word	1
- 311 00e2 4B00      		.word	75
- 312 00e4 3E00      		.word	62
- 313 00e6 0100      		.word	1
- 314 00e8 0100      		.word	1
- 315 00ea 0100      		.word	1
- 316 00ec 0000      		.word	0
- 317 00ee 4A02      		.word	586
- 318 00f0 3F00      		.word	63
- 319 00f2 0100      		.word	1
- 320 00f4 0000      		.word	0
- 321 00f6 0100      		.word	1
- 322 00f8 0000      		.word	0
- 323 00fa 4D02      		.word	589
- 324 00fc 4000      		.word	64
- 325 00fe 0100      		.word	1
- 326 0100 0000      		.word	0
- 327 0102 0100      		.word	1
- 328 0104 0000      		.word	0
- 329 0106 5000      		.word	80
- 330 0108 4100      		.word	65
- 331 010a 0100      		.word	1
- 332 010c 0100      		.word	1
- 333 010e 0100      		.word	1
- 334 0110 0000      		.word	0
- 335 0112 4F00      		.word	79
- 336 0114 4200      		.word	66
- 337 0116 0100      		.word	1
- 338 0118 0100      		.word	1
- 339 011a 0100      		.word	1
- 340 011c 0100      		.word	1
- 341 011e 5200      		.word	82
- 342 0120 4300      		.word	67
- 343 0122 0100      		.word	1
- 344 0124 0100      		.word	1
- 345 0126 0100      		.word	1
- 346 0128 0100      		.word	1
- 347 012a 2800      		.word	40
- 348 012c 4400      		.word	68
- 349 012e 0100      		.word	1
- 350 0130 0100      		.word	1
- 351 0132 0100      		.word	1
- 352 0134 3600      		.word	54
- 353 0136 4C00      		.word	76
- 354 0138 4500      		.word	69
- 355 013a 0100      		.word	1
- 356 013c 0100      		.word	1
- 357 013e 0100      		.word	1
- 358 0140 0100      		.word	1
- 359 0142 5100      		.word	81
- 360 0144 0100      		.word	1
- 361 0146 0100      		.word	1
- 362 0148 0100      		.word	1
- 363 014a 0100      		.word	1
- 364 014c 0100      		.word	1
- 365 014e 0000      		.word	0
- 366 0150 2900      		.word	41
- 367 0152 0100      		.word	1
- 368 0154 0100      		.word	1
- 369 0156 0100      		.word	1
- 370 0158 0130      		.word	12289
- 371 015a 0000      		.word	0
- 372 015c 3A00      		.word	58
- 373 015e 1E02      		.word	542
- 374 0160 2002      		.word	544
- 375 0162 2202      		.word	546
- 376 0164 0100      		.word	1
- 377 0166 4E00      		.word	78
- 378 0168 3B00      		.word	59
- 379 016a 1F02      		.word	543
- 380 016c 2102      		.word	545
- 381 016e 2302      		.word	547
- 382 0170 0100      		.word	1
- 383 0172 2A00      		.word	42
- 384 0174 3C00      		.word	60
- 385 0176 2F02      		.word	559
- 386 0178 2602      		.word	550
- 387 017a 2F00      		.word	47
- 388 017c 0100      		.word	1
- 389 017e 2C00      		.word	44
- 390 0180 3D00      		.word	61
- 391 0182 3002      		.word	560
- 392 0184 2702      		.word	551
- 393 0186 3000      		.word	48
- 394 0188 0100      		.word	1
- 395 018a 4B00      		.word	75
- 396 018c 3E00      		.word	62
- 397 018e 3102      		.word	561
- 398 0190 3500      		.word	53
- 399 0192 3502      		.word	565
- 400 0194 0000      		.word	0
- 401 0196 4A00      		.word	74
- 402 0198 3F00      		.word	63
- 403 019a 0100      		.word	1
- 404 019c 0000      		.word	0
- 405 019e 0100      		.word	1
- 406 01a0 0000      		.word	0
- 407 01a2 4D00      		.word	77
- 408 01a4 4000      		.word	64
- 409 01a6 3600      		.word	54
- 410 01a8 0000      		.word	0
- 411 01aa 0100      		.word	1
- 412 01ac 0000      		.word	0
- 413 01ae 5001      		.word	336
- 414 01b0 4100      		.word	65
- 415 01b2 2400      		.word	36
- 416 01b4 2100      		.word	33
- 417 01b6 1E00      		.word	30
- 418 01b8 0000      		.word	0
- 419 01ba 4F01      		.word	335
- 420 01bc 4200      		.word	66
- 421 01be 2500      		.word	37
- 422 01c0 2200      		.word	34
- 423 01c2 1F00      		.word	31
- 424 01c4 2700      		.word	39
- 425 01c6 5200      		.word	82
- 426 01c8 4300      		.word	67
- 427 01ca 2600      		.word	38
- 428 01cc 2300      		.word	35
- 429 01ce 2000      		.word	32
- 430 01d0 3700      		.word	55
- 431 01d2 2800      		.word	40
- 432 01d4 4400      		.word	68
- 433 01d6 2F00      		.word	47
- 434 01d8 2F02      		.word	559
- 435 01da 3600      		.word	54
- 436 01dc 5000      		.word	80
- 437 01de 4C00      		.word	76
- 438 01e0 4500      		.word	69
- 439 01e2 3000      		.word	48
- 440 01e4 3002      		.word	560
- 441 01e6 5200      		.word	82
- 442 01e8 5100      		.word	81
- 443 01ea 5100      		.word	81
- 444 01ec 2E02      		.word	558
- 445 01ee 2D00      		.word	45
- 446 01f0 2502      		.word	549
- 447 01f2 3800      		.word	56
- 448 01f4 4F00      		.word	79
- 449 01f6 0000      		.word	0
- 450 01f8 2900      		.word	41
- 451 01fa 2B00      		.word	43
- 452 01fc 3500      		.word	53
- 453 01fe E100      		.word	225
- 454 0200 E000      		.word	224
- 455 0202 0000      		.word	0
- 456 0204 1E00      		.word	30
- 457 0206 1400      		.word	20
- 458 0208 0400      		.word	4
- 459 020a 1D00      		.word	29
- 460 020c E201      		.word	482
- 461 020e 4E00      		.word	78
- 462 0210 1F00      		.word	31
- 463 0212 1A00      		.word	26
- 464 0214 1600      		.word	22
- 465 0216 1B00      		.word	27
- 466 0218 E300      		.word	227
- 467 021a 2A00      		.word	42
- 468 021c 2000      		.word	32
- 469 021e 0800      		.word	8
- 470 0220 0700      		.word	7
- 471 0222 0600      		.word	6
- 472 0224 6500      		.word	101
- 473 0226 2C00      		.word	44
- 474 0228 2100      		.word	33
- 475 022a 1500      		.word	21
- 476 022c 0900      		.word	9
- 477 022e 1900      		.word	25
- 478 0230 E200      		.word	226
- 479 0232 4B00      		.word	75
- 480 0234 2200      		.word	34
- 481 0236 1700      		.word	23
- 482 0238 0A00      		.word	10
- 483 023a 0500      		.word	5
- 484 023c 0000      		.word	0
- 485 023e 4A00      		.word	74
- 486 0240 0353      		.word	21251
- 487 0242 2E00      		.word	46
- 488 0244 0000      		.word	0
- 489 0246 0253      		.word	21250
- 490 0248 0000      		.word	0
- 491 024a 4D00      		.word	77
- 492 024c 2300      		.word	35
- 493 024e 0130      		.word	12289
- 494 0250 0000      		.word	0
- 495 0252 3E01      		.word	318
- 496 0254 0000      		.word	0
- 497 0256 5000      		.word	80
- 498 0258 2400      		.word	36
- 499 025a 1C00      		.word	28
- 500 025c 0B00      		.word	11
- 501 025e 1100      		.word	17
- 502 0260 0000      		.word	0
- 503 0262 4F00      		.word	79
- 504 0264 2500      		.word	37
- 505 0266 1800      		.word	24
- 506 0268 0D00      		.word	13
- 507 026a 1000      		.word	16
- 508 026c E600      		.word	230
- 509 026e 5200      		.word	82
- 510 0270 2600      		.word	38
- 511 0272 0C00      		.word	12
- 512 0274 0E00      		.word	14
- 513 0276 3600      		.word	54
- 514 0278 2C02      		.word	556
- 515 027a 2800      		.word	40
- 516 027c 2700      		.word	39
- 517 027e 1200      		.word	18
- 518 0280 0F00      		.word	15
- 519 0282 3700      		.word	55
- 520 0284 2F00      		.word	47
- 521 0286 4C00      		.word	76
- 522 0288 2D00      		.word	45
- 523 028a 1300      		.word	19
- 524 028c 3300      		.word	51
- 525 028e 3800      		.word	56
- 526 0290 3000      		.word	48
- 527 0292 5100      		.word	81
- 528 0294 2E02      		.word	558
- 529 0296 3100      		.word	49
- 530 0298 3400      		.word	52
- 531 029a E500      		.word	229
- 532 029c C100      		.word	193
- 533 029e 0000      		.word	0
- 534 02a0 2900      		.word	41
- 535 02a2 2B00      		.word	43
- 536 02a4 3500      		.word	53
- 537 02a6 E100      		.word	225
- 538 02a8 E000      		.word	224
- 539 02aa 0000      		.word	0
- 540 02ac 1E00      		.word	30
- 541 02ae 1400      		.word	20
- 542 02b0 0400      		.word	4
- 543 02b2 1D00      		.word	29
- 544 02b4 E201      		.word	482
- 545 02b6 4E00      		.word	78
- 546 02b8 1F00      		.word	31
- 547 02ba 1A00      		.word	26
- 548 02bc 1600      		.word	22
- 549 02be 1B00      		.word	27
- 550 02c0 E300      		.word	227
- 551 02c2 2A00      		.word	42
- 552 02c4 2000      		.word	32
- 553 02c6 0800      		.word	8
- 554 02c8 0700      		.word	7
- 555 02ca 0600      		.word	6
- 556 02cc 6500      		.word	101
- 557 02ce 2C00      		.word	44
- 558 02d0 2100      		.word	33
- 559 02d2 1500      		.word	21
- 560 02d4 0900      		.word	9
- 561 02d6 1900      		.word	25
- 562 02d8 E200      		.word	226
- 563 02da 4B00      		.word	75
- 564 02dc 2200      		.word	34
- 565 02de 1700      		.word	23
- 566 02e0 0A00      		.word	10
- 567 02e2 0500      		.word	5
- 568 02e4 0000      		.word	0
- 569 02e6 4A00      		.word	74
- 570 02e8 0353      		.word	21251
- 571 02ea 2E00      		.word	46
- 572 02ec 0000      		.word	0
- 573 02ee 0253      		.word	21250
- 574 02f0 0000      		.word	0
- 575 02f2 4D00      		.word	77
- 576 02f4 2300      		.word	35
- 577 02f6 0130      		.word	12289
- 578 02f8 0000      		.word	0
- 579 02fa 3E01      		.word	318
- 580 02fc 0000      		.word	0
- 581 02fe 5000      		.word	80
- 582 0300 2400      		.word	36
- 583 0302 1C00      		.word	28
- 584 0304 0B00      		.word	11
- 585 0306 1100      		.word	17
- 586 0308 0000      		.word	0
- 587 030a 4F00      		.word	79
- 588 030c 2500      		.word	37
- 589 030e 1800      		.word	24
- 590 0310 0D00      		.word	13
- 591 0312 1000      		.word	16
- 592 0314 E600      		.word	230
- 593 0316 5200      		.word	82
- 594 0318 2600      		.word	38
- 595 031a 0C00      		.word	12
- 596 031c 0E00      		.word	14
- 597 031e 3600      		.word	54
- 598 0320 2C02      		.word	556
- 599 0322 2800      		.word	40
- 600 0324 2700      		.word	39
- 601 0326 1200      		.word	18
- 602 0328 0F00      		.word	15
- 603 032a 3700      		.word	55
- 604 032c 2F00      		.word	47
- 605 032e 4C00      		.word	76
- 606 0330 2D00      		.word	45
- 607 0332 1300      		.word	19
- 608 0334 3300      		.word	51
- 609 0336 3800      		.word	56
- 610 0338 3000      		.word	48
- 611 033a 5100      		.word	81
- 612 033c 2E02      		.word	558
- 613 033e 3100      		.word	49
- 614 0340 3400      		.word	52
- 615 0342 E500      		.word	229
- 616 0344 C100      		.word	193
- 617 0346 0000      		.word	0
- 618               		.text
- 619               	.Letext0:
- 620               		.file 3 "/usr/lib/avr/include/stdint.h"
- 621               		.file 4 "./tmk_core/common/keyboard.h"
- 622               		.file 5 "./tmk_core/common/keycode.h"
- 623               		.file 6 "./tmk_core/common/action_code.h"
- 624               		.file 7 "./tmk_core/common/action_macro.h"
- 625               		.file 8 "./tmk_core/common/action.h"
- 626               		.file 9 "./quantum/keymap.h"
- 627               		.file 10 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.h"
- 628               		.file 11 "./quantum/quantum.h"
- 629               		.file 12 "./tmk_core/common/util.h"
+ 177               		.loc 2 39 0
+ 178 004a 269A      		sbi 0x4,6
+ 179 004c 2E9A      		sbi 0x5,6
+ 180 004e 0895      		ret
+ 181               	.LBE35:
+ 182               	.LBE34:
+ 183               		.cfi_endproc
+ 184               	.LFE126:
+ 186               		.section	.progmem.data.__c.5235,"a",@progbits
+ 189               	__c.5235:
+ 190 0000 2725 5925 		.string	"'%Y%m%d%H%M%S%f'"
+ 190      6D25 6425 
+ 190      4825 4D25 
+ 190      5325 6627 
+ 190      00
+ 191               		.section	.progmem.data.__c.5232,"a",@progbits
+ 194               	__c.5232:
+ 195 0000 3C2D 00   		.string	"<-"
+ 196               		.section	.progmem.data.__c.5228,"a",@progbits
+ 199               	__c.5228:
+ 200 0000 6572 676F 		.string	"ergodox/dawkiny @ 604625-dirty"
+ 200      646F 782F 
+ 200      6461 776B 
+ 200      696E 7920 
+ 200      4020 3630 
+ 201               	.global	fn_actions
+ 202               		.section	.progmem.data.fn_actions,"a",@progbits
+ 205               	fn_actions:
+ 206 0000 0000      		.zero	2
+ 207 0002 F0A1      		.word	-24080
+ 208 0004 F0A2      		.word	-23824
+ 209               	.global	keymaps
+ 210               		.section	.progmem.data.keymaps,"a",@progbits
+ 213               	keymaps:
+ 214 0000 2900      		.word	41
+ 215 0002 2B00      		.word	43
+ 216 0004 3500      		.word	53
+ 217 0006 E100      		.word	225
+ 218 0008 E000      		.word	224
+ 219 000a 0000      		.word	0
+ 220 000c 1E00      		.word	30
+ 221 000e 1400      		.word	20
+ 222 0010 0400      		.word	4
+ 223 0012 1D00      		.word	29
+ 224 0014 E201      		.word	482
+ 225 0016 4E00      		.word	78
+ 226 0018 1F00      		.word	31
+ 227 001a 1A00      		.word	26
+ 228 001c 1600      		.word	22
+ 229 001e 1B00      		.word	27
+ 230 0020 E300      		.word	227
+ 231 0022 2A00      		.word	42
+ 232 0024 2000      		.word	32
+ 233 0026 0800      		.word	8
+ 234 0028 0700      		.word	7
+ 235 002a 0600      		.word	6
+ 236 002c 6500      		.word	101
+ 237 002e 2C00      		.word	44
+ 238 0030 2100      		.word	33
+ 239 0032 1500      		.word	21
+ 240 0034 0900      		.word	9
+ 241 0036 1900      		.word	25
+ 242 0038 E200      		.word	226
+ 243 003a 4B00      		.word	75
+ 244 003c 2200      		.word	34
+ 245 003e 1700      		.word	23
+ 246 0040 0A00      		.word	10
+ 247 0042 0500      		.word	5
+ 248 0044 0000      		.word	0
+ 249 0046 4A00      		.word	74
+ 250 0048 3E01      		.word	318
+ 251 004a 2E00      		.word	46
+ 252 004c 0000      		.word	0
+ 253 004e C200      		.word	194
+ 254 0050 0000      		.word	0
+ 255 0052 4D00      		.word	77
+ 256 0054 2300      		.word	35
+ 257 0056 0130      		.word	12289
+ 258 0058 0000      		.word	0
+ 259 005a 3E01      		.word	318
+ 260 005c 0000      		.word	0
+ 261 005e 5000      		.word	80
+ 262 0060 2400      		.word	36
+ 263 0062 1C00      		.word	28
+ 264 0064 0B00      		.word	11
+ 265 0066 1100      		.word	17
+ 266 0068 0000      		.word	0
+ 267 006a 4F00      		.word	79
+ 268 006c 2500      		.word	37
+ 269 006e 1800      		.word	24
+ 270 0070 0D00      		.word	13
+ 271 0072 1000      		.word	16
+ 272 0074 E600      		.word	230
+ 273 0076 5200      		.word	82
+ 274 0078 2600      		.word	38
+ 275 007a 0C00      		.word	12
+ 276 007c 0E00      		.word	14
+ 277 007e 3600      		.word	54
+ 278 0080 E400      		.word	228
+ 279 0082 2800      		.word	40
+ 280 0084 2700      		.word	39
+ 281 0086 1200      		.word	18
+ 282 0088 0F00      		.word	15
+ 283 008a 3700      		.word	55
+ 284 008c 2F00      		.word	47
+ 285 008e 4C00      		.word	76
+ 286 0090 2D00      		.word	45
+ 287 0092 1300      		.word	19
+ 288 0094 3300      		.word	51
+ 289 0096 3800      		.word	56
+ 290 0098 3000      		.word	48
+ 291 009a 5100      		.word	81
+ 292 009c 2E02      		.word	558
+ 293 009e 3100      		.word	49
+ 294 00a0 3400      		.word	52
+ 295 00a2 E500      		.word	229
+ 296 00a4 C100      		.word	193
+ 297 00a6 0000      		.word	0
+ 298 00a8 2900      		.word	41
+ 299 00aa 0100      		.word	1
+ 300 00ac 0100      		.word	1
+ 301 00ae 0100      		.word	1
+ 302 00b0 E000      		.word	224
+ 303 00b2 0000      		.word	0
+ 304 00b4 3A00      		.word	58
+ 305 00b6 0100      		.word	1
+ 306 00b8 0100      		.word	1
+ 307 00ba 0100      		.word	1
+ 308 00bc 0100      		.word	1
+ 309 00be 4E00      		.word	78
+ 310 00c0 3B00      		.word	59
+ 311 00c2 0100      		.word	1
+ 312 00c4 5000      		.word	80
+ 313 00c6 0100      		.word	1
+ 314 00c8 0100      		.word	1
+ 315 00ca 2A00      		.word	42
+ 316 00cc 3C00      		.word	60
+ 317 00ce 5200      		.word	82
+ 318 00d0 5100      		.word	81
+ 319 00d2 0100      		.word	1
+ 320 00d4 0100      		.word	1
+ 321 00d6 2C00      		.word	44
+ 322 00d8 3D00      		.word	61
+ 323 00da 0100      		.word	1
+ 324 00dc 4F00      		.word	79
+ 325 00de 0100      		.word	1
+ 326 00e0 0100      		.word	1
+ 327 00e2 4B00      		.word	75
+ 328 00e4 3E00      		.word	62
+ 329 00e6 0100      		.word	1
+ 330 00e8 0100      		.word	1
+ 331 00ea 0100      		.word	1
+ 332 00ec 0000      		.word	0
+ 333 00ee 4A02      		.word	586
+ 334 00f0 3F00      		.word	63
+ 335 00f2 0100      		.word	1
+ 336 00f4 0000      		.word	0
+ 337 00f6 0100      		.word	1
+ 338 00f8 0000      		.word	0
+ 339 00fa 4D02      		.word	589
+ 340 00fc 4000      		.word	64
+ 341 00fe 0100      		.word	1
+ 342 0100 0000      		.word	0
+ 343 0102 0100      		.word	1
+ 344 0104 0000      		.word	0
+ 345 0106 5000      		.word	80
+ 346 0108 4100      		.word	65
+ 347 010a 0100      		.word	1
+ 348 010c 0100      		.word	1
+ 349 010e 0100      		.word	1
+ 350 0110 0000      		.word	0
+ 351 0112 4F00      		.word	79
+ 352 0114 4200      		.word	66
+ 353 0116 0100      		.word	1
+ 354 0118 0100      		.word	1
+ 355 011a 0100      		.word	1
+ 356 011c 0100      		.word	1
+ 357 011e 5200      		.word	82
+ 358 0120 4300      		.word	67
+ 359 0122 0100      		.word	1
+ 360 0124 0100      		.word	1
+ 361 0126 0100      		.word	1
+ 362 0128 0100      		.word	1
+ 363 012a 2800      		.word	40
+ 364 012c 4400      		.word	68
+ 365 012e 0100      		.word	1
+ 366 0130 0100      		.word	1
+ 367 0132 0100      		.word	1
+ 368 0134 3600      		.word	54
+ 369 0136 4C00      		.word	76
+ 370 0138 4500      		.word	69
+ 371 013a 0100      		.word	1
+ 372 013c 0100      		.word	1
+ 373 013e 0100      		.word	1
+ 374 0140 0100      		.word	1
+ 375 0142 5100      		.word	81
+ 376 0144 0100      		.word	1
+ 377 0146 0100      		.word	1
+ 378 0148 0100      		.word	1
+ 379 014a 0100      		.word	1
+ 380 014c 0100      		.word	1
+ 381 014e 0000      		.word	0
+ 382 0150 2900      		.word	41
+ 383 0152 0100      		.word	1
+ 384 0154 0100      		.word	1
+ 385 0156 0100      		.word	1
+ 386 0158 0130      		.word	12289
+ 387 015a 0000      		.word	0
+ 388 015c 3A00      		.word	58
+ 389 015e 0100      		.word	1
+ 390 0160 2002      		.word	544
+ 391 0162 2202      		.word	546
+ 392 0164 0100      		.word	1
+ 393 0166 5100      		.word	81
+ 394 0168 3B00      		.word	59
+ 395 016a 1F02      		.word	543
+ 396 016c 2102      		.word	545
+ 397 016e 2302      		.word	547
+ 398 0170 0100      		.word	1
+ 399 0172 4C00      		.word	76
+ 400 0174 3C00      		.word	60
+ 401 0176 0230      		.word	12290
+ 402 0178 0100      		.word	1
+ 403 017a 0100      		.word	1
+ 404 017c 0100      		.word	1
+ 405 017e 2800      		.word	40
+ 406 0180 3D00      		.word	61
+ 407 0182 2F02      		.word	559
+ 408 0184 2602      		.word	550
+ 409 0186 2F00      		.word	47
+ 410 0188 0100      		.word	1
+ 411 018a 5200      		.word	82
+ 412 018c 3E00      		.word	62
+ 413 018e 3002      		.word	560
+ 414 0190 2702      		.word	551
+ 415 0192 3000      		.word	48
+ 416 0194 0000      		.word	0
+ 417 0196 5000      		.word	80
+ 418 0198 3F00      		.word	63
+ 419 019a 0100      		.word	1
+ 420 019c 0000      		.word	0
+ 421 019e 0100      		.word	1
+ 422 01a0 0000      		.word	0
+ 423 01a2 4F00      		.word	79
+ 424 01a4 4000      		.word	64
+ 425 01a6 3502      		.word	565
+ 426 01a8 0000      		.word	0
+ 427 01aa 0100      		.word	1
+ 428 01ac 0000      		.word	0
+ 429 01ae 5001      		.word	336
+ 430 01b0 4100      		.word	65
+ 431 01b2 2400      		.word	36
+ 432 01b4 2100      		.word	33
+ 433 01b6 1E00      		.word	30
+ 434 01b8 0000      		.word	0
+ 435 01ba 4F01      		.word	335
+ 436 01bc 4200      		.word	66
+ 437 01be 2500      		.word	37
+ 438 01c0 2200      		.word	34
+ 439 01c2 1F00      		.word	31
+ 440 01c4 2700      		.word	39
+ 441 01c6 4B00      		.word	75
+ 442 01c8 4300      		.word	67
+ 443 01ca 2600      		.word	38
+ 444 01cc 2300      		.word	35
+ 445 01ce 2000      		.word	32
+ 446 01d0 3700      		.word	55
+ 447 01d2 2C00      		.word	44
+ 448 01d4 4400      		.word	68
+ 449 01d6 2F00      		.word	47
+ 450 01d8 2F02      		.word	559
+ 451 01da 3600      		.word	54
+ 452 01dc 5000      		.word	80
+ 453 01de 2A00      		.word	42
+ 454 01e0 4500      		.word	69
+ 455 01e2 3000      		.word	48
+ 456 01e4 3002      		.word	560
+ 457 01e6 5200      		.word	82
+ 458 01e8 5100      		.word	81
+ 459 01ea 4E00      		.word	78
+ 460 01ec 2E02      		.word	558
+ 461 01ee 2D00      		.word	45
+ 462 01f0 2502      		.word	549
+ 463 01f2 3800      		.word	56
+ 464 01f4 4F00      		.word	79
+ 465 01f6 0000      		.word	0
+ 466 01f8 2900      		.word	41
+ 467 01fa 2B00      		.word	43
+ 468 01fc 3500      		.word	53
+ 469 01fe E100      		.word	225
+ 470 0200 E000      		.word	224
+ 471 0202 0000      		.word	0
+ 472 0204 1E00      		.word	30
+ 473 0206 1400      		.word	20
+ 474 0208 0400      		.word	4
+ 475 020a 1D00      		.word	29
+ 476 020c E201      		.word	482
+ 477 020e 4E00      		.word	78
+ 478 0210 1F00      		.word	31
+ 479 0212 1A00      		.word	26
+ 480 0214 1600      		.word	22
+ 481 0216 1B00      		.word	27
+ 482 0218 E300      		.word	227
+ 483 021a 4C00      		.word	76
+ 484 021c 2000      		.word	32
+ 485 021e 0800      		.word	8
+ 486 0220 0700      		.word	7
+ 487 0222 0600      		.word	6
+ 488 0224 6500      		.word	101
+ 489 0226 2C00      		.word	44
+ 490 0228 2100      		.word	33
+ 491 022a 1500      		.word	21
+ 492 022c 0900      		.word	9
+ 493 022e 1900      		.word	25
+ 494 0230 E200      		.word	226
+ 495 0232 4B00      		.word	75
+ 496 0234 2200      		.word	34
+ 497 0236 1700      		.word	23
+ 498 0238 0A00      		.word	10
+ 499 023a 0500      		.word	5
+ 500 023c 0000      		.word	0
+ 501 023e 4A00      		.word	74
+ 502 0240 0353      		.word	21251
+ 503 0242 2E00      		.word	46
+ 504 0244 0000      		.word	0
+ 505 0246 0253      		.word	21250
+ 506 0248 0000      		.word	0
+ 507 024a 4D00      		.word	77
+ 508 024c 2300      		.word	35
+ 509 024e 0130      		.word	12289
+ 510 0250 0000      		.word	0
+ 511 0252 3E01      		.word	318
+ 512 0254 0000      		.word	0
+ 513 0256 4A00      		.word	74
+ 514 0258 2400      		.word	36
+ 515 025a 1C00      		.word	28
+ 516 025c 0B00      		.word	11
+ 517 025e 1100      		.word	17
+ 518 0260 0000      		.word	0
+ 519 0262 4D00      		.word	77
+ 520 0264 2500      		.word	37
+ 521 0266 1800      		.word	24
+ 522 0268 0D00      		.word	13
+ 523 026a 1000      		.word	16
+ 524 026c E600      		.word	230
+ 525 026e 4B00      		.word	75
+ 526 0270 2600      		.word	38
+ 527 0272 0C00      		.word	12
+ 528 0274 0E00      		.word	14
+ 529 0276 3600      		.word	54
+ 530 0278 2C02      		.word	556
+ 531 027a 2800      		.word	40
+ 532 027c 2700      		.word	39
+ 533 027e 1200      		.word	18
+ 534 0280 0F00      		.word	15
+ 535 0282 3700      		.word	55
+ 536 0284 2F00      		.word	47
+ 537 0286 4C00      		.word	76
+ 538 0288 2D00      		.word	45
+ 539 028a 1300      		.word	19
+ 540 028c 3300      		.word	51
+ 541 028e 3800      		.word	56
+ 542 0290 3000      		.word	48
+ 543 0292 4E00      		.word	78
+ 544 0294 2E02      		.word	558
+ 545 0296 3100      		.word	49
+ 546 0298 3400      		.word	52
+ 547 029a 0257      		.word	22274
+ 548 029c C100      		.word	193
+ 549 029e 0000      		.word	0
+ 550 02a0 2900      		.word	41
+ 551 02a2 2B00      		.word	43
+ 552 02a4 3500      		.word	53
+ 553 02a6 E100      		.word	225
+ 554 02a8 E000      		.word	224
+ 555 02aa 0000      		.word	0
+ 556 02ac 1E00      		.word	30
+ 557 02ae 1400      		.word	20
+ 558 02b0 0400      		.word	4
+ 559 02b2 1D00      		.word	29
+ 560 02b4 E201      		.word	482
+ 561 02b6 4E00      		.word	78
+ 562 02b8 1F00      		.word	31
+ 563 02ba 1A00      		.word	26
+ 564 02bc 1600      		.word	22
+ 565 02be 1B00      		.word	27
+ 566 02c0 E300      		.word	227
+ 567 02c2 2A00      		.word	42
+ 568 02c4 2000      		.word	32
+ 569 02c6 0800      		.word	8
+ 570 02c8 0700      		.word	7
+ 571 02ca 0600      		.word	6
+ 572 02cc 6500      		.word	101
+ 573 02ce 2C00      		.word	44
+ 574 02d0 2100      		.word	33
+ 575 02d2 1500      		.word	21
+ 576 02d4 0900      		.word	9
+ 577 02d6 1900      		.word	25
+ 578 02d8 E200      		.word	226
+ 579 02da 4B00      		.word	75
+ 580 02dc 2200      		.word	34
+ 581 02de 1700      		.word	23
+ 582 02e0 0A00      		.word	10
+ 583 02e2 0500      		.word	5
+ 584 02e4 0000      		.word	0
+ 585 02e6 4A00      		.word	74
+ 586 02e8 0353      		.word	21251
+ 587 02ea 2E00      		.word	46
+ 588 02ec 0000      		.word	0
+ 589 02ee 0253      		.word	21250
+ 590 02f0 0000      		.word	0
+ 591 02f2 4D00      		.word	77
+ 592 02f4 2300      		.word	35
+ 593 02f6 0130      		.word	12289
+ 594 02f8 0000      		.word	0
+ 595 02fa 3E01      		.word	318
+ 596 02fc 0000      		.word	0
+ 597 02fe 5000      		.word	80
+ 598 0300 2400      		.word	36
+ 599 0302 1C00      		.word	28
+ 600 0304 0B00      		.word	11
+ 601 0306 1100      		.word	17
+ 602 0308 0000      		.word	0
+ 603 030a 4F00      		.word	79
+ 604 030c 2500      		.word	37
+ 605 030e 1800      		.word	24
+ 606 0310 0D00      		.word	13
+ 607 0312 1000      		.word	16
+ 608 0314 E600      		.word	230
+ 609 0316 5200      		.word	82
+ 610 0318 2600      		.word	38
+ 611 031a 0C00      		.word	12
+ 612 031c 0E00      		.word	14
+ 613 031e 3600      		.word	54
+ 614 0320 2C02      		.word	556
+ 615 0322 2800      		.word	40
+ 616 0324 2700      		.word	39
+ 617 0326 1200      		.word	18
+ 618 0328 0F00      		.word	15
+ 619 032a 3700      		.word	55
+ 620 032c 2F00      		.word	47
+ 621 032e 4C00      		.word	76
+ 622 0330 2D00      		.word	45
+ 623 0332 1300      		.word	19
+ 624 0334 3300      		.word	51
+ 625 0336 3800      		.word	56
+ 626 0338 3000      		.word	48
+ 627 033a 5100      		.word	81
+ 628 033c 2E02      		.word	558
+ 629 033e 3100      		.word	49
+ 630 0340 3400      		.word	52
+ 631 0342 E500      		.word	229
+ 632 0344 C100      		.word	193
+ 633 0346 0000      		.word	0
+ 634               		.text
+ 635               	.Letext0:
+ 636               		.file 3 "/usr/lib/avr/include/stdint.h"
+ 637               		.file 4 "./tmk_core/common/keyboard.h"
+ 638               		.file 5 "./tmk_core/common/keycode.h"
+ 639               		.file 6 "./tmk_core/common/action_code.h"
+ 640               		.file 7 "./tmk_core/common/action_macro.h"
+ 641               		.file 8 "./tmk_core/common/action.h"
+ 642               		.file 9 "./quantum/keymap.h"
+ 643               		.file 10 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.h"
+ 644               		.file 11 "./quantum/quantum.h"
+ 645               		.file 12 "./tmk_core/common/util.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 keymap.c
-     /tmp/ccJCeUoL.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccJCeUoL.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccJCeUoL.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccJCeUoL.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccJCeUoL.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccJCeUoL.s:13     .text.action_get_macro:0000000000000000 action_get_macro
-     /tmp/ccJCeUoL.s:183    .progmem.data.__c.5228:0000000000000000 __c.5228
-     /tmp/ccJCeUoL.s:178    .progmem.data.__c.5232:0000000000000000 __c.5232
-     /tmp/ccJCeUoL.s:65     .text.matrix_init_user:0000000000000000 matrix_init_user
-     /tmp/ccJCeUoL.s:80     .text.matrix_scan_user:0000000000000000 matrix_scan_user
-     /tmp/ccJCeUoL.s:189    .progmem.data.fn_actions:0000000000000000 fn_actions
-     /tmp/ccJCeUoL.s:197    .progmem.data.keymaps:0000000000000000 keymaps
+     /tmp/cce7Qt0G.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cce7Qt0G.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cce7Qt0G.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cce7Qt0G.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cce7Qt0G.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cce7Qt0G.s:13     .text.action_get_macro:0000000000000000 action_get_macro
+     /tmp/cce7Qt0G.s:199    .progmem.data.__c.5228:0000000000000000 __c.5228
+     /tmp/cce7Qt0G.s:194    .progmem.data.__c.5232:0000000000000000 __c.5232
+     /tmp/cce7Qt0G.s:189    .progmem.data.__c.5235:0000000000000000 __c.5235
+     /tmp/cce7Qt0G.s:76     .text.matrix_init_user:0000000000000000 matrix_init_user
+     /tmp/cce7Qt0G.s:91     .text.matrix_scan_user:0000000000000000 matrix_scan_user
+     /tmp/cce7Qt0G.s:205    .progmem.data.fn_actions:0000000000000000 fn_actions
+     /tmp/cce7Qt0G.s:213    .progmem.data.keymaps:0000000000000000 keymaps
 
 UNDEFINED SYMBOLS
 send_string

@@ -1499,18 +1499,18 @@
  511               		.file 13 "./tmk_core/common/action_layer.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 command.c
-     /tmp/ccwB9Jz4.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccwB9Jz4.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccwB9Jz4.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccwB9Jz4.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccwB9Jz4.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccwB9Jz4.s:12     .text.command_common:0000000000000000 command_common
-     /tmp/ccwB9Jz4.s:497    .bss.command_state:0000000000000000 command_state
-     /tmp/ccwB9Jz4.s:291    .text.command_extra:0000000000000000 command_extra
-     /tmp/ccwB9Jz4.s:310    .text.command_console_extra:0000000000000000 command_console_extra
-     /tmp/ccwB9Jz4.s:329    .text.command_proc:0000000000000000 command_proc
-     /tmp/ccwB9Jz4.s:451    .text.numkey2num:0000000000000000 numkey2num
-     /tmp/ccwB9Jz4.s:482    .rodata.CSWTCH.17:0000000000000000 CSWTCH.17
+     /tmp/ccGrJe5W.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccGrJe5W.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccGrJe5W.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccGrJe5W.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccGrJe5W.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccGrJe5W.s:12     .text.command_common:0000000000000000 command_common
+     /tmp/ccGrJe5W.s:497    .bss.command_state:0000000000000000 command_state
+     /tmp/ccGrJe5W.s:291    .text.command_extra:0000000000000000 command_extra
+     /tmp/ccGrJe5W.s:310    .text.command_console_extra:0000000000000000 command_console_extra
+     /tmp/ccGrJe5W.s:329    .text.command_proc:0000000000000000 command_proc
+     /tmp/ccGrJe5W.s:451    .text.numkey2num:0000000000000000 numkey2num
+     /tmp/ccGrJe5W.s:482    .rodata.CSWTCH.17:0000000000000000 CSWTCH.17
 
 UNDEFINED SYMBOLS
 debug_config
