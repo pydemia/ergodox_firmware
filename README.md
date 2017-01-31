@@ -5,15 +5,33 @@
 
 ```sh
 gedit ~/Git/Firmware/qmk/keyboards/ergodox/ez/keymaps/dawkiny/keymap.c
-~/Git/Firmware/qmk/keyboards/ergodox/make ez dawkiny
+cd ~/Git/Firmware/qmk/keyboards/ergodox
+make ez dawkiny
+
+Making ergodox/ez with keymap dawkiny [OK]
+Making ergodox/ez with keymap profet_80 [OK]
+Making ergodox/ez with keymap pydemia [OK]
+Making ergodox/ez with keymap steno [OK]
+Making ergodox/ez with keymap dawkiny
+
+avr-gcc (GCC) 4.9.2
+Copyright (C) 2014 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Size before:
+   text	   data	    bss	    dec	    hex	filename
+      0	  19182	      0	  19182	   4aee	ergodox_ez_dawkiny.hex
+
+
+Size after:
+   text	   data	    bss	    dec	    hex	filename
+      0	  19182	      0	  19182	   4aee	ergodox_ez_dawkiny.hex
+
 
 ~/Git/Firmware/teensy/teensy.64bit &
 ```
 
-![make_and_teensy](https://github.com/dawkiny/Firmware/edit/master/make_and_teensy.png)
-<p align="center">
-  <img src="https://github.com/dawkiny/Firmware/edit/master/make_and_teensy.png" width="350"/>
-</p>
 ---
 
 
