@@ -5,8 +5,7 @@
 
 ```sh
 gedit ~/Git/Firmware/qmk/keyboards/ergodox/ez/keymaps/dawkiny/keymap.c
-cd ~/Git/Firmware/qmk/keyboards/ergodox/
-make ez dawkiny
+~/Git/Firmware/qmk/keyboards/ergodox/make ez dawkiny
 
 ~/Git/Firmware/teensy/teensy.64bit &
 ```
