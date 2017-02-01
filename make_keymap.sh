@@ -1,3 +1,3 @@
 cd ~/Git/Firmware/qmk/keyboards/ergodox
-make ez dawkiny
+make ez pydemia
 cd ~/Git/Firmware

@@ -742,7 +742,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000     0x49be
+.text           0x0000000000000000     0x4a12
  *(.vectors)
  .vectors       0x0000000000000000       0xac /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega32u4.o
                 0x0000000000000000                __vectors
@@ -764,82 +764,84 @@ END GROUP
  *(.trampolines*)
                 0x000000000000014a                __trampolines_end = .
  *(.progmem*)
+ .progmem.data.__c.5238
+                0x000000000000014a       0x44 .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/keymaps/dawkiny/keymap.o
  .progmem.data.__c.5235
-                0x000000000000014a       0x11 .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/keymaps/dawkiny/keymap.o
+                0x000000000000018e       0x11 .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/keymaps/dawkiny/keymap.o
  .progmem.data.__c.5232
-                0x000000000000015b        0x3 .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/keymaps/dawkiny/keymap.o
+                0x000000000000019f        0x3 .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/keymaps/dawkiny/keymap.o
  .progmem.data.__c.5228
-                0x000000000000015e       0x1f .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/keymaps/dawkiny/keymap.o
+                0x00000000000001a2       0x1f .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/keymaps/dawkiny/keymap.o
  .progmem.data.fn_actions
-                0x000000000000017d        0x6 .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/keymaps/dawkiny/keymap.o
-                0x000000000000017d                fn_actions
+                0x00000000000001c1        0x6 .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/keymaps/dawkiny/keymap.o
+                0x00000000000001c1                fn_actions
  .progmem.data.keymaps
-                0x0000000000000183      0x348 .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/keymaps/dawkiny/keymap.o
-                0x0000000000000183                keymaps
+                0x00000000000001c7      0x348 .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/keymaps/dawkiny/keymap.o
+                0x00000000000001c7                keymaps
  .progmem.data.ascii_to_qwerty_keycode_lut
-                0x00000000000004cb       0x80 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
-                0x00000000000004cb                ascii_to_qwerty_keycode_lut
+                0x000000000000050f       0x80 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
+                0x000000000000050f                ascii_to_qwerty_keycode_lut
  .progmem.data.ascii_to_qwerty_shift_lut
-                0x000000000000054b       0x80 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
-                0x000000000000054b                ascii_to_qwerty_shift_lut
+                0x000000000000058f       0x80 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
+                0x000000000000058f                ascii_to_qwerty_shift_lut
  .progmem.data.ProductString
-                0x00000000000005cb       0x18 .build/obj_ergodox_ez_dawkiny/descriptor.o
-                0x00000000000005cb                ProductString
+                0x000000000000060f       0x18 .build/obj_ergodox_ez_dawkiny/descriptor.o
+                0x000000000000060f                ProductString
  .progmem.data.ManufacturerString
-                0x00000000000005e3       0x18 .build/obj_ergodox_ez_dawkiny/descriptor.o
-                0x00000000000005e3                ManufacturerString
+                0x0000000000000627       0x18 .build/obj_ergodox_ez_dawkiny/descriptor.o
+                0x0000000000000627                ManufacturerString
  .progmem.data.LanguageString
-                0x00000000000005fb        0x4 .build/obj_ergodox_ez_dawkiny/descriptor.o
-                0x00000000000005fb                LanguageString
+                0x000000000000063f        0x4 .build/obj_ergodox_ez_dawkiny/descriptor.o
+                0x000000000000063f                LanguageString
  .progmem.data.ConfigurationDescriptor
-                0x00000000000005ff       0x6d .build/obj_ergodox_ez_dawkiny/descriptor.o
-                0x00000000000005ff                ConfigurationDescriptor
+                0x0000000000000643       0x6d .build/obj_ergodox_ez_dawkiny/descriptor.o
+                0x0000000000000643                ConfigurationDescriptor
  .progmem.data.DeviceDescriptor
-                0x000000000000066c       0x12 .build/obj_ergodox_ez_dawkiny/descriptor.o
-                0x000000000000066c                DeviceDescriptor
+                0x00000000000006b0       0x12 .build/obj_ergodox_ez_dawkiny/descriptor.o
+                0x00000000000006b0                DeviceDescriptor
  .progmem.data.NKROReport
-                0x000000000000067e       0x39 .build/obj_ergodox_ez_dawkiny/descriptor.o
-                0x000000000000067e                NKROReport
+                0x00000000000006c2       0x39 .build/obj_ergodox_ez_dawkiny/descriptor.o
+                0x00000000000006c2                NKROReport
  .progmem.data.ExtrakeyReport
-                0x00000000000006b7       0x36 .build/obj_ergodox_ez_dawkiny/descriptor.o
-                0x00000000000006b7                ExtrakeyReport
+                0x00000000000006fb       0x36 .build/obj_ergodox_ez_dawkiny/descriptor.o
+                0x00000000000006fb                ExtrakeyReport
  .progmem.data.MouseReport
-                0x00000000000006ed       0x4d .build/obj_ergodox_ez_dawkiny/descriptor.o
-                0x00000000000006ed                MouseReport
+                0x0000000000000731       0x4d .build/obj_ergodox_ez_dawkiny/descriptor.o
+                0x0000000000000731                MouseReport
  .progmem.data.KeyboardReport
-                0x000000000000073a       0x40 .build/obj_ergodox_ez_dawkiny/descriptor.o
-                0x000000000000073a                KeyboardReport
-                0x000000000000077a                . = ALIGN (0x2)
+                0x000000000000077e       0x40 .build/obj_ergodox_ez_dawkiny/descriptor.o
+                0x000000000000077e                KeyboardReport
+                0x00000000000007be                . = ALIGN (0x2)
  *(.jumptables)
  *(.jumptables*)
  *(.lowtext)
  *(.lowtext*)
-                0x000000000000077a                __ctors_start = .
+                0x00000000000007be                __ctors_start = .
  *(.ctors)
-                0x000000000000077a                __ctors_end = .
-                0x000000000000077a                __dtors_start = .
+                0x00000000000007be                __ctors_end = .
+                0x00000000000007be                __dtors_start = .
  *(.dtors)
-                0x000000000000077a                __dtors_end = .
+                0x00000000000007be                __dtors_end = .
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x000000000000077a        0x0 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega32u4.o
-                0x000000000000077a                __init
+ .init0         0x00000000000007be        0x0 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega32u4.o
+                0x00000000000007be                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x000000000000077a        0xc /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega32u4.o
+ .init2         0x00000000000007be        0xc /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega32u4.o
  *(.init2)
  *(.init3)
- .init3         0x0000000000000786       0x54 .build/obj_ergodox_ez_dawkiny/common/avr/bootloader.o
-                0x0000000000000786                bootloader_jump_after_watchdog_reset
+ .init3         0x00000000000007ca       0x54 .build/obj_ergodox_ez_dawkiny/common/avr/bootloader.o
+                0x00000000000007ca                bootloader_jump_after_watchdog_reset
  *(.init3)
  *(.init4)
- .init4         0x00000000000007da       0x16 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_copy_data.o)
-                0x00000000000007da                __do_copy_data
- .init4         0x00000000000007f0       0x10 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_clear_bss.o)
-                0x00000000000007f0                __do_clear_bss
+ .init4         0x000000000000081e       0x16 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_copy_data.o)
+                0x000000000000081e                __do_copy_data
+ .init4         0x0000000000000834       0x10 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_clear_bss.o)
+                0x0000000000000834                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -850,612 +852,612 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x0000000000000800        0x8 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega32u4.o
+ .init9         0x0000000000000844        0x8 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega32u4.o
  *(.init9)
  *(.text)
- .text          0x0000000000000808        0x4 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega32u4.o
-                0x0000000000000808                __vector_38
-                0x0000000000000808                __vector_22
-                0x0000000000000808                __vector_28
-                0x0000000000000808                __vector_1
-                0x0000000000000808                __vector_32
-                0x0000000000000808                __vector_34
-                0x0000000000000808                __vector_24
-                0x0000000000000808                __bad_interrupt
-                0x0000000000000808                __vector_6
-                0x0000000000000808                __vector_31
-                0x0000000000000808                __vector_35
-                0x0000000000000808                __vector_39
-                0x0000000000000808                __vector_3
-                0x0000000000000808                __vector_23
-                0x0000000000000808                __vector_30
-                0x0000000000000808                __vector_25
-                0x0000000000000808                __vector_13
-                0x0000000000000808                __vector_17
-                0x0000000000000808                __vector_19
-                0x0000000000000808                __vector_7
-                0x0000000000000808                __vector_41
-                0x0000000000000808                __vector_27
-                0x0000000000000808                __vector_5
-                0x0000000000000808                __vector_33
-                0x0000000000000808                __vector_37
-                0x0000000000000808                __vector_4
-                0x0000000000000808                __vector_9
-                0x0000000000000808                __vector_2
-                0x0000000000000808                __vector_15
-                0x0000000000000808                __vector_36
-                0x0000000000000808                __vector_29
-                0x0000000000000808                __vector_40
-                0x0000000000000808                __vector_8
-                0x0000000000000808                __vector_26
-                0x0000000000000808                __vector_14
-                0x0000000000000808                __vector_16
-                0x0000000000000808                __vector_18
-                0x0000000000000808                __vector_20
-                0x0000000000000808                __vector_42
-                0x000000000000080c                . = ALIGN (0x2)
+ .text          0x000000000000084c        0x4 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega32u4.o
+                0x000000000000084c                __vector_38
+                0x000000000000084c                __vector_22
+                0x000000000000084c                __vector_28
+                0x000000000000084c                __vector_1
+                0x000000000000084c                __vector_32
+                0x000000000000084c                __vector_34
+                0x000000000000084c                __vector_24
+                0x000000000000084c                __bad_interrupt
+                0x000000000000084c                __vector_6
+                0x000000000000084c                __vector_31
+                0x000000000000084c                __vector_35
+                0x000000000000084c                __vector_39
+                0x000000000000084c                __vector_3
+                0x000000000000084c                __vector_23
+                0x000000000000084c                __vector_30
+                0x000000000000084c                __vector_25
+                0x000000000000084c                __vector_13
+                0x000000000000084c                __vector_17
+                0x000000000000084c                __vector_19
+                0x000000000000084c                __vector_7
+                0x000000000000084c                __vector_41
+                0x000000000000084c                __vector_27
+                0x000000000000084c                __vector_5
+                0x000000000000084c                __vector_33
+                0x000000000000084c                __vector_37
+                0x000000000000084c                __vector_4
+                0x000000000000084c                __vector_9
+                0x000000000000084c                __vector_2
+                0x000000000000084c                __vector_15
+                0x000000000000084c                __vector_36
+                0x000000000000084c                __vector_29
+                0x000000000000084c                __vector_40
+                0x000000000000084c                __vector_8
+                0x000000000000084c                __vector_26
+                0x000000000000084c                __vector_14
+                0x000000000000084c                __vector_16
+                0x000000000000084c                __vector_18
+                0x000000000000084c                __vector_20
+                0x000000000000084c                __vector_42
+                0x0000000000000850                . = ALIGN (0x2)
  *(.text.*)
  .text.i2c_init
-                0x000000000000080c        0xc .build/obj_ergodox_ez_dawkiny/twimaster.o
-                0x000000000000080c                i2c_init
+                0x0000000000000850        0xc .build/obj_ergodox_ez_dawkiny/twimaster.o
+                0x0000000000000850                i2c_init
  .text.i2c_start
-                0x0000000000000818       0x44 .build/obj_ergodox_ez_dawkiny/twimaster.o
-                0x0000000000000818                i2c_start
+                0x000000000000085c       0x44 .build/obj_ergodox_ez_dawkiny/twimaster.o
+                0x000000000000085c                i2c_start
  .text.i2c_stop
-                0x000000000000085c       0x10 .build/obj_ergodox_ez_dawkiny/twimaster.o
-                0x000000000000085c                i2c_stop
+                0x00000000000008a0       0x10 .build/obj_ergodox_ez_dawkiny/twimaster.o
+                0x00000000000008a0                i2c_stop
  .text.i2c_write
-                0x000000000000086c       0x22 .build/obj_ergodox_ez_dawkiny/twimaster.o
-                0x000000000000086c                i2c_write
+                0x00000000000008b0       0x22 .build/obj_ergodox_ez_dawkiny/twimaster.o
+                0x00000000000008b0                i2c_write
  .text.i2c_readNak
-                0x000000000000088e       0x14 .build/obj_ergodox_ez_dawkiny/twimaster.o
-                0x000000000000088e                i2c_readNak
+                0x00000000000008d2       0x14 .build/obj_ergodox_ez_dawkiny/twimaster.o
+                0x00000000000008d2                i2c_readNak
  .text.init_cols
-                0x00000000000008a2        0xe .build/obj_ergodox_ez_dawkiny/matrix.o
+                0x00000000000008e6        0xe .build/obj_ergodox_ez_dawkiny/matrix.o
  .text.unselect_rows
-                0x00000000000008b0       0x50 .build/obj_ergodox_ez_dawkiny/matrix.o
+                0x00000000000008f4       0x50 .build/obj_ergodox_ez_dawkiny/matrix.o
  .text.matrix_scan_kb
-                0x0000000000000900        0x4 .build/obj_ergodox_ez_dawkiny/matrix.o
-                0x0000000000000900                matrix_scan_kb
+                0x0000000000000944        0x4 .build/obj_ergodox_ez_dawkiny/matrix.o
+                0x0000000000000944                matrix_scan_kb
  .text.matrix_init
-                0x0000000000000904       0x28 .build/obj_ergodox_ez_dawkiny/matrix.o
-                0x0000000000000904                matrix_init
+                0x0000000000000948       0x28 .build/obj_ergodox_ez_dawkiny/matrix.o
+                0x0000000000000948                matrix_init
  .text.matrix_power_up
-                0x000000000000092c       0x26 .build/obj_ergodox_ez_dawkiny/matrix.o
-                0x000000000000092c                matrix_power_up
+                0x0000000000000970       0x26 .build/obj_ergodox_ez_dawkiny/matrix.o
+                0x0000000000000970                matrix_power_up
  .text.matrix_scan
-                0x0000000000000952      0x1dc .build/obj_ergodox_ez_dawkiny/matrix.o
-                0x0000000000000952                matrix_scan
+                0x0000000000000996      0x1dc .build/obj_ergodox_ez_dawkiny/matrix.o
+                0x0000000000000996                matrix_scan
  .text.matrix_get_row
-                0x0000000000000b2e        0xc .build/obj_ergodox_ez_dawkiny/matrix.o
-                0x0000000000000b2e                matrix_get_row
+                0x0000000000000b72        0xc .build/obj_ergodox_ez_dawkiny/matrix.o
+                0x0000000000000b72                matrix_get_row
  .text.matrix_print
-                0x0000000000000b3a        0x2 .build/obj_ergodox_ez_dawkiny/matrix.o
-                0x0000000000000b3a                matrix_print
+                0x0000000000000b7e        0x2 .build/obj_ergodox_ez_dawkiny/matrix.o
+                0x0000000000000b7e                matrix_print
  .text.action_get_macro
-                0x0000000000000b3c       0x3a .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/keymaps/dawkiny/keymap.o
-                0x0000000000000b3c                action_get_macro
+                0x0000000000000b80       0x4a .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/keymaps/dawkiny/keymap.o
+                0x0000000000000b80                action_get_macro
  .text.matrix_init_user
-                0x0000000000000b76        0x2 .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/keymaps/dawkiny/keymap.o
-                0x0000000000000b76                matrix_init_user
+                0x0000000000000bca        0x2 .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/keymaps/dawkiny/keymap.o
+                0x0000000000000bca                matrix_init_user
  .text.matrix_scan_user
-                0x0000000000000b78       0x50 .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/keymaps/dawkiny/keymap.o
-                0x0000000000000b78                matrix_scan_user
+                0x0000000000000bcc       0x50 .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/keymaps/dawkiny/keymap.o
+                0x0000000000000bcc                matrix_scan_user
  .text.process_action_kb
-                0x0000000000000bc8        0x4 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
-                0x0000000000000bc8                process_action_kb
+                0x0000000000000c1c        0x4 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
+                0x0000000000000c1c                process_action_kb
  .text.process_record_user
-                0x0000000000000bcc        0x4 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
-                0x0000000000000bcc                process_record_user
+                0x0000000000000c20        0x4 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
+                0x0000000000000c20                process_record_user
  .text.process_record_kb
-                0x0000000000000bd0        0x4 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
-                0x0000000000000bd0                process_record_kb
+                0x0000000000000c24        0x4 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
+                0x0000000000000c24                process_record_kb
  .text.reset_keyboard
-                0x0000000000000bd4       0x1a .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
-                0x0000000000000bd4                reset_keyboard
+                0x0000000000000c28       0x1a .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
+                0x0000000000000c28                reset_keyboard
  .text.process_record_quantum
-                0x0000000000000bee      0x1b8 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
-                0x0000000000000bee                process_record_quantum
+                0x0000000000000c42      0x1b8 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
+                0x0000000000000c42                process_record_quantum
  .text.send_string
-                0x0000000000000da6       0x56 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
-                0x0000000000000da6                send_string
+                0x0000000000000dfa       0x56 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
+                0x0000000000000dfa                send_string
  .text.matrix_scan_quantum
-                0x0000000000000dfc        0x4 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
-                0x0000000000000dfc                matrix_scan_quantum
+                0x0000000000000e50        0x4 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
+                0x0000000000000e50                matrix_scan_quantum
  .text.led_set_user
-                0x0000000000000e00        0x2 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
-                0x0000000000000e00                led_set_user
+                0x0000000000000e54        0x2 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
+                0x0000000000000e54                led_set_user
  .text.led_set_kb
-                0x0000000000000e02        0x4 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
-                0x0000000000000e02                led_set_kb
- .text.led_set  0x0000000000000e06        0x4 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
-                0x0000000000000e06                led_set
+                0x0000000000000e56        0x4 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
+                0x0000000000000e56                led_set_kb
+ .text.led_set  0x0000000000000e5a        0x4 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
+                0x0000000000000e5a                led_set
  .text.action_for_key
-                0x0000000000000e0a      0x31e .build/obj_ergodox_ez_dawkiny/quantum/keymap_common.o
-                0x0000000000000e0a                action_for_key
+                0x0000000000000e5e      0x31e .build/obj_ergodox_ez_dawkiny/quantum/keymap_common.o
+                0x0000000000000e5e                action_for_key
  .text.action_function
-                0x0000000000001128        0x2 .build/obj_ergodox_ez_dawkiny/quantum/keymap_common.o
-                0x0000000000001128                action_function
+                0x000000000000117c        0x2 .build/obj_ergodox_ez_dawkiny/quantum/keymap_common.o
+                0x000000000000117c                action_function
  .text.keymap_key_to_keycode
-                0x000000000000112a       0x24 .build/obj_ergodox_ez_dawkiny/quantum/keymap_common.o
-                0x000000000000112a                keymap_key_to_keycode
+                0x000000000000117e       0x24 .build/obj_ergodox_ez_dawkiny/quantum/keymap_common.o
+                0x000000000000117e                keymap_key_to_keycode
  .text.keycode_config
-                0x000000000000114e       0xfa .build/obj_ergodox_ez_dawkiny/quantum/keycode_config.o
-                0x000000000000114e                keycode_config
+                0x00000000000011a2       0xfa .build/obj_ergodox_ez_dawkiny/quantum/keycode_config.o
+                0x00000000000011a2                keycode_config
  .text.leader_start
-                0x0000000000001248        0x2 .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_leader.o
-                0x0000000000001248                leader_start
+                0x000000000000129c        0x2 .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_leader.o
+                0x000000000000129c                leader_start
  .text.process_leader
-                0x000000000000124a       0x9e .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_leader.o
-                0x000000000000124a                process_leader
+                0x000000000000129e       0x9e .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_leader.o
+                0x000000000000129e                process_leader
  .text.ergodox_blink_all_leds
-                0x00000000000012e8       0xb0 .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/ez.o
-                0x00000000000012e8                ergodox_blink_all_leds
+                0x000000000000133c       0xb0 .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/ez.o
+                0x000000000000133c                ergodox_blink_all_leds
  .text.matrix_init_kb
-                0x0000000000001398       0x2c .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/ez.o
-                0x0000000000001398                matrix_init_kb
+                0x00000000000013ec       0x2c .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/ez.o
+                0x00000000000013ec                matrix_init_kb
  .text.init_mcp23018
-                0x00000000000013c4       0x9e .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/ez.o
-                0x00000000000013c4                init_mcp23018
+                0x0000000000001418       0x9e .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/ez.o
+                0x0000000000001418                init_mcp23018
  .text.hex_to_keycode
-                0x0000000000001462       0x1a .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_unicode.o
-                0x0000000000001462                hex_to_keycode
+                0x00000000000014b6       0x1a .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_unicode.o
+                0x00000000000014b6                hex_to_keycode
  .text.unicode_input_start
-                0x000000000000147c       0x58 .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_unicode.o
-                0x000000000000147c                unicode_input_start
+                0x00000000000014d0       0x58 .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_unicode.o
+                0x00000000000014d0                unicode_input_start
  .text.unicode_input_finish
-                0x00000000000014d4       0x20 .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_unicode.o
-                0x00000000000014d4                unicode_input_finish
+                0x0000000000001528       0x20 .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_unicode.o
+                0x0000000000001528                unicode_input_finish
  .text.register_hex
-                0x00000000000014f4       0x4c .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_unicode.o
-                0x00000000000014f4                register_hex
+                0x0000000000001548       0x4c .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_unicode.o
+                0x0000000000001548                register_hex
  .text.process_unicode
-                0x0000000000001540       0x2e .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_unicode.o
-                0x0000000000001540                process_unicode
+                0x0000000000001594       0x2e .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_unicode.o
+                0x0000000000001594                process_unicode
  .text.host_set_driver
-                0x000000000000156e        0xa .build/obj_ergodox_ez_dawkiny/common/host.o
-                0x000000000000156e                host_set_driver
+                0x00000000000015c2        0xa .build/obj_ergodox_ez_dawkiny/common/host.o
+                0x00000000000015c2                host_set_driver
  .text.host_keyboard_leds
-                0x0000000000001578       0x18 .build/obj_ergodox_ez_dawkiny/common/host.o
-                0x0000000000001578                host_keyboard_leds
+                0x00000000000015cc       0x18 .build/obj_ergodox_ez_dawkiny/common/host.o
+                0x00000000000015cc                host_keyboard_leds
  .text.host_keyboard_send
-                0x0000000000001590       0x16 .build/obj_ergodox_ez_dawkiny/common/host.o
-                0x0000000000001590                host_keyboard_send
+                0x00000000000015e4       0x16 .build/obj_ergodox_ez_dawkiny/common/host.o
+                0x00000000000015e4                host_keyboard_send
  .text.host_mouse_send
-                0x00000000000015a6       0x16 .build/obj_ergodox_ez_dawkiny/common/host.o
-                0x00000000000015a6                host_mouse_send
+                0x00000000000015fa       0x16 .build/obj_ergodox_ez_dawkiny/common/host.o
+                0x00000000000015fa                host_mouse_send
  .text.host_system_send
-                0x00000000000015bc       0x2c .build/obj_ergodox_ez_dawkiny/common/host.o
-                0x00000000000015bc                host_system_send
+                0x0000000000001610       0x2c .build/obj_ergodox_ez_dawkiny/common/host.o
+                0x0000000000001610                host_system_send
  .text.host_consumer_send
-                0x00000000000015e8       0x2c .build/obj_ergodox_ez_dawkiny/common/host.o
-                0x00000000000015e8                host_consumer_send
+                0x000000000000163c       0x2c .build/obj_ergodox_ez_dawkiny/common/host.o
+                0x000000000000163c                host_consumer_send
  .text.matrix_setup
-                0x0000000000001614        0x2 .build/obj_ergodox_ez_dawkiny/common/keyboard.o
-                0x0000000000001614                matrix_setup
+                0x0000000000001668        0x2 .build/obj_ergodox_ez_dawkiny/common/keyboard.o
+                0x0000000000001668                matrix_setup
  .text.keyboard_setup
-                0x0000000000001616        0x4 .build/obj_ergodox_ez_dawkiny/common/keyboard.o
-                0x0000000000001616                keyboard_setup
+                0x000000000000166a        0x4 .build/obj_ergodox_ez_dawkiny/common/keyboard.o
+                0x000000000000166a                keyboard_setup
  .text.keyboard_init
-                0x000000000000161a        0xc .build/obj_ergodox_ez_dawkiny/common/keyboard.o
-                0x000000000000161a                keyboard_init
+                0x000000000000166e        0xc .build/obj_ergodox_ez_dawkiny/common/keyboard.o
+                0x000000000000166e                keyboard_init
  .text.keyboard_task
-                0x0000000000001626      0x146 .build/obj_ergodox_ez_dawkiny/common/keyboard.o
-                0x0000000000001626                keyboard_task
+                0x000000000000167a      0x146 .build/obj_ergodox_ez_dawkiny/common/keyboard.o
+                0x000000000000167a                keyboard_task
  .text.process_hand_swap
-                0x000000000000176c       0x78 .build/obj_ergodox_ez_dawkiny/common/action.o
-                0x000000000000176c                process_hand_swap
+                0x00000000000017c0       0x78 .build/obj_ergodox_ez_dawkiny/common/action.o
+                0x00000000000017c0                process_hand_swap
  .text.action_exec
-                0x00000000000017e4       0x7a .build/obj_ergodox_ez_dawkiny/common/action.o
-                0x00000000000017e4                action_exec
+                0x0000000000001838       0x7a .build/obj_ergodox_ez_dawkiny/common/action.o
+                0x0000000000001838                action_exec
  .text.register_code
-                0x000000000000185e      0x1a6 .build/obj_ergodox_ez_dawkiny/common/action.o
-                0x000000000000185e                register_code
+                0x00000000000018b2      0x1a6 .build/obj_ergodox_ez_dawkiny/common/action.o
+                0x00000000000018b2                register_code
  .text.unregister_code
-                0x0000000000001a04       0x9e .build/obj_ergodox_ez_dawkiny/common/action.o
-                0x0000000000001a04                unregister_code
+                0x0000000000001a58       0x9e .build/obj_ergodox_ez_dawkiny/common/action.o
+                0x0000000000001a58                unregister_code
  .text.register_mods
-                0x0000000000001aa2        0xe .build/obj_ergodox_ez_dawkiny/common/action.o
-                0x0000000000001aa2                register_mods
+                0x0000000000001af6        0xe .build/obj_ergodox_ez_dawkiny/common/action.o
+                0x0000000000001af6                register_mods
  .text.unregister_mods
-                0x0000000000001ab0        0xe .build/obj_ergodox_ez_dawkiny/common/action.o
-                0x0000000000001ab0                unregister_mods
+                0x0000000000001b04        0xe .build/obj_ergodox_ez_dawkiny/common/action.o
+                0x0000000000001b04                unregister_mods
  .text.process_action
-                0x0000000000001abe      0x4be .build/obj_ergodox_ez_dawkiny/common/action.o
-                0x0000000000001abe                process_action
+                0x0000000000001b12      0x4be .build/obj_ergodox_ez_dawkiny/common/action.o
+                0x0000000000001b12                process_action
  .text.process_record
-                0x0000000000001f7c       0x4e .build/obj_ergodox_ez_dawkiny/common/action.o
-                0x0000000000001f7c                process_record
+                0x0000000000001fd0       0x4e .build/obj_ergodox_ez_dawkiny/common/action.o
+                0x0000000000001fd0                process_record
  .text.clear_keyboard_but_mods
-                0x0000000000001fca       0x28 .build/obj_ergodox_ez_dawkiny/common/action.o
-                0x0000000000001fca                clear_keyboard_but_mods
+                0x000000000000201e       0x28 .build/obj_ergodox_ez_dawkiny/common/action.o
+                0x000000000000201e                clear_keyboard_but_mods
  .text.clear_keyboard
-                0x0000000000001ff2        0x8 .build/obj_ergodox_ez_dawkiny/common/action.o
-                0x0000000000001ff2                clear_keyboard
+                0x0000000000002046        0x8 .build/obj_ergodox_ez_dawkiny/common/action.o
+                0x0000000000002046                clear_keyboard
  .text.is_tap_key
-                0x0000000000001ffa       0x48 .build/obj_ergodox_ez_dawkiny/common/action.o
-                0x0000000000001ffa                is_tap_key
+                0x000000000000204e       0x48 .build/obj_ergodox_ez_dawkiny/common/action.o
+                0x000000000000204e                is_tap_key
  .text.debug_event
-                0x0000000000002042       0x1e .build/obj_ergodox_ez_dawkiny/common/action.o
-                0x0000000000002042                debug_event
+                0x0000000000002096       0x1e .build/obj_ergodox_ez_dawkiny/common/action.o
+                0x0000000000002096                debug_event
  .text.debug_record
-                0x0000000000002060       0x20 .build/obj_ergodox_ez_dawkiny/common/action.o
-                0x0000000000002060                debug_record
+                0x00000000000020b4       0x20 .build/obj_ergodox_ez_dawkiny/common/action.o
+                0x00000000000020b4                debug_record
  .text.debug_waiting_buffer
-                0x0000000000002080       0x42 .build/obj_ergodox_ez_dawkiny/common/action_tapping.o
+                0x00000000000020d4       0x42 .build/obj_ergodox_ez_dawkiny/common/action_tapping.o
  .text.debug_tapping_key
-                0x00000000000020c2       0x1c .build/obj_ergodox_ez_dawkiny/common/action_tapping.o
+                0x0000000000002116       0x1c .build/obj_ergodox_ez_dawkiny/common/action_tapping.o
  .text.waiting_buffer_scan_tap
-                0x00000000000020de       0xb6 .build/obj_ergodox_ez_dawkiny/common/action_tapping.o
+                0x0000000000002132       0xb6 .build/obj_ergodox_ez_dawkiny/common/action_tapping.o
  .text.process_tapping
-                0x0000000000002194      0x38e .build/obj_ergodox_ez_dawkiny/common/action_tapping.o
+                0x00000000000021e8      0x38e .build/obj_ergodox_ez_dawkiny/common/action_tapping.o
  .text.action_tapping_process
-                0x0000000000002522      0x148 .build/obj_ergodox_ez_dawkiny/common/action_tapping.o
-                0x0000000000002522                action_tapping_process
+                0x0000000000002576      0x148 .build/obj_ergodox_ez_dawkiny/common/action_tapping.o
+                0x0000000000002576                action_tapping_process
  .text.action_macro_play
-                0x000000000000266a       0xfa .build/obj_ergodox_ez_dawkiny/common/action_macro.o
-                0x000000000000266a                action_macro_play
+                0x00000000000026be       0xfa .build/obj_ergodox_ez_dawkiny/common/action_macro.o
+                0x00000000000026be                action_macro_play
  .text.default_layer_debug
-                0x0000000000002764        0x2 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
-                0x0000000000002764                default_layer_debug
+                0x00000000000027b8        0x2 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
+                0x00000000000027b8                default_layer_debug
  .text.default_layer_set
-                0x0000000000002766       0x14 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
-                0x0000000000002766                default_layer_set
+                0x00000000000027ba       0x14 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
+                0x00000000000027ba                default_layer_set
  .text.default_layer_or
-                0x000000000000277a       0x38 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
-                0x000000000000277a                default_layer_or
+                0x00000000000027ce       0x38 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
+                0x00000000000027ce                default_layer_or
  .text.default_layer_and
-                0x00000000000027b2       0x38 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
-                0x00000000000027b2                default_layer_and
+                0x0000000000002806       0x38 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
+                0x0000000000002806                default_layer_and
  .text.default_layer_xor
-                0x00000000000027ea       0x38 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
-                0x00000000000027ea                default_layer_xor
+                0x000000000000283e       0x38 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
+                0x000000000000283e                default_layer_xor
  .text.layer_clear
-                0x0000000000002822       0x14 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
-                0x0000000000002822                layer_clear
+                0x0000000000002876       0x14 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
+                0x0000000000002876                layer_clear
  .text.layer_move
-                0x0000000000002836       0x2a .build/obj_ergodox_ez_dawkiny/common/action_layer.o
-                0x0000000000002836                layer_move
+                0x000000000000288a       0x2a .build/obj_ergodox_ez_dawkiny/common/action_layer.o
+                0x000000000000288a                layer_move
  .text.layer_on
-                0x0000000000002860       0x42 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
-                0x0000000000002860                layer_on
+                0x00000000000028b4       0x42 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
+                0x00000000000028b4                layer_on
  .text.layer_off
-                0x00000000000028a2       0x4a .build/obj_ergodox_ez_dawkiny/common/action_layer.o
-                0x00000000000028a2                layer_off
+                0x00000000000028f6       0x4a .build/obj_ergodox_ez_dawkiny/common/action_layer.o
+                0x00000000000028f6                layer_off
  .text.layer_invert
-                0x00000000000028ec       0x42 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
-                0x00000000000028ec                layer_invert
+                0x0000000000002940       0x42 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
+                0x0000000000002940                layer_invert
  .text.layer_or
-                0x000000000000292e       0x38 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
-                0x000000000000292e                layer_or
+                0x0000000000002982       0x38 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
+                0x0000000000002982                layer_or
  .text.layer_and
-                0x0000000000002966       0x38 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
-                0x0000000000002966                layer_and
+                0x00000000000029ba       0x38 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
+                0x00000000000029ba                layer_and
  .text.layer_xor
-                0x000000000000299e       0x38 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
-                0x000000000000299e                layer_xor
+                0x00000000000029f2       0x38 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
+                0x00000000000029f2                layer_xor
  .text.layer_debug
-                0x00000000000029d6        0x2 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
-                0x00000000000029d6                layer_debug
+                0x0000000000002a2a        0x2 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
+                0x0000000000002a2a                layer_debug
  .text.layer_switch_get_layer
-                0x00000000000029d8       0x7e .build/obj_ergodox_ez_dawkiny/common/action_layer.o
-                0x00000000000029d8                layer_switch_get_layer
+                0x0000000000002a2c       0x7e .build/obj_ergodox_ez_dawkiny/common/action_layer.o
+                0x0000000000002a2c                layer_switch_get_layer
  .text.layer_switch_get_action
-                0x0000000000002a56       0x16 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
-                0x0000000000002a56                layer_switch_get_action
+                0x0000000000002aaa       0x16 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
+                0x0000000000002aaa                layer_switch_get_action
  .text.store_or_get_action
-                0x0000000000002a6c        0x8 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
-                0x0000000000002a6c                store_or_get_action
+                0x0000000000002ac0        0x8 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
+                0x0000000000002ac0                store_or_get_action
  .text.get_oneshot_layer
-                0x0000000000002a74        0xc .build/obj_ergodox_ez_dawkiny/common/action_util.o
-                0x0000000000002a74                get_oneshot_layer
+                0x0000000000002ac8        0xc .build/obj_ergodox_ez_dawkiny/common/action_util.o
+                0x0000000000002ac8                get_oneshot_layer
  .text.get_oneshot_layer_state
-                0x0000000000002a80        0x8 .build/obj_ergodox_ez_dawkiny/common/action_util.o
-                0x0000000000002a80                get_oneshot_layer_state
+                0x0000000000002ad4        0x8 .build/obj_ergodox_ez_dawkiny/common/action_util.o
+                0x0000000000002ad4                get_oneshot_layer_state
  .text.set_oneshot_layer
-                0x0000000000002a88       0x12 .build/obj_ergodox_ez_dawkiny/common/action_util.o
-                0x0000000000002a88                set_oneshot_layer
+                0x0000000000002adc       0x12 .build/obj_ergodox_ez_dawkiny/common/action_util.o
+                0x0000000000002adc                set_oneshot_layer
  .text.clear_oneshot_layer_state
-                0x0000000000002a9a       0x2e .build/obj_ergodox_ez_dawkiny/common/action_util.o
-                0x0000000000002a9a                clear_oneshot_layer_state
+                0x0000000000002aee       0x2e .build/obj_ergodox_ez_dawkiny/common/action_util.o
+                0x0000000000002aee                clear_oneshot_layer_state
  .text.is_oneshot_layer_active
-                0x0000000000002ac8        0xe .build/obj_ergodox_ez_dawkiny/common/action_util.o
-                0x0000000000002ac8                is_oneshot_layer_active
- .text.add_key  0x0000000000002ad6       0x84 .build/obj_ergodox_ez_dawkiny/common/action_util.o
-                0x0000000000002ad6                add_key
- .text.del_key  0x0000000000002b5a       0x6c .build/obj_ergodox_ez_dawkiny/common/action_util.o
-                0x0000000000002b5a                del_key
+                0x0000000000002b1c        0xe .build/obj_ergodox_ez_dawkiny/common/action_util.o
+                0x0000000000002b1c                is_oneshot_layer_active
+ .text.add_key  0x0000000000002b2a       0x84 .build/obj_ergodox_ez_dawkiny/common/action_util.o
+                0x0000000000002b2a                add_key
+ .text.del_key  0x0000000000002bae       0x6c .build/obj_ergodox_ez_dawkiny/common/action_util.o
+                0x0000000000002bae                del_key
  .text.clear_keys
-                0x0000000000002bc6       0x1c .build/obj_ergodox_ez_dawkiny/common/action_util.o
-                0x0000000000002bc6                clear_keys
+                0x0000000000002c1a       0x1c .build/obj_ergodox_ez_dawkiny/common/action_util.o
+                0x0000000000002c1a                clear_keys
  .text.add_mods
-                0x0000000000002be2        0xc .build/obj_ergodox_ez_dawkiny/common/action_util.o
-                0x0000000000002be2                add_mods
+                0x0000000000002c36        0xc .build/obj_ergodox_ez_dawkiny/common/action_util.o
+                0x0000000000002c36                add_mods
  .text.del_mods
-                0x0000000000002bee        0xe .build/obj_ergodox_ez_dawkiny/common/action_util.o
-                0x0000000000002bee                del_mods
+                0x0000000000002c42        0xe .build/obj_ergodox_ez_dawkiny/common/action_util.o
+                0x0000000000002c42                del_mods
  .text.clear_mods
-                0x0000000000002bfc        0x6 .build/obj_ergodox_ez_dawkiny/common/action_util.o
-                0x0000000000002bfc                clear_mods
+                0x0000000000002c50        0x6 .build/obj_ergodox_ez_dawkiny/common/action_util.o
+                0x0000000000002c50                clear_mods
  .text.add_weak_mods
-                0x0000000000002c02        0xc .build/obj_ergodox_ez_dawkiny/common/action_util.o
-                0x0000000000002c02                add_weak_mods
+                0x0000000000002c56        0xc .build/obj_ergodox_ez_dawkiny/common/action_util.o
+                0x0000000000002c56                add_weak_mods
  .text.del_weak_mods
-                0x0000000000002c0e        0xe .build/obj_ergodox_ez_dawkiny/common/action_util.o
-                0x0000000000002c0e                del_weak_mods
+                0x0000000000002c62        0xe .build/obj_ergodox_ez_dawkiny/common/action_util.o
+                0x0000000000002c62                del_weak_mods
  .text.clear_weak_mods
-                0x0000000000002c1c        0x6 .build/obj_ergodox_ez_dawkiny/common/action_util.o
-                0x0000000000002c1c                clear_weak_mods
+                0x0000000000002c70        0x6 .build/obj_ergodox_ez_dawkiny/common/action_util.o
+                0x0000000000002c70                clear_weak_mods
  .text.add_macro_mods
-                0x0000000000002c22        0xc .build/obj_ergodox_ez_dawkiny/common/action_util.o
-                0x0000000000002c22                add_macro_mods
+                0x0000000000002c76        0xc .build/obj_ergodox_ez_dawkiny/common/action_util.o
+                0x0000000000002c76                add_macro_mods
  .text.del_macro_mods
-                0x0000000000002c2e        0xe .build/obj_ergodox_ez_dawkiny/common/action_util.o
-                0x0000000000002c2e                del_macro_mods
+                0x0000000000002c82        0xe .build/obj_ergodox_ez_dawkiny/common/action_util.o
+                0x0000000000002c82                del_macro_mods
  .text.clear_macro_mods
-                0x0000000000002c3c        0x6 .build/obj_ergodox_ez_dawkiny/common/action_util.o
-                0x0000000000002c3c                clear_macro_mods
+                0x0000000000002c90        0x6 .build/obj_ergodox_ez_dawkiny/common/action_util.o
+                0x0000000000002c90                clear_macro_mods
  .text.set_oneshot_mods
-                0x0000000000002c42        0x6 .build/obj_ergodox_ez_dawkiny/common/action_util.o
-                0x0000000000002c42                set_oneshot_mods
+                0x0000000000002c96        0x6 .build/obj_ergodox_ez_dawkiny/common/action_util.o
+                0x0000000000002c96                set_oneshot_mods
  .text.clear_oneshot_mods
-                0x0000000000002c48        0x6 .build/obj_ergodox_ez_dawkiny/common/action_util.o
-                0x0000000000002c48                clear_oneshot_mods
+                0x0000000000002c9c        0x6 .build/obj_ergodox_ez_dawkiny/common/action_util.o
+                0x0000000000002c9c                clear_oneshot_mods
  .text.has_anykey
-                0x0000000000002c4e       0x22 .build/obj_ergodox_ez_dawkiny/common/action_util.o
-                0x0000000000002c4e                has_anykey
+                0x0000000000002ca2       0x22 .build/obj_ergodox_ez_dawkiny/common/action_util.o
+                0x0000000000002ca2                has_anykey
  .text.send_keyboard_report
-                0x0000000000002c70       0x5e .build/obj_ergodox_ez_dawkiny/common/action_util.o
-                0x0000000000002c70                send_keyboard_report
- .text.biton32  0x0000000000002cce       0xa0 .build/obj_ergodox_ez_dawkiny/common/util.o
-                0x0000000000002cce                biton32
+                0x0000000000002cc4       0x5e .build/obj_ergodox_ez_dawkiny/common/action_util.o
+                0x0000000000002cc4                send_keyboard_report
+ .text.biton32  0x0000000000002d22       0xa0 .build/obj_ergodox_ez_dawkiny/common/util.o
+                0x0000000000002d22                biton32
  .text.eeconfig_init
-                0x0000000000002d6e       0x34 .build/obj_ergodox_ez_dawkiny/common/eeconfig.o
-                0x0000000000002d6e                eeconfig_init
+                0x0000000000002dc2       0x34 .build/obj_ergodox_ez_dawkiny/common/eeconfig.o
+                0x0000000000002dc2                eeconfig_init
  .text.eeconfig_is_enabled
-                0x0000000000002da2       0x16 .build/obj_ergodox_ez_dawkiny/common/eeconfig.o
-                0x0000000000002da2                eeconfig_is_enabled
+                0x0000000000002df6       0x16 .build/obj_ergodox_ez_dawkiny/common/eeconfig.o
+                0x0000000000002df6                eeconfig_is_enabled
  .text.eeconfig_read_debug
-                0x0000000000002db8        0x8 .build/obj_ergodox_ez_dawkiny/common/eeconfig.o
-                0x0000000000002db8                eeconfig_read_debug
+                0x0000000000002e0c        0x8 .build/obj_ergodox_ez_dawkiny/common/eeconfig.o
+                0x0000000000002e0c                eeconfig_read_debug
  .text.eeconfig_read_default_layer
-                0x0000000000002dc0        0x8 .build/obj_ergodox_ez_dawkiny/common/eeconfig.o
-                0x0000000000002dc0                eeconfig_read_default_layer
+                0x0000000000002e14        0x8 .build/obj_ergodox_ez_dawkiny/common/eeconfig.o
+                0x0000000000002e14                eeconfig_read_default_layer
  .text.eeconfig_read_keymap
-                0x0000000000002dc8        0x8 .build/obj_ergodox_ez_dawkiny/common/eeconfig.o
-                0x0000000000002dc8                eeconfig_read_keymap
+                0x0000000000002e1c        0x8 .build/obj_ergodox_ez_dawkiny/common/eeconfig.o
+                0x0000000000002e1c                eeconfig_read_keymap
  .text.eeconfig_update_keymap
-                0x0000000000002dd0        0xa .build/obj_ergodox_ez_dawkiny/common/eeconfig.o
-                0x0000000000002dd0                eeconfig_update_keymap
+                0x0000000000002e24        0xa .build/obj_ergodox_ez_dawkiny/common/eeconfig.o
+                0x0000000000002e24                eeconfig_update_keymap
  .text.suspend_power_down
-                0x0000000000002dda       0x58 .build/obj_ergodox_ez_dawkiny/common/avr/suspend.o
-                0x0000000000002dda                suspend_power_down
+                0x0000000000002e2e       0x58 .build/obj_ergodox_ez_dawkiny/common/avr/suspend.o
+                0x0000000000002e2e                suspend_power_down
  .text.matrix_power_down
-                0x0000000000002e32        0x2 .build/obj_ergodox_ez_dawkiny/common/avr/suspend.o
-                0x0000000000002e32                matrix_power_down
+                0x0000000000002e86        0x2 .build/obj_ergodox_ez_dawkiny/common/avr/suspend.o
+                0x0000000000002e86                matrix_power_down
  .text.suspend_wakeup_condition
-                0x0000000000002e34       0x28 .build/obj_ergodox_ez_dawkiny/common/avr/suspend.o
-                0x0000000000002e34                suspend_wakeup_condition
+                0x0000000000002e88       0x28 .build/obj_ergodox_ez_dawkiny/common/avr/suspend.o
+                0x0000000000002e88                suspend_wakeup_condition
  .text.suspend_wakeup_init
-                0x0000000000002e5c        0xc .build/obj_ergodox_ez_dawkiny/common/avr/suspend.o
-                0x0000000000002e5c                suspend_wakeup_init
+                0x0000000000002eb0        0xc .build/obj_ergodox_ez_dawkiny/common/avr/suspend.o
+                0x0000000000002eb0                suspend_wakeup_init
  .text.__vector_12
-                0x0000000000002e68       0x52 .build/obj_ergodox_ez_dawkiny/common/avr/suspend.o
-                0x0000000000002e68                __vector_12
+                0x0000000000002ebc       0x52 .build/obj_ergodox_ez_dawkiny/common/avr/suspend.o
+                0x0000000000002ebc                __vector_12
  .text.timer_init
-                0x0000000000002eba       0x12 .build/obj_ergodox_ez_dawkiny/common/avr/timer.o
-                0x0000000000002eba                timer_init
+                0x0000000000002f0e       0x12 .build/obj_ergodox_ez_dawkiny/common/avr/timer.o
+                0x0000000000002f0e                timer_init
  .text.timer_read
-                0x0000000000002ecc       0x18 .build/obj_ergodox_ez_dawkiny/common/avr/timer.o
-                0x0000000000002ecc                timer_read
+                0x0000000000002f20       0x18 .build/obj_ergodox_ez_dawkiny/common/avr/timer.o
+                0x0000000000002f20                timer_read
  .text.timer_elapsed
-                0x0000000000002ee4       0x54 .build/obj_ergodox_ez_dawkiny/common/avr/timer.o
-                0x0000000000002ee4                timer_elapsed
+                0x0000000000002f38       0x54 .build/obj_ergodox_ez_dawkiny/common/avr/timer.o
+                0x0000000000002f38                timer_elapsed
  .text.__vector_21
-                0x0000000000002f38       0x4a .build/obj_ergodox_ez_dawkiny/common/avr/timer.o
-                0x0000000000002f38                __vector_21
+                0x0000000000002f8c       0x4a .build/obj_ergodox_ez_dawkiny/common/avr/timer.o
+                0x0000000000002f8c                __vector_21
  .text.bootloader_jump
-                0x0000000000002f82       0x44 .build/obj_ergodox_ez_dawkiny/common/avr/bootloader.o
-                0x0000000000002f82                bootloader_jump
- .text.magic    0x0000000000002fc6       0x32 .build/obj_ergodox_ez_dawkiny/common/magic.o
-                0x0000000000002fc6                magic
+                0x0000000000002fd6       0x44 .build/obj_ergodox_ez_dawkiny/common/avr/bootloader.o
+                0x0000000000002fd6                bootloader_jump
+ .text.magic    0x000000000000301a       0x32 .build/obj_ergodox_ez_dawkiny/common/magic.o
+                0x000000000000301a                magic
  .text.move_unit
-                0x0000000000002ff8       0x92 .build/obj_ergodox_ez_dawkiny/common/mousekey.o
+                0x000000000000304c       0x92 .build/obj_ergodox_ez_dawkiny/common/mousekey.o
  .text.wheel_unit
-                0x000000000000308a       0x72 .build/obj_ergodox_ez_dawkiny/common/mousekey.o
+                0x00000000000030de       0x72 .build/obj_ergodox_ez_dawkiny/common/mousekey.o
  .text.mousekey_on
-                0x00000000000030fc       0xd0 .build/obj_ergodox_ez_dawkiny/common/mousekey.o
-                0x00000000000030fc                mousekey_on
+                0x0000000000003150       0xd0 .build/obj_ergodox_ez_dawkiny/common/mousekey.o
+                0x0000000000003150                mousekey_on
  .text.mousekey_off
-                0x00000000000031cc      0x10a .build/obj_ergodox_ez_dawkiny/common/mousekey.o
-                0x00000000000031cc                mousekey_off
+                0x0000000000003220      0x10a .build/obj_ergodox_ez_dawkiny/common/mousekey.o
+                0x0000000000003220                mousekey_off
  .text.mousekey_send
-                0x00000000000032d6       0x16 .build/obj_ergodox_ez_dawkiny/common/mousekey.o
-                0x00000000000032d6                mousekey_send
+                0x000000000000332a       0x16 .build/obj_ergodox_ez_dawkiny/common/mousekey.o
+                0x000000000000332a                mousekey_send
  .text.mousekey_task
-                0x00000000000032ec      0x14a .build/obj_ergodox_ez_dawkiny/common/mousekey.o
-                0x00000000000032ec                mousekey_task
+                0x0000000000003340      0x14a .build/obj_ergodox_ez_dawkiny/common/mousekey.o
+                0x0000000000003340                mousekey_task
  .text.mousekey_clear
-                0x0000000000003436       0x18 .build/obj_ergodox_ez_dawkiny/common/mousekey.o
-                0x0000000000003436                mousekey_clear
+                0x000000000000348a       0x18 .build/obj_ergodox_ez_dawkiny/common/mousekey.o
+                0x000000000000348a                mousekey_clear
  .text.mousekey_param_inc
-                0x000000000000344e       0xec .build/obj_ergodox_ez_dawkiny/common/command.o
+                0x00000000000034a2       0xec .build/obj_ergodox_ez_dawkiny/common/command.o
  .text.mousekey_param_dec
-                0x000000000000353a       0xa0 .build/obj_ergodox_ez_dawkiny/common/command.o
+                0x000000000000358e       0xa0 .build/obj_ergodox_ez_dawkiny/common/command.o
  .text.command_common
-                0x00000000000035da      0x178 .build/obj_ergodox_ez_dawkiny/common/command.o
+                0x000000000000362e      0x178 .build/obj_ergodox_ez_dawkiny/common/command.o
  .text.command_extra
-                0x0000000000003752        0x4 .build/obj_ergodox_ez_dawkiny/common/command.o
-                0x0000000000003752                command_extra
+                0x00000000000037a6        0x4 .build/obj_ergodox_ez_dawkiny/common/command.o
+                0x00000000000037a6                command_extra
  .text.command_console_extra
-                0x0000000000003756        0x4 .build/obj_ergodox_ez_dawkiny/common/command.o
-                0x0000000000003756                command_console_extra
+                0x00000000000037aa        0x4 .build/obj_ergodox_ez_dawkiny/common/command.o
+                0x00000000000037aa                command_console_extra
  .text.numkey2num
-                0x000000000000375a       0x16 .build/obj_ergodox_ez_dawkiny/common/command.o
-                0x000000000000375a                numkey2num
+                0x00000000000037ae       0x16 .build/obj_ergodox_ez_dawkiny/common/command.o
+                0x00000000000037ae                numkey2num
  .text.command_proc
-                0x0000000000003770      0x134 .build/obj_ergodox_ez_dawkiny/common/command.o
-                0x0000000000003770                command_proc
+                0x00000000000037c4      0x134 .build/obj_ergodox_ez_dawkiny/common/command.o
+                0x00000000000037c4                command_proc
  .text.keyboard_leds
-                0x00000000000038a4        0x6 .build/obj_ergodox_ez_dawkiny/lufa.o
+                0x00000000000038f8        0x6 .build/obj_ergodox_ez_dawkiny/lufa.o
  .text.send_consumer
-                0x00000000000038aa       0x68 .build/obj_ergodox_ez_dawkiny/lufa.o
+                0x00000000000038fe       0x68 .build/obj_ergodox_ez_dawkiny/lufa.o
  .text.send_system
-                0x0000000000003912       0x68 .build/obj_ergodox_ez_dawkiny/lufa.o
+                0x0000000000003966       0x68 .build/obj_ergodox_ez_dawkiny/lufa.o
  .text.send_mouse
-                0x000000000000397a       0x46 .build/obj_ergodox_ez_dawkiny/lufa.o
+                0x00000000000039ce       0x46 .build/obj_ergodox_ez_dawkiny/lufa.o
  .text.send_keyboard
-                0x00000000000039c0       0xa2 .build/obj_ergodox_ez_dawkiny/lufa.o
+                0x0000000000003a14       0xa2 .build/obj_ergodox_ez_dawkiny/lufa.o
  .text.EVENT_USB_Device_Connect
-                0x0000000000003a62       0x1c .build/obj_ergodox_ez_dawkiny/lufa.o
-                0x0000000000003a62                EVENT_USB_Device_Connect
+                0x0000000000003ab6       0x1c .build/obj_ergodox_ez_dawkiny/lufa.o
+                0x0000000000003ab6                EVENT_USB_Device_Connect
  .text.EVENT_USB_Device_Disconnect
-                0x0000000000003a7e        0x6 .build/obj_ergodox_ez_dawkiny/lufa.o
-                0x0000000000003a7e                EVENT_USB_Device_Disconnect
+                0x0000000000003ad2        0x6 .build/obj_ergodox_ez_dawkiny/lufa.o
+                0x0000000000003ad2                EVENT_USB_Device_Disconnect
  .text.EVENT_USB_Device_Reset
-                0x0000000000003a84        0x2 .build/obj_ergodox_ez_dawkiny/lufa.o
-                0x0000000000003a84                EVENT_USB_Device_Reset
+                0x0000000000003ad8        0x2 .build/obj_ergodox_ez_dawkiny/lufa.o
+                0x0000000000003ad8                EVENT_USB_Device_Reset
  .text.EVENT_USB_Device_Suspend
-                0x0000000000003a86        0x2 .build/obj_ergodox_ez_dawkiny/lufa.o
-                0x0000000000003a86                EVENT_USB_Device_Suspend
+                0x0000000000003ada        0x2 .build/obj_ergodox_ez_dawkiny/lufa.o
+                0x0000000000003ada                EVENT_USB_Device_Suspend
  .text.EVENT_USB_Device_WakeUp
-                0x0000000000003a88        0x4 .build/obj_ergodox_ez_dawkiny/lufa.o
-                0x0000000000003a88                EVENT_USB_Device_WakeUp
+                0x0000000000003adc        0x4 .build/obj_ergodox_ez_dawkiny/lufa.o
+                0x0000000000003adc                EVENT_USB_Device_WakeUp
  .text.EVENT_USB_Device_ConfigurationChanged
-                0x0000000000003a8c       0x28 .build/obj_ergodox_ez_dawkiny/lufa.o
-                0x0000000000003a8c                EVENT_USB_Device_ConfigurationChanged
+                0x0000000000003ae0       0x28 .build/obj_ergodox_ez_dawkiny/lufa.o
+                0x0000000000003ae0                EVENT_USB_Device_ConfigurationChanged
  .text.EVENT_USB_Device_ControlRequest
-                0x0000000000003ab4      0x164 .build/obj_ergodox_ez_dawkiny/lufa.o
-                0x0000000000003ab4                EVENT_USB_Device_ControlRequest
+                0x0000000000003b08      0x164 .build/obj_ergodox_ez_dawkiny/lufa.o
+                0x0000000000003b08                EVENT_USB_Device_ControlRequest
  .text.startup.main
-                0x0000000000003c18       0x76 .build/obj_ergodox_ez_dawkiny/lufa.o
-                0x0000000000003c18                main
+                0x0000000000003c6c       0x76 .build/obj_ergodox_ez_dawkiny/lufa.o
+                0x0000000000003c6c                main
  .text.CALLBACK_USB_GetDescriptor
-                0x0000000000003c8e       0xb0 .build/obj_ergodox_ez_dawkiny/descriptor.o
-                0x0000000000003c8e                CALLBACK_USB_GetDescriptor
+                0x0000000000003ce2       0xb0 .build/obj_ergodox_ez_dawkiny/descriptor.o
+                0x0000000000003ce2                CALLBACK_USB_GetDescriptor
  .text.USB_Device_SendRemoteWakeup
-                0x0000000000003d3e       0x2c .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.o
-                0x0000000000003d3e                USB_Device_SendRemoteWakeup
+                0x0000000000003d92       0x2c .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.o
+                0x0000000000003d92                USB_Device_SendRemoteWakeup
  .text.Endpoint_Write_Stream_LE
-                0x0000000000003d6a       0x96 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
-                0x0000000000003d6a                Endpoint_Write_Stream_LE
+                0x0000000000003dbe       0x96 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
+                0x0000000000003dbe                Endpoint_Write_Stream_LE
  .text.Endpoint_Write_Control_Stream_LE
-                0x0000000000003e00       0xc6 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
-                0x0000000000003e00                Endpoint_Write_Control_Stream_LE
+                0x0000000000003e54       0xc6 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
+                0x0000000000003e54                Endpoint_Write_Control_Stream_LE
  .text.Endpoint_Write_Control_PStream_LE
-                0x0000000000003ec6       0xc2 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
-                0x0000000000003ec6                Endpoint_Write_Control_PStream_LE
+                0x0000000000003f1a       0xc2 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
+                0x0000000000003f1a                Endpoint_Write_Control_PStream_LE
  .text.Endpoint_ConfigureEndpoint_Prv
-                0x0000000000003f88       0x6a .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
-                0x0000000000003f88                Endpoint_ConfigureEndpoint_Prv
+                0x0000000000003fdc       0x6a .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
+                0x0000000000003fdc                Endpoint_ConfigureEndpoint_Prv
  .text.Endpoint_ClearStatusStage
-                0x0000000000003ff2       0x3e .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
-                0x0000000000003ff2                Endpoint_ClearStatusStage
+                0x0000000000004046       0x3e .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
+                0x0000000000004046                Endpoint_ClearStatusStage
  .text.Endpoint_WaitUntilReady
-                0x0000000000004030       0x64 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
-                0x0000000000004030                Endpoint_WaitUntilReady
+                0x0000000000004084       0x64 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
+                0x0000000000004084                Endpoint_WaitUntilReady
  .text.USB_Disable
-                0x0000000000004094       0x34 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
-                0x0000000000004094                USB_Disable
+                0x00000000000040e8       0x34 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
+                0x00000000000040e8                USB_Disable
  .text.USB_ResetInterface
-                0x00000000000040c8       0x86 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
-                0x00000000000040c8                USB_ResetInterface
+                0x000000000000411c       0x86 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
+                0x000000000000411c                USB_ResetInterface
  .text.USB_Init
-                0x000000000000414e       0x22 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
-                0x000000000000414e                USB_Init
+                0x00000000000041a2       0x22 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
+                0x00000000000041a2                USB_Init
  .text.USB_INT_DisableAllInterrupts
-                0x0000000000004170       0x10 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
-                0x0000000000004170                USB_INT_DisableAllInterrupts
+                0x00000000000041c4       0x10 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+                0x00000000000041c4                USB_INT_DisableAllInterrupts
  .text.USB_INT_ClearAllInterrupts
-                0x0000000000004180        0xa .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
-                0x0000000000004180                USB_INT_ClearAllInterrupts
+                0x00000000000041d4        0xa .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+                0x00000000000041d4                USB_INT_ClearAllInterrupts
  .text.__vector_10
-                0x000000000000418a      0x1a4 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
-                0x000000000000418a                __vector_10
+                0x00000000000041de      0x1a4 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+                0x00000000000041de                __vector_10
  .text.__vector_11
-                0x000000000000432e       0x88 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
-                0x000000000000432e                __vector_11
+                0x0000000000004382       0x88 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+                0x0000000000004382                __vector_11
  .text.USB_Device_ProcessControlRequest
-                0x00000000000043b6      0x2a2 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.o
-                0x00000000000043b6                USB_Device_ProcessControlRequest
+                0x000000000000440a      0x2a2 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.o
+                0x000000000000440a                USB_Device_ProcessControlRequest
  .text.USB_Event_Stub
-                0x0000000000004658        0x2 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.o
-                0x0000000000004658                USB_Event_Stub
-                0x0000000000004658                EVENT_USB_Device_StartOfFrame
+                0x00000000000046ac        0x2 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.o
+                0x00000000000046ac                USB_Event_Stub
+                0x00000000000046ac                EVENT_USB_Device_StartOfFrame
  .text.USB_USBTask
-                0x000000000000465a       0x36 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
-                0x000000000000465a                USB_USBTask
+                0x00000000000046ae       0x36 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
+                0x00000000000046ae                USB_USBTask
  .text.avr-libc.fplib
-                0x0000000000004690        0xe /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libm.a(fixsfsi.o)
-                0x0000000000004690                __fixsfsi
+                0x00000000000046e4        0xe /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libm.a(fixsfsi.o)
+                0x00000000000046e4                __fixsfsi
  .text.avr-libc.fplib
-                0x000000000000469e       0x5e /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libm.a(fixunssfsi.o)
-                0x000000000000469e                __fixunssfsi
+                0x00000000000046f2       0x5e /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libm.a(fixunssfsi.o)
+                0x00000000000046f2                __fixunssfsi
  .text.avr-libc.fplib
-                0x00000000000046fc       0x7a /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libm.a(floatsisf.o)
-                0x00000000000046fc                __floatunsisf
-                0x0000000000004700                __floatsisf
+                0x0000000000004750       0x7a /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libm.a(floatsisf.o)
+                0x0000000000004750                __floatunsisf
+                0x0000000000004754                __floatsisf
  .text.avr-libc.fplib
-                0x0000000000004776       0x44 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libm.a(fp_split3.o)
-                0x0000000000004776                __fp_split3
-                0x0000000000004786                __fp_splitA
+                0x00000000000047ca       0x44 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libm.a(fp_split3.o)
+                0x00000000000047ca                __fp_split3
+                0x00000000000047da                __fp_splitA
  .text.avr-libc.fplib
-                0x00000000000047ba        0xe /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libm.a(fp_zero.o)
-                0x00000000000047ba                __fp_zero
-                0x00000000000047bc                __fp_szero
+                0x000000000000480e        0xe /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libm.a(fp_zero.o)
+                0x000000000000480e                __fp_zero
+                0x0000000000004810                __fp_szero
  .text.avr-libc.fplib
-                0x00000000000047c8        0x8 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libm.a(mulsf3.o)
-                0x00000000000047c8                __mulsf3
+                0x000000000000481c        0x8 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libm.a(mulsf3.o)
+                0x000000000000481c                __mulsf3
  .text.avr-libc.fplib
-                0x00000000000047d0       0xd2 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libm.a(mulsf3x.o)
-                0x00000000000047ee                __mulsf3x
-                0x00000000000047f4                __mulsf3_pse
+                0x0000000000004824       0xd2 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libm.a(mulsf3x.o)
+                0x0000000000004842                __mulsf3x
+                0x0000000000004848                __mulsf3_pse
  .text.avr-libc.fplib
-                0x00000000000048a2        0xc /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libm.a(fp_inf.o)
-                0x00000000000048a2                __fp_inf
+                0x00000000000048f6        0xc /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libm.a(fp_inf.o)
+                0x00000000000048f6                __fp_inf
  .text.avr-libc.fplib
-                0x00000000000048ae        0x6 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libm.a(fp_nan.o)
-                0x00000000000048ae                __fp_nan
+                0x0000000000004902        0x6 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libm.a(fp_nan.o)
+                0x0000000000004902                __fp_nan
  .text.avr-libc.fplib
-                0x00000000000048b4        0xe /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libm.a(fp_pscA.o)
-                0x00000000000048b4                __fp_pscA
+                0x0000000000004908        0xe /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libm.a(fp_pscA.o)
+                0x0000000000004908                __fp_pscA
  .text.avr-libc.fplib
-                0x00000000000048c2        0xe /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libm.a(fp_pscB.o)
-                0x00000000000048c2                __fp_pscB
+                0x0000000000004916        0xe /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libm.a(fp_pscB.o)
+                0x0000000000004916                __fp_pscB
  .text.avr-libc.fplib
-                0x00000000000048d0       0x22 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libm.a(fp_round.o)
-                0x00000000000048d0                __fp_round
+                0x0000000000004924       0x22 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libm.a(fp_round.o)
+                0x0000000000004924                __fp_round
  .text.libgcc.div
-                0x00000000000048f2       0x28 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_divmodhi4.o)
-                0x00000000000048f2                __divmodhi4
-                0x00000000000048f2                _div
- .text.libgcc   0x000000000000491a        0xc /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_tablejump2.o)
-                0x000000000000491a                __tablejump2__
+                0x0000000000004946       0x28 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_divmodhi4.o)
+                0x0000000000004946                __divmodhi4
+                0x0000000000004946                _div
+ .text.libgcc   0x000000000000496e        0xc /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_tablejump2.o)
+                0x000000000000496e                __tablejump2__
  .text.libgcc.div
-                0x0000000000004926       0x28 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_udivmodhi4.o)
-                0x0000000000004926                __udivmodhi4
+                0x000000000000497a       0x28 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_udivmodhi4.o)
+                0x000000000000497a                __udivmodhi4
  .text.avr-libc
-                0x000000000000494e       0x10 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libatmega32u4.a(eerd_byte.o)
-                0x000000000000494e                eeprom_read_byte
+                0x00000000000049a2       0x10 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libatmega32u4.a(eerd_byte.o)
+                0x00000000000049a2                eeprom_read_byte
  .text.avr-libc
-                0x000000000000495e        0xc /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libatmega32u4.a(eerd_word.o)
-                0x000000000000495e                eeprom_read_word
+                0x00000000000049b2        0xc /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libatmega32u4.a(eerd_word.o)
+                0x00000000000049b2                eeprom_read_word
  .text.avr-libc
-                0x000000000000496a       0x24 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libatmega32u4.a(eeupd_byte.o)
-                0x000000000000496a                eeprom_update_byte
-                0x000000000000496c                eeprom_update_r18
+                0x00000000000049be       0x24 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libatmega32u4.a(eeupd_byte.o)
+                0x00000000000049be                eeprom_update_byte
+                0x00000000000049c0                eeprom_update_r18
  .text.avr-libc
-                0x000000000000498e        0xc /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libatmega32u4.a(eeupd_word.o)
-                0x000000000000498e                eeprom_update_word
+                0x00000000000049e2        0xc /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libatmega32u4.a(eeupd_word.o)
+                0x00000000000049e2                eeprom_update_word
  .text.avr-libc
-                0x000000000000499a       0x20 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libatmega32u4.a(eerd_block.o)
-                0x000000000000499a                eeprom_read_block
-                0x000000000000499e                eeprom_read_blraw
-                0x00000000000049ba                . = ALIGN (0x2)
+                0x00000000000049ee       0x20 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libatmega32u4.a(eerd_block.o)
+                0x00000000000049ee                eeprom_read_block
+                0x00000000000049f2                eeprom_read_blraw
+                0x0000000000004a0e                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000000000049ba        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_exit.o)
-                0x00000000000049ba                exit
-                0x00000000000049ba                _exit
+ .fini9         0x0000000000004a0e        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_exit.o)
+                0x0000000000004a0e                exit
+                0x0000000000004a0e                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -1474,11 +1476,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000000000049ba        0x4 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_exit.o)
+ .fini0         0x0000000000004a0e        0x4 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_exit.o)
  *(.fini0)
-                0x00000000000049be                _etext = .
+                0x0000000000004a12                _etext = .
 
-.data           0x0000000000800100       0xdc load address 0x00000000000049be
+.data           0x0000000000800100       0xdc load address 0x0000000000004a12
                 0x0000000000800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -1640,8 +1642,8 @@ END GROUP
                 0x00000000008002cd                USB_DeviceState
                 0x00000000008002ce                USB_ControlRequest
                 0x00000000008002d6                PROVIDE (__bss_end, .)
-                0x00000000000049be                __data_load_start = LOADADDR (.data)
-                0x0000000000004a9a                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x0000000000004a12                __data_load_start = LOADADDR (.data)
+                0x0000000000004aee                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00000000008002d6        0x4
                 0x00000000008002d6                PROVIDE (__noinit_start, .)
@@ -1828,122 +1830,122 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000    0x11c79
+.debug_info     0x0000000000000000    0x11c7e
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x1be .build/obj_ergodox_ez_dawkiny/twimaster.o
  .debug_info    0x00000000000001be      0x6de .build/obj_ergodox_ez_dawkiny/matrix.o
  .debug_info    0x000000000000089c       0xe5 .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ergodox.o
- .debug_info    0x0000000000000981      0xe1f .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/keymaps/dawkiny/keymap.o
- .debug_info    0x00000000000017a0     0x1505 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
- .debug_info    0x0000000000002ca5     0x121d .build/obj_ergodox_ez_dawkiny/quantum/keymap_common.o
- .debug_info    0x0000000000003ec2      0x5ec .build/obj_ergodox_ez_dawkiny/quantum/keycode_config.o
- .debug_info    0x00000000000044ae      0x5d2 .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_leader.o
- .debug_info    0x0000000000004a80      0x5d2 .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/ez.o
- .debug_info    0x0000000000005052      0xc9b .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_unicode.o
- .debug_info    0x0000000000005ced      0x4a9 .build/obj_ergodox_ez_dawkiny/common/host.o
- .debug_info    0x0000000000006196      0x435 .build/obj_ergodox_ez_dawkiny/common/keyboard.o
- .debug_info    0x00000000000065cb     0x1a19 .build/obj_ergodox_ez_dawkiny/common/action.o
- .debug_info    0x0000000000007fe4      0xe54 .build/obj_ergodox_ez_dawkiny/common/action_tapping.o
- .debug_info    0x0000000000008e38      0x83e .build/obj_ergodox_ez_dawkiny/common/action_macro.o
- .debug_info    0x0000000000009676      0x8ef .build/obj_ergodox_ez_dawkiny/common/action_layer.o
- .debug_info    0x0000000000009f65      0x9a2 .build/obj_ergodox_ez_dawkiny/common/action_util.o
- .debug_info    0x000000000000a907       0xfc .build/obj_ergodox_ez_dawkiny/common/debug.o
- .debug_info    0x000000000000aa03      0x29b .build/obj_ergodox_ez_dawkiny/common/util.o
- .debug_info    0x000000000000ac9e      0x3cb .build/obj_ergodox_ez_dawkiny/common/eeconfig.o
- .debug_info    0x000000000000b069      0x2fc .build/obj_ergodox_ez_dawkiny/common/avr/suspend.o
- .debug_info    0x000000000000b365      0x204 .build/obj_ergodox_ez_dawkiny/common/avr/timer.o
- .debug_info    0x000000000000b569      0x204 .build/obj_ergodox_ez_dawkiny/common/avr/bootloader.o
- .debug_info    0x000000000000b76d      0x2b3 .build/obj_ergodox_ez_dawkiny/common/magic.o
- .debug_info    0x000000000000ba20      0x63f .build/obj_ergodox_ez_dawkiny/common/mousekey.o
- .debug_info    0x000000000000c05f      0xb3e .build/obj_ergodox_ez_dawkiny/common/command.o
- .debug_info    0x000000000000cb9d     0x109a .build/obj_ergodox_ez_dawkiny/lufa.o
- .debug_info    0x000000000000dc37      0x7b9 .build/obj_ergodox_ez_dawkiny/descriptor.o
- .debug_info    0x000000000000e3f0       0xd2 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.o
- .debug_info    0x000000000000e4c2     0x17d6 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
- .debug_info    0x000000000000fc98      0x614 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
- .debug_info    0x00000000000102ac      0x4cb .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
- .debug_info    0x0000000000010777      0x7c8 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
- .debug_info    0x0000000000010f3f      0xa57 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.o
- .debug_info    0x0000000000011996       0x78 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.o
- .debug_info    0x0000000000011a0e      0x26b .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
+ .debug_info    0x0000000000000981      0xe24 .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/keymaps/dawkiny/keymap.o
+ .debug_info    0x00000000000017a5     0x1505 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
+ .debug_info    0x0000000000002caa     0x121d .build/obj_ergodox_ez_dawkiny/quantum/keymap_common.o
+ .debug_info    0x0000000000003ec7      0x5ec .build/obj_ergodox_ez_dawkiny/quantum/keycode_config.o
+ .debug_info    0x00000000000044b3      0x5d2 .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_leader.o
+ .debug_info    0x0000000000004a85      0x5d2 .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/ez.o
+ .debug_info    0x0000000000005057      0xc9b .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_unicode.o
+ .debug_info    0x0000000000005cf2      0x4a9 .build/obj_ergodox_ez_dawkiny/common/host.o
+ .debug_info    0x000000000000619b      0x435 .build/obj_ergodox_ez_dawkiny/common/keyboard.o
+ .debug_info    0x00000000000065d0     0x1a19 .build/obj_ergodox_ez_dawkiny/common/action.o
+ .debug_info    0x0000000000007fe9      0xe54 .build/obj_ergodox_ez_dawkiny/common/action_tapping.o
+ .debug_info    0x0000000000008e3d      0x83e .build/obj_ergodox_ez_dawkiny/common/action_macro.o
+ .debug_info    0x000000000000967b      0x8ef .build/obj_ergodox_ez_dawkiny/common/action_layer.o
+ .debug_info    0x0000000000009f6a      0x9a2 .build/obj_ergodox_ez_dawkiny/common/action_util.o
+ .debug_info    0x000000000000a90c       0xfc .build/obj_ergodox_ez_dawkiny/common/debug.o
+ .debug_info    0x000000000000aa08      0x29b .build/obj_ergodox_ez_dawkiny/common/util.o
+ .debug_info    0x000000000000aca3      0x3cb .build/obj_ergodox_ez_dawkiny/common/eeconfig.o
+ .debug_info    0x000000000000b06e      0x2fc .build/obj_ergodox_ez_dawkiny/common/avr/suspend.o
+ .debug_info    0x000000000000b36a      0x204 .build/obj_ergodox_ez_dawkiny/common/avr/timer.o
+ .debug_info    0x000000000000b56e      0x204 .build/obj_ergodox_ez_dawkiny/common/avr/bootloader.o
+ .debug_info    0x000000000000b772      0x2b3 .build/obj_ergodox_ez_dawkiny/common/magic.o
+ .debug_info    0x000000000000ba25      0x63f .build/obj_ergodox_ez_dawkiny/common/mousekey.o
+ .debug_info    0x000000000000c064      0xb3e .build/obj_ergodox_ez_dawkiny/common/command.o
+ .debug_info    0x000000000000cba2     0x109a .build/obj_ergodox_ez_dawkiny/lufa.o
+ .debug_info    0x000000000000dc3c      0x7b9 .build/obj_ergodox_ez_dawkiny/descriptor.o
+ .debug_info    0x000000000000e3f5       0xd2 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.o
+ .debug_info    0x000000000000e4c7     0x17d6 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
+ .debug_info    0x000000000000fc9d      0x614 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
+ .debug_info    0x00000000000102b1      0x4cb .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
+ .debug_info    0x000000000001077c      0x7c8 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+ .debug_info    0x0000000000010f44      0xa57 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.o
+ .debug_info    0x000000000001199b       0x78 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.o
+ .debug_info    0x0000000000011a13      0x26b .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
 
-.debug_abbrev   0x0000000000000000     0x42e9
+.debug_abbrev   0x0000000000000000     0x42fa
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000       0xe8 .build/obj_ergodox_ez_dawkiny/twimaster.o
  .debug_abbrev  0x00000000000000e8      0x2ef .build/obj_ergodox_ez_dawkiny/matrix.o
  .debug_abbrev  0x00000000000003d7       0x91 .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ergodox.o
- .debug_abbrev  0x0000000000000468      0x1be .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/keymaps/dawkiny/keymap.o
- .debug_abbrev  0x0000000000000626      0x3b7 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
- .debug_abbrev  0x00000000000009dd      0x299 .build/obj_ergodox_ez_dawkiny/quantum/keymap_common.o
- .debug_abbrev  0x0000000000000c76       0xd0 .build/obj_ergodox_ez_dawkiny/quantum/keycode_config.o
- .debug_abbrev  0x0000000000000d46      0x150 .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_leader.o
- .debug_abbrev  0x0000000000000e96      0x1ce .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/ez.o
- .debug_abbrev  0x0000000000001064      0x260 .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_unicode.o
- .debug_abbrev  0x00000000000012c4      0x183 .build/obj_ergodox_ez_dawkiny/common/host.o
- .debug_abbrev  0x0000000000001447      0x23d .build/obj_ergodox_ez_dawkiny/common/keyboard.o
- .debug_abbrev  0x0000000000001684      0x372 .build/obj_ergodox_ez_dawkiny/common/action.o
- .debug_abbrev  0x00000000000019f6      0x2d7 .build/obj_ergodox_ez_dawkiny/common/action_tapping.o
- .debug_abbrev  0x0000000000001ccd      0x192 .build/obj_ergodox_ez_dawkiny/common/action_macro.o
- .debug_abbrev  0x0000000000001e5f      0x243 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
- .debug_abbrev  0x00000000000020a2      0x30e .build/obj_ergodox_ez_dawkiny/common/action_util.o
- .debug_abbrev  0x00000000000023b0       0x87 .build/obj_ergodox_ez_dawkiny/common/debug.o
- .debug_abbrev  0x0000000000002437       0xcb .build/obj_ergodox_ez_dawkiny/common/util.o
- .debug_abbrev  0x0000000000002502       0xef .build/obj_ergodox_ez_dawkiny/common/eeconfig.o
- .debug_abbrev  0x00000000000025f1      0x204 .build/obj_ergodox_ez_dawkiny/common/avr/suspend.o
- .debug_abbrev  0x00000000000027f5      0x11e .build/obj_ergodox_ez_dawkiny/common/avr/timer.o
- .debug_abbrev  0x0000000000002913      0x15c .build/obj_ergodox_ez_dawkiny/common/avr/bootloader.o
- .debug_abbrev  0x0000000000002a6f      0x123 .build/obj_ergodox_ez_dawkiny/common/magic.o
- .debug_abbrev  0x0000000000002b92      0x1e9 .build/obj_ergodox_ez_dawkiny/common/mousekey.o
- .debug_abbrev  0x0000000000002d7b      0x2d6 .build/obj_ergodox_ez_dawkiny/common/command.o
- .debug_abbrev  0x0000000000003051      0x441 .build/obj_ergodox_ez_dawkiny/lufa.o
- .debug_abbrev  0x0000000000003492      0x177 .build/obj_ergodox_ez_dawkiny/descriptor.o
- .debug_abbrev  0x0000000000003609       0x80 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.o
- .debug_abbrev  0x0000000000003689      0x204 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
- .debug_abbrev  0x000000000000388d      0x213 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
- .debug_abbrev  0x0000000000003aa0      0x196 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
- .debug_abbrev  0x0000000000003c36      0x23e .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
- .debug_abbrev  0x0000000000003e74      0x2c9 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.o
- .debug_abbrev  0x000000000000413d       0x44 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.o
- .debug_abbrev  0x0000000000004181      0x168 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
+ .debug_abbrev  0x0000000000000468      0x1cf .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/keymaps/dawkiny/keymap.o
+ .debug_abbrev  0x0000000000000637      0x3b7 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
+ .debug_abbrev  0x00000000000009ee      0x299 .build/obj_ergodox_ez_dawkiny/quantum/keymap_common.o
+ .debug_abbrev  0x0000000000000c87       0xd0 .build/obj_ergodox_ez_dawkiny/quantum/keycode_config.o
+ .debug_abbrev  0x0000000000000d57      0x150 .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_leader.o
+ .debug_abbrev  0x0000000000000ea7      0x1ce .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/ez.o
+ .debug_abbrev  0x0000000000001075      0x260 .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_unicode.o
+ .debug_abbrev  0x00000000000012d5      0x183 .build/obj_ergodox_ez_dawkiny/common/host.o
+ .debug_abbrev  0x0000000000001458      0x23d .build/obj_ergodox_ez_dawkiny/common/keyboard.o
+ .debug_abbrev  0x0000000000001695      0x372 .build/obj_ergodox_ez_dawkiny/common/action.o
+ .debug_abbrev  0x0000000000001a07      0x2d7 .build/obj_ergodox_ez_dawkiny/common/action_tapping.o
+ .debug_abbrev  0x0000000000001cde      0x192 .build/obj_ergodox_ez_dawkiny/common/action_macro.o
+ .debug_abbrev  0x0000000000001e70      0x243 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
+ .debug_abbrev  0x00000000000020b3      0x30e .build/obj_ergodox_ez_dawkiny/common/action_util.o
+ .debug_abbrev  0x00000000000023c1       0x87 .build/obj_ergodox_ez_dawkiny/common/debug.o
+ .debug_abbrev  0x0000000000002448       0xcb .build/obj_ergodox_ez_dawkiny/common/util.o
+ .debug_abbrev  0x0000000000002513       0xef .build/obj_ergodox_ez_dawkiny/common/eeconfig.o
+ .debug_abbrev  0x0000000000002602      0x204 .build/obj_ergodox_ez_dawkiny/common/avr/suspend.o
+ .debug_abbrev  0x0000000000002806      0x11e .build/obj_ergodox_ez_dawkiny/common/avr/timer.o
+ .debug_abbrev  0x0000000000002924      0x15c .build/obj_ergodox_ez_dawkiny/common/avr/bootloader.o
+ .debug_abbrev  0x0000000000002a80      0x123 .build/obj_ergodox_ez_dawkiny/common/magic.o
+ .debug_abbrev  0x0000000000002ba3      0x1e9 .build/obj_ergodox_ez_dawkiny/common/mousekey.o
+ .debug_abbrev  0x0000000000002d8c      0x2d6 .build/obj_ergodox_ez_dawkiny/common/command.o
+ .debug_abbrev  0x0000000000003062      0x441 .build/obj_ergodox_ez_dawkiny/lufa.o
+ .debug_abbrev  0x00000000000034a3      0x177 .build/obj_ergodox_ez_dawkiny/descriptor.o
+ .debug_abbrev  0x000000000000361a       0x80 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.o
+ .debug_abbrev  0x000000000000369a      0x204 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
+ .debug_abbrev  0x000000000000389e      0x213 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
+ .debug_abbrev  0x0000000000003ab1      0x196 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
+ .debug_abbrev  0x0000000000003c47      0x23e .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+ .debug_abbrev  0x0000000000003e85      0x2c9 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.o
+ .debug_abbrev  0x000000000000414e       0x44 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.o
+ .debug_abbrev  0x0000000000004192      0x168 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
 
-.debug_line     0x0000000000000000     0x5637
+.debug_line     0x0000000000000000     0x5639
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x153 .build/obj_ergodox_ez_dawkiny/twimaster.o
  .debug_line    0x0000000000000153      0x2d2 .build/obj_ergodox_ez_dawkiny/matrix.o
  .debug_line    0x0000000000000425       0xbf .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ergodox.o
- .debug_line    0x00000000000004e4      0x1aa .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/keymaps/dawkiny/keymap.o
- .debug_line    0x000000000000068e      0x3c2 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
- .debug_line    0x0000000000000a50      0x214 .build/obj_ergodox_ez_dawkiny/quantum/keymap_common.o
- .debug_line    0x0000000000000c64       0xc1 .build/obj_ergodox_ez_dawkiny/quantum/keycode_config.o
- .debug_line    0x0000000000000d25      0x144 .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_leader.o
- .debug_line    0x0000000000000e69      0x191 .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/ez.o
- .debug_line    0x0000000000000ffa      0x1ce .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_unicode.o
- .debug_line    0x00000000000011c8      0x162 .build/obj_ergodox_ez_dawkiny/common/host.o
- .debug_line    0x000000000000132a      0x191 .build/obj_ergodox_ez_dawkiny/common/keyboard.o
- .debug_line    0x00000000000014bb      0x467 .build/obj_ergodox_ez_dawkiny/common/action.o
- .debug_line    0x0000000000001922      0x28a .build/obj_ergodox_ez_dawkiny/common/action_tapping.o
- .debug_line    0x0000000000001bac      0x153 .build/obj_ergodox_ez_dawkiny/common/action_macro.o
- .debug_line    0x0000000000001cff      0x201 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
- .debug_line    0x0000000000001f00      0x3c0 .build/obj_ergodox_ez_dawkiny/common/action_util.o
- .debug_line    0x00000000000022c0       0x63 .build/obj_ergodox_ez_dawkiny/common/debug.o
- .debug_line    0x0000000000002323      0x175 .build/obj_ergodox_ez_dawkiny/common/util.o
- .debug_line    0x0000000000002498      0x123 .build/obj_ergodox_ez_dawkiny/common/eeconfig.o
- .debug_line    0x00000000000025bb      0x1f4 .build/obj_ergodox_ez_dawkiny/common/avr/suspend.o
- .debug_line    0x00000000000027af      0x107 .build/obj_ergodox_ez_dawkiny/common/avr/timer.o
- .debug_line    0x00000000000028b6      0x197 .build/obj_ergodox_ez_dawkiny/common/avr/bootloader.o
- .debug_line    0x0000000000002a4d       0xfb .build/obj_ergodox_ez_dawkiny/common/magic.o
- .debug_line    0x0000000000002b48      0x323 .build/obj_ergodox_ez_dawkiny/common/mousekey.o
- .debug_line    0x0000000000002e6b      0x2c1 .build/obj_ergodox_ez_dawkiny/common/command.o
- .debug_line    0x000000000000312c      0x608 .build/obj_ergodox_ez_dawkiny/lufa.o
- .debug_line    0x0000000000003734      0x1bc .build/obj_ergodox_ez_dawkiny/descriptor.o
- .debug_line    0x00000000000038f0      0x120 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.o
- .debug_line    0x0000000000003a10      0xb6b .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
- .debug_line    0x000000000000457b      0x3d3 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
- .debug_line    0x000000000000494e      0x2de .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
- .debug_line    0x0000000000004c2c      0x4ae .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
- .debug_line    0x00000000000050da      0x369 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.o
- .debug_line    0x0000000000005443       0x6d .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.o
- .debug_line    0x00000000000054b0      0x187 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
+ .debug_line    0x00000000000004e4      0x1ac .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/keymaps/dawkiny/keymap.o
+ .debug_line    0x0000000000000690      0x3c2 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
+ .debug_line    0x0000000000000a52      0x214 .build/obj_ergodox_ez_dawkiny/quantum/keymap_common.o
+ .debug_line    0x0000000000000c66       0xc1 .build/obj_ergodox_ez_dawkiny/quantum/keycode_config.o
+ .debug_line    0x0000000000000d27      0x144 .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_leader.o
+ .debug_line    0x0000000000000e6b      0x191 .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/ez.o
+ .debug_line    0x0000000000000ffc      0x1ce .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_unicode.o
+ .debug_line    0x00000000000011ca      0x162 .build/obj_ergodox_ez_dawkiny/common/host.o
+ .debug_line    0x000000000000132c      0x191 .build/obj_ergodox_ez_dawkiny/common/keyboard.o
+ .debug_line    0x00000000000014bd      0x467 .build/obj_ergodox_ez_dawkiny/common/action.o
+ .debug_line    0x0000000000001924      0x28a .build/obj_ergodox_ez_dawkiny/common/action_tapping.o
+ .debug_line    0x0000000000001bae      0x153 .build/obj_ergodox_ez_dawkiny/common/action_macro.o
+ .debug_line    0x0000000000001d01      0x201 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
+ .debug_line    0x0000000000001f02      0x3c0 .build/obj_ergodox_ez_dawkiny/common/action_util.o
+ .debug_line    0x00000000000022c2       0x63 .build/obj_ergodox_ez_dawkiny/common/debug.o
+ .debug_line    0x0000000000002325      0x175 .build/obj_ergodox_ez_dawkiny/common/util.o
+ .debug_line    0x000000000000249a      0x123 .build/obj_ergodox_ez_dawkiny/common/eeconfig.o
+ .debug_line    0x00000000000025bd      0x1f4 .build/obj_ergodox_ez_dawkiny/common/avr/suspend.o
+ .debug_line    0x00000000000027b1      0x107 .build/obj_ergodox_ez_dawkiny/common/avr/timer.o
+ .debug_line    0x00000000000028b8      0x197 .build/obj_ergodox_ez_dawkiny/common/avr/bootloader.o
+ .debug_line    0x0000000000002a4f       0xfb .build/obj_ergodox_ez_dawkiny/common/magic.o
+ .debug_line    0x0000000000002b4a      0x323 .build/obj_ergodox_ez_dawkiny/common/mousekey.o
+ .debug_line    0x0000000000002e6d      0x2c1 .build/obj_ergodox_ez_dawkiny/common/command.o
+ .debug_line    0x000000000000312e      0x608 .build/obj_ergodox_ez_dawkiny/lufa.o
+ .debug_line    0x0000000000003736      0x1bc .build/obj_ergodox_ez_dawkiny/descriptor.o
+ .debug_line    0x00000000000038f2      0x120 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.o
+ .debug_line    0x0000000000003a12      0xb6b .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
+ .debug_line    0x000000000000457d      0x3d3 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
+ .debug_line    0x0000000000004950      0x2de .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
+ .debug_line    0x0000000000004c2e      0x4ae .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+ .debug_line    0x00000000000050dc      0x369 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.o
+ .debug_line    0x0000000000005445       0x6d .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.o
+ .debug_line    0x00000000000054b2      0x187 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
 
 .debug_frame    0x0000000000000000     0x1afc
  *(.debug_frame)
@@ -2057,39 +2059,39 @@ END GROUP
  .debug_str     0x0000000000004573       0x5e .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
                                         0x39a (size before relaxing)
 
-.debug_loc      0x0000000000000000     0x77b9
+.debug_loc      0x0000000000000000     0x77d9
  *(.debug_loc)
  .debug_loc     0x0000000000000000      0x109 .build/obj_ergodox_ez_dawkiny/twimaster.o
  .debug_loc     0x0000000000000109      0x350 .build/obj_ergodox_ez_dawkiny/matrix.o
- .debug_loc     0x0000000000000459       0xb8 .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/keymaps/dawkiny/keymap.o
- .debug_loc     0x0000000000000511      0x6a2 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
- .debug_loc     0x0000000000000bb3      0x43c .build/obj_ergodox_ez_dawkiny/quantum/keymap_common.o
- .debug_loc     0x0000000000000fef      0x116 .build/obj_ergodox_ez_dawkiny/quantum/keycode_config.o
- .debug_loc     0x0000000000001105       0xf2 .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_leader.o
- .debug_loc     0x00000000000011f7       0x48 .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/ez.o
- .debug_loc     0x000000000000123f      0x1a7 .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_unicode.o
- .debug_loc     0x00000000000013e6       0xd8 .build/obj_ergodox_ez_dawkiny/common/host.o
- .debug_loc     0x00000000000014be      0x18b .build/obj_ergodox_ez_dawkiny/common/keyboard.o
- .debug_loc     0x0000000000001649      0x9e5 .build/obj_ergodox_ez_dawkiny/common/action.o
- .debug_loc     0x000000000000202e      0x63e .build/obj_ergodox_ez_dawkiny/common/action_tapping.o
- .debug_loc     0x000000000000266c      0x4f9 .build/obj_ergodox_ez_dawkiny/common/action_macro.o
- .debug_loc     0x0000000000002b65      0x725 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
- .debug_loc     0x000000000000328a      0x361 .build/obj_ergodox_ez_dawkiny/common/action_util.o
- .debug_loc     0x00000000000035eb      0x524 .build/obj_ergodox_ez_dawkiny/common/util.o
- .debug_loc     0x0000000000003b0f       0x84 .build/obj_ergodox_ez_dawkiny/common/eeconfig.o
- .debug_loc     0x0000000000003b93       0xc5 .build/obj_ergodox_ez_dawkiny/common/avr/suspend.o
- .debug_loc     0x0000000000003c58      0x20a .build/obj_ergodox_ez_dawkiny/common/avr/timer.o
- .debug_loc     0x0000000000003e62       0x2a .build/obj_ergodox_ez_dawkiny/common/magic.o
- .debug_loc     0x0000000000003e8c      0x3e6 .build/obj_ergodox_ez_dawkiny/common/mousekey.o
- .debug_loc     0x0000000000004272      0x480 .build/obj_ergodox_ez_dawkiny/common/command.o
- .debug_loc     0x00000000000046f2      0x562 .build/obj_ergodox_ez_dawkiny/lufa.o
- .debug_loc     0x0000000000004c54      0x20a .build/obj_ergodox_ez_dawkiny/descriptor.o
- .debug_loc     0x0000000000004e5e     0x1ea0 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
- .debug_loc     0x0000000000006cfe      0x3df .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
- .debug_loc     0x00000000000070dd       0x49 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
- .debug_loc     0x0000000000007126      0x363 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
- .debug_loc     0x0000000000007489      0x2e7 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.o
- .debug_loc     0x0000000000007770       0x49 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
+ .debug_loc     0x0000000000000459       0xd8 .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/keymaps/dawkiny/keymap.o
+ .debug_loc     0x0000000000000531      0x6a2 .build/obj_ergodox_ez_dawkiny/quantum/quantum.o
+ .debug_loc     0x0000000000000bd3      0x43c .build/obj_ergodox_ez_dawkiny/quantum/keymap_common.o
+ .debug_loc     0x000000000000100f      0x116 .build/obj_ergodox_ez_dawkiny/quantum/keycode_config.o
+ .debug_loc     0x0000000000001125       0xf2 .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_leader.o
+ .debug_loc     0x0000000000001217       0x48 .build/obj_ergodox_ez_dawkiny/keyboards/ergodox/ez/ez.o
+ .debug_loc     0x000000000000125f      0x1a7 .build/obj_ergodox_ez_dawkiny/quantum/process_keycode/process_unicode.o
+ .debug_loc     0x0000000000001406       0xd8 .build/obj_ergodox_ez_dawkiny/common/host.o
+ .debug_loc     0x00000000000014de      0x18b .build/obj_ergodox_ez_dawkiny/common/keyboard.o
+ .debug_loc     0x0000000000001669      0x9e5 .build/obj_ergodox_ez_dawkiny/common/action.o
+ .debug_loc     0x000000000000204e      0x63e .build/obj_ergodox_ez_dawkiny/common/action_tapping.o
+ .debug_loc     0x000000000000268c      0x4f9 .build/obj_ergodox_ez_dawkiny/common/action_macro.o
+ .debug_loc     0x0000000000002b85      0x725 .build/obj_ergodox_ez_dawkiny/common/action_layer.o
+ .debug_loc     0x00000000000032aa      0x361 .build/obj_ergodox_ez_dawkiny/common/action_util.o
+ .debug_loc     0x000000000000360b      0x524 .build/obj_ergodox_ez_dawkiny/common/util.o
+ .debug_loc     0x0000000000003b2f       0x84 .build/obj_ergodox_ez_dawkiny/common/eeconfig.o
+ .debug_loc     0x0000000000003bb3       0xc5 .build/obj_ergodox_ez_dawkiny/common/avr/suspend.o
+ .debug_loc     0x0000000000003c78      0x20a .build/obj_ergodox_ez_dawkiny/common/avr/timer.o
+ .debug_loc     0x0000000000003e82       0x2a .build/obj_ergodox_ez_dawkiny/common/magic.o
+ .debug_loc     0x0000000000003eac      0x3e6 .build/obj_ergodox_ez_dawkiny/common/mousekey.o
+ .debug_loc     0x0000000000004292      0x480 .build/obj_ergodox_ez_dawkiny/common/command.o
+ .debug_loc     0x0000000000004712      0x562 .build/obj_ergodox_ez_dawkiny/lufa.o
+ .debug_loc     0x0000000000004c74      0x20a .build/obj_ergodox_ez_dawkiny/descriptor.o
+ .debug_loc     0x0000000000004e7e     0x1ea0 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
+ .debug_loc     0x0000000000006d1e      0x3df .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
+ .debug_loc     0x00000000000070fd       0x49 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
+ .debug_loc     0x0000000000007146      0x363 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+ .debug_loc     0x00000000000074a9      0x2e7 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.o
+ .debug_loc     0x0000000000007790       0x49 .build/obj_ergodox_ez_dawkiny/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
 
 .debug_macinfo
  *(.debug_macinfo)
