@@ -597,11 +597,11 @@
  213 0000 3C2D 00   		.string	"<-"
  214               		.section	.progmem.data.__c.5228,"a",@progbits
  217               	__c.5228:
- 218 0000 6572 676F 		.string	"ergodox/pydemia @ 797422-dirty"
+ 218 0000 6572 676F 		.string	"ergodox/pydemia @ 6fa4b9-dirty"
  218      646F 782F 
  218      7079 6465 
  218      6D69 6120 
- 218      4020 3739 
+ 218      4020 3666 
  219               	.global	fn_actions
  220               		.section	.progmem.data.fn_actions,"a",@progbits
  223               	fn_actions:
@@ -1045,20 +1045,20 @@
  663               		.file 12 "./tmk_core/common/util.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 keymap.c
-     /tmp/cc9Wf4yu.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/cc9Wf4yu.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/cc9Wf4yu.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/cc9Wf4yu.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/cc9Wf4yu.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/cc9Wf4yu.s:13     .text.action_get_macro:0000000000000000 action_get_macro
-     /tmp/cc9Wf4yu.s:217    .progmem.data.__c.5228:0000000000000000 __c.5228
-     /tmp/cc9Wf4yu.s:212    .progmem.data.__c.5232:0000000000000000 __c.5232
-     /tmp/cc9Wf4yu.s:207    .progmem.data.__c.5235:0000000000000000 __c.5235
-     /tmp/cc9Wf4yu.s:202    .progmem.data.__c.5238:0000000000000000 __c.5238
-     /tmp/cc9Wf4yu.s:89     .text.matrix_init_user:0000000000000000 matrix_init_user
-     /tmp/cc9Wf4yu.s:104    .text.matrix_scan_user:0000000000000000 matrix_scan_user
-     /tmp/cc9Wf4yu.s:223    .progmem.data.fn_actions:0000000000000000 fn_actions
-     /tmp/cc9Wf4yu.s:231    .progmem.data.keymaps:0000000000000000 keymaps
+     /tmp/ccthyohU.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccthyohU.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccthyohU.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccthyohU.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccthyohU.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccthyohU.s:13     .text.action_get_macro:0000000000000000 action_get_macro
+     /tmp/ccthyohU.s:217    .progmem.data.__c.5228:0000000000000000 __c.5228
+     /tmp/ccthyohU.s:212    .progmem.data.__c.5232:0000000000000000 __c.5232
+     /tmp/ccthyohU.s:207    .progmem.data.__c.5235:0000000000000000 __c.5235
+     /tmp/ccthyohU.s:202    .progmem.data.__c.5238:0000000000000000 __c.5238
+     /tmp/ccthyohU.s:89     .text.matrix_init_user:0000000000000000 matrix_init_user
+     /tmp/ccthyohU.s:104    .text.matrix_scan_user:0000000000000000 matrix_scan_user
+     /tmp/ccthyohU.s:223    .progmem.data.fn_actions:0000000000000000 fn_actions
+     /tmp/ccthyohU.s:231    .progmem.data.keymaps:0000000000000000 keymaps
 
 UNDEFINED SYMBOLS
 send_string

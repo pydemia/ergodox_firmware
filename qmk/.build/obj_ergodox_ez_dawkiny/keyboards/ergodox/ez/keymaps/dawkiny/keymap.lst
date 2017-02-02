@@ -33,7 +33,7 @@
   19:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * ┌───────┬─────┬─────┬─────┬─────
   20:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * │  Esc  │  1  │  2  │  3  │  4  │  5  │CtFn5│     │  6  │  7  │  8  │  9
   21:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * ├───────┼─────┼─────┼─────┼─────
-  22:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * │  Tab  │  Q  │  W  │  E  │  R  │  T  │  <- │     │ Ctl │  Y  │  U  │  I
+  22:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * │  Tab  │  Q  │  W  │  E  │  R  │  T  │     │     │ Ctl │  Y  │  U  │  I
   23:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * ├───────┼─────┼─────┼─────┼─────
   24:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * │   ~   │  A  │  S  │  D  │  F  │  G  ├─────┤     ├─────�
   25:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * ├───────┼─────┼─────┼─────┼─────
@@ -61,8 +61,8 @@
   47:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_LSFT,  KC_Z,          KC_X,    KC_C,         KC_V,    KC_B,  KC_FN1,
   48:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_LCTRL, LCTL(KC_LALT), KC_LGUI, KC_APP,      KC_LALT,
   49:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                         KC_LEFT, KC_RGHT,
-  50:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                                  LSFT(KC_HOME),
-  51:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                KC_SPC,  KC_BSPC, LSFT(KC_END),
+  50:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                                  KC_HOME,
+  51:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                KC_SPC,  KC_BSPC, KC_END,
   52:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         // right hand
   53:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         KC_6,                KC_7,           KC_8,     KC_9,                 KC_0,                 
   54:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****         LCTL(KC_ENT),        KC_Y,           KC_U,     KC_I,                 KC_O,                 
@@ -77,9 +77,9 @@
   63:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * ┌───────┬─────┬─────┬─────┬─────
   64:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * │  Ver  │ Fn1 │ Fn2 │ Fn3 │ Fn4 │ Fn5 │ Fn6 │     │ Fn7 │ Fn8 │ Fn9 │ F1
   65:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * ├───────┼─────┼─────┼─────┼─────
-  66:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * │       │ CAT │     │ Dfm │  [  │  ]  │  <- │     │     │  7  │  8  │  9
+  66:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * │       │ CAT │     │ Dfm │  {  │  }  │  "  │     │     │  7  │  8  │  9
   67:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * ├───────┼─────┼─────┼─────┼─────
-  68:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * │       │     │     │     │  {  │  }  ├─────┤     ├─────�
+  68:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * │       │     │     │     │  [  │  ]  ├─────┤     ├─────�
   69:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * ├───────┼─────┼─────┼─────┼─────
   70:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * │       │     │     │     │  (  │  )  │     │     │     │  1  │  2  │  3
   71:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****  * └─┬─────┼─────┼─────┼─────┼─────
@@ -96,8 +96,8 @@
   82:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c **** [NPAD] = KEYMAP(
   83:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        // left hand
   84:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        M(0),   KC_F1,  	  KC_F2,    KC_F3,   KC_F4,   KC_F5,   KC_F6,
-  85:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_TRNS, LCTL(LALT(KC_T)), KC_TRNS,  M(2),    KC_LBRC, KC_RBRC, M(1),
-  86:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_TRNS, KC_TRNS, 	  KC_TRNS,  M(3),    KC_LCBR, KC_RCBR,
+  85:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_TRNS, LCTL(LALT(KC_T)), KC_TRNS,  M(2),    KC_LCBR, KC_RCBR, KC_QUOT,//M(1),
+  86:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_TRNS, KC_TRNS, 	  KC_TRNS,  M(3),    KC_LBRC, KC_RBRC,
   87:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****        KC_TRNS, KC_TRNS, 	  KC_TRNS,  KC_TRNS, KC_LPRN, KC_RPRN, KC_TRNS,
   88:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****           EPRM, KC_TRNS, 	  KC_TRNS,  KC_TRNS, KC_TRNS,
   89:keyboards/ergodox/ez/keymaps/dawkiny/keymap.c ****                                                         KC_LEFT, KC_RGHT,
@@ -590,11 +590,11 @@
  213 0000 3C2D 00   		.string	"<-"
  214               		.section	.progmem.data.__c.5228,"a",@progbits
  217               	__c.5228:
- 218 0000 6572 676F 		.string	"ergodox/dawkiny @ 797422-dirty"
+ 218 0000 6572 676F 		.string	"ergodox/dawkiny @ 6fa4b9-dirty"
  218      646F 782F 
  218      6461 776B 
  218      696E 7920 
- 218      4020 3739 
+ 218      4020 3666 
  219               	.global	fn_actions
  220               		.section	.progmem.data.fn_actions,"a",@progbits
  223               	fn_actions:
@@ -615,7 +615,7 @@
  240 0010 0400      		.word	4
  241 0012 1D00      		.word	29
  242 0014 E201      		.word	482
- 243 0016 4D02      		.word	589
+ 243 0016 4D00      		.word	77
  244 0018 1F00      		.word	31
  245 001a 1A00      		.word	26
  246 001c 1600      		.word	22
@@ -633,7 +633,7 @@
  258 0034 0900      		.word	9
  259 0036 1900      		.word	25
  260 0038 E200      		.word	226
- 261 003a 4A02      		.word	586
+ 261 003a 4A00      		.word	74
  262 003c 2200      		.word	34
  263 003e 1700      		.word	23
  264 0040 0A00      		.word	10
@@ -713,19 +713,19 @@
  338 00d4 0100      		.word	1
  339 00d6 2800      		.word	40
  340 00d8 3D00      		.word	61
- 341 00da 2F00      		.word	47
- 342 00dc 2F02      		.word	559
+ 341 00da 2F02      		.word	559
+ 342 00dc 2F00      		.word	47
  343 00de 2602      		.word	550
  344 00e0 0100      		.word	1
  345 00e2 4A02      		.word	586
  346 00e4 3E00      		.word	62
- 347 00e6 3000      		.word	48
- 348 00e8 3002      		.word	560
+ 347 00e6 3002      		.word	560
+ 348 00e8 3000      		.word	48
  349 00ea 2702      		.word	551
  350 00ec 0000      		.word	0
  351 00ee 5000      		.word	80
  352 00f0 3F00      		.word	63
- 353 00f2 0130      		.word	12289
+ 353 00f2 3400      		.word	52
  354 00f4 0000      		.word	0
  355 00f6 0100      		.word	1
  356 00f8 0000      		.word	0
@@ -1038,20 +1038,20 @@
  663               		.file 12 "./tmk_core/common/util.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 keymap.c
-     /tmp/cc3Br0gY.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/cc3Br0gY.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/cc3Br0gY.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/cc3Br0gY.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/cc3Br0gY.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/cc3Br0gY.s:13     .text.action_get_macro:0000000000000000 action_get_macro
-     /tmp/cc3Br0gY.s:217    .progmem.data.__c.5228:0000000000000000 __c.5228
-     /tmp/cc3Br0gY.s:212    .progmem.data.__c.5232:0000000000000000 __c.5232
-     /tmp/cc3Br0gY.s:207    .progmem.data.__c.5235:0000000000000000 __c.5235
-     /tmp/cc3Br0gY.s:202    .progmem.data.__c.5238:0000000000000000 __c.5238
-     /tmp/cc3Br0gY.s:89     .text.matrix_init_user:0000000000000000 matrix_init_user
-     /tmp/cc3Br0gY.s:104    .text.matrix_scan_user:0000000000000000 matrix_scan_user
-     /tmp/cc3Br0gY.s:223    .progmem.data.fn_actions:0000000000000000 fn_actions
-     /tmp/cc3Br0gY.s:231    .progmem.data.keymaps:0000000000000000 keymaps
+     /tmp/cc2FB6NE.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cc2FB6NE.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cc2FB6NE.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cc2FB6NE.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cc2FB6NE.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cc2FB6NE.s:13     .text.action_get_macro:0000000000000000 action_get_macro
+     /tmp/cc2FB6NE.s:217    .progmem.data.__c.5228:0000000000000000 __c.5228
+     /tmp/cc2FB6NE.s:212    .progmem.data.__c.5232:0000000000000000 __c.5232
+     /tmp/cc2FB6NE.s:207    .progmem.data.__c.5235:0000000000000000 __c.5235
+     /tmp/cc2FB6NE.s:202    .progmem.data.__c.5238:0000000000000000 __c.5238
+     /tmp/cc2FB6NE.s:89     .text.matrix_init_user:0000000000000000 matrix_init_user
+     /tmp/cc2FB6NE.s:104    .text.matrix_scan_user:0000000000000000 matrix_scan_user
+     /tmp/cc2FB6NE.s:223    .progmem.data.fn_actions:0000000000000000 fn_actions
+     /tmp/cc2FB6NE.s:231    .progmem.data.keymaps:0000000000000000 keymaps
 
 UNDEFINED SYMBOLS
 send_string

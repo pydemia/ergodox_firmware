@@ -19,7 +19,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ┌───────┬─────┬─────┬─────┬─────┬─────┬─────┐     ┌─────┬─────┬─────┬─────┬─────┬─────┬───────┐
  * │  Esc  │  1  │  2  │  3  │  4  │  5  │CtFn5│     │  6  │  7  │  8  │  9  │  0  │  -  │   +   │
  * ├───────┼─────┼─────┼─────┼─────┼─────┼─────┤     ├─────┼─────┼─────┼─────┼─────┼─────┼───────┤
- * │  Tab  │  Q  │  W  │  E  │  R  │  T  │  <- │     │ Ctl │  Y  │  U  │  I  │  O  │  P  │   \   │
+ * │  Tab  │  Q  │  W  │  E  │  R  │  T  │     │     │ Ctl │  Y  │  U  │  I  │  O  │  P  │   \   │
  * ├───────┼─────┼─────┼─────┼─────┼─────┤  =  │     │ Ent ├─────┼─────┼─────┼─────┼─────┼───────┤
  * │   ~   │  A  │  S  │  D  │  F  │  G  ├─────┤     ├─────┤  H  │  J  │  K  │  L  │  ;  │   '   │
  * ├───────┼─────┼─────┼─────┼─────┼─────┤ Tg  │     │ Ctl ├─────┼─────┼─────┼─────┼─────┼───────┤
@@ -47,8 +47,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LSFT,  KC_Z,          KC_X,    KC_C,         KC_V,    KC_B,  KC_FN1,
         KC_LCTRL, LCTL(KC_LALT), KC_LGUI, KC_APP,      KC_LALT,
                                                         KC_LEFT, KC_RGHT,
-                                                                 LSFT(KC_HOME),
-                                               KC_SPC,  KC_BSPC, LSFT(KC_END),
+                                                                 KC_HOME,
+                                               KC_SPC,  KC_BSPC, KC_END,
         // right hand
         KC_6,                KC_7,           KC_8,     KC_9,                 KC_0,                 KC_MINUS,  KC_PLUS,
         LCTL(KC_ENT),        KC_Y,           KC_U,     KC_I,                 KC_O,                 KC_P,      KC_BSLS,
@@ -63,9 +63,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ┌───────┬─────┬─────┬─────┬─────┬─────┬─────┐     ┌─────┬─────┬─────┬─────┬─────┬─────┬───────┐
  * │  Ver  │ Fn1 │ Fn2 │ Fn3 │ Fn4 │ Fn5 │ Fn6 │     │ Fn7 │ Fn8 │ Fn9 │ F10 │ F11 │ F12 │       │
  * ├───────┼─────┼─────┼─────┼─────┼─────┼─────┤     ├─────┼─────┼─────┼─────┼─────┼─────┼───────┤
- * │       │ CAT │     │ Dfm │  [  │  ]  │  <- │     │     │  7  │  8  │  9  │  +  │  -  │       │
- * ├───────┼─────┼─────┼─────┼─────┼─────┤     │     │     ├─────┼─────┼─────┼─────┼─────┼───────┤
- * │       │     │     │     │  {  │  }  ├─────┤     ├─────┤  4  │  5  │  6  │  *  │  /  │       │
+ * │       │ CAT │     │ Dfm │  {  │  }  │  "  │     │     │  7  │  8  │  9  │  +  │  -  │       │
+ * ├───────┼─────┼─────┼─────┼─────┼─────┤  '  │     │     ├─────┼─────┼─────┼─────┼─────┼───────┤
+ * │       │     │     │     │  [  │  ]  ├─────┤     ├─────┤  4  │  5  │  6  │  *  │  /  │       │
  * ├───────┼─────┼─────┼─────┼─────┼─────┤     │     │     ├─────┼─────┼─────┼─────┼─────┼───────┤
  * │       │     │     │     │  (  │  )  │     │     │     │  1  │  2  │  3  │  ,  │ Up  │       │
  * └─┬─────┼─────┼─────┼─────┼─────┼─────┴─────┘     └─────┴─────┼─────┼─────┼─────┼─────┼─────┬─┘
@@ -82,8 +82,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [NPAD] = KEYMAP(
        // left hand
        M(0),   KC_F1,  	  KC_F2,    KC_F3,   KC_F4,   KC_F5,   KC_F6,
-       KC_TRNS, LCTL(LALT(KC_T)), KC_TRNS,  M(2),    KC_LBRC, KC_RBRC, M(1),
-       KC_TRNS, KC_TRNS, 	  KC_TRNS,  M(3),    KC_LCBR, KC_RCBR,
+       KC_TRNS, LCTL(LALT(KC_T)), KC_TRNS,  M(2),    KC_LCBR, KC_RCBR, KC_QUOT,//M(1),
+       KC_TRNS, KC_TRNS, 	  KC_TRNS,  M(3),    KC_LBRC, KC_RBRC,
        KC_TRNS, KC_TRNS, 	  KC_TRNS,  KC_TRNS, KC_LPRN, KC_RPRN, KC_TRNS,
           EPRM, KC_TRNS, 	  KC_TRNS,  KC_TRNS, KC_TRNS,
                                                         KC_LEFT, KC_RGHT,
