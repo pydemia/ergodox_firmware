@@ -32,6 +32,7 @@ Size after:
 ~/Git/Firmware/teensy/teensy.64bit &
 ```
 
+![console image](https://github.com/pydemia/Firmware/blob/master/make_and_teensy.png?raw=true)
 ---
 
 
