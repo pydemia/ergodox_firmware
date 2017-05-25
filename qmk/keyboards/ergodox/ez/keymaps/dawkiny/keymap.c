@@ -19,11 +19,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ┌───────┬─────┬─────┬─────┬─────┬─────┬─────┐     ┌─────┬─────┬─────┬─────┬─────┬─────┬───────┐
  * │  Esc  │  1  │  2  │  3  │  4  │  5  │CtFn5│     │  6  │  7  │  8  │  9  │  0  │  -  │   +   │
  * ├───────┼─────┼─────┼─────┼─────┼─────┼─────┤     ├─────┼─────┼─────┼─────┼─────┼─────┼───────┤
- * │  Tab  │  Q  │  W  │  E  │  R  │  T  │     │     │ Ctl │  Y  │  U  │  I  │  O  │  P  │   \   │
- * ├───────┼─────┼─────┼─────┼─────┼─────┤  =  │     │ Ent ├─────┼─────┼─────┼─────┼─────┼───────┤
+ * │  Tab  │  Q  │  W  │  E  │  R  │  T  │     │     │     │  Y  │  U  │  I  │  O  │  P  │   \   │
+ * ├───────┼─────┼─────┼─────┼─────┼─────┤  =  │     │ <-  ├─────┼─────┼─────┼─────┼─────┼───────┤
  * │   ~   │  A  │  S  │  D  │  F  │  G  ├─────┤     ├─────┤  H  │  J  │  K  │  L  │  ;  │   '   │
  * ├───────┼─────┼─────┼─────┼─────┼─────┤ Tg  │     │ Ctl ├─────┼─────┼─────┼─────┼─────┼───────┤
- * │ LSHFT │  Z  │  X  │  C  │  V  │  B  │ Npd │     │ Fn5 │  N  │  M  │  ,  │  .  │  /  │ Shift │
+ * │ LSHFT │  Z  │  X  │  C  │  V  │  B  │ Npd │     │ Ent │  N  │  M  │  ,  │  .  │  /  │ Shift │
  * └─┬─────┼─────┼─────┼─────┼─────┼─────┴─────┘     └─────┴─────┼─────┼─────┼─────┼─────┼─────┬─┘
  *   │ CTL │CtAlt│Wn/Cd│ App │ ALT │                             │ RAt │ RCl │  [  │  ]  │ TgM │
  *   └─────┴─────┴─────┴─────┴─────┘ ┌─────┬─────┐ ┌─────┬─────┐ └─────┴─────┴─────┴─────┴─────┘
@@ -51,9 +51,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                KC_SPC,  KC_BSPC, KC_END,
         // right hand
         KC_6,                KC_7,           KC_8,     KC_9,                 KC_0,                 KC_MINUS,  KC_PLUS,
-        LCTL(KC_ENT),        KC_Y,           KC_U,     KC_I,                 KC_O,                 KC_P,      KC_BSLS,
+        M(1),                KC_Y,           KC_U,     KC_I,                 KC_O,                 KC_P,      KC_BSLS,
                              KC_H,           KC_J,     KC_K,                 KC_L,                 KC_SCLN,   KC_QUOT,
-        LCTL(KC_F5),         KC_N,           KC_M,     KC_COMM,              KC_DOT,               KC_SLSH,   KC_RSFT,
+        LCTL(KC_ENT),         KC_N,           KC_M,     KC_COMM,              KC_DOT,               KC_SLSH,   KC_RSFT,
                              KC_RALT,        KC_RCTL,  KC_LBRC,              KC_RBRC,              KC_FN2,
         KC_LEFT,     KC_RGHT, 
         KC_UP,
@@ -301,6 +301,26 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
         }
         break;
         case 3:
+        if (record->event.pressed) { // For resetting EEPROM
+          SEND_STRING ( SIGN );
+        }
+        break;
+        case 4:
+        if (record->event.pressed) { // For resetting EEPROM
+          SEND_STRING ( SIGN );
+        }
+        break;
+        case 5:
+        if (record->event.pressed) { // For resetting EEPROM
+          SEND_STRING ( SIGN );
+        }
+        break;
+        case 6:
+        if (record->event.pressed) { // For resetting EEPROM
+          SEND_STRING ( SIGN );
+        }
+        break;
+        case 7:
         if (record->event.pressed) { // For resetting EEPROM
           SEND_STRING ( SIGN );
         }
