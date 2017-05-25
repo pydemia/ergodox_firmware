@@ -4,8 +4,8 @@
 ## Edit Keymap
 
 ```sh
-gedit ~/Git/Firmware/qmk/keyboards/ergodox/ez/keymaps/dawkiny/keymap.c
-cd ~/Git/Firmware/qmk/keyboards/ergodox
+gedit ~/git/Firmware/qmk/keyboards/ergodox/ez/keymaps/dawkiny/keymap.c
+cd ~/git/Firmware/qmk/keyboards/ergodox
 make ez dawkiny
 
 Making ergodox/ez with keymap dawkiny [OK]
