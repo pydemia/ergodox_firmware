@@ -13,6 +13,12 @@ In case of Error (with `shim-signed`):
 sudo apt-get install shim-signed
 ```
 
+Set teensy :
+```sh
+sudo cp ~/git/teensy/49-teensy.rules /etc/udev/rules.d/
+```
+
+
 ## Edit Keymap
 
 ```sh
