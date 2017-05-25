@@ -1,5 +1,23 @@
 # Firmware
 
+## Installation
+
+Pull this `git` and Run this as a root:
+```sh
+bash ~/git/Firmware/util/install_dependencies.sh
+```
+
+In case of Error (with `shim-signed`):
+
+```sh
+sudo apt-get install shim-signed
+```
+
+Set teensy :
+```sh
+sudo cp ~/git/teensy/49-teensy.rules /etc/udev/rules.d/
+```
+
 
 ## Edit Keymap
 
@@ -28,8 +46,10 @@ Size after:
    text	   data	    bss	    dec	    hex	filename
       0	  19182	      0	  19182	   4aee	ergodox_ez_dawkiny.hex
 
+```
 
-~/Git/Firmware/teensy/teensy.64bit &
+```sh
+~/git/Firmware/teensy/teensy.64bit &
 ```
 
 ![console image](https://github.com/pydemia/Firmware/blob/master/make_and_teensy.png?raw=true)
