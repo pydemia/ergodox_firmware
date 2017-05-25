@@ -34,8 +34,10 @@ Size after:
    text	   data	    bss	    dec	    hex	filename
       0	  19182	      0	  19182	   4aee	ergodox_ez_dawkiny.hex
 
+```
 
-~/Git/Firmware/teensy/teensy.64bit &
+```sh
+~/git/Firmware/teensy/teensy.64bit &
 ```
 
 ![console image](https://github.com/pydemia/Firmware/blob/master/make_and_teensy.png?raw=true)
