@@ -2479,30 +2479,30 @@
  1331               		.file 12 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../../Core/AVR8/../AVR8/
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 CDCClassDevice.c
-     /tmp/ccl0lqsV.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccl0lqsV.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccl0lqsV.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccl0lqsV.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccl0lqsV.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccl0lqsV.s:13     .text.CDC_Device_ConfigureEndpoints:0000000000000000 CDC_Device_ConfigureEndpoints
-     /tmp/ccl0lqsV.s:92     .text.CDC_Device_SendString:0000000000000000 CDC_Device_SendString
-     /tmp/ccl0lqsV.s:154    .text.CDC_Device_SendData:0000000000000000 CDC_Device_SendData
-     /tmp/ccl0lqsV.s:208    .text.CDC_Device_SendByte:0000000000000000 CDC_Device_SendByte
-     /tmp/ccl0lqsV.s:311    .text.CDC_Device_putchar:0000000000000000 CDC_Device_putchar
-     /tmp/ccl0lqsV.s:348    .text.CDC_Device_Flush:0000000000000000 CDC_Device_Flush
-     /tmp/ccl0lqsV.s:442    .text.CDC_Device_USBTask:0000000000000000 CDC_Device_USBTask
-     /tmp/ccl0lqsV.s:494    .text.CDC_Device_BytesReceived:0000000000000000 CDC_Device_BytesReceived
-     /tmp/ccl0lqsV.s:583    .text.CDC_Device_ReceiveByte:0000000000000000 CDC_Device_ReceiveByte
-     /tmp/ccl0lqsV.s:691    .text.CDC_Device_getchar:0000000000000000 CDC_Device_getchar
-     /tmp/ccl0lqsV.s:722    .text.CDC_Device_getchar_Blocking:0000000000000000 CDC_Device_getchar_Blocking
-     /tmp/ccl0lqsV.s:787    .text.CDC_Device_SendControlLineStateChange:0000000000000000 CDC_Device_SendControlLineStateChange
-     /tmp/ccl0lqsV.s:909    .text.CDC_Device_CreateStream:0000000000000000 CDC_Device_CreateStream
-     /tmp/ccl0lqsV.s:946    .text.CDC_Device_CreateBlockingStream:0000000000000000 CDC_Device_CreateBlockingStream
-     /tmp/ccl0lqsV.s:983    .text.CDC_Device_Event_Stub:0000000000000000 CDC_Device_Event_Stub
-     /tmp/ccl0lqsV.s:983    .text.CDC_Device_Event_Stub:0000000000000000 EVENT_CDC_Device_LineEncodingChanged
-     /tmp/ccl0lqsV.s:983    .text.CDC_Device_Event_Stub:0000000000000000 EVENT_CDC_Device_ControLineStateChanged
-     /tmp/ccl0lqsV.s:983    .text.CDC_Device_Event_Stub:0000000000000000 EVENT_CDC_Device_BreakSent
-     /tmp/ccl0lqsV.s:1004   .text.CDC_Device_ProcessControlRequest:0000000000000000 CDC_Device_ProcessControlRequest
+     /tmp/ccADDwMT.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccADDwMT.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccADDwMT.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccADDwMT.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccADDwMT.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccADDwMT.s:13     .text.CDC_Device_ConfigureEndpoints:0000000000000000 CDC_Device_ConfigureEndpoints
+     /tmp/ccADDwMT.s:92     .text.CDC_Device_SendString:0000000000000000 CDC_Device_SendString
+     /tmp/ccADDwMT.s:154    .text.CDC_Device_SendData:0000000000000000 CDC_Device_SendData
+     /tmp/ccADDwMT.s:208    .text.CDC_Device_SendByte:0000000000000000 CDC_Device_SendByte
+     /tmp/ccADDwMT.s:311    .text.CDC_Device_putchar:0000000000000000 CDC_Device_putchar
+     /tmp/ccADDwMT.s:348    .text.CDC_Device_Flush:0000000000000000 CDC_Device_Flush
+     /tmp/ccADDwMT.s:442    .text.CDC_Device_USBTask:0000000000000000 CDC_Device_USBTask
+     /tmp/ccADDwMT.s:494    .text.CDC_Device_BytesReceived:0000000000000000 CDC_Device_BytesReceived
+     /tmp/ccADDwMT.s:583    .text.CDC_Device_ReceiveByte:0000000000000000 CDC_Device_ReceiveByte
+     /tmp/ccADDwMT.s:691    .text.CDC_Device_getchar:0000000000000000 CDC_Device_getchar
+     /tmp/ccADDwMT.s:722    .text.CDC_Device_getchar_Blocking:0000000000000000 CDC_Device_getchar_Blocking
+     /tmp/ccADDwMT.s:787    .text.CDC_Device_SendControlLineStateChange:0000000000000000 CDC_Device_SendControlLineStateChange
+     /tmp/ccADDwMT.s:909    .text.CDC_Device_CreateStream:0000000000000000 CDC_Device_CreateStream
+     /tmp/ccADDwMT.s:946    .text.CDC_Device_CreateBlockingStream:0000000000000000 CDC_Device_CreateBlockingStream
+     /tmp/ccADDwMT.s:983    .text.CDC_Device_Event_Stub:0000000000000000 CDC_Device_Event_Stub
+     /tmp/ccADDwMT.s:983    .text.CDC_Device_Event_Stub:0000000000000000 EVENT_CDC_Device_LineEncodingChanged
+     /tmp/ccADDwMT.s:983    .text.CDC_Device_Event_Stub:0000000000000000 EVENT_CDC_Device_ControLineStateChanged
+     /tmp/ccADDwMT.s:983    .text.CDC_Device_Event_Stub:0000000000000000 EVENT_CDC_Device_BreakSent
+     /tmp/ccADDwMT.s:1004   .text.CDC_Device_ProcessControlRequest:0000000000000000 CDC_Device_ProcessControlRequest
 
 UNDEFINED SYMBOLS
 Endpoint_ConfigureEndpointTable

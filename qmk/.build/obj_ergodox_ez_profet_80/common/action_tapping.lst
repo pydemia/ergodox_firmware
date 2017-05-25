@@ -1680,20 +1680,20 @@
  1143               		.file 7 "./tmk_core/common/action_layer.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 action_tapping.c
-     /tmp/ccCKWfpx.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccCKWfpx.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccCKWfpx.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccCKWfpx.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccCKWfpx.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccCKWfpx.s:12     .text.debug_waiting_buffer:0000000000000000 debug_waiting_buffer
-     /tmp/ccCKWfpx.s:1120   .bss.waiting_buffer_tail:0000000000000000 waiting_buffer_tail
-     /tmp/ccCKWfpx.s:1125   .bss.waiting_buffer_head:0000000000000000 waiting_buffer_head
-     /tmp/ccCKWfpx.s:1130   .bss.waiting_buffer:0000000000000000 waiting_buffer
-     /tmp/ccCKWfpx.s:82     .text.debug_tapping_key:0000000000000000 debug_tapping_key
-     /tmp/ccCKWfpx.s:1135   .bss.tapping_key:0000000000000000 tapping_key
-     /tmp/ccCKWfpx.s:104    .text.waiting_buffer_scan_tap:0000000000000000 waiting_buffer_scan_tap
-     /tmp/ccCKWfpx.s:231    .text.process_tapping:0000000000000000 process_tapping
-     /tmp/ccCKWfpx.s:890    .text.action_tapping_process:0000000000000000 action_tapping_process
+     /tmp/cck8jcGB.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cck8jcGB.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cck8jcGB.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cck8jcGB.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cck8jcGB.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cck8jcGB.s:12     .text.debug_waiting_buffer:0000000000000000 debug_waiting_buffer
+     /tmp/cck8jcGB.s:1120   .bss.waiting_buffer_tail:0000000000000000 waiting_buffer_tail
+     /tmp/cck8jcGB.s:1125   .bss.waiting_buffer_head:0000000000000000 waiting_buffer_head
+     /tmp/cck8jcGB.s:1130   .bss.waiting_buffer:0000000000000000 waiting_buffer
+     /tmp/cck8jcGB.s:82     .text.debug_tapping_key:0000000000000000 debug_tapping_key
+     /tmp/cck8jcGB.s:1135   .bss.tapping_key:0000000000000000 tapping_key
+     /tmp/cck8jcGB.s:104    .text.waiting_buffer_scan_tap:0000000000000000 waiting_buffer_scan_tap
+     /tmp/cck8jcGB.s:231    .text.process_tapping:0000000000000000 process_tapping
+     /tmp/cck8jcGB.s:890    .text.action_tapping_process:0000000000000000 action_tapping_process
 
 UNDEFINED SYMBOLS
 debug_record

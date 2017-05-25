@@ -202,7 +202,7 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x18 .build/obj_ergodox_ez_steno/common/print.o
  .debug_line    0x0000000000000000       0x1a .build/obj_ergodox_ez_steno/common/print.o
- .debug_str     0x0000000000000000      0x183 .build/obj_ergodox_ez_steno/common/print.o
+ .debug_str     0x0000000000000000      0x181 .build/obj_ergodox_ez_steno/common/print.o
  .comment       0x0000000000000000       0x12 .build/obj_ergodox_ez_steno/common/print.o
  .text          0x0000000000000000        0x0 .build/obj_ergodox_ez_steno/common/debug.o
  .data          0x0000000000000000        0x0 .build/obj_ergodox_ez_steno/common/debug.o
@@ -292,7 +292,7 @@ Discarded input sections
                 0x0000000000000000       0x38 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Common/HIDParser.o
  .debug_ranges  0x0000000000000000       0xd0 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Common/HIDParser.o
  .debug_line    0x0000000000000000      0x248 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Common/HIDParser.o
- .debug_str     0x0000000000000000      0x6d7 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Common/HIDParser.o
+ .debug_str     0x0000000000000000      0x6d5 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Common/HIDParser.o
  .comment       0x0000000000000000       0x12 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Common/HIDParser.o
  .debug_frame   0x0000000000000000      0x14c .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Common/HIDParser.o
  .text          0x0000000000000000        0x0 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.o
@@ -354,7 +354,7 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x18 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Host_AVR8.o
  .debug_line    0x0000000000000000       0x1a .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Host_AVR8.o
- .debug_str     0x0000000000000000      0x1b2 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Host_AVR8.o
+ .debug_str     0x0000000000000000      0x1b0 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Host_AVR8.o
  .comment       0x0000000000000000       0x12 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Host_AVR8.o
  .text          0x0000000000000000        0x0 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/PipeStream_AVR8.o
  .data          0x0000000000000000        0x0 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/PipeStream_AVR8.o
@@ -364,7 +364,7 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x18 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/PipeStream_AVR8.o
  .debug_line    0x0000000000000000       0x1a .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/PipeStream_AVR8.o
- .debug_str     0x0000000000000000      0x1b8 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/PipeStream_AVR8.o
+ .debug_str     0x0000000000000000      0x1b6 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/PipeStream_AVR8.o
  .comment       0x0000000000000000       0x12 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/PipeStream_AVR8.o
  .text          0x0000000000000000        0x0 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Pipe_AVR8.o
  .data          0x0000000000000000        0x0 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Pipe_AVR8.o
@@ -374,7 +374,7 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x18 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Pipe_AVR8.o
  .debug_line    0x0000000000000000       0x1a .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Pipe_AVR8.o
- .debug_str     0x0000000000000000      0x1b2 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Pipe_AVR8.o
+ .debug_str     0x0000000000000000      0x1b0 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Pipe_AVR8.o
  .comment       0x0000000000000000       0x12 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Pipe_AVR8.o
  .text          0x0000000000000000        0x0 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
  .data          0x0000000000000000        0x0 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
@@ -402,7 +402,7 @@ Discarded input sections
                 0x0000000000000000       0x40 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/ConfigDescriptors.o
  .debug_ranges  0x0000000000000000       0x30 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/ConfigDescriptors.o
  .debug_line    0x0000000000000000      0x16c .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/ConfigDescriptors.o
- .debug_str     0x0000000000000000      0x3fb .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/ConfigDescriptors.o
+ .debug_str     0x0000000000000000      0x3f9 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/ConfigDescriptors.o
  .comment       0x0000000000000000       0x12 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/ConfigDescriptors.o
  .debug_frame   0x0000000000000000      0x124 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/ConfigDescriptors.o
  .text          0x0000000000000000        0x0 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.o
@@ -419,7 +419,7 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x18 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/HostStandardReq.o
  .debug_line    0x0000000000000000       0x1a .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/HostStandardReq.o
- .debug_str     0x0000000000000000      0x1b3 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/HostStandardReq.o
+ .debug_str     0x0000000000000000      0x1b1 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/HostStandardReq.o
  .comment       0x0000000000000000       0x12 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/HostStandardReq.o
  .text          0x0000000000000000        0x0 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
  .data          0x0000000000000000        0x0 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
@@ -1846,80 +1846,80 @@ END GROUP
  .debug_frame   0x0000000000001a94       0x2c .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
  .debug_frame   0x0000000000001ac0      0x16c .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/CDCClassDevice.o
 
-.debug_str      0x0000000000000000     0x4ba7
+.debug_str      0x0000000000000000     0x4ba5
  *(.debug_str)
- .debug_str     0x0000000000000000      0x1c6 .build/obj_ergodox_ez_steno/twimaster.o
-                                        0x1ff (size before relaxing)
- .debug_str     0x00000000000001c6      0x20e .build/obj_ergodox_ez_steno/matrix.o
-                                        0x3d1 (size before relaxing)
- .debug_str     0x00000000000003d4       0x36 .build/obj_ergodox_ez_steno/keyboards/ergodox/ergodox.o
-                                        0x1cb (size before relaxing)
- .debug_str     0x000000000000040a     0x10a3 .build/obj_ergodox_ez_steno/keyboards/ergodox/ez/keymaps/steno/keymap.o
-                                       0x12b9 (size before relaxing)
- .debug_str     0x00000000000014ad      0x36a .build/obj_ergodox_ez_steno/quantum/quantum.o
-                                       0x10e6 (size before relaxing)
- .debug_str     0x0000000000001817      0x1b5 .build/obj_ergodox_ez_steno/quantum/keymap_common.o
-                                       0x1365 (size before relaxing)
- .debug_str     0x00000000000019cc       0x19 .build/obj_ergodox_ez_steno/quantum/keycode_config.o
-                                        0x7fe (size before relaxing)
- .debug_str     0x00000000000019e5       0x93 .build/obj_ergodox_ez_steno/quantum/process_keycode/process_leader.o
-                                        0x77f (size before relaxing)
- .debug_str     0x0000000000001a78       0xb1 .build/obj_ergodox_ez_steno/keyboards/ergodox/ez/ez.o
-                                        0x3a1 (size before relaxing)
- .debug_str     0x0000000000001b29       0xad .build/obj_ergodox_ez_steno/quantum/process_keycode/process_unicode.o
-                                        0xdd2 (size before relaxing)
- .debug_str     0x0000000000001bd6      0x12f .build/obj_ergodox_ez_steno/common/host.o
-                                        0x36e (size before relaxing)
- .debug_str     0x0000000000001d05       0xc4 .build/obj_ergodox_ez_steno/common/keyboard.o
-                                        0x331 (size before relaxing)
- .debug_str     0x0000000000001dc9      0x3c6 .build/obj_ergodox_ez_steno/common/action.o
-                                       0x12ce (size before relaxing)
- .debug_str     0x000000000000218f       0xe8 .build/obj_ergodox_ez_steno/common/action_tapping.o
-                                        0xb05 (size before relaxing)
- .debug_str     0x0000000000002277       0x7f .build/obj_ergodox_ez_steno/common/action_macro.o
-                                        0x889 (size before relaxing)
- .debug_str     0x00000000000022f6       0x66 .build/obj_ergodox_ez_steno/common/action_layer.o
-                                        0x43d (size before relaxing)
- .debug_str     0x000000000000235c      0x17f .build/obj_ergodox_ez_steno/common/action_util.o
-                                        0x5fe (size before relaxing)
- .debug_str     0x00000000000024db       0x1a .build/obj_ergodox_ez_steno/common/debug.o
-                                        0x1d3 (size before relaxing)
- .debug_str     0x00000000000024f5       0x43 .build/obj_ergodox_ez_steno/common/util.o
-                                        0x1e9 (size before relaxing)
- .debug_str     0x0000000000002538       0xea .build/obj_ergodox_ez_steno/common/eeconfig.o
-                                        0x2b8 (size before relaxing)
- .debug_str     0x0000000000002622      0x159 .build/obj_ergodox_ez_steno/common/avr/suspend.o
-                                        0x372 (size before relaxing)
- .debug_str     0x000000000000277b       0x5d .build/obj_ergodox_ez_steno/common/avr/timer.o
-                                        0x210 (size before relaxing)
- .debug_str     0x00000000000027d8       0x6f .build/obj_ergodox_ez_steno/common/avr/bootloader.o
-                                        0x27d (size before relaxing)
- .debug_str     0x0000000000002847       0x1a .build/obj_ergodox_ez_steno/common/magic.o
-                                        0x32a (size before relaxing)
- .debug_str     0x0000000000002861       0xa5 .build/obj_ergodox_ez_steno/common/command.o
-                                        0x9b1 (size before relaxing)
- .debug_str     0x0000000000002906      0x6d7 .build/obj_ergodox_ez_steno/lufa.o
-                                        0xbd0 (size before relaxing)
- .debug_str     0x0000000000002fdd      0x9e9 .build/obj_ergodox_ez_steno/descriptor.o
-                                        0xc05 (size before relaxing)
- .debug_str     0x00000000000039c6       0x77 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.o
-                                        0x213 (size before relaxing)
- .debug_str     0x0000000000003a3d      0x4d5 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
-                                        0x875 (size before relaxing)
- .debug_str     0x0000000000003f12      0x224 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
-                                        0x635 (size before relaxing)
- .debug_str     0x0000000000004136      0x1d9 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
-                                        0x574 (size before relaxing)
- .debug_str     0x000000000000430f      0x143 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
-                                        0x5f3 (size before relaxing)
- .debug_str     0x0000000000004452      0x413 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.o
-                                        0x9e7 (size before relaxing)
- .debug_str     0x0000000000004865       0x50 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.o
-                                        0x1b9 (size before relaxing)
- .debug_str     0x00000000000048b5       0x5e .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
-                                        0x39a (size before relaxing)
- .debug_str     0x0000000000004913      0x294 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/CDCClassDevice.o
-                                        0xa24 (size before relaxing)
+ .debug_str     0x0000000000000000      0x1c4 .build/obj_ergodox_ez_steno/twimaster.o
+                                        0x1fd (size before relaxing)
+ .debug_str     0x00000000000001c4      0x20e .build/obj_ergodox_ez_steno/matrix.o
+                                        0x3cf (size before relaxing)
+ .debug_str     0x00000000000003d2       0x36 .build/obj_ergodox_ez_steno/keyboards/ergodox/ergodox.o
+                                        0x1c9 (size before relaxing)
+ .debug_str     0x0000000000000408     0x10a3 .build/obj_ergodox_ez_steno/keyboards/ergodox/ez/keymaps/steno/keymap.o
+                                       0x12b7 (size before relaxing)
+ .debug_str     0x00000000000014ab      0x36a .build/obj_ergodox_ez_steno/quantum/quantum.o
+                                       0x10e4 (size before relaxing)
+ .debug_str     0x0000000000001815      0x1b5 .build/obj_ergodox_ez_steno/quantum/keymap_common.o
+                                       0x1363 (size before relaxing)
+ .debug_str     0x00000000000019ca       0x19 .build/obj_ergodox_ez_steno/quantum/keycode_config.o
+                                        0x7fc (size before relaxing)
+ .debug_str     0x00000000000019e3       0x93 .build/obj_ergodox_ez_steno/quantum/process_keycode/process_leader.o
+                                        0x77d (size before relaxing)
+ .debug_str     0x0000000000001a76       0xb1 .build/obj_ergodox_ez_steno/keyboards/ergodox/ez/ez.o
+                                        0x39f (size before relaxing)
+ .debug_str     0x0000000000001b27       0xad .build/obj_ergodox_ez_steno/quantum/process_keycode/process_unicode.o
+                                        0xdd0 (size before relaxing)
+ .debug_str     0x0000000000001bd4      0x12f .build/obj_ergodox_ez_steno/common/host.o
+                                        0x36c (size before relaxing)
+ .debug_str     0x0000000000001d03       0xc4 .build/obj_ergodox_ez_steno/common/keyboard.o
+                                        0x32f (size before relaxing)
+ .debug_str     0x0000000000001dc7      0x3c6 .build/obj_ergodox_ez_steno/common/action.o
+                                       0x12cc (size before relaxing)
+ .debug_str     0x000000000000218d       0xe8 .build/obj_ergodox_ez_steno/common/action_tapping.o
+                                        0xb03 (size before relaxing)
+ .debug_str     0x0000000000002275       0x7f .build/obj_ergodox_ez_steno/common/action_macro.o
+                                        0x887 (size before relaxing)
+ .debug_str     0x00000000000022f4       0x66 .build/obj_ergodox_ez_steno/common/action_layer.o
+                                        0x43b (size before relaxing)
+ .debug_str     0x000000000000235a      0x17f .build/obj_ergodox_ez_steno/common/action_util.o
+                                        0x5fc (size before relaxing)
+ .debug_str     0x00000000000024d9       0x1a .build/obj_ergodox_ez_steno/common/debug.o
+                                        0x1d1 (size before relaxing)
+ .debug_str     0x00000000000024f3       0x43 .build/obj_ergodox_ez_steno/common/util.o
+                                        0x1e7 (size before relaxing)
+ .debug_str     0x0000000000002536       0xea .build/obj_ergodox_ez_steno/common/eeconfig.o
+                                        0x2b6 (size before relaxing)
+ .debug_str     0x0000000000002620      0x159 .build/obj_ergodox_ez_steno/common/avr/suspend.o
+                                        0x370 (size before relaxing)
+ .debug_str     0x0000000000002779       0x5d .build/obj_ergodox_ez_steno/common/avr/timer.o
+                                        0x20e (size before relaxing)
+ .debug_str     0x00000000000027d6       0x6f .build/obj_ergodox_ez_steno/common/avr/bootloader.o
+                                        0x27b (size before relaxing)
+ .debug_str     0x0000000000002845       0x1a .build/obj_ergodox_ez_steno/common/magic.o
+                                        0x328 (size before relaxing)
+ .debug_str     0x000000000000285f       0xa5 .build/obj_ergodox_ez_steno/common/command.o
+                                        0x9af (size before relaxing)
+ .debug_str     0x0000000000002904      0x6d7 .build/obj_ergodox_ez_steno/lufa.o
+                                        0xbce (size before relaxing)
+ .debug_str     0x0000000000002fdb      0x9e9 .build/obj_ergodox_ez_steno/descriptor.o
+                                        0xc03 (size before relaxing)
+ .debug_str     0x00000000000039c4       0x77 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.o
+                                        0x211 (size before relaxing)
+ .debug_str     0x0000000000003a3b      0x4d5 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
+                                        0x873 (size before relaxing)
+ .debug_str     0x0000000000003f10      0x224 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
+                                        0x633 (size before relaxing)
+ .debug_str     0x0000000000004134      0x1d9 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
+                                        0x572 (size before relaxing)
+ .debug_str     0x000000000000430d      0x143 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+                                        0x5f1 (size before relaxing)
+ .debug_str     0x0000000000004450      0x413 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.o
+                                        0x9e5 (size before relaxing)
+ .debug_str     0x0000000000004863       0x50 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.o
+                                        0x1b7 (size before relaxing)
+ .debug_str     0x00000000000048b3       0x5e .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
+                                        0x398 (size before relaxing)
+ .debug_str     0x0000000000004911      0x294 .build/obj_ergodox_ez_steno/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/CDCClassDevice.o
+                                        0xa22 (size before relaxing)
 
 .debug_loc      0x0000000000000000     0x7b72
  *(.debug_loc)

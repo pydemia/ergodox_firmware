@@ -602,12 +602,12 @@
   99               		.file 6 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../DeviceStandardReq.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 USBTask.c
-     /tmp/ccWHwaGy.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccWHwaGy.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccWHwaGy.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccWHwaGy.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccWHwaGy.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccWHwaGy.s:13     .text.USB_USBTask:0000000000000000 USB_USBTask
+     /tmp/ccRUU8jT.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccRUU8jT.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccRUU8jT.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccRUU8jT.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccRUU8jT.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccRUU8jT.s:13     .text.USB_USBTask:0000000000000000 USB_USBTask
                             *COM*:0000000000000001 USB_DeviceState
                             *COM*:0000000000000008 USB_ControlRequest
                             *COM*:0000000000000001 USB_IsInitialized

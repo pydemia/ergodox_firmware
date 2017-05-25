@@ -962,16 +962,16 @@
  737               		.file 10 "quantum/keycode_config.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 keymap_common.c
-     /tmp/cc61HvDJ.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/cc61HvDJ.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/cc61HvDJ.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/cc61HvDJ.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/cc61HvDJ.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/cc61HvDJ.s:13     .text.action_for_key:0000000000000000 action_for_key
-     /tmp/cc61HvDJ.s:726    .progmem.data.fn_actions:0000000000000000 fn_actions
-     /tmp/cc61HvDJ.s:645    .text.action_get_macro:0000000000000000 action_get_macro
-     /tmp/cc61HvDJ.s:665    .text.action_function:0000000000000000 action_function
-     /tmp/cc61HvDJ.s:681    .text.keymap_key_to_keycode:0000000000000000 keymap_key_to_keycode
+     /tmp/cctHRh9C.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cctHRh9C.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cctHRh9C.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cctHRh9C.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cctHRh9C.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cctHRh9C.s:13     .text.action_for_key:0000000000000000 action_for_key
+     /tmp/cctHRh9C.s:726    .progmem.data.fn_actions:0000000000000000 fn_actions
+     /tmp/cctHRh9C.s:645    .text.action_get_macro:0000000000000000 action_get_macro
+     /tmp/cctHRh9C.s:665    .text.action_function:0000000000000000 action_function
+     /tmp/cctHRh9C.s:681    .text.keymap_key_to_keycode:0000000000000000 keymap_key_to_keycode
 
 UNDEFINED SYMBOLS
 keymaps

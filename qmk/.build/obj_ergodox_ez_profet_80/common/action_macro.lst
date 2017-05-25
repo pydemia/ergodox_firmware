@@ -566,12 +566,12 @@
  305               		.file 8 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 action_macro.c
-     /tmp/ccKLJ13B.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccKLJ13B.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccKLJ13B.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccKLJ13B.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccKLJ13B.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccKLJ13B.s:13     .text.action_macro_play:0000000000000000 action_macro_play
+     /tmp/cc0MhDsH.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cc0MhDsH.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cc0MhDsH.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cc0MhDsH.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cc0MhDsH.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cc0MhDsH.s:13     .text.action_macro_play:0000000000000000 action_macro_play
 
 UNDEFINED SYMBOLS
 unregister_code

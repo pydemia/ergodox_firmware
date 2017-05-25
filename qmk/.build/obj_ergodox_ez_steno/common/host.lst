@@ -332,23 +332,23 @@
  264               		.file 6 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 host.c
-     /tmp/ccvh83Pp.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccvh83Pp.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccvh83Pp.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccvh83Pp.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccvh83Pp.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccvh83Pp.s:13     .text.host_set_driver:0000000000000000 host_set_driver
-     /tmp/ccvh83Pp.s:256    .bss.driver:0000000000000000 driver
-     /tmp/ccvh83Pp.s:33     .text.host_get_driver:0000000000000000 host_get_driver
-     /tmp/ccvh83Pp.s:51     .text.host_keyboard_leds:0000000000000000 host_keyboard_leds
-     /tmp/ccvh83Pp.s:80     .text.host_keyboard_send:0000000000000000 host_keyboard_send
-     /tmp/ccvh83Pp.s:108    .text.host_mouse_send:0000000000000000 host_mouse_send
-     /tmp/ccvh83Pp.s:136    .text.host_system_send:0000000000000000 host_system_send
-     /tmp/ccvh83Pp.s:251    .bss.last_system_report:0000000000000000 last_system_report
-     /tmp/ccvh83Pp.s:173    .text.host_consumer_send:0000000000000000 host_consumer_send
-     /tmp/ccvh83Pp.s:246    .bss.last_consumer_report:0000000000000000 last_consumer_report
-     /tmp/ccvh83Pp.s:210    .text.host_last_system_report:0000000000000000 host_last_system_report
-     /tmp/ccvh83Pp.s:228    .text.host_last_consumer_report:0000000000000000 host_last_consumer_report
+     /tmp/ccw6AgAK.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccw6AgAK.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccw6AgAK.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccw6AgAK.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccw6AgAK.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccw6AgAK.s:13     .text.host_set_driver:0000000000000000 host_set_driver
+     /tmp/ccw6AgAK.s:256    .bss.driver:0000000000000000 driver
+     /tmp/ccw6AgAK.s:33     .text.host_get_driver:0000000000000000 host_get_driver
+     /tmp/ccw6AgAK.s:51     .text.host_keyboard_leds:0000000000000000 host_keyboard_leds
+     /tmp/ccw6AgAK.s:80     .text.host_keyboard_send:0000000000000000 host_keyboard_send
+     /tmp/ccw6AgAK.s:108    .text.host_mouse_send:0000000000000000 host_mouse_send
+     /tmp/ccw6AgAK.s:136    .text.host_system_send:0000000000000000 host_system_send
+     /tmp/ccw6AgAK.s:251    .bss.last_system_report:0000000000000000 last_system_report
+     /tmp/ccw6AgAK.s:173    .text.host_consumer_send:0000000000000000 host_consumer_send
+     /tmp/ccw6AgAK.s:246    .bss.last_consumer_report:0000000000000000 last_consumer_report
+     /tmp/ccw6AgAK.s:210    .text.host_last_system_report:0000000000000000 host_last_system_report
+     /tmp/ccw6AgAK.s:228    .text.host_last_consumer_report:0000000000000000 host_last_consumer_report
 
 UNDEFINED SYMBOLS
 __do_clear_bss

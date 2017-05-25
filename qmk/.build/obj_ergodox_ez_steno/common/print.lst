@@ -10,10 +10,10 @@
   10               	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 print.c
-     /tmp/ccHFePlR.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccHFePlR.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccHFePlR.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccHFePlR.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccHFePlR.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccum3XtZ.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccum3XtZ.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccum3XtZ.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccum3XtZ.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccum3XtZ.s:6      *ABS*:0000000000000001 __zero_reg__
 
 NO UNDEFINED SYMBOLS

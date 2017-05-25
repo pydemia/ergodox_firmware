@@ -490,19 +490,19 @@
  389               		.file 2 "/usr/lib/avr/include/stdint.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 timer.c
-     /tmp/ccJpnae3.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccJpnae3.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccJpnae3.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccJpnae3.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccJpnae3.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccJpnae3.s:13     .text.timer_init:0000000000000000 timer_init
-     /tmp/ccJpnae3.s:40     .text.timer_clear:0000000000000000 timer_clear
-     /tmp/ccJpnae3.s:385    .bss.timer_count:0000000000000000 timer_count
-     /tmp/ccJpnae3.s:71     .text.timer_read:0000000000000000 timer_read
-     /tmp/ccJpnae3.s:103    .text.timer_read32:0000000000000000 timer_read32
-     /tmp/ccJpnae3.s:136    .text.timer_elapsed:0000000000000000 timer_elapsed
-     /tmp/ccJpnae3.s:226    .text.timer_elapsed32:0000000000000000 timer_elapsed32
-     /tmp/ccJpnae3.s:320    .text.__vector_21:0000000000000000 __vector_21
+     /tmp/cc8aFMd6.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cc8aFMd6.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cc8aFMd6.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cc8aFMd6.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cc8aFMd6.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cc8aFMd6.s:13     .text.timer_init:0000000000000000 timer_init
+     /tmp/cc8aFMd6.s:40     .text.timer_clear:0000000000000000 timer_clear
+     /tmp/cc8aFMd6.s:385    .bss.timer_count:0000000000000000 timer_count
+     /tmp/cc8aFMd6.s:71     .text.timer_read:0000000000000000 timer_read
+     /tmp/cc8aFMd6.s:103    .text.timer_read32:0000000000000000 timer_read32
+     /tmp/cc8aFMd6.s:136    .text.timer_elapsed:0000000000000000 timer_elapsed
+     /tmp/cc8aFMd6.s:226    .text.timer_elapsed32:0000000000000000 timer_elapsed32
+     /tmp/cc8aFMd6.s:320    .text.__vector_21:0000000000000000 __vector_21
 
 UNDEFINED SYMBOLS
 __do_clear_bss

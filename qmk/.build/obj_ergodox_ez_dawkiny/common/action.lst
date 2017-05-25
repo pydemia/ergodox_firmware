@@ -3104,29 +3104,29 @@
  2129               		.file 14 "./tmk_core/common/command.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 action.c
-     /tmp/cc0Gsb61.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/cc0Gsb61.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/cc0Gsb61.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/cc0Gsb61.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/cc0Gsb61.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/cc0Gsb61.s:13     .text.process_hand_swap:0000000000000000 process_hand_swap
-     /tmp/cc0Gsb61.s:2114   .bss.swap_hands:0000000000000000 swap_hands
-     /tmp/cc0Gsb61.s:2108   .bss.swap_state.4800:0000000000000000 swap_state.4800
-     /tmp/cc0Gsb61.s:114    .text.action_exec:0000000000000000 action_exec
-     /tmp/cc0Gsb61.s:214    .text.process_record_quantum:0000000000000000 process_record_quantum
-     /tmp/cc0Gsb61.s:233    .text.register_code:0000000000000000 register_code
-     /tmp/cc0Gsb61.s:564    .text.unregister_code:0000000000000000 unregister_code
-     /tmp/cc0Gsb61.s:699    .text.register_mods:0000000000000000 register_mods
-     /tmp/cc0Gsb61.s:725    .text.unregister_mods:0000000000000000 unregister_mods
-     /tmp/cc0Gsb61.s:751    .text.process_action:0000000000000000 process_action
-     /tmp/cc0Gsb61.s:1758   .text.process_record:0000000000000000 process_record
-     /tmp/cc0Gsb61.s:1842   .text.process_record_nocache:0000000000000000 process_record_nocache
-     /tmp/cc0Gsb61.s:1860   .text.clear_keyboard_but_mods:0000000000000000 clear_keyboard_but_mods
-     /tmp/cc0Gsb61.s:1902   .text.clear_keyboard:0000000000000000 clear_keyboard
-     /tmp/cc0Gsb61.s:1922   .text.is_tap_key:0000000000000000 is_tap_key
-     /tmp/cc0Gsb61.s:2009   .text.debug_event:0000000000000000 debug_event
-     /tmp/cc0Gsb61.s:2050   .text.debug_record:0000000000000000 debug_record
-     /tmp/cc0Gsb61.s:2092   .text.debug_action:0000000000000000 debug_action
+     /tmp/ccHlmE7M.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccHlmE7M.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccHlmE7M.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccHlmE7M.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccHlmE7M.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccHlmE7M.s:13     .text.process_hand_swap:0000000000000000 process_hand_swap
+     /tmp/ccHlmE7M.s:2114   .bss.swap_hands:0000000000000000 swap_hands
+     /tmp/ccHlmE7M.s:2108   .bss.swap_state.4800:0000000000000000 swap_state.4800
+     /tmp/ccHlmE7M.s:114    .text.action_exec:0000000000000000 action_exec
+     /tmp/ccHlmE7M.s:214    .text.process_record_quantum:0000000000000000 process_record_quantum
+     /tmp/ccHlmE7M.s:233    .text.register_code:0000000000000000 register_code
+     /tmp/ccHlmE7M.s:564    .text.unregister_code:0000000000000000 unregister_code
+     /tmp/ccHlmE7M.s:699    .text.register_mods:0000000000000000 register_mods
+     /tmp/ccHlmE7M.s:725    .text.unregister_mods:0000000000000000 unregister_mods
+     /tmp/ccHlmE7M.s:751    .text.process_action:0000000000000000 process_action
+     /tmp/ccHlmE7M.s:1758   .text.process_record:0000000000000000 process_record
+     /tmp/ccHlmE7M.s:1842   .text.process_record_nocache:0000000000000000 process_record_nocache
+     /tmp/ccHlmE7M.s:1860   .text.clear_keyboard_but_mods:0000000000000000 clear_keyboard_but_mods
+     /tmp/ccHlmE7M.s:1902   .text.clear_keyboard:0000000000000000 clear_keyboard
+     /tmp/ccHlmE7M.s:1922   .text.is_tap_key:0000000000000000 is_tap_key
+     /tmp/ccHlmE7M.s:2009   .text.debug_event:0000000000000000 debug_event
+     /tmp/ccHlmE7M.s:2050   .text.debug_record:0000000000000000 debug_record
+     /tmp/ccHlmE7M.s:2092   .text.debug_action:0000000000000000 debug_action
 
 UNDEFINED SYMBOLS
 hand_swap_config

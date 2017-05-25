@@ -710,19 +710,19 @@
  621               		.file 2 "/usr/lib/avr/include/stdint.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 util.c
-     /tmp/ccCJBius.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccCJBius.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccCJBius.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccCJBius.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccCJBius.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccCJBius.s:13     .text.bitpop:0000000000000000 bitpop
-     /tmp/ccCJBius.s:50     .text.bitpop16:0000000000000000 bitpop16
-     /tmp/ccCJBius.s:88     .text.bitpop32:0000000000000000 bitpop32
-     /tmp/ccCJBius.s:156    .text.biton:0000000000000000 biton
-     /tmp/ccCJBius.s:210    .text.biton16:0000000000000000 biton16
-     /tmp/ccCJBius.s:289    .text.biton32:0000000000000000 biton32
-     /tmp/ccCJBius.s:431    .text.bitrev:0000000000000000 bitrev
-     /tmp/ccCJBius.s:477    .text.bitrev16:0000000000000000 bitrev16
-     /tmp/ccCJBius.s:535    .text.bitrev32:0000000000000000 bitrev32
+     /tmp/ccUkhFz7.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccUkhFz7.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccUkhFz7.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccUkhFz7.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccUkhFz7.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccUkhFz7.s:13     .text.bitpop:0000000000000000 bitpop
+     /tmp/ccUkhFz7.s:50     .text.bitpop16:0000000000000000 bitpop16
+     /tmp/ccUkhFz7.s:88     .text.bitpop32:0000000000000000 bitpop32
+     /tmp/ccUkhFz7.s:156    .text.biton:0000000000000000 biton
+     /tmp/ccUkhFz7.s:210    .text.biton16:0000000000000000 biton16
+     /tmp/ccUkhFz7.s:289    .text.biton32:0000000000000000 biton32
+     /tmp/ccUkhFz7.s:431    .text.bitrev:0000000000000000 bitrev
+     /tmp/ccUkhFz7.s:477    .text.bitrev16:0000000000000000 bitrev16
+     /tmp/ccUkhFz7.s:535    .text.bitrev32:0000000000000000 bitrev32
 
 NO UNDEFINED SYMBOLS

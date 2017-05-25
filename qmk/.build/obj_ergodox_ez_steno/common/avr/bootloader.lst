@@ -915,14 +915,14 @@
  157               		.file 6 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 bootloader.c
-     /tmp/ccFaQ6G1.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccFaQ6G1.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccFaQ6G1.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccFaQ6G1.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccFaQ6G1.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccFaQ6G1.s:13     .text.bootloader_jump:0000000000000000 bootloader_jump
-     /tmp/ccFaQ6G1.s:151    .noinit:0000000000000000 reset_key
-     /tmp/ccFaQ6G1.s:84     .init3:0000000000000000 bootloader_jump_after_watchdog_reset
+     /tmp/ccxTkJc5.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccxTkJc5.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccxTkJc5.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccxTkJc5.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccxTkJc5.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccxTkJc5.s:13     .text.bootloader_jump:0000000000000000 bootloader_jump
+     /tmp/ccxTkJc5.s:151    .noinit:0000000000000000 reset_key
+     /tmp/ccxTkJc5.s:84     .init3:0000000000000000 bootloader_jump_after_watchdog_reset
 
 UNDEFINED SYMBOLS
 USB_Disable

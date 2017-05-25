@@ -77,19 +77,19 @@
   43               	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 Events.c
-     /tmp/ccNHKJMR.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccNHKJMR.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccNHKJMR.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccNHKJMR.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccNHKJMR.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccNHKJMR.s:13     .text.USB_Event_Stub:0000000000000000 USB_Event_Stub
-     /tmp/ccNHKJMR.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_Connect
-     /tmp/ccNHKJMR.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_Disconnect
-     /tmp/ccNHKJMR.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_ControlRequest
-     /tmp/ccNHKJMR.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_ConfigurationChanged
-     /tmp/ccNHKJMR.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_Suspend
-     /tmp/ccNHKJMR.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_WakeUp
-     /tmp/ccNHKJMR.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_Reset
-     /tmp/ccNHKJMR.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_StartOfFrame
+     /tmp/ccG1t4JB.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccG1t4JB.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccG1t4JB.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccG1t4JB.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccG1t4JB.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccG1t4JB.s:13     .text.USB_Event_Stub:0000000000000000 USB_Event_Stub
+     /tmp/ccG1t4JB.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_Connect
+     /tmp/ccG1t4JB.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_Disconnect
+     /tmp/ccG1t4JB.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_ControlRequest
+     /tmp/ccG1t4JB.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_ConfigurationChanged
+     /tmp/ccG1t4JB.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_Suspend
+     /tmp/ccG1t4JB.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_WakeUp
+     /tmp/ccG1t4JB.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_Reset
+     /tmp/ccG1t4JB.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_StartOfFrame
 
 NO UNDEFINED SYMBOLS

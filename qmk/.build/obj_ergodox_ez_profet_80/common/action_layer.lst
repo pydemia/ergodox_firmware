@@ -1020,30 +1020,30 @@
  827               		.file 5 "./tmk_core/common/action.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 action_layer.c
-     /tmp/ccCCexeF.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccCCexeF.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccCCexeF.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccCCexeF.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccCCexeF.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccCCexeF.s:13     .text.default_layer_debug:0000000000000000 default_layer_debug
-     /tmp/ccCCexeF.s:29     .text.default_layer_set:0000000000000000 default_layer_set
-     /tmp/ccCCexeF.s:820    .bss.default_layer_state:0000000000000000 default_layer_state
-     /tmp/ccCCexeF.s:56     .text.default_layer_or:0000000000000000 default_layer_or
-     /tmp/ccCCexeF.s:112    .text.default_layer_and:0000000000000000 default_layer_and
-     /tmp/ccCCexeF.s:168    .text.default_layer_xor:0000000000000000 default_layer_xor
-     /tmp/ccCCexeF.s:224    .text.layer_clear:0000000000000000 layer_clear
-     /tmp/ccCCexeF.s:814    .bss.layer_state:0000000000000000 layer_state
-     /tmp/ccCCexeF.s:251    .text.layer_move:0000000000000000 layer_move
-     /tmp/ccCCexeF.s:292    .text.layer_on:0000000000000000 layer_on
-     /tmp/ccCCexeF.s:343    .text.layer_off:0000000000000000 layer_off
-     /tmp/ccCCexeF.s:398    .text.layer_invert:0000000000000000 layer_invert
-     /tmp/ccCCexeF.s:449    .text.layer_or:0000000000000000 layer_or
-     /tmp/ccCCexeF.s:505    .text.layer_and:0000000000000000 layer_and
-     /tmp/ccCCexeF.s:561    .text.layer_xor:0000000000000000 layer_xor
-     /tmp/ccCCexeF.s:617    .text.layer_debug:0000000000000000 layer_debug
-     /tmp/ccCCexeF.s:632    .text.layer_switch_get_layer:0000000000000000 layer_switch_get_layer
-     /tmp/ccCCexeF.s:755    .text.layer_switch_get_action:0000000000000000 layer_switch_get_action
-     /tmp/ccCCexeF.s:791    .text.store_or_get_action:0000000000000000 store_or_get_action
+     /tmp/ccuYKj2J.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccuYKj2J.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccuYKj2J.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccuYKj2J.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccuYKj2J.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccuYKj2J.s:13     .text.default_layer_debug:0000000000000000 default_layer_debug
+     /tmp/ccuYKj2J.s:29     .text.default_layer_set:0000000000000000 default_layer_set
+     /tmp/ccuYKj2J.s:820    .bss.default_layer_state:0000000000000000 default_layer_state
+     /tmp/ccuYKj2J.s:56     .text.default_layer_or:0000000000000000 default_layer_or
+     /tmp/ccuYKj2J.s:112    .text.default_layer_and:0000000000000000 default_layer_and
+     /tmp/ccuYKj2J.s:168    .text.default_layer_xor:0000000000000000 default_layer_xor
+     /tmp/ccuYKj2J.s:224    .text.layer_clear:0000000000000000 layer_clear
+     /tmp/ccuYKj2J.s:814    .bss.layer_state:0000000000000000 layer_state
+     /tmp/ccuYKj2J.s:251    .text.layer_move:0000000000000000 layer_move
+     /tmp/ccuYKj2J.s:292    .text.layer_on:0000000000000000 layer_on
+     /tmp/ccuYKj2J.s:343    .text.layer_off:0000000000000000 layer_off
+     /tmp/ccuYKj2J.s:398    .text.layer_invert:0000000000000000 layer_invert
+     /tmp/ccuYKj2J.s:449    .text.layer_or:0000000000000000 layer_or
+     /tmp/ccuYKj2J.s:505    .text.layer_and:0000000000000000 layer_and
+     /tmp/ccuYKj2J.s:561    .text.layer_xor:0000000000000000 layer_xor
+     /tmp/ccuYKj2J.s:617    .text.layer_debug:0000000000000000 layer_debug
+     /tmp/ccuYKj2J.s:632    .text.layer_switch_get_layer:0000000000000000 layer_switch_get_layer
+     /tmp/ccuYKj2J.s:755    .text.layer_switch_get_action:0000000000000000 layer_switch_get_action
+     /tmp/ccuYKj2J.s:791    .text.store_or_get_action:0000000000000000 store_or_get_action
 
 UNDEFINED SYMBOLS
 clear_keyboard_but_mods

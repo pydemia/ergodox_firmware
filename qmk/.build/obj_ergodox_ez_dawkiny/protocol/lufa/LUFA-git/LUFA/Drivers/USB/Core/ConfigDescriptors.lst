@@ -860,15 +860,15 @@
  447               		.file 4 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../StdDescriptors.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 ConfigDescriptors.c
-     /tmp/ccs7BOdo.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccs7BOdo.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccs7BOdo.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccs7BOdo.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccs7BOdo.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccs7BOdo.s:12     .text.USB_GetNextDescriptor:0000000000000000 USB_GetNextDescriptor
-     /tmp/ccs7BOdo.s:74     .text.USB_GetNextDescriptorOfType:0000000000000000 USB_GetNextDescriptorOfType
-     /tmp/ccs7BOdo.s:158    .text.USB_GetNextDescriptorOfTypeBefore:0000000000000000 USB_GetNextDescriptorOfTypeBefore
-     /tmp/ccs7BOdo.s:251    .text.USB_GetNextDescriptorOfTypeAfter:0000000000000000 USB_GetNextDescriptorOfTypeAfter
-     /tmp/ccs7BOdo.s:328    .text.USB_GetNextDescriptorComp:0000000000000000 USB_GetNextDescriptorComp
+     /tmp/ccggblIL.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccggblIL.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccggblIL.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccggblIL.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccggblIL.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccggblIL.s:12     .text.USB_GetNextDescriptor:0000000000000000 USB_GetNextDescriptor
+     /tmp/ccggblIL.s:74     .text.USB_GetNextDescriptorOfType:0000000000000000 USB_GetNextDescriptorOfType
+     /tmp/ccggblIL.s:158    .text.USB_GetNextDescriptorOfTypeBefore:0000000000000000 USB_GetNextDescriptorOfTypeBefore
+     /tmp/ccggblIL.s:251    .text.USB_GetNextDescriptorOfTypeAfter:0000000000000000 USB_GetNextDescriptorOfTypeAfter
+     /tmp/ccggblIL.s:328    .text.USB_GetNextDescriptorComp:0000000000000000 USB_GetNextDescriptorComp
 
 NO UNDEFINED SYMBOLS

@@ -1049,20 +1049,20 @@
  706               		.file 13 "./tmk_core/common/util.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 keymap.c
-     /tmp/cc2QWGQ0.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/cc2QWGQ0.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/cc2QWGQ0.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/cc2QWGQ0.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/cc2QWGQ0.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/cc2QWGQ0.s:13     .text.send_chord:0000000000000000 send_chord
-     /tmp/cc2QWGQ0.s:260    .bss.chord:0000000000000000 chord
-     /tmp/cc2QWGQ0.s:72     .text.process_record_user:0000000000000000 process_record_user
-     /tmp/cc2QWGQ0.s:254    .bss.pressed_count:0000000000000000 pressed_count
-     /tmp/cc2QWGQ0.s:105    .text.action_get_macro:0000000000000000 action_get_macro
-     /tmp/cc2QWGQ0.s:164    .text.matrix_init_user:0000000000000000 matrix_init_user
-     /tmp/cc2QWGQ0.s:179    .text.matrix_scan_user:0000000000000000 matrix_scan_user
-     /tmp/cc2QWGQ0.s:266    .progmem.data.fn_actions:0000000000000000 fn_actions
-     /tmp/cc2QWGQ0.s:273    .progmem.data.keymaps:0000000000000000 keymaps
+     /tmp/ccrSLhdr.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccrSLhdr.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccrSLhdr.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccrSLhdr.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccrSLhdr.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccrSLhdr.s:13     .text.send_chord:0000000000000000 send_chord
+     /tmp/ccrSLhdr.s:260    .bss.chord:0000000000000000 chord
+     /tmp/ccrSLhdr.s:72     .text.process_record_user:0000000000000000 process_record_user
+     /tmp/ccrSLhdr.s:254    .bss.pressed_count:0000000000000000 pressed_count
+     /tmp/ccrSLhdr.s:105    .text.action_get_macro:0000000000000000 action_get_macro
+     /tmp/ccrSLhdr.s:164    .text.matrix_init_user:0000000000000000 matrix_init_user
+     /tmp/ccrSLhdr.s:179    .text.matrix_scan_user:0000000000000000 matrix_scan_user
+     /tmp/ccrSLhdr.s:266    .progmem.data.fn_actions:0000000000000000 fn_actions
+     /tmp/ccrSLhdr.s:273    .progmem.data.keymaps:0000000000000000 keymaps
 
 UNDEFINED SYMBOLS
 virtser_send

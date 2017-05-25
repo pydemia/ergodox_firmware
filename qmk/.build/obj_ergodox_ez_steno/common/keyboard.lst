@@ -580,18 +580,18 @@
  372               		.file 11 "./tmk_core/common/host.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 keyboard.c
-     /tmp/cclyiVUq.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/cclyiVUq.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/cclyiVUq.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/cclyiVUq.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/cclyiVUq.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/cclyiVUq.s:13     .text.matrix_setup:0000000000000000 matrix_setup
-     /tmp/cclyiVUq.s:29     .text.keyboard_setup:0000000000000000 keyboard_setup
-     /tmp/cclyiVUq.s:46     .text.keyboard_init:0000000000000000 keyboard_init
-     /tmp/cclyiVUq.s:69     .text.keyboard_task:0000000000000000 keyboard_task
-     /tmp/cclyiVUq.s:359    .bss.matrix_prev.4903:0000000000000000 matrix_prev.4903
-     /tmp/cclyiVUq.s:354    .bss.led_status.4904:0000000000000000 led_status.4904
-     /tmp/cclyiVUq.s:336    .text.keyboard_set_leds:0000000000000000 keyboard_set_leds
+     /tmp/ccGZobsN.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccGZobsN.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccGZobsN.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccGZobsN.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccGZobsN.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccGZobsN.s:13     .text.matrix_setup:0000000000000000 matrix_setup
+     /tmp/ccGZobsN.s:29     .text.keyboard_setup:0000000000000000 keyboard_setup
+     /tmp/ccGZobsN.s:46     .text.keyboard_init:0000000000000000 keyboard_init
+     /tmp/ccGZobsN.s:69     .text.keyboard_task:0000000000000000 keyboard_task
+     /tmp/ccGZobsN.s:359    .bss.matrix_prev.4903:0000000000000000 matrix_prev.4903
+     /tmp/ccGZobsN.s:354    .bss.led_status.4904:0000000000000000 led_status.4904
+     /tmp/ccGZobsN.s:336    .text.keyboard_set_leds:0000000000000000 keyboard_set_leds
 
 UNDEFINED SYMBOLS
 timer_init

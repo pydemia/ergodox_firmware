@@ -503,11 +503,11 @@
   63               		.file 3 "/usr/lib/avr/include/stdint.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 Device_AVR8.c
-     /tmp/ccuZ6b2i.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccuZ6b2i.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccuZ6b2i.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccuZ6b2i.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccuZ6b2i.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccuZ6b2i.s:13     .text.USB_Device_SendRemoteWakeup:0000000000000000 USB_Device_SendRemoteWakeup
+     /tmp/ccyzgv0o.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccyzgv0o.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccyzgv0o.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccyzgv0o.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccyzgv0o.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccyzgv0o.s:13     .text.USB_Device_SendRemoteWakeup:0000000000000000 USB_Device_SendRemoteWakeup
 
 NO UNDEFINED SYMBOLS

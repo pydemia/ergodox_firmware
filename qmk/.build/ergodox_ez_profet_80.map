@@ -220,7 +220,7 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x18 .build/obj_ergodox_ez_profet_80/common/print.o
  .debug_line    0x0000000000000000       0x1a .build/obj_ergodox_ez_profet_80/common/print.o
- .debug_str     0x0000000000000000      0x183 .build/obj_ergodox_ez_profet_80/common/print.o
+ .debug_str     0x0000000000000000      0x181 .build/obj_ergodox_ez_profet_80/common/print.o
  .comment       0x0000000000000000       0x12 .build/obj_ergodox_ez_profet_80/common/print.o
  .text          0x0000000000000000        0x0 .build/obj_ergodox_ez_profet_80/common/debug.o
  .data          0x0000000000000000        0x0 .build/obj_ergodox_ez_profet_80/common/debug.o
@@ -309,7 +309,7 @@ Discarded input sections
                 0x0000000000000000       0x38 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Common/HIDParser.o
  .debug_ranges  0x0000000000000000       0xd0 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Common/HIDParser.o
  .debug_line    0x0000000000000000      0x248 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Common/HIDParser.o
- .debug_str     0x0000000000000000      0x6d7 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Common/HIDParser.o
+ .debug_str     0x0000000000000000      0x6d5 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Common/HIDParser.o
  .comment       0x0000000000000000       0x12 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Common/HIDParser.o
  .debug_frame   0x0000000000000000      0x14c .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Common/HIDParser.o
  .text          0x0000000000000000        0x0 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.o
@@ -371,7 +371,7 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x18 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Host_AVR8.o
  .debug_line    0x0000000000000000       0x1a .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Host_AVR8.o
- .debug_str     0x0000000000000000      0x1b2 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Host_AVR8.o
+ .debug_str     0x0000000000000000      0x1b0 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Host_AVR8.o
  .comment       0x0000000000000000       0x12 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Host_AVR8.o
  .text          0x0000000000000000        0x0 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/PipeStream_AVR8.o
  .data          0x0000000000000000        0x0 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/PipeStream_AVR8.o
@@ -381,7 +381,7 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x18 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/PipeStream_AVR8.o
  .debug_line    0x0000000000000000       0x1a .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/PipeStream_AVR8.o
- .debug_str     0x0000000000000000      0x1b8 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/PipeStream_AVR8.o
+ .debug_str     0x0000000000000000      0x1b6 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/PipeStream_AVR8.o
  .comment       0x0000000000000000       0x12 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/PipeStream_AVR8.o
  .text          0x0000000000000000        0x0 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Pipe_AVR8.o
  .data          0x0000000000000000        0x0 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Pipe_AVR8.o
@@ -391,7 +391,7 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x18 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Pipe_AVR8.o
  .debug_line    0x0000000000000000       0x1a .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Pipe_AVR8.o
- .debug_str     0x0000000000000000      0x1b2 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Pipe_AVR8.o
+ .debug_str     0x0000000000000000      0x1b0 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Pipe_AVR8.o
  .comment       0x0000000000000000       0x12 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Pipe_AVR8.o
  .text          0x0000000000000000        0x0 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
  .data          0x0000000000000000        0x0 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
@@ -419,7 +419,7 @@ Discarded input sections
                 0x0000000000000000       0x40 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/ConfigDescriptors.o
  .debug_ranges  0x0000000000000000       0x30 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/ConfigDescriptors.o
  .debug_line    0x0000000000000000      0x16c .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/ConfigDescriptors.o
- .debug_str     0x0000000000000000      0x3fb .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/ConfigDescriptors.o
+ .debug_str     0x0000000000000000      0x3f9 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/ConfigDescriptors.o
  .comment       0x0000000000000000       0x12 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/ConfigDescriptors.o
  .debug_frame   0x0000000000000000      0x124 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/ConfigDescriptors.o
  .text          0x0000000000000000        0x0 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.o
@@ -436,7 +436,7 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x18 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/HostStandardReq.o
  .debug_line    0x0000000000000000       0x1a .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/HostStandardReq.o
- .debug_str     0x0000000000000000      0x1b3 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/HostStandardReq.o
+ .debug_str     0x0000000000000000      0x1b1 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/HostStandardReq.o
  .comment       0x0000000000000000       0x12 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/HostStandardReq.o
  .text          0x0000000000000000        0x0 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
  .data          0x0000000000000000        0x0 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
@@ -1978,80 +1978,80 @@ END GROUP
  .debug_frame   0x0000000000001aac       0x24 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.o
  .debug_frame   0x0000000000001ad0       0x2c .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
 
-.debug_str      0x0000000000000000     0x4624
+.debug_str      0x0000000000000000     0x4622
  *(.debug_str)
- .debug_str     0x0000000000000000      0x1c6 .build/obj_ergodox_ez_profet_80/twimaster.o
-                                        0x1ff (size before relaxing)
- .debug_str     0x00000000000001c6      0x20e .build/obj_ergodox_ez_profet_80/matrix.o
-                                        0x3d1 (size before relaxing)
- .debug_str     0x00000000000003d4       0x36 .build/obj_ergodox_ez_profet_80/keyboards/ergodox/ergodox.o
-                                        0x1cb (size before relaxing)
- .debug_str     0x000000000000040a     0x1079 .build/obj_ergodox_ez_profet_80/keyboards/ergodox/ez/keymaps/profet_80/keymap.o
-                                       0x1281 (size before relaxing)
- .debug_str     0x0000000000001483      0x372 .build/obj_ergodox_ez_profet_80/quantum/quantum.o
-                                       0x10e6 (size before relaxing)
- .debug_str     0x00000000000017f5      0x1af .build/obj_ergodox_ez_profet_80/quantum/keymap_common.o
-                                       0x1365 (size before relaxing)
- .debug_str     0x00000000000019a4       0x19 .build/obj_ergodox_ez_profet_80/quantum/keycode_config.o
-                                        0x7fe (size before relaxing)
- .debug_str     0x00000000000019bd       0x93 .build/obj_ergodox_ez_profet_80/quantum/process_keycode/process_leader.o
-                                        0x77f (size before relaxing)
- .debug_str     0x0000000000001a50       0xb1 .build/obj_ergodox_ez_profet_80/keyboards/ergodox/ez/ez.o
-                                        0x3a1 (size before relaxing)
- .debug_str     0x0000000000001b01       0xad .build/obj_ergodox_ez_profet_80/quantum/process_keycode/process_unicode.o
-                                        0xdd2 (size before relaxing)
- .debug_str     0x0000000000001bae      0x12f .build/obj_ergodox_ez_profet_80/common/host.o
-                                        0x36e (size before relaxing)
- .debug_str     0x0000000000001cdd       0xd2 .build/obj_ergodox_ez_profet_80/common/keyboard.o
-                                        0x33f (size before relaxing)
- .debug_str     0x0000000000001daf      0x3fc .build/obj_ergodox_ez_profet_80/common/action.o
-                                       0x1304 (size before relaxing)
- .debug_str     0x00000000000021ab       0xe8 .build/obj_ergodox_ez_profet_80/common/action_tapping.o
-                                        0xb05 (size before relaxing)
- .debug_str     0x0000000000002293       0x76 .build/obj_ergodox_ez_profet_80/common/action_macro.o
-                                        0x889 (size before relaxing)
- .debug_str     0x0000000000002309       0x66 .build/obj_ergodox_ez_profet_80/common/action_layer.o
-                                        0x43d (size before relaxing)
- .debug_str     0x000000000000236f      0x17f .build/obj_ergodox_ez_profet_80/common/action_util.o
-                                        0x5fe (size before relaxing)
- .debug_str     0x00000000000024ee       0x1a .build/obj_ergodox_ez_profet_80/common/debug.o
-                                        0x1d3 (size before relaxing)
- .debug_str     0x0000000000002508       0x43 .build/obj_ergodox_ez_profet_80/common/util.o
-                                        0x1e9 (size before relaxing)
- .debug_str     0x000000000000254b       0xea .build/obj_ergodox_ez_profet_80/common/eeconfig.o
-                                        0x2b8 (size before relaxing)
- .debug_str     0x0000000000002635      0x159 .build/obj_ergodox_ez_profet_80/common/avr/suspend.o
-                                        0x372 (size before relaxing)
- .debug_str     0x000000000000278e       0x5d .build/obj_ergodox_ez_profet_80/common/avr/timer.o
-                                        0x210 (size before relaxing)
- .debug_str     0x00000000000027eb       0x6f .build/obj_ergodox_ez_profet_80/common/avr/bootloader.o
-                                        0x27d (size before relaxing)
- .debug_str     0x000000000000285a       0x1a .build/obj_ergodox_ez_profet_80/common/magic.o
-                                        0x32a (size before relaxing)
- .debug_str     0x0000000000002874       0xc2 .build/obj_ergodox_ez_profet_80/common/mousekey.o
-                                        0x67b (size before relaxing)
- .debug_str     0x0000000000002936       0xeb .build/obj_ergodox_ez_profet_80/common/command.o
-                                        0xa56 (size before relaxing)
- .debug_str     0x0000000000002a21      0x4d0 .build/obj_ergodox_ez_profet_80/lufa.o
-                                        0x981 (size before relaxing)
- .debug_str     0x0000000000002ef1      0x76e .build/obj_ergodox_ez_profet_80/descriptor.o
-                                        0x973 (size before relaxing)
- .debug_str     0x000000000000365f       0x77 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.o
-                                        0x213 (size before relaxing)
- .debug_str     0x00000000000036d6      0x4d5 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
-                                        0x875 (size before relaxing)
- .debug_str     0x0000000000003bab      0x26d .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
-                                        0x635 (size before relaxing)
- .debug_str     0x0000000000003e18      0x1d9 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
-                                        0x574 (size before relaxing)
- .debug_str     0x0000000000003ff1      0x15f .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
-                                        0x5f3 (size before relaxing)
- .debug_str     0x0000000000004150      0x426 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.o
-                                        0x9e7 (size before relaxing)
- .debug_str     0x0000000000004576       0x50 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.o
-                                        0x1b9 (size before relaxing)
- .debug_str     0x00000000000045c6       0x5e .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
-                                        0x39a (size before relaxing)
+ .debug_str     0x0000000000000000      0x1c4 .build/obj_ergodox_ez_profet_80/twimaster.o
+                                        0x1fd (size before relaxing)
+ .debug_str     0x00000000000001c4      0x20e .build/obj_ergodox_ez_profet_80/matrix.o
+                                        0x3cf (size before relaxing)
+ .debug_str     0x00000000000003d2       0x36 .build/obj_ergodox_ez_profet_80/keyboards/ergodox/ergodox.o
+                                        0x1c9 (size before relaxing)
+ .debug_str     0x0000000000000408     0x1079 .build/obj_ergodox_ez_profet_80/keyboards/ergodox/ez/keymaps/profet_80/keymap.o
+                                       0x127f (size before relaxing)
+ .debug_str     0x0000000000001481      0x372 .build/obj_ergodox_ez_profet_80/quantum/quantum.o
+                                       0x10e4 (size before relaxing)
+ .debug_str     0x00000000000017f3      0x1af .build/obj_ergodox_ez_profet_80/quantum/keymap_common.o
+                                       0x1363 (size before relaxing)
+ .debug_str     0x00000000000019a2       0x19 .build/obj_ergodox_ez_profet_80/quantum/keycode_config.o
+                                        0x7fc (size before relaxing)
+ .debug_str     0x00000000000019bb       0x93 .build/obj_ergodox_ez_profet_80/quantum/process_keycode/process_leader.o
+                                        0x77d (size before relaxing)
+ .debug_str     0x0000000000001a4e       0xb1 .build/obj_ergodox_ez_profet_80/keyboards/ergodox/ez/ez.o
+                                        0x39f (size before relaxing)
+ .debug_str     0x0000000000001aff       0xad .build/obj_ergodox_ez_profet_80/quantum/process_keycode/process_unicode.o
+                                        0xdd0 (size before relaxing)
+ .debug_str     0x0000000000001bac      0x12f .build/obj_ergodox_ez_profet_80/common/host.o
+                                        0x36c (size before relaxing)
+ .debug_str     0x0000000000001cdb       0xd2 .build/obj_ergodox_ez_profet_80/common/keyboard.o
+                                        0x33d (size before relaxing)
+ .debug_str     0x0000000000001dad      0x3fc .build/obj_ergodox_ez_profet_80/common/action.o
+                                       0x1302 (size before relaxing)
+ .debug_str     0x00000000000021a9       0xe8 .build/obj_ergodox_ez_profet_80/common/action_tapping.o
+                                        0xb03 (size before relaxing)
+ .debug_str     0x0000000000002291       0x76 .build/obj_ergodox_ez_profet_80/common/action_macro.o
+                                        0x887 (size before relaxing)
+ .debug_str     0x0000000000002307       0x66 .build/obj_ergodox_ez_profet_80/common/action_layer.o
+                                        0x43b (size before relaxing)
+ .debug_str     0x000000000000236d      0x17f .build/obj_ergodox_ez_profet_80/common/action_util.o
+                                        0x5fc (size before relaxing)
+ .debug_str     0x00000000000024ec       0x1a .build/obj_ergodox_ez_profet_80/common/debug.o
+                                        0x1d1 (size before relaxing)
+ .debug_str     0x0000000000002506       0x43 .build/obj_ergodox_ez_profet_80/common/util.o
+                                        0x1e7 (size before relaxing)
+ .debug_str     0x0000000000002549       0xea .build/obj_ergodox_ez_profet_80/common/eeconfig.o
+                                        0x2b6 (size before relaxing)
+ .debug_str     0x0000000000002633      0x159 .build/obj_ergodox_ez_profet_80/common/avr/suspend.o
+                                        0x370 (size before relaxing)
+ .debug_str     0x000000000000278c       0x5d .build/obj_ergodox_ez_profet_80/common/avr/timer.o
+                                        0x20e (size before relaxing)
+ .debug_str     0x00000000000027e9       0x6f .build/obj_ergodox_ez_profet_80/common/avr/bootloader.o
+                                        0x27b (size before relaxing)
+ .debug_str     0x0000000000002858       0x1a .build/obj_ergodox_ez_profet_80/common/magic.o
+                                        0x328 (size before relaxing)
+ .debug_str     0x0000000000002872       0xc2 .build/obj_ergodox_ez_profet_80/common/mousekey.o
+                                        0x679 (size before relaxing)
+ .debug_str     0x0000000000002934       0xeb .build/obj_ergodox_ez_profet_80/common/command.o
+                                        0xa54 (size before relaxing)
+ .debug_str     0x0000000000002a1f      0x4d0 .build/obj_ergodox_ez_profet_80/lufa.o
+                                        0x97f (size before relaxing)
+ .debug_str     0x0000000000002eef      0x76e .build/obj_ergodox_ez_profet_80/descriptor.o
+                                        0x971 (size before relaxing)
+ .debug_str     0x000000000000365d       0x77 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.o
+                                        0x211 (size before relaxing)
+ .debug_str     0x00000000000036d4      0x4d5 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
+                                        0x873 (size before relaxing)
+ .debug_str     0x0000000000003ba9      0x26d .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
+                                        0x633 (size before relaxing)
+ .debug_str     0x0000000000003e16      0x1d9 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
+                                        0x572 (size before relaxing)
+ .debug_str     0x0000000000003fef      0x15f .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+                                        0x5f1 (size before relaxing)
+ .debug_str     0x000000000000414e      0x426 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.o
+                                        0x9e5 (size before relaxing)
+ .debug_str     0x0000000000004574       0x50 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.o
+                                        0x1b7 (size before relaxing)
+ .debug_str     0x00000000000045c4       0x5e .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
+                                        0x398 (size before relaxing)
 
 .debug_loc      0x0000000000000000     0x7779
  *(.debug_loc)

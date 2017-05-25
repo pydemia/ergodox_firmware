@@ -915,14 +915,14 @@
  157               		.file 6 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 bootloader.c
-     /tmp/ccX2Jrrr.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccX2Jrrr.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccX2Jrrr.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccX2Jrrr.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccX2Jrrr.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccX2Jrrr.s:13     .text.bootloader_jump:0000000000000000 bootloader_jump
-     /tmp/ccX2Jrrr.s:151    .noinit:0000000000000000 reset_key
-     /tmp/ccX2Jrrr.s:84     .init3:0000000000000000 bootloader_jump_after_watchdog_reset
+     /tmp/ccWnB92e.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccWnB92e.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccWnB92e.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccWnB92e.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccWnB92e.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccWnB92e.s:13     .text.bootloader_jump:0000000000000000 bootloader_jump
+     /tmp/ccWnB92e.s:151    .noinit:0000000000000000 reset_key
+     /tmp/ccWnB92e.s:84     .init3:0000000000000000 bootloader_jump_after_watchdog_reset
 
 UNDEFINED SYMBOLS
 USB_Disable

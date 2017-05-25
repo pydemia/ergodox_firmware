@@ -727,16 +727,16 @@
  401               		.file 7 "keyboards/ergodox/ez/i2cmaster.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 ez.c
-     /tmp/ccqiS0Lf.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccqiS0Lf.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccqiS0Lf.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccqiS0Lf.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccqiS0Lf.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccqiS0Lf.s:13     .text.ergodox_blink_all_leds:0000000000000000 ergodox_blink_all_leds
-     /tmp/ccqiS0Lf.s:236    .text.matrix_init_kb:0000000000000000 matrix_init_kb
-     /tmp/ccqiS0Lf.s:282    .text.init_mcp23018:0000000000000000 init_mcp23018
-     /tmp/ccqiS0Lf.s:388    .data.mcp23018_status:0000000000000000 mcp23018_status
-     /tmp/ccqiS0Lf.s:394    .bss.i2c_initialized:0000000000000000 i2c_initialized
+     /tmp/ccbYLVBk.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccbYLVBk.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccbYLVBk.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccbYLVBk.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccbYLVBk.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccbYLVBk.s:13     .text.ergodox_blink_all_leds:0000000000000000 ergodox_blink_all_leds
+     /tmp/ccbYLVBk.s:236    .text.matrix_init_kb:0000000000000000 matrix_init_kb
+     /tmp/ccbYLVBk.s:282    .text.init_mcp23018:0000000000000000 init_mcp23018
+     /tmp/ccbYLVBk.s:388    .data.mcp23018_status:0000000000000000 mcp23018_status
+     /tmp/ccbYLVBk.s:394    .bss.i2c_initialized:0000000000000000 i2c_initialized
 
 UNDEFINED SYMBOLS
 matrix_init_user

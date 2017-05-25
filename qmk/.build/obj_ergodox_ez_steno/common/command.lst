@@ -1499,18 +1499,18 @@
  511               		.file 13 "./tmk_core/common/action_layer.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 command.c
-     /tmp/ccpveci8.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccpveci8.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccpveci8.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccpveci8.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccpveci8.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccpveci8.s:12     .text.command_common:0000000000000000 command_common
-     /tmp/ccpveci8.s:497    .bss.command_state:0000000000000000 command_state
-     /tmp/ccpveci8.s:291    .text.command_extra:0000000000000000 command_extra
-     /tmp/ccpveci8.s:310    .text.command_console_extra:0000000000000000 command_console_extra
-     /tmp/ccpveci8.s:329    .text.command_proc:0000000000000000 command_proc
-     /tmp/ccpveci8.s:451    .text.numkey2num:0000000000000000 numkey2num
-     /tmp/ccpveci8.s:482    .rodata.CSWTCH.17:0000000000000000 CSWTCH.17
+     /tmp/ccyFoOxc.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccyFoOxc.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccyFoOxc.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccyFoOxc.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccyFoOxc.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccyFoOxc.s:12     .text.command_common:0000000000000000 command_common
+     /tmp/ccyFoOxc.s:497    .bss.command_state:0000000000000000 command_state
+     /tmp/ccyFoOxc.s:291    .text.command_extra:0000000000000000 command_extra
+     /tmp/ccyFoOxc.s:310    .text.command_console_extra:0000000000000000 command_console_extra
+     /tmp/ccyFoOxc.s:329    .text.command_proc:0000000000000000 command_proc
+     /tmp/ccyFoOxc.s:451    .text.numkey2num:0000000000000000 numkey2num
+     /tmp/ccyFoOxc.s:482    .rodata.CSWTCH.17:0000000000000000 CSWTCH.17
 
 UNDEFINED SYMBOLS
 debug_config
