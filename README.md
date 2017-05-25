@@ -1,5 +1,11 @@
 # Firmware
 
+## Installation
+
+Pull this `git` and Run this as a root:
+```sh
+sudo bash ~/git/Firmware/util/install_dependencies.sh
+```
 
 ## Edit Keymap
 
