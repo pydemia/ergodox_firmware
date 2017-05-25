@@ -4,7 +4,13 @@
 
 Pull this `git` and Run this as a root:
 ```sh
-sudo bash ~/git/Firmware/util/install_dependencies.sh
+bash ~/git/Firmware/util/install_dependencies.sh
+```
+
+In case of Error (with `shim-signed`):
+
+```sh
+sudo apt-get install shim-signed
 ```
 
 ## Edit Keymap
