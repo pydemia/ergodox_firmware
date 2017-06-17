@@ -28,9 +28,9 @@ make ez pydemia
 ```
 
 ```sh
-Making ergodox/ez with keymap profet_80                                                                [OK]
-Making ergodox/ez with keymap pydemia                                                                  [OK]
-Making ergodox/ez with keymap steno                                                                    [OK]
+Making ergodox/ez with keymap profet_80             [OK]
+Making ergodox/ez with keymap pydemia               [OK]
+Making ergodox/ez with keymap steno                 [OK]
 Making ergodox/ez with keymap pydemia
 
 avr-gcc (GCC) 4.9.2
