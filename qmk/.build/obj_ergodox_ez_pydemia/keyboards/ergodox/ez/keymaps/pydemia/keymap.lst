@@ -7,28 +7,39 @@
    7               		.text
    8               	.Ltext0:
    9               		.cfi_sections	.debug_frame
-  10               		.section	.text.action_get_macro,"ax",@progbits
-  11               	.global	action_get_macro
-  13               	action_get_macro:
-  14               	.LFB124:
-  15               		.file 1 "keyboards/ergodox/ez/keymaps/pydemia/keymap.c"
+  10               		.section	.rodata.str1.1,"aMS",@progbits,1
+  11               	.LC1:
+  12 0000 2573 2025 		.string	"%s %d %d"
+  12      6420 2564 
+  12      00
+  13               	.LC0:
+  14 0009 4A61 6E46 		.string	"JanFebMarAprMayJunJulAugSepOctNovDec"
+  14      6562 4D61 
+  14      7241 7072 
+  14      4D61 794A 
+  14      756E 4A75 
+  15               		.section	.text.pre_macro_date_to_int,"ax",@progbits
+  16               	.global	pre_macro_date_to_int
+  18               	pre_macro_date_to_int:
+  19               	.LFB124:
+  20               		.file 1 "keyboards/ergodox/ez/keymaps/pydemia/keymap.c"
    1:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** #include "ergodox.h"
    2:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** #include "debug.h"
    3:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** #include "action_layer.h"
    4:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** #include "version.h"
    5:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
-   6:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** #define SIGN "# -*- coding: utf-8 -*- \n'''\nCreated on \n\n@author: Young Ju Kim\n'''"
-   7:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
-   8:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** #define WKEY 0 // default layer
-   9:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** #define NPAD 1 // Numpad Layer
-  10:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** #define MAGI 2 // Magic Layer
-  11:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** #define LKEY 3 // Linux
-  12:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** #define PPTK 4 // PPT
+   6:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** #define WKEY 0 // default layer
+   7:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** #define NPAD 1 // Numpad Layer
+   8:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** #define MAGI 2 // Magic Layer
+   9:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** #define LKEY 3 // Linux
+  10:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** #define PPTK 4 // PPT
+  11:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+  12:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** #define EPRM M(1) // Macro 1: Reset EEPROM
   13:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
-  14:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** #define EPRM M(1) // Macro 1: Reset EEPROM
+  14:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   15:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
-  16:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  17:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** /* Keymap 0: Basic layer
+  16:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** /* Keymap 0: Basic layer
+  17:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *
   18:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ┌───────┬─────┬─────┬─────┬─────
   19:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │  Esc  │  1  │  2  │  3  │  4  │  5  │CtFn5│     │  6  │  7  │  8  │  9
   20:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ├───────┼─────┼─────┼─────┼─────
@@ -38,7 +49,7 @@
   24:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ├───────┼─────┼─────┼─────┼─────
   25:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │ LSHFT │  Z  │  X  │  C  │  V  │  B  │ Npd │     │ Fn5 │  N  │  M  │  ,
   26:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * └─┬─────┼─────┼─────┼─────┼─────
-  27:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *   │ CTL │CtAlt│Wn/Cd│ App │ ALT │                             │ RAt │ RCl │  [
+  27:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *   │ CTL │ TgM │Wn/Cd│ App │ ALT │                             │ RAt │ RCl │  [
   28:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *   └─────┴─────┴─────┴─────┴─────┘ 
   29:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                   │ Hom │ End │ │ Lft │ Rgt │
   30:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                             ┌─────┼─────┼─────┤ ├──�
@@ -58,7 +69,7 @@
   44:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_TAB,   KC_Q,          KC_W,    KC_E,         KC_R,    KC_T,  KC_EQUAL,
   45:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_GRV,   KC_A,          KC_S,    KC_D,         KC_F,    KC_G,
   46:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_LSFT,  KC_Z,          KC_X,    KC_C,         KC_V,    KC_B,  KC_FN1,
-  47:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_LCTRL, LCTL(KC_LALT), KC_LGUI, KC_APP,      KC_LALT,
+  47:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_LCTRL, KC_FN2/*LCTL(KC_LALT)*/, KC_LGUI, KC_APP,      KC_LALT,
   48:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                         KC_HOME, KC_END,
   49:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                                  KC_PGUP,
   50:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                KC_SPC,  KC_BSPC, KC_PGDN,
@@ -72,380 +83,1056 @@
   58:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_UP,
   59:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_DOWN,     KC_DELT,  KC_ENT
   60:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     ),
-  61:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** /* Keymap 1: Numpad Layer
-  62:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ┌───────┬─────┬─────┬─────┬─────
-  63:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │  Ver  │ Fn1 │ Fn2 │ Fn3 │ Fn4 │ Fn5 │ Fn6 │     │ Fn7 │ Fn8 │ Fn9 │ F1
-  64:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ├───────┼─────┼─────┼─────┼─────
-  65:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │       │ CAT │     │ Dfm │  [  │  ]  │  <- │     │     │  7  │  8  │  9
+  61:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+  62:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** /* Keymap 1: Numpad Layer
+  63:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *
+  64:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ┌───────┬─────┬─────┬─────┬─────
+  65:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │  Ver  │ Fn1 │ Fn2 │ Fn3 │ Fn4 │ Fn5 │ Fn6 │     │ Fn7 │ Fn8 │ Fn9 │ F1
   66:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ├───────┼─────┼─────┼─────┼─────
-  67:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │       │     │     │ DTm │  {  │  }  ├─────┤     ├─────�
+  67:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │ DTTM  │     │ DAT │ Dfm │  (  │  )  │ #%% │     │     │  7  │  8  │  9
   68:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ├───────┼─────┼─────┼─────┼─────
-  69:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │       │     │     │     │  (  │  )  │     │     │     │  1  │  2  │  3
-  70:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * └─┬─────┼─────┼─────┼─────┼─────
-  71:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *   │     │     │     │     │     │                             │  0  │  .  │ Lf
-  72:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *   └─────┴─────┴─────┴─────┴─────┘ 
-  73:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                   │ Lft │ Rgt │ │ CLf │ CRt │
-  74:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                             ┌─────┼─────┼─────┤ ├──�
-  75:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                             │     │     │ Up  │ │ Up  │     │     │
-  76:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                             │ Ent │ Del ├─────┤ ├─────┤ Bsp │ 
-  77:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                             │     │     │ Dwn │ │ Dwn │     │     │
-  78:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                             └─────┴─────┴─────┘ └──�
-  79:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  */
-  80:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** // SYMBOLS M(0) = Version
-  81:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** [NPAD] = KEYMAP(
-  82:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        // left hand
-  83:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_ESC,   KC_F1,  	  KC_F2,    KC_F3,   KC_F4,   KC_F5,   KC_F6,
-  84:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_TRNS, LCTL(LALT(KC_T)), KC_TRNS,  M(2),    KC_LBRC, KC_RBRC, M(1),
-  85:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_TRNS, KC_TRNS, 	  KC_TRNS,  M(3),    KC_LCBR, KC_RCBR,
-  86:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_TRNS, KC_TRNS, 	  KC_TRNS,  KC_TRNS, KC_LPRN, KC_RPRN, KC_TRNS,
-  87:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****           EPRM, KC_TRNS, 	  KC_TRNS,  KC_TRNS, KC_TRNS,
-  88:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                         KC_LEFT, KC_RGHT,
-  89:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                                  KC_UP,
-  90:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                KC_ENT,  KC_DELT, KC_DOWN,
-  91:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
-  92:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        // right hand
-  93:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_TRNS,
-  94:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_TILD, KC_7,    KC_8,    KC_9,    KC_PLUS, KC_MINUS,KC_TRNS, 
-  95:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                 KC_4,    KC_5,    KC_6,    KC_ASTR, KC_SLSH, KC_TRNS,
-  96:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_TRNS, KC_1,    KC_2,    KC_3,    KC_COMM, KC_UP,   KC_TRNS,
-  97:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                 KC_0,    KC_DOT,  KC_LEFT, KC_DOWN, KC_RGHT,
-  98:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        LCTL(KC_LEFT),     LCTL(KC_RGHT),
-  99:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_PGUP,
- 100:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_PGDN,     KC_BSPC,  KC_SPC
- 101:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     ),
- 102:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** /* Keymap 2: Magic Layer
- 103:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *
- 104:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ,--------------------------------------------------.           ,--------------------------------
- 105:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |  ESC   |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |           |  F7  |  F8  |  F9  |  F10 |  F1
- 106:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |--------+------+------+------+------+-------------|           |------+------+------+------+----
- 107:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |        |      |      |  Up  |      |      |      |           |      |      |      |      |  {[
- 108:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
- 109:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |        |      | Left | Down | Rght |      |------|           |------|      |      |      |   (
- 110:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
- 111:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |        |      |      |      |      |      |      |           |      |      |      |      |    
- 112:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * `--------+------+------+------+------+-------------'           `-------------+------+------+----
- 113:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *   | EPRM |      |      |      |      |                                       |      |      |    
- 114:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *   `----------------------------------'                                       `------------------
- 115:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                        ,-------------.       ,-------------.
- 116:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                        | SFHm | SFEd |       | Left | Right|
- 117:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                 ,------|------|------|       |------+--------+------.
- 118:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                 |      |      | PgUp |       |  Up  |        |      |
- 119:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                 | Space|Backsp|------|       |------|  Del   |Enter |
- 120:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                 |      |ace   | PgDn |       | Down |        |      |
- 121:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                 `--------------------'       `----------------------'
- 122:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  */
- 123:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** // MAGI
- 124:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** [MAGI] = KEYMAP(
- 125:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        // left hand
- 126:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_ESC,   KC_F1,           KC_F2,        KC_F3,   KC_F4,  KC_F5,   KC_F6,
- 127:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_TRNS,KC_TRNS,         KC_TRNS,        KC_UP,	 KC_TRNS, KC_TRNS, KC_TRNS,
- 128:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_TRNS,KC_TRNS,         KC_LEFT,     	KC_DOWN, KC_RGHT, KC_TRNS,
- 129:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_TRNS,KC_TRNS,   KC_TRNS, KC_TRNS,  	KC_TRNS, KC_TRNS, KC_TRNS,
- 130:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_LCTRL,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
- 131:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                        	       LSFT(KC_HOME),    LSFT(KC_END),
- 132:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                                  KC_PGUP,
- 133:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                KC_SPC,  KC_BSPC, KC_PGDN,
- 134:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        // right hand
- 135:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_F7,   KC_F8,         KC_F9,        KC_F10,  KC_F11,  KC_F12,  KC_TRNS,
- 136:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_TRNS, KC_TRNS,       KC_TRNS,      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
- 137:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                 KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS,
- 138:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_TRNS, KC_TRNS,       KC_TRNS,      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
- 139:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                KC_TRNS,      KC_TRNS,  KC_COMM, KC_TRNS,  KC_TRNS,
- 140:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_LEFT,     KC_RGHT,
- 141:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_UP,
- 142:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_DOWN,     KC_DELT,  KC_ENT
- 143:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     ),
- 144:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** /* Keymap 3: Linux Key layer
- 145:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *
- 146:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ,--------------------------------------------------.           ,--------------------------------
- 147:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |  Esc   |   1  |   2  |   3  |   4  |   5  | TgLk |           |   6  |   7  |   8  |   9  |   0
- 148:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |--------+------+------+------+------+-------------|           |------+------+------+------+----
- 149:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |  Tab   |   Q  |   W  |   E  |   R  |   T  |      |           |      |   Y  |   U  |   I  |   O
- 150:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |--------+------+------+------+------+------|  =   |           |  <-  |------+------+------+----
- 151:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |   ~    |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L
- 152:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |--------+------+------+------+------+------|      |           |CtrlF5|------+------+------+----
- 153:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .
- 154:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * `--------+------+------+------+------+-------------'           `-------------+------+------+----
- 155:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *   |LCtrl |CtlAlt|Wn/Cmd| App |  LAlt |                                       | RAlt | RCtl |  [ 
- 156:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *   `----------------------------------'                                      `-------------------
- 157:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                        ,-------------.       ,-------------.
- 158:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                        | Home | End  |       | CtLf | CtRt |
- 159:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                 ,------|------|------|       |------+--------+------.
- 160:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                 |      |      | PgUp |       |  Up  |        |      |
- 161:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                 | Space|Backsp|------|       |------|  Del   |Enter |
- 162:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                 |      |ace   | PgDn |       | Down |        |      |
- 163:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                 `--------------------'       `----------------------'
- 164:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  */
- 165:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** // If it accepts an argument (i.e, is a function), it doesn't need KC_.
- 166:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** // Otherwise, it needs KC_*
- 167:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
- 168:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** //Hyper: ALL_T(KC_NO)
- 169:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** //Meh: MEH_T(KC_NO)
- 170:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** [LKEY] = KEYMAP(  // layer 0 : default
- 171:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         // left hand
- 172:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_ESC,   KC_1,          KC_2,    KC_3,         KC_4,    KC_5,  TG(LKEY),
- 173:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_TAB,   KC_Q,          KC_W,    KC_E,         KC_R,    KC_T,  KC_EQUAL,
- 174:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_GRV,   KC_A,          KC_S,    KC_D,         KC_F,    KC_G,
- 175:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_LSFT,  KC_Z,          KC_X,    KC_C,         KC_V,    KC_B,  LT(NPAD, TG(NPAD)),
- 176:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_LCTRL, LCTL(KC_LALT), KC_LGUI, KC_APP,      KC_LALT,
- 177:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                        			KC_HOME, KC_END,
- 178:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                                  KC_PGUP,
- 179:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                KC_SPC,  KC_DELT, KC_PGDN,
- 180:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         // right hand
- 181:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_6,                KC_7,           KC_8,     KC_9,                 KC_0,                 
- 182:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         M(1),            KC_Y,           KC_U,     KC_I,                 KC_O,                 KC_P
- 183:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                              KC_H,           KC_J,     KC_K,                 KC_L,                 
- 184:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         LCTL(KC_F5),         KC_N,           KC_M,     KC_COMM,              KC_DOT,               
- 185:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                              KC_RALT,        LSFT(KC_SPC),  KC_LBRC,              KC_RBRC,         
- 186:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_HOME,     KC_END, 
- 187:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_PGUP,
- 188:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_PGDN,     KC_DELT,  KC_ENT
- 189:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     ),
- 190:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** /* Keymap 4: PPT layer
- 191:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *
- 192:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ,--------------------------------------------------.           ,--------------------------------
- 193:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |  Esc   |   1  |   2  |   3  |   4  |   5  | TgLk |           |   6  |   7  |   8  |   9  |   0
- 194:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |--------+------+------+------+------+-------------|           |------+------+------+------+----
- 195:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |  Tab   |   Q  |   W  |   E  |   R  |   T  |      |           |      |   Y  |   U  |   I  |   O
- 196:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |--------+------+------+------+------+------|  =   |           |  <-  |------+------+------+----
- 197:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |   ~    |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L
- 198:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |--------+------+------+------+------+------|      |           |CtrlF5|------+------+------+----
- 199:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .
- 200:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * `--------+------+------+------+------+-------------'           `-------------+------+------+----
- 201:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *   |LCtrl |CtlAlt|Wn/Cmd| App |  LAlt |                                       | RAlt | RCtl |  [ 
- 202:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *   `----------------------------------'                                      `-------------------
- 203:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                        ,-------------.       ,-------------.
- 204:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                        | Home | End  |       | Left | Right|
- 205:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                 ,------|------|------|       |------+--------+------.
- 206:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                 |      |      | PgUp |       |  Up  |        |      |
- 207:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                 | Space|Backsp|------|       |------|  Del   |Enter |
- 208:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                 |      |ace   | PgDn |       | Down |        |      |
- 209:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                 `--------------------'       `----------------------'
- 210:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  */
- 211:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** // If it accepts an argument (i.e, is a function), it doesn't need KC_.
- 212:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** // Otherwise, it needs KC_*
- 213:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
- 214:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** //Hyper: ALL_T(KC_NO)
- 215:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** //Meh: MEH_T(KC_NO)
- 216:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** [PPTK] = KEYMAP(  // layer 0 : default
- 217:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         // left hand
- 218:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_ESC,   KC_1,          KC_2,    KC_3,         KC_4,    KC_5,  TG(LKEY),
- 219:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_TAB,   KC_Q,          KC_W,    KC_E,         KC_R,    KC_T,  KC_EQUAL,
- 220:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_GRV,   KC_A,          KC_S,    KC_D,         KC_F,    KC_G,
- 221:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_LSFT,  KC_Z,          KC_X,    KC_C,         KC_V,    KC_B,  LT(NPAD, TG(NPAD)),
- 222:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_LCTRL, LCTL(KC_LALT), KC_LGUI, KC_APP,      KC_LALT,
- 223:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                         KC_HOME, KC_END,
- 224:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                                  KC_PGUP,
- 225:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                KC_SPC,  KC_BSPC, KC_PGDN,
- 226:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         // right hand
- 227:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_6,                KC_7,           KC_8,     KC_9,                 KC_0,                 
- 228:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         M(1),            KC_Y,           KC_U,     KC_I,                 KC_O,                 KC_P
- 229:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                              KC_H,           KC_J,     KC_K,                 KC_L,                 
- 230:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         LCTL(KC_F5),         KC_N,           KC_M,     KC_COMM,              KC_DOT,               
- 231:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                              KC_RALT,        LSFT(KC_SPC),  KC_LBRC,              KC_RBRC,         
- 232:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_LEFT,     KC_RGHT, 
- 233:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_UP,
- 234:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_DOWN,     KC_DELT,  KC_ENT
- 235:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     ),
- 236:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** };
- 237:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
- 238:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** /* Layer _ : ---
- 239:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ┌─────────┬───────┬───────┬─────
- 240:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │         │       │       │       │       │       │       │     │       │   
- 241:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ├─────────┼───────┼───────┼─────
- 242:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │         │  A    │    A  │    A  │    A  │    A  │       │     │       │   
+  69:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │  DAT  │     │ TIM │ NOW │  [  │  ]  ├─────┤     ├─────�
+  70:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ├───────┼─────┼─────┼─────┼─────
+  71:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │  TIM  │     │ PIP │     │  {  │  }  │     │     │     │  1  │  2  │  3
+  72:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * └─┬─────┼─────┼─────┼─────┼─────
+  73:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *   │     │     │     │     │     │                             │  0  │  .  │ Lf
+  74:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *   └─────┴─────┴─────┴─────┴─────┘ 
+  75:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                   │ Lft │ Rgt │ │ CLf │ CRt │
+  76:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                             ┌─────┼─────┼─────┤ ├──�
+  77:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                             │     │     │ SHm │ │ PUp │     │     │
+  78:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                             │ Ent │ Bsp ├─────┤ ├─────┤ Del │ 
+  79:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                             │     │     │ SDn │ │ PDn │     │     │
+  80:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                             └─────┴─────┴─────┘ └──�
+  81:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  */
+  82:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** // SYMBOLS M(0) = Version
+  83:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** [NPAD] = KEYMAP(
+  84:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        // left hand
+  85:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        M(0),   KC_F1,  	  KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,
+  86:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        M(10),  KC_TRNS,  M(8),     M(2),     KC_LPRN,  KC_RPRN,  M(3),//KC_QUOT,M(1),
+  87:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        M(8),   KC_TRNS,  M(9),     M(10),    KC_LBRC,  KC_RBRC,
+  88:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        M(9),   KC_TRNS,  M(7),     KC_TRNS,  KC_LCBR,  KC_RCBR,  KC_TRNS,
+  89:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****           EPRM, KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
+  90:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                         KC_LEFT,  KC_RGHT,
+  91:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                                   LSFT(KC_HOME),
+  92:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                KC_ENT,  KC_BSPC,  LSFT(KC_END),
+  93:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+  94:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        // right hand
+  95:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_TRNS,
+  96:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_TILD, KC_7,    KC_8,    KC_9,    KC_PLUS, KC_MINUS,KC_TRNS, 
+  97:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                 KC_4,    KC_5,    KC_6,    KC_ASTR, KC_SLSH, KC_TRNS,
+  98:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_TRNS, KC_1,    KC_2,    KC_3,    KC_COMM, KC_UP,   KC_TRNS,
+  99:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                 KC_0,    KC_DOT,  KC_LEFT, KC_DOWN, KC_RGHT,
+ 100:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        LCTL(KC_LEFT),     LCTL(KC_RGHT),
+ 101:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_PGUP,
+ 102:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_PGDN,     KC_DELT,  KC_SPC
+ 103:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     ),
+ 104:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 105:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** /* Keymap 2: Magic Layer
+ 106:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *
+ 107:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ┌───────┬─────┬─────┬─────┬─────
+ 108:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │ SIGN  │ Fn1 │ Fn2 │ Fn3 │ Fn4 │ Fn5 │ Fn6 │     │ Fn7 │ Fn8 │ Fn9 │ F1
+ 109:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ├───────┼─────┼─────┼─────┼─────
+ 110:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │ DTTM  │ NQr │     │     │  (  │  )  │ #%% │     │     │  7  │  8  │  9
+ 111:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ├───────┼─────┼─────┼─────┼─────
+ 112:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │  DAT  │ LQr │     │     │  [  │  ]  ├─────┤     ├─────�
+ 113:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ├───────┼─────┼─────┼─────┼─────
+ 114:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │  TIM  │ SQr │     │     │  {  │  }  │     │     │     │  1  │  2  │  3
+ 115:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * └─┬─────┼─────┼─────┼─────┼─────
+ 116:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *   │     │     │     │     │     │                             │  0  │  .  │ Lf
+ 117:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *   └─────┴─────┴─────┴─────┴─────┘ 
+ 118:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                   │ Lft │ Rgt │ │ CLf │ CRt │
+ 119:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                             ┌─────┼─────┼─────┤ ├──�
+ 120:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                             │     │     │ SHm │ │ PUp │     │     │
+ 121:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                             │ Ent │ Bsp ├─────┤ ├─────┤ Del │ 
+ 122:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                             │     │     │ SDn │ │ PDn │     │     │
+ 123:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                             └─────┴─────┴─────┘ └──�
+ 124:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  */
+ 125:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** // MAGI
+ 126:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** [MAGI] = KEYMAP(
+ 127:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        // left hand
+ 128:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        M(100),   KC_F1,    KC_F2,     KC_F3,    KC_F4,   KC_F5,   KC_F6,
+ 129:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        M(10),    M(4),     KC_TRNS,   KC_UP,    KC_TRNS, KC_TRNS, KC_TRNS,
+ 130:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        M(8),     M(5),     KC_TRNS,   KC_DOWN,  KC_RGHT, KC_TRNS,
+ 131:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        M(9),     M(6),     KC_TRNS,   KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS,
+ 132:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_LCTRL,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
+ 133:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                        	       LSFT(KC_HOME),     LSFT(KC_END),
+ 134:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                                   KC_PGUP,
+ 135:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                KC_SPC,  KC_BSPC,  KC_PGDN,
+ 136:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        // right hand
+ 137:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_F7,   KC_F8,         KC_F9,        KC_F10,   KC_F11,   KC_F12,   KC_TRNS,
+ 138:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_TRNS, KC_TRNS,       KC_TRNS,      KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
+ 139:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                 KC_TRNS,       KC_TRNS,      KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
+ 140:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_TRNS, KC_TRNS,       KC_TRNS,      KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
+ 141:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                KC_TRNS,      KC_TRNS,  KC_COMM,  KC_TRNS,  KC_TRNS,
+ 142:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_LEFT,     KC_RGHT,
+ 143:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_UP,
+ 144:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_DOWN,     KC_DELT,  KC_ENT
+ 145:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     ),
+ 146:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** /* Keymap 3: Linux Key layer
+ 147:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *
+ 148:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ,--------------------------------------------------.           ,--------------------------------
+ 149:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |  Esc   |   1  |   2  |   3  |   4  |   5  | TgLk |           |   6  |   7  |   8  |   9  |   0
+ 150:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |--------+------+------+------+------+-------------|           |------+------+------+------+----
+ 151:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |  Tab   |   Q  |   W  |   E  |   R  |   T  |      |           |      |   Y  |   U  |   I  |   O
+ 152:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |--------+------+------+------+------+------|  =   |           |  <-  |------+------+------+----
+ 153:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |   ~    |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L
+ 154:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |--------+------+------+------+------+------|      |           |CtrlF5|------+------+------+----
+ 155:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .
+ 156:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * `--------+------+------+------+------+-------------'           `-------------+------+------+----
+ 157:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *   |LCtrl |CtlAlt|Wn/Cmd| App |  LAlt |                                       | RAlt | RCtl |  [ 
+ 158:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *   `----------------------------------'                                      `-------------------
+ 159:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                        ,-------------.       ,-------------.
+ 160:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                        | Home | End  |       | CtLf | CtRt |
+ 161:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                 ,------|------|------|       |------+--------+------.
+ 162:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                 |      |      | PgUp |       |  Up  |        |      |
+ 163:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                 | Space|Backsp|------|       |------|  Del   |Enter |
+ 164:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                 |      |ace   | PgDn |       | Down |        |      |
+ 165:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                 `--------------------'       `----------------------'
+ 166:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  */
+ 167:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** // If it accepts an argument (i.e, is a function), it doesn't need KC_.
+ 168:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** // Otherwise, it needs KC_*
+ 169:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 170:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** //Hyper: ALL_T(KC_NO)
+ 171:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** //Meh: MEH_T(KC_NO)
+ 172:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** [LKEY] = KEYMAP(  // layer 0 : default
+ 173:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         // left hand
+ 174:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_ESC,   KC_1,          KC_2,    KC_3,         KC_4,    KC_5,  TG(LKEY),
+ 175:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_TAB,   KC_Q,          KC_W,    KC_E,         KC_R,    KC_T,  KC_EQUAL,
+ 176:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_GRV,   KC_A,          KC_S,    KC_D,         KC_F,    KC_G,
+ 177:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_LSFT,  KC_Z,          KC_X,    KC_C,         KC_V,    KC_B,  LT(NPAD, TG(NPAD)),
+ 178:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_LCTRL, LCTL(KC_LALT), KC_LGUI, KC_APP,      KC_LALT,
+ 179:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                        			KC_HOME, KC_END,
+ 180:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                                  KC_PGUP,
+ 181:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                KC_SPC,  KC_DELT, KC_PGDN,
+ 182:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         // right hand
+ 183:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_6,                KC_7,           KC_8,     KC_9,                 KC_0,                 
+ 184:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         M(1),            KC_Y,           KC_U,     KC_I,                 KC_O,                 KC_P
+ 185:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                              KC_H,           KC_J,     KC_K,                 KC_L,                 
+ 186:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         LCTL(KC_F5),         KC_N,           KC_M,     KC_COMM,              KC_DOT,               
+ 187:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                              KC_RALT,        LSFT(KC_SPC),  KC_LBRC,              KC_RBRC,         
+ 188:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_HOME,     KC_END, 
+ 189:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_PGUP,
+ 190:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_PGDN,     KC_DELT,  KC_ENT
+ 191:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     ),
+ 192:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** /* Keymap 4: PPT layer
+ 193:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *
+ 194:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ,--------------------------------------------------.           ,--------------------------------
+ 195:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |  Esc   |   1  |   2  |   3  |   4  |   5  | TgLk |           |   6  |   7  |   8  |   9  |   0
+ 196:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |--------+------+------+------+------+-------------|           |------+------+------+------+----
+ 197:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |  Tab   |   Q  |   W  |   E  |   R  |   T  |      |           |      |   Y  |   U  |   I  |   O
+ 198:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |--------+------+------+------+------+------|  =   |           |  <-  |------+------+------+----
+ 199:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |   ~    |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L
+ 200:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * |--------+------+------+------+------+------|      |           |CtrlF5|------+------+------+----
+ 201:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .
+ 202:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * `--------+------+------+------+------+-------------'           `-------------+------+------+----
+ 203:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *   |LCtrl |CtlAlt|Wn/Cmd| App |  LAlt |                                       | RAlt | RCtl |  [ 
+ 204:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *   `----------------------------------'                                      `-------------------
+ 205:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                        ,-------------.       ,-------------.
+ 206:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                        | Home | End  |       | Left | Right|
+ 207:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                 ,------|------|------|       |------+--------+------.
+ 208:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                 |      |      | PgUp |       |  Up  |        |      |
+ 209:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                 | Space|Backsp|------|       |------|  Del   |Enter |
+ 210:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                 |      |ace   | PgDn |       | Down |        |      |
+ 211:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                 `--------------------'       `----------------------'
+ 212:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  */
+ 213:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** // If it accepts an argument (i.e, is a function), it doesn't need KC_.
+ 214:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** // Otherwise, it needs KC_*
+ 215:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 216:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** //Hyper: ALL_T(KC_NO)
+ 217:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** //Meh: MEH_T(KC_NO)
+ 218:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** [PPTK] = KEYMAP(  // layer 0 : default
+ 219:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         // left hand
+ 220:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_ESC,   KC_1,          KC_2,    KC_3,         KC_4,    KC_5,  TG(LKEY),
+ 221:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_TAB,   KC_Q,          KC_W,    KC_E,         KC_R,    KC_T,  KC_EQUAL,
+ 222:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_GRV,   KC_A,          KC_S,    KC_D,         KC_F,    KC_G,
+ 223:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_LSFT,  KC_Z,          KC_X,    KC_C,         KC_V,    KC_B,  LT(NPAD, TG(NPAD)),
+ 224:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_LCTRL, LCTL(KC_LALT), KC_LGUI, KC_APP,      KC_LALT,
+ 225:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                         KC_HOME, KC_END,
+ 226:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                                  KC_PGUP,
+ 227:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                KC_SPC,  KC_BSPC, KC_PGDN,
+ 228:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         // right hand
+ 229:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_6,                KC_7,           KC_8,     KC_9,                 KC_0,                 
+ 230:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         M(1),            KC_Y,           KC_U,     KC_I,                 KC_O,                 KC_P
+ 231:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                              KC_H,           KC_J,     KC_K,                 KC_L,                 
+ 232:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         LCTL(KC_F5),         KC_N,           KC_M,     KC_COMM,              KC_DOT,               
+ 233:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                              KC_RALT,        LSFT(KC_SPC),  KC_LBRC,              KC_RBRC,         
+ 234:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_LEFT,     KC_RGHT, 
+ 235:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_UP,
+ 236:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         KC_DOWN,     KC_DELT,  KC_ENT
+ 237:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     ),
+ 238:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** };
+ 239:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 240:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** /* Layer _ : ---
+ 241:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ┌─────────┬───────┬───────┬─────
+ 242:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │         │       │       │       │       │       │       │     │       │   
  243:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ├─────────┼───────┼───────┼─────
- 244:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │         │  A    │    A  │    A  │    A  │    A  ├───────┤     �
+ 244:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │         │  A    │    A  │    A  │    A  │    A  │       │     │       │   
  245:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ├─────────┼───────┼───────┼─────
- 246:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │         │  A    │    A  │    A  │    A  │    A  │       │     │       │   
- 247:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * └─┬───────┼───────┼───────┼─────
- 248:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *   │       │       │(MO1)  │       │(MO4)  │                                     │(
- 249:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *   └───────┴───────┴───────┴──────�
- 250:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                             │ Ms    │ Ms    │ │   Ms  │  Ms   │
- 251:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                     ┌───────┼───────┼───
- 252:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                     │       │       │   MLC │ │ MRC   │       │   
- 253:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                     │       │       ├───────┤ ├───
- 254:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                     │       │       │       │ │       │       │   
- 255:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                     └───────┴───────┴───
- 256:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  */
- 257:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
- 258:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** /* Layer _ : ---
- 259:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ┌───────┬─────┬─────┬─────┬─────
- 260:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │  TAB  │  1  │  2  │  3  │  4  │  5  │  `  │     │  ´  │  6  │  7  │  
- 261:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ├───────┼─────┼─────┼─────┼─────
- 262:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │   Y   │  X  │  V  │  L  │  C  │  W  │ HOM │     │ END │  K  │  H  │  G
+ 246:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │         │  A    │    A  │    A  │    A  │    A  ├───────┤     �
+ 247:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ├─────────┼───────┼───────┼─────
+ 248:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │         │  A    │    A  │    A  │    A  │    A  │       │     │       │   
+ 249:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * └─┬───────┼───────┼───────┼─────
+ 250:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *   │       │       │(MO1)  │       │(MO4)  │                                     │(
+ 251:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *   └───────┴───────┴───────┴──────�
+ 252:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                             │ Ms    │ Ms    │ │   Ms  │  Ms   │
+ 253:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                     ┌───────┼───────┼───
+ 254:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                     │       │       │   MLC │ │ MRC   │       │   
+ 255:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                     │       │       ├───────┤ ├───
+ 256:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                     │       │       │       │ │       │       │   
+ 257:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                     └───────┴───────┴───
+ 258:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  */
+ 259:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 260:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** /* Layer _ : ---
+ 261:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ┌───────┬─────┬─────┬─────┬─────
+ 262:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │  TAB  │  1  │  2  │  3  │  4  │  5  │  `  │     │  ´  │  6  │  7  │  
  263:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ├───────┼─────┼─────┼─────┼─────
- 264:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │ Mod3  │  U  │  I  │  A  │  E  │  O  ├─────┤     ├─────�
+ 264:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │   Y   │  X  │  V  │  L  │  C  │  W  │ HOM │     │ END │  K  │  H  │  G
  265:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ├───────┼─────┼─────┼─────┼─────
- 266:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │ LSHFT │  Ü  │  Ö  │  Ä  │  P  │  Z  │     │     │     │  B  │  M  │
- 267:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * └─┬─────┼─────┼─────┼─────┼─────
- 268:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *   │ CTL │ ALT │ MO1 │ Win │ Mod4│                             │ Mod4│ Win │ MO
- 269:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *   └─────┴─────┴─────┴─────┴─────┘ 
- 270:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                   │  A  │  A  │ │  A  │  A  │
- 271:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                             ┌─────┼─────┼─────┤ ├──�
- 272:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                             │     │     │  ─  │ │  ─  │     │     │
- 273:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                             │ SPC │ RTN ├─────┤ ├─────┤ RTN │ 
- 274:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                             │     │     │ HYP │ │ MEH │     │     │
- 275:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                             └─────┴─────┴─────┘ └──�
- 276:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  */
- 277:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
- 278:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** const uint16_t PROGMEM fn_actions[] = {
- 279:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     [1] = ACTION_LAYER_TAP_TOGGLE(NPAD),                // FN1 - Momentary Layer 1 (Numpad Layer)~
- 280:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     [2] = ACTION_LAYER_TAP_TOGGLE(MAGI),                // FN2 - Momentary Layer 2 (Magic Layer)~
- 281:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
- 282:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** };
- 283:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
- 284:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
- 285:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** {
-  16               		.loc 1 285 0
-  17               		.cfi_startproc
-  18               	.LVL0:
-  19               	/* prologue: function */
-  20               	/* frame size = 0 */
-  21               	/* stack size = 0 */
-  22               	.L__stack_usage = 0
-  23 0000 FC01      		movw r30,r24
- 286:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****   // MACRODOWN only works in this function
- 287:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****       switch(id) {
-  24               		.loc 1 287 0
-  25 0002 6130      		cpi r22,lo8(1)
-  26 0004 01F0      		breq .L3
-  27 0006 00F0      		brlo .L4
-  28 0008 6230      		cpi r22,lo8(2)
-  29 000a 01F0      		breq .L5
-  30 000c 6330      		cpi r22,lo8(3)
-  31 000e 01F0      		breq .L6
-  32 0010 00C0      		rjmp .L2
-  33               	.L4:
- 288:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         case 0:
- 289:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         if (record->event.pressed) {
-  34               		.loc 1 289 0
-  35 0012 8281      		ldd r24,Z+2
-  36               	.LVL1:
-  37 0014 8823      		tst r24
-  38 0016 01F0      		breq .L2
- 290:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****           SEND_STRING (QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION);
-  39               		.loc 1 290 0
-  40 0018 80E0      		ldi r24,lo8(__c.5228)
-  41 001a 90E0      		ldi r25,hi8(__c.5228)
-  42 001c 00C0      		rjmp .L19
-  43               	.LVL2:
-  44               	.L3:
- 291:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         }
- 292:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         break;
- 293:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         case 1:
- 294:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         if (record->event.pressed) { // For resetting EEPROM
-  45               		.loc 1 294 0
-  46 001e 8281      		ldd r24,Z+2
-  47               	.LVL3:
-  48 0020 8823      		tst r24
-  49 0022 01F0      		breq .L2
- 295:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****           SEND_STRING ( "<-" );
-  50               		.loc 1 295 0
-  51 0024 80E0      		ldi r24,lo8(__c.5232)
-  52 0026 90E0      		ldi r25,hi8(__c.5232)
-  53 0028 00C0      		rjmp .L19
-  54               	.LVL4:
-  55               	.L5:
- 296:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         }
- 297:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         break;
- 298:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         case 2:
- 299:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         if (record->event.pressed) { // For resetting EEPROM
-  56               		.loc 1 299 0
-  57 002a 8281      		ldd r24,Z+2
-  58               	.LVL5:
-  59 002c 8823      		tst r24
-  60 002e 01F0      		breq .L2
- 300:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****           SEND_STRING ( "'%Y%m%d%H%M%S%f'" );
-  61               		.loc 1 300 0
-  62 0030 80E0      		ldi r24,lo8(__c.5235)
-  63 0032 90E0      		ldi r25,hi8(__c.5235)
-  64 0034 00C0      		rjmp .L19
-  65               	.LVL6:
-  66               	.L6:
- 301:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         }
- 302:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         break;
- 303:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 	case 3:
- 304:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         if (record->event.pressed) { // For resetting EEPROM
-  67               		.loc 1 304 0
-  68 0036 8281      		ldd r24,Z+2
-  69               	.LVL7:
-  70 0038 8823      		tst r24
-  71 003a 01F0      		breq .L2
- 305:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****           SEND_STRING ( SIGN );
-  72               		.loc 1 305 0
-  73 003c 80E0      		ldi r24,lo8(__c.5238)
-  74 003e 90E0      		ldi r25,hi8(__c.5238)
-  75               	.L19:
-  76 0040 0E94 0000 		call send_string
-  77               	.LVL8:
-  78               	.L2:
- 306:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         }
- 307:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         break;
- 308:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** //        case REQL:
- 309:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** //            return (record->event.pressed ?
- 310:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** //                    MACRO( T(LSFT(KC_COMMA)), T(KC_MINUS), END) : // For resetting EEPROM
- 311:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** //                    MACRO_NONE ) ;
- 312:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     }
- 313:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     return MACRO_NONE;
- 314:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** };
-  79               		.loc 1 314 0
-  80 0044 80E0      		ldi r24,0
-  81 0046 90E0      		ldi r25,0
-  82 0048 0895      		ret
-  83               		.cfi_endproc
-  84               	.LFE124:
-  86               		.section	.text.matrix_init_user,"ax",@progbits
-  87               	.global	matrix_init_user
-  89               	matrix_init_user:
-  90               	.LFB125:
- 315:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
- 316:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** // Runs just one time when the keyboard initializes.
- 317:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** void matrix_init_user(void) {
-  91               		.loc 1 317 0
-  92               		.cfi_startproc
-  93               	/* prologue: function */
-  94               	/* frame size = 0 */
-  95               	/* stack size = 0 */
-  96               	.L__stack_usage = 0
-  97 0000 0895      		ret
-  98               		.cfi_endproc
-  99               	.LFE125:
- 101               		.section	.text.matrix_scan_user,"ax",@progbits
- 102               	.global	matrix_scan_user
- 104               	matrix_scan_user:
- 105               	.LFB126:
- 318:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
- 319:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** };
- 320:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
- 321:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** // Print Timestamp Function
- 322:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** /*static macro_t *gettime(void) {
- 323:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     time_t t = time(NULL);
- 324:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     struct tm *tm = localtime(&t);
- 325:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     printf("%s\n", asctime(tm));
- 326:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     return MACRO_NONE; 
- 327:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** }
- 328:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** */
- 329:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** // Runs constantly in the background, in a loop.
- 330:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** void matrix_scan_user(void) {
- 106               		.loc 1 330 0
- 107               		.cfi_startproc
- 108               	/* prologue: function */
- 109               	/* frame size = 0 */
- 110               	/* stack size = 0 */
- 111               	.L__stack_usage = 0
- 331:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
- 332:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     uint8_t layer = biton32(layer_state);
- 112               		.loc 1 332 0
- 113 0000 6091 0000 		lds r22,layer_state
- 114 0004 7091 0000 		lds r23,layer_state+1
- 115 0008 8091 0000 		lds r24,layer_state+2
- 116 000c 9091 0000 		lds r25,layer_state+3
- 117 0010 0E94 0000 		call biton32
- 118               	.LVL9:
- 119               	.LBB20:
- 120               	.LBB21:
- 121               		.file 2 "keyboards/ergodox/ez/ez.h"
+ 266:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │ Mod3  │  U  │  I  │  A  │  E  │  O  ├─────┤     ├─────�
+ 267:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ├───────┼─────┼─────┼─────┼─────
+ 268:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │ LSHFT │  Ü  │  Ö  │  Ä  │  P  │  Z  │     │     │     │  B  │  M  │
+ 269:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * └─┬─────┼─────┼─────┼─────┼─────
+ 270:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *   │ CTL │ ALT │ MO1 │ Win │ Mod4│                             │ Mod4│ Win │ MO
+ 271:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *   └─────┴─────┴─────┴─────┴─────┘ 
+ 272:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                                   │  A  │  A  │ │  A  │  A  │
+ 273:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                             ┌─────┼─────┼─────┤ ├──�
+ 274:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                             │     │     │  ─  │ │  ─  │     │     │
+ 275:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                             │ SPC │ RTN ├─────┤ ├─────┤ RTN │ 
+ 276:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                             │     │     │ HYP │ │ MEH │     │     │
+ 277:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  *                             └─────┴─────┴─────┘ └──�
+ 278:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  */
+ 279:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 280:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 281:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** // --- CUSTOM FORMAT STRING ---
+ 282:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** #define QUOTE(...) #__VA_ARGS__
+ 283:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** const char *sql_query = QUOTE(
+ 284:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     SELECT word_id
+ 285:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     FROM table1, table2
+ 286:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     WHERE table2.word_id = table1.word_id
+ 287:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     ORDER BY table1.word ASC
+ 288:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** );
+ 289:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 290:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** // Python Code Format
+ 291:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** #define SIGNITURE "# -*- coding: utf-8 -*- \n"\
+ 292:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "'''\n"\
+ 293:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "\n"\
+ 294:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "Created on \n"\
+ 295:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "\n"\
+ 296:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "@author: Young Ju Kim\n"\
+ 297:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "'''\n"
+ 298:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 299:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** // Query Strings
+ 300:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** #define SQL_NORMAL_STR "SELECT\r\n"\
+ 301:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "     A.col\r\n"\
+ 302:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "    ,A.*\r\n"\
+ 303:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "FROM\r\n"\
+ 304:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "    a.aa A\r\n"\
+ 305:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "WHERE\r\n"\
+ 306:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "    A.col = NULL\r\n"\
+ 307:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "AND A.col <> 1\r\n"\
+ 308:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "AND A.col BETWEEN '01' AND '02'\r\n"
+ 309:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 310:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 311:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** #define SQL_LEFT_STR "SELECT\r\n"\
+ 312:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "     A.*\r\n"\
+ 313:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "    ,B.*\r\n"\
+ 314:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "FROM\r\n"\
+ 315:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "    a.aa A\r\n"\
+ 316:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "    LEFT OUTER JOIN b.bb B\r\n"\
+ 317:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "    ON\r\n"\
+ 318:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "        B.col = A.col --NULL\r\n"\
+ 319:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "    AND B.col = A.col --NULL\r\n"\
+ 320:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "WHERE\r\n"\
+ 321:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "    B.col = NULL\r\n"\
+ 322:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "AND A.col <> 1\r\n"\
+ 323:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "AND A.col BETWEEN '01' AND '02'\r\n"
+ 324:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 325:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 326:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** #define SQL_LEFT_SUB_STR "SELECT\r\n"\
+ 327:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "     A.*\r\n"\
+ 328:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "    ,B.*\r\n"\
+ 329:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "FROM\r\n"\
+ 330:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "    a.aa A\r\n"\
+ 331:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "    LEFT OUTER JOIN\r\n"\
+ 332:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "        (\r\n"\
+ 333:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "        SELECT\r\n"\
+ 334:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "             C.col\r\n"\
+ 335:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "        FROM\r\n"\
+ 336:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "            c.cc C\r\n"\
+ 337:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "        WHERE\r\n"\
+ 338:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "            C.col = NULL\r\n"\
+ 339:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "        ) B\r\n"\
+ 340:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "    ON\r\n"\
+ 341:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "        B.col = A.col --NULL\r\n"\
+ 342:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "    AND B.col = A.col --NULL\r\n"\
+ 343:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "WHERE\r\n"\
+ 344:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "    B.col = NULL\r\n"\
+ 345:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "AND A.col <> 1\r\n"\
+ 346:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "AND A.col BETWEEN '01' AND '02'\r\n"
+ 347:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 348:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** // pip String
+ 349:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** #define PIP_STR "pip install --cert=c:/sslproxy.crt "
+ 350:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 351:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 352:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** #define DATETIME_STR __DATE__ " " __TIME__ 
+ 353:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 354:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** // DATE to INT Function
+ 355:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** char pre_macro_date_to_int(const char *str_pre_macro_date)
+ 356:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** {
+  21               		.loc 1 356 0
+  22               		.cfi_startproc
+  23               	.LVL0:
+  24 0000 EF92      		push r14
+  25               	.LCFI0:
+  26               		.cfi_def_cfa_offset 3
+  27               		.cfi_offset 14, -2
+  28 0002 FF92      		push r15
+  29               	.LCFI1:
+  30               		.cfi_def_cfa_offset 4
+  31               		.cfi_offset 15, -3
+  32 0004 0F93      		push r16
+  33               	.LCFI2:
+  34               		.cfi_def_cfa_offset 5
+  35               		.cfi_offset 16, -4
+  36 0006 1F93      		push r17
+  37               	.LCFI3:
+  38               		.cfi_def_cfa_offset 6
+  39               		.cfi_offset 17, -5
+  40 0008 CF93      		push r28
+  41               	.LCFI4:
+  42               		.cfi_def_cfa_offset 7
+  43               		.cfi_offset 28, -6
+  44 000a DF93      		push r29
+  45               	.LCFI5:
+  46               		.cfi_def_cfa_offset 8
+  47               		.cfi_offset 29, -7
+  48 000c CDB7      		in r28,__SP_L__
+  49 000e DEB7      		in r29,__SP_H__
+  50               	.LCFI6:
+  51               		.cfi_def_cfa_register 28
+  52 0010 AE97      		sbiw r28,46
+  53               	.LCFI7:
+  54               		.cfi_def_cfa_offset 54
+  55 0012 0FB6      		in __tmp_reg__,__SREG__
+  56 0014 F894      		cli
+  57 0016 DEBF      		out __SP_H__,r29
+  58 0018 0FBE      		out __SREG__,__tmp_reg__
+  59 001a CDBF      		out __SP_L__,r28
+  60               	/* prologue: function */
+  61               	/* frame size = 46 */
+  62               	/* stack size = 52 */
+  63               	.L__stack_usage = 52
+  64               	.LVL1:
+ 357:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     const int comfile_date_len = 12;
+ 358:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  
+ 359:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     // error check
+ 360:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     if (NULL == str_pre_macro_date || comfile_date_len - 1 != strlen(str_pre_macro_date))
+  65               		.loc 1 360 0
+  66 001c 0097      		sbiw r24,0
+  67 001e 01F4      		brne .+2
+  68 0020 00C0      		rjmp .L4
+  69               		.loc 1 360 0 is_stmt 0 discriminator 1
+  70 0022 FC01      		movw r30,r24
+  71               		0:
+  72 0024 0190      		ld __tmp_reg__,Z+
+  73 0026 0020      		tst __tmp_reg__
+  74 0028 01F4      		brne 0b
+  75 002a 9F01      		movw r18,r30
+  76 002c 2C50      		subi r18,12
+  77 002e 3109      		sbc r19,__zero_reg__
+  78 0030 2817      		cp r18,r24
+  79 0032 3907      		cpc r19,r25
+  80 0034 01F0      		breq .+2
+  81 0036 00C0      		rjmp .L4
+ 361:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         return 0;
+ 362:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  
+ 363:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     const char month_names[] = "JanFebMarAprMayJunJulAugSepOctNovDec";
+  82               		.loc 1 363 0 is_stmt 1
+  83 0038 25E2      		ldi r18,lo8(37)
+  84 003a E0E0      		ldi r30,lo8(.LC0)
+  85 003c F0E0      		ldi r31,hi8(.LC0)
+  86 003e AE01      		movw r20,r28
+  87 0040 4F5F      		subi r20,-1
+  88 0042 5F4F      		sbci r21,-1
+  89 0044 7A01      		movw r14,r20
+  90 0046 DA01      		movw r26,r20
+  91               		0:
+  92 0048 0190      		ld r0,Z+
+  93 004a 0D92      		st X+,r0
+  94 004c 2A95      		dec r18
+  95 004e 01F4      		brne 0b
+ 364:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  
+ 365:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     char s_month[5] = {0,};
+  96               		.loc 1 365 0
+  97 0050 8E01      		movw r16,r28
+  98 0052 0A5D      		subi r16,-38
+  99 0054 1F4F      		sbci r17,-1
+ 100 0056 25E0      		ldi r18,lo8(5)
+ 101 0058 F801      		movw r30,r16
+ 102               		0:
+ 103 005a 1192      		st Z+,__zero_reg__
+ 104 005c 2A95      		dec r18
+ 105 005e 01F4      		brne 0b
+ 366:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     int iyear = 0, iday = 0;
+ 106               		.loc 1 366 0
+ 107 0060 1EA6      		std Y+46,__zero_reg__
+ 108 0062 1DA6      		std Y+45,__zero_reg__
+ 109 0064 1CA6      		std Y+44,__zero_reg__
+ 110 0066 1BA6      		std Y+43,__zero_reg__
+ 367:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  
+ 368:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     sscanf(str_pre_macro_date, "%s %d %d", s_month, &iday, &iyear);
+ 111               		.loc 1 368 0
+ 112 0068 9E01      		movw r18,r28
+ 113 006a 235D      		subi r18,-45
+ 114 006c 3F4F      		sbci r19,-1
+ 115 006e 3F93      		push r19
+ 116 0070 2F93      		push r18
+ 117 0072 2250      		subi r18,2
+ 118 0074 3109      		sbc r19,__zero_reg__
+ 119 0076 3F93      		push r19
+ 120 0078 2F93      		push r18
+ 121 007a 1F93      		push r17
+ 122 007c 0F93      		push r16
+ 123 007e 20E0      		ldi r18,lo8(.LC1)
+ 124 0080 30E0      		ldi r19,hi8(.LC1)
+ 125 0082 3F93      		push r19
+ 126 0084 2F93      		push r18
+ 127 0086 9F93      		push r25
+ 128 0088 8F93      		push r24
+ 129 008a 0E94 0000 		call sscanf
+ 130               	.LVL2:
+ 369:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     int imonth = (strstr(month_names, s_month) - month_names) / 3 + 1;
+ 131               		.loc 1 369 0
+ 132 008e B801      		movw r22,r16
+ 133 0090 C701      		movw r24,r14
+ 134 0092 0E94 0000 		call strstr
+ 135               	.LVL3:
+ 370:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 371:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     //snprintf(date_string, 100, "%d", date_int);
+ 372:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     return 10000 * iyear + 100 * imonth + iday;
+ 136               		.loc 1 372 0
+ 137 0096 3DA5      		ldd r19,Y+45
+ 138 0098 2BA5      		ldd r18,Y+43
+ 139 009a F0E1      		ldi r31,lo8(16)
+ 140 009c 3F9F      		mul r19,r31
+ 141 009e 200D      		add r18,r0
+ 142 00a0 1124      		clr __zero_reg__
+ 369:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     int imonth = (strstr(month_names, s_month) - month_names) / 3 + 1;
+ 143               		.loc 1 369 0
+ 144 00a2 8E19      		sub r24,r14
+ 145 00a4 9F09      		sbc r25,r15
+ 146               	.LVL4:
+ 147 00a6 63E0      		ldi r22,lo8(3)
+ 148 00a8 70E0      		ldi r23,0
+ 149 00aa 0E94 0000 		call __divmodhi4
+ 150               		.loc 1 372 0
+ 151 00ae 822F      		mov r24,r18
+ 152 00b0 34E6      		ldi r19,lo8(100)
+ 153 00b2 639F      		mul r22,r19
+ 154 00b4 800D      		add r24,r0
+ 155 00b6 1124      		clr __zero_reg__
+ 156 00b8 8C59      		subi r24,lo8(-(100))
+ 157 00ba 0FB6      		in __tmp_reg__,__SREG__
+ 158 00bc F894      		cli
+ 159 00be DEBF      		out __SP_H__,r29
+ 160 00c0 0FBE      		out __SREG__,__tmp_reg__
+ 161 00c2 CDBF      		out __SP_L__,r28
+ 162 00c4 00C0      		rjmp .L2
+ 163               	.LVL5:
+ 164               	.L4:
+ 361:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  
+ 165               		.loc 1 361 0
+ 166 00c6 80E0      		ldi r24,0
+ 167               	.LVL6:
+ 168               	.L2:
+ 169               	/* epilogue start */
+ 373:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** };
+ 170               		.loc 1 373 0
+ 171 00c8 AE96      		adiw r28,46
+ 172 00ca 0FB6      		in __tmp_reg__,__SREG__
+ 173 00cc F894      		cli
+ 174 00ce DEBF      		out __SP_H__,r29
+ 175 00d0 0FBE      		out __SREG__,__tmp_reg__
+ 176 00d2 CDBF      		out __SP_L__,r28
+ 177 00d4 DF91      		pop r29
+ 178 00d6 CF91      		pop r28
+ 179 00d8 1F91      		pop r17
+ 180 00da 0F91      		pop r16
+ 181 00dc FF90      		pop r15
+ 182 00de EF90      		pop r14
+ 183 00e0 0895      		ret
+ 184               		.cfi_endproc
+ 185               	.LFE124:
+ 187               		.section	.rodata.str1.1
+ 188               	.LC2:
+ 189 002e 2564 3A25 		.string	"%d:%d:%d"
+ 189      643A 2564 
+ 189      00
+ 190               		.section	.text.pre_macro_time_to_int,"ax",@progbits
+ 191               	.global	pre_macro_time_to_int
+ 193               	pre_macro_time_to_int:
+ 194               	.LFB125:
+ 374:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 375:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 376:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** // TIME to INT Functions
+ 377:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** int pre_macro_time_to_int(const char *str_pre_macro_time)
+ 378:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** {
+ 195               		.loc 1 378 0
+ 196               		.cfi_startproc
+ 197               	.LVL7:
+ 198 0000 CF93      		push r28
+ 199               	.LCFI8:
+ 200               		.cfi_def_cfa_offset 3
+ 201               		.cfi_offset 28, -2
+ 202 0002 DF93      		push r29
+ 203               	.LCFI9:
+ 204               		.cfi_def_cfa_offset 4
+ 205               		.cfi_offset 29, -3
+ 206 0004 00D0      		rcall .
+ 207 0006 00D0      		rcall .
+ 208 0008 00D0      		rcall .
+ 209               	.LCFI10:
+ 210               		.cfi_def_cfa_offset 10
+ 211 000a CDB7      		in r28,__SP_L__
+ 212 000c DEB7      		in r29,__SP_H__
+ 213               	.LCFI11:
+ 214               		.cfi_def_cfa_register 28
+ 215               	/* prologue: function */
+ 216               	/* frame size = 6 */
+ 217               	/* stack size = 8 */
+ 218               	.L__stack_usage = 8
+ 219               	.LVL8:
+ 379:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     const int comfile_time_len = 9;
+ 380:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  
+ 381:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     if (NULL == str_pre_macro_time || comfile_time_len -1 != strlen(str_pre_macro_time))
+ 220               		.loc 1 381 0
+ 221 000e 0097      		sbiw r24,0
+ 222 0010 01F4      		brne .+2
+ 223 0012 00C0      		rjmp .L9
+ 224               		.loc 1 381 0 is_stmt 0 discriminator 1
+ 225 0014 FC01      		movw r30,r24
+ 226               		0:
+ 227 0016 0190      		ld __tmp_reg__,Z+
+ 228 0018 0020      		tst __tmp_reg__
+ 229 001a 01F4      		brne 0b
+ 230 001c 9F01      		movw r18,r30
+ 231 001e 2950      		subi r18,9
+ 232 0020 3109      		sbc r19,__zero_reg__
+ 233 0022 2817      		cp r18,r24
+ 234 0024 3907      		cpc r19,r25
+ 235 0026 01F4      		brne .L9
+ 382:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         return 0;
+ 383:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  
+ 384:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     int ihour = 0, iminute = 0, isec = 0;
+ 236               		.loc 1 384 0 is_stmt 1
+ 237 0028 1E82      		std Y+6,__zero_reg__
+ 238 002a 1D82      		std Y+5,__zero_reg__
+ 239 002c 1C82      		std Y+4,__zero_reg__
+ 240 002e 1B82      		std Y+3,__zero_reg__
+ 241 0030 1A82      		std Y+2,__zero_reg__
+ 242 0032 1982      		std Y+1,__zero_reg__
+ 385:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     sscanf(str_pre_macro_time, "%d:%d:%d", &ihour, &iminute, &isec);
+ 243               		.loc 1 385 0
+ 244 0034 9E01      		movw r18,r28
+ 245 0036 2F5F      		subi r18,-1
+ 246 0038 3F4F      		sbci r19,-1
+ 247 003a 3F93      		push r19
+ 248 003c 2F93      		push r18
+ 249 003e 2E5F      		subi r18,-2
+ 250 0040 3F4F      		sbci r19,-1
+ 251 0042 3F93      		push r19
+ 252 0044 2F93      		push r18
+ 253 0046 2E5F      		subi r18,-2
+ 254 0048 3F4F      		sbci r19,-1
+ 255 004a 3F93      		push r19
+ 256 004c 2F93      		push r18
+ 257 004e 20E0      		ldi r18,lo8(.LC2)
+ 258 0050 30E0      		ldi r19,hi8(.LC2)
+ 259 0052 3F93      		push r19
+ 260 0054 2F93      		push r18
+ 261 0056 9F93      		push r25
+ 262 0058 8F93      		push r24
+ 263 005a 0E94 0000 		call sscanf
+ 264               	.LVL9:
+ 386:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  
+ 387:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     // 030511
+ 388:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     return ihour * 10000 + iminute * 100 + isec;
+ 265               		.loc 1 388 0
+ 266 005e 4D81      		ldd r20,Y+5
+ 267 0060 5E81      		ldd r21,Y+6
+ 268 0062 80E1      		ldi r24,lo8(16)
+ 269 0064 97E2      		ldi r25,lo8(39)
+ 270 0066 489F      		mul r20,r24
+ 271 0068 9001      		movw r18,r0
+ 272 006a 499F      		mul r20,r25
+ 273 006c 300D      		add r19,r0
+ 274 006e 589F      		mul r21,r24
+ 275 0070 300D      		add r19,r0
+ 276 0072 1124      		clr r1
+ 277 0074 4B81      		ldd r20,Y+3
+ 278 0076 5C81      		ldd r21,Y+4
+ 279 0078 64E6      		ldi r22,lo8(100)
+ 280 007a 649F      		mul r22,r20
+ 281 007c C001      		movw r24,r0
+ 282 007e 659F      		mul r22,r21
+ 283 0080 900D      		add r25,r0
+ 284 0082 1124      		clr __zero_reg__
+ 285 0084 820F      		add r24,r18
+ 286 0086 931F      		adc r25,r19
+ 287 0088 2981      		ldd r18,Y+1
+ 288 008a 3A81      		ldd r19,Y+2
+ 289 008c 820F      		add r24,r18
+ 290 008e 931F      		adc r25,r19
+ 291 0090 0FB6      		in __tmp_reg__,__SREG__
+ 292 0092 F894      		cli
+ 293 0094 DEBF      		out __SP_H__,r29
+ 294 0096 0FBE      		out __SREG__,__tmp_reg__
+ 295 0098 CDBF      		out __SP_L__,r28
+ 296 009a 00C0      		rjmp .L7
+ 297               	.LVL10:
+ 298               	.L9:
+ 382:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  
+ 299               		.loc 1 382 0
+ 300 009c 80E0      		ldi r24,0
+ 301 009e 90E0      		ldi r25,0
+ 302               	.LVL11:
+ 303               	.L7:
+ 304               	/* epilogue start */
+ 389:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** };
+ 305               		.loc 1 389 0
+ 306 00a0 2696      		adiw r28,6
+ 307 00a2 0FB6      		in __tmp_reg__,__SREG__
+ 308 00a4 F894      		cli
+ 309 00a6 DEBF      		out __SP_H__,r29
+ 310 00a8 0FBE      		out __SREG__,__tmp_reg__
+ 311 00aa CDBF      		out __SP_L__,r28
+ 312 00ac DF91      		pop r29
+ 313 00ae CF91      		pop r28
+ 314 00b0 0895      		ret
+ 315               		.cfi_endproc
+ 316               	.LFE125:
+ 318               		.section	.text.action_get_macro,"ax",@progbits
+ 319               	.global	action_get_macro
+ 321               	action_get_macro:
+ 322               	.LFB126:
+ 390:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 391:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 392:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** #define QUOTE(...) #__VA_ARGS__
+ 393:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** char *date_str = QUOTE(
+ 394:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** "a"
+ 395:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** //pre_macro_date_to_int(__DATE__)
+ 396:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** );
+ 397:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 398:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** #define FDATE (char const[]){ __DATE__[7], __DATE__[8]}
+ 399:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 400:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 401:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** // Layer Change
+ 402:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** const uint16_t PROGMEM fn_actions[] = {
+ 403:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     [1] = ACTION_LAYER_TAP_TOGGLE(NPAD),                // FN1 - Momentary Layer 1 (Numpad Layer)~
+ 404:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     [2] = ACTION_LAYER_TAP_TOGGLE(MAGI),                // FN2 - Momentary Layer 2 (Magic Layer)~
+ 405:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 406:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** };
+ 407:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 408:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 409:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
+ 410:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** {
+ 323               		.loc 1 410 0
+ 324               		.cfi_startproc
+ 325               	.LVL12:
+ 326               	/* prologue: function */
+ 327               	/* frame size = 0 */
+ 328               	/* stack size = 0 */
+ 329               	.L__stack_usage = 0
+ 330 0000 FC01      		movw r30,r24
+ 411:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****   // MACRODOWN only works in this function
+ 412:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****       switch(id) {
+ 331               		.loc 1 412 0
+ 332 0002 6830      		cpi r22,lo8(8)
+ 333 0004 01F4      		brne .+2
+ 334 0006 00C0      		rjmp .L12
+ 335 0008 00F4      		brsh .L13
+ 336 000a 6330      		cpi r22,lo8(3)
+ 337 000c 01F0      		breq .L14
+ 338 000e 00F4      		brsh .L15
+ 339 0010 8281      		ldd r24,Z+2
+ 340               	.LVL13:
+ 341 0012 6130      		cpi r22,lo8(1)
+ 342 0014 01F0      		breq .L16
+ 343 0016 00F0      		brlo .L83
+ 344 0018 00C0      		rjmp .L86
+ 345               	.LVL14:
+ 346               	.L15:
+ 347 001a 6530      		cpi r22,lo8(5)
+ 348 001c 01F4      		brne .+2
+ 349 001e 00C0      		rjmp .L19
+ 350 0020 00F0      		brlo .L20
+ 351 0022 6630      		cpi r22,lo8(6)
+ 352 0024 01F4      		brne .+2
+ 353 0026 00C0      		rjmp .L21
+ 354 0028 6730      		cpi r22,lo8(7)
+ 355 002a 01F4      		brne .+2
+ 356 002c 00C0      		rjmp .L22
+ 357 002e 00C0      		rjmp .L11
+ 358               	.L13:
+ 359 0030 6C30      		cpi r22,lo8(12)
+ 360 0032 01F4      		brne .+2
+ 361 0034 00C0      		rjmp .L23
+ 362 0036 00F4      		brsh .L24
+ 363 0038 8281      		ldd r24,Z+2
+ 364               	.LVL15:
+ 365 003a 6A30      		cpi r22,lo8(10)
+ 366 003c 01F4      		brne .+2
+ 367 003e 00C0      		rjmp .L25
+ 368 0040 00F4      		brsh .+2
+ 369 0042 00C0      		rjmp .L84
+ 370 0044 00C0      		rjmp .L87
+ 371               	.LVL16:
+ 372               	.L24:
+ 373 0046 6E30      		cpi r22,lo8(14)
+ 374 0048 01F4      		brne .+2
+ 375 004a 00C0      		rjmp .L28
+ 376 004c 00F4      		brsh .+2
+ 377 004e 00C0      		rjmp .L29
+ 378 0050 6336      		cpi r22,lo8(99)
+ 379 0052 01F4      		brne .+2
+ 380 0054 00C0      		rjmp .L30
+ 381 0056 6436      		cpi r22,lo8(100)
+ 382 0058 01F4      		brne .+2
+ 383 005a 00C0      		rjmp .L31
+ 384 005c 00C0      		rjmp .L11
+ 385               	.LVL17:
+ 386               	.L83:
+ 413:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         case 0:
+ 414:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         if (record->event.pressed) {
+ 387               		.loc 1 414 0
+ 388 005e 8823      		tst r24
+ 389 0060 01F4      		brne .+2
+ 390 0062 00C0      		rjmp .L11
+ 415:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****           SEND_STRING (QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION);
+ 391               		.loc 1 415 0
+ 392 0064 80E0      		ldi r24,lo8(__c.5246)
+ 393 0066 90E0      		ldi r25,hi8(__c.5246)
+ 394 0068 00C0      		rjmp .L85
+ 395               	.L16:
+ 416:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         }
+ 417:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         break;
+ 418:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         case 1:
+ 419:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         if (record->event.pressed) { // For resetting EEPROM
+ 396               		.loc 1 419 0
+ 397 006a 8823      		tst r24
+ 398 006c 01F4      		brne .+2
+ 399 006e 00C0      		rjmp .L11
+ 420:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****           SEND_STRING ( "<-" );
+ 400               		.loc 1 420 0
+ 401 0070 80E0      		ldi r24,lo8(__c.5250)
+ 402 0072 90E0      		ldi r25,hi8(__c.5250)
+ 403 0074 00C0      		rjmp .L85
+ 404               	.L86:
+ 421:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         }
+ 422:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         break;
+ 423:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         case 2:
+ 424:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         if (record->event.pressed) { // For resetting EEPROM
+ 405               		.loc 1 424 0
+ 406 0076 8823      		tst r24
+ 407 0078 01F4      		brne .+2
+ 408 007a 00C0      		rjmp .L11
+ 425:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****           SEND_STRING ( "'%Y%m%d%H%M%S%f'" );
+ 409               		.loc 1 425 0
+ 410 007c 80E0      		ldi r24,lo8(__c.5253)
+ 411 007e 90E0      		ldi r25,hi8(__c.5253)
+ 412 0080 00C0      		rjmp .L85
+ 413               	.LVL18:
+ 414               	.L14:
+ 426:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         }
+ 427:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         break;
+ 428:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         case 3:
+ 429:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         if (record->event.pressed) { // For resetting EEPROM
+ 415               		.loc 1 429 0
+ 416 0082 8281      		ldd r24,Z+2
+ 417               	.LVL19:
+ 418 0084 8823      		tst r24
+ 419 0086 01F4      		brne .+2
+ 420 0088 00C0      		rjmp .L11
+ 430:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****           SEND_STRING ( "# %%" );
+ 421               		.loc 1 430 0
+ 422 008a 80E0      		ldi r24,lo8(__c.5256)
+ 423 008c 90E0      		ldi r25,hi8(__c.5256)
+ 424 008e 00C0      		rjmp .L85
+ 425               	.LVL20:
+ 426               	.L20:
+ 431:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         }
+ 432:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         break;
+ 433:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         case 4:
+ 434:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         if (record->event.pressed) { // For resetting EEPROM
+ 427               		.loc 1 434 0
+ 428 0090 8281      		ldd r24,Z+2
+ 429               	.LVL21:
+ 430 0092 8823      		tst r24
+ 431 0094 01F4      		brne .+2
+ 432 0096 00C0      		rjmp .L11
+ 435:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****           SEND_STRING ( SQL_NORMAL_STR );
+ 433               		.loc 1 435 0
+ 434 0098 80E0      		ldi r24,lo8(__c.5259)
+ 435 009a 90E0      		ldi r25,hi8(__c.5259)
+ 436 009c 00C0      		rjmp .L85
+ 437               	.LVL22:
+ 438               	.L19:
+ 436:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         }
+ 437:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         break;
+ 438:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         case 5:
+ 439:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         if (record->event.pressed) { // For resetting EEPROM
+ 439               		.loc 1 439 0
+ 440 009e 8281      		ldd r24,Z+2
+ 441               	.LVL23:
+ 442 00a0 8823      		tst r24
+ 443 00a2 01F4      		brne .+2
+ 444 00a4 00C0      		rjmp .L11
+ 440:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****           SEND_STRING ( SQL_LEFT_STR );
+ 445               		.loc 1 440 0
+ 446 00a6 80E0      		ldi r24,lo8(__c.5262)
+ 447 00a8 90E0      		ldi r25,hi8(__c.5262)
+ 448 00aa 00C0      		rjmp .L85
+ 449               	.LVL24:
+ 450               	.L21:
+ 441:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         }
+ 442:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         break;
+ 443:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         case 6:
+ 444:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         if (record->event.pressed) { // For resetting EEPROM
+ 451               		.loc 1 444 0
+ 452 00ac 8281      		ldd r24,Z+2
+ 453               	.LVL25:
+ 454 00ae 8823      		tst r24
+ 455 00b0 01F0      		breq .L11
+ 445:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****           SEND_STRING ( SQL_LEFT_SUB_STR );
+ 456               		.loc 1 445 0
+ 457 00b2 80E0      		ldi r24,lo8(__c.5265)
+ 458 00b4 90E0      		ldi r25,hi8(__c.5265)
+ 459 00b6 00C0      		rjmp .L85
+ 460               	.LVL26:
+ 461               	.L22:
+ 446:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         }
+ 447:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         break;
+ 448:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         case 7:
+ 449:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         if (record->event.pressed) { // For resetting EEPROM
+ 462               		.loc 1 449 0
+ 463 00b8 8281      		ldd r24,Z+2
+ 464               	.LVL27:
+ 465 00ba 8823      		tst r24
+ 466 00bc 01F0      		breq .L11
+ 450:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****           SEND_STRING ( PIP_STR );
+ 467               		.loc 1 450 0
+ 468 00be 80E0      		ldi r24,lo8(__c.5268)
+ 469 00c0 90E0      		ldi r25,hi8(__c.5268)
+ 470 00c2 00C0      		rjmp .L85
+ 471               	.LVL28:
+ 472               	.L12:
+ 451:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         }
+ 452:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         break;
+ 453:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         case 8:
+ 454:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         if (record->event.pressed) { // For resetting EEPROM
+ 473               		.loc 1 454 0
+ 474 00c4 8281      		ldd r24,Z+2
+ 475               	.LVL29:
+ 476 00c6 8823      		tst r24
+ 477 00c8 01F0      		breq .L11
+ 455:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****           SEND_STRING ( __DATE__ );
+ 478               		.loc 1 455 0
+ 479 00ca 80E0      		ldi r24,lo8(__c.5271)
+ 480 00cc 90E0      		ldi r25,hi8(__c.5271)
+ 481 00ce 00C0      		rjmp .L85
+ 482               	.L84:
+ 456:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         }
+ 457:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         break;
+ 458:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         case 9:
+ 459:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         if (record->event.pressed) { // For resetting EEPROM
+ 483               		.loc 1 459 0
+ 484 00d0 8823      		tst r24
+ 485 00d2 01F0      		breq .L11
+ 460:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****           SEND_STRING ( __TIME__ );
+ 486               		.loc 1 460 0
+ 487 00d4 80E0      		ldi r24,lo8(__c.5274)
+ 488 00d6 90E0      		ldi r25,hi8(__c.5274)
+ 489 00d8 00C0      		rjmp .L85
+ 490               	.L25:
+ 461:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         }
+ 462:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         break;
+ 463:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         case 10:
+ 464:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         if (record->event.pressed) { // For resetting EEPROM
+ 491               		.loc 1 464 0
+ 492 00da 8823      		tst r24
+ 493 00dc 01F0      		breq .L11
+ 465:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****           SEND_STRING ( DATETIME_STR );
+ 494               		.loc 1 465 0
+ 495 00de 80E0      		ldi r24,lo8(__c.5277)
+ 496 00e0 90E0      		ldi r25,hi8(__c.5277)
+ 497 00e2 00C0      		rjmp .L85
+ 498               	.L87:
+ 466:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         }
+ 467:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         break;
+ 468:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         case 11:
+ 469:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         if (record->event.pressed) { // For resetting EEPROM
+ 499               		.loc 1 469 0
+ 500 00e4 8823      		tst r24
+ 501 00e6 01F0      		breq .L11
+ 470:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****           SEND_STRING ( "" );
+ 502               		.loc 1 470 0
+ 503 00e8 80E0      		ldi r24,lo8(__c.5280)
+ 504 00ea 90E0      		ldi r25,hi8(__c.5280)
+ 505 00ec 00C0      		rjmp .L85
+ 506               	.LVL30:
+ 507               	.L23:
+ 471:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         }
+ 472:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         break;
+ 473:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         case 12:
+ 474:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         if (record->event.pressed) { // For resetting EEPROM
+ 508               		.loc 1 474 0
+ 509 00ee 8281      		ldd r24,Z+2
+ 510               	.LVL31:
+ 511 00f0 8823      		tst r24
+ 512 00f2 01F0      		breq .L11
+ 475:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****           SEND_STRING ( SIGNITURE );
+ 513               		.loc 1 475 0
+ 514 00f4 80E0      		ldi r24,lo8(__c.5283)
+ 515 00f6 90E0      		ldi r25,hi8(__c.5283)
+ 516 00f8 00C0      		rjmp .L85
+ 517               	.LVL32:
+ 518               	.L29:
+ 476:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         }
+ 477:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         break;
+ 478:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         case 13:
+ 479:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         if (record->event.pressed) { // For resetting EEPROM
+ 519               		.loc 1 479 0
+ 520 00fa 8281      		ldd r24,Z+2
+ 521               	.LVL33:
+ 522 00fc 8823      		tst r24
+ 523 00fe 01F0      		breq .L11
+ 480:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****           SEND_STRING ( SIGNITURE );
+ 524               		.loc 1 480 0
+ 525 0100 80E0      		ldi r24,lo8(__c.5286)
+ 526 0102 90E0      		ldi r25,hi8(__c.5286)
+ 527 0104 00C0      		rjmp .L85
+ 528               	.LVL34:
+ 529               	.L28:
+ 481:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         }
+ 482:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         break;
+ 483:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         case 14:
+ 484:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         if (record->event.pressed) { // For resetting EEPROM
+ 530               		.loc 1 484 0
+ 531 0106 8281      		ldd r24,Z+2
+ 532               	.LVL35:
+ 533 0108 8823      		tst r24
+ 534 010a 01F0      		breq .L11
+ 485:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****           SEND_STRING ( SIGNITURE );
+ 535               		.loc 1 485 0
+ 536 010c 80E0      		ldi r24,lo8(__c.5289)
+ 537 010e 90E0      		ldi r25,hi8(__c.5289)
+ 538 0110 00C0      		rjmp .L85
+ 539               	.LVL36:
+ 540               	.L30:
+ 486:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         }
+ 487:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         break;
+ 488:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         case 99:
+ 489:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         if (record->event.pressed) { // For resetting EEPROM
+ 541               		.loc 1 489 0
+ 542 0112 8281      		ldd r24,Z+2
+ 543               	.LVL37:
+ 544 0114 8823      		tst r24
+ 545 0116 01F0      		breq .L11
+ 490:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****           /*char buff[100];
+ 491:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****           time_t now = time (0);
+ 492:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****           strftime (buff, 100, "%Y-%m-%d %H:%M:%S.000", localtime (&now));
+ 493:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****           //printf ("%s\n", buff);*/
+ 494:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****           SEND_STRING ( SIGNITURE );
+ 546               		.loc 1 494 0
+ 547 0118 80E0      		ldi r24,lo8(__c.5292)
+ 548 011a 90E0      		ldi r25,hi8(__c.5292)
+ 549 011c 00C0      		rjmp .L85
+ 550               	.LVL38:
+ 551               	.L31:
+ 495:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         }
+ 496:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         break;
+ 497:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         case 100:
+ 498:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         if (record->event.pressed) { // For resetting EEPROM
+ 552               		.loc 1 498 0
+ 553 011e 8281      		ldd r24,Z+2
+ 554               	.LVL39:
+ 555 0120 8823      		tst r24
+ 556 0122 01F0      		breq .L11
+ 499:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****           SEND_STRING ( SIGNITURE );
+ 557               		.loc 1 499 0
+ 558 0124 80E0      		ldi r24,lo8(__c.5295)
+ 559 0126 90E0      		ldi r25,hi8(__c.5295)
+ 560               	.L85:
+ 561 0128 0E94 0000 		call send_string
+ 562               	.LVL40:
+ 563               	.L11:
+ 500:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         }
+ 501:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****         break;
+ 502:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** //        case REQL:
+ 503:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** //            return (record->event.pressed ?
+ 504:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** //                    MACRO( T(LSFT(KC_COMMA)), T(KC_MINUS), END) : // For resetting EEPROM
+ 505:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** //                    MACRO_NONE ) ;
+ 506:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     }
+ 507:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     return MACRO_NONE;
+ 508:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** };
+ 564               		.loc 1 508 0
+ 565 012c 80E0      		ldi r24,0
+ 566 012e 90E0      		ldi r25,0
+ 567 0130 0895      		ret
+ 568               		.cfi_endproc
+ 569               	.LFE126:
+ 571               		.section	.text.matrix_init_user,"ax",@progbits
+ 572               	.global	matrix_init_user
+ 574               	matrix_init_user:
+ 575               	.LFB127:
+ 509:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 510:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 511:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** // Runs just one time when the keyboard initializes.
+ 512:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** void matrix_init_user(void) {
+ 576               		.loc 1 512 0
+ 577               		.cfi_startproc
+ 578               	/* prologue: function */
+ 579               	/* frame size = 0 */
+ 580               	/* stack size = 0 */
+ 581               	.L__stack_usage = 0
+ 582 0000 0895      		ret
+ 583               		.cfi_endproc
+ 584               	.LFE127:
+ 586               		.section	.text.matrix_scan_user,"ax",@progbits
+ 587               	.global	matrix_scan_user
+ 589               	matrix_scan_user:
+ 590               	.LFB128:
+ 513:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 514:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** };
+ 515:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 516:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** // Print Timestamp Function
+ 517:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** /*static macro_t *gettime(void) {
+ 518:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     time_t t = time(NULL);
+ 519:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     struct tm *tm = localtime(&t);
+ 520:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     printf("%s\n", asctime(tm));
+ 521:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     return MACRO_NONE; 
+ 522:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** }
+ 523:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** */
+ 524:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** // Runs constantly in the background, in a loop.
+ 525:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** void matrix_scan_user(void) {
+ 591               		.loc 1 525 0
+ 592               		.cfi_startproc
+ 593               	/* prologue: function */
+ 594               	/* frame size = 0 */
+ 595               	/* stack size = 0 */
+ 596               	.L__stack_usage = 0
+ 526:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 527:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     uint8_t layer = biton32(layer_state);
+ 597               		.loc 1 527 0
+ 598 0000 6091 0000 		lds r22,layer_state
+ 599 0004 7091 0000 		lds r23,layer_state+1
+ 600 0008 8091 0000 		lds r24,layer_state+2
+ 601 000c 9091 0000 		lds r25,layer_state+3
+ 602 0010 0E94 0000 		call biton32
+ 603               	.LVL41:
+ 604               	.LBB20:
+ 605               	.LBB21:
+ 606               		.file 2 "keyboards/ergodox/ez/ez.h"
    1:keyboards/ergodox/ez/ez.h **** #ifndef ERGODOX_EZ_H
    2:keyboards/ergodox/ez/ez.h **** #define ERGODOX_EZ_H
    3:keyboards/ergodox/ez/ez.h **** 
@@ -489,578 +1176,709 @@
   41:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_on(uint8_t led) { DDRB |= (1<<(led+4)); PORTB |= (1<<(led+4)); }
   42:keyboards/ergodox/ez/ez.h **** 
   43:keyboards/ergodox/ez/ez.h **** inline void ergodox_board_led_off(void)     { DDRD &= ~(1<<6); PORTD &= ~(1<<6); }
- 122               		.loc 2 43 0
- 123 0014 5698      		cbi 0xa,6
- 124 0016 5E98      		cbi 0xb,6
- 125               	.LBE21:
- 126               	.LBE20:
- 127               	.LBB22:
- 128               	.LBB23:
+ 607               		.loc 2 43 0
+ 608 0014 5698      		cbi 0xa,6
+ 609 0016 5E98      		cbi 0xb,6
+ 610               	.LBE21:
+ 611               	.LBE20:
+ 612               	.LBB22:
+ 613               	.LBB23:
   44:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_1_off(void)   { DDRB &= ~(1<<5); PORTB &= ~(1<<5); }
- 129               		.loc 2 44 0
- 130 0018 2598      		cbi 0x4,5
- 131 001a 2D98      		cbi 0x5,5
- 132               	.LBE23:
- 133               	.LBE22:
- 134               	.LBB24:
- 135               	.LBB25:
+ 614               		.loc 2 44 0
+ 615 0018 2598      		cbi 0x4,5
+ 616 001a 2D98      		cbi 0x5,5
+ 617               	.LBE23:
+ 618               	.LBE22:
+ 619               	.LBB24:
+ 620               	.LBB25:
   45:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_2_off(void)   { DDRB &= ~(1<<6); PORTB &= ~(1<<6); }
- 136               		.loc 2 45 0
- 137 001c 2698      		cbi 0x4,6
- 138 001e 2E98      		cbi 0x5,6
- 139               	.LBE25:
- 140               	.LBE24:
- 141               	.LBB26:
- 142               	.LBB27:
+ 621               		.loc 2 45 0
+ 622 001c 2698      		cbi 0x4,6
+ 623 001e 2E98      		cbi 0x5,6
+ 624               	.LBE25:
+ 625               	.LBE24:
+ 626               	.LBB26:
+ 627               	.LBB27:
   46:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_3_off(void)   { DDRB &= ~(1<<7); PORTB &= ~(1<<7); }
- 143               		.loc 2 46 0
- 144 0020 2798      		cbi 0x4,7
- 145 0022 2F98      		cbi 0x5,7
- 146               	.LBE27:
- 147               	.LBE26:
- 333:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
- 334:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     ergodox_board_led_off();
- 335:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     ergodox_right_led_1_off();
- 336:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     ergodox_right_led_2_off();
- 337:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     ergodox_right_led_3_off();
- 338:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     switch (layer) {
- 148               		.loc 1 338 0
- 149 0024 8230      		cpi r24,lo8(2)
- 150 0026 01F0      		breq .L29
- 151 0028 00F4      		brsh .L25
- 152 002a 8130      		cpi r24,lo8(1)
- 153 002c 01F0      		breq .L26
- 154 002e 0895      		ret
- 155               	.L25:
- 156 0030 8330      		cpi r24,lo8(3)
- 157 0032 01F0      		breq .L27
- 158 0034 8430      		cpi r24,lo8(4)
- 159 0036 01F0      		breq .L28
- 160 0038 0895      		ret
- 161               	.L26:
- 162               	.LBB28:
- 163               	.LBB29:
+ 628               		.loc 2 46 0
+ 629 0020 2798      		cbi 0x4,7
+ 630 0022 2F98      		cbi 0x5,7
+ 631               	.LBE27:
+ 632               	.LBE26:
+ 528:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** 
+ 529:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     ergodox_board_led_off();
+ 530:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     ergodox_right_led_1_off();
+ 531:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     ergodox_right_led_2_off();
+ 532:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     ergodox_right_led_3_off();
+ 533:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****     switch (layer) {
+ 633               		.loc 1 533 0
+ 634 0024 8230      		cpi r24,lo8(2)
+ 635 0026 01F0      		breq .L96
+ 636 0028 00F4      		brsh .L92
+ 637 002a 8130      		cpi r24,lo8(1)
+ 638 002c 01F0      		breq .L93
+ 639 002e 0895      		ret
+ 640               	.L92:
+ 641 0030 8330      		cpi r24,lo8(3)
+ 642 0032 01F0      		breq .L94
+ 643 0034 8430      		cpi r24,lo8(4)
+ 644 0036 01F0      		breq .L95
+ 645 0038 0895      		ret
+ 646               	.L93:
+ 647               	.LBB28:
+ 648               	.LBB29:
   38:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_2_on(void)    { DDRB |=  (1<<6); PORTB |=  (1<<6); }
- 164               		.loc 2 38 0
- 165 003a 259A      		sbi 0x4,5
- 166 003c 2D9A      		sbi 0x5,5
- 167 003e 0895      		ret
- 168               	.L27:
- 169               	.LBE29:
- 170               	.LBE28:
- 171               	.LBB30:
- 172               	.LBB31:
+ 649               		.loc 2 38 0
+ 650 003a 259A      		sbi 0x4,5
+ 651 003c 2D9A      		sbi 0x5,5
+ 652 003e 0895      		ret
+ 653               	.L94:
+ 654               	.LBE29:
+ 655               	.LBE28:
+ 656               	.LBB30:
+ 657               	.LBB31:
   40:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_on(uint8_t led) { DDRB |= (1<<(led+4)); PORTB |= (1<<(led+4)); }
- 173               		.loc 2 40 0
- 174 0040 279A      		sbi 0x4,7
- 175 0042 2F9A      		sbi 0x5,7
- 176 0044 0895      		ret
- 177               	.L28:
- 178               	.LBE31:
- 179               	.LBE30:
- 180               	.LBB32:
- 181               	.LBB33:
+ 658               		.loc 2 40 0
+ 659 0040 279A      		sbi 0x4,7
+ 660 0042 2F9A      		sbi 0x5,7
+ 661 0044 0895      		ret
+ 662               	.L95:
+ 663               	.LBE31:
+ 664               	.LBE30:
+ 665               	.LBB32:
+ 666               	.LBB33:
   38:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_2_on(void)    { DDRB |=  (1<<6); PORTB |=  (1<<6); }
- 182               		.loc 2 38 0
- 183 0046 259A      		sbi 0x4,5
- 184 0048 2D9A      		sbi 0x5,5
- 185               	.L29:
- 186               	.LBE33:
- 187               	.LBE32:
- 188               	.LBB34:
- 189               	.LBB35:
+ 667               		.loc 2 38 0
+ 668 0046 259A      		sbi 0x4,5
+ 669 0048 2D9A      		sbi 0x5,5
+ 670               	.L96:
+ 671               	.LBE33:
+ 672               	.LBE32:
+ 673               	.LBB34:
+ 674               	.LBB35:
   39:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_3_on(void)    { DDRB |=  (1<<7); PORTB |=  (1<<7); }
- 190               		.loc 2 39 0
- 191 004a 269A      		sbi 0x4,6
- 192 004c 2E9A      		sbi 0x5,6
- 193 004e 0895      		ret
- 194               	.LBE35:
- 195               	.LBE34:
- 196               		.cfi_endproc
- 197               	.LFE126:
- 199               		.section	.progmem.data.__c.5238,"a",@progbits
- 202               	__c.5238:
- 203 0000 2320 2D2A 		.string	"# -*- coding: utf-8 -*- \n'''\nCreated on \n\n@author: Young Ju Kim\n'''"
- 203      2D20 636F 
- 203      6469 6E67 
- 203      3A20 7574 
- 203      662D 3820 
- 204               		.section	.progmem.data.__c.5235,"a",@progbits
- 207               	__c.5235:
- 208 0000 2725 5925 		.string	"'%Y%m%d%H%M%S%f'"
- 208      6D25 6425 
- 208      4825 4D25 
- 208      5325 6627 
- 208      00
- 209               		.section	.progmem.data.__c.5232,"a",@progbits
- 212               	__c.5232:
- 213 0000 3C2D 00   		.string	"<-"
- 214               		.section	.progmem.data.__c.5228,"a",@progbits
- 217               	__c.5228:
- 218 0000 6572 676F 		.string	"ergodox/pydemia @ 6d4dd4-dirty"
- 218      646F 782F 
- 218      7079 6465 
- 218      6D69 6120 
- 218      4020 3664 
- 219               	.global	fn_actions
- 220               		.section	.progmem.data.fn_actions,"a",@progbits
- 223               	fn_actions:
- 224 0000 0000      		.zero	2
- 225 0002 F0A1      		.word	-24080
- 226 0004 F0A2      		.word	-23824
- 227               	.global	keymaps
- 228               		.section	.progmem.data.keymaps,"a",@progbits
- 231               	keymaps:
- 232 0000 2900      		.word	41
- 233 0002 2B00      		.word	43
- 234 0004 3500      		.word	53
- 235 0006 E100      		.word	225
- 236 0008 E000      		.word	224
- 237 000a 0000      		.word	0
- 238 000c 1E00      		.word	30
- 239 000e 1400      		.word	20
- 240 0010 0400      		.word	4
- 241 0012 1D00      		.word	29
- 242 0014 E201      		.word	482
- 243 0016 4E00      		.word	78
- 244 0018 1F00      		.word	31
- 245 001a 1A00      		.word	26
- 246 001c 1600      		.word	22
- 247 001e 1B00      		.word	27
- 248 0020 E300      		.word	227
- 249 0022 2A00      		.word	42
- 250 0024 2000      		.word	32
- 251 0026 0800      		.word	8
- 252 0028 0700      		.word	7
- 253 002a 0600      		.word	6
- 254 002c 6500      		.word	101
- 255 002e 2C00      		.word	44
- 256 0030 2100      		.word	33
- 257 0032 1500      		.word	21
- 258 0034 0900      		.word	9
- 259 0036 1900      		.word	25
- 260 0038 E200      		.word	226
- 261 003a 4B00      		.word	75
- 262 003c 2200      		.word	34
- 263 003e 1700      		.word	23
- 264 0040 0A00      		.word	10
- 265 0042 0500      		.word	5
- 266 0044 0000      		.word	0
- 267 0046 4A00      		.word	74
- 268 0048 3E01      		.word	318
- 269 004a 2E00      		.word	46
- 270 004c 0000      		.word	0
- 271 004e C100      		.word	193
- 272 0050 0000      		.word	0
- 273 0052 4D00      		.word	77
- 274 0054 2300      		.word	35
- 275 0056 2801      		.word	296
- 276 0058 0000      		.word	0
- 277 005a 3E01      		.word	318
- 278 005c 0000      		.word	0
- 279 005e 5000      		.word	80
- 280 0060 2400      		.word	36
- 281 0062 1C00      		.word	28
- 282 0064 0B00      		.word	11
- 283 0066 1100      		.word	17
- 284 0068 0000      		.word	0
- 285 006a 4F00      		.word	79
- 286 006c 2500      		.word	37
- 287 006e 1800      		.word	24
- 288 0070 0D00      		.word	13
- 289 0072 1000      		.word	16
- 290 0074 E600      		.word	230
- 291 0076 5200      		.word	82
- 292 0078 2600      		.word	38
- 293 007a 0C00      		.word	12
- 294 007c 0E00      		.word	14
- 295 007e 3600      		.word	54
- 296 0080 E400      		.word	228
- 297 0082 2800      		.word	40
- 298 0084 2700      		.word	39
- 299 0086 1200      		.word	18
- 300 0088 0F00      		.word	15
- 301 008a 3700      		.word	55
- 302 008c 2F00      		.word	47
- 303 008e 4C00      		.word	76
- 304 0090 2D00      		.word	45
- 305 0092 1300      		.word	19
- 306 0094 3300      		.word	51
- 307 0096 3800      		.word	56
- 308 0098 3000      		.word	48
- 309 009a 5100      		.word	81
- 310 009c 2E02      		.word	558
- 311 009e 3100      		.word	49
- 312 00a0 3400      		.word	52
- 313 00a2 E500      		.word	229
- 314 00a4 C200      		.word	194
- 315 00a6 0000      		.word	0
- 316 00a8 2900      		.word	41
- 317 00aa 0100      		.word	1
- 318 00ac 0100      		.word	1
- 319 00ae 0100      		.word	1
- 320 00b0 0130      		.word	12289
- 321 00b2 0000      		.word	0
- 322 00b4 3A00      		.word	58
- 323 00b6 1705      		.word	1303
- 324 00b8 0100      		.word	1
- 325 00ba 0100      		.word	1
- 326 00bc 0100      		.word	1
- 327 00be 5100      		.word	81
- 328 00c0 3B00      		.word	59
- 329 00c2 0100      		.word	1
- 330 00c4 0100      		.word	1
- 331 00c6 0100      		.word	1
- 332 00c8 0100      		.word	1
- 333 00ca 4C00      		.word	76
- 334 00cc 3C00      		.word	60
- 335 00ce 0230      		.word	12290
- 336 00d0 0330      		.word	12291
- 337 00d2 0100      		.word	1
- 338 00d4 0100      		.word	1
- 339 00d6 2800      		.word	40
- 340 00d8 3D00      		.word	61
- 341 00da 2F00      		.word	47
- 342 00dc 2F02      		.word	559
- 343 00de 2602      		.word	550
- 344 00e0 0100      		.word	1
- 345 00e2 5200      		.word	82
- 346 00e4 3E00      		.word	62
- 347 00e6 3000      		.word	48
- 348 00e8 3002      		.word	560
- 349 00ea 2702      		.word	551
- 350 00ec 0000      		.word	0
- 351 00ee 5000      		.word	80
- 352 00f0 3F00      		.word	63
- 353 00f2 0130      		.word	12289
- 354 00f4 0000      		.word	0
- 355 00f6 0100      		.word	1
- 356 00f8 0000      		.word	0
- 357 00fa 4F00      		.word	79
- 358 00fc 4000      		.word	64
- 359 00fe 3502      		.word	565
- 360 0100 0000      		.word	0
- 361 0102 0100      		.word	1
- 362 0104 0000      		.word	0
- 363 0106 5001      		.word	336
- 364 0108 4100      		.word	65
- 365 010a 2400      		.word	36
- 366 010c 2100      		.word	33
- 367 010e 1E00      		.word	30
- 368 0110 0000      		.word	0
- 369 0112 4F01      		.word	335
- 370 0114 4200      		.word	66
- 371 0116 2500      		.word	37
- 372 0118 2200      		.word	34
- 373 011a 1F00      		.word	31
- 374 011c 2700      		.word	39
- 375 011e 4B00      		.word	75
- 376 0120 4300      		.word	67
- 377 0122 2600      		.word	38
- 378 0124 2300      		.word	35
- 379 0126 2000      		.word	32
- 380 0128 3700      		.word	55
- 381 012a 2C00      		.word	44
- 382 012c 4400      		.word	68
- 383 012e 2E02      		.word	558
- 384 0130 2502      		.word	549
- 385 0132 3600      		.word	54
- 386 0134 5000      		.word	80
- 387 0136 2A00      		.word	42
- 388 0138 4500      		.word	69
- 389 013a 2D00      		.word	45
- 390 013c 3800      		.word	56
- 391 013e 5200      		.word	82
- 392 0140 5100      		.word	81
- 393 0142 4E00      		.word	78
- 394 0144 0100      		.word	1
- 395 0146 0100      		.word	1
- 396 0148 0100      		.word	1
- 397 014a 0100      		.word	1
- 398 014c 4F00      		.word	79
- 399 014e 0000      		.word	0
- 400 0150 2900      		.word	41
- 401 0152 0100      		.word	1
- 402 0154 0100      		.word	1
- 403 0156 0100      		.word	1
- 404 0158 E000      		.word	224
- 405 015a 0000      		.word	0
- 406 015c 3A00      		.word	58
- 407 015e 0100      		.word	1
- 408 0160 0100      		.word	1
- 409 0162 0100      		.word	1
- 410 0164 0100      		.word	1
- 411 0166 4E00      		.word	78
- 412 0168 3B00      		.word	59
- 413 016a 0100      		.word	1
- 414 016c 5000      		.word	80
- 415 016e 0100      		.word	1
- 416 0170 0100      		.word	1
- 417 0172 2A00      		.word	42
- 418 0174 3C00      		.word	60
- 419 0176 5200      		.word	82
- 420 0178 5100      		.word	81
- 421 017a 0100      		.word	1
- 422 017c 0100      		.word	1
- 423 017e 2C00      		.word	44
- 424 0180 3D00      		.word	61
- 425 0182 0100      		.word	1
- 426 0184 4F00      		.word	79
- 427 0186 0100      		.word	1
- 428 0188 0100      		.word	1
- 429 018a 4B00      		.word	75
- 430 018c 3E00      		.word	62
- 431 018e 0100      		.word	1
- 432 0190 0100      		.word	1
- 433 0192 0100      		.word	1
- 434 0194 0000      		.word	0
- 435 0196 4A02      		.word	586
- 436 0198 3F00      		.word	63
- 437 019a 0100      		.word	1
- 438 019c 0000      		.word	0
- 439 019e 0100      		.word	1
- 440 01a0 0000      		.word	0
- 441 01a2 4D02      		.word	589
- 442 01a4 4000      		.word	64
- 443 01a6 0100      		.word	1
- 444 01a8 0000      		.word	0
- 445 01aa 0100      		.word	1
- 446 01ac 0000      		.word	0
- 447 01ae 5000      		.word	80
- 448 01b0 4100      		.word	65
- 449 01b2 0100      		.word	1
- 450 01b4 0100      		.word	1
- 451 01b6 0100      		.word	1
- 452 01b8 0000      		.word	0
- 453 01ba 4F00      		.word	79
- 454 01bc 4200      		.word	66
- 455 01be 0100      		.word	1
- 456 01c0 0100      		.word	1
- 457 01c2 0100      		.word	1
- 458 01c4 0100      		.word	1
- 459 01c6 5200      		.word	82
- 460 01c8 4300      		.word	67
- 461 01ca 0100      		.word	1
- 462 01cc 0100      		.word	1
- 463 01ce 0100      		.word	1
- 464 01d0 0100      		.word	1
- 465 01d2 2800      		.word	40
- 466 01d4 4400      		.word	68
- 467 01d6 0100      		.word	1
- 468 01d8 0100      		.word	1
- 469 01da 0100      		.word	1
- 470 01dc 3600      		.word	54
- 471 01de 4C00      		.word	76
- 472 01e0 4500      		.word	69
- 473 01e2 0100      		.word	1
- 474 01e4 0100      		.word	1
- 475 01e6 0100      		.word	1
- 476 01e8 0100      		.word	1
- 477 01ea 5100      		.word	81
- 478 01ec 0100      		.word	1
- 479 01ee 0100      		.word	1
- 480 01f0 0100      		.word	1
- 481 01f2 0100      		.word	1
- 482 01f4 0100      		.word	1
- 483 01f6 0000      		.word	0
- 484 01f8 2900      		.word	41
- 485 01fa 2B00      		.word	43
- 486 01fc 3500      		.word	53
- 487 01fe E100      		.word	225
- 488 0200 E000      		.word	224
- 489 0202 0000      		.word	0
- 490 0204 1E00      		.word	30
- 491 0206 1400      		.word	20
- 492 0208 0400      		.word	4
- 493 020a 1D00      		.word	29
- 494 020c E201      		.word	482
- 495 020e 4E00      		.word	78
- 496 0210 1F00      		.word	31
- 497 0212 1A00      		.word	26
- 498 0214 1600      		.word	22
- 499 0216 1B00      		.word	27
- 500 0218 E300      		.word	227
- 501 021a 4C00      		.word	76
- 502 021c 2000      		.word	32
- 503 021e 0800      		.word	8
- 504 0220 0700      		.word	7
- 505 0222 0600      		.word	6
- 506 0224 6500      		.word	101
- 507 0226 2C00      		.word	44
- 508 0228 2100      		.word	33
- 509 022a 1500      		.word	21
- 510 022c 0900      		.word	9
- 511 022e 1900      		.word	25
- 512 0230 E200      		.word	226
- 513 0232 4B00      		.word	75
- 514 0234 2200      		.word	34
- 515 0236 1700      		.word	23
- 516 0238 0A00      		.word	10
- 517 023a 0500      		.word	5
- 518 023c 0000      		.word	0
- 519 023e 4A00      		.word	74
- 520 0240 0353      		.word	21251
- 521 0242 2E00      		.word	46
- 522 0244 0000      		.word	0
- 523 0246 0153      		.word	21249
- 524 0248 0000      		.word	0
- 525 024a 4D00      		.word	77
- 526 024c 2300      		.word	35
- 527 024e 0130      		.word	12289
- 528 0250 0000      		.word	0
- 529 0252 3E01      		.word	318
- 530 0254 0000      		.word	0
- 531 0256 4A00      		.word	74
- 532 0258 2400      		.word	36
- 533 025a 1C00      		.word	28
- 534 025c 0B00      		.word	11
- 535 025e 1100      		.word	17
- 536 0260 0000      		.word	0
- 537 0262 4D00      		.word	77
- 538 0264 2500      		.word	37
- 539 0266 1800      		.word	24
- 540 0268 0D00      		.word	13
- 541 026a 1000      		.word	16
- 542 026c E600      		.word	230
- 543 026e 4B00      		.word	75
- 544 0270 2600      		.word	38
- 545 0272 0C00      		.word	12
- 546 0274 0E00      		.word	14
- 547 0276 3600      		.word	54
- 548 0278 2C02      		.word	556
- 549 027a 2800      		.word	40
- 550 027c 2700      		.word	39
- 551 027e 1200      		.word	18
- 552 0280 0F00      		.word	15
- 553 0282 3700      		.word	55
- 554 0284 2F00      		.word	47
- 555 0286 4C00      		.word	76
- 556 0288 2D00      		.word	45
- 557 028a 1300      		.word	19
- 558 028c 3300      		.word	51
- 559 028e 3800      		.word	56
- 560 0290 3000      		.word	48
- 561 0292 4E00      		.word	78
- 562 0294 2E02      		.word	558
- 563 0296 3100      		.word	49
- 564 0298 3400      		.word	52
- 565 029a 0157      		.word	22273
- 566 029c C100      		.word	193
- 567 029e 0000      		.word	0
- 568 02a0 2900      		.word	41
- 569 02a2 2B00      		.word	43
- 570 02a4 3500      		.word	53
- 571 02a6 E100      		.word	225
- 572 02a8 E000      		.word	224
- 573 02aa 0000      		.word	0
- 574 02ac 1E00      		.word	30
- 575 02ae 1400      		.word	20
- 576 02b0 0400      		.word	4
- 577 02b2 1D00      		.word	29
- 578 02b4 E201      		.word	482
- 579 02b6 4E00      		.word	78
- 580 02b8 1F00      		.word	31
- 581 02ba 1A00      		.word	26
- 582 02bc 1600      		.word	22
- 583 02be 1B00      		.word	27
- 584 02c0 E300      		.word	227
- 585 02c2 2A00      		.word	42
- 586 02c4 2000      		.word	32
- 587 02c6 0800      		.word	8
- 588 02c8 0700      		.word	7
- 589 02ca 0600      		.word	6
- 590 02cc 6500      		.word	101
- 591 02ce 2C00      		.word	44
- 592 02d0 2100      		.word	33
- 593 02d2 1500      		.word	21
- 594 02d4 0900      		.word	9
- 595 02d6 1900      		.word	25
- 596 02d8 E200      		.word	226
- 597 02da 4B00      		.word	75
- 598 02dc 2200      		.word	34
- 599 02de 1700      		.word	23
- 600 02e0 0A00      		.word	10
- 601 02e2 0500      		.word	5
- 602 02e4 0000      		.word	0
- 603 02e6 4A00      		.word	74
- 604 02e8 0353      		.word	21251
- 605 02ea 2E00      		.word	46
- 606 02ec 0000      		.word	0
- 607 02ee 0153      		.word	21249
- 608 02f0 0000      		.word	0
- 609 02f2 4D00      		.word	77
- 610 02f4 2300      		.word	35
- 611 02f6 0130      		.word	12289
- 612 02f8 0000      		.word	0
- 613 02fa 3E01      		.word	318
- 614 02fc 0000      		.word	0
- 615 02fe 5000      		.word	80
- 616 0300 2400      		.word	36
- 617 0302 1C00      		.word	28
- 618 0304 0B00      		.word	11
- 619 0306 1100      		.word	17
- 620 0308 0000      		.word	0
- 621 030a 4F00      		.word	79
- 622 030c 2500      		.word	37
- 623 030e 1800      		.word	24
- 624 0310 0D00      		.word	13
- 625 0312 1000      		.word	16
- 626 0314 E600      		.word	230
- 627 0316 5200      		.word	82
- 628 0318 2600      		.word	38
- 629 031a 0C00      		.word	12
- 630 031c 0E00      		.word	14
- 631 031e 3600      		.word	54
- 632 0320 2C02      		.word	556
- 633 0322 2800      		.word	40
- 634 0324 2700      		.word	39
- 635 0326 1200      		.word	18
- 636 0328 0F00      		.word	15
- 637 032a 3700      		.word	55
- 638 032c 2F00      		.word	47
- 639 032e 4C00      		.word	76
- 640 0330 2D00      		.word	45
- 641 0332 1300      		.word	19
- 642 0334 3300      		.word	51
- 643 0336 3800      		.word	56
- 644 0338 3000      		.word	48
- 645 033a 5100      		.word	81
- 646 033c 2E02      		.word	558
- 647 033e 3100      		.word	49
- 648 0340 3400      		.word	52
- 649 0342 E500      		.word	229
- 650 0344 C100      		.word	193
- 651 0346 0000      		.word	0
- 652               		.text
- 653               	.Letext0:
- 654               		.file 3 "/usr/lib/avr/include/stdint.h"
- 655               		.file 4 "./tmk_core/common/keyboard.h"
- 656               		.file 5 "./tmk_core/common/keycode.h"
- 657               		.file 6 "./tmk_core/common/action_code.h"
- 658               		.file 7 "./tmk_core/common/action_macro.h"
- 659               		.file 8 "./tmk_core/common/action.h"
- 660               		.file 9 "./quantum/keymap.h"
- 661               		.file 10 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.h"
- 662               		.file 11 "./quantum/quantum.h"
- 663               		.file 12 "./tmk_core/common/util.h"
+ 675               		.loc 2 39 0
+ 676 004a 269A      		sbi 0x4,6
+ 677 004c 2E9A      		sbi 0x5,6
+ 678 004e 0895      		ret
+ 679               	.LBE35:
+ 680               	.LBE34:
+ 681               		.cfi_endproc
+ 682               	.LFE128:
+ 684               		.section	.progmem.data.__c.5295,"a",@progbits
+ 687               	__c.5295:
+ 688 0000 2320 2D2A 		.string	"# -*- coding: utf-8 -*- \n'''\n\nCreated on \n\n@author: Young Ju Kim\n'''\n"
+ 688      2D20 636F 
+ 688      6469 6E67 
+ 688      3A20 7574 
+ 688      662D 3820 
+ 689               		.section	.progmem.data.__c.5292,"a",@progbits
+ 692               	__c.5292:
+ 693 0000 2320 2D2A 		.string	"# -*- coding: utf-8 -*- \n'''\n\nCreated on \n\n@author: Young Ju Kim\n'''\n"
+ 693      2D20 636F 
+ 693      6469 6E67 
+ 693      3A20 7574 
+ 693      662D 3820 
+ 694               		.section	.progmem.data.__c.5289,"a",@progbits
+ 697               	__c.5289:
+ 698 0000 2320 2D2A 		.string	"# -*- coding: utf-8 -*- \n'''\n\nCreated on \n\n@author: Young Ju Kim\n'''\n"
+ 698      2D20 636F 
+ 698      6469 6E67 
+ 698      3A20 7574 
+ 698      662D 3820 
+ 699               		.section	.progmem.data.__c.5286,"a",@progbits
+ 702               	__c.5286:
+ 703 0000 2320 2D2A 		.string	"# -*- coding: utf-8 -*- \n'''\n\nCreated on \n\n@author: Young Ju Kim\n'''\n"
+ 703      2D20 636F 
+ 703      6469 6E67 
+ 703      3A20 7574 
+ 703      662D 3820 
+ 704               		.section	.progmem.data.__c.5283,"a",@progbits
+ 707               	__c.5283:
+ 708 0000 2320 2D2A 		.string	"# -*- coding: utf-8 -*- \n'''\n\nCreated on \n\n@author: Young Ju Kim\n'''\n"
+ 708      2D20 636F 
+ 708      6469 6E67 
+ 708      3A20 7574 
+ 708      662D 3820 
+ 709               		.section	.progmem.data.__c.5280,"a",@progbits
+ 712               	__c.5280:
+ 713 0000 00        		.zero	1
+ 714               		.section	.progmem.data.__c.5277,"a",@progbits
+ 717               	__c.5277:
+ 718 0000 4A75 6E20 		.string	"Jun 18 2017 00:34:11"
+ 718      3138 2032 
+ 718      3031 3720 
+ 718      3030 3A33 
+ 718      343A 3131 
+ 719               		.section	.progmem.data.__c.5274,"a",@progbits
+ 722               	__c.5274:
+ 723 0000 3030 3A33 		.string	"00:34:11"
+ 723      343A 3131 
+ 723      00
+ 724               		.section	.progmem.data.__c.5271,"a",@progbits
+ 727               	__c.5271:
+ 728 0000 4A75 6E20 		.string	"Jun 18 2017"
+ 728      3138 2032 
+ 728      3031 3700 
+ 729               		.section	.progmem.data.__c.5268,"a",@progbits
+ 732               	__c.5268:
+ 733 0000 7069 7020 		.string	"pip install --cert=c:/sslproxy.crt "
+ 733      696E 7374 
+ 733      616C 6C20 
+ 733      2D2D 6365 
+ 733      7274 3D63 
+ 734               		.section	.progmem.data.__c.5265,"a",@progbits
+ 737               	__c.5265:
+ 738 0000 5345 4C45 		.ascii	"SELECT\r\n     A.*\r\n    ,B.*\r\nFROM\r\n    a.aa A\r\n    "
+ 738      4354 0D0A 
+ 738      2020 2020 
+ 738      2041 2E2A 
+ 738      0D0A 2020 
+ 739 0032 4C45 4654 		.ascii	"LEFT OUTER JOIN\r\n        (\r\n        SE"
+ 739      204F 5554 
+ 739      4552 204A 
+ 739      4F49 4E0D 
+ 739      0A20 2020 
+ 740 0058 4C45 4354 		.string	"LECT\r\n             C.col\r\n        FROM\r\n            c.cc C\r\n        WHERE\r\n    
+ 740      0D0A 2020 
+ 740      2020 2020 
+ 740      2020 2020 
+ 740      2020 2043 
+ 741               		.section	.progmem.data.__c.5262,"a",@progbits
+ 744               	__c.5262:
+ 745 0000 5345 4C45 		.string	"SELECT\r\n     A.*\r\n    ,B.*\r\nFROM\r\n    a.aa A\r\n    LEFT OUTER JOIN b.bb B\r\n   
+ 745      4354 0D0A 
+ 745      2020 2020 
+ 745      2041 2E2A 
+ 745      0D0A 2020 
+ 746               		.section	.progmem.data.__c.5259,"a",@progbits
+ 749               	__c.5259:
+ 750 0000 5345 4C45 		.string	"SELECT\r\n     A.col\r\n    ,A.*\r\nFROM\r\n    a.aa A\r\nWHERE\r\n    A.col = NULL\r\nAN
+ 750      4354 0D0A 
+ 750      2020 2020 
+ 750      2041 2E63 
+ 750      6F6C 0D0A 
+ 751               		.section	.progmem.data.__c.5256,"a",@progbits
+ 754               	__c.5256:
+ 755 0000 2320 2525 		.string	"# %%"
+ 755      00
+ 756               		.section	.progmem.data.__c.5253,"a",@progbits
+ 759               	__c.5253:
+ 760 0000 2725 5925 		.string	"'%Y%m%d%H%M%S%f'"
+ 760      6D25 6425 
+ 760      4825 4D25 
+ 760      5325 6627 
+ 760      00
+ 761               		.section	.progmem.data.__c.5250,"a",@progbits
+ 764               	__c.5250:
+ 765 0000 3C2D 00   		.string	"<-"
+ 766               		.section	.progmem.data.__c.5246,"a",@progbits
+ 769               	__c.5246:
+ 770 0000 6572 676F 		.string	"ergodox/pydemia @ 512d1d-dirty"
+ 770      646F 782F 
+ 770      7079 6465 
+ 770      6D69 6120 
+ 770      4020 3531 
+ 771               	.global	fn_actions
+ 772               		.section	.progmem.data.fn_actions,"a",@progbits
+ 775               	fn_actions:
+ 776 0000 0000      		.zero	2
+ 777 0002 F0A1      		.word	-24080
+ 778 0004 F0A2      		.word	-23824
+ 779               	.global	date_str
+ 780               		.section	.rodata.str1.1
+ 781               	.LC3:
+ 782 0037 2261 2200 		.string	"\"a\""
+ 783               		.section	.data.date_str,"aw",@progbits
+ 786               	date_str:
+ 787 0000 0000      		.word	.LC3
+ 788               	.global	sql_query
+ 789               		.section	.rodata.str1.1
+ 790               	.LC4:
+ 791 003b 5345 4C45 		.string	"SELECT word_id FROM table1, table2 WHERE table2.word_id = table1.word_id ORDER BY table1.
+ 791      4354 2077 
+ 791      6F72 645F 
+ 791      6964 2046 
+ 791      524F 4D20 
+ 792               		.section	.data.sql_query,"aw",@progbits
+ 795               	sql_query:
+ 796 0000 0000      		.word	.LC4
+ 797               	.global	keymaps
+ 798               		.section	.progmem.data.keymaps,"a",@progbits
+ 801               	keymaps:
+ 802 0000 2900      		.word	41
+ 803 0002 2B00      		.word	43
+ 804 0004 3500      		.word	53
+ 805 0006 E100      		.word	225
+ 806 0008 E000      		.word	224
+ 807 000a 0000      		.word	0
+ 808 000c 1E00      		.word	30
+ 809 000e 1400      		.word	20
+ 810 0010 0400      		.word	4
+ 811 0012 1D00      		.word	29
+ 812 0014 C200      		.word	194
+ 813 0016 4E00      		.word	78
+ 814 0018 1F00      		.word	31
+ 815 001a 1A00      		.word	26
+ 816 001c 1600      		.word	22
+ 817 001e 1B00      		.word	27
+ 818 0020 E300      		.word	227
+ 819 0022 2A00      		.word	42
+ 820 0024 2000      		.word	32
+ 821 0026 0800      		.word	8
+ 822 0028 0700      		.word	7
+ 823 002a 0600      		.word	6
+ 824 002c 6500      		.word	101
+ 825 002e 2C00      		.word	44
+ 826 0030 2100      		.word	33
+ 827 0032 1500      		.word	21
+ 828 0034 0900      		.word	9
+ 829 0036 1900      		.word	25
+ 830 0038 E200      		.word	226
+ 831 003a 4B00      		.word	75
+ 832 003c 2200      		.word	34
+ 833 003e 1700      		.word	23
+ 834 0040 0A00      		.word	10
+ 835 0042 0500      		.word	5
+ 836 0044 0000      		.word	0
+ 837 0046 4A00      		.word	74
+ 838 0048 3E01      		.word	318
+ 839 004a 2E00      		.word	46
+ 840 004c 0000      		.word	0
+ 841 004e C100      		.word	193
+ 842 0050 0000      		.word	0
+ 843 0052 4D00      		.word	77
+ 844 0054 2300      		.word	35
+ 845 0056 2801      		.word	296
+ 846 0058 0000      		.word	0
+ 847 005a 3E01      		.word	318
+ 848 005c 0000      		.word	0
+ 849 005e 5000      		.word	80
+ 850 0060 2400      		.word	36
+ 851 0062 1C00      		.word	28
+ 852 0064 0B00      		.word	11
+ 853 0066 1100      		.word	17
+ 854 0068 0000      		.word	0
+ 855 006a 4F00      		.word	79
+ 856 006c 2500      		.word	37
+ 857 006e 1800      		.word	24
+ 858 0070 0D00      		.word	13
+ 859 0072 1000      		.word	16
+ 860 0074 E600      		.word	230
+ 861 0076 5200      		.word	82
+ 862 0078 2600      		.word	38
+ 863 007a 0C00      		.word	12
+ 864 007c 0E00      		.word	14
+ 865 007e 3600      		.word	54
+ 866 0080 E400      		.word	228
+ 867 0082 2800      		.word	40
+ 868 0084 2700      		.word	39
+ 869 0086 1200      		.word	18
+ 870 0088 0F00      		.word	15
+ 871 008a 3700      		.word	55
+ 872 008c 2F00      		.word	47
+ 873 008e 4C00      		.word	76
+ 874 0090 2D00      		.word	45
+ 875 0092 1300      		.word	19
+ 876 0094 3300      		.word	51
+ 877 0096 3800      		.word	56
+ 878 0098 3000      		.word	48
+ 879 009a 5100      		.word	81
+ 880 009c 2E02      		.word	558
+ 881 009e 3100      		.word	49
+ 882 00a0 3400      		.word	52
+ 883 00a2 E500      		.word	229
+ 884 00a4 C200      		.word	194
+ 885 00a6 0000      		.word	0
+ 886 00a8 0030      		.word	12288
+ 887 00aa 0A30      		.word	12298
+ 888 00ac 0830      		.word	12296
+ 889 00ae 0930      		.word	12297
+ 890 00b0 0130      		.word	12289
+ 891 00b2 0000      		.word	0
+ 892 00b4 3A00      		.word	58
+ 893 00b6 0100      		.word	1
+ 894 00b8 0100      		.word	1
+ 895 00ba 0100      		.word	1
+ 896 00bc 0100      		.word	1
+ 897 00be 4D02      		.word	589
+ 898 00c0 3B00      		.word	59
+ 899 00c2 0830      		.word	12296
+ 900 00c4 0930      		.word	12297
+ 901 00c6 0730      		.word	12295
+ 902 00c8 0100      		.word	1
+ 903 00ca 2A00      		.word	42
+ 904 00cc 3C00      		.word	60
+ 905 00ce 0230      		.word	12290
+ 906 00d0 0A30      		.word	12298
+ 907 00d2 0100      		.word	1
+ 908 00d4 0100      		.word	1
+ 909 00d6 2800      		.word	40
+ 910 00d8 3D00      		.word	61
+ 911 00da 2602      		.word	550
+ 912 00dc 2F00      		.word	47
+ 913 00de 2F02      		.word	559
+ 914 00e0 0100      		.word	1
+ 915 00e2 4A02      		.word	586
+ 916 00e4 3E00      		.word	62
+ 917 00e6 2702      		.word	551
+ 918 00e8 3000      		.word	48
+ 919 00ea 3002      		.word	560
+ 920 00ec 0000      		.word	0
+ 921 00ee 5000      		.word	80
+ 922 00f0 3F00      		.word	63
+ 923 00f2 0330      		.word	12291
+ 924 00f4 0000      		.word	0
+ 925 00f6 0100      		.word	1
+ 926 00f8 0000      		.word	0
+ 927 00fa 4F00      		.word	79
+ 928 00fc 4000      		.word	64
+ 929 00fe 3502      		.word	565
+ 930 0100 0000      		.word	0
+ 931 0102 0100      		.word	1
+ 932 0104 0000      		.word	0
+ 933 0106 5001      		.word	336
+ 934 0108 4100      		.word	65
+ 935 010a 2400      		.word	36
+ 936 010c 2100      		.word	33
+ 937 010e 1E00      		.word	30
+ 938 0110 0000      		.word	0
+ 939 0112 4F01      		.word	335
+ 940 0114 4200      		.word	66
+ 941 0116 2500      		.word	37
+ 942 0118 2200      		.word	34
+ 943 011a 1F00      		.word	31
+ 944 011c 2700      		.word	39
+ 945 011e 4B00      		.word	75
+ 946 0120 4300      		.word	67
+ 947 0122 2600      		.word	38
+ 948 0124 2300      		.word	35
+ 949 0126 2000      		.word	32
+ 950 0128 3700      		.word	55
+ 951 012a 2C00      		.word	44
+ 952 012c 4400      		.word	68
+ 953 012e 2E02      		.word	558
+ 954 0130 2502      		.word	549
+ 955 0132 3600      		.word	54
+ 956 0134 5000      		.word	80
+ 957 0136 4C00      		.word	76
+ 958 0138 4500      		.word	69
+ 959 013a 2D00      		.word	45
+ 960 013c 3800      		.word	56
+ 961 013e 5200      		.word	82
+ 962 0140 5100      		.word	81
+ 963 0142 4E00      		.word	78
+ 964 0144 0100      		.word	1
+ 965 0146 0100      		.word	1
+ 966 0148 0100      		.word	1
+ 967 014a 0100      		.word	1
+ 968 014c 4F00      		.word	79
+ 969 014e 0000      		.word	0
+ 970 0150 6430      		.word	12388
+ 971 0152 0A30      		.word	12298
+ 972 0154 0830      		.word	12296
+ 973 0156 0930      		.word	12297
+ 974 0158 E000      		.word	224
+ 975 015a 0000      		.word	0
+ 976 015c 3A00      		.word	58
+ 977 015e 0430      		.word	12292
+ 978 0160 0530      		.word	12293
+ 979 0162 0630      		.word	12294
+ 980 0164 0100      		.word	1
+ 981 0166 4E00      		.word	78
+ 982 0168 3B00      		.word	59
+ 983 016a 0100      		.word	1
+ 984 016c 0100      		.word	1
+ 985 016e 0100      		.word	1
+ 986 0170 0100      		.word	1
+ 987 0172 2A00      		.word	42
+ 988 0174 3C00      		.word	60
+ 989 0176 5200      		.word	82
+ 990 0178 5100      		.word	81
+ 991 017a 0100      		.word	1
+ 992 017c 0100      		.word	1
+ 993 017e 2C00      		.word	44
+ 994 0180 3D00      		.word	61
+ 995 0182 0100      		.word	1
+ 996 0184 4F00      		.word	79
+ 997 0186 0100      		.word	1
+ 998 0188 0100      		.word	1
+ 999 018a 4B00      		.word	75
+ 1000 018c 3E00      		.word	62
+ 1001 018e 0100      		.word	1
+ 1002 0190 0100      		.word	1
+ 1003 0192 0100      		.word	1
+ 1004 0194 0000      		.word	0
+ 1005 0196 4A02      		.word	586
+ 1006 0198 3F00      		.word	63
+ 1007 019a 0100      		.word	1
+ 1008 019c 0000      		.word	0
+ 1009 019e 0100      		.word	1
+ 1010 01a0 0000      		.word	0
+ 1011 01a2 4D02      		.word	589
+ 1012 01a4 4000      		.word	64
+ 1013 01a6 0100      		.word	1
+ 1014 01a8 0000      		.word	0
+ 1015 01aa 0100      		.word	1
+ 1016 01ac 0000      		.word	0
+ 1017 01ae 5000      		.word	80
+ 1018 01b0 4100      		.word	65
+ 1019 01b2 0100      		.word	1
+ 1020 01b4 0100      		.word	1
+ 1021 01b6 0100      		.word	1
+ 1022 01b8 0000      		.word	0
+ 1023 01ba 4F00      		.word	79
+ 1024 01bc 4200      		.word	66
+ 1025 01be 0100      		.word	1
+ 1026 01c0 0100      		.word	1
+ 1027 01c2 0100      		.word	1
+ 1028 01c4 0100      		.word	1
+ 1029 01c6 5200      		.word	82
+ 1030 01c8 4300      		.word	67
+ 1031 01ca 0100      		.word	1
+ 1032 01cc 0100      		.word	1
+ 1033 01ce 0100      		.word	1
+ 1034 01d0 0100      		.word	1
+ 1035 01d2 2800      		.word	40
+ 1036 01d4 4400      		.word	68
+ 1037 01d6 0100      		.word	1
+ 1038 01d8 0100      		.word	1
+ 1039 01da 0100      		.word	1
+ 1040 01dc 3600      		.word	54
+ 1041 01de 4C00      		.word	76
+ 1042 01e0 4500      		.word	69
+ 1043 01e2 0100      		.word	1
+ 1044 01e4 0100      		.word	1
+ 1045 01e6 0100      		.word	1
+ 1046 01e8 0100      		.word	1
+ 1047 01ea 5100      		.word	81
+ 1048 01ec 0100      		.word	1
+ 1049 01ee 0100      		.word	1
+ 1050 01f0 0100      		.word	1
+ 1051 01f2 0100      		.word	1
+ 1052 01f4 0100      		.word	1
+ 1053 01f6 0000      		.word	0
+ 1054 01f8 2900      		.word	41
+ 1055 01fa 2B00      		.word	43
+ 1056 01fc 3500      		.word	53
+ 1057 01fe E100      		.word	225
+ 1058 0200 E000      		.word	224
+ 1059 0202 0000      		.word	0
+ 1060 0204 1E00      		.word	30
+ 1061 0206 1400      		.word	20
+ 1062 0208 0400      		.word	4
+ 1063 020a 1D00      		.word	29
+ 1064 020c E201      		.word	482
+ 1065 020e 4E00      		.word	78
+ 1066 0210 1F00      		.word	31
+ 1067 0212 1A00      		.word	26
+ 1068 0214 1600      		.word	22
+ 1069 0216 1B00      		.word	27
+ 1070 0218 E300      		.word	227
+ 1071 021a 4C00      		.word	76
+ 1072 021c 2000      		.word	32
+ 1073 021e 0800      		.word	8
+ 1074 0220 0700      		.word	7
+ 1075 0222 0600      		.word	6
+ 1076 0224 6500      		.word	101
+ 1077 0226 2C00      		.word	44
+ 1078 0228 2100      		.word	33
+ 1079 022a 1500      		.word	21
+ 1080 022c 0900      		.word	9
+ 1081 022e 1900      		.word	25
+ 1082 0230 E200      		.word	226
+ 1083 0232 4B00      		.word	75
+ 1084 0234 2200      		.word	34
+ 1085 0236 1700      		.word	23
+ 1086 0238 0A00      		.word	10
+ 1087 023a 0500      		.word	5
+ 1088 023c 0000      		.word	0
+ 1089 023e 4A00      		.word	74
+ 1090 0240 0353      		.word	21251
+ 1091 0242 2E00      		.word	46
+ 1092 0244 0000      		.word	0
+ 1093 0246 0153      		.word	21249
+ 1094 0248 0000      		.word	0
+ 1095 024a 4D00      		.word	77
+ 1096 024c 2300      		.word	35
+ 1097 024e 0130      		.word	12289
+ 1098 0250 0000      		.word	0
+ 1099 0252 3E01      		.word	318
+ 1100 0254 0000      		.word	0
+ 1101 0256 4A00      		.word	74
+ 1102 0258 2400      		.word	36
+ 1103 025a 1C00      		.word	28
+ 1104 025c 0B00      		.word	11
+ 1105 025e 1100      		.word	17
+ 1106 0260 0000      		.word	0
+ 1107 0262 4D00      		.word	77
+ 1108 0264 2500      		.word	37
+ 1109 0266 1800      		.word	24
+ 1110 0268 0D00      		.word	13
+ 1111 026a 1000      		.word	16
+ 1112 026c E600      		.word	230
+ 1113 026e 4B00      		.word	75
+ 1114 0270 2600      		.word	38
+ 1115 0272 0C00      		.word	12
+ 1116 0274 0E00      		.word	14
+ 1117 0276 3600      		.word	54
+ 1118 0278 2C02      		.word	556
+ 1119 027a 2800      		.word	40
+ 1120 027c 2700      		.word	39
+ 1121 027e 1200      		.word	18
+ 1122 0280 0F00      		.word	15
+ 1123 0282 3700      		.word	55
+ 1124 0284 2F00      		.word	47
+ 1125 0286 4C00      		.word	76
+ 1126 0288 2D00      		.word	45
+ 1127 028a 1300      		.word	19
+ 1128 028c 3300      		.word	51
+ 1129 028e 3800      		.word	56
+ 1130 0290 3000      		.word	48
+ 1131 0292 4E00      		.word	78
+ 1132 0294 2E02      		.word	558
+ 1133 0296 3100      		.word	49
+ 1134 0298 3400      		.word	52
+ 1135 029a 0157      		.word	22273
+ 1136 029c C100      		.word	193
+ 1137 029e 0000      		.word	0
+ 1138 02a0 2900      		.word	41
+ 1139 02a2 2B00      		.word	43
+ 1140 02a4 3500      		.word	53
+ 1141 02a6 E100      		.word	225
+ 1142 02a8 E000      		.word	224
+ 1143 02aa 0000      		.word	0
+ 1144 02ac 1E00      		.word	30
+ 1145 02ae 1400      		.word	20
+ 1146 02b0 0400      		.word	4
+ 1147 02b2 1D00      		.word	29
+ 1148 02b4 E201      		.word	482
+ 1149 02b6 4E00      		.word	78
+ 1150 02b8 1F00      		.word	31
+ 1151 02ba 1A00      		.word	26
+ 1152 02bc 1600      		.word	22
+ 1153 02be 1B00      		.word	27
+ 1154 02c0 E300      		.word	227
+ 1155 02c2 2A00      		.word	42
+ 1156 02c4 2000      		.word	32
+ 1157 02c6 0800      		.word	8
+ 1158 02c8 0700      		.word	7
+ 1159 02ca 0600      		.word	6
+ 1160 02cc 6500      		.word	101
+ 1161 02ce 2C00      		.word	44
+ 1162 02d0 2100      		.word	33
+ 1163 02d2 1500      		.word	21
+ 1164 02d4 0900      		.word	9
+ 1165 02d6 1900      		.word	25
+ 1166 02d8 E200      		.word	226
+ 1167 02da 4B00      		.word	75
+ 1168 02dc 2200      		.word	34
+ 1169 02de 1700      		.word	23
+ 1170 02e0 0A00      		.word	10
+ 1171 02e2 0500      		.word	5
+ 1172 02e4 0000      		.word	0
+ 1173 02e6 4A00      		.word	74
+ 1174 02e8 0353      		.word	21251
+ 1175 02ea 2E00      		.word	46
+ 1176 02ec 0000      		.word	0
+ 1177 02ee 0153      		.word	21249
+ 1178 02f0 0000      		.word	0
+ 1179 02f2 4D00      		.word	77
+ 1180 02f4 2300      		.word	35
+ 1181 02f6 0130      		.word	12289
+ 1182 02f8 0000      		.word	0
+ 1183 02fa 3E01      		.word	318
+ 1184 02fc 0000      		.word	0
+ 1185 02fe 5000      		.word	80
+ 1186 0300 2400      		.word	36
+ 1187 0302 1C00      		.word	28
+ 1188 0304 0B00      		.word	11
+ 1189 0306 1100      		.word	17
+ 1190 0308 0000      		.word	0
+ 1191 030a 4F00      		.word	79
+ 1192 030c 2500      		.word	37
+ 1193 030e 1800      		.word	24
+ 1194 0310 0D00      		.word	13
+ 1195 0312 1000      		.word	16
+ 1196 0314 E600      		.word	230
+ 1197 0316 5200      		.word	82
+ 1198 0318 2600      		.word	38
+ 1199 031a 0C00      		.word	12
+ 1200 031c 0E00      		.word	14
+ 1201 031e 3600      		.word	54
+ 1202 0320 2C02      		.word	556
+ 1203 0322 2800      		.word	40
+ 1204 0324 2700      		.word	39
+ 1205 0326 1200      		.word	18
+ 1206 0328 0F00      		.word	15
+ 1207 032a 3700      		.word	55
+ 1208 032c 2F00      		.word	47
+ 1209 032e 4C00      		.word	76
+ 1210 0330 2D00      		.word	45
+ 1211 0332 1300      		.word	19
+ 1212 0334 3300      		.word	51
+ 1213 0336 3800      		.word	56
+ 1214 0338 3000      		.word	48
+ 1215 033a 5100      		.word	81
+ 1216 033c 2E02      		.word	558
+ 1217 033e 3100      		.word	49
+ 1218 0340 3400      		.word	52
+ 1219 0342 E500      		.word	229
+ 1220 0344 C100      		.word	193
+ 1221 0346 0000      		.word	0
+ 1222               		.text
+ 1223               	.Letext0:
+ 1224               		.file 3 "/usr/lib/avr/include/stdint.h"
+ 1225               		.file 4 "./tmk_core/common/keyboard.h"
+ 1226               		.file 5 "./tmk_core/common/keycode.h"
+ 1227               		.file 6 "./tmk_core/common/action_code.h"
+ 1228               		.file 7 "./tmk_core/common/action_macro.h"
+ 1229               		.file 8 "./tmk_core/common/action.h"
+ 1230               		.file 9 "./quantum/keymap.h"
+ 1231               		.file 10 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.h"
+ 1232               		.file 11 "./quantum/quantum.h"
+ 1233               		.file 12 "/usr/lib/avr/include/stdio.h"
+ 1234               		.file 13 "/usr/lib/avr/include/string.h"
+ 1235               		.file 14 "./tmk_core/common/util.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 keymap.c
-     /tmp/ccVmHF23.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccVmHF23.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccVmHF23.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccVmHF23.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccVmHF23.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccVmHF23.s:13     .text.action_get_macro:0000000000000000 action_get_macro
-     /tmp/ccVmHF23.s:217    .progmem.data.__c.5228:0000000000000000 __c.5228
-     /tmp/ccVmHF23.s:212    .progmem.data.__c.5232:0000000000000000 __c.5232
-     /tmp/ccVmHF23.s:207    .progmem.data.__c.5235:0000000000000000 __c.5235
-     /tmp/ccVmHF23.s:202    .progmem.data.__c.5238:0000000000000000 __c.5238
-     /tmp/ccVmHF23.s:89     .text.matrix_init_user:0000000000000000 matrix_init_user
-     /tmp/ccVmHF23.s:104    .text.matrix_scan_user:0000000000000000 matrix_scan_user
-     /tmp/ccVmHF23.s:223    .progmem.data.fn_actions:0000000000000000 fn_actions
-     /tmp/ccVmHF23.s:231    .progmem.data.keymaps:0000000000000000 keymaps
+     /tmp/ccLpX6zW.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccLpX6zW.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccLpX6zW.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccLpX6zW.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccLpX6zW.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccLpX6zW.s:18     .text.pre_macro_date_to_int:0000000000000000 pre_macro_date_to_int
+     /tmp/ccLpX6zW.s:193    .text.pre_macro_time_to_int:0000000000000000 pre_macro_time_to_int
+     /tmp/ccLpX6zW.s:321    .text.action_get_macro:0000000000000000 action_get_macro
+     /tmp/ccLpX6zW.s:769    .progmem.data.__c.5246:0000000000000000 __c.5246
+     /tmp/ccLpX6zW.s:764    .progmem.data.__c.5250:0000000000000000 __c.5250
+     /tmp/ccLpX6zW.s:759    .progmem.data.__c.5253:0000000000000000 __c.5253
+     /tmp/ccLpX6zW.s:754    .progmem.data.__c.5256:0000000000000000 __c.5256
+     /tmp/ccLpX6zW.s:749    .progmem.data.__c.5259:0000000000000000 __c.5259
+     /tmp/ccLpX6zW.s:744    .progmem.data.__c.5262:0000000000000000 __c.5262
+     /tmp/ccLpX6zW.s:737    .progmem.data.__c.5265:0000000000000000 __c.5265
+     /tmp/ccLpX6zW.s:732    .progmem.data.__c.5268:0000000000000000 __c.5268
+     /tmp/ccLpX6zW.s:727    .progmem.data.__c.5271:0000000000000000 __c.5271
+     /tmp/ccLpX6zW.s:722    .progmem.data.__c.5274:0000000000000000 __c.5274
+     /tmp/ccLpX6zW.s:717    .progmem.data.__c.5277:0000000000000000 __c.5277
+     /tmp/ccLpX6zW.s:712    .progmem.data.__c.5280:0000000000000000 __c.5280
+     /tmp/ccLpX6zW.s:707    .progmem.data.__c.5283:0000000000000000 __c.5283
+     /tmp/ccLpX6zW.s:702    .progmem.data.__c.5286:0000000000000000 __c.5286
+     /tmp/ccLpX6zW.s:697    .progmem.data.__c.5289:0000000000000000 __c.5289
+     /tmp/ccLpX6zW.s:692    .progmem.data.__c.5292:0000000000000000 __c.5292
+     /tmp/ccLpX6zW.s:687    .progmem.data.__c.5295:0000000000000000 __c.5295
+     /tmp/ccLpX6zW.s:574    .text.matrix_init_user:0000000000000000 matrix_init_user
+     /tmp/ccLpX6zW.s:589    .text.matrix_scan_user:0000000000000000 matrix_scan_user
+     /tmp/ccLpX6zW.s:775    .progmem.data.fn_actions:0000000000000000 fn_actions
+     /tmp/ccLpX6zW.s:786    .data.date_str:0000000000000000 date_str
+     /tmp/ccLpX6zW.s:795    .data.sql_query:0000000000000000 sql_query
+     /tmp/ccLpX6zW.s:801    .progmem.data.keymaps:0000000000000000 keymaps
 
 UNDEFINED SYMBOLS
+sscanf
+strstr
+__divmodhi4
 send_string
 layer_state
 biton32
+__do_copy_data
