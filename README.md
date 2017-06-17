@@ -22,15 +22,16 @@ sudo cp ~/git/teensy/49-teensy.rules /etc/udev/rules.d/
 ## Edit Keymap
 
 ```sh
-gedit ~/git/Firmware/qmk/keyboards/ergodox/ez/keymaps/dawkiny/keymap.c
+gedit ~/git/Firmware/qmk/keyboards/ergodox/ez/keymaps/pydemia/keymap.c
 cd ~/git/Firmware/qmk/keyboards/ergodox
-make ez dawkiny
+make ez pydemia
+```
 
-Making ergodox/ez with keymap dawkiny [OK]
-Making ergodox/ez with keymap profet_80 [OK]
-Making ergodox/ez with keymap pydemia [OK]
-Making ergodox/ez with keymap steno [OK]
-Making ergodox/ez with keymap dawkiny
+```sh
+Making ergodox/ez with keymap profet_80                                                                [OK]
+Making ergodox/ez with keymap pydemia                                                                  [OK]
+Making ergodox/ez with keymap steno                                                                    [OK]
+Making ergodox/ez with keymap pydemia
 
 avr-gcc (GCC) 4.9.2
 Copyright (C) 2014 Free Software Foundation, Inc.
@@ -39,13 +40,12 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 Size before:
    text	   data	    bss	    dec	    hex	filename
-      0	  19182	      0	  19182	   4aee	ergodox_ez_dawkiny.hex
+      0	  20466	      0	  20466	   4ff2	ergodox_ez_pydemia.hex
 
 
 Size after:
    text	   data	    bss	    dec	    hex	filename
-      0	  19182	      0	  19182	   4aee	ergodox_ez_dawkiny.hex
-
+      0	  20466	      0	  20466	   4ff2	ergodox_ez_pydemia.hex
 ```
 
 ```sh
