@@ -1305,15 +1305,15 @@
  713 0000 00        		.zero	1
  714               		.section	.progmem.data.__c.5277,"a",@progbits
  717               	__c.5277:
- 718 0000 4A75 6E20 		.string	"Jun 18 2017 00:34:11"
+ 718 0000 4A75 6E20 		.string	"Jun 18 2017 00:44:17"
  718      3138 2032 
  718      3031 3720 
- 718      3030 3A33 
- 718      343A 3131 
+ 718      3030 3A34 
+ 718      343A 3137 
  719               		.section	.progmem.data.__c.5274,"a",@progbits
  722               	__c.5274:
- 723 0000 3030 3A33 		.string	"00:34:11"
- 723      343A 3131 
+ 723 0000 3030 3A34 		.string	"00:44:17"
+ 723      343A 3137 
  723      00
  724               		.section	.progmem.data.__c.5271,"a",@progbits
  727               	__c.5271:
@@ -1374,11 +1374,11 @@
  765 0000 3C2D 00   		.string	"<-"
  766               		.section	.progmem.data.__c.5246,"a",@progbits
  769               	__c.5246:
- 770 0000 6572 676F 		.string	"ergodox/pydemia @ 512d1d-dirty"
+ 770 0000 6572 676F 		.string	"ergodox/pydemia @ 505bcc-dirty"
  770      646F 782F 
  770      7079 6465 
  770      6D69 6120 
- 770      4020 3531 
+ 770      4020 3530 
  771               	.global	fn_actions
  772               		.section	.progmem.data.fn_actions,"a",@progbits
  775               	fn_actions:
@@ -1842,37 +1842,37 @@
  1235               		.file 14 "./tmk_core/common/util.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 keymap.c
-     /tmp/ccLpX6zW.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccLpX6zW.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccLpX6zW.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccLpX6zW.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccLpX6zW.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccLpX6zW.s:18     .text.pre_macro_date_to_int:0000000000000000 pre_macro_date_to_int
-     /tmp/ccLpX6zW.s:193    .text.pre_macro_time_to_int:0000000000000000 pre_macro_time_to_int
-     /tmp/ccLpX6zW.s:321    .text.action_get_macro:0000000000000000 action_get_macro
-     /tmp/ccLpX6zW.s:769    .progmem.data.__c.5246:0000000000000000 __c.5246
-     /tmp/ccLpX6zW.s:764    .progmem.data.__c.5250:0000000000000000 __c.5250
-     /tmp/ccLpX6zW.s:759    .progmem.data.__c.5253:0000000000000000 __c.5253
-     /tmp/ccLpX6zW.s:754    .progmem.data.__c.5256:0000000000000000 __c.5256
-     /tmp/ccLpX6zW.s:749    .progmem.data.__c.5259:0000000000000000 __c.5259
-     /tmp/ccLpX6zW.s:744    .progmem.data.__c.5262:0000000000000000 __c.5262
-     /tmp/ccLpX6zW.s:737    .progmem.data.__c.5265:0000000000000000 __c.5265
-     /tmp/ccLpX6zW.s:732    .progmem.data.__c.5268:0000000000000000 __c.5268
-     /tmp/ccLpX6zW.s:727    .progmem.data.__c.5271:0000000000000000 __c.5271
-     /tmp/ccLpX6zW.s:722    .progmem.data.__c.5274:0000000000000000 __c.5274
-     /tmp/ccLpX6zW.s:717    .progmem.data.__c.5277:0000000000000000 __c.5277
-     /tmp/ccLpX6zW.s:712    .progmem.data.__c.5280:0000000000000000 __c.5280
-     /tmp/ccLpX6zW.s:707    .progmem.data.__c.5283:0000000000000000 __c.5283
-     /tmp/ccLpX6zW.s:702    .progmem.data.__c.5286:0000000000000000 __c.5286
-     /tmp/ccLpX6zW.s:697    .progmem.data.__c.5289:0000000000000000 __c.5289
-     /tmp/ccLpX6zW.s:692    .progmem.data.__c.5292:0000000000000000 __c.5292
-     /tmp/ccLpX6zW.s:687    .progmem.data.__c.5295:0000000000000000 __c.5295
-     /tmp/ccLpX6zW.s:574    .text.matrix_init_user:0000000000000000 matrix_init_user
-     /tmp/ccLpX6zW.s:589    .text.matrix_scan_user:0000000000000000 matrix_scan_user
-     /tmp/ccLpX6zW.s:775    .progmem.data.fn_actions:0000000000000000 fn_actions
-     /tmp/ccLpX6zW.s:786    .data.date_str:0000000000000000 date_str
-     /tmp/ccLpX6zW.s:795    .data.sql_query:0000000000000000 sql_query
-     /tmp/ccLpX6zW.s:801    .progmem.data.keymaps:0000000000000000 keymaps
+     /tmp/ccDmqcel.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccDmqcel.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccDmqcel.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccDmqcel.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccDmqcel.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccDmqcel.s:18     .text.pre_macro_date_to_int:0000000000000000 pre_macro_date_to_int
+     /tmp/ccDmqcel.s:193    .text.pre_macro_time_to_int:0000000000000000 pre_macro_time_to_int
+     /tmp/ccDmqcel.s:321    .text.action_get_macro:0000000000000000 action_get_macro
+     /tmp/ccDmqcel.s:769    .progmem.data.__c.5246:0000000000000000 __c.5246
+     /tmp/ccDmqcel.s:764    .progmem.data.__c.5250:0000000000000000 __c.5250
+     /tmp/ccDmqcel.s:759    .progmem.data.__c.5253:0000000000000000 __c.5253
+     /tmp/ccDmqcel.s:754    .progmem.data.__c.5256:0000000000000000 __c.5256
+     /tmp/ccDmqcel.s:749    .progmem.data.__c.5259:0000000000000000 __c.5259
+     /tmp/ccDmqcel.s:744    .progmem.data.__c.5262:0000000000000000 __c.5262
+     /tmp/ccDmqcel.s:737    .progmem.data.__c.5265:0000000000000000 __c.5265
+     /tmp/ccDmqcel.s:732    .progmem.data.__c.5268:0000000000000000 __c.5268
+     /tmp/ccDmqcel.s:727    .progmem.data.__c.5271:0000000000000000 __c.5271
+     /tmp/ccDmqcel.s:722    .progmem.data.__c.5274:0000000000000000 __c.5274
+     /tmp/ccDmqcel.s:717    .progmem.data.__c.5277:0000000000000000 __c.5277
+     /tmp/ccDmqcel.s:712    .progmem.data.__c.5280:0000000000000000 __c.5280
+     /tmp/ccDmqcel.s:707    .progmem.data.__c.5283:0000000000000000 __c.5283
+     /tmp/ccDmqcel.s:702    .progmem.data.__c.5286:0000000000000000 __c.5286
+     /tmp/ccDmqcel.s:697    .progmem.data.__c.5289:0000000000000000 __c.5289
+     /tmp/ccDmqcel.s:692    .progmem.data.__c.5292:0000000000000000 __c.5292
+     /tmp/ccDmqcel.s:687    .progmem.data.__c.5295:0000000000000000 __c.5295
+     /tmp/ccDmqcel.s:574    .text.matrix_init_user:0000000000000000 matrix_init_user
+     /tmp/ccDmqcel.s:589    .text.matrix_scan_user:0000000000000000 matrix_scan_user
+     /tmp/ccDmqcel.s:775    .progmem.data.fn_actions:0000000000000000 fn_actions
+     /tmp/ccDmqcel.s:786    .data.date_str:0000000000000000 date_str
+     /tmp/ccDmqcel.s:795    .data.sql_query:0000000000000000 sql_query
+     /tmp/ccDmqcel.s:801    .progmem.data.keymaps:0000000000000000 keymaps
 
 UNDEFINED SYMBOLS
 sscanf
