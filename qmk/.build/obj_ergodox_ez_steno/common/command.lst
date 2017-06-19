@@ -1499,18 +1499,18 @@
  511               		.file 13 "./tmk_core/common/action_layer.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 command.c
-     /tmp/cc9Nj8lu.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/cc9Nj8lu.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/cc9Nj8lu.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/cc9Nj8lu.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/cc9Nj8lu.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/cc9Nj8lu.s:12     .text.command_common:0000000000000000 command_common
-     /tmp/cc9Nj8lu.s:497    .bss.command_state:0000000000000000 command_state
-     /tmp/cc9Nj8lu.s:291    .text.command_extra:0000000000000000 command_extra
-     /tmp/cc9Nj8lu.s:310    .text.command_console_extra:0000000000000000 command_console_extra
-     /tmp/cc9Nj8lu.s:329    .text.command_proc:0000000000000000 command_proc
-     /tmp/cc9Nj8lu.s:451    .text.numkey2num:0000000000000000 numkey2num
-     /tmp/cc9Nj8lu.s:482    .rodata.CSWTCH.17:0000000000000000 CSWTCH.17
+     /tmp/ccE7FlCZ.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccE7FlCZ.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccE7FlCZ.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccE7FlCZ.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccE7FlCZ.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccE7FlCZ.s:12     .text.command_common:0000000000000000 command_common
+     /tmp/ccE7FlCZ.s:497    .bss.command_state:0000000000000000 command_state
+     /tmp/ccE7FlCZ.s:291    .text.command_extra:0000000000000000 command_extra
+     /tmp/ccE7FlCZ.s:310    .text.command_console_extra:0000000000000000 command_console_extra
+     /tmp/ccE7FlCZ.s:329    .text.command_proc:0000000000000000 command_proc
+     /tmp/ccE7FlCZ.s:451    .text.numkey2num:0000000000000000 numkey2num
+     /tmp/ccE7FlCZ.s:482    .rodata.CSWTCH.17:0000000000000000 CSWTCH.17
 
 UNDEFINED SYMBOLS
 debug_config
