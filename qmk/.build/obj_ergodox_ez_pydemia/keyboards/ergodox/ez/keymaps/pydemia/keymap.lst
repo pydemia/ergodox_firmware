@@ -111,7 +111,7 @@
   86:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        M(10),  KC_TRNS,  M(8),     M(2),     KC_LPRN,  KC_RPRN,  M(3),//KC_QUOT,M(1),
   87:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        M(8),   KC_TRNS,  M(9),     M(10),    KC_LBRC,  KC_RBRC,
   88:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        M(9),   KC_TRNS,  M(7),     KC_TRNS,  KC_LCBR,  KC_RCBR,  KC_TRNS,
-  89:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****           EPRM, KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
+  89:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****       KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
   90:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                         KC_LEFT,  KC_RGHT,
   91:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                                   LSFT(KC_HOME),
   92:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                KC_ENT,  KC_BSPC,  LSFT(KC_END),
@@ -154,7 +154,7 @@
  129:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        M(10),    M(4),     KC_TRNS,   KC_UP,    KC_TRNS, KC_TRNS, KC_TRNS,
  130:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        M(8),     M(5),     KC_TRNS,   KC_DOWN,  KC_RGHT, KC_TRNS,
  131:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        M(9),     M(6),     KC_TRNS,   KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS,
- 132:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_LCTRL,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
+ 132:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****        KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
  133:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                        	       LSFT(KC_HOME),     LSFT(KC_END),
  134:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                                   KC_PGUP,
  135:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                KC_SPC,  KC_BSPC,  KC_PGDN,
@@ -1305,20 +1305,20 @@
  713 0000 00        		.zero	1
  714               		.section	.progmem.data.__c.5277,"a",@progbits
  717               	__c.5277:
- 718 0000 4A75 6E20 		.string	"Jun 19 2017 19:21:58"
- 718      3139 2032 
+ 718 0000 4A75 6C20 		.string	"Jul 11 2017 23:18:21"
+ 718      3131 2032 
  718      3031 3720 
- 718      3139 3A32 
- 718      313A 3538 
+ 718      3233 3A31 
+ 718      383A 3231 
  719               		.section	.progmem.data.__c.5274,"a",@progbits
  722               	__c.5274:
- 723 0000 3139 3A32 		.string	"19:21:58"
- 723      313A 3538 
+ 723 0000 3233 3A31 		.string	"23:18:21"
+ 723      383A 3231 
  723      00
  724               		.section	.progmem.data.__c.5271,"a",@progbits
  727               	__c.5271:
- 728 0000 4A75 6E20 		.string	"Jun 19 2017"
- 728      3139 2032 
+ 728 0000 4A75 6C20 		.string	"Jul 11 2017"
+ 728      3131 2032 
  728      3031 3700 
  729               		.section	.progmem.data.__c.5268,"a",@progbits
  732               	__c.5268:
@@ -1374,11 +1374,11 @@
  765 0000 3C2D 00   		.string	"<-"
  766               		.section	.progmem.data.__c.5246,"a",@progbits
  769               	__c.5246:
- 770 0000 6572 676F 		.string	"ergodox/pydemia @ 43647a-dirty"
+ 770 0000 6572 676F 		.string	"ergodox/pydemia @ 602fcf-dirty"
  770      646F 782F 
  770      7079 6465 
  770      6D69 6120 
- 770      4020 3433 
+ 770      4020 3630 
  771               	.global	fn_actions
  772               		.section	.progmem.data.fn_actions,"a",@progbits
  775               	fn_actions:
@@ -1494,7 +1494,7 @@
  887 00aa 0A30      		.word	12298
  888 00ac 0830      		.word	12296
  889 00ae 0930      		.word	12297
- 890 00b0 0130      		.word	12289
+ 890 00b0 0100      		.word	1
  891 00b2 0000      		.word	0
  892 00b4 3A00      		.word	58
  893 00b6 0100      		.word	1
@@ -1578,7 +1578,7 @@
  971 0152 0A30      		.word	12298
  972 0154 0830      		.word	12296
  973 0156 0930      		.word	12297
- 974 0158 E000      		.word	224
+ 974 0158 0100      		.word	1
  975 015a 0000      		.word	0
  976 015c 3A00      		.word	58
  977 015e 0430      		.word	12292
@@ -1842,37 +1842,37 @@
  1235               		.file 14 "./tmk_core/common/util.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 keymap.c
-     /tmp/ccQgcm3w.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccQgcm3w.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccQgcm3w.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccQgcm3w.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccQgcm3w.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccQgcm3w.s:18     .text.pre_macro_date_to_int:0000000000000000 pre_macro_date_to_int
-     /tmp/ccQgcm3w.s:193    .text.pre_macro_time_to_int:0000000000000000 pre_macro_time_to_int
-     /tmp/ccQgcm3w.s:321    .text.action_get_macro:0000000000000000 action_get_macro
-     /tmp/ccQgcm3w.s:769    .progmem.data.__c.5246:0000000000000000 __c.5246
-     /tmp/ccQgcm3w.s:764    .progmem.data.__c.5250:0000000000000000 __c.5250
-     /tmp/ccQgcm3w.s:759    .progmem.data.__c.5253:0000000000000000 __c.5253
-     /tmp/ccQgcm3w.s:754    .progmem.data.__c.5256:0000000000000000 __c.5256
-     /tmp/ccQgcm3w.s:749    .progmem.data.__c.5259:0000000000000000 __c.5259
-     /tmp/ccQgcm3w.s:744    .progmem.data.__c.5262:0000000000000000 __c.5262
-     /tmp/ccQgcm3w.s:737    .progmem.data.__c.5265:0000000000000000 __c.5265
-     /tmp/ccQgcm3w.s:732    .progmem.data.__c.5268:0000000000000000 __c.5268
-     /tmp/ccQgcm3w.s:727    .progmem.data.__c.5271:0000000000000000 __c.5271
-     /tmp/ccQgcm3w.s:722    .progmem.data.__c.5274:0000000000000000 __c.5274
-     /tmp/ccQgcm3w.s:717    .progmem.data.__c.5277:0000000000000000 __c.5277
-     /tmp/ccQgcm3w.s:712    .progmem.data.__c.5280:0000000000000000 __c.5280
-     /tmp/ccQgcm3w.s:707    .progmem.data.__c.5283:0000000000000000 __c.5283
-     /tmp/ccQgcm3w.s:702    .progmem.data.__c.5286:0000000000000000 __c.5286
-     /tmp/ccQgcm3w.s:697    .progmem.data.__c.5289:0000000000000000 __c.5289
-     /tmp/ccQgcm3w.s:692    .progmem.data.__c.5292:0000000000000000 __c.5292
-     /tmp/ccQgcm3w.s:687    .progmem.data.__c.5295:0000000000000000 __c.5295
-     /tmp/ccQgcm3w.s:574    .text.matrix_init_user:0000000000000000 matrix_init_user
-     /tmp/ccQgcm3w.s:589    .text.matrix_scan_user:0000000000000000 matrix_scan_user
-     /tmp/ccQgcm3w.s:775    .progmem.data.fn_actions:0000000000000000 fn_actions
-     /tmp/ccQgcm3w.s:786    .data.date_str:0000000000000000 date_str
-     /tmp/ccQgcm3w.s:795    .data.sql_query:0000000000000000 sql_query
-     /tmp/ccQgcm3w.s:801    .progmem.data.keymaps:0000000000000000 keymaps
+     /tmp/cctAjuat.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cctAjuat.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cctAjuat.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cctAjuat.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cctAjuat.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cctAjuat.s:18     .text.pre_macro_date_to_int:0000000000000000 pre_macro_date_to_int
+     /tmp/cctAjuat.s:193    .text.pre_macro_time_to_int:0000000000000000 pre_macro_time_to_int
+     /tmp/cctAjuat.s:321    .text.action_get_macro:0000000000000000 action_get_macro
+     /tmp/cctAjuat.s:769    .progmem.data.__c.5246:0000000000000000 __c.5246
+     /tmp/cctAjuat.s:764    .progmem.data.__c.5250:0000000000000000 __c.5250
+     /tmp/cctAjuat.s:759    .progmem.data.__c.5253:0000000000000000 __c.5253
+     /tmp/cctAjuat.s:754    .progmem.data.__c.5256:0000000000000000 __c.5256
+     /tmp/cctAjuat.s:749    .progmem.data.__c.5259:0000000000000000 __c.5259
+     /tmp/cctAjuat.s:744    .progmem.data.__c.5262:0000000000000000 __c.5262
+     /tmp/cctAjuat.s:737    .progmem.data.__c.5265:0000000000000000 __c.5265
+     /tmp/cctAjuat.s:732    .progmem.data.__c.5268:0000000000000000 __c.5268
+     /tmp/cctAjuat.s:727    .progmem.data.__c.5271:0000000000000000 __c.5271
+     /tmp/cctAjuat.s:722    .progmem.data.__c.5274:0000000000000000 __c.5274
+     /tmp/cctAjuat.s:717    .progmem.data.__c.5277:0000000000000000 __c.5277
+     /tmp/cctAjuat.s:712    .progmem.data.__c.5280:0000000000000000 __c.5280
+     /tmp/cctAjuat.s:707    .progmem.data.__c.5283:0000000000000000 __c.5283
+     /tmp/cctAjuat.s:702    .progmem.data.__c.5286:0000000000000000 __c.5286
+     /tmp/cctAjuat.s:697    .progmem.data.__c.5289:0000000000000000 __c.5289
+     /tmp/cctAjuat.s:692    .progmem.data.__c.5292:0000000000000000 __c.5292
+     /tmp/cctAjuat.s:687    .progmem.data.__c.5295:0000000000000000 __c.5295
+     /tmp/cctAjuat.s:574    .text.matrix_init_user:0000000000000000 matrix_init_user
+     /tmp/cctAjuat.s:589    .text.matrix_scan_user:0000000000000000 matrix_scan_user
+     /tmp/cctAjuat.s:775    .progmem.data.fn_actions:0000000000000000 fn_actions
+     /tmp/cctAjuat.s:786    .data.date_str:0000000000000000 date_str
+     /tmp/cctAjuat.s:795    .data.sql_query:0000000000000000 sql_query
+     /tmp/cctAjuat.s:801    .progmem.data.keymaps:0000000000000000 keymaps
 
 UNDEFINED SYMBOLS
 sscanf
