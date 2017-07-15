@@ -3627,30 +3627,30 @@
  1128               		.file 22 "./tmk_core/common/host.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 lufa.c
-     /tmp/ccEhGHxH.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccEhGHxH.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccEhGHxH.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccEhGHxH.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccEhGHxH.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccEhGHxH.s:12     .text.keyboard_leds:0000000000000000 keyboard_leds
-     /tmp/ccEhGHxH.s:1096   .bss.keyboard_led_stats:0000000000000000 keyboard_led_stats
-     /tmp/ccEhGHxH.s:29     .text.send_consumer:0000000000000000 send_consumer
-     /tmp/ccEhGHxH.s:147    .text.send_system:0000000000000000 send_system
-     /tmp/ccEhGHxH.s:263    .text.send_mouse:0000000000000000 send_mouse
-     /tmp/ccEhGHxH.s:347    .text.send_keyboard:0000000000000000 send_keyboard
-     /tmp/ccEhGHxH.s:1102   .data.keyboard_protocol:0000000000000000 keyboard_protocol
-     /tmp/ccEhGHxH.s:1091   .bss.keyboard_report_sent:0000000000000000 keyboard_report_sent
-     /tmp/ccEhGHxH.s:523    .text.EVENT_USB_Device_Connect:0000000000000000 EVENT_USB_Device_Connect
-     /tmp/ccEhGHxH.s:561    .text.EVENT_USB_Device_Disconnect:0000000000000000 EVENT_USB_Device_Disconnect
-     /tmp/ccEhGHxH.s:578    .text.EVENT_USB_Device_Reset:0000000000000000 EVENT_USB_Device_Reset
-     /tmp/ccEhGHxH.s:593    .text.EVENT_USB_Device_Suspend:0000000000000000 EVENT_USB_Device_Suspend
-     /tmp/ccEhGHxH.s:608    .text.EVENT_USB_Device_WakeUp:0000000000000000 EVENT_USB_Device_WakeUp
-     /tmp/ccEhGHxH.s:625    .text.EVENT_USB_Device_ConfigurationChanged:0000000000000000 EVENT_USB_Device_ConfigurationChanged
-     /tmp/ccEhGHxH.s:677    .text.EVENT_USB_Device_ControlRequest:0000000000000000 EVENT_USB_Device_ControlRequest
-     /tmp/ccEhGHxH.s:1108   .bss.keyboard_idle:0000000000000000 keyboard_idle
-     /tmp/ccEhGHxH.s:948    .text.sendchar:0000000000000000 sendchar
-     /tmp/ccEhGHxH.s:967    .text.startup.main:0000000000000000 main
-     /tmp/ccEhGHxH.s:1082   .data.lufa_driver:0000000000000000 lufa_driver
+     /tmp/cc53o22i.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cc53o22i.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cc53o22i.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cc53o22i.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cc53o22i.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cc53o22i.s:12     .text.keyboard_leds:0000000000000000 keyboard_leds
+     /tmp/cc53o22i.s:1096   .bss.keyboard_led_stats:0000000000000000 keyboard_led_stats
+     /tmp/cc53o22i.s:29     .text.send_consumer:0000000000000000 send_consumer
+     /tmp/cc53o22i.s:147    .text.send_system:0000000000000000 send_system
+     /tmp/cc53o22i.s:263    .text.send_mouse:0000000000000000 send_mouse
+     /tmp/cc53o22i.s:347    .text.send_keyboard:0000000000000000 send_keyboard
+     /tmp/cc53o22i.s:1102   .data.keyboard_protocol:0000000000000000 keyboard_protocol
+     /tmp/cc53o22i.s:1091   .bss.keyboard_report_sent:0000000000000000 keyboard_report_sent
+     /tmp/cc53o22i.s:523    .text.EVENT_USB_Device_Connect:0000000000000000 EVENT_USB_Device_Connect
+     /tmp/cc53o22i.s:561    .text.EVENT_USB_Device_Disconnect:0000000000000000 EVENT_USB_Device_Disconnect
+     /tmp/cc53o22i.s:578    .text.EVENT_USB_Device_Reset:0000000000000000 EVENT_USB_Device_Reset
+     /tmp/cc53o22i.s:593    .text.EVENT_USB_Device_Suspend:0000000000000000 EVENT_USB_Device_Suspend
+     /tmp/cc53o22i.s:608    .text.EVENT_USB_Device_WakeUp:0000000000000000 EVENT_USB_Device_WakeUp
+     /tmp/cc53o22i.s:625    .text.EVENT_USB_Device_ConfigurationChanged:0000000000000000 EVENT_USB_Device_ConfigurationChanged
+     /tmp/cc53o22i.s:677    .text.EVENT_USB_Device_ControlRequest:0000000000000000 EVENT_USB_Device_ControlRequest
+     /tmp/cc53o22i.s:1108   .bss.keyboard_idle:0000000000000000 keyboard_idle
+     /tmp/cc53o22i.s:948    .text.sendchar:0000000000000000 sendchar
+     /tmp/cc53o22i.s:967    .text.startup.main:0000000000000000 main
+     /tmp/cc53o22i.s:1082   .data.lufa_driver:0000000000000000 lufa_driver
 
 UNDEFINED SYMBOLS
 USB_DeviceState

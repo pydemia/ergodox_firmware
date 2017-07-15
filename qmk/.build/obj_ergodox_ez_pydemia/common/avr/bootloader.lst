@@ -915,14 +915,14 @@
  157               		.file 6 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 bootloader.c
-     /tmp/ccLULbOv.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccLULbOv.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccLULbOv.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccLULbOv.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccLULbOv.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccLULbOv.s:13     .text.bootloader_jump:0000000000000000 bootloader_jump
-     /tmp/ccLULbOv.s:151    .noinit:0000000000000000 reset_key
-     /tmp/ccLULbOv.s:84     .init3:0000000000000000 bootloader_jump_after_watchdog_reset
+     /tmp/ccBCga95.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccBCga95.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccBCga95.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccBCga95.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccBCga95.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccBCga95.s:13     .text.bootloader_jump:0000000000000000 bootloader_jump
+     /tmp/ccBCga95.s:151    .noinit:0000000000000000 reset_key
+     /tmp/ccBCga95.s:84     .init3:0000000000000000 bootloader_jump_after_watchdog_reset
 
 UNDEFINED SYMBOLS
 USB_Disable

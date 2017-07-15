@@ -11,6 +11,45 @@
 
 #define EPRM M(1) // Macro 1: Reset EEPROM
 
+
+/*// Tap Dance Start------------------------------------------------------------
+#ifdef TAP_DANCE_ENABLE
+#define SFT_CAP TD(0)	// Left shift, double tap for caps
+#endif
+#ifndef TAP_DANCE_ENABLE
+#define SFT_CAP KC_LSFT // Regular left shift
+#endif
+#ifdef TAP_DANCE_ENABLE
+#define QUOTE_SD TD(1)	// Single Quote, double tap for Double Quotes
+#endif
+#ifndef TAP_DANCE_ENABLE
+#define QUOTE_SD kC_QUOT // Regular Single Quote
+#endif
+// Tap Dance Definitions
+#ifdef TAP_DANCE_ENABLE
+qk_tap_dance_action_t tap_dance_actions[] = {
+	[0]  = ACTION_TAP_DANCE_DOUBLE(KC_LSFT, KC_CAPS),
+    [1]  = ACTION_TAP_DANCE_DOUBLE(KC_QUOT, LALT(KC_QUOT))
+};
+#endif
+*/
+// Tap Dance End ------------------------------------------------------------
+
+
+
+//Tap Dance Declarations
+enum {
+  TD_01 = 0,
+  TD_02,
+};
+
+//Tap Dance Definitions
+qk_tap_dance_action_t tap_dance_actions[] = {
+  [TD_01] = ACTION_TAP_DANCE_DOUBLE(KC_U, KC_CAPS),
+  [TD_02] = ACTION_TAP_DANCE_DOUBLE(KC_I, KC_RBRC)
+};
+
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Keymap 0: Basic layer
@@ -42,9 +81,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // left hand
         KC_ESC,   KC_1,          KC_2,    KC_3,         KC_4,    KC_5,  LCTL(KC_F5),         // TG(LKEY),
         KC_TAB,   KC_Q,          KC_W,    KC_E,         KC_R,    KC_T,  KC_EQUAL,
-        KC_GRV,   KC_A,          KC_S,    KC_D,         KC_F,    KC_G,
-        KC_LSFT,  KC_Z,          KC_X,    KC_C,         KC_V,    KC_B,  KC_FN1,
-        LCTL(KC_LCTL), KC_FN2/*LCTL(KC_LALT)*/, KC_RGUI, KC_APP,      LALT(KC_LALT),
+        KC_GRV,   KC_A,          KC_S,    KC_D,         KC_F,    KC_G,  QUOTE_SD,
+        SFT_CAP,  KC_Z,          KC_X,    KC_C,         KC_V,    KC_B,  KC_FN1,
+        CTL_T(), KC_FN2/*LCTL(KC_LALT)*/, KC_RGUI, KC_APP,      ALT_T(),
                                                         KC_PGUP, KC_PGDN,
                                                                  KC_HOME,
                                                KC_SPC,  KC_BSPC, KC_END,
@@ -143,6 +182,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_UP,
        KC_DOWN,     KC_DELT,  KC_ENT
     ),
+
 /* Keymap 3: Linux Key layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
@@ -361,8 +401,7 @@ const uint16_t PROGMEM fn_actions[] = {
 };
 
 
-const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
-{
+const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
   // MACRODOWN only works in this function
       switch(id) {
         case 0:

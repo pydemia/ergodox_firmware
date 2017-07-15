@@ -1,3 +1,5 @@
+TAP_DANCE_ENABLE=yes
+
 ifndef VERBOSE
 .SILENT:
 endif
