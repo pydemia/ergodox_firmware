@@ -1549,31 +1549,31 @@
  879               		.file 8 "./tmk_core/common/util.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 matrix.c
-     /tmp/ccR4vwqc.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccR4vwqc.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccR4vwqc.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccR4vwqc.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccR4vwqc.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccR4vwqc.s:12     .text.init_cols:0000000000000000 init_cols
-     /tmp/ccR4vwqc.s:35     .text.unselect_rows:0000000000000000 unselect_rows
-     /tmp/ccR4vwqc.s:98     .text.matrix_init_user:0000000000000000 matrix_init_user
-     /tmp/ccR4vwqc.s:113    .text.matrix_scan_user:0000000000000000 matrix_scan_user
-     /tmp/ccR4vwqc.s:128    .text.matrix_init_kb:0000000000000000 matrix_init_kb
-     /tmp/ccR4vwqc.s:145    .text.matrix_scan_kb:0000000000000000 matrix_scan_kb
-     /tmp/ccR4vwqc.s:162    .text.matrix_rows:0000000000000000 matrix_rows
-     /tmp/ccR4vwqc.s:179    .text.matrix_cols:0000000000000000 matrix_cols
-     /tmp/ccR4vwqc.s:196    .text.matrix_init:0000000000000000 matrix_init
-     /tmp/ccR4vwqc.s:860    .bss.matrix_debouncing:0000000000000000 matrix_debouncing
-     /tmp/ccR4vwqc.s:865    .bss.matrix:0000000000000000 matrix
-     /tmp/ccR4vwqc.s:242    .text.matrix_power_up:0000000000000000 matrix_power_up
-     /tmp/ccR4vwqc.s:288    .text.matrix_scan:0000000000000000 matrix_scan
-     /tmp/ccR4vwqc.s:855    .bss.mcp23018_reset_loop:0000000000000000 mcp23018_reset_loop
-     /tmp/ccR4vwqc.s:870    .data.debouncing:0000000000000000 debouncing
-     /tmp/ccR4vwqc.s:687    .text.matrix_is_modified:0000000000000000 matrix_is_modified
-     /tmp/ccR4vwqc.s:709    .text.matrix_is_on:0000000000000000 matrix_is_on
-     /tmp/ccR4vwqc.s:751    .text.matrix_get_row:0000000000000000 matrix_get_row
-     /tmp/ccR4vwqc.s:775    .text.matrix_print:0000000000000000 matrix_print
-     /tmp/ccR4vwqc.s:791    .text.matrix_key_count:0000000000000000 matrix_key_count
+     /tmp/ccme47kl.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccme47kl.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccme47kl.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccme47kl.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccme47kl.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccme47kl.s:12     .text.init_cols:0000000000000000 init_cols
+     /tmp/ccme47kl.s:35     .text.unselect_rows:0000000000000000 unselect_rows
+     /tmp/ccme47kl.s:98     .text.matrix_init_user:0000000000000000 matrix_init_user
+     /tmp/ccme47kl.s:113    .text.matrix_scan_user:0000000000000000 matrix_scan_user
+     /tmp/ccme47kl.s:128    .text.matrix_init_kb:0000000000000000 matrix_init_kb
+     /tmp/ccme47kl.s:145    .text.matrix_scan_kb:0000000000000000 matrix_scan_kb
+     /tmp/ccme47kl.s:162    .text.matrix_rows:0000000000000000 matrix_rows
+     /tmp/ccme47kl.s:179    .text.matrix_cols:0000000000000000 matrix_cols
+     /tmp/ccme47kl.s:196    .text.matrix_init:0000000000000000 matrix_init
+     /tmp/ccme47kl.s:860    .bss.matrix_debouncing:0000000000000000 matrix_debouncing
+     /tmp/ccme47kl.s:865    .bss.matrix:0000000000000000 matrix
+     /tmp/ccme47kl.s:242    .text.matrix_power_up:0000000000000000 matrix_power_up
+     /tmp/ccme47kl.s:288    .text.matrix_scan:0000000000000000 matrix_scan
+     /tmp/ccme47kl.s:855    .bss.mcp23018_reset_loop:0000000000000000 mcp23018_reset_loop
+     /tmp/ccme47kl.s:870    .data.debouncing:0000000000000000 debouncing
+     /tmp/ccme47kl.s:687    .text.matrix_is_modified:0000000000000000 matrix_is_modified
+     /tmp/ccme47kl.s:709    .text.matrix_is_on:0000000000000000 matrix_is_on
+     /tmp/ccme47kl.s:751    .text.matrix_get_row:0000000000000000 matrix_get_row
+     /tmp/ccme47kl.s:775    .text.matrix_print:0000000000000000 matrix_print
+     /tmp/ccme47kl.s:791    .text.matrix_key_count:0000000000000000 matrix_key_count
 
 UNDEFINED SYMBOLS
 mcp23018_status

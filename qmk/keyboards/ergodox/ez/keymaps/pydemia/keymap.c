@@ -21,27 +21,601 @@ const uint16_t PROGMEM fn_actions[] = {
 };
 
 
-#define QMK_VER_KEY     M(0)
-#define ASSIGN_R_KEY    M(1)
-#define PY_DTFM_KEY     M(2)
-#define SPYD_BLOCK_KEY  M(3)
-#define SQL_NORMAL_KEY  M(4)
-#define SQL_LEFT_KEY    M(5)
-#define SQL_LEFTSUB_KEY M(6)
-#define PIP_STR_KEY     M(7)
-#define DT_STR_KEY      M(8)
-#define TM_STR_KEY      M(9)
-#define DTTM_STR_KEY    M(10)
-#define D_QUOTE_KEY     M(11)
-#define CUT_KEY         M(12)
-#define COPY_KEY        M(13)
-#define PASTE_KEY       M(14)
 
-#define SIGN_KEY        M(100)
+
+// Python Code Format
+#define SIGNITURE "# -*- coding: utf-8 -*- \n"\
+"'''\n"\
+"\n"\
+"Created on \n"\
+"\n"\
+"@author: Young Ju Kim\n"\
+"'''\n"
+
+// Query Strings
+#define SQL_NORMAL_STR "SELECT\r\n"\
+"     A.col\r\n"\
+"    ,A.*\r\n"\
+"FROM\r\n"\
+"    a.aa A\r\n"\
+"WHERE\r\n"\
+"    A.col = NULL\r\n"\
+"AND A.col <> 1\r\n"\
+"AND A.col BETWEEN '01' AND '02'\r\n"
+
+
+#define SQL_LEFT_STR "SELECT\r\n"\
+"     A.*\r\n"\
+"    ,B.*\r\n"\
+"FROM\r\n"\
+"    a.aa A\r\n"\
+"    LEFT OUTER JOIN b.bb B\r\n"\
+"    ON\r\n"\
+"        B.col = A.col --NULL\r\n"\
+"    AND B.col = A.col --NULL\r\n"\
+"WHERE\r\n"\
+"    B.col = NULL\r\n"\
+"AND A.col <> 1\r\n"\
+"AND A.col BETWEEN '01' AND '02'\r\n"
+
+
+#define SQL_LEFT_SUB_STR "SELECT\r\n"\
+"     A.*\r\n"\
+"    ,B.*\r\n"\
+"FROM\r\n"\
+"    a.aa A\r\n"\
+"    LEFT OUTER JOIN\r\n"\
+"        (\r\n"\
+"        SELECT\r\n"\
+"             C.col\r\n"\
+"        FROM\r\n"\
+"            c.cc C\r\n"\
+"        WHERE\r\n"\
+"            C.col = NULL\r\n"\
+"        ) B\r\n"\
+"    ON\r\n"\
+"        B.col = A.col --NULL\r\n"\
+"    AND B.col = A.col --NULL\r\n"\
+"WHERE\r\n"\
+"    B.col = NULL\r\n"\
+"AND A.col <> 1\r\n"\
+"AND A.col BETWEEN '01' AND '02'\r\n"
+
+// pip String
+#define PIP_STR "pip install --cert=c:/sslproxy.crt "
+
+
+#define DATETIME_STR __DATE__ " " __TIME__ 
+
+
+// Macro Key
+
+// MACRO START ---------------------------------------------------------------------
+
+
+#define QMK_VER_KEY     M(0)
+#define SIGN_KEY        M(1)
+#define ASSIGN_R_KEY    M(2)
+#define PY_DTFM_KEY     M(3)
+#define SPYD_CELL_KEY   M(4)
+#define R_FOLDING_KEY   M(5)
+#define SQL_NORMAL_KEY  M(6)
+#define SQL_LEFT_KEY    M(7)
+#define SQL_LEFTSUB_KEY M(8)
+#define PIP_STR_KEY     M(9)
+#define DT_STR_KEY      M(10)
+#define TM_STR_KEY      M(11)
+#define DTTM_STR_KEY    M(12)
+#define D_QUOTE_KEY     M(13)
+#define BRC_KEY         M(14)
+#define CBR_KEY         M(15)
+#define PRN_KEY         M(16)
+#define HOME_SFT_KEY    M(17)
+#define END_SFT_KEY     M(18)
+
+const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt )
+{
+  // MACRODOWN only works in this function
+      switch(id) {
+        case 0:
+        if (record->event.pressed) {
+          SEND_STRING (QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION);
+        }
+        break;
+        case 1:
+        if (record->event.pressed) { // For resetting EEPROM
+          SEND_STRING ( SIGNITURE );
+        }
+        break;
+        case 2:
+        if (record->event.pressed) { // <-
+          //SEND_STRING ( "<-" );
+          return MACRO(D(LSFT), T(COMMA), U(LSFT), T(MINUS), END);
+        }
+        break;
+        case 3:
+        if (record->event.pressed) { // '%Y%m%d%H%M%S%f'
+          SEND_STRING ( "'%Y%m%d%H%M%S%f'" );
+          //return MACRO(D(LSFT), T(COMMA), U(LSFT), T(MINUS), END);
+        }
+        break;
+        case 4:
+        if (record->event.pressed) { // # %% (For Python Spyder)
+          //SEND_STRING ( "# %%" );
+          return MACRO(D(LSFT), T(3), T(SPC), T(5), T(5), U(LSFT), END);
+        }
+        break;
+        case 5:
+        if (record->event.pressed) { // # %% (For Python Spyder)
+          //SEND_STRING ( "# %%" );
+          return MACRO( D(LSFT), T(3), U(LSFT), T(SPC), T(SPC), T(MINUS), T(MINUS), T(MINUS), T(MINUS),
+                        T(LEFT), T(LEFT), T(LEFT), T(LEFT), T(LEFT), T(LEFT), END);
+        }
+        break;
+        case 6:
+        if (record->event.pressed) { // For resetting EEPROM
+          SEND_STRING ( SQL_NORMAL_STR );
+        }
+        break;
+        case 7:
+        if (record->event.pressed) { // For resetting EEPROM
+          SEND_STRING ( SQL_LEFT_STR );
+        }
+        break;
+        case 8:
+        if (record->event.pressed) { // For resetting EEPROM
+          SEND_STRING ( SQL_LEFT_SUB_STR );
+        }
+        break;
+        case 9:
+        if (record->event.pressed) { // For resetting EEPROM
+          SEND_STRING ( PIP_STR );
+        }
+        break;
+        case 10:
+        if (record->event.pressed) { // For resetting EEPROM
+          SEND_STRING ( __DATE__ );
+        }
+        break;
+        case 11:
+        if (record->event.pressed) { // For resetting EEPROM
+          SEND_STRING ( __TIME__ );
+        }
+        break;
+        case 12:
+        if (record->event.pressed) { // For resetting EEPROM
+          SEND_STRING ( DATETIME_STR );
+        }
+        break;
+        case 13:
+        if (record->event.pressed) { // For resetting EEPROM
+          //SEND_STRING ( " );
+          return MACRO(D(LSFT), T(QUOT), U(LSFT), END);
+        }
+        break;
+        case 14:
+        if (record->event.pressed) { // For resetting EEPROM
+          return MACRO( T(LBRC), T(RBRC), T(LEFT), END );
+        }
+        break;
+        case 15:
+        if (record->event.pressed) { // For resetting EEPROM
+          return MACRO( D(LSFT), T(LBRC), T(RBRC), U(LSFT), T(LEFT), END );
+          //return MACRO( T(LCBR), T(RCBR), T(LEFT), END );
+        }
+        break;
+        case 16:
+        if (record->event.pressed) { // For resetting EEPROM
+          return MACRO( D(LSFT), T(9), T(0), U(LSFT), T(LEFT), END );
+        }
+        break;
+        case 17:
+        if (record->event.pressed) { // For resetting EEPROM
+          return MACRO( D(LSFT), T(HOME), U(LSFT), END );
+        }
+        break;
+        case 18:
+        if (record->event.pressed) { // For resetting EEPROM
+          return MACRO( D(LSFT), T(END), U(LSFT), END );
+        }
+        break;
+//        case REQL:
+//            return (record->event.pressed ?
+//                    MACRO( T(LSFT(KC_COMMA)), T(KC_MINUS), END) : // For resetting EEPROM
+//                    MACRO_NONE ) ;
+    }
+    return MACRO_NONE;
+};
+
+
+// MACRO END -----------------------------------------------------------------------
+
+
+// MACRO START ---------------------------------------------------------------------
+/*
+#define QMK_VER_KEY     M(M_KEYBOARD_VER)
+#define SIGN_KEY        M(M_SIGN)
+#define ASSIGN_R_KEY    M(M_R_ASSIGN)
+#define PY_DTFM_KEY     M(M_PYTHON_DTFORMAT)
+#define SPYD_CELL_KEY   M(M_SPYDER_CELL)
+#define R_FOLDING_KEY   M(M_R_FOLDING)
+#define SQL_NORMAL_KEY  M(M_SQL_NM)
+#define SQL_LEFT_KEY    M(M_SQL_LEFTJOIN)
+#define SQL_LEFTSUB_KEY M(M_SQL_LEFTSUBJOIN)
+#define PIP_STR_KEY     M(M_PIP)
+#define DT_STR_KEY      M(M_DATE)
+#define TM_STR_KEY      M(M_TIME)
+#define DTTM_STR_KEY    M(M_DATETIME)
+#define D_QUOTE_KEY     M(M_DOUBLE_QUOTE)
+#define CUT_KEY         M(M_CUT)
+#define COPY_KEY        M(M_COPY)
+#define PASTE_KEY       M(M_PASTE)
+#define BRC_KEY         M(M_BRC)
+#define CBR_KEY         M(M_CBR)
+#define PRN_KEY         M(M_PRN)
+
+
+//Macro Declarations
+typedef enum MACRO_NAME {
+  M_KEYBOARD_VER = 0,
+  M_SIGN,
+  M_R_ASSIGN,
+  M_PYTHON_DTFORMAT,
+  M_SPYDER_CELL,
+  M_R_FOLDING,
+  M_SQL_NM,
+  M_SQL_LEFTJOIN,
+  M_SQL_LEFTSUBJOIN,
+  M_PIP,
+  M_DATE,
+  M_TIME,
+  M_DATETIME,
+  M_DOUBLE_QUOTE,
+  M_CUT,
+  M_COPY,
+  M_PASTE,
+  M_BRC,
+  M_CBR,
+  M_PRN
+} macro_name;
+
+
+const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt )
+{
+  // MACRODOWN only works in this function
+      macro_name mcr;
+      switch(mcr) {
+        case M_KEYBOARD_VER:
+        if (record->event.pressed) {
+          SEND_STRING (QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION);
+        }
+        break;
+        case M_SIGN:
+        if (record->event.pressed) { // For resetting EEPROM
+          SEND_STRING ( SIGNITURE );
+        }
+        break;
+        case M_R_ASSIGN:
+        if (record->event.pressed) { // <-
+          //SEND_STRING ( "<-" );
+          return MACRO(D(LSFT), T(COMMA), U(LSFT), T(MINUS), END);
+        }
+        break;
+        case M_PYTHON_DTFORMAT:
+        if (record->event.pressed) { // '%Y%m%d%H%M%S%f'
+          SEND_STRING ( "'%Y%m%d%H%M%S%f'" );
+          //return MACRO(D(LSFT), T(COMMA), U(LSFT), T(MINUS), END);
+        }
+        break;
+        case M_SPYDER_CELL:
+        if (record->event.pressed) { // # %% (For Python Spyder)
+          //SEND_STRING ( "# %%" );
+          return MACRO(D(LSFT), T(3), T(SPC), T(5), T(5), U(LSFT), END);
+        }
+        break;
+        case M_R_FOLDING:
+        if (record->event.pressed) { // # %% (For Python Spyder)
+          //SEND_STRING ( "# %%" );
+          return MACRO(D(LSFT), T(3), U(LSFT), T(SPC), T(SPC), T(MINUS), T(MINUS), T(MINUS), T(MINUS), END);
+        }
+        break;
+        case M_SQL_NM:
+        if (record->event.pressed) { // For resetting EEPROM
+          SEND_STRING ( SQL_NORMAL_STR );
+        }
+        break;
+        case M_SQL_LEFTJOIN:
+        if (record->event.pressed) { // For resetting EEPROM
+          SEND_STRING ( SQL_LEFT_STR );
+        }
+        break;
+        case M_SQL_LEFTSUBJOIN:
+        if (record->event.pressed) { // For resetting EEPROM
+          SEND_STRING ( SQL_LEFT_SUB_STR );
+        }
+        break;
+        case M_PIP:
+        if (record->event.pressed) { // For resetting EEPROM
+          SEND_STRING ( PIP_STR );
+        }
+        break;
+        case M_DATE:
+        if (record->event.pressed) { // For resetting EEPROM
+          SEND_STRING ( __DATE__ );
+        }
+        break;
+        case M_TIME:
+        if (record->event.pressed) { // For resetting EEPROM
+          SEND_STRING ( __TIME__ );
+        }
+        break;
+        case M_DATETIME:
+        if (record->event.pressed) { // For resetting EEPROM
+          SEND_STRING ( DATETIME_STR );
+        }
+        break;
+        case M_DOUBLE_QUOTE:
+        if (record->event.pressed) { // For resetting EEPROM
+          //SEND_STRING ( " );
+          return MACRO(D(LSFT), T(QUOT), U(LSFT), END);
+        }
+        break;
+        case M_CUT:
+        if (record->event.pressed) { // For resetting EEPROM
+          return MACRO(D(RCTL), T(X), U(RCTL), END);
+        }
+        break;
+        case M_COPY:
+        if (record->event.pressed) { // For resetting EEPROM
+          return MACRO(D(RCTL), T(C), U(RCTL), END);
+        }
+        break;
+        case M_PASTE:
+        if (record->event.pressed) { // For resetting EEPROM
+          return MACRO(D(RCTL), T(V), U(RCTL), END);
+        }
+        break;
+        case M_BRC:
+        if (record->event.pressed) { // For resetting EEPROM
+          //SEND_STRING ( "[]" );
+          return MACRO( T(LBRC), T(RBRC), END );
+        }
+        break;
+        case M_CBR:
+        if (record->event.pressed) { // For resetting EEPROM
+          //SEND_STRING ( "{}" );
+          return MACRO( D(LSFT), T(LBRC), T(RBRC), U(LSFT), END );
+        }
+        break;
+        case M_PRN:
+        if (record->event.pressed) { // For resetting EEPROM
+          //SEND_STRING ( "()" );
+          return MACRO( D(LSFT), T(9), T(0), U(LSFT), END );
+        }
+        break;
+//        case REQL:
+//            return (record->event.pressed ?
+//                    MACRO( T(LSFT(KC_COMMA)), T(KC_MINUS), END) : // For resetting EEPROM
+//                    MACRO_NONE ) ;
+    }
+    return MACRO_NONE;
+};
+*/
+
+// MACRO END -----------------------------------------------------------------------
+
+
+
+
+// Tap Dance Key
+#define ASSIGN_TAP     TD(ASSIGN_MARK)
+#define F01_TAP        TD(F01)
+#define F02_TAP        TD(F02)
+#define F03_TAP        TD(F03)
+#define F04_TAP        TD(F04)
+#define F05_TAP        TD(F05)
+#define F06_TAP        TD(F06)
+#define F07_TAP        TD(F07)
+#define F08_TAP        TD(F08)
+#define F09_TAP        TD(F09)
+#define F10_TAP        TD(F10)
+#define F11_TAP        TD(F11)
+#define F12_TAP        TD(F12)
+
+#define SFT_CAPS_TAP   TD(SFT_CAPS)
+#define CUT_TAP        TD(CUT)
+#define COPY_TAP       TD(COPY)
+#define PASTE_TAP      TD(PASTE)
+
+#define D_QUOTE_TAP    TD(D_QUOTE)
+
+#define PGUP_BWEB_TAP  TD(PGUP_BWEB)
+#define PGDN_FWEB_TAP  TD(PGDN_FWEB)
+
+#define T_DBRC_TAP     TD(T_DBRC)
+#define G_DCBR_TAP     TD(G_DCBR)
+#define B_DPRN_TAP     TD(B_DPRN)
+
+#define J_DBRC_TAP     TD(J_DBRC)
+#define K_DCBR_TAP     TD(K_DCBR)
+#define L_DPRN_TAP     TD(L_DPRN)
+
 
 // Tap Dance Start ------------------------------------------------------------
 
 //In Layer declaration, add tap dance item in place of a key code
+
+
+
+// CUSTOM KEYMAP START -----------------------------------------------------
+
+// T & []
+void dance_press_t (qk_tap_dance_state_t *state, void *user_data) {
+  if (state->count == 1) {
+
+    register_code(KC_T);
+    unregister_code(KC_T);
+
+  } else {
+    clear_keyboard_but_mods();
+  }
+}
+void dance_dbrc (qk_tap_dance_state_t *state, void *user_data) {
+  if (state->count == 2) {
+
+    register_code(KC_LBRC);
+    unregister_code(KC_LBRC);
+
+    register_code(KC_RBRC);
+    unregister_code(KC_RBRC);
+
+    register_code(KC_LEFT);
+    unregister_code(KC_LEFT);
+
+  } else {
+    clear_keyboard_but_mods();
+  }
+}
+
+// G & {}
+void dance_press_g (qk_tap_dance_state_t *state, void *user_data) {
+  if (state->count == 1) {
+
+    register_code(KC_G);
+    unregister_code(KC_G);
+
+  } else {
+    clear_keyboard_but_mods();
+  }
+}
+void dance_dcbr (qk_tap_dance_state_t *state, void *user_data) {
+  if (state->count == 2) {
+
+    register_code(KC_LSFT);
+    register_code(KC_LBRC);
+    unregister_code(KC_LBRC);
+
+    register_code(KC_RBRC);
+    unregister_code(KC_RBRC);
+    unregister_code(KC_LSFT);
+
+    register_code(KC_LEFT);
+    unregister_code(KC_LEFT);
+
+  } else {
+    clear_keyboard_but_mods();
+  }
+}
+
+// B & ()
+void dance_press_b (qk_tap_dance_state_t *state, void *user_data) {
+  if (state->count == 1) {
+
+    register_code(KC_B);
+    unregister_code(KC_B);
+
+  } else {
+    clear_keyboard_but_mods();
+  }
+}
+void dance_dprn (qk_tap_dance_state_t *state, void *user_data) {
+  if (state->count == 2) {
+
+    register_code(KC_LSFT);
+    register_code(KC_9);
+    unregister_code(KC_9);
+
+    register_code(KC_0);
+    unregister_code(KC_0);
+    unregister_code(KC_LSFT);
+
+    register_code(KC_LEFT);
+    unregister_code(KC_LEFT);
+
+  } else {
+    clear_keyboard_but_mods();
+  }
+}
+
+
+// = & <-
+void dance_press_equal (qk_tap_dance_state_t *state, void *user_data) {
+  if (state->count == 1) {
+
+    register_code(KC_EQUAL);
+    unregister_code(KC_EQUAL);
+
+  } else {
+    clear_keyboard_but_mods();
+  }
+}
+void dance_press_rassign (qk_tap_dance_state_t *state, void *user_data) {
+  if (state->count == 2) {
+
+    register_code(KC_LSFT);
+    register_code(KC_COMMA);
+    unregister_code(KC_COMMA);
+    unregister_code(KC_LSFT);
+
+    register_code(KC_MINUS);
+    unregister_code(KC_MINUS);
+
+  } else {
+    clear_keyboard_but_mods();
+  }
+}
+
+// = & <-
+void dance_press_home (qk_tap_dance_state_t *state, void *user_data) {
+  if (state->count == 1) {
+
+    register_code(KC_HOME);
+    unregister_code(KC_HOME);
+
+  } else {
+    clear_keyboard_but_mods();
+  }
+}
+void dance_press_shifthome (qk_tap_dance_state_t *state, void *user_data) {
+  if (state->count == 2) {
+
+    register_code(KC_LSFT);
+    register_code(KC_HOME);
+    unregister_code(KC_HOME);
+    unregister_code(KC_LSFT);
+
+  } else {
+    clear_keyboard_but_mods();
+  }
+}
+
+
+// = & <-
+void dance_press_end (qk_tap_dance_state_t *state, void *user_data) {
+  if (state->count == 1) {
+
+    register_code(KC_END);
+    unregister_code(KC_END);
+
+  } else {
+    clear_keyboard_but_mods();
+  }
+}
+void dance_press_shiftend (qk_tap_dance_state_t *state, void *user_data) {
+  if (state->count == 2) {
+
+    register_code(KC_LSFT);
+    register_code(KC_END);
+    unregister_code(KC_END);
+    unregister_code(KC_LSFT);
+
+  } else {
+    clear_keyboard_but_mods();
+  }
+}
+// CUSTOM KEYMAP END -------------------------------------------------------
+
+
 
 //Tap Dance Declarations
 enum {
@@ -62,20 +636,27 @@ enum {
 
   SFT_CAPS,
 
-  CUT,
-  COPY,
-  PASTE,
-
   D_QUOTE,
 
   PGUP_BWEB,
   PGDN_FWEB,
-};
 
+  T_DBRC,
+  G_DCBR,
+  B_DPRN,
+
+  HOME_SFT,
+  END_SFT,
+
+  J_DBRC,
+  K_DCBR,
+  L_DPRN
+};
 
 //Tap Dance Definitions
 qk_tap_dance_action_t tap_dance_actions[] = {
-  [ASSIGN_MARK] = ACTION_TAP_DANCE_DOUBLE(KC_EQUAL, ASSIGN_R_KEY),
+
+  [ASSIGN_MARK] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, dance_press_equal, dance_press_rassign), 
 
   [F01] = ACTION_TAP_DANCE_DOUBLE(KC_1, KC_F1),
   [F02] = ACTION_TAP_DANCE_DOUBLE(KC_2, KC_F2),
@@ -92,14 +673,22 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 
   [SFT_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_LSFT, KC_CAPS),
 
-  [CUT]   = ACTION_TAP_DANCE_DOUBLE(KC_X, CUT_KEY),
-  [COPY]  = ACTION_TAP_DANCE_DOUBLE(KC_C, COPY_KEY),
-  [PASTE] = ACTION_TAP_DANCE_DOUBLE(KC_V, PASTE_KEY),
-
   [D_QUOTE] = ACTION_TAP_DANCE_DOUBLE(KC_QUOT, LSFT(KC_QUOT)),
 
   [PGUP_BWEB] = ACTION_TAP_DANCE_DOUBLE(KC_PGUP, LALT(KC_LEFT)),
   [PGDN_FWEB] = ACTION_TAP_DANCE_DOUBLE(KC_PGDN, LALT(KC_RGHT)),
+
+  [T_DBRC] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, dance_press_t, dance_dbrc),
+  [G_DCBR] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, dance_press_g, dance_dcbr),
+  [B_DPRN] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, dance_press_b, dance_dprn),
+
+  [HOME_SFT] = ACTION_TAP_DANCE_DOUBLE(KC_HOME, LSFT(KC_HOME)),
+  [END_SFT]  = ACTION_TAP_DANCE_DOUBLE(KC_END, LSFT(KC_END)),
+
+  [J_DBRC] = ACTION_TAP_DANCE_DOUBLE(KC_J, BRC_KEY),
+  [K_DCBR] = ACTION_TAP_DANCE_DOUBLE(KC_K, CBR_KEY),
+  [L_DPRN] = ACTION_TAP_DANCE_DOUBLE(KC_L, PRN_KEY),
+
 };
 
 // Tap Dance End --------------------------------------------------------------
@@ -112,11 +701,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ┌───────┬─────┬─────┬─────┬─────┬─────┬─────┐     ┌─────┬─────┬─────┬─────┬─────┬─────┬───────┐
  * │  Esc  │  1  │  2  │  3  │  4  │  5  │CtFn5│     │  6  │  7  │  8  │  9  │  0  │  -  │   +   │
  * ├───────┼─────┼─────┼─────┼─────┼─────┼─────┤     ├─────┼─────┼─────┼─────┼─────┼─────┼───────┤
- * │  Tab  │  Q  │  W  │  E  │  R  │  T  │  <- │     │ Ctl │  Y  │  U  │  I  │  O  │  P  │   \   │
+ * │  Tab  │  Q  │  W  │  E  │  R  │ T[] │  <- │     │ Ctl │  Y  │  U  │  I  │  O  │  P  │   \   │
  * ├───────┼─────┼─────┼─────┼─────┼─────┤  =  │     │ Ent ├─────┼─────┼─────┼─────┼─────┼───────┤
- * │   ~   │  A  │  S  │  D  │  F  │  G  ├─────┤     ├─────┤  H  │  J  │  K  │  L  │  ;  │   '   │
+ * │   ~   │  A  │  S  │  D  │  F  │ G{} ├─────┤     ├─────┤  H  │ J[] │ K{} │ L() │  ;  │  ' "  │
  * ├───────┼─────┼─────┼─────┼─────┼─────┤ Tg  │     │ Ctl ├─────┼─────┼─────┼─────┼─────┼───────┤
- * │ SftCp │  Z  │  X  │  C  │  V  │  B  │ Npd │     │ Fn5 │  N  │  M  │  ,  │  .  │  /  │ Shift │
+ * │ SftCp │  Z  │  X  │  C  │  V  │ B() │ Npd │     │ Fn5 │  N  │  M  │  ,  │  .  │  /  │ Shift │
  * └─┬─────┼─────┼─────┼─────┼─────┼─────┴─────┘     └─────┴─────┼─────┼─────┼─────┼─────┼─────┬─┘
  *   │ CTL │ TgM │Wn/Cd│ App │ ALT │                             │ RAt │ RCl │  [  │  ]  │ TgA │
  *   └─────┴─────┴─────┴─────┴─────┘ ┌─────┬─────┐ ┌─────┬─────┐ └─────┴─────┴─────┴─────┴─────┘
@@ -134,20 +723,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //Meh: MEH_T(KC_NO)
 [WKEY] = KEYMAP(  // layer 0 : default
 // left hand
-KC_ESC,           TD(F01),    TD(F02),    TD(F03),      TD(F04),          TD(F05),          LCTL(KC_F5),         // TG(LKEY),
-KC_TAB,           KC_Q,       KC_W,       KC_E,         KC_R,             KC_T,             TD(ASSIGN_MARK),
-LT(MAGI, KC_GRV), KC_A,       KC_S,       KC_D,         KC_F,             KC_G,
-TD(SFT_CAPS),     KC_Z,       KC_X,       KC_C,         KC_V,             KC_B,             KC_FN1,
-CTL_T(KC_LCTL),   KC_FN2,     KC_LGUI,    KC_APP,       ALT_T(KC_LALT),
-                                                                        TD(PGUP_BWEB),    TD(PGDN_FWEB),
+KC_ESC,           F01_TAP,    F02_TAP,    F03_TAP,      F04_TAP,        F05_TAP,          LCTL(KC_F5),         // TG(LKEY),
+LT(MAGI, KC_TAB), KC_Q,       KC_W,       KC_E,         KC_R,           T_DBRC_TAP,       ASSIGN_TAP,
+KC_GRV,           KC_A,       KC_S,       KC_D,         KC_F,           G_DCBR_TAP,
+SFT_CAPS_TAP,     KC_Z,       KC_X,       KC_C,         KC_V,           B_DPRN_TAP,       KC_FN1,
+CTL_T(KC_LCTL),   KC_FN2,     KC_RGUI,    KC_APP,       ALT_T(KC_LALT),
+                                                                        PGUP_BWEB_TAP,    PGDN_FWEB_TAP,
                                                                         KC_HOME,
                                                       KC_SPC,           KC_BSPC,          KC_END,
 // right hand
-TD(F06),          TD(F07),    TD(F08),    TD(F09),      TD(F10),          TD(F11),          TD(F12),
+F06_TAP,          F07_TAP,    F08_TAP,    F09_TAP,      F10_TAP,          F11_TAP,          F12_TAP,
 ASSIGN_R_KEY,     KC_Y,       KC_U,       KC_I,         KC_O,             KC_P,             KC_BSLS,
-                  KC_H,       KC_J,       KC_K,         KC_L,             KC_SCLN,          TD(D_QUOTE),
+                  KC_H,       J_DBRC_TAP, K_DCBR_TAP,   L_DPRN_TAP,       KC_SCLN,          D_QUOTE_TAP,
 LCTL(KC_ENT),     KC_N,       KC_M,       KC_COMM,      KC_DOT,           KC_SLSH,          KC_RSFT,
-                  KC_RALT,    KC_RCTL,    KC_LBRC,      KC_RBRC,          KC_FN3,
+                  KC_RALT,    KC_RCTL,    KC_LBRC,      KC_RBRC,          M(16),//KC_FN3,
 KC_LEFT,          KC_RGHT, 
 KC_UP,
 KC_DOWN,          KC_DELT,    KC_ENT
@@ -176,10 +765,10 @@ KC_DOWN,          KC_DELT,    KC_ENT
 // SYMBOLS M(0) = Version
 [NPAD] = KEYMAP(
 // left hand
-QMK_VER_KEY,   KC_TRNS,    KC_TRNS,     KC_TRNS,    KC_TRNS,   SPYD_BLOCK_KEY,   KC_TRNS,
-KC_TRNS,  KC_TRNS,  DTTM_STR_KEY,     PY_DTFM_KEY,     KC_LPRN,  KC_RPRN,  ASSIGN_R_KEY,//KC_QUOT,M(1),
-KC_TRNS,   KC_TRNS,  DT_STR_KEY,     DTTM_STR_KEY,    KC_LBRC,  KC_RBRC,
-KC_TRNS,   PIP_STR_KEY,  TM_STR_KEY,     KC_TRNS,  KC_LCBR,  KC_RCBR,  KC_TRNS,
+QMK_VER_KEY,   KC_TRNS,    KC_TRNS,     KC_TRNS,    R_FOLDING_KEY,   SPYD_CELL_KEY,   KC_TRNS,
+KC_TRNS,       KC_TRNS,    DTTM_STR_KEY,     PY_DTFM_KEY,     KC_LPRN,  KC_RPRN,  ASSIGN_R_KEY,//KC_QUOT,M(1),
+KC_TRNS,  KC_TRNS,    DT_STR_KEY,     DTTM_STR_KEY,    KC_LBRC,  KC_RBRC,
+KC_TRNS,       PIP_STR_KEY,  TM_STR_KEY,     KC_TRNS,  KC_LCBR,  KC_RCBR,  KC_TRNS,
 KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
                                                 KC_LEFT,  KC_RGHT,
                                                           LSFT(KC_HOME),
@@ -423,70 +1012,6 @@ const char *sql_query = QUOTE(
     ORDER BY table1.word ASC
 );
 
-// Python Code Format
-#define SIGNITURE "# -*- coding: utf-8 -*- \n"\
-"'''\n"\
-"\n"\
-"Created on \n"\
-"\n"\
-"@author: Young Ju Kim\n"\
-"'''\n"
-
-// Query Strings
-#define SQL_NORMAL_STR "SELECT\r\n"\
-"     A.col\r\n"\
-"    ,A.*\r\n"\
-"FROM\r\n"\
-"    a.aa A\r\n"\
-"WHERE\r\n"\
-"    A.col = NULL\r\n"\
-"AND A.col <> 1\r\n"\
-"AND A.col BETWEEN '01' AND '02'\r\n"
-
-
-#define SQL_LEFT_STR "SELECT\r\n"\
-"     A.*\r\n"\
-"    ,B.*\r\n"\
-"FROM\r\n"\
-"    a.aa A\r\n"\
-"    LEFT OUTER JOIN b.bb B\r\n"\
-"    ON\r\n"\
-"        B.col = A.col --NULL\r\n"\
-"    AND B.col = A.col --NULL\r\n"\
-"WHERE\r\n"\
-"    B.col = NULL\r\n"\
-"AND A.col <> 1\r\n"\
-"AND A.col BETWEEN '01' AND '02'\r\n"
-
-
-#define SQL_LEFT_SUB_STR "SELECT\r\n"\
-"     A.*\r\n"\
-"    ,B.*\r\n"\
-"FROM\r\n"\
-"    a.aa A\r\n"\
-"    LEFT OUTER JOIN\r\n"\
-"        (\r\n"\
-"        SELECT\r\n"\
-"             C.col\r\n"\
-"        FROM\r\n"\
-"            c.cc C\r\n"\
-"        WHERE\r\n"\
-"            C.col = NULL\r\n"\
-"        ) B\r\n"\
-"    ON\r\n"\
-"        B.col = A.col --NULL\r\n"\
-"    AND B.col = A.col --NULL\r\n"\
-"WHERE\r\n"\
-"    B.col = NULL\r\n"\
-"AND A.col <> 1\r\n"\
-"AND A.col BETWEEN '01' AND '02'\r\n"
-
-// pip String
-#define PIP_STR "pip install --cert=c:/sslproxy.crt "
-
-
-#define DATETIME_STR __DATE__ " " __TIME__ 
-
 // DATE to INT Function
 char pre_macro_date_to_int(const char *str_pre_macro_date)
 {
@@ -534,114 +1059,6 @@ char *date_str = QUOTE(
 #define FDATE (char const[]){ __DATE__[7], __DATE__[8]}
 
 
-// MACRO START ---------------------------------------------------------------------
-
-const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
-{
-  // MACRODOWN only works in this function
-      switch(id) {
-        case 0:
-        if (record->event.pressed) {
-          SEND_STRING (QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION);
-        }
-        break;
-        case 1:
-        if (record->event.pressed) { // For resetting EEPROM
-          //SEND_STRING ( "<-" );
-          return MACRO(D(LSFT), T(COMMA), U(LSFT), T(MINUS), END);
-        }
-        break;
-        case 2:
-        if (record->event.pressed) { // For resetting EEPROM
-          SEND_STRING ( "'%Y%m%d%H%M%S%f'" );
-          //return MACRO(D(LSFT), T(COMMA), U(LSFT), T(MINUS), END);
-        }
-        break;
-        case 3:
-        if (record->event.pressed) { // For resetting EEPROM
-          //SEND_STRING ( "# %%" );
-          return MACRO(D(LSFT), T(3), T(SPC), T(5), T(5), U(LSFT), END);
-        }
-        break;
-        case 4:
-        if (record->event.pressed) { // For resetting EEPROM
-          SEND_STRING ( SQL_NORMAL_STR );
-        }
-        break;
-        case 5:
-        if (record->event.pressed) { // For resetting EEPROM
-          SEND_STRING ( SQL_LEFT_STR );
-        }
-        break;
-        case 6:
-        if (record->event.pressed) { // For resetting EEPROM
-          SEND_STRING ( SQL_LEFT_SUB_STR );
-        }
-        break;
-        case 7:
-        if (record->event.pressed) { // For resetting EEPROM
-          SEND_STRING ( PIP_STR );
-        }
-        break;
-        case 8:
-        if (record->event.pressed) { // For resetting EEPROM
-          SEND_STRING ( __DATE__ );
-        }
-        break;
-        case 9:
-        if (record->event.pressed) { // For resetting EEPROM
-          SEND_STRING ( __TIME__ );
-        }
-        break;
-        case 10:
-        if (record->event.pressed) { // For resetting EEPROM
-          SEND_STRING ( DATETIME_STR );
-        }
-        break;
-        case 11:
-        if (record->event.pressed) { // For resetting EEPROM
-          //SEND_STRING ( " );
-          return MACRO(D(LSFT), T(QUOT), U(LSFT), END);
-        }
-        break;
-        case 12:
-        if (record->event.pressed) { // For resetting EEPROM
-          return MACRO(D(RCTL), T(X), U(RCTL), END);
-        }
-        break;
-        case 13:
-        if (record->event.pressed) { // For resetting EEPROM
-          return MACRO(D(RCTL), T(C), U(RCTL), END);
-        }
-        break;
-        case 14:
-        if (record->event.pressed) { // For resetting EEPROM
-          return MACRO(D(RCTL), T(V), U(RCTL), END);
-        }
-        break;
-        case 99:
-        if (record->event.pressed) { // For resetting EEPROM
-          /*char buff[100];
-          time_t now = time (0);
-          strftime (buff, 100, "%Y-%m-%d %H:%M:%S.000", localtime (&now));
-          //printf ("%s\n", buff);*/
-          SEND_STRING ( SIGNITURE );
-        }
-        break;
-        case 100:
-        if (record->event.pressed) { // For resetting EEPROM
-          SEND_STRING ( SIGNITURE );
-        }
-        break;
-//        case REQL:
-//            return (record->event.pressed ?
-//                    MACRO( T(LSFT(KC_COMMA)), T(KC_MINUS), END) : // For resetting EEPROM
-//                    MACRO_NONE ) ;
-    }
-    return MACRO_NONE;
-};
-
-// MACRO END -----------------------------------------------------------------------
 
 
 // Runs just one time when the keyboard initializes.

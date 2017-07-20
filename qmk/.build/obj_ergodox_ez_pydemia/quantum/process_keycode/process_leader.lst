@@ -228,18 +228,18 @@
  186               		.file 7 "./tmk_core/common/timer.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 process_leader.c
-     /tmp/ccGta9Gv.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccGta9Gv.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccGta9Gv.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccGta9Gv.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccGta9Gv.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccGta9Gv.s:13     .text.leader_start:0000000000000000 leader_start
-     /tmp/ccGta9Gv.s:29     .text.leader_end:0000000000000000 leader_end
-     /tmp/ccGta9Gv.s:44     .text.process_leader:0000000000000000 process_leader
-     /tmp/ccGta9Gv.s:177    .bss.leading:0000000000000000 leading
-     /tmp/ccGta9Gv.s:171    .bss.leader_time:0000000000000000 leader_time
-     /tmp/ccGta9Gv.s:159    .bss.leader_sequence_size:0000000000000000 leader_sequence_size
-     /tmp/ccGta9Gv.s:165    .bss.leader_sequence:0000000000000000 leader_sequence
+     /tmp/ccRItkkE.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccRItkkE.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccRItkkE.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccRItkkE.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccRItkkE.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccRItkkE.s:13     .text.leader_start:0000000000000000 leader_start
+     /tmp/ccRItkkE.s:29     .text.leader_end:0000000000000000 leader_end
+     /tmp/ccRItkkE.s:44     .text.process_leader:0000000000000000 process_leader
+     /tmp/ccRItkkE.s:177    .bss.leading:0000000000000000 leading
+     /tmp/ccRItkkE.s:171    .bss.leader_time:0000000000000000 leader_time
+     /tmp/ccRItkkE.s:159    .bss.leader_sequence_size:0000000000000000 leader_sequence_size
+     /tmp/ccRItkkE.s:165    .bss.leader_sequence:0000000000000000 leader_sequence
 
 UNDEFINED SYMBOLS
 timer_read
