@@ -512,18 +512,18 @@
  309               		.file 2 "/usr/lib/avr/include/stdint.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 twimaster.c
-     /tmp/ccNnecQd.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccNnecQd.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccNnecQd.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccNnecQd.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccNnecQd.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccNnecQd.s:13     .text.i2c_init:0000000000000000 i2c_init
-     /tmp/ccNnecQd.s:34     .text.i2c_start:0000000000000000 i2c_start
-     /tmp/ccNnecQd.s:102    .text.i2c_start_wait:0000000000000000 i2c_start_wait
-     /tmp/ccNnecQd.s:175    .text.i2c_rep_start:0000000000000000 i2c_rep_start
-     /tmp/ccNnecQd.s:193    .text.i2c_stop:0000000000000000 i2c_stop
-     /tmp/ccNnecQd.s:218    .text.i2c_write:0000000000000000 i2c_write
-     /tmp/ccNnecQd.s:258    .text.i2c_readAck:0000000000000000 i2c_readAck
-     /tmp/ccNnecQd.s:284    .text.i2c_readNak:0000000000000000 i2c_readNak
+     /tmp/cc1Z1cOl.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cc1Z1cOl.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cc1Z1cOl.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cc1Z1cOl.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cc1Z1cOl.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cc1Z1cOl.s:13     .text.i2c_init:0000000000000000 i2c_init
+     /tmp/cc1Z1cOl.s:34     .text.i2c_start:0000000000000000 i2c_start
+     /tmp/cc1Z1cOl.s:102    .text.i2c_start_wait:0000000000000000 i2c_start_wait
+     /tmp/cc1Z1cOl.s:175    .text.i2c_rep_start:0000000000000000 i2c_rep_start
+     /tmp/cc1Z1cOl.s:193    .text.i2c_stop:0000000000000000 i2c_stop
+     /tmp/cc1Z1cOl.s:218    .text.i2c_write:0000000000000000 i2c_write
+     /tmp/cc1Z1cOl.s:258    .text.i2c_readAck:0000000000000000 i2c_readAck
+     /tmp/cc1Z1cOl.s:284    .text.i2c_readNak:0000000000000000 i2c_readNak
 
 NO UNDEFINED SYMBOLS

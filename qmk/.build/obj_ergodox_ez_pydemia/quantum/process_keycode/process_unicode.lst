@@ -591,19 +591,19 @@
  355               		.file 8 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 process_unicode.c
-     /tmp/ccfhRrCA.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccfhRrCA.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccfhRrCA.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccfhRrCA.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccfhRrCA.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccfhRrCA.s:13     .text.hex_to_keycode:0000000000000000 hex_to_keycode
-     /tmp/ccfhRrCA.s:51     .text.set_unicode_input_mode:0000000000000000 set_unicode_input_mode
-     /tmp/ccfhRrCA.s:346    .bss.input_mode:0000000000000000 input_mode
-     /tmp/ccfhRrCA.s:69     .text.get_unicode_input_mode:0000000000000000 get_unicode_input_mode
-     /tmp/ccfhRrCA.s:86     .text.unicode_input_start:0000000000000000 unicode_input_start
-     /tmp/ccfhRrCA.s:166    .text.unicode_input_finish:0000000000000000 unicode_input_finish
-     /tmp/ccfhRrCA.s:203    .text.register_hex:0000000000000000 register_hex
-     /tmp/ccfhRrCA.s:290    .text.process_unicode:0000000000000000 process_unicode
+     /tmp/ccuI5OeJ.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccuI5OeJ.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccuI5OeJ.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccuI5OeJ.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccuI5OeJ.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccuI5OeJ.s:13     .text.hex_to_keycode:0000000000000000 hex_to_keycode
+     /tmp/ccuI5OeJ.s:51     .text.set_unicode_input_mode:0000000000000000 set_unicode_input_mode
+     /tmp/ccuI5OeJ.s:346    .bss.input_mode:0000000000000000 input_mode
+     /tmp/ccuI5OeJ.s:69     .text.get_unicode_input_mode:0000000000000000 get_unicode_input_mode
+     /tmp/ccuI5OeJ.s:86     .text.unicode_input_start:0000000000000000 unicode_input_start
+     /tmp/ccuI5OeJ.s:166    .text.unicode_input_finish:0000000000000000 unicode_input_finish
+     /tmp/ccuI5OeJ.s:203    .text.register_hex:0000000000000000 register_hex
+     /tmp/ccuI5OeJ.s:290    .text.process_unicode:0000000000000000 process_unicode
 
 UNDEFINED SYMBOLS
 register_code

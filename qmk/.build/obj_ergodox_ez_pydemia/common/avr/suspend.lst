@@ -945,19 +945,19 @@
  337               		.file 10 "./tmk_core/common/action.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 suspend.c
-     /tmp/ccmKfn54.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccmKfn54.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccmKfn54.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccmKfn54.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccmKfn54.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccmKfn54.s:13     .text.suspend_idle:0000000000000000 suspend_idle
-     /tmp/ccmKfn54.s:60     .text.suspend_power_down:0000000000000000 suspend_power_down
-     /tmp/ccmKfn54.s:326    .bss.wdt_timeout:0000000000000000 wdt_timeout
-     /tmp/ccmKfn54.s:150    .text.matrix_power_up:0000000000000000 matrix_power_up
-     /tmp/ccmKfn54.s:165    .text.matrix_power_down:0000000000000000 matrix_power_down
-     /tmp/ccmKfn54.s:180    .text.suspend_wakeup_condition:0000000000000000 suspend_wakeup_condition
-     /tmp/ccmKfn54.s:235    .text.suspend_wakeup_init:0000000000000000 suspend_wakeup_init
-     /tmp/ccmKfn54.s:257    .text.__vector_12:0000000000000000 __vector_12
+     /tmp/ccf6KVFd.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccf6KVFd.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccf6KVFd.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccf6KVFd.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccf6KVFd.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccf6KVFd.s:13     .text.suspend_idle:0000000000000000 suspend_idle
+     /tmp/ccf6KVFd.s:60     .text.suspend_power_down:0000000000000000 suspend_power_down
+     /tmp/ccf6KVFd.s:326    .bss.wdt_timeout:0000000000000000 wdt_timeout
+     /tmp/ccf6KVFd.s:150    .text.matrix_power_up:0000000000000000 matrix_power_up
+     /tmp/ccf6KVFd.s:165    .text.matrix_power_down:0000000000000000 matrix_power_down
+     /tmp/ccf6KVFd.s:180    .text.suspend_wakeup_condition:0000000000000000 suspend_wakeup_condition
+     /tmp/ccf6KVFd.s:235    .text.suspend_wakeup_init:0000000000000000 suspend_wakeup_init
+     /tmp/ccf6KVFd.s:257    .text.__vector_12:0000000000000000 __vector_12
 
 UNDEFINED SYMBOLS
 USB_DeviceState
