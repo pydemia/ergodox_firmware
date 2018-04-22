@@ -3071,29 +3071,29 @@
  2101               		.file 13 "./tmk_core/common/command.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 action.c
-     /tmp/ccCa5VUP.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccCa5VUP.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccCa5VUP.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccCa5VUP.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccCa5VUP.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccCa5VUP.s:13     .text.process_hand_swap:0000000000000000 process_hand_swap
-     /tmp/ccCa5VUP.s:2087   .bss.swap_hands:0000000000000000 swap_hands
-     /tmp/ccCa5VUP.s:2081   .bss.swap_state.4806:0000000000000000 swap_state.4806
-     /tmp/ccCa5VUP.s:114    .text.action_exec:0000000000000000 action_exec
-     /tmp/ccCa5VUP.s:214    .text.process_record_quantum:0000000000000000 process_record_quantum
-     /tmp/ccCa5VUP.s:233    .text.register_code:0000000000000000 register_code
-     /tmp/ccCa5VUP.s:564    .text.unregister_code:0000000000000000 unregister_code
-     /tmp/ccCa5VUP.s:699    .text.register_mods:0000000000000000 register_mods
-     /tmp/ccCa5VUP.s:725    .text.unregister_mods:0000000000000000 unregister_mods
-     /tmp/ccCa5VUP.s:751    .text.process_action:0000000000000000 process_action
-     /tmp/ccCa5VUP.s:1737   .text.process_record:0000000000000000 process_record
-     /tmp/ccCa5VUP.s:1821   .text.process_record_nocache:0000000000000000 process_record_nocache
-     /tmp/ccCa5VUP.s:1839   .text.clear_keyboard_but_mods:0000000000000000 clear_keyboard_but_mods
-     /tmp/ccCa5VUP.s:1875   .text.clear_keyboard:0000000000000000 clear_keyboard
-     /tmp/ccCa5VUP.s:1895   .text.is_tap_key:0000000000000000 is_tap_key
-     /tmp/ccCa5VUP.s:1982   .text.debug_event:0000000000000000 debug_event
-     /tmp/ccCa5VUP.s:2023   .text.debug_record:0000000000000000 debug_record
-     /tmp/ccCa5VUP.s:2065   .text.debug_action:0000000000000000 debug_action
+     /tmp/ccNjrADq.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccNjrADq.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccNjrADq.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccNjrADq.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccNjrADq.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccNjrADq.s:13     .text.process_hand_swap:0000000000000000 process_hand_swap
+     /tmp/ccNjrADq.s:2087   .bss.swap_hands:0000000000000000 swap_hands
+     /tmp/ccNjrADq.s:2081   .bss.swap_state.4806:0000000000000000 swap_state.4806
+     /tmp/ccNjrADq.s:114    .text.action_exec:0000000000000000 action_exec
+     /tmp/ccNjrADq.s:214    .text.process_record_quantum:0000000000000000 process_record_quantum
+     /tmp/ccNjrADq.s:233    .text.register_code:0000000000000000 register_code
+     /tmp/ccNjrADq.s:564    .text.unregister_code:0000000000000000 unregister_code
+     /tmp/ccNjrADq.s:699    .text.register_mods:0000000000000000 register_mods
+     /tmp/ccNjrADq.s:725    .text.unregister_mods:0000000000000000 unregister_mods
+     /tmp/ccNjrADq.s:751    .text.process_action:0000000000000000 process_action
+     /tmp/ccNjrADq.s:1737   .text.process_record:0000000000000000 process_record
+     /tmp/ccNjrADq.s:1821   .text.process_record_nocache:0000000000000000 process_record_nocache
+     /tmp/ccNjrADq.s:1839   .text.clear_keyboard_but_mods:0000000000000000 clear_keyboard_but_mods
+     /tmp/ccNjrADq.s:1875   .text.clear_keyboard:0000000000000000 clear_keyboard
+     /tmp/ccNjrADq.s:1895   .text.is_tap_key:0000000000000000 is_tap_key
+     /tmp/ccNjrADq.s:1982   .text.debug_event:0000000000000000 debug_event
+     /tmp/ccNjrADq.s:2023   .text.debug_record:0000000000000000 debug_record
+     /tmp/ccNjrADq.s:2065   .text.debug_action:0000000000000000 debug_action
 
 UNDEFINED SYMBOLS
 hand_swap_config

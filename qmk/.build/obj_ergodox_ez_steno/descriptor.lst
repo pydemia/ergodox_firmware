@@ -1468,23 +1468,23 @@
  588               		.file 8 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 descriptor.c
-     /tmp/cc74yAsh.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/cc74yAsh.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/cc74yAsh.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/cc74yAsh.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/cc74yAsh.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/cc74yAsh.s:13     .text.CALLBACK_USB_GetDescriptor:0000000000000000 CALLBACK_USB_GetDescriptor
-     /tmp/cc74yAsh.s:239    .progmem.data.ConfigurationDescriptor:0000000000000000 ConfigurationDescriptor
-     /tmp/cc74yAsh.s:375    .progmem.data.DeviceDescriptor:0000000000000000 DeviceDescriptor
-     /tmp/cc74yAsh.s:231    .progmem.data.LanguageString:0000000000000000 LanguageString
-     /tmp/cc74yAsh.s:212    .progmem.data.ManufacturerString:0000000000000000 ManufacturerString
-     /tmp/cc74yAsh.s:193    .progmem.data.ProductString:0000000000000000 ProductString
-     /tmp/cc74yAsh.s:185    .rodata.CSWTCH.1:0000000000000000 CSWTCH.1
-     /tmp/cc74yAsh.s:178    .rodata.CSWTCH.2:0000000000000000 CSWTCH.2
-     /tmp/cc74yAsh.s:171    .rodata.CSWTCH.3:0000000000000000 CSWTCH.3
-     /tmp/cc74yAsh.s:515    .progmem.data.KeyboardReport:0000000000000000 KeyboardReport
-     /tmp/cc74yAsh.s:456    .progmem.data.ExtrakeyReport:0000000000000000 ExtrakeyReport
-     /tmp/cc74yAsh.s:394    .progmem.data.NKROReport:0000000000000000 NKROReport
+     /tmp/cctEo0MW.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cctEo0MW.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cctEo0MW.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cctEo0MW.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cctEo0MW.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cctEo0MW.s:13     .text.CALLBACK_USB_GetDescriptor:0000000000000000 CALLBACK_USB_GetDescriptor
+     /tmp/cctEo0MW.s:239    .progmem.data.ConfigurationDescriptor:0000000000000000 ConfigurationDescriptor
+     /tmp/cctEo0MW.s:375    .progmem.data.DeviceDescriptor:0000000000000000 DeviceDescriptor
+     /tmp/cctEo0MW.s:231    .progmem.data.LanguageString:0000000000000000 LanguageString
+     /tmp/cctEo0MW.s:212    .progmem.data.ManufacturerString:0000000000000000 ManufacturerString
+     /tmp/cctEo0MW.s:193    .progmem.data.ProductString:0000000000000000 ProductString
+     /tmp/cctEo0MW.s:185    .rodata.CSWTCH.1:0000000000000000 CSWTCH.1
+     /tmp/cctEo0MW.s:178    .rodata.CSWTCH.2:0000000000000000 CSWTCH.2
+     /tmp/cctEo0MW.s:171    .rodata.CSWTCH.3:0000000000000000 CSWTCH.3
+     /tmp/cctEo0MW.s:515    .progmem.data.KeyboardReport:0000000000000000 KeyboardReport
+     /tmp/cctEo0MW.s:456    .progmem.data.ExtrakeyReport:0000000000000000 ExtrakeyReport
+     /tmp/cctEo0MW.s:394    .progmem.data.NKROReport:0000000000000000 NKROReport
 
 UNDEFINED SYMBOLS
 __do_copy_data

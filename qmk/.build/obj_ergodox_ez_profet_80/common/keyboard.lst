@@ -584,18 +584,18 @@
  376               		.file 12 "./tmk_core/common/host.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 keyboard.c
-     /tmp/cc6PWmiv.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/cc6PWmiv.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/cc6PWmiv.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/cc6PWmiv.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/cc6PWmiv.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/cc6PWmiv.s:13     .text.matrix_setup:0000000000000000 matrix_setup
-     /tmp/cc6PWmiv.s:29     .text.keyboard_setup:0000000000000000 keyboard_setup
-     /tmp/cc6PWmiv.s:46     .text.keyboard_init:0000000000000000 keyboard_init
-     /tmp/cc6PWmiv.s:69     .text.keyboard_task:0000000000000000 keyboard_task
-     /tmp/cc6PWmiv.s:362    .bss.matrix_prev.4913:0000000000000000 matrix_prev.4913
-     /tmp/cc6PWmiv.s:357    .bss.led_status.4914:0000000000000000 led_status.4914
-     /tmp/cc6PWmiv.s:339    .text.keyboard_set_leds:0000000000000000 keyboard_set_leds
+     /tmp/ccjVrDEO.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccjVrDEO.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccjVrDEO.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccjVrDEO.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccjVrDEO.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccjVrDEO.s:13     .text.matrix_setup:0000000000000000 matrix_setup
+     /tmp/ccjVrDEO.s:29     .text.keyboard_setup:0000000000000000 keyboard_setup
+     /tmp/ccjVrDEO.s:46     .text.keyboard_init:0000000000000000 keyboard_init
+     /tmp/ccjVrDEO.s:69     .text.keyboard_task:0000000000000000 keyboard_task
+     /tmp/ccjVrDEO.s:362    .bss.matrix_prev.4913:0000000000000000 matrix_prev.4913
+     /tmp/ccjVrDEO.s:357    .bss.led_status.4914:0000000000000000 led_status.4914
+     /tmp/ccjVrDEO.s:339    .text.keyboard_set_leds:0000000000000000 keyboard_set_leds
 
 UNDEFINED SYMBOLS
 timer_init

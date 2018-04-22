@@ -228,18 +228,18 @@
  186               		.file 7 "./tmk_core/common/timer.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 process_leader.c
-     /tmp/ccOmHnbD.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccOmHnbD.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccOmHnbD.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccOmHnbD.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccOmHnbD.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccOmHnbD.s:13     .text.leader_start:0000000000000000 leader_start
-     /tmp/ccOmHnbD.s:29     .text.leader_end:0000000000000000 leader_end
-     /tmp/ccOmHnbD.s:44     .text.process_leader:0000000000000000 process_leader
-     /tmp/ccOmHnbD.s:177    .bss.leading:0000000000000000 leading
-     /tmp/ccOmHnbD.s:171    .bss.leader_time:0000000000000000 leader_time
-     /tmp/ccOmHnbD.s:159    .bss.leader_sequence_size:0000000000000000 leader_sequence_size
-     /tmp/ccOmHnbD.s:165    .bss.leader_sequence:0000000000000000 leader_sequence
+     /tmp/ccuJSuce.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccuJSuce.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccuJSuce.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccuJSuce.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccuJSuce.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccuJSuce.s:13     .text.leader_start:0000000000000000 leader_start
+     /tmp/ccuJSuce.s:29     .text.leader_end:0000000000000000 leader_end
+     /tmp/ccuJSuce.s:44     .text.process_leader:0000000000000000 process_leader
+     /tmp/ccuJSuce.s:177    .bss.leading:0000000000000000 leading
+     /tmp/ccuJSuce.s:171    .bss.leader_time:0000000000000000 leader_time
+     /tmp/ccuJSuce.s:159    .bss.leader_sequence_size:0000000000000000 leader_sequence_size
+     /tmp/ccuJSuce.s:165    .bss.leader_sequence:0000000000000000 leader_sequence
 
 UNDEFINED SYMBOLS
 timer_read

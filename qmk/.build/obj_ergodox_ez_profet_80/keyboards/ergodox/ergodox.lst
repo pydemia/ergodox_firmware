@@ -186,12 +186,12 @@
  188               		.file 4 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 ergodox.c
-     /tmp/ccRWoYM5.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccRWoYM5.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccRWoYM5.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccRWoYM5.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccRWoYM5.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccRWoYM5.s:14     .rodata.hand_swap_config:0000000000000000 hand_swap_config
+     /tmp/cc50hXfD.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cc50hXfD.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cc50hXfD.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cc50hXfD.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cc50hXfD.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cc50hXfD.s:14     .rodata.hand_swap_config:0000000000000000 hand_swap_config
 
 UNDEFINED SYMBOLS
 __do_copy_data

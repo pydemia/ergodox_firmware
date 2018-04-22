@@ -860,15 +860,15 @@
  447               		.file 4 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../StdDescriptors.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 ConfigDescriptors.c
-     /tmp/ccEZMtmN.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccEZMtmN.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccEZMtmN.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccEZMtmN.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccEZMtmN.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccEZMtmN.s:12     .text.USB_GetNextDescriptor:0000000000000000 USB_GetNextDescriptor
-     /tmp/ccEZMtmN.s:74     .text.USB_GetNextDescriptorOfType:0000000000000000 USB_GetNextDescriptorOfType
-     /tmp/ccEZMtmN.s:158    .text.USB_GetNextDescriptorOfTypeBefore:0000000000000000 USB_GetNextDescriptorOfTypeBefore
-     /tmp/ccEZMtmN.s:251    .text.USB_GetNextDescriptorOfTypeAfter:0000000000000000 USB_GetNextDescriptorOfTypeAfter
-     /tmp/ccEZMtmN.s:328    .text.USB_GetNextDescriptorComp:0000000000000000 USB_GetNextDescriptorComp
+     /tmp/cc2Y2aJr.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cc2Y2aJr.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cc2Y2aJr.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cc2Y2aJr.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cc2Y2aJr.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cc2Y2aJr.s:12     .text.USB_GetNextDescriptor:0000000000000000 USB_GetNextDescriptor
+     /tmp/cc2Y2aJr.s:74     .text.USB_GetNextDescriptorOfType:0000000000000000 USB_GetNextDescriptorOfType
+     /tmp/cc2Y2aJr.s:158    .text.USB_GetNextDescriptorOfTypeBefore:0000000000000000 USB_GetNextDescriptorOfTypeBefore
+     /tmp/cc2Y2aJr.s:251    .text.USB_GetNextDescriptorOfTypeAfter:0000000000000000 USB_GetNextDescriptorOfTypeAfter
+     /tmp/cc2Y2aJr.s:328    .text.USB_GetNextDescriptorComp:0000000000000000 USB_GetNextDescriptorComp
 
 NO UNDEFINED SYMBOLS

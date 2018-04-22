@@ -619,7 +619,7 @@
  184               		.loc 1 347 0 is_stmt 0 discriminator 2
  185 0074 241B      		sub r18,r20
  186 0076 350B      		sbc r19,r21
- 187 0078 283C      		cpi r18,-56
+ 187 0078 2639      		cpi r18,-106
  188 007a 3105      		cpc r19,__zero_reg__
  189 007c 00F4      		brsh .L10
  348:./tmk_core/common/action_tapping.c ****             waiting_buffer[i].tap.count = 1;
@@ -798,7 +798,7 @@
  353               	.L133:
  354 0090 FF24      		clr r15
  355 0092 F394      		inc r15
- 356 0094 883C      		cpi r24,-56
+ 356 0094 8639      		cpi r24,-106
  357 0096 9105      		cpc r25,__zero_reg__
  358 0098 00F0      		brlo .L86
  359 009a F12C      		mov r15,__zero_reg__
@@ -1103,7 +1103,7 @@
  618               	.L136:
  228:./tmk_core/common/action_tapping.c ****             if (event.pressed) {
  619               		.loc 1 228 0 discriminator 2
- 620 0204 883C      		cpi r24,-56
+ 620 0204 8639      		cpi r24,-106
  621 0206 9105      		cpc r25,__zero_reg__
  622 0208 00F4      		brsh .+2
  623 020a 00C0      		rjmp .L87
@@ -1680,20 +1680,20 @@
  1143               		.file 7 "./tmk_core/common/action_layer.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 action_tapping.c
-     /tmp/cck8jcGB.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/cck8jcGB.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/cck8jcGB.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/cck8jcGB.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/cck8jcGB.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/cck8jcGB.s:12     .text.debug_waiting_buffer:0000000000000000 debug_waiting_buffer
-     /tmp/cck8jcGB.s:1120   .bss.waiting_buffer_tail:0000000000000000 waiting_buffer_tail
-     /tmp/cck8jcGB.s:1125   .bss.waiting_buffer_head:0000000000000000 waiting_buffer_head
-     /tmp/cck8jcGB.s:1130   .bss.waiting_buffer:0000000000000000 waiting_buffer
-     /tmp/cck8jcGB.s:82     .text.debug_tapping_key:0000000000000000 debug_tapping_key
-     /tmp/cck8jcGB.s:1135   .bss.tapping_key:0000000000000000 tapping_key
-     /tmp/cck8jcGB.s:104    .text.waiting_buffer_scan_tap:0000000000000000 waiting_buffer_scan_tap
-     /tmp/cck8jcGB.s:231    .text.process_tapping:0000000000000000 process_tapping
-     /tmp/cck8jcGB.s:890    .text.action_tapping_process:0000000000000000 action_tapping_process
+     /tmp/cchBNDc1.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cchBNDc1.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cchBNDc1.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cchBNDc1.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cchBNDc1.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cchBNDc1.s:12     .text.debug_waiting_buffer:0000000000000000 debug_waiting_buffer
+     /tmp/cchBNDc1.s:1120   .bss.waiting_buffer_tail:0000000000000000 waiting_buffer_tail
+     /tmp/cchBNDc1.s:1125   .bss.waiting_buffer_head:0000000000000000 waiting_buffer_head
+     /tmp/cchBNDc1.s:1130   .bss.waiting_buffer:0000000000000000 waiting_buffer
+     /tmp/cchBNDc1.s:82     .text.debug_tapping_key:0000000000000000 debug_tapping_key
+     /tmp/cchBNDc1.s:1135   .bss.tapping_key:0000000000000000 tapping_key
+     /tmp/cchBNDc1.s:104    .text.waiting_buffer_scan_tap:0000000000000000 waiting_buffer_scan_tap
+     /tmp/cchBNDc1.s:231    .text.process_tapping:0000000000000000 process_tapping
+     /tmp/cchBNDc1.s:890    .text.action_tapping_process:0000000000000000 action_tapping_process
 
 UNDEFINED SYMBOLS
 debug_record

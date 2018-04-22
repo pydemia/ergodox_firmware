@@ -1515,24 +1515,24 @@
  637               		.file 7 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 descriptor.c
-     /tmp/ccGGEyr6.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccGGEyr6.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccGGEyr6.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccGGEyr6.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccGGEyr6.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccGGEyr6.s:13     .text.CALLBACK_USB_GetDescriptor:0000000000000000 CALLBACK_USB_GetDescriptor
-     /tmp/ccGGEyr6.s:242    .progmem.data.ConfigurationDescriptor:0000000000000000 ConfigurationDescriptor
-     /tmp/ccGGEyr6.s:343    .progmem.data.DeviceDescriptor:0000000000000000 DeviceDescriptor
-     /tmp/ccGGEyr6.s:234    .progmem.data.LanguageString:0000000000000000 LanguageString
-     /tmp/ccGGEyr6.s:215    .progmem.data.ManufacturerString:0000000000000000 ManufacturerString
-     /tmp/ccGGEyr6.s:196    .progmem.data.ProductString:0000000000000000 ProductString
-     /tmp/ccGGEyr6.s:187    .rodata.CSWTCH.1:0000000000000000 CSWTCH.1
-     /tmp/ccGGEyr6.s:179    .rodata.CSWTCH.2:0000000000000000 CSWTCH.2
-     /tmp/ccGGEyr6.s:171    .rodata.CSWTCH.3:0000000000000000 CSWTCH.3
-     /tmp/ccGGEyr6.s:565    .progmem.data.KeyboardReport:0000000000000000 KeyboardReport
-     /tmp/ccGGEyr6.s:483    .progmem.data.MouseReport:0000000000000000 MouseReport
-     /tmp/ccGGEyr6.s:424    .progmem.data.ExtrakeyReport:0000000000000000 ExtrakeyReport
-     /tmp/ccGGEyr6.s:362    .progmem.data.NKROReport:0000000000000000 NKROReport
+     /tmp/ccgJK5nG.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccgJK5nG.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccgJK5nG.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccgJK5nG.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccgJK5nG.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccgJK5nG.s:13     .text.CALLBACK_USB_GetDescriptor:0000000000000000 CALLBACK_USB_GetDescriptor
+     /tmp/ccgJK5nG.s:242    .progmem.data.ConfigurationDescriptor:0000000000000000 ConfigurationDescriptor
+     /tmp/ccgJK5nG.s:343    .progmem.data.DeviceDescriptor:0000000000000000 DeviceDescriptor
+     /tmp/ccgJK5nG.s:234    .progmem.data.LanguageString:0000000000000000 LanguageString
+     /tmp/ccgJK5nG.s:215    .progmem.data.ManufacturerString:0000000000000000 ManufacturerString
+     /tmp/ccgJK5nG.s:196    .progmem.data.ProductString:0000000000000000 ProductString
+     /tmp/ccgJK5nG.s:187    .rodata.CSWTCH.1:0000000000000000 CSWTCH.1
+     /tmp/ccgJK5nG.s:179    .rodata.CSWTCH.2:0000000000000000 CSWTCH.2
+     /tmp/ccgJK5nG.s:171    .rodata.CSWTCH.3:0000000000000000 CSWTCH.3
+     /tmp/ccgJK5nG.s:565    .progmem.data.KeyboardReport:0000000000000000 KeyboardReport
+     /tmp/ccgJK5nG.s:483    .progmem.data.MouseReport:0000000000000000 MouseReport
+     /tmp/ccgJK5nG.s:424    .progmem.data.ExtrakeyReport:0000000000000000 ExtrakeyReport
+     /tmp/ccgJK5nG.s:362    .progmem.data.NKROReport:0000000000000000 NKROReport
 
 UNDEFINED SYMBOLS
 __do_copy_data
