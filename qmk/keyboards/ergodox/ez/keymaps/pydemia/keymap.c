@@ -8,17 +8,19 @@
 #define NPAD 1 // Numpad Layer
 #define MAGI 2 // Magic Layer
 #define ACTN 3 // Action Layer
-#define RESV 4 // Action Layer
-#define LKEY 5 // Linux Layer
-#define PPTK 6 // Linux Layer
+#define MOSL 4 // MacOS Layer
+#define RESV 5 // Reserved Layer
+#define LKEY 6 // Linux Layer
+#define PPTK 7 // PPT Layer
 
 // Layer Change
 const uint16_t PROGMEM fn_actions[] = {
     [1] = ACTION_LAYER_TAP_TOGGLE(NPAD),  // FN1 - Momentary Layer 1 (Numpad Layer)~
     [2] = ACTION_LAYER_TAP_TOGGLE(MAGI),  // FN2 - Momentary Layer 2 (Magic Layer)~
     [3] = ACTION_LAYER_TAP_TOGGLE(ACTN),  // FN3 - Momentary Layer 3 (Action Layer)~
-    [4] = ACTION_LAYER_TAP_TOGGLE(RESV),  // FN3 - Momentary Layer 3 (Reserved Layer)~
-    [5] = ACTION_LAYER_TAP_TOGGLE(LKEY),  // FN4 - Momentary Layer 4 (PPT Layer)~
+    [4] = ACTION_LAYER_TAP_TOGGLE(MOSL),  // FN4 - Momentary Layer 4 (MacOS Layer)~
+    [5] = ACTION_LAYER_TAP_TOGGLE(RESV),  // FN5 - Momentary Layer 5 (Reserved Layer)~
+    [6] = ACTION_LAYER_TAP_TOGGLE(LKEY),  // FN6 - Momentary Layer 6 (PPT Layer)~
 
 };
 
@@ -240,181 +242,6 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt )
 // MACRO END -----------------------------------------------------------------------
 
 
-// MACRO START ---------------------------------------------------------------------
-/*
-#define QMK_VER_KEY     M(M_KEYBOARD_VER)
-#define SIGN_KEY        M(M_SIGN)
-#define ASSIGN_R_KEY    M(M_R_ASSIGN)
-#define PY_DTFM_KEY     M(M_PYTHON_DTFORMAT)
-#define SPYD_CELL_KEY   M(M_SPYDER_CELL)
-#define R_FOLDING_KEY   M(M_R_FOLDING)
-#define SQL_NORMAL_KEY  M(M_SQL_NM)
-#define SQL_LEFT_KEY    M(M_SQL_LEFTJOIN)
-#define SQL_LEFTSUB_KEY M(M_SQL_LEFTSUBJOIN)
-#define PIP_STR_KEY     M(M_PIP)
-#define DT_STR_KEY      M(M_DATE)
-#define TM_STR_KEY      M(M_TIME)
-#define DTTM_STR_KEY    M(M_DATETIME)
-#define D_QUOTE_KEY     M(M_DOUBLE_QUOTE)
-#define CUT_KEY         M(M_CUT)
-#define COPY_KEY        M(M_COPY)
-#define PASTE_KEY       M(M_PASTE)
-#define BRC_KEY         M(M_BRC)
-#define CBR_KEY         M(M_CBR)
-#define PRN_KEY         M(M_PRN)
-
-
-//Macro Declarations
-typedef enum MACRO_NAME {
-  M_KEYBOARD_VER = 0,
-  M_SIGN,
-  M_R_ASSIGN,
-  M_PYTHON_DTFORMAT,
-  M_SPYDER_CELL,
-  M_R_FOLDING,
-  M_SQL_NM,
-  M_SQL_LEFTJOIN,
-  M_SQL_LEFTSUBJOIN,
-  M_PIP,
-  M_DATE,
-  M_TIME,
-  M_DATETIME,
-  M_DOUBLE_QUOTE,
-  M_CUT,
-  M_COPY,
-  M_PASTE,
-  M_BRC,
-  M_CBR,
-  M_PRN
-} macro_name;
-
-
-const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt )
-{
-  // MACRODOWN only works in this function
-      macro_name mcr;
-      switch(mcr) {
-        case M_KEYBOARD_VER:
-        if (record->event.pressed) {
-          SEND_STRING (QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION);
-        }
-        break;
-        case M_SIGN:
-        if (record->event.pressed) { // For resetting EEPROM
-          SEND_STRING ( SIGNITURE );
-        }
-        break;
-        case M_R_ASSIGN:
-        if (record->event.pressed) { // <-
-          //SEND_STRING ( "<-" );
-          return MACRO(D(LSFT), T(COMMA), U(LSFT), T(MINUS), END);
-        }
-        break;
-        case M_PYTHON_DTFORMAT:
-        if (record->event.pressed) { // '%Y%m%d%H%M%S%f'
-          SEND_STRING ( "'%Y%m%d%H%M%S%f'" );
-          //return MACRO(D(LSFT), T(COMMA), U(LSFT), T(MINUS), END);
-        }
-        break;
-        case M_SPYDER_CELL:
-        if (record->event.pressed) { // # %% (For Python Spyder)
-          //SEND_STRING ( "# %%" );
-          return MACRO(D(LSFT), T(3), T(SPC), T(5), T(5), U(LSFT), END);
-        }
-        break;
-        case M_R_FOLDING:
-        if (record->event.pressed) { // # %% (For Python Spyder)
-          //SEND_STRING ( "# %%" );
-          return MACRO(D(LSFT), T(3), U(LSFT), T(SPC), T(SPC), T(MINUS), T(MINUS), T(MINUS), T(MINUS), END);
-        }
-        break;
-        case M_SQL_NM:
-        if (record->event.pressed) { // For resetting EEPROM
-          SEND_STRING ( SQL_NORMAL_STR );
-        }
-        break;
-        case M_SQL_LEFTJOIN:
-        if (record->event.pressed) { // For resetting EEPROM
-          SEND_STRING ( SQL_LEFT_STR );
-        }
-        break;
-        case M_SQL_LEFTSUBJOIN:
-        if (record->event.pressed) { // For resetting EEPROM
-          SEND_STRING ( SQL_LEFT_SUB_STR );
-        }
-        break;
-        case M_PIP:
-        if (record->event.pressed) { // For resetting EEPROM
-          SEND_STRING ( PIP_STR );
-        }
-        break;
-        case M_DATE:
-        if (record->event.pressed) { // For resetting EEPROM
-          SEND_STRING ( __DATE__ );
-        }
-        break;
-        case M_TIME:
-        if (record->event.pressed) { // For resetting EEPROM
-          SEND_STRING ( __TIME__ );
-        }
-        break;
-        case M_DATETIME:
-        if (record->event.pressed) { // For resetting EEPROM
-          SEND_STRING ( DATETIME_STR );
-        }
-        break;
-        case M_DOUBLE_QUOTE:
-        if (record->event.pressed) { // For resetting EEPROM
-          //SEND_STRING ( " );
-          return MACRO(D(LSFT), T(QUOT), U(LSFT), END);
-        }
-        break;
-        case M_CUT:
-        if (record->event.pressed) { // For resetting EEPROM
-          return MACRO(D(RCTL), T(X), U(RCTL), END);
-        }
-        break;
-        case M_COPY:
-        if (record->event.pressed) { // For resetting EEPROM
-          return MACRO(D(RCTL), T(C), U(RCTL), END);
-        }
-        break;
-        case M_PASTE:
-        if (record->event.pressed) { // For resetting EEPROM
-          return MACRO(D(RCTL), T(V), U(RCTL), END);
-        }
-        break;
-        case M_BRC:
-        if (record->event.pressed) { // For resetting EEPROM
-          //SEND_STRING ( "[]" );
-          return MACRO( T(LBRC), T(RBRC), END );
-        }
-        break;
-        case M_CBR:
-        if (record->event.pressed) { // For resetting EEPROM
-          //SEND_STRING ( "{}" );
-          return MACRO( D(LSFT), T(LBRC), T(RBRC), U(LSFT), END );
-        }
-        break;
-        case M_PRN:
-        if (record->event.pressed) { // For resetting EEPROM
-          //SEND_STRING ( "()" );
-          return MACRO( D(LSFT), T(9), T(0), U(LSFT), END );
-        }
-        break;
-//        case REQL:
-//            return (record->event.pressed ?
-//                    MACRO( T(LSFT(KC_COMMA)), T(KC_MINUS), END) : // For resetting EEPROM
-//                    MACRO_NONE ) ;
-    }
-    return MACRO_NONE;
-};
-*/
-
-// MACRO END -----------------------------------------------------------------------
-
-
-
 
 // Tap Dance Key
 #define ASSIGN_TAP     TD(ASSIGN_MARK)
@@ -439,11 +266,11 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt )
 
 #define PGUP_BWEB_TAP  TD(PGUP_BWEB)
 #define PGDN_FWEB_TAP  TD(PGDN_FWEB)
-
+/*
 #define T_DBRC_TAP     TD(T_DBRC)
 #define G_DCBR_TAP     TD(G_DCBR)
 #define B_DPRN_TAP     TD(B_DPRN)
-
+*/
 #define J_DBRC_TAP     TD(J_DBRC)
 #define K_DCBR_TAP     TD(K_DCBR)
 #define L_DPRN_TAP     TD(L_DPRN)
@@ -484,7 +311,7 @@ void dance_dbrc (qk_tap_dance_state_t *state, void *user_data) {
     clear_keyboard_but_mods();
   }
 }
-
+/*
 // G & {}
 void dance_press_g (qk_tap_dance_state_t *state, void *user_data) {
   if (state->count == 1) {
@@ -544,7 +371,7 @@ void dance_dprn (qk_tap_dance_state_t *state, void *user_data) {
     clear_keyboard_but_mods();
   }
 }
-
+*/
 
 // = & <-
 void dance_press_equal (qk_tap_dance_state_t *state, void *user_data) {
@@ -646,11 +473,11 @@ enum {
 
   PGUP_BWEB,
   PGDN_FWEB,
-
+/*
   T_DBRC,
   G_DCBR,
   B_DPRN,
-
+*/
   HOME_SFT,
   END_SFT,
 
@@ -681,11 +508,11 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 
   [PGUP_BWEB] = ACTION_TAP_DANCE_DOUBLE(KC_PGUP, LALT(KC_LEFT)),
   [PGDN_FWEB] = ACTION_TAP_DANCE_DOUBLE(KC_PGDN, LALT(KC_RGHT)),
-
+/*
   [T_DBRC] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, dance_press_t, dance_dbrc),
   [G_DCBR] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, dance_press_g, dance_dcbr),
   [B_DPRN] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, dance_press_b, dance_dprn),
-
+*/
   [HOME_SFT] = ACTION_TAP_DANCE_DOUBLE(KC_HOME, LSFT(KC_HOME)),
   [END_SFT]  = ACTION_TAP_DANCE_DOUBLE(KC_END, LSFT(KC_END)),
 
@@ -705,13 +532,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ┌───────┬─────┬─────┬─────┬─────┬─────┬─────┐     ┌─────┬─────┬─────┬─────┬─────┬─────┬───────┐
  * │  Esc  │  1  │  2  │  3  │  4  │  5  │CtFn5│     │  6  │  7  │  8  │  9  │  0  │  -  │   +   │
  * ├───────┼─────┼─────┼─────┼─────┼─────┼─────┤     ├─────┼─────┼─────┼─────┼─────┼─────┼───────┤
- * │  Tab  │  Q  │  W  │  E  │  R  │ T[] │  <- │     │     │  Y  │  U  │  I  │  O  │  P  │   \   │
- * ├───────┼─────┼─────┼─────┼─────┼─────┤  =  │     │     ├─────┼─────┼─────┼─────┼─────┼───────┤
+ * │  Tab  │  Q  │  W  │  E  │  R  │ T[] │  <- │     │ Tg  │  Y  │  U  │  I  │  O  │  P  │   \   │
+ * ├───────┼─────┼─────┼─────┼─────┼─────┤  =  │     │ Mgc ├─────┼─────┼─────┼─────┼─────┼───────┤
  * │   ~   │  A  │  S  │  D  │  F  │ G{} ├─────┤     ├─────┤  H  │ J[] │ K{} │ L() │  ;  │  ' "  │
  * ├───────┼─────┼─────┼─────┼─────┼─────┤ Tg  │     │ Tg  ├─────┼─────┼─────┼─────┼─────┼───────┤
- * │  Sft  │  Z  │  X  │  C  │  V  │ B() │ Npd │     │ Npd │  N  │  M  │  ,  │  .  │  /  │ Shift │
+ * │  Sft  │  Z  │  X  │  C  │  V  │ B() │ Npd │     │ MOS │  N  │  M  │  ,  │  .  │  /  │ Shift │
  * └─┬─────┼─────┼─────┼─────┼─────┼─────┴─────┘     └─────┴─────┼─────┼─────┼─────┼─────┼─────┬─┘
- *   │ CTL │ TgM │Wn/Cd│ App │ ALT │                             │ RAt │ RCl │  [  │  ]  │ TgA │
+ *   │ CTL │CtCmd│Wn/Cd│ App │ ALT │                             │ RAt │ RCl │  [  │  ]  │ ( ) │
  *   └─────┴─────┴─────┴─────┴─────┘ ┌─────┬─────┐ ┌─────┬─────┐ └─────┴─────┴─────┴─────┴─────┘
  *                                   │ TgA │CtEnt│ │ Lft │ Rgt │
  *                             ┌─────┼─────┼─────┤ ├─────┼─────┼─────┐
@@ -727,19 +554,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //Meh: MEH_T(KC_NO)
 [WKEY] = KEYMAP(  // layer 0 : default
 // left hand
-KC_ESC,           KC_1,       KC_2,       KC_3,         KC_4,           KC_5,             LCTL(KC_F5), // TG(LKEY),
-KC_TAB,           KC_Q,       KC_W,       KC_E,         KC_R,           T_DBRC_TAP,       ASSIGN_TAP,
-KC_GRV,           KC_A,       KC_S,       KC_D,         KC_F,           G_DCBR_TAP,
-KC_LSFT,          KC_Z,       KC_X,       KC_C,         KC_V,           B_DPRN_TAP,       KC_FN1,
-CTL_T(KC_LCTL),   KC_FN2,     KC_RGUI,    KC_APP,       ALT_T(KC_LALT),
+KC_ESC,           KC_1,           KC_2,           KC_3,         KC_4,           KC_5,       LCTL(KC_F5), // TG(LKEY),
+KC_TAB,           KC_Q,           KC_W,           KC_E,         KC_R,           KC_T,       ASSIGN_TAP,
+KC_GRV,           KC_A,           KC_S,           KC_D,         KC_F,           KC_G,
+KC_LSFT,          KC_Z,           KC_X,           KC_C,         KC_V,           KC_B,       KC_FN1,
+CTL_T(KC_LCTL),   KC_FN2,         KC_RGUI,        KC_APP,       ALT_T(KC_LALT),
                                                                         KC_FN3,           LCTL(KC_ENT),
                                                                                           KC_HOME,
                                                       KC_SPC,           KC_BSPC,          KC_END,
 // right hand
 KC_6,             KC_7,       KC_8,       KC_9,         KC_0,             KC_MINUS,         KC_PLUS,
-KC_TRNS,          KC_Y,       KC_U,       KC_I,         KC_O,             KC_P,             KC_BSLS,
+KC_FN2,           KC_Y,       KC_U,       KC_I,         KC_O,             KC_P,             KC_BSLS,
                   KC_H,       KC_J,       KC_K,         KC_L,             KC_SCLN,          D_QUOTE_TAP,
-KC_TRNS,          KC_N,       KC_M,       KC_COMM,      KC_DOT,           KC_SLSH,          KC_RSFT,
+KC_FN4,           KC_N,       KC_M,       KC_COMM,      KC_DOT,           KC_SLSH,          KC_RSFT,
                   KC_RALT,    KC_RCTL,    KC_LBRC,      KC_RBRC,          M(16),//KC_FN3,
 KC_LEFT,          KC_RGHT, 
 KC_UP,
@@ -751,7 +578,7 @@ KC_DOWN,          KC_DELT,    KC_ENT
  * ┌───────┬─────┬─────┬─────┬─────┬─────┬─────┐     ┌─────┬─────┬─────┬─────┬─────┬─────┬───────┐
  * │ AltF4 │ **  │     │     │ #-- │ #%% │     │     │Calc │     │     │     │     │     │ PrScr │
  * ├───────┼─────┼─────┼─────┼─────┼─────┼─────┤     ├─────┼─────┼─────┼─────┼─────┼─────┼───────┤
- * │       │     │     │     │  (  │  )  │ <-  │     │  +  │  7  │  8  │  9  │  +  │  -  │ MyCom │
+ * │       │ SQr │ LQr │ SQr │  (  │  )  │ <-  │     │  +  │  7  │  8  │  9  │  +  │  -  │ MyCom │
  * ├───────┼─────┼─────┼─────┼─────┼─────┤     │     │     ├─────┼─────┼─────┼─────┼─────┼───────┤
  * │       │DTTM │ DAT │ Dfm │  [  │  ]  ├─────┤     ├─────┤  4  │  5  │  6  │  *  │  /  │       │
  * ├───────┼─────┼─────┼─────┼─────┼─────┤     │     │  -  ├─────┼─────┼─────┼─────┼─────┼───────┤
@@ -770,7 +597,7 @@ KC_DOWN,          KC_DELT,    KC_ENT
 [NPAD] = KEYMAP( //QMK_VER_KEY
 // left hand
 LALT(KC_F4),      SQLCOMMENT_KEY,    KC_TRNS,        KC_TRNS,          R_FOLDING_KEY,   SPYD_CELL_KEY,   KC_TRNS,
-KC_TRNS,          KC_TRNS,           KC_TRNS,        KC_TRNS,          KC_LPRN,         KC_RPRN,         ASSIGN_R_KEY,//KC_QUOT,M(1),
+KC_TRNS,          SQL_NORMAL_KEY,   SQL_LEFT_KEY,    SQL_LEFTSUB_KEY,  KC_LPRN,         KC_RPRN,         ASSIGN_R_KEY,//KC_QUOT,M(1),
 KC_TRNS,          DTTM_STR_KEY,      DT_STR_KEY,     PY_DTFM_KEY,      KC_LBRC,         KC_RBRC,
 KC_TRNS,          PIP_STR_KEY,       TM_STR_KEY,     SIGN_KEY,         KC_LCBR,         KC_RCBR,         KC_TRNS,
 KC_TRNS,          KC_TRNS,           KC_TRNS,        KC_TRNS,          KC_TRNS,
@@ -792,15 +619,15 @@ KC_PGDN,          KC_DELT,           KC_ENT
 /* Keymap 2: Magic Layer
  *
  * ┌───────┬─────┬─────┬─────┬─────┬─────┬─────┐     ┌─────┬─────┬─────┬─────┬─────┬─────┬───────┐
- * │ SIGN  │  1  │  2  │  3  │  4  │  5  │     │     │     │     │     │     │     │     │ PrScr │
+ * │ SIGN  │     │     │     │     │     │     │     │Calc │     │     │     │     │     │ PrScr │
  * ├───────┼─────┼─────┼─────┼─────┼─────┼─────┤     ├─────┼─────┼─────┼─────┼─────┼─────┼───────┤
- * │       │  6  │  7  │  8  │  9  │  0  │     │     │     │  7  │  8  │  9  │  +  │  -  │       │
+ * │       │  7  │  8  │  9  │     │     │     │     │  +  │  7  │  8  │  9  │  +  │  -  │ MyCom │
  * ├───────┼─────┼─────┼─────┼─────┼─────┤     │     │     ├─────┼─────┼─────┼─────┼─────┼───────┤
- * │       │ DAT │ TIM │DTTM │  [  │  ]  ├─────┤     ├─────┤  4  │  5  │  6  │  *  │  /  │       │
- * ├───────┼─────┼─────┼─────┼─────┼─────┤     │     │     ├─────┼─────┼─────┼─────┼─────┼───────┤
- * │       │ SQr │ LQr │ SQr │  {  │  }  │     │     │     │  1  │  2  │  3  │  ,  │ Up  │       │
+ * │       │  4  │  5  │  6  │     │     ├─────┤     ├─────┤  4  │  5  │  6  │  *  │  /  │       │
+ * ├───────┼─────┼─────┼─────┼─────┼─────┤     │     │  -  ├─────┼─────┼─────┼─────┼─────┼───────┤
+ * │       │  1  │  2  │  3  │  ,  │  .  │     │     │     │  1  │  2  │  3  │  ,  │ Up  │       │
  * └─┬─────┼─────┼─────┼─────┼─────┼─────┴─────┘     └─────┴─────┼─────┼─────┼─────┼─────┼─────┬─┘
- *   │     │     │     │     │     │                             │  0  │  .  │ Lft │ Dwn │ Rgt │
+ *   │     │     │  .  │  0  │     │                             │  0  │  .  │ Lft │ Dwn │ Rgt │
  *   └─────┴─────┴─────┴─────┴─────┘ ┌─────┬─────┐ ┌─────┬─────┐ └─────┴─────┴─────┴─────┴─────┘
  *                                   │     │AlEnt│ │ CLf │ CRt │
  *                             ┌─────┼─────┼─────┤ ├─────┼─────┼─────┐
@@ -812,20 +639,20 @@ KC_PGDN,          KC_DELT,           KC_ENT
 // MAGI
 [MAGI] = KEYMAP(
 // left hand
-SIGN_KEY,     KC_1,             KC_2,             KC_3,              KC_4,         KC_5,              KC_TRNS,
-KC_TRNS,      KC_6,             KC_7,             KC_8,              KC_9,         KC_0,              KC_TRNS,
-KC_TRNS,      DT_STR_KEY,       TM_STR_KEY,       DTTM_STR_KEY,      KC_TRNS,      KC_TRNS,
-KC_TRNS,      SQL_NORMAL_KEY,   SQL_LEFT_KEY,     SQL_LEFTSUB_KEY,   KC_TRNS,      KC_TRNS,           KC_TRNS,
-KC_TRNS,      KC_TRNS,          KC_TRNS,          KC_TRNS,           KC_TRNS,
+SIGN_KEY,     KC_TRNS,          KC_TRNS,          KC_TRNS,           KC_TRNS,      KC_TRNS,           KC_TRNS,
+KC_TRNS,      KC_7,             KC_8,             KC_9,              KC_TRNS,      KC_TRNS,           KC_TRNS,
+KC_TRNS,      KC_4,             KC_5,             KC_6,              KC_TRNS,      KC_TRNS,
+KC_TRNS,      KC_1,             KC_2,             KC_3,              KC_COMM,      KC_DOT,            KC_TRNS,
+KC_TRNS,      KC_TRNS,          KC_DOT,           KC_0,              KC_TRNS,
                                	                                                   KC_TRNS,           LALT(KC_ENT),
                                                                                                       KC_PGUP,
                                                                      KC_SPC,       KC_BSPC,           KC_PGDN,
 // right hand
-KC_TRNS,          KC_TRNS,          KC_TRNS,           KC_TRNS,      KC_TRNS,      KC_TRNS,           KC_PSCREEN,
-KC_TRNS,          KC_TRNS,          KC_TRNS,           KC_TRNS,      KC_TRNS,      KC_TRNS,           KC_TRNS,
-                  KC_TRNS,          KC_TRNS,           KC_TRNS,      KC_TRNS,      KC_TRNS,           KC_TRNS,
-KC_TRNS,          KC_TRNS,          KC_TRNS,           KC_TRNS,      KC_TRNS,      KC_TRNS,           KC_TRNS,
-                  KC_TRNS,          KC_TRNS,           KC_COMM,      KC_TRNS,      KC_TRNS,
+KC_CALC,          KC_TRNS,           KC_TRNS,        KC_TRNS,          KC_TRNS,         KC_TRNS,         KC_PSCREEN,
+KC_PLUS,          KC_7,              KC_8,           KC_9,             KC_PLUS,         KC_MINUS,        KC_MYCM, 
+                  KC_4,              KC_5,           KC_6,             KC_ASTR,         KC_SLSH,         KC_TRNS,
+KC_MINUS,         KC_1,              KC_2,           KC_3,             KC_COMM,         KC_UP,           KC_TRNS,
+                  KC_0,              KC_DOT,         KC_LEFT,          KC_DOWN,         KC_RGHT,
 KC_LEFT,          KC_RGHT,
 KC_UP,
 KC_DOWN,          KC_DELT,          KC_ENT
@@ -834,11 +661,11 @@ KC_DOWN,          KC_DELT,          KC_ENT
 /* Keymap 3: Action Layer
  *
  * ┌───────┬─────┬─────┬─────┬─────┬─────┬─────┐     ┌─────┬─────┬─────┬─────┬─────┬─────┬───────┐
- * │ QMKVer│ Fn1 │ Fn2 │ Fn3 │ Fn4 │ Fn5 │ Fn6 │     │     │     │     │     │     │     │       │
+ * │ QMKVer│ F1  │ F2  │ F3  │ F4  │ F5  │     │     │     │     │     │     │     │     │       │
  * ├───────┼─────┼─────┼─────┼─────┼─────┼─────┤     ├─────┼─────┼─────┼─────┼─────┼─────┼───────┤
- * │       │ Fn7 │ Fn8 │ Fn9 │ F10 │ F11 │ F12 │     │     │     │     │     │     │     │       │
+ * │       │ F6  │ F7  │ F8  │ F9  │ F10 │     │     │     │     │     │     │     │     │       │
  * ├───────┼─────┼─────┼─────┼─────┼─────┤     │     │     ├─────┼─────┼─────┼─────┼─────┼───────┤
- * │       │     │     │     │     │     ├─────┤     ├─────┤     │     │     │     │     │       │
+ * │       │ F11 │ F12 │ F13 │ F14 │ F15 ├─────┤     ├─────┤     │     │     │     │     │       │
  * ├───────┼─────┼─────┼─────┼─────┼─────┤     │     │     ├─────┼─────┼─────┼─────┼─────┼───────┤
  * │       │     │     │     │     │     │     │     │     │     │     │     │     │     │       │
  * └─┬─────┼─────┼─────┼─────┼─────┼─────┴─────┘     └─────┴─────┼─────┼─────┼─────┼─────┼─────┬─┘
@@ -854,16 +681,16 @@ KC_DOWN,          KC_DELT,          KC_ENT
 // ACTN
 [ACTN] = KEYMAP(
 // left hand
-QMK_VER_KEY,   KC_F1,             KC_F2,          KC_F3,           KC_F4,           KC_F5,             KC_F6,
-KC_TRNS,       KC_F7,             KC_F8,          KC_F9,           KC_F10,          KC_F11,            KC_F12,
-KC_TRNS,       KC_TRNS,           KC_TRNS,        KC_TRNS,         KC_TRNS,         KC_TRNS,
+QMK_VER_KEY,   KC_F1,             KC_F2,          KC_F3,           KC_F4,           KC_F5,             KC_TRNS,
+KC_TRNS,       KC_F6,             KC_F7,          KC_F8,           KC_F9,           KC_F10,            KC_TRNS,
+KC_TRNS,       KC_F11,            KC_F12,         KC_F13,          KC_F14,          KC_F15, 
 KC_TRNS,       KC_TRNS,           KC_TRNS,        KC_TRNS,         KC_TRNS,         KC_TRNS,           KC_TRNS,
 KC_TRNS,       KC_TRNS,           KC_TRNS,        KC_TRNS,         KC_TRNS,
                                	                                                    KC_TRNS,           KC_TRNS,
                                                                                                        KC_HOME,
                                                                    KC_SPC,          KC_BSPC,           KC_END,
 // right hand
-KC_TRNS,   KC_TRNS,         KC_TRNS,        KC_TRNS,   KC_TRNS,   KC_TRNS,   KC_TRNS,
+KC_TRNS,   KC_TRNS,         KC_TRNS,        KC_PAUSE,   KC_TRNS,   KC_TRNS,   KC_TRNS,
 KC_TRNS, KC_TRNS,       KC_TRNS,      KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
         KC_TRNS,       KC_TRNS,      KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
 KC_TRNS, KC_TRNS,       KC_TRNS,      KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
@@ -872,8 +699,48 @@ KC_LEFT,     KC_RGHT,
 KC_UP,
 KC_DOWN,     KC_DELT,  KC_ENT
 ),
-
-/* Keymap 3: Reserved Layer
+/* Keymap 4: Mac OS Layer
+ *
+ * ┌───────┬─────┬─────┬─────┬─────┬─────┬─────┐     ┌─────┬─────┬─────┬─────┬─────┬─────┬───────┐
+ * │  Esc  │  1  │  2  │  3  │  4  │  5  │CtFn5│     │  6  │  7  │  8  │  9  │  0  │  -  │   +   │
+ * ├───────┼─────┼─────┼─────┼─────┼─────┼─────┤     ├─────┼─────┼─────┼─────┼─────┼─────┼───────┤
+ * │  Tab  │  Q  │  W  │  E  │  R  │ T[] │  <- │     │ Tg  │  Y  │  U  │  I  │  O  │  P  │   \   │
+ * ├───────┼─────┼─────┼─────┼─────┼─────┤  =  │     │ Mgc ├─────┼─────┼─────┼─────┼─────┼───────┤
+ * │   ~   │  A  │  S  │  D  │  F  │ G{} ├─────┤     ├─────┤  H  │ J[] │ K{} │ L() │  ;  │  ' "  │
+ * ├───────┼─────┼─────┼─────┼─────┼─────┤ Tg  │     │     ├─────┼─────┼─────┼─────┼─────┼───────┤
+ * │  Sft  │  Z  │  X  │  C  │  V  │ B() │ Npd │     │     │  N  │  M  │  ,  │  .  │  /  │ Shift │
+ * └─┬─────┼─────┼─────┼─────┼─────┼─────┴─────┘     └─────┴─────┼─────┼─────┼─────┼─────┼─────┬─┘
+ *   │ Cmd │CtCmd│ Ctl │ App │ ALT │                             │CdSpc│ RCl │  [  │  ]  │ ( ) │
+ *   └─────┴─────┴─────┴─────┴─────┘ ┌─────┬─────┐ ┌─────┬─────┐ └─────┴─────┴─────┴─────┴─────┘
+ *                                   │ TgA │CtEnt│ │ Lft │ Rgt │
+ *                             ┌─────┼─────┼─────┤ ├─────┼─────┼─────┐
+ *                             │     │     │ Hom │ │ Up  │     │     │
+ *                             │ Spc │ Bsp ├─────┤ ├─────┤ Del │ Ent │
+ *                             │     │     │ End │ │ Dwn │     │     │
+ *                             └─────┴─────┴─────┘ └─────┴─────┴─────┘
+ */
+// MOSL
+[MOSL] = KEYMAP(
+// left hand
+KC_ESC,           KC_1,           KC_2,           KC_3,         KC_4,           KC_5,       LGUI(KC_F5), // TG(LKEY),
+KC_TAB,           KC_Q,           KC_W,           KC_E,         KC_R,           KC_T,       ASSIGN_TAP,
+KC_GRV,           KC_A,           KC_S,           KC_D,         KC_F,           KC_G,
+KC_LSFT,          KC_Z,           KC_X,           KC_C,         KC_V,           KC_B,       KC_TRNS,
+KC_RGUI,          CTL_T(KC_RGUI), CTL_T(KC_LCTL), KC_APP,       ALT_T(KC_LALT),
+                                                                        KC_TRNS,          LCTL(KC_ENT),
+                                                                                          KC_HOME,
+                                                      KC_SPC,           KC_BSPC,          KC_END,
+// right hand
+KC_6,             KC_7,           KC_8,       KC_9,         KC_0,             KC_MINUS,         KC_PLUS,
+KC_TRNS,          KC_Y,           KC_U,       KC_I,         KC_O,             KC_P,             KC_BSLS,
+                  KC_H,           KC_J,       KC_K,         KC_L,             KC_SCLN,          D_QUOTE_TAP,
+KC_TRNS,          KC_N,           KC_M,       KC_COMM,      KC_DOT,           KC_SLSH,          KC_RSFT,
+                  LGUI(KC_SPC),   KC_RCTL,    KC_LBRC,      KC_RBRC,          M(16),//KC_FN3,
+KC_LEFT,          KC_RGHT, 
+KC_UP,
+KC_DOWN,          KC_DELT,    KC_ENT
+),
+/* Keymap 5: Reserved Layer
  *
  * ┌───────┬─────┬─────┬─────┬─────┬─────┬─────┐     ┌─────┬─────┬─────┬─────┬─────┬─────┬───────┐
  * │  Esc  │  1  │  2  │  3  │  4  │  5  │CtFn5│     │  6  │  7  │  8  │  9  │  0  │  -  │   +   │
@@ -909,12 +776,12 @@ KC_6,                KC_7,           KC_8,     KC_9,                 KC_0,      
 LCTL(KC_ENT),        KC_Y,           KC_U,     KC_I,                 KC_O,                 KC_P,      KC_BSLS,
                      KC_H,           KC_J,     KC_K,                 KC_L,                 KC_SCLN,   KC_QUOT,
 LCTL(KC_F5),         KC_N,           KC_M,     KC_COMM,              KC_DOT,               KC_SLSH,   KC_RSFT,
-                     KC_RALT,        KC_RCTL,  KC_LBRC,              KC_RBRC,              KC_FN3,
+                     KC_RALT,        KC_RCTL,  KC_LBRC,              KC_RBRC,              M(16),//KC_FN3,
 KC_LEFT,     KC_RGHT, 
 KC_UP,
 KC_DOWN,     KC_DELT,  KC_ENT
 ),
-/* Keymap 3: Linux Key layer
+/* Keymap 6: Linux Key layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
  * |  Esc   |   1  |   2  |   3  |   4  |   5  | TgLk |           |   6  |   7  |   8  |   9  |   0  |   -  |   +    |
