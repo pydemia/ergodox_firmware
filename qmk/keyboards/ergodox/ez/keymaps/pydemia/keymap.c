@@ -578,11 +578,11 @@ KC_DOWN,          KC_DELT,    KC_ENT
  * ┌───────┬─────┬─────┬─────┬─────┬─────┬─────┐     ┌─────┬─────┬─────┬─────┬─────┬─────┬───────┐
  * │ AltF4 │ **  │     │     │ #-- │ #%% │     │     │Calc │     │     │     │     │     │ PrScr │
  * ├───────┼─────┼─────┼─────┼─────┼─────┼─────┤     ├─────┼─────┼─────┼─────┼─────┼─────┼───────┤
- * │       │ SQr │ LQr │ SQr │  (  │  )  │ <-  │     │  +  │  7  │  8  │  9  │  +  │  -  │ MyCom │
+ * │       │ SQr │     │     │  (  │  )  │ <-  │     │  +  │  7  │  8  │  9  │  +  │  -  │ MyCom │
  * ├───────┼─────┼─────┼─────┼─────┼─────┤     │     │     ├─────┼─────┼─────┼─────┼─────┼───────┤
- * │       │DTTM │ DAT │ Dfm │  [  │  ]  ├─────┤     ├─────┤  4  │  5  │  6  │  *  │  /  │       │
+ * │       │ LQr │     │ Dfm │  [  │  ]  ├─────┤     ├─────┤  4  │  5  │  6  │  *  │  /  │       │
  * ├───────┼─────┼─────┼─────┼─────┼─────┤     │     │  -  ├─────┼─────┼─────┼─────┼─────┼───────┤
- * │       │ PIP │ TIM │SIGN │  {  │  }  │     │     │     │  1  │  2  │  3  │  ,  │ Up  │       │
+ * │       │ SQr │     │     │  {  │  }  │     │     │     │  1  │  2  │  3  │  ,  │ Up  │       │
  * └─┬─────┼─────┼─────┼─────┼─────┼─────┴─────┘     └─────┴─────┼─────┼─────┼─────┼─────┼─────┬─┘
  *   │     │     │     │     │     │                             │  0  │  .  │ Lft │ Dwn │ Rgt │
  *   └─────┴─────┴─────┴─────┴─────┘ ┌─────┬─────┐ ┌─────┬─────┐ └─────┴─────┴─────┴─────┴─────┘
@@ -597,9 +597,9 @@ KC_DOWN,          KC_DELT,    KC_ENT
 [NPAD] = KEYMAP( //QMK_VER_KEY
 // left hand
 LALT(KC_F4),      SQLCOMMENT_KEY,    KC_TRNS,        KC_TRNS,          R_FOLDING_KEY,   SPYD_CELL_KEY,   KC_TRNS,
-KC_TRNS,          SQL_NORMAL_KEY,   SQL_LEFT_KEY,    SQL_LEFTSUB_KEY,  KC_LPRN,         KC_RPRN,         ASSIGN_R_KEY,//KC_QUOT,M(1),
-KC_TRNS,          DTTM_STR_KEY,      DT_STR_KEY,     PY_DTFM_KEY,      KC_LBRC,         KC_RBRC,
-KC_TRNS,          PIP_STR_KEY,       TM_STR_KEY,     SIGN_KEY,         KC_LCBR,         KC_RCBR,         KC_TRNS,
+KC_TRNS,          SQL_NORMAL_KEY,    KC_TRNS,        KC_TRNS,          KC_LPRN,         KC_RPRN,         ASSIGN_R_KEY,//KC_QUOT,M(1),
+KC_TRNS,          SQL_LEFT_KEY,      KC_TRNS,        PY_DTFM_KEY,      KC_LBRC,         KC_RBRC,
+KC_TRNS,          SQL_LEFTSUB_KEY,   KC_TRNS,        KC_TRNS,         KC_LCBR,         KC_RCBR,         KC_TRNS,
 KC_TRNS,          KC_TRNS,           KC_TRNS,        KC_TRNS,          KC_TRNS,
                                                                                         KC_TRNS,         LALT(KC_ENT),
                                                                                                          LSFT(KC_HOME),
@@ -615,6 +615,7 @@ LCTL(KC_LEFT),    LCTL(KC_RGHT),
 KC_PGUP,
 KC_PGDN,          KC_DELT,           KC_ENT
 ),
+
 
 /* Keymap 2: Magic Layer
  *
