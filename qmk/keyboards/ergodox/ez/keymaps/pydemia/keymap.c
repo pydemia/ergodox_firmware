@@ -89,9 +89,9 @@ const uint16_t PROGMEM fn_actions[] = {
 #define PIP_STR "pip install --cert=c:/sslproxy.crt "
 
 
-#define DATETIME_STR __DATE__ " " __TIME__ 
+#define DATETIME_STR __DATE__ " " __TIME__
 
-#define SQLCOMMENT 
+#define SQLCOMMENT
 
 // Macro Key
 
@@ -489,7 +489,7 @@ enum {
 //Tap Dance Definitions
 qk_tap_dance_action_t tap_dance_actions[] = {
 
-  [ASSIGN_MARK] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, dance_press_equal, dance_press_rassign), 
+  [ASSIGN_MARK] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, dance_press_equal, dance_press_rassign),
 
   [F01] = ACTION_TAP_DANCE_DOUBLE(KC_1, KC_F1),
   [F02] = ACTION_TAP_DANCE_DOUBLE(KC_2, KC_F2),
@@ -538,7 +538,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ├───────┼─────┼─────┼─────┼─────┼─────┤ Tg  │     │ Tg  ├─────┼─────┼─────┼─────┼─────┼───────┤
  * │  Sft  │  Z  │  X  │  C  │  V  │ B() │ Npd │     │ MOS │  N  │  M  │  ,  │  .  │  /  │ Shift │
  * └─┬─────┼─────┼─────┼─────┼─────┼─────┴─────┘     └─────┴─────┼─────┼─────┼─────┼─────┼─────┬─┘
- *   │ CTL │CtCmd│Wn/Cd│ App │ ALT │                             │ RAt │ RCl │  [  │  ]  │ ( ) │
+ *   │ CTL │ FN2 │Wn/Cd│ App │ ALT │                             │ RAt │ RCl │  [  │  ]  │ ( ) │
  *   └─────┴─────┴─────┴─────┴─────┘ ┌─────┬─────┐ ┌─────┬─────┐ └─────┴─────┴─────┴─────┴─────┘
  *                                   │ TgA │CtEnt│ │ Lft │ Rgt │
  *                             ┌─────┼─────┼─────┤ ├─────┼─────┼─────┐
@@ -558,7 +558,7 @@ KC_ESC,           KC_1,           KC_2,           KC_3,         KC_4,           
 KC_TAB,           KC_Q,           KC_W,           KC_E,         KC_R,           KC_T,       ASSIGN_TAP,
 KC_GRV,           KC_A,           KC_S,           KC_D,         KC_F,           KC_G,
 KC_LSFT,          KC_Z,           KC_X,           KC_C,         KC_V,           KC_B,       KC_FN1,
-CTL_T(KC_LCTL),   KC_FN2,         KC_RGUI,        KC_APP,       ALT_T(KC_LALT),
+CTL_T(KC_LCTL),   KC_FN2,         KC_LGUI,        KC_APP,       ALT_T(KC_LALT),
                                                                         KC_FN3,           LCTL(KC_ENT),
                                                                                           KC_HOME,
                                                       KC_SPC,           KC_BSPC,          KC_END,
@@ -568,7 +568,7 @@ KC_FN2,           KC_Y,       KC_U,       KC_I,         KC_O,             KC_P, 
                   KC_H,       KC_J,       KC_K,         KC_L,             KC_SCLN,          D_QUOTE_TAP,
 KC_FN4,           KC_N,       KC_M,       KC_COMM,      KC_DOT,           KC_SLSH,          KC_RSFT,
                   KC_RALT,    KC_RCTL,    KC_LBRC,      KC_RBRC,          M(16),//KC_FN3,
-KC_LEFT,          KC_RGHT, 
+KC_LEFT,          KC_RGHT,
 KC_UP,
 KC_DOWN,          KC_DELT,    KC_ENT
 ),
@@ -607,7 +607,7 @@ KC_TRNS,          KC_TRNS,           KC_TRNS,        KC_TRNS,          KC_TRNS,
 
 // right hand
 KC_CALC,          KC_TRNS,           KC_TRNS,        KC_TRNS,          KC_TRNS,         KC_TRNS,         KC_PSCREEN,
-KC_PLUS,          KC_7,              KC_8,           KC_9,             KC_PLUS,         KC_MINUS,        KC_MYCM, 
+KC_PLUS,          KC_7,              KC_8,           KC_9,             KC_PLUS,         KC_MINUS,        KC_MYCM,
                   KC_4,              KC_5,           KC_6,             KC_ASTR,         KC_SLSH,         KC_TRNS,
 KC_MINUS,         KC_1,              KC_2,           KC_3,             KC_COMM,         KC_UP,           KC_TRNS,
                   KC_0,              KC_DOT,         KC_LEFT,          KC_DOWN,         KC_RGHT,
@@ -621,11 +621,11 @@ KC_PGDN,          KC_DELT,           KC_ENT
  * ┌───────┬─────┬─────┬─────┬─────┬─────┬─────┐     ┌─────┬─────┬─────┬─────┬─────┬─────┬───────┐
  * │ SIGN  │     │     │     │     │     │     │     │Calc │     │     │     │     │     │ PrScr │
  * ├───────┼─────┼─────┼─────┼─────┼─────┼─────┤     ├─────┼─────┼─────┼─────┼─────┼─────┼───────┤
- * │       │  7  │  8  │  9  │     │     │     │     │  +  │  7  │  8  │  9  │  +  │  -  │ MyCom │
+ * │       │  7  │  8  │  9  │ ( ) │     │     │     │  +  │  7  │  8  │  9  │  +  │  -  │ MyCom │
  * ├───────┼─────┼─────┼─────┼─────┼─────┤     │     │     ├─────┼─────┼─────┼─────┼─────┼───────┤
- * │       │  4  │  5  │  6  │     │     ├─────┤     ├─────┤  4  │  5  │  6  │  *  │  /  │       │
+ * │       │  4  │  5  │  6  │ [ ] │     ├─────┤     ├─────┤  4  │  5  │  6  │  *  │  /  │       │
  * ├───────┼─────┼─────┼─────┼─────┼─────┤     │     │  -  ├─────┼─────┼─────┼─────┼─────┼───────┤
- * │       │  1  │  2  │  3  │  ,  │  .  │     │     │     │  1  │  2  │  3  │  ,  │ Up  │       │
+ * │       │  1  │  2  │  3  │ { } │     │     │     │     │  1  │  2  │  3  │  ,  │ Up  │       │
  * └─┬─────┼─────┼─────┼─────┼─────┼─────┴─────┘     └─────┴─────┼─────┼─────┼─────┼─────┼─────┬─┘
  *   │     │     │  .  │  0  │     │                             │  0  │  .  │ Lft │ Dwn │ Rgt │
  *   └─────┴─────┴─────┴─────┴─────┘ ┌─────┬─────┐ ┌─────┬─────┐ └─────┴─────┴─────┴─────┴─────┘
@@ -640,16 +640,16 @@ KC_PGDN,          KC_DELT,           KC_ENT
 [MAGI] = KEYMAP(
 // left hand
 SIGN_KEY,     KC_TRNS,          KC_TRNS,          KC_TRNS,           KC_TRNS,      KC_TRNS,           KC_TRNS,
-KC_TRNS,      KC_7,             KC_8,             KC_9,              KC_TRNS,      KC_TRNS,           KC_TRNS,
-KC_TRNS,      KC_4,             KC_5,             KC_6,              KC_TRNS,      KC_TRNS,
-KC_TRNS,      KC_1,             KC_2,             KC_3,              KC_COMM,      KC_DOT,            KC_TRNS,
-KC_TRNS,      KC_TRNS,          KC_DOT,           KC_0,              KC_TRNS,
+KC_TRNS,      KC_7,             KC_8,             KC_9,              M(16),        KC_TRNS,             KC_TRNS,
+KC_TRNS,      KC_4,             KC_5,             KC_6,              M(14),        KC_TRNS,
+KC_TRNS,      KC_1,             KC_2,             KC_3,              M(15),        KC_TRNS,             KC_TRNS,
+KC_TRNS,      KC_TRNS,          KC_DOT,           KC_0,              KC_COMM,
                                	                                                   KC_TRNS,           LALT(KC_ENT),
                                                                                                       KC_PGUP,
                                                                      KC_SPC,       KC_BSPC,           KC_PGDN,
 // right hand
 KC_CALC,          KC_TRNS,           KC_TRNS,        KC_TRNS,          KC_TRNS,         KC_TRNS,         KC_PSCREEN,
-KC_PLUS,          KC_7,              KC_8,           KC_9,             KC_PLUS,         KC_MINUS,        KC_MYCM, 
+KC_PLUS,          KC_7,              KC_8,           KC_9,             KC_PLUS,         KC_MINUS,        KC_MYCM,
                   KC_4,              KC_5,           KC_6,             KC_ASTR,         KC_SLSH,         KC_TRNS,
 KC_MINUS,         KC_1,              KC_2,           KC_3,             KC_COMM,         KC_UP,           KC_TRNS,
                   KC_0,              KC_DOT,         KC_LEFT,          KC_DOWN,         KC_RGHT,
@@ -683,7 +683,7 @@ KC_DOWN,          KC_DELT,          KC_ENT
 // left hand
 QMK_VER_KEY,   KC_F1,             KC_F2,          KC_F3,           KC_F4,           KC_F5,             KC_TRNS,
 KC_TRNS,       KC_F6,             KC_F7,          KC_F8,           KC_F9,           KC_F10,            KC_TRNS,
-KC_TRNS,       KC_F11,            KC_F12,         KC_F13,          KC_F14,          KC_F15, 
+KC_TRNS,       KC_F11,            KC_F12,         KC_F13,          KC_F14,          KC_F15,
 KC_TRNS,       KC_TRNS,           KC_TRNS,        KC_TRNS,         KC_TRNS,         KC_TRNS,           KC_TRNS,
 KC_TRNS,       KC_TRNS,           KC_TRNS,        KC_TRNS,         KC_TRNS,
                                	                                                    KC_TRNS,           KC_TRNS,
@@ -722,11 +722,11 @@ KC_DOWN,     KC_DELT,  KC_ENT
 // MOSL
 [MOSL] = KEYMAP(
 // left hand
-KC_ESC,           KC_1,           KC_2,           KC_3,         KC_4,           KC_5,       LGUI(KC_F5), // TG(LKEY),
+KC_ESC,           KC_1,           KC_2,           KC_3,         KC_4,           KC_5,       LSFT(KC_ENT), // TG(LKEY),
 KC_TAB,           KC_Q,           KC_W,           KC_E,         KC_R,           KC_T,       ASSIGN_TAP,
 KC_GRV,           KC_A,           KC_S,           KC_D,         KC_F,           KC_G,
 KC_LSFT,          KC_Z,           KC_X,           KC_C,         KC_V,           KC_B,       KC_TRNS,
-KC_RGUI,          CTL_T(KC_RGUI), CTL_T(KC_LCTL), KC_APP,       ALT_T(KC_LALT),
+CTL_T(KC_LCTL),   KC_TRNS,        KC_LGUI,        KC_APP,       ALT_T(KC_LALT),
                                                                         KC_TRNS,          LCTL(KC_ENT),
                                                                                           KC_HOME,
                                                       KC_SPC,           KC_BSPC,          KC_END,
@@ -735,8 +735,8 @@ KC_6,             KC_7,           KC_8,       KC_9,         KC_0,             KC
 KC_TRNS,          KC_Y,           KC_U,       KC_I,         KC_O,             KC_P,             KC_BSLS,
                   KC_H,           KC_J,       KC_K,         KC_L,             KC_SCLN,          D_QUOTE_TAP,
 KC_TRNS,          KC_N,           KC_M,       KC_COMM,      KC_DOT,           KC_SLSH,          KC_RSFT,
-                  LGUI(KC_SPC),   KC_RCTL,    KC_LBRC,      KC_RBRC,          M(16),//KC_FN3,
-KC_LEFT,          KC_RGHT, 
+                  KC_RALT,        KC_RGUI,    KC_LBRC,      KC_RBRC,          M(16),//KC_FN3,
+KC_LEFT,          KC_RGHT,
 KC_UP,
 KC_DOWN,          KC_DELT,    KC_ENT
 ),
@@ -777,7 +777,7 @@ LCTL(KC_ENT),        KC_Y,           KC_U,     KC_I,                 KC_O,      
                      KC_H,           KC_J,     KC_K,                 KC_L,                 KC_SCLN,   KC_QUOT,
 LCTL(KC_F5),         KC_N,           KC_M,     KC_COMM,              KC_DOT,               KC_SLSH,   KC_RSFT,
                      KC_RALT,        KC_RCTL,  KC_LBRC,              KC_RBRC,              M(16),//KC_FN3,
-KC_LEFT,     KC_RGHT, 
+KC_LEFT,     KC_RGHT,
 KC_UP,
 KC_DOWN,     KC_DELT,  KC_ENT
 ),
@@ -823,7 +823,7 @@ ASSIGN_R_KEY,            KC_Y,           KC_U,     KC_I,                 KC_O,  
                      KC_H,           KC_J,     KC_K,                 KC_L,                 KC_SCLN,   KC_QUOT,
 LCTL(KC_F5),         KC_N,           KC_M,     KC_COMM,              KC_DOT,               KC_SLSH,   LT(KC_RSFT, TG(NPAD)),
                      KC_RALT,        LSFT(KC_SPC),  KC_LBRC,              KC_RBRC,              KC_FN1,
-KC_HOME,     KC_END, 
+KC_HOME,     KC_END,
 KC_PGUP,
 KC_PGDN,     KC_DELT,  KC_ENT
 ),
@@ -869,7 +869,7 @@ ASSIGN_R_KEY,            KC_Y,           KC_U,     KC_I,                 KC_O,  
                      KC_H,           KC_J,     KC_K,                 KC_L,                 KC_SCLN,   KC_QUOT,
 LCTL(KC_F5),         KC_N,           KC_M,     KC_COMM,              KC_DOT,               KC_SLSH,   KC_RSFT,
                      KC_RALT,        LSFT(KC_SPC),  KC_LBRC,              KC_RBRC,              KC_FN1,
-KC_LEFT,     KC_RGHT, 
+KC_LEFT,     KC_RGHT,
 KC_UP,
 KC_DOWN,     KC_DELT,  KC_ENT
 ),
@@ -929,16 +929,16 @@ const char *sql_query = QUOTE(
 char pre_macro_date_to_int(const char *str_pre_macro_date)
 {
     const int comfile_date_len = 12;
- 
+
     // error check
     if (NULL == str_pre_macro_date || comfile_date_len - 1 != strlen(str_pre_macro_date))
         return 0;
- 
+
     const char month_names[] = "JanFebMarAprMayJunJulAugSepOctNovDec";
- 
+
     char s_month[5] = {0,};
     int iyear = 0, iday = 0;
- 
+
     sscanf(str_pre_macro_date, "%s %d %d", s_month, &iday, &iyear);
     int imonth = (strstr(month_names, s_month) - month_names) / 3 + 1;
 
@@ -951,13 +951,13 @@ char pre_macro_date_to_int(const char *str_pre_macro_date)
 int pre_macro_time_to_int(const char *str_pre_macro_time)
 {
     const int comfile_time_len = 9;
- 
+
     if (NULL == str_pre_macro_time || comfile_time_len -1 != strlen(str_pre_macro_time))
         return 0;
- 
+
     int ihour = 0, iminute = 0, isec = 0;
     sscanf(str_pre_macro_time, "%d:%d:%d", &ihour, &iminute, &isec);
- 
+
     // 030511
     return ihour * 10000 + iminute * 100 + isec;
 };
@@ -984,7 +984,7 @@ void matrix_init_user(void) {
     time_t t = time(NULL);
     struct tm *tm = localtime(&t);
     printf("%s\n", asctime(tm));
-    return MACRO_NONE; 
+    return MACRO_NONE;
 }
 */
 // Runs constantly in the background, in a loop.
@@ -999,15 +999,22 @@ void matrix_scan_user(void) {
     switch (layer) {
       // TODO: Make this relevant to the ErgoDox EZ.
         case 1:
+            ergodox_right_led_2_off();
+            ergodox_right_led_3_off();
             ergodox_right_led_1_on();
             break;
         case 2:
+            ergodox_right_led_1_off();
+            ergodox_right_led_3_off();
             ergodox_right_led_2_on();
             break;
         case 3:
+            ergodox_right_led_1_off();
+            ergodox_right_led_2_off();
             ergodox_right_led_3_on();
             break;
         case 4:
+            ergodox_right_led_3_off();
             ergodox_right_led_1_on();
             ergodox_right_led_2_on();
             break;
@@ -1016,5 +1023,3 @@ void matrix_scan_user(void) {
             break;
     }
 }
-
-
