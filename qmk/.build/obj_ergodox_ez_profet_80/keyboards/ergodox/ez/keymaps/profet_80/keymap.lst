@@ -345,7 +345,7 @@
  132               	.LFE126:
  134               		.section	.progmem.data.__c.5228,"a",@progbits
  137               	__c.5228:
- 138 0000 6572 676F 		.string	"ergodox/profet_80 @ feca29-dirty"
+ 138 0000 6572 676F 		.string	"ergodox/profet_80 @ f4e7ce-dirty"
  138      646F 782F 
  138      7072 6F66 
  138      6574 5F38 
@@ -624,17 +624,17 @@
  414               		.file 12 "./tmk_core/common/util.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 keymap.c
-     /tmp/ccAi9XjE.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccAi9XjE.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccAi9XjE.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccAi9XjE.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccAi9XjE.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccAi9XjE.s:13     .text.action_get_macro:0000000000000000 action_get_macro
-     /tmp/ccAi9XjE.s:137    .progmem.data.__c.5228:0000000000000000 __c.5228
-     /tmp/ccAi9XjE.s:48     .text.matrix_init_user:0000000000000000 matrix_init_user
-     /tmp/ccAi9XjE.s:63     .text.matrix_scan_user:0000000000000000 matrix_scan_user
-     /tmp/ccAi9XjE.s:143    .progmem.data.fn_actions:0000000000000000 fn_actions
-     /tmp/ccAi9XjE.s:150    .progmem.data.keymaps:0000000000000000 keymaps
+     /tmp/ccaUzMJd.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccaUzMJd.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccaUzMJd.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccaUzMJd.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccaUzMJd.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccaUzMJd.s:13     .text.action_get_macro:0000000000000000 action_get_macro
+     /tmp/ccaUzMJd.s:137    .progmem.data.__c.5228:0000000000000000 __c.5228
+     /tmp/ccaUzMJd.s:48     .text.matrix_init_user:0000000000000000 matrix_init_user
+     /tmp/ccaUzMJd.s:63     .text.matrix_scan_user:0000000000000000 matrix_scan_user
+     /tmp/ccaUzMJd.s:143    .progmem.data.fn_actions:0000000000000000 fn_actions
+     /tmp/ccaUzMJd.s:150    .progmem.data.keymaps:0000000000000000 keymaps
 
 UNDEFINED SYMBOLS
 send_string
