@@ -180,18 +180,34 @@
  182 00a7 00        		.byte	0
  183               		.text
  184               	.Letext0:
- 185               		.file 1 "./tmk_core/common/keyboard.h"
- 186               		.file 2 "/usr/lib/avr/include/stdint.h"
- 187               		.file 3 "keyboards/ergodox/ergodox.c"
- 188               		.file 4 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.h"
+ 185               		.file 1 "/usr/local/Cellar/avr-gcc/8.1.0/avr/include/stdint.h"
+ 186               		.file 2 "/usr/local/Cellar/avr-gcc/8.1.0/lib/avr-gcc/8/gcc/avr/8.1.0/include/stddef.h"
+ 187               		.file 3 "./tmk_core/common/keyboard.h"
+ 188               		.file 4 "./tmk_core/common/action.h"
+ 189               		.file 5 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../StdRequestType.h"
+ 190               		.file 6 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../DeviceStandardReq.h"
+ 191               		.file 7 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.h"
+ 192               		.file 8 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/HostStandardReq.h"
+ 193               		.file 9 "/usr/local/Cellar/avr-gcc/8.1.0/avr/include/stdio.h"
+ 194               		.file 10 "./tmk_core/common/report.h"
+ 195               		.file 11 "./tmk_core/common/host.h"
+ 196               		.file 12 "./tmk_core/common/debug.h"
+ 197               		.file 13 "./quantum/keycode_config.h"
+ 198               		.file 14 "./quantum/keymap.h"
+ 199               		.file 15 "./tmk_core/common/action_layer.h"
+ 200               		.file 16 "./tmk_core/common/timer.h"
+ 201               		.file 17 "./tmk_core/common/action_util.h"
+ 202               		.file 18 "/usr/local/Cellar/avr-gcc/8.1.0/avr/include/stdlib.h"
+ 203               		.file 19 "keyboards/ergodox/ez/ez.h"
+ 204               		.file 20 "keyboards/ergodox/ergodox.c"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 ergodox.c
-     /tmp/ccYj0Xs3.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccYj0Xs3.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccYj0Xs3.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccYj0Xs3.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccYj0Xs3.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccYj0Xs3.s:14     .rodata.hand_swap_config:0000000000000000 hand_swap_config
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//cc7tdwgJ.s:2      *ABS*:000000000000003e __SP_H__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//cc7tdwgJ.s:3      *ABS*:000000000000003d __SP_L__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//cc7tdwgJ.s:4      *ABS*:000000000000003f __SREG__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//cc7tdwgJ.s:5      *ABS*:0000000000000000 __tmp_reg__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//cc7tdwgJ.s:6      *ABS*:0000000000000001 __zero_reg__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//cc7tdwgJ.s:14     .rodata.hand_swap_config:0000000000000000 hand_swap_config
 
 UNDEFINED SYMBOLS
 __do_copy_data

@@ -1,0 +1,651 @@
+   1               		.file	"keymap.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.section	.text.action_get_macro,"ax",@progbits
+  11               	.global	action_get_macro
+  13               	action_get_macro:
+  14               	.LVL0:
+  15               	.LFB128:
+  16               		.file 1 "layouts/community/ergodox/adam/keymap.c"
+   1:layouts/community/ergodox/adam/keymap.c **** #include QMK_KEYBOARD_H
+   2:layouts/community/ergodox/adam/keymap.c **** #include "debug.h"
+   3:layouts/community/ergodox/adam/keymap.c **** #include "action_layer.h"
+   4:layouts/community/ergodox/adam/keymap.c **** #include "version.h"
+   5:layouts/community/ergodox/adam/keymap.c **** 
+   6:layouts/community/ergodox/adam/keymap.c **** 
+   7:layouts/community/ergodox/adam/keymap.c **** #define BASE 0 // default layer
+   8:layouts/community/ergodox/adam/keymap.c **** #define FLOCK 1 // symbols arrows and F keys on F held down
+   9:layouts/community/ergodox/adam/keymap.c **** #define JLOCK 2 // same as Flock but with fall thru J and mapped to J held down
+  10:layouts/community/ergodox/adam/keymap.c **** #define CAPLOCK 3 //caps on until space / enter / esc
+  11:layouts/community/ergodox/adam/keymap.c **** #define SFLOCK 11 // symbols arrows and F keys on F held down
+  12:layouts/community/ergodox/adam/keymap.c **** #define SJLOCK 12 // same as Flock but with fall thru J and mapped to J held down
+  13:layouts/community/ergodox/adam/keymap.c **** 
+  14:layouts/community/ergodox/adam/keymap.c **** // Sends macro when key is tapped, presses mod when key is held
+  15:layouts/community/ergodox/adam/keymap.c **** #define tap_mod_macro(record, mod, macro) ( ((record)->event.pressed) ? \
+  16:layouts/community/ergodox/adam/keymap.c ****      ( ((record)->tap.count <= 0 || (record)->tap.interrupted) ? MACRO(D(mod), END) : MACRO_NONE ) 
+  17:layouts/community/ergodox/adam/keymap.c ****      ( ((record)->tap.count > 0 && !((record)->tap.interrupted)) ? (macro) : MACRO(U(mod), END) ) )
+  18:layouts/community/ergodox/adam/keymap.c **** 
+  19:layouts/community/ergodox/adam/keymap.c **** #define tap_mod_shift(record, mod, macro) ( ((record)->event.pressed) ? \
+  20:layouts/community/ergodox/adam/keymap.c ****           ( ((record)->tap.count <= 0 || (record)->tap.interrupted) ? MACRO(D(mod), END) : MACRO_NO
+  21:layouts/community/ergodox/adam/keymap.c ****           ( ((record)->tap.count > 0 && !((record)->tap.interrupted)) ? (MACRO( D(LSFT), T(LBRC), U
+  22:layouts/community/ergodox/adam/keymap.c **** 
+  23:layouts/community/ergodox/adam/keymap.c **** const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+  24:layouts/community/ergodox/adam/keymap.c **** /* Layout
+  25:layouts/community/ergodox/adam/keymap.c ****  *
+  26:layouts/community/ergodox/adam/keymap.c ****  * ,--------------------------------------------------.           ,--------------------------------
+  27:layouts/community/ergodox/adam/keymap.c ****  * |        |   1  |   2  |   3  |   4  |   5  |      |           |      |   6  |   7  |   8  |   9
+  28:layouts/community/ergodox/adam/keymap.c ****  * |--------+------+------+------+------+-------------|           |------+------+------+------+----
+  29:layouts/community/ergodox/adam/keymap.c ****  * |        |   Q  |   W  |   E  |   R  |   T  |      |           |      |   Y  |   U  |   I  |   O
+  30:layouts/community/ergodox/adam/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
+  31:layouts/community/ergodox/adam/keymap.c ****  * |        |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L
+  32:layouts/community/ergodox/adam/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
+  33:layouts/community/ergodox/adam/keymap.c ****  * |        |  Z   |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .
+  34:layouts/community/ergodox/adam/keymap.c ****  * `--------+------+------+------+------+-------------'           `-------------+------+------+----
+  35:layouts/community/ergodox/adam/keymap.c ****  *   |       |     |      |      |      |                                       |      |      |    
+  36:layouts/community/ergodox/adam/keymap.c ****  *   `----------------------------------'                                       `------------------
+  37:layouts/community/ergodox/adam/keymap.c ****  *                                        ,-------------.       ,-------------.
+  38:layouts/community/ergodox/adam/keymap.c ****  *                                        |      |      |       |      |        |
+  39:layouts/community/ergodox/adam/keymap.c ****  *                                 ,------|------|------|       |------+--------+------.
+  40:layouts/community/ergodox/adam/keymap.c ****  *                                 |      |      |      |       |      |        |      |
+  41:layouts/community/ergodox/adam/keymap.c ****  *                                 |      |      |------|       |------|        |      |
+  42:layouts/community/ergodox/adam/keymap.c ****  *                                 |      |      |      |       |      |        |      |
+  43:layouts/community/ergodox/adam/keymap.c ****  *                                 `--------------------'       `----------------------'
+  44:layouts/community/ergodox/adam/keymap.c ****  */
+  45:layouts/community/ergodox/adam/keymap.c ****         [BASE] = LAYOUT_ergodox(
+  46:layouts/community/ergodox/adam/keymap.c ****                 // left hand
+  47:layouts/community/ergodox/adam/keymap.c ****                 GUI_T(KC_ESC), KC_1, KC_2, KC_3, KC_4, KC_5, KC_MINS,
+  48:layouts/community/ergodox/adam/keymap.c ****                 _______, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_TAB,
+  49:layouts/community/ergodox/adam/keymap.c ****                 _______, SFT_T(KC_A), ALT_T(KC_S), CTL_T(KC_D), F(FLOCK), GUI_T(KC_G),
+  50:layouts/community/ergodox/adam/keymap.c ****                 _______, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_BSPC,
+  51:layouts/community/ergodox/adam/keymap.c ****                 _______, _______,  _______,  _______ ,_______,
+  52:layouts/community/ergodox/adam/keymap.c ****                 _______,  _______,
+  53:layouts/community/ergodox/adam/keymap.c ****                 _______,
+  54:layouts/community/ergodox/adam/keymap.c ****                 KC_SPC, _______, _______ ,
+  55:layouts/community/ergodox/adam/keymap.c **** 
+  56:layouts/community/ergodox/adam/keymap.c ****                 // right hand
+  57:layouts/community/ergodox/adam/keymap.c ****                 KC_EQL,     KC_6,   KC_7,   KC_8,   KC_9,   KC_0,             _______,
+  58:layouts/community/ergodox/adam/keymap.c ****                 KC_TAB,     KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,             _______,
+  59:layouts/community/ergodox/adam/keymap.c ****                 GUI_T(KC_H),   F(JLOCK),   CTL_T(KC_K),   ALT_T(KC_L),   SFT_T(KC_SCLN),           
+  60:layouts/community/ergodox/adam/keymap.c ****                 KC_DELETE,  KC_N,   KC_M,   KC_COMM,KC_DOT, KC_QUOT,           _______,
+  61:layouts/community/ergodox/adam/keymap.c ****                 _______,  _______,_______,_______,          _______,
+  62:layouts/community/ergodox/adam/keymap.c ****                 _______,        _______,
+  63:layouts/community/ergodox/adam/keymap.c ****                 _______,
+  64:layouts/community/ergodox/adam/keymap.c ****                 _______,_______, KC_ENT
+  65:layouts/community/ergodox/adam/keymap.c ****         ),
+  66:layouts/community/ergodox/adam/keymap.c ****         [FLOCK] = LAYOUT_ergodox(
+  67:layouts/community/ergodox/adam/keymap.c ****                 // left hand
+  68:layouts/community/ergodox/adam/keymap.c ****                 XXXXXXX,   KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F11,
+  69:layouts/community/ergodox/adam/keymap.c ****                 XXXXXXX,KC_LBRC,XXXXXXX,  XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,
+  70:layouts/community/ergodox/adam/keymap.c ****                 XXXXXXX,S(KC_LBRC),XXXXXXX, XXXXXXX,_______,XXXXXXX,
+  71:layouts/community/ergodox/adam/keymap.c ****                 XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,TO(CAPLOCK),XXXXXXX,
+  72:layouts/community/ergodox/adam/keymap.c ****                 XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,
+  73:layouts/community/ergodox/adam/keymap.c ****                 XXXXXXX,XXXXXXX,
+  74:layouts/community/ergodox/adam/keymap.c ****                 XXXXXXX,
+  75:layouts/community/ergodox/adam/keymap.c ****                 KC_ESC,XXXXXXX,XXXXXXX,
+  76:layouts/community/ergodox/adam/keymap.c ****                 // right hand
+  77:layouts/community/ergodox/adam/keymap.c ****                 KC_F12, KC_F6,   KC_F7,  KC_F8,   KC_F9,   KC_F10,  XXXXXXX,
+  78:layouts/community/ergodox/adam/keymap.c ****                 XXXXXXX, XXXXXXX, KC_HOME,   KC_PGUP,    XXXXXXX,    KC_RBRC, XXXXXXX,
+  79:layouts/community/ergodox/adam/keymap.c ****                 KC_LEFT, KC_DOWN,   KC_UP,    KC_RIGHT,    S(KC_RBRC), XXXXXXX,
+  80:layouts/community/ergodox/adam/keymap.c ****                 XXXXXXX, XXXXXXX, KC_END,   KC_PGDOWN,    KC_QUES,    KC_SLSH, XXXXXXX,
+  81:layouts/community/ergodox/adam/keymap.c ****                 XXXXXXX, XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,
+  82:layouts/community/ergodox/adam/keymap.c ****                 XXXXXXX, XXXXXXX,
+  83:layouts/community/ergodox/adam/keymap.c ****                 XXXXXXX,
+  84:layouts/community/ergodox/adam/keymap.c ****                 XXXXXXX, XXXXXXX, XXXXXXX
+  85:layouts/community/ergodox/adam/keymap.c ****         ),
+  86:layouts/community/ergodox/adam/keymap.c ****         [JLOCK] = LAYOUT_ergodox(
+  87:layouts/community/ergodox/adam/keymap.c ****                 // left hand
+  88:layouts/community/ergodox/adam/keymap.c ****                 XXXXXXX,   KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F11,
+  89:layouts/community/ergodox/adam/keymap.c ****                 XXXXXXX,KC_LBRC,KC_GRV,  KC_TILD,XXXXXXX,XXXXXXX,XXXXXXX,
+  90:layouts/community/ergodox/adam/keymap.c ****                 XXXXXXX,S(KC_LBRC),XXXXXXX, XXXXXXX,XXXXXXX,XXXXXXX,
+  91:layouts/community/ergodox/adam/keymap.c ****                 XXXXXXX,KC_BSLS,KC_PIPE,XXXXXXX,XXXXXXX,TO(CAPLOCK),XXXXXXX,
+  92:layouts/community/ergodox/adam/keymap.c ****                 XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,
+  93:layouts/community/ergodox/adam/keymap.c ****                 XXXXXXX,XXXXXXX,
+  94:layouts/community/ergodox/adam/keymap.c ****                 XXXXXXX,
+  95:layouts/community/ergodox/adam/keymap.c ****                 KC_ESC,XXXXXXX,XXXXXXX,
+  96:layouts/community/ergodox/adam/keymap.c ****                 // right hand
+  97:layouts/community/ergodox/adam/keymap.c ****                 KC_F12, KC_F6,   KC_F7,  KC_F8,   KC_F9,   KC_F10,  XXXXXXX,
+  98:layouts/community/ergodox/adam/keymap.c ****                   XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX,    XXXXXXX,    KC_RBRC, XXXXXXX,
+  99:layouts/community/ergodox/adam/keymap.c ****                 XXXXXXX, _______,   XXXXXXX,  XXXXXXX,    S(KC_RBRC), XXXXXXX,
+ 100:layouts/community/ergodox/adam/keymap.c ****                 XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX,    XXXXXXX,    XXXXXXX, XXXXXXX,
+ 101:layouts/community/ergodox/adam/keymap.c ****                 XXXXXXX,XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,
+ 102:layouts/community/ergodox/adam/keymap.c ****                 XXXXXXX, XXXXXXX,
+ 103:layouts/community/ergodox/adam/keymap.c ****                 XXXXXXX,
+ 104:layouts/community/ergodox/adam/keymap.c ****                 XXXXXXX, XXXXXXX, XXXXXXX
+ 105:layouts/community/ergodox/adam/keymap.c ****         ),
+ 106:layouts/community/ergodox/adam/keymap.c ****         [CAPLOCK] = LAYOUT_ergodox(
+ 107:layouts/community/ergodox/adam/keymap.c ****                 // left hand
+ 108:layouts/community/ergodox/adam/keymap.c ****                 TO(BASE), _______, _______, _______, _______, _______, _______,
+ 109:layouts/community/ergodox/adam/keymap.c ****                 _______, S(KC_Q), S(KC_W), S(KC_E), S(KC_R), S(KC_T), _______,
+ 110:layouts/community/ergodox/adam/keymap.c ****                 // _______, SFT_T(S(KC_A)), ALT_T(KC_S), CTL_T(KC_D), F(FLOCK), GUI_T(KC_G),
+ 111:layouts/community/ergodox/adam/keymap.c ****                 _______, S(KC_A), S(KC_S), S(KC_D), S(KC_F), S(KC_G),
+ 112:layouts/community/ergodox/adam/keymap.c ****                 _______, S(KC_Z), S(KC_X), S(KC_C), S(KC_V), S(KC_B), _______,
+ 113:layouts/community/ergodox/adam/keymap.c ****                 _______, _______,  _______,  _______ ,_______,
+ 114:layouts/community/ergodox/adam/keymap.c ****                 _______,  _______,
+ 115:layouts/community/ergodox/adam/keymap.c ****                 _______,
+ 116:layouts/community/ergodox/adam/keymap.c ****                 TO(BASE), _______, _______ ,
+ 117:layouts/community/ergodox/adam/keymap.c **** 
+ 118:layouts/community/ergodox/adam/keymap.c ****                 // right hand
+ 119:layouts/community/ergodox/adam/keymap.c ****                 _______,     _______,   _______,   _______,   _______,   _______,             _____
+ 120:layouts/community/ergodox/adam/keymap.c ****                 _______,     S(KC_Y),   S(KC_U),   S(KC_I),   S(KC_O),   S(KC_P),             _____
+ 121:layouts/community/ergodox/adam/keymap.c ****                          S(KC_H),   S(KC_J),   S(KC_K),   S(KC_L),   S(KC_SCLN),           _______,
+ 122:layouts/community/ergodox/adam/keymap.c ****                 _______,  S(KC_N),   S(KC_M),   S(KC_COMM),S(KC_DOT), S(KC_QUOT),           _______
+ 123:layouts/community/ergodox/adam/keymap.c ****                 _______,  _______,_______,_______,          _______,
+ 124:layouts/community/ergodox/adam/keymap.c ****                 _______,        _______,
+ 125:layouts/community/ergodox/adam/keymap.c ****                 _______,
+ 126:layouts/community/ergodox/adam/keymap.c ****                 _______,_______, TO(BASE)
+ 127:layouts/community/ergodox/adam/keymap.c ****         )
+ 128:layouts/community/ergodox/adam/keymap.c **** };
+ 129:layouts/community/ergodox/adam/keymap.c **** 
+ 130:layouts/community/ergodox/adam/keymap.c **** const uint16_t PROGMEM fn_actions[] = {
+ 131:layouts/community/ergodox/adam/keymap.c ****         [1] = ACTION_LAYER_TAP_KEY(FLOCK,KC_F),
+ 132:layouts/community/ergodox/adam/keymap.c ****         [2] = ACTION_LAYER_TAP_KEY(JLOCK,KC_J),
+ 133:layouts/community/ergodox/adam/keymap.c ****         [11] = ACTION_LAYER_TAP_KEY(FLOCK,LSFT(KC_F)),
+ 134:layouts/community/ergodox/adam/keymap.c ****         [12] = ACTION_LAYER_TAP_KEY(JLOCK,LSFT(KC_J))
+ 135:layouts/community/ergodox/adam/keymap.c **** };
+ 136:layouts/community/ergodox/adam/keymap.c **** 
+ 137:layouts/community/ergodox/adam/keymap.c **** const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
+ 138:layouts/community/ergodox/adam/keymap.c **** {
+  17               		.loc 1 138 1 view -0
+  18               		.cfi_startproc
+  19               	/* prologue: function */
+  20               	/* frame size = 0 */
+  21               	/* stack size = 0 */
+  22               	.L__stack_usage = 0
+ 139:layouts/community/ergodox/adam/keymap.c ****         // MACRODOWN only works in this function
+ 140:layouts/community/ergodox/adam/keymap.c ****         switch(id) {
+  23               		.loc 1 140 9 view .LVU1
+  24 0000 6111      		cpse r22,__zero_reg__
+  25 0002 00C0      		rjmp .L2
+ 141:layouts/community/ergodox/adam/keymap.c ****         case 0:
+ 142:layouts/community/ergodox/adam/keymap.c ****                 if (record->event.pressed) {
+  26               		.loc 1 142 17 view .LVU2
+  27               		.loc 1 142 20 is_stmt 0 view .LVU3
+  28 0004 FC01      		movw r30,r24
+  29 0006 8281      		ldd r24,Z+2
+  30               	.LVL1:
+  31               		.loc 1 142 20 view .LVU4
+  32 0008 8823      		tst r24
+  33 000a 01F0      		breq .L2
+ 143:layouts/community/ergodox/adam/keymap.c ****                         SEND_STRING (QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION);
+  34               		.loc 1 143 25 is_stmt 1 view .LVU5
+  35               	.LBB2:
+  36               		.loc 1 143 25 view .LVU6
+  37               		.loc 1 143 25 view .LVU7
+  38               	.LBE2:
+  39 000c 80E0      		ldi r24,lo8(__c.6056)
+  40 000e 90E0      		ldi r25,hi8(__c.6056)
+  41 0010 0E94 0000 		call send_string_P
+  42               	.LVL2:
+  43               	.L2:
+ 144:layouts/community/ergodox/adam/keymap.c ****                 }
+ 145:layouts/community/ergodox/adam/keymap.c ****                 break;
+ 146:layouts/community/ergodox/adam/keymap.c ****         }
+ 147:layouts/community/ergodox/adam/keymap.c **** 
+ 148:layouts/community/ergodox/adam/keymap.c ****         return MACRO_NONE;
+  44               		.loc 1 148 9 view .LVU8
+ 149:layouts/community/ergodox/adam/keymap.c **** };
+  45               		.loc 1 149 1 is_stmt 0 view .LVU9
+  46 0014 90E0      		ldi r25,0
+  47 0016 80E0      		ldi r24,0
+  48               	/* epilogue start */
+  49 0018 0895      		ret
+  50               		.cfi_endproc
+  51               	.LFE128:
+  53               		.section	.text.matrix_init_user,"ax",@progbits
+  54               	.global	matrix_init_user
+  56               	matrix_init_user:
+  57               	.LFB129:
+ 150:layouts/community/ergodox/adam/keymap.c **** 
+ 151:layouts/community/ergodox/adam/keymap.c **** // Runs just one time when the keyboard initializes.
+ 152:layouts/community/ergodox/adam/keymap.c **** void matrix_init_user(void) {
+  58               		.loc 1 152 29 is_stmt 1 view -0
+  59               		.cfi_startproc
+  60               	/* prologue: function */
+  61               	/* frame size = 0 */
+  62               	/* stack size = 0 */
+  63               	.L__stack_usage = 0
+ 153:layouts/community/ergodox/adam/keymap.c **** 
+ 154:layouts/community/ergodox/adam/keymap.c **** };
+  64               		.loc 1 154 1 view .LVU11
+  65               	/* epilogue start */
+  66 0000 0895      		ret
+  67               		.cfi_endproc
+  68               	.LFE129:
+  70               		.section	.text.matrix_scan_user,"ax",@progbits
+  71               	.global	matrix_scan_user
+  73               	matrix_scan_user:
+  74               	.LFB130:
+ 155:layouts/community/ergodox/adam/keymap.c **** 
+ 156:layouts/community/ergodox/adam/keymap.c **** 
+ 157:layouts/community/ergodox/adam/keymap.c **** // Runs constantly in the background, in a loop.
+ 158:layouts/community/ergodox/adam/keymap.c **** void matrix_scan_user(void) {
+  75               		.loc 1 158 29 view -0
+  76               		.cfi_startproc
+  77               	/* prologue: function */
+  78               	/* frame size = 0 */
+  79               	/* stack size = 0 */
+  80               	.L__stack_usage = 0
+ 159:layouts/community/ergodox/adam/keymap.c ****   uint8_t layer = biton32(layer_state);
+  81               		.loc 1 159 3 view .LVU13
+  82               		.loc 1 159 19 is_stmt 0 view .LVU14
+  83 0000 6091 0000 		lds r22,layer_state
+  84 0004 7091 0000 		lds r23,layer_state+1
+  85 0008 8091 0000 		lds r24,layer_state+2
+  86 000c 9091 0000 		lds r25,layer_state+3
+  87 0010 0C94 0000 		jmp biton32
+  88               	.LVL3:
+  89               		.cfi_endproc
+  90               	.LFE130:
+  92               		.section	.progmem.data.__c.6056,"a",@progbits
+  95               	__c.6056:
+  96 0000 6572 676F 		.string	"ergodox_ez/adam @ a0258c-dirty"
+  96      646F 785F 
+  96      657A 2F61 
+  96      6461 6D20 
+  96      4020 6130 
+  97               	.global	fn_actions
+  98               		.section	.progmem.data.fn_actions,"a",@progbits
+ 101               	fn_actions:
+ 102 0000 0000      		.zero	2
+ 103 0002 09A1      		.word	-24311
+ 104 0004 0DA2      		.word	-24051
+ 105 0006 0000 0000 		.zero	16
+ 105      0000 0000 
+ 105      0000 0000 
+ 105      0000 0000 
+ 106 0016 09A3      		.word	-23799
+ 107 0018 0DA2      		.word	-24051
+ 108               	.global	keymaps
+ 109               		.section	.progmem.data.keymaps,"a",@progbits
+ 112               	keymaps:
+ 113 0000 2968      		.word	26665
+ 114 0002 0100      		.word	1
+ 115 0004 0100      		.word	1
+ 116 0006 0100      		.word	1
+ 117 0008 0100      		.word	1
+ 118 000a 0000      		.word	0
+ 119 000c 1E00      		.word	30
+ 120 000e 1400      		.word	20
+ 121 0010 0462      		.word	25092
+ 122 0012 1D00      		.word	29
+ 123 0014 0100      		.word	1
+ 124 0016 0100      		.word	1
+ 125 0018 1F00      		.word	31
+ 126 001a 1A00      		.word	26
+ 127 001c 1664      		.word	25622
+ 128 001e 1B00      		.word	27
+ 129 0020 0100      		.word	1
+ 130 0022 0100      		.word	1
+ 131 0024 2000      		.word	32
+ 132 0026 0800      		.word	8
+ 133 0028 0761      		.word	24839
+ 134 002a 0600      		.word	6
+ 135 002c 0100      		.word	1
+ 136 002e 2C00      		.word	44
+ 137 0030 2100      		.word	33
+ 138 0032 1500      		.word	21
+ 139 0034 0120      		.word	8193
+ 140 0036 1900      		.word	25
+ 141 0038 0100      		.word	1
+ 142 003a 0100      		.word	1
+ 143 003c 2200      		.word	34
+ 144 003e 1700      		.word	23
+ 145 0040 0A68      		.word	26634
+ 146 0042 0500      		.word	5
+ 147 0044 0000      		.word	0
+ 148 0046 0100      		.word	1
+ 149 0048 2D00      		.word	45
+ 150 004a 2B00      		.word	43
+ 151 004c 0000      		.word	0
+ 152 004e 2A00      		.word	42
+ 153 0050 0000      		.word	0
+ 154 0052 0100      		.word	1
+ 155 0054 2E00      		.word	46
+ 156 0056 2B00      		.word	43
+ 157 0058 0000      		.word	0
+ 158 005a 4C00      		.word	76
+ 159 005c 0000      		.word	0
+ 160 005e 0100      		.word	1
+ 161 0060 2300      		.word	35
+ 162 0062 1C00      		.word	28
+ 163 0064 0B68      		.word	26635
+ 164 0066 1100      		.word	17
+ 165 0068 0000      		.word	0
+ 166 006a 0100      		.word	1
+ 167 006c 2400      		.word	36
+ 168 006e 1800      		.word	24
+ 169 0070 0220      		.word	8194
+ 170 0072 1000      		.word	16
+ 171 0074 0100      		.word	1
+ 172 0076 0100      		.word	1
+ 173 0078 2500      		.word	37
+ 174 007a 0C00      		.word	12
+ 175 007c 0E61      		.word	24846
+ 176 007e 3600      		.word	54
+ 177 0080 0100      		.word	1
+ 178 0082 2800      		.word	40
+ 179 0084 2600      		.word	38
+ 180 0086 1200      		.word	18
+ 181 0088 0F64      		.word	25615
+ 182 008a 3700      		.word	55
+ 183 008c 0100      		.word	1
+ 184 008e 0100      		.word	1
+ 185 0090 2700      		.word	39
+ 186 0092 1300      		.word	19
+ 187 0094 3362      		.word	25139
+ 188 0096 3400      		.word	52
+ 189 0098 0100      		.word	1
+ 190 009a 0100      		.word	1
+ 191 009c 0100      		.word	1
+ 192 009e 0100      		.word	1
+ 193 00a0 0100      		.word	1
+ 194 00a2 0100      		.word	1
+ 195 00a4 0100      		.word	1
+ 196 00a6 0000      		.word	0
+ 197 00a8 0000      		.word	0
+ 198 00aa 0000      		.word	0
+ 199 00ac 0000      		.word	0
+ 200 00ae 0000      		.word	0
+ 201 00b0 0000      		.word	0
+ 202 00b2 0000      		.word	0
+ 203 00b4 3A00      		.word	58
+ 204 00b6 2F00      		.word	47
+ 205 00b8 2F02      		.word	559
+ 206 00ba 0000      		.word	0
+ 207 00bc 0000      		.word	0
+ 208 00be 0000      		.word	0
+ 209 00c0 3B00      		.word	59
+ 210 00c2 0000      		.word	0
+ 211 00c4 0000      		.word	0
+ 212 00c6 0000      		.word	0
+ 213 00c8 0000      		.word	0
+ 214 00ca 0000      		.word	0
+ 215 00cc 3C00      		.word	60
+ 216 00ce 0000      		.word	0
+ 217 00d0 0000      		.word	0
+ 218 00d2 0000      		.word	0
+ 219 00d4 0000      		.word	0
+ 220 00d6 2900      		.word	41
+ 221 00d8 3D00      		.word	61
+ 222 00da 0000      		.word	0
+ 223 00dc 0100      		.word	1
+ 224 00de 0000      		.word	0
+ 225 00e0 0000      		.word	0
+ 226 00e2 0000      		.word	0
+ 227 00e4 3E00      		.word	62
+ 228 00e6 0000      		.word	0
+ 229 00e8 0000      		.word	0
+ 230 00ea 1350      		.word	20499
+ 231 00ec 0000      		.word	0
+ 232 00ee 0000      		.word	0
+ 233 00f0 4400      		.word	68
+ 234 00f2 0000      		.word	0
+ 235 00f4 0000      		.word	0
+ 236 00f6 0000      		.word	0
+ 237 00f8 0000      		.word	0
+ 238 00fa 0000      		.word	0
+ 239 00fc 4500      		.word	69
+ 240 00fe 0000      		.word	0
+ 241 0100 0000      		.word	0
+ 242 0102 0000      		.word	0
+ 243 0104 0000      		.word	0
+ 244 0106 0000      		.word	0
+ 245 0108 3F00      		.word	63
+ 246 010a 0000      		.word	0
+ 247 010c 5000      		.word	80
+ 248 010e 0000      		.word	0
+ 249 0110 0000      		.word	0
+ 250 0112 0000      		.word	0
+ 251 0114 4000      		.word	64
+ 252 0116 4A00      		.word	74
+ 253 0118 5100      		.word	81
+ 254 011a 4D00      		.word	77
+ 255 011c 0000      		.word	0
+ 256 011e 0000      		.word	0
+ 257 0120 4100      		.word	65
+ 258 0122 4B00      		.word	75
+ 259 0124 5200      		.word	82
+ 260 0126 4E00      		.word	78
+ 261 0128 0000      		.word	0
+ 262 012a 0000      		.word	0
+ 263 012c 4200      		.word	66
+ 264 012e 0000      		.word	0
+ 265 0130 4F00      		.word	79
+ 266 0132 3802      		.word	568
+ 267 0134 0000      		.word	0
+ 268 0136 0000      		.word	0
+ 269 0138 4300      		.word	67
+ 270 013a 3000      		.word	48
+ 271 013c 3002      		.word	560
+ 272 013e 3800      		.word	56
+ 273 0140 0000      		.word	0
+ 274 0142 0000      		.word	0
+ 275 0144 0000      		.word	0
+ 276 0146 0000      		.word	0
+ 277 0148 0000      		.word	0
+ 278 014a 0000      		.word	0
+ 279 014c 0000      		.word	0
+ 280 014e 0000      		.word	0
+ 281 0150 0000      		.word	0
+ 282 0152 0000      		.word	0
+ 283 0154 0000      		.word	0
+ 284 0156 0000      		.word	0
+ 285 0158 0000      		.word	0
+ 286 015a 0000      		.word	0
+ 287 015c 3A00      		.word	58
+ 288 015e 2F00      		.word	47
+ 289 0160 2F02      		.word	559
+ 290 0162 3100      		.word	49
+ 291 0164 0000      		.word	0
+ 292 0166 0000      		.word	0
+ 293 0168 3B00      		.word	59
+ 294 016a 3500      		.word	53
+ 295 016c 0000      		.word	0
+ 296 016e 3102      		.word	561
+ 297 0170 0000      		.word	0
+ 298 0172 0000      		.word	0
+ 299 0174 3C00      		.word	60
+ 300 0176 3502      		.word	565
+ 301 0178 0000      		.word	0
+ 302 017a 0000      		.word	0
+ 303 017c 0000      		.word	0
+ 304 017e 2900      		.word	41
+ 305 0180 3D00      		.word	61
+ 306 0182 0000      		.word	0
+ 307 0184 0000      		.word	0
+ 308 0186 0000      		.word	0
+ 309 0188 0000      		.word	0
+ 310 018a 0000      		.word	0
+ 311 018c 3E00      		.word	62
+ 312 018e 0000      		.word	0
+ 313 0190 0000      		.word	0
+ 314 0192 1350      		.word	20499
+ 315 0194 0000      		.word	0
+ 316 0196 0000      		.word	0
+ 317 0198 4400      		.word	68
+ 318 019a 0000      		.word	0
+ 319 019c 0000      		.word	0
+ 320 019e 0000      		.word	0
+ 321 01a0 0000      		.word	0
+ 322 01a2 0000      		.word	0
+ 323 01a4 4500      		.word	69
+ 324 01a6 0000      		.word	0
+ 325 01a8 0000      		.word	0
+ 326 01aa 0000      		.word	0
+ 327 01ac 0000      		.word	0
+ 328 01ae 0000      		.word	0
+ 329 01b0 3F00      		.word	63
+ 330 01b2 0000      		.word	0
+ 331 01b4 0000      		.word	0
+ 332 01b6 0000      		.word	0
+ 333 01b8 0000      		.word	0
+ 334 01ba 0000      		.word	0
+ 335 01bc 4000      		.word	64
+ 336 01be 0000      		.word	0
+ 337 01c0 0100      		.word	1
+ 338 01c2 0000      		.word	0
+ 339 01c4 0000      		.word	0
+ 340 01c6 0000      		.word	0
+ 341 01c8 4100      		.word	65
+ 342 01ca 0000      		.word	0
+ 343 01cc 0000      		.word	0
+ 344 01ce 0000      		.word	0
+ 345 01d0 0000      		.word	0
+ 346 01d2 0000      		.word	0
+ 347 01d4 4200      		.word	66
+ 348 01d6 0000      		.word	0
+ 349 01d8 0000      		.word	0
+ 350 01da 0000      		.word	0
+ 351 01dc 0000      		.word	0
+ 352 01de 0000      		.word	0
+ 353 01e0 4300      		.word	67
+ 354 01e2 3000      		.word	48
+ 355 01e4 3002      		.word	560
+ 356 01e6 0000      		.word	0
+ 357 01e8 0000      		.word	0
+ 358 01ea 0000      		.word	0
+ 359 01ec 0000      		.word	0
+ 360 01ee 0000      		.word	0
+ 361 01f0 0000      		.word	0
+ 362 01f2 0000      		.word	0
+ 363 01f4 0000      		.word	0
+ 364 01f6 0000      		.word	0
+ 365 01f8 1050      		.word	20496
+ 366 01fa 0100      		.word	1
+ 367 01fc 0100      		.word	1
+ 368 01fe 0100      		.word	1
+ 369 0200 0100      		.word	1
+ 370 0202 0000      		.word	0
+ 371 0204 0100      		.word	1
+ 372 0206 1402      		.word	532
+ 373 0208 0402      		.word	516
+ 374 020a 1D02      		.word	541
+ 375 020c 0100      		.word	1
+ 376 020e 0100      		.word	1
+ 377 0210 0100      		.word	1
+ 378 0212 1A02      		.word	538
+ 379 0214 1602      		.word	534
+ 380 0216 1B02      		.word	539
+ 381 0218 0100      		.word	1
+ 382 021a 0100      		.word	1
+ 383 021c 0100      		.word	1
+ 384 021e 0802      		.word	520
+ 385 0220 0702      		.word	519
+ 386 0222 0602      		.word	518
+ 387 0224 0100      		.word	1
+ 388 0226 1050      		.word	20496
+ 389 0228 0100      		.word	1
+ 390 022a 1502      		.word	533
+ 391 022c 0902      		.word	521
+ 392 022e 1902      		.word	537
+ 393 0230 0100      		.word	1
+ 394 0232 0100      		.word	1
+ 395 0234 0100      		.word	1
+ 396 0236 1702      		.word	535
+ 397 0238 0A02      		.word	522
+ 398 023a 0502      		.word	517
+ 399 023c 0000      		.word	0
+ 400 023e 0100      		.word	1
+ 401 0240 0100      		.word	1
+ 402 0242 0100      		.word	1
+ 403 0244 0000      		.word	0
+ 404 0246 0100      		.word	1
+ 405 0248 0000      		.word	0
+ 406 024a 0100      		.word	1
+ 407 024c 0100      		.word	1
+ 408 024e 0100      		.word	1
+ 409 0250 0000      		.word	0
+ 410 0252 0100      		.word	1
+ 411 0254 0000      		.word	0
+ 412 0256 0100      		.word	1
+ 413 0258 0100      		.word	1
+ 414 025a 1C02      		.word	540
+ 415 025c 0B02      		.word	523
+ 416 025e 1102      		.word	529
+ 417 0260 0000      		.word	0
+ 418 0262 0100      		.word	1
+ 419 0264 0100      		.word	1
+ 420 0266 1802      		.word	536
+ 421 0268 0D02      		.word	525
+ 422 026a 1002      		.word	528
+ 423 026c 0100      		.word	1
+ 424 026e 0100      		.word	1
+ 425 0270 0100      		.word	1
+ 426 0272 0C02      		.word	524
+ 427 0274 0E02      		.word	526
+ 428 0276 3602      		.word	566
+ 429 0278 0100      		.word	1
+ 430 027a 1050      		.word	20496
+ 431 027c 0100      		.word	1
+ 432 027e 1202      		.word	530
+ 433 0280 0F02      		.word	527
+ 434 0282 3702      		.word	567
+ 435 0284 0100      		.word	1
+ 436 0286 0100      		.word	1
+ 437 0288 0100      		.word	1
+ 438 028a 1302      		.word	531
+ 439 028c 3302      		.word	563
+ 440 028e 3402      		.word	564
+ 441 0290 0100      		.word	1
+ 442 0292 0100      		.word	1
+ 443 0294 0100      		.word	1
+ 444 0296 0100      		.word	1
+ 445 0298 0100      		.word	1
+ 446 029a 0100      		.word	1
+ 447 029c 0100      		.word	1
+ 448 029e 0000      		.word	0
+ 449               		.text
+ 450               	.Letext0:
+ 451               		.file 2 "/usr/local/Cellar/avr-gcc/8.1.0/avr/include/stdint.h"
+ 452               		.file 3 "/usr/local/Cellar/avr-gcc/8.1.0/lib/avr-gcc/8/gcc/avr/8.1.0/include/stddef.h"
+ 453               		.file 4 "tmk_core/common/keyboard.h"
+ 454               		.file 5 "tmk_core/common/keycode.h"
+ 455               		.file 6 "tmk_core/common/action_code.h"
+ 456               		.file 7 "tmk_core/common/action_macro.h"
+ 457               		.file 8 "tmk_core/common/action.h"
+ 458               		.file 9 "lib/lufa/LUFA/Drivers/USB/Core/AVR8/../StdRequestType.h"
+ 459               		.file 10 "lib/lufa/LUFA/Drivers/USB/Core/AVR8/../DeviceStandardReq.h"
+ 460               		.file 11 "lib/lufa/LUFA/Drivers/USB/Core/USBTask.h"
+ 461               		.file 12 "lib/lufa/LUFA/Drivers/USB/Core/HostStandardReq.h"
+ 462               		.file 13 "/usr/local/Cellar/avr-gcc/8.1.0/avr/include/stdio.h"
+ 463               		.file 14 "tmk_core/common/report.h"
+ 464               		.file 15 "tmk_core/common/host.h"
+ 465               		.file 16 "tmk_core/common/debug.h"
+ 466               		.file 17 "quantum/keycode_config.h"
+ 467               		.file 18 "quantum/quantum_keycodes.h"
+ 468               		.file 19 "quantum/keymap.h"
+ 469               		.file 20 "quantum/rgblight_types.h"
+ 470               		.file 21 "quantum/rgblight.h"
+ 471               		.file 22 "tmk_core/common/action_layer.h"
+ 472               		.file 23 "tmk_core/common/timer.h"
+ 473               		.file 24 "tmk_core/common/action_util.h"
+ 474               		.file 25 "/usr/local/Cellar/avr-gcc/8.1.0/avr/include/stdlib.h"
+ 475               		.file 26 "quantum/process_keycode/process_unicode_common.h"
+ 476               		.file 27 "quantum/quantum.h"
+ 477               		.file 28 "drivers/avr/i2c_master.h"
+ 478               		.file 29 "keyboards/ergodox_ez/ergodox_ez.h"
+ 479               		.file 30 "tmk_core/common/util.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 keymap.c
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccUkYhqa.s:2      *ABS*:000000000000003e __SP_H__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccUkYhqa.s:3      *ABS*:000000000000003d __SP_L__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccUkYhqa.s:4      *ABS*:000000000000003f __SREG__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccUkYhqa.s:5      *ABS*:0000000000000000 __tmp_reg__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccUkYhqa.s:6      *ABS*:0000000000000001 __zero_reg__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccUkYhqa.s:13     .text.action_get_macro:0000000000000000 action_get_macro
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccUkYhqa.s:95     .progmem.data.__c.6056:0000000000000000 __c.6056
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccUkYhqa.s:56     .text.matrix_init_user:0000000000000000 matrix_init_user
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccUkYhqa.s:73     .text.matrix_scan_user:0000000000000000 matrix_scan_user
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccUkYhqa.s:101    .progmem.data.fn_actions:0000000000000000 fn_actions
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccUkYhqa.s:112    .progmem.data.keymaps:0000000000000000 keymaps
+
+UNDEFINED SYMBOLS
+send_string_P
+layer_state
+biton32

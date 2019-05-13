@@ -1,0 +1,1 @@
+-Wl,--gc-sections -Wl,-Map=.build/ergodox_ez_adnw_k_o_y.map,--cref     -lm 

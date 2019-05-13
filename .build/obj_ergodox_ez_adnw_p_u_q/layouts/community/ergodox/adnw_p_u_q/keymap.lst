@@ -1,0 +1,911 @@
+   1               		.file	"keymap.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.section	.text.matrix_scan_user_keyboard,"ax",@progbits
+  11               	.global	matrix_scan_user_keyboard
+  13               	matrix_scan_user_keyboard:
+  14               	.LFB128:
+  15               		.file 1 "layouts/community/ergodox/adnw_p_u_q/keymap.c"
+   1:layouts/community/ergodox/adnw_p_u_q/keymap.c **** #include QMK_KEYBOARD_H
+   2:layouts/community/ergodox/adnw_p_u_q/keymap.c **** #include "keymap_german.h"
+   3:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 
+   4:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 
+   5:layouts/community/ergodox/adnw_p_u_q/keymap.c **** #define BASE 0 // default layer / VIM
+   6:layouts/community/ergodox/adnw_p_u_q/keymap.c **** #define ARW 1 // arrow layer / Terminal
+   7:layouts/community/ergodox/adnw_p_u_q/keymap.c **** #define DIAK 2 // diakritika layer
+   8:layouts/community/ergodox/adnw_p_u_q/keymap.c **** #define BRACK 3 // brackets layer
+   9:layouts/community/ergodox/adnw_p_u_q/keymap.c **** #define SYMBOLS 4 // symbols
+  10:layouts/community/ergodox/adnw_p_u_q/keymap.c **** #define MEDIA 5 // media keys / Mouse-Navigation
+  11:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 
+  12:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 
+  13:layouts/community/ergodox/adnw_p_u_q/keymap.c **** const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+  14:layouts/community/ergodox/adnw_p_u_q/keymap.c **** /* Keymap 0: Basic layer / VIM 
+  15:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * ,--------------------------------------------------.           ,--------------------------------
+  16:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |        |   1  |   2  |   3  |   4  |   5  |      |           |      |   6  |   7  |   8  |   9
+  17:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |--------+------+------+------+------+-------------|           |------+------+------+------+----
+  18:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |        |   P  |   U  | Dia-L|   ,  |   Q  |      |           |      |   V  |   C  |   L  |   M
+  19:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |--------+------+------+------+------+------| G    |           | gg   |------+------+------+----
+  20:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * | Symbols|   H  |   I  |   E  |   A  |   O  |------|           |------|   D  |   T  |   R  |   N
+  21:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
+  22:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * | LShift |   K  |   Y  |   .  |   '  |   X  |str-D |           |str-U |   J  |   G  |   Z  |   W
+  23:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * * `--------+------+------+------+------+-------------'           `-------------+------+------+--
+  24:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *   | Ctrl |  Alt |      |      |      |                                       |   H  |   J  |   K
+  25:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *   `----------------------------------'                                       `------------------
+  26:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                    LShift is Tab on Click                                                       
+  27:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                                                                                 
+  28:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                        ,-------------.       ,-------------.
+  29:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                        | ^    | /    |       | ?    | $    |
+  30:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 ,------|------|------|       |------+--------+------.
+  31:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 |      |      |str+a |       |str+c |        |      |
+  32:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 | Brack| Space|------|       |------|  Enter |BSpace| 
+  33:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 | -Lay |/shift| Tab/ |       |      |        |      |
+  34:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 |      |	 |  GUI	|       | ESC  |        |      |
+  35:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 `--------------------'       `----------------------'
+  36:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 GUI is one shot
+  37:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 str + a is for tmux etc.
+  38:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * 				   str + c is for stopping programs
+  39:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  */
+  40:layouts/community/ergodox/adnw_p_u_q/keymap.c **** [BASE] = LAYOUT_ergodox(  // layer 0 : default
+  41:layouts/community/ergodox/adnw_p_u_q/keymap.c ****         // left hand
+  42:layouts/community/ergodox/adnw_p_u_q/keymap.c ****         KC_NO, KC_1, KC_2, KC_3, KC_4, KC_5, KC_NO,
+  43:layouts/community/ergodox/adnw_p_u_q/keymap.c ****         TG(SYMBOLS), DE_P, DE_U, OSL(DIAK), DE_COMM, DE_Q, LSFT(DE_G),
+  44:layouts/community/ergodox/adnw_p_u_q/keymap.c ****         OSL(SYMBOLS), DE_H, DE_I, DE_E, DE_A, DE_O,
+  45:layouts/community/ergodox/adnw_p_u_q/keymap.c ****      	SFT_T(KC_TAB), DE_K, DE_Y, DE_DOT, DE_QUOT, DE_X, LCTL(DE_D),
+  46:layouts/community/ergodox/adnw_p_u_q/keymap.c ****         KC_LCTRL, KC_LALT, KC_NO, KC_NO, KC_NO,
+  47:layouts/community/ergodox/adnw_p_u_q/keymap.c ****         
+  48:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 
+  49:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 	// left hand thumb-cluster
+  50:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                         DE_CIRC, DE_SLSH,
+  51:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 		                 LCTL(DE_A),
+  52:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 	OSL(BRACK), SFT_T(KC_SPACE), GUI_T(KC_TAB),
+  53:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 
+  54:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 
+  55:layouts/community/ergodox/adnw_p_u_q/keymap.c ****         // right hand
+  56:layouts/community/ergodox/adnw_p_u_q/keymap.c ****         KC_NO, KC_6, KC_7, KC_8, KC_9, KC_0, TG(MEDIA),
+  57:layouts/community/ergodox/adnw_p_u_q/keymap.c ****         DE_G, DE_V, DE_C, DE_L, DE_M, DE_B, KC_NO,
+  58:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                   DE_D, DE_T, DE_R, DE_N, DE_S, TG(ARW),
+  59:layouts/community/ergodox/adnw_p_u_q/keymap.c ****         LCTL(DE_U), DE_J, DE_G, DE_Z, DE_W, DE_F, KC_RSFT,
+  60:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                          KC_H, KC_J, KC_K, KC_L, KC_RCTRL,
+  61:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 
+  62:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 	// right thumb-cluster
+  63:layouts/community/ergodox/adnw_p_u_q/keymap.c ****         DE_QST, DE_DLR,
+  64:layouts/community/ergodox/adnw_p_u_q/keymap.c ****         LCTL(DE_C),
+  65:layouts/community/ergodox/adnw_p_u_q/keymap.c ****         KC_ESCAPE, KC_ENTER, KC_BSPACE
+  66:layouts/community/ergodox/adnw_p_u_q/keymap.c **** ),
+  67:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 
+  68:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 
+  69:layouts/community/ergodox/adnw_p_u_q/keymap.c **** /* Keymap 1: Arrow Layer / Terminal
+  70:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *
+  71:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * ,--------------------------------------------------.           ,--------------------------------
+  72:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |        |      |      |      |      |      |      |           |      |      |      |      |    
+  73:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |--------+------+------+------+------+-------------|           |------+------+------+------+----
+  74:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |        |      |      |      |      |      |      |           |      |      |      |      |    
+  75:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
+  76:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |        |      |      |      |      |      |------|           |------|      |      |      |    
+  77:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
+  78:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |        |      |      |      |      |      |P-Down|           |P-Up  |      |      |      |    
+  79:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * `--------+------+------+------+------+-------------'           `-------------+------+------+----
+  80:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *   |      |      |      |      |      |                                       | Left | Bot  | Top
+  81:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *   `----------------------------------'                                       `------------------
+  82:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                        ,-------------.       ,-------------.
+  83:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                        | Home |      |       |      | End  |
+  84:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 ,------|------|------|       |------+------+------.
+  85:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 |      |      |      |       |      |      |      |
+  86:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 |      |      |------|       |------|      |      |
+  87:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 |      |      |      |       |      |      |      |
+  88:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 `--------------------'       `--------------------'
+  89:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  */
+  90:layouts/community/ergodox/adnw_p_u_q/keymap.c **** // Arrows
+  91:layouts/community/ergodox/adnw_p_u_q/keymap.c **** [ARW] = LAYOUT_ergodox(
+  92:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+  93:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+  94:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+  95:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_PGDOWN,
+  96:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+  97:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                                            KC_HOME, KC_TRNS,
+  98:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                                                     KC_TRNS,
+  99:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                                   KC_TRNS, KC_TRNS, KC_TRNS,
+ 100:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 
+ 101:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        // right hand
+ 102:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 103:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 104:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        	         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 105:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_PGUP,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 106:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                           KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, KC_TRNS,
+ 107:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_END,
+ 108:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS,
+ 109:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS, KC_TRNS 
+ 110:layouts/community/ergodox/adnw_p_u_q/keymap.c **** ),
+ 111:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 
+ 112:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 
+ 113:layouts/community/ergodox/adnw_p_u_q/keymap.c **** /* Keymap 2: Diakritika Layer
+ 114:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *
+ 115:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * ,--------------------------------------------------.           ,--------------------------------
+ 116:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |        |      |      |      |      |      |      |           |      |      |      |      |    
+ 117:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |--------+------+------+------+------+-------------|           |------+------+------+------+----
+ 118:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |        |      |   Ü  |      |      |      |      |           |      |      |      |      |   
+ 119:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
+ 120:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |        |      |      |      |   Ä  |   Ö  |------|           |------|      |      |      |  
+ 121:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
+ 122:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |        |      |      |      |      |      |      |           |      |      |      |      |    
+ 123:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * `--------+------+------+------+------+-------------'           `-------------+------+------+----
+ 124:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *   |      |      |      |      |      |                                       |      |      |    
+ 125:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *   `----------------------------------'                                       `------------------
+ 126:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                        ,-------------.       ,-------------.
+ 127:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                        |      |      |       |      |      |
+ 128:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 ,------|------|------|       |------+------+------.
+ 129:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 |      |      |      |       |      |      |      |
+ 130:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 |      |      |------|       |------|      |      |
+ 131:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 |      |      |      |       |      |      |      |
+ 132:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 `--------------------'       `--------------------'
+ 133:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  */
+ 134:layouts/community/ergodox/adnw_p_u_q/keymap.c **** // Diakritika
+ 135:layouts/community/ergodox/adnw_p_u_q/keymap.c **** [DIAK] = LAYOUT_ergodox(
+ 136:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 137:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS, DE_UE, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 138:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, DE_AE, DE_OE,
+ 139:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 140:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 141:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                                            KC_TRNS, KC_TRNS,
+ 142:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                                                     KC_TRNS,
+ 143:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                                   KC_TRNS, KC_TRNS, KC_TRNS,
+ 144:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 
+ 145:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        // right hand
+ 146:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 147:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 148:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        	         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, DE_SS, KC_TRNS,
+ 149:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 150:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                           KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 151:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS,
+ 152:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS,
+ 153:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS, KC_TRNS 
+ 154:layouts/community/ergodox/adnw_p_u_q/keymap.c **** ),
+ 155:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 
+ 156:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 
+ 157:layouts/community/ergodox/adnw_p_u_q/keymap.c **** /* Keymap 3: Brackets Layer 
+ 158:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *
+ 159:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * ,--------------------------------------------------.           ,--------------------------------
+ 160:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |        |      |      |      |      |      |      |           |      |      |      |      |    
+ 161:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |--------+------+------+------+------+-------------|           |------+------+------+------+----
+ 162:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |        |      |      |      |      |      |      |           |      |      |      |      |    
+ 163:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
+ 164:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |        |      |   (  |   {  |   [  |      |------|           |------|      |  ]   |  }   |  ) 
+ 165:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
+ 166:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |        |      |      |      |      |      |      |           |      |      |      |      |    
+ 167:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * `--------+------+------+------+------+-------------'           `-------------+------+------+----
+ 168:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *   |      |      |      |      |      |                                       |      |      |    
+ 169:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *   `----------------------------------'                                       `------------------
+ 170:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                        ,-------------.       ,-------------.
+ 171:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                        |      |      |       |      |      |
+ 172:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 ,------|------|------|       |------+------+------.
+ 173:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 |      |      |      |       |      |      |      |
+ 174:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 |      |      |------|       |------|      |      |
+ 175:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 |      |      |      |       |      |      |      |
+ 176:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 `--------------------'       `--------------------'
+ 177:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  */
+ 178:layouts/community/ergodox/adnw_p_u_q/keymap.c **** // BRACK
+ 179:layouts/community/ergodox/adnw_p_u_q/keymap.c **** [BRACK] = LAYOUT_ergodox(
+ 180:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 181:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 182:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS, DE_LPRN, DE_LCBR, DE_LBRC, KC_TRNS,
+ 183:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 184:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 185:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                                            KC_TRNS, KC_TRNS,
+ 186:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                                                     KC_TRNS,
+ 187:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                                   KC_TRNS, KC_TRNS, KC_TRNS,
+ 188:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 
+ 189:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        // right hand
+ 190:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 191:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 192:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        	         KC_TRNS, DE_RBRC, DE_RCBR, DE_RPRN, KC_TRNS, KC_TRNS,
+ 193:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 194:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                           KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 195:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS,
+ 196:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS,
+ 197:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS, KC_TRNS 
+ 198:layouts/community/ergodox/adnw_p_u_q/keymap.c **** ),
+ 199:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 
+ 200:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 
+ 201:layouts/community/ergodox/adnw_p_u_q/keymap.c **** /* Keymap 4: Symbol Layer
+ 202:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *
+ 203:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *
+ 204:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * Original:
+ 205:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * ,--------------------------------------------------.           ,--------------------------------
+ 206:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |        |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |           | F7   |  F8  |  F9  |  F10 |  F1
+ 207:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |--------+------+------+------+------+-------------|           |------+------+------+------+----
+ 208:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |        |  ²   |  °   |  ~   |  @   |  !   |      |           |      |  ?   |  &   |  §   | 
+ 209:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |--------+------+------+------+------+------|   (  |           |  )   |------+------+------+----
+ 210:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |        |  ´   |  '   |  :   |  ^   |  <   |------|           |------|  >   |  $   |  ;   |  |
+ 211:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
+ 212:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |        |  €   |  +   |  =   |  *   |  /   |   {  |           |  }   |  \   |  %   |  #   |  
+ 213:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * `--------+------+------+------+------+-------------'           `-------------+------+------+----
+ 214:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *   |      |      |      |      |      |                                       |      |      |    
+ 215:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *   `----------------------------------'                                       `------------------
+ 216:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  */
+ 217:layouts/community/ergodox/adnw_p_u_q/keymap.c **** // SYMBOLS
+ 218:layouts/community/ergodox/adnw_p_u_q/keymap.c **** [SYMBOLS] = LAYOUT_ergodox(
+ 219:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        // left hand
+ 220:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS,  KC_F1,  KC_F2,   KC_F3,   KC_F4,   KC_F5,  KC_F6, //DE_LBRC,
+ 221:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS,DE_SQ2, DE_RING, DE_TILD, DE_AT,   DE_EXLM, DE_LPRN,
+ 222:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS,DE_ACUT,DE_QUOT, DE_COLN, DE_CIRC, DE_LESS,
+ 223:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS,DE_EURO,DE_PLUS, DE_EQL,  DE_ASTR, DE_SLSH, DE_LCBR,
+ 224:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
+ 225:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 
+ 226:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                                        KC_TRNS,KC_TRNS,
+ 227:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                                                KC_TRNS,
+ 228:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                                KC_TRNS,KC_TRNS,KC_TRNS,
+ 229:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 
+ 230:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        // right hand
+ 231:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        //DE_RBRC, 
+ 232:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_F7,   KC_F8,   KC_F9,   KC_F10,   KC_F11,  KC_F12,  KC_TRNS,
+ 233:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        DE_RPRN, DE_QST,  DE_AMPR, DE_PARA, DE_DQOT,  DE_SQ3,  KC_TRNS,
+ 234:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                 DE_MORE, DE_DLR,  DE_SCLN, DE_PIPE,  DE_GRV,  KC_TRNS,
+ 235:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        DE_RCBR, DE_BSLS, DE_PERC, DE_HASH, DE_MINS,  DE_UNDS, KC_TRNS,
+ 236:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                          KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS,
+ 237:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 
+ 238:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS,
+ 239:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS,
+ 240:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS, KC_TRNS
+ 241:layouts/community/ergodox/adnw_p_u_q/keymap.c **** ),
+ 242:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 
+ 243:layouts/community/ergodox/adnw_p_u_q/keymap.c **** /* Keymap 5: Numbers
+ 244:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *
+ 245:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * ,--------------------------------------------------.           ,--------------------------------
+ 246:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |        |      |      |      |      |      |      |           |      |      |      | Num  |  / 
+ 247:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |--------+------+------+------+------+-------------|           |------+------+------+------+----
+ 248:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |        |      |      |      |      |      |      |           |      |      |      | 7    |  8 
+ 249:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
+ 250:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |        |      |      |      |      |      |------|           |------|      |      | 4    |  5 
+ 251:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
+ 252:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |        |      |      |      |      |      |      |           |      |      |      | 1    |  2 
+ 253:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * `--------+------+------+------+------+-------------'           `-------------+------+------+----
+ 254:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *   |      |      |      |      |      |                                       |  0   | ,    |    
+ 255:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *   `----------------------------------'                                       `------------------
+ 256:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                        ,-------------.       ,-------------.
+ 257:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                        |      |      |       |      |      |
+ 258:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 ,------|------|------|       |------+------+------.
+ 259:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 |      |      |      |       |      |      |      |
+ 260:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 |      |      |------|       |------|      |      |
+ 261:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 |      |      |      |       |      |      |      |
+ 262:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 `--------------------'       `--------------------'
+ 263:layouts/community/ergodox/adnw_p_u_q/keymap.c **** // NUMBERS
+ 264:layouts/community/ergodox/adnw_p_u_q/keymap.c **** [NUMBERS] = LAYOUT_ergodox(
+ 265:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 266:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 267:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 268:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 269:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 270:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                                            KC_TRNS, KC_TRNS,
+ 271:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                                                     KC_TRNS,
+ 272:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                                   KC_TRNS, KC_TRNS, KC_TRNS,
+ 273:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 
+ 274:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        // right hand
+ 275:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 276:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS,  KC_TRNS, KC_TRNS, KC_7, KC_8, KC_9, KC_TRNS,
+ 277:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                  KC_TRNS, KC_TRNS, KC_4, KC_5, KC_8, KC_TRNS,
+ 278:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS,  KC_TRNS, KC_TRNS, KC_1, KC_2, KC_3, KC_TRNS,
+ 279:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                           KC_0, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 280:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS,
+ 281:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS,
+ 282:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS, KC_TRNS 
+ 283:layouts/community/ergodox/adnw_p_u_q/keymap.c **** ),
+ 284:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 
+ 285:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 
+ 286:layouts/community/ergodox/adnw_p_u_q/keymap.c **** */
+ 287:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 
+ 288:layouts/community/ergodox/adnw_p_u_q/keymap.c **** /* Keymap 6: Media and mouse keys 
+ 289:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *
+ 290:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * ,--------------------------------------------------.           ,--------------------------------
+ 291:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |        |      |      |      |      |      |      |           |      |      |      |      |    
+ 292:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |--------+------+------+------+------+-------------|           |------+------+------+------+----
+ 293:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |        | Sleep|      |      |      |      |      |           |      |      |      |      |    
+ 294:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
+ 295:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |        | Wake |      |      |      |      |------|           |------|      |MsLeft|MsDown| MsU
+ 296:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
+ 297:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * |        |      |      |      |      |      |      |           |      |      |      |      |    
+ 298:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  * `--------+------+------+------+------+-------------'           `-------------+------+------+----
+ 299:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *   |      |      |  Mute| VolDn| VolUp|                                       |  Play| Prev | Nex
+ 300:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *   `----------------------------------'                                       `------------------
+ 301:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                        ,-------------.       ,-------------.
+ 302:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                        |      |      |       |      |      |
+ 303:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 ,------|------|------|       |------+------+------.
+ 304:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 |      |      |      |       |      |      |      |
+ 305:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 |      |  Lclk|------|       |------|Rclk  |      |
+ 306:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 |      |      |      |       |      |      |      |
+ 307:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  *                                 `--------------------'       `--------------------'
+ 308:layouts/community/ergodox/adnw_p_u_q/keymap.c ****  */
+ 309:layouts/community/ergodox/adnw_p_u_q/keymap.c **** // MEDIA AND MOUSE
+ 310:layouts/community/ergodox/adnw_p_u_q/keymap.c **** [MEDIA] = LAYOUT_ergodox(
+ 311:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+ 312:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_SLEP, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+ 313:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_WAKE, KC_NO, KC_NO, KC_NO, KC_TRNS,
+ 314:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+ 315:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS, KC_MUTE, KC_VOLD, KC_VOLU,
+ 316:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                                            KC_TRNS, KC_TRNS,
+ 317:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                                                     KC_TRNS,
+ 318:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                                  KC_TRNS, KC_BTN1, KC_TRNS,
+ 319:layouts/community/ergodox/adnw_p_u_q/keymap.c ****     // right hand
+ 320:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS,
+ 321:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS,
+ 322:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                  KC_TRNS, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_TRNS,
+ 323:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS,
+ 324:layouts/community/ergodox/adnw_p_u_q/keymap.c ****                           KC_MPLY, KC_MPRV, KC_MNXT, KC_MSTP, KC_TRNS,
+ 325:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_TRNS,
+ 326:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS,
+ 327:layouts/community/ergodox/adnw_p_u_q/keymap.c ****        KC_TRNS, KC_BTN2, KC_TRNS
+ 328:layouts/community/ergodox/adnw_p_u_q/keymap.c **** ),
+ 329:layouts/community/ergodox/adnw_p_u_q/keymap.c **** };
+ 330:layouts/community/ergodox/adnw_p_u_q/keymap.c **** 
+ 331:layouts/community/ergodox/adnw_p_u_q/keymap.c **** // Runs constantly in the background, in a loop.
+ 332:layouts/community/ergodox/adnw_p_u_q/keymap.c **** void matrix_scan_user_keyboard(void) {
+  16               		.loc 1 332 38 view -0
+  17               		.cfi_startproc
+  18               	/* prologue: function */
+  19               	/* frame size = 0 */
+  20               	/* stack size = 0 */
+  21               	.L__stack_usage = 0
+ 333:layouts/community/ergodox/adnw_p_u_q/keymap.c ****     ergodox_board_led_on();
+  22               		.loc 1 333 5 view .LVU1
+  23 0000 0E94 0000 		call ergodox_board_led_on
+  24               	.LVL0:
+ 334:layouts/community/ergodox/adnw_p_u_q/keymap.c ****     ergodox_led_all_on();
+  25               		.loc 1 334 5 view .LVU2
+  26 0004 0C94 0000 		jmp ergodox_led_all_on
+  27               	.LVL1:
+  28               		.cfi_endproc
+  29               	.LFE128:
+  31               	.global	keymaps
+  32               		.section	.progmem.data.keymaps,"a",@progbits
+  35               	keymaps:
+  36 0000 0000      		.word	0
+  37 0002 0453      		.word	21252
+  38 0004 0454      		.word	21508
+  39 0006 2B62      		.word	25131
+  40 0008 E000      		.word	224
+  41 000a 0000      		.word	0
+  42 000c 1E00      		.word	30
+  43 000e 1300      		.word	19
+  44 0010 0B00      		.word	11
+  45 0012 0E00      		.word	14
+  46 0014 E200      		.word	226
+  47 0016 2B68      		.word	26667
+  48 0018 1F00      		.word	31
+  49 001a 1800      		.word	24
+  50 001c 0C00      		.word	12
+  51 001e 1D00      		.word	29
+  52 0020 0000      		.word	0
+  53 0022 2C62      		.word	25132
+  54 0024 2000      		.word	32
+  55 0026 0254      		.word	21506
+  56 0028 0800      		.word	8
+  57 002a 3700      		.word	55
+  58 002c 0000      		.word	0
+  59 002e 0354      		.word	21507
+  60 0030 2100      		.word	33
+  61 0032 3600      		.word	54
+  62 0034 0400      		.word	4
+  63 0036 3102      		.word	561
+  64 0038 0000      		.word	0
+  65 003a 0401      		.word	260
+  66 003c 2200      		.word	34
+  67 003e 1400      		.word	20
+  68 0040 1200      		.word	18
+  69 0042 1B00      		.word	27
+  70 0044 0000      		.word	0
+  71 0046 3500      		.word	53
+  72 0048 0000      		.word	0
+  73 004a 0A02      		.word	522
+  74 004c 0000      		.word	0
+  75 004e 0701      		.word	263
+  76 0050 0000      		.word	0
+  77 0052 2402      		.word	548
+  78 0054 0000      		.word	0
+  79 0056 0A00      		.word	10
+  80 0058 0000      		.word	0
+  81 005a 1801      		.word	280
+  82 005c 0000      		.word	0
+  83 005e 2D02      		.word	557
+  84 0060 2300      		.word	35
+  85 0062 1900      		.word	25
+  86 0064 0700      		.word	7
+  87 0066 0D00      		.word	13
+  88 0068 0000      		.word	0
+  89 006a 2102      		.word	545
+  90 006c 2400      		.word	36
+  91 006e 0600      		.word	6
+  92 0070 1700      		.word	23
+  93 0072 0A00      		.word	10
+  94 0074 0B00      		.word	11
+  95 0076 0601      		.word	262
+  96 0078 2500      		.word	37
+  97 007a 0F00      		.word	15
+  98 007c 1500      		.word	21
+  99 007e 1C00      		.word	28
+ 100 0080 0D00      		.word	13
+ 101 0082 2A00      		.word	42
+ 102 0084 2600      		.word	38
+ 103 0086 1000      		.word	16
+ 104 0088 1100      		.word	17
+ 105 008a 1A00      		.word	26
+ 106 008c 0E00      		.word	14
+ 107 008e 2800      		.word	40
+ 108 0090 2700      		.word	39
+ 109 0092 0500      		.word	5
+ 110 0094 1600      		.word	22
+ 111 0096 0900      		.word	9
+ 112 0098 0F00      		.word	15
+ 113 009a 2900      		.word	41
+ 114 009c 0553      		.word	21253
+ 115 009e 0000      		.word	0
+ 116 00a0 0153      		.word	21249
+ 117 00a2 E500      		.word	229
+ 118 00a4 E400      		.word	228
+ 119 00a6 0000      		.word	0
+ 120 00a8 0100      		.word	1
+ 121 00aa 0100      		.word	1
+ 122 00ac 0100      		.word	1
+ 123 00ae 0100      		.word	1
+ 124 00b0 0100      		.word	1
+ 125 00b2 0000      		.word	0
+ 126 00b4 0100      		.word	1
+ 127 00b6 0100      		.word	1
+ 128 00b8 0100      		.word	1
+ 129 00ba 0100      		.word	1
+ 130 00bc 0100      		.word	1
+ 131 00be 0100      		.word	1
+ 132 00c0 0100      		.word	1
+ 133 00c2 0100      		.word	1
+ 134 00c4 0100      		.word	1
+ 135 00c6 0100      		.word	1
+ 136 00c8 0100      		.word	1
+ 137 00ca 0100      		.word	1
+ 138 00cc 0100      		.word	1
+ 139 00ce 0100      		.word	1
+ 140 00d0 0100      		.word	1
+ 141 00d2 0100      		.word	1
+ 142 00d4 0100      		.word	1
+ 143 00d6 0100      		.word	1
+ 144 00d8 0100      		.word	1
+ 145 00da 0100      		.word	1
+ 146 00dc 0100      		.word	1
+ 147 00de 0100      		.word	1
+ 148 00e0 0100      		.word	1
+ 149 00e2 0100      		.word	1
+ 150 00e4 0100      		.word	1
+ 151 00e6 0100      		.word	1
+ 152 00e8 0100      		.word	1
+ 153 00ea 0100      		.word	1
+ 154 00ec 0000      		.word	0
+ 155 00ee 4A00      		.word	74
+ 156 00f0 0100      		.word	1
+ 157 00f2 0100      		.word	1
+ 158 00f4 0000      		.word	0
+ 159 00f6 4E00      		.word	78
+ 160 00f8 0000      		.word	0
+ 161 00fa 0100      		.word	1
+ 162 00fc 0100      		.word	1
+ 163 00fe 0100      		.word	1
+ 164 0100 0000      		.word	0
+ 165 0102 4B00      		.word	75
+ 166 0104 0000      		.word	0
+ 167 0106 0100      		.word	1
+ 168 0108 0100      		.word	1
+ 169 010a 0100      		.word	1
+ 170 010c 0100      		.word	1
+ 171 010e 0100      		.word	1
+ 172 0110 0000      		.word	0
+ 173 0112 4D00      		.word	77
+ 174 0114 0100      		.word	1
+ 175 0116 0100      		.word	1
+ 176 0118 0100      		.word	1
+ 177 011a 0100      		.word	1
+ 178 011c 5000      		.word	80
+ 179 011e 0100      		.word	1
+ 180 0120 0100      		.word	1
+ 181 0122 0100      		.word	1
+ 182 0124 0100      		.word	1
+ 183 0126 0100      		.word	1
+ 184 0128 5100      		.word	81
+ 185 012a 0100      		.word	1
+ 186 012c 0100      		.word	1
+ 187 012e 0100      		.word	1
+ 188 0130 0100      		.word	1
+ 189 0132 0100      		.word	1
+ 190 0134 5200      		.word	82
+ 191 0136 0100      		.word	1
+ 192 0138 0100      		.word	1
+ 193 013a 0100      		.word	1
+ 194 013c 0100      		.word	1
+ 195 013e 0100      		.word	1
+ 196 0140 4F00      		.word	79
+ 197 0142 0100      		.word	1
+ 198 0144 0100      		.word	1
+ 199 0146 0100      		.word	1
+ 200 0148 0100      		.word	1
+ 201 014a 0100      		.word	1
+ 202 014c 0100      		.word	1
+ 203 014e 0000      		.word	0
+ 204 0150 0100      		.word	1
+ 205 0152 0100      		.word	1
+ 206 0154 0100      		.word	1
+ 207 0156 0100      		.word	1
+ 208 0158 0100      		.word	1
+ 209 015a 0000      		.word	0
+ 210 015c 0100      		.word	1
+ 211 015e 0100      		.word	1
+ 212 0160 0100      		.word	1
+ 213 0162 0100      		.word	1
+ 214 0164 0100      		.word	1
+ 215 0166 0100      		.word	1
+ 216 0168 0100      		.word	1
+ 217 016a 2F00      		.word	47
+ 218 016c 0100      		.word	1
+ 219 016e 0100      		.word	1
+ 220 0170 0100      		.word	1
+ 221 0172 0100      		.word	1
+ 222 0174 0100      		.word	1
+ 223 0176 0100      		.word	1
+ 224 0178 0100      		.word	1
+ 225 017a 0100      		.word	1
+ 226 017c 0100      		.word	1
+ 227 017e 0100      		.word	1
+ 228 0180 0100      		.word	1
+ 229 0182 0100      		.word	1
+ 230 0184 3400      		.word	52
+ 231 0186 0100      		.word	1
+ 232 0188 0100      		.word	1
+ 233 018a 0100      		.word	1
+ 234 018c 0100      		.word	1
+ 235 018e 0100      		.word	1
+ 236 0190 3300      		.word	51
+ 237 0192 0100      		.word	1
+ 238 0194 0000      		.word	0
+ 239 0196 0100      		.word	1
+ 240 0198 0100      		.word	1
+ 241 019a 0100      		.word	1
+ 242 019c 0000      		.word	0
+ 243 019e 0100      		.word	1
+ 244 01a0 0000      		.word	0
+ 245 01a2 0100      		.word	1
+ 246 01a4 0100      		.word	1
+ 247 01a6 0100      		.word	1
+ 248 01a8 0000      		.word	0
+ 249 01aa 0100      		.word	1
+ 250 01ac 0000      		.word	0
+ 251 01ae 0100      		.word	1
+ 252 01b0 0100      		.word	1
+ 253 01b2 0100      		.word	1
+ 254 01b4 0100      		.word	1
+ 255 01b6 0100      		.word	1
+ 256 01b8 0000      		.word	0
+ 257 01ba 0100      		.word	1
+ 258 01bc 0100      		.word	1
+ 259 01be 0100      		.word	1
+ 260 01c0 0100      		.word	1
+ 261 01c2 0100      		.word	1
+ 262 01c4 0100      		.word	1
+ 263 01c6 0100      		.word	1
+ 264 01c8 0100      		.word	1
+ 265 01ca 0100      		.word	1
+ 266 01cc 0100      		.word	1
+ 267 01ce 0100      		.word	1
+ 268 01d0 0100      		.word	1
+ 269 01d2 0100      		.word	1
+ 270 01d4 0100      		.word	1
+ 271 01d6 0100      		.word	1
+ 272 01d8 0100      		.word	1
+ 273 01da 0100      		.word	1
+ 274 01dc 0100      		.word	1
+ 275 01de 0100      		.word	1
+ 276 01e0 0100      		.word	1
+ 277 01e2 0100      		.word	1
+ 278 01e4 2D00      		.word	45
+ 279 01e6 0100      		.word	1
+ 280 01e8 0100      		.word	1
+ 281 01ea 0100      		.word	1
+ 282 01ec 0100      		.word	1
+ 283 01ee 0100      		.word	1
+ 284 01f0 0100      		.word	1
+ 285 01f2 0100      		.word	1
+ 286 01f4 0100      		.word	1
+ 287 01f6 0000      		.word	0
+ 288 01f8 0100      		.word	1
+ 289 01fa 0100      		.word	1
+ 290 01fc 0100      		.word	1
+ 291 01fe 0100      		.word	1
+ 292 0200 0100      		.word	1
+ 293 0202 0000      		.word	0
+ 294 0204 0100      		.word	1
+ 295 0206 0100      		.word	1
+ 296 0208 0100      		.word	1
+ 297 020a 0100      		.word	1
+ 298 020c 0100      		.word	1
+ 299 020e 0100      		.word	1
+ 300 0210 0100      		.word	1
+ 301 0212 0100      		.word	1
+ 302 0214 2502      		.word	549
+ 303 0216 0100      		.word	1
+ 304 0218 0100      		.word	1
+ 305 021a 0100      		.word	1
+ 306 021c 0100      		.word	1
+ 307 021e 0100      		.word	1
+ 308 0220 2414      		.word	5156
+ 309 0222 0100      		.word	1
+ 310 0224 0100      		.word	1
+ 311 0226 0100      		.word	1
+ 312 0228 0100      		.word	1
+ 313 022a 0100      		.word	1
+ 314 022c 2514      		.word	5157
+ 315 022e 0100      		.word	1
+ 316 0230 0100      		.word	1
+ 317 0232 0100      		.word	1
+ 318 0234 0100      		.word	1
+ 319 0236 0100      		.word	1
+ 320 0238 0100      		.word	1
+ 321 023a 0100      		.word	1
+ 322 023c 0000      		.word	0
+ 323 023e 0100      		.word	1
+ 324 0240 0100      		.word	1
+ 325 0242 0100      		.word	1
+ 326 0244 0000      		.word	0
+ 327 0246 0100      		.word	1
+ 328 0248 0000      		.word	0
+ 329 024a 0100      		.word	1
+ 330 024c 0100      		.word	1
+ 331 024e 0100      		.word	1
+ 332 0250 0000      		.word	0
+ 333 0252 0100      		.word	1
+ 334 0254 0000      		.word	0
+ 335 0256 0100      		.word	1
+ 336 0258 0100      		.word	1
+ 337 025a 0100      		.word	1
+ 338 025c 0100      		.word	1
+ 339 025e 0100      		.word	1
+ 340 0260 0000      		.word	0
+ 341 0262 0100      		.word	1
+ 342 0264 0100      		.word	1
+ 343 0266 0100      		.word	1
+ 344 0268 2614      		.word	5158
+ 345 026a 0100      		.word	1
+ 346 026c 0100      		.word	1
+ 347 026e 0100      		.word	1
+ 348 0270 0100      		.word	1
+ 349 0272 0100      		.word	1
+ 350 0274 2714      		.word	5159
+ 351 0276 0100      		.word	1
+ 352 0278 0100      		.word	1
+ 353 027a 0100      		.word	1
+ 354 027c 0100      		.word	1
+ 355 027e 0100      		.word	1
+ 356 0280 2602      		.word	550
+ 357 0282 0100      		.word	1
+ 358 0284 0100      		.word	1
+ 359 0286 0100      		.word	1
+ 360 0288 0100      		.word	1
+ 361 028a 0100      		.word	1
+ 362 028c 0100      		.word	1
+ 363 028e 0100      		.word	1
+ 364 0290 0100      		.word	1
+ 365 0292 0100      		.word	1
+ 366 0294 0100      		.word	1
+ 367 0296 0100      		.word	1
+ 368 0298 0100      		.word	1
+ 369 029a 0100      		.word	1
+ 370 029c 0100      		.word	1
+ 371 029e 0000      		.word	0
+ 372 02a0 0100      		.word	1
+ 373 02a2 0100      		.word	1
+ 374 02a4 0100      		.word	1
+ 375 02a6 0100      		.word	1
+ 376 02a8 0100      		.word	1
+ 377 02aa 0000      		.word	0
+ 378 02ac 3A00      		.word	58
+ 379 02ae 1F14      		.word	5151
+ 380 02b0 2E00      		.word	46
+ 381 02b2 0814      		.word	5128
+ 382 02b4 0100      		.word	1
+ 383 02b6 0100      		.word	1
+ 384 02b8 3B00      		.word	59
+ 385 02ba 3502      		.word	565
+ 386 02bc 3102      		.word	561
+ 387 02be 3000      		.word	48
+ 388 02c0 0100      		.word	1
+ 389 02c2 0100      		.word	1
+ 390 02c4 3C00      		.word	60
+ 391 02c6 3014      		.word	5168
+ 392 02c8 3702      		.word	567
+ 393 02ca 2702      		.word	551
+ 394 02cc 0100      		.word	1
+ 395 02ce 0100      		.word	1
+ 396 02d0 3D00      		.word	61
+ 397 02d2 1414      		.word	5140
+ 398 02d4 3500      		.word	53
+ 399 02d6 3002      		.word	560
+ 400 02d8 0100      		.word	1
+ 401 02da 0100      		.word	1
+ 402 02dc 3E00      		.word	62
+ 403 02de 1E02      		.word	542
+ 404 02e0 6400      		.word	100
+ 405 02e2 2402      		.word	548
+ 406 02e4 0000      		.word	0
+ 407 02e6 0100      		.word	1
+ 408 02e8 3F00      		.word	63
+ 409 02ea 2502      		.word	549
+ 410 02ec 0000      		.word	0
+ 411 02ee 2414      		.word	5156
+ 412 02f0 0000      		.word	0
+ 413 02f2 0100      		.word	1
+ 414 02f4 4000      		.word	64
+ 415 02f6 2602      		.word	550
+ 416 02f8 0000      		.word	0
+ 417 02fa 2714      		.word	5159
+ 418 02fc 0000      		.word	0
+ 419 02fe 0100      		.word	1
+ 420 0300 4100      		.word	65
+ 421 0302 2D02      		.word	557
+ 422 0304 6402      		.word	612
+ 423 0306 2D14      		.word	5165
+ 424 0308 0000      		.word	0
+ 425 030a 0100      		.word	1
+ 426 030c 4200      		.word	66
+ 427 030e 2302      		.word	547
+ 428 0310 2102      		.word	545
+ 429 0312 2202      		.word	546
+ 430 0314 0100      		.word	1
+ 431 0316 0100      		.word	1
+ 432 0318 4300      		.word	67
+ 433 031a 2002      		.word	544
+ 434 031c 3602      		.word	566
+ 435 031e 3100      		.word	49
+ 436 0320 0100      		.word	1
+ 437 0322 0100      		.word	1
+ 438 0324 4400      		.word	68
+ 439 0326 1F02      		.word	543
+ 440 0328 6414      		.word	5220
+ 441 032a 3800      		.word	56
+ 442 032c 0100      		.word	1
+ 443 032e 0100      		.word	1
+ 444 0330 4500      		.word	69
+ 445 0332 2014      		.word	5152
+ 446 0334 2E02      		.word	558
+ 447 0336 3802      		.word	568
+ 448 0338 0100      		.word	1
+ 449 033a 0100      		.word	1
+ 450 033c 0100      		.word	1
+ 451 033e 0100      		.word	1
+ 452 0340 0100      		.word	1
+ 453 0342 0100      		.word	1
+ 454 0344 0100      		.word	1
+ 455 0346 0000      		.word	0
+ 456 0348 0100      		.word	1
+ 457 034a 0100      		.word	1
+ 458 034c 0100      		.word	1
+ 459 034e 0100      		.word	1
+ 460 0350 0100      		.word	1
+ 461 0352 0000      		.word	0
+ 462 0354 0100      		.word	1
+ 463 0356 A600      		.word	166
+ 464 0358 A700      		.word	167
+ 465 035a 0100      		.word	1
+ 466 035c 0100      		.word	1
+ 467 035e 0100      		.word	1
+ 468 0360 0000      		.word	0
+ 469 0362 0000      		.word	0
+ 470 0364 0000      		.word	0
+ 471 0366 0000      		.word	0
+ 472 0368 A800      		.word	168
+ 473 036a F400      		.word	244
+ 474 036c 0000      		.word	0
+ 475 036e 0000      		.word	0
+ 476 0370 0000      		.word	0
+ 477 0372 0000      		.word	0
+ 478 0374 AA00      		.word	170
+ 479 0376 0100      		.word	1
+ 480 0378 0000      		.word	0
+ 481 037a 0000      		.word	0
+ 482 037c 0000      		.word	0
+ 483 037e 0000      		.word	0
+ 484 0380 A900      		.word	169
+ 485 0382 0100      		.word	1
+ 486 0384 0000      		.word	0
+ 487 0386 0000      		.word	0
+ 488 0388 0100      		.word	1
+ 489 038a 0000      		.word	0
+ 490 038c 0000      		.word	0
+ 491 038e 0100      		.word	1
+ 492 0390 0000      		.word	0
+ 493 0392 0000      		.word	0
+ 494 0394 0000      		.word	0
+ 495 0396 0000      		.word	0
+ 496 0398 0000      		.word	0
+ 497 039a 0100      		.word	1
+ 498 039c 0100      		.word	1
+ 499 039e 0100      		.word	1
+ 500 03a0 0000      		.word	0
+ 501 03a2 0100      		.word	1
+ 502 03a4 0000      		.word	0
+ 503 03a6 0100      		.word	1
+ 504 03a8 0000      		.word	0
+ 505 03aa 0000      		.word	0
+ 506 03ac 0100      		.word	1
+ 507 03ae 0000      		.word	0
+ 508 03b0 0000      		.word	0
+ 509 03b2 0100      		.word	1
+ 510 03b4 0000      		.word	0
+ 511 03b6 0000      		.word	0
+ 512 03b8 F200      		.word	242
+ 513 03ba 0000      		.word	0
+ 514 03bc AE00      		.word	174
+ 515 03be 0100      		.word	1
+ 516 03c0 0000      		.word	0
+ 517 03c2 0000      		.word	0
+ 518 03c4 F100      		.word	241
+ 519 03c6 0000      		.word	0
+ 520 03c8 AC00      		.word	172
+ 521 03ca 0100      		.word	1
+ 522 03cc 0000      		.word	0
+ 523 03ce 0000      		.word	0
+ 524 03d0 F000      		.word	240
+ 525 03d2 0000      		.word	0
+ 526 03d4 AB00      		.word	171
+ 527 03d6 F500      		.word	245
+ 528 03d8 0000      		.word	0
+ 529 03da 0000      		.word	0
+ 530 03dc F300      		.word	243
+ 531 03de 0000      		.word	0
+ 532 03e0 AD00      		.word	173
+ 533 03e2 0100      		.word	1
+ 534 03e4 0100      		.word	1
+ 535 03e6 0100      		.word	1
+ 536 03e8 0100      		.word	1
+ 537 03ea 0100      		.word	1
+ 538 03ec 0100      		.word	1
+ 539 03ee 0000      		.word	0
+ 540               		.text
+ 541               	.Letext0:
+ 542               		.file 2 "/usr/local/Cellar/avr-gcc/8.1.0/avr/include/stdint.h"
+ 543               		.file 3 "/usr/local/Cellar/avr-gcc/8.1.0/lib/avr-gcc/8/gcc/avr/8.1.0/include/stddef.h"
+ 544               		.file 4 "tmk_core/common/keyboard.h"
+ 545               		.file 5 "tmk_core/common/keycode.h"
+ 546               		.file 6 "tmk_core/common/action_code.h"
+ 547               		.file 7 "tmk_core/common/action.h"
+ 548               		.file 8 "lib/lufa/LUFA/Drivers/USB/Core/AVR8/../StdRequestType.h"
+ 549               		.file 9 "lib/lufa/LUFA/Drivers/USB/Core/AVR8/../DeviceStandardReq.h"
+ 550               		.file 10 "lib/lufa/LUFA/Drivers/USB/Core/USBTask.h"
+ 551               		.file 11 "lib/lufa/LUFA/Drivers/USB/Core/HostStandardReq.h"
+ 552               		.file 12 "/usr/local/Cellar/avr-gcc/8.1.0/avr/include/stdio.h"
+ 553               		.file 13 "tmk_core/common/report.h"
+ 554               		.file 14 "tmk_core/common/host.h"
+ 555               		.file 15 "tmk_core/common/debug.h"
+ 556               		.file 16 "quantum/keycode_config.h"
+ 557               		.file 17 "quantum/quantum_keycodes.h"
+ 558               		.file 18 "quantum/keymap.h"
+ 559               		.file 19 "quantum/rgblight_types.h"
+ 560               		.file 20 "quantum/rgblight.h"
+ 561               		.file 21 "tmk_core/common/action_layer.h"
+ 562               		.file 22 "tmk_core/common/timer.h"
+ 563               		.file 23 "tmk_core/common/action_util.h"
+ 564               		.file 24 "/usr/local/Cellar/avr-gcc/8.1.0/avr/include/stdlib.h"
+ 565               		.file 25 "quantum/process_keycode/process_unicode_common.h"
+ 566               		.file 26 "quantum/quantum.h"
+ 567               		.file 27 "drivers/avr/i2c_master.h"
+ 568               		.file 28 "keyboards/ergodox_ez/ergodox_ez.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 keymap.c
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccXRahOw.s:2      *ABS*:000000000000003e __SP_H__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccXRahOw.s:3      *ABS*:000000000000003d __SP_L__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccXRahOw.s:4      *ABS*:000000000000003f __SREG__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccXRahOw.s:5      *ABS*:0000000000000000 __tmp_reg__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccXRahOw.s:6      *ABS*:0000000000000001 __zero_reg__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccXRahOw.s:13     .text.matrix_scan_user_keyboard:0000000000000000 matrix_scan_user_keyboard
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccXRahOw.s:35     .progmem.data.keymaps:0000000000000000 keymaps
+
+UNDEFINED SYMBOLS
+ergodox_board_led_on
+ergodox_led_all_on

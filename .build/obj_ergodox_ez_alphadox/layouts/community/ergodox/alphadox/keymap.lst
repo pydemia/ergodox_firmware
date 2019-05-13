@@ -1,0 +1,527 @@
+   1               		.file	"keymap.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.section	.text.action_get_macro,"ax",@progbits
+  11               	.global	action_get_macro
+  13               	action_get_macro:
+  14               	.LVL0:
+  15               	.LFB128:
+  16               		.file 1 "layouts/community/ergodox/alphadox/keymap.c"
+   1:layouts/community/ergodox/alphadox/keymap.c **** #include QMK_KEYBOARD_H
+   2:layouts/community/ergodox/alphadox/keymap.c **** #include "debug.h"
+   3:layouts/community/ergodox/alphadox/keymap.c **** #include "action_layer.h"
+   4:layouts/community/ergodox/alphadox/keymap.c **** 
+   5:layouts/community/ergodox/alphadox/keymap.c **** #define BASE 0 // default layer
+   6:layouts/community/ergodox/alphadox/keymap.c **** #define SYMB 1 // symbols
+   7:layouts/community/ergodox/alphadox/keymap.c **** #define ETC  2 // etc
+   8:layouts/community/ergodox/alphadox/keymap.c **** 
+   9:layouts/community/ergodox/alphadox/keymap.c **** enum macro_id {
+  10:layouts/community/ergodox/alphadox/keymap.c ****     TEENSY,
+  11:layouts/community/ergodox/alphadox/keymap.c **** };
+  12:layouts/community/ergodox/alphadox/keymap.c **** 
+  13:layouts/community/ergodox/alphadox/keymap.c **** const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+  14:layouts/community/ergodox/alphadox/keymap.c **** 
+  15:layouts/community/ergodox/alphadox/keymap.c **** [BASE] = LAYOUT_ergodox(
+  16:layouts/community/ergodox/alphadox/keymap.c ****     KC_NO,          KC_NO,         KC_NO,   KC_NO,    KC_NO,          KC_NO,  KC_NO,
+  17:layouts/community/ergodox/alphadox/keymap.c ****     KC_TAB,         KC_Q,          KC_W,    KC_D,     KC_F,           KC_K,   KC_PGUP,
+  18:layouts/community/ergodox/alphadox/keymap.c ****     CTL_T(KC_ESC),  LT(ETC,KC_A),  KC_S,    KC_E,     KC_T,           KC_G,
+  19:layouts/community/ergodox/alphadox/keymap.c ****     KC_LSFT,        KC_Z,          KC_X,    KC_C,     KC_V,           KC_B,   KC_PGDN,
+  20:layouts/community/ergodox/alphadox/keymap.c ****     KC_GRV,         KC_DEL,        KC_DEL,  KC_LALT,  GUI_T(KC_TAB),
+  21:layouts/community/ergodox/alphadox/keymap.c ****                                                                       KC_NO,  KC_NO,
+  22:layouts/community/ergodox/alphadox/keymap.c ****                                                                               KC_NO,
+  23:layouts/community/ergodox/alphadox/keymap.c ****                                            LT(SYMB,KC_BSPC),  CTL_T(KC_ESC),  KC_NO,
+  24:layouts/community/ergodox/alphadox/keymap.c **** 
+  25:layouts/community/ergodox/alphadox/keymap.c ****     KC_NO,    KC_NO,  KC_NO,          KC_NO,    KC_NO,    KC_NO,    KC_NO,
+  26:layouts/community/ergodox/alphadox/keymap.c ****     KC_VOLU,  KC_J,   KC_U,           KC_R,     KC_L,     KC_SCLN,  KC_BSLS,
+  27:layouts/community/ergodox/alphadox/keymap.c ****               KC_Y,   KC_N,           KC_I,     KC_O,     KC_H,     KC_QUOT,
+  28:layouts/community/ergodox/alphadox/keymap.c ****     KC_VOLD,  KC_P,   KC_M,           KC_COMM,  KC_DOT,   KC_SLSH,  KC_RSFT,
+  29:layouts/community/ergodox/alphadox/keymap.c ****                       GUI_T(KC_TAB),  KC_LEFT,  KC_DOWN,  KC_UP,    LCAG_T(KC_RGHT),
+  30:layouts/community/ergodox/alphadox/keymap.c ****     KC_NO,  KC_NO,
+  31:layouts/community/ergodox/alphadox/keymap.c ****     KC_NO,
+  32:layouts/community/ergodox/alphadox/keymap.c ****     KC_NO,  SFT_T(KC_ENT),  LT(SYMB,KC_SPC)
+  33:layouts/community/ergodox/alphadox/keymap.c **** ),
+  34:layouts/community/ergodox/alphadox/keymap.c **** 
+  35:layouts/community/ergodox/alphadox/keymap.c **** [SYMB] = LAYOUT_ergodox(
+  36:layouts/community/ergodox/alphadox/keymap.c ****     KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,
+  37:layouts/community/ergodox/alphadox/keymap.c ****     KC_TRNS,  KC_EXLM,  KC_AT,    KC_LCBR,  KC_RCBR,  KC_PIPE,  KC_TRNS,
+  38:layouts/community/ergodox/alphadox/keymap.c ****     KC_TRNS,  KC_HASH,  KC_DLR,   KC_LPRN,  KC_RPRN,  KC_BSLS,
+  39:layouts/community/ergodox/alphadox/keymap.c ****     KC_TRNS,  KC_PERC,  KC_CIRC,  KC_LBRC,  KC_RBRC,  KC_ASTR,  KC_TRNS,
+  40:layouts/community/ergodox/alphadox/keymap.c ****     KC_TILD,  KC_AMPR,  KC_AMPR,  KC_TRNS,  KC_TRNS,
+  41:layouts/community/ergodox/alphadox/keymap.c ****                                                       KC_TRNS,  KC_TRNS,
+  42:layouts/community/ergodox/alphadox/keymap.c ****                                                                 KC_TRNS,
+  43:layouts/community/ergodox/alphadox/keymap.c ****                                               KC_TRNS, KC_TRNS, KC_TRNS,
+  44:layouts/community/ergodox/alphadox/keymap.c **** 
+  45:layouts/community/ergodox/alphadox/keymap.c ****     KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,   KC_NO,    KC_NO,
+  46:layouts/community/ergodox/alphadox/keymap.c ****     KC_TRNS,  KC_EQL,   KC_7,   KC_8,   KC_9,    KC_PLUS,  KC_NO,
+  47:layouts/community/ergodox/alphadox/keymap.c ****               KC_MINS,  KC_4,   KC_5,   KC_6,    KC_QUOT,  KC_NO,
+  48:layouts/community/ergodox/alphadox/keymap.c ****     KC_TRNS,  KC_UNDS,  KC_1,   KC_2,   KC_3,    KC_DQUO,  KC_TRNS,
+  49:layouts/community/ergodox/alphadox/keymap.c ****                         KC_0,   KC_NO,  KC_DOT,  KC_TRNS,  KC_TRNS,
+  50:layouts/community/ergodox/alphadox/keymap.c ****     KC_TRNS,  KC_TRNS,
+  51:layouts/community/ergodox/alphadox/keymap.c ****     KC_TRNS,
+  52:layouts/community/ergodox/alphadox/keymap.c ****     KC_TRNS,  KC_TRNS,  KC_TRNS
+  53:layouts/community/ergodox/alphadox/keymap.c **** ),
+  54:layouts/community/ergodox/alphadox/keymap.c **** 
+  55:layouts/community/ergodox/alphadox/keymap.c **** [ETC] = LAYOUT_ergodox(
+  56:layouts/community/ergodox/alphadox/keymap.c ****     RESET,    KC_NO,         KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,
+  57:layouts/community/ergodox/alphadox/keymap.c ****     KC_TRNS,  KC_NO,         KC_NO,  KC_NO,    KC_NO,    KC_PGUP,  KC_TRNS,
+  58:layouts/community/ergodox/alphadox/keymap.c ****     KC_TRNS,  LT(ETC,KC_A),  KC_NO,  KC_NO,    KC_NO,    KC_PGDN,
+  59:layouts/community/ergodox/alphadox/keymap.c ****     KC_TRNS,  KC_NO,         KC_NO,  KC_NO,    KC_NO,    KC_DEL,   KC_TRNS,
+  60:layouts/community/ergodox/alphadox/keymap.c ****     KC_TRNS,  KC_TRNS,       KC_NO,  KC_TRNS,  KC_TRNS,
+  61:layouts/community/ergodox/alphadox/keymap.c ****                                                          KC_TRNS,  KC_TRNS,
+  62:layouts/community/ergodox/alphadox/keymap.c ****                                                                    KC_TRNS,
+  63:layouts/community/ergodox/alphadox/keymap.c ****                                                  KC_TRNS, KC_TRNS, KC_TRNS,
+  64:layouts/community/ergodox/alphadox/keymap.c **** 
+  65:layouts/community/ergodox/alphadox/keymap.c ****     KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,   KC_NO,    KC_NO,
+  66:layouts/community/ergodox/alphadox/keymap.c ****     KC_TRNS,  KC_VOLU,  KC_F7,  KC_F8,  KC_F9,   KC_HOME,  KC_NO,
+  67:layouts/community/ergodox/alphadox/keymap.c ****               KC_VOLD,  KC_F4,  KC_F5,  KC_F6,   KC_END,   KC_NO,
+  68:layouts/community/ergodox/alphadox/keymap.c ****     KC_TRNS,  KC_MUTE,  KC_F1,  KC_F2,  KC_F3,   KC_INS,   KC_TRNS,
+  69:layouts/community/ergodox/alphadox/keymap.c ****                         KC_NO,  KC_NO,  KC_NO,   KC_NO,    KC_NO,
+  70:layouts/community/ergodox/alphadox/keymap.c ****     KC_TRNS,  KC_TRNS,
+  71:layouts/community/ergodox/alphadox/keymap.c ****     KC_TRNS,
+  72:layouts/community/ergodox/alphadox/keymap.c ****     KC_TRNS,  KC_TRNS,  KC_TRNS
+  73:layouts/community/ergodox/alphadox/keymap.c **** ),
+  74:layouts/community/ergodox/alphadox/keymap.c **** };
+  75:layouts/community/ergodox/alphadox/keymap.c **** 
+  76:layouts/community/ergodox/alphadox/keymap.c **** const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
+  17               		.loc 1 76 79 view -0
+  18               		.cfi_startproc
+  19               	/* prologue: function */
+  20               	/* frame size = 0 */
+  21               	/* stack size = 0 */
+  22               	.L__stack_usage = 0
+  77:layouts/community/ergodox/alphadox/keymap.c ****   switch(id) {
+  23               		.loc 1 77 3 view .LVU1
+  78:layouts/community/ergodox/alphadox/keymap.c ****     case TEENSY:
+  79:layouts/community/ergodox/alphadox/keymap.c ****       break;
+  80:layouts/community/ergodox/alphadox/keymap.c ****   }
+  81:layouts/community/ergodox/alphadox/keymap.c ****   return MACRO_NONE;
+  24               		.loc 1 81 3 view .LVU2
+  82:layouts/community/ergodox/alphadox/keymap.c **** };
+  25               		.loc 1 82 1 is_stmt 0 view .LVU3
+  26 0000 90E0      		ldi r25,0
+  27 0002 80E0      		ldi r24,0
+  28               	.LVL1:
+  29               	/* epilogue start */
+  30               		.loc 1 82 1 view .LVU4
+  31 0004 0895      		ret
+  32               		.cfi_endproc
+  33               	.LFE128:
+  35               		.section	.text.matrix_init_user,"ax",@progbits
+  36               	.global	matrix_init_user
+  38               	matrix_init_user:
+  39               	.LFB129:
+  83:layouts/community/ergodox/alphadox/keymap.c **** 
+  84:layouts/community/ergodox/alphadox/keymap.c **** void matrix_init_user(void) {
+  40               		.loc 1 84 29 is_stmt 1 view -0
+  41               		.cfi_startproc
+  42               	/* prologue: function */
+  43               	/* frame size = 0 */
+  44               	/* stack size = 0 */
+  45               	.L__stack_usage = 0
+  85:layouts/community/ergodox/alphadox/keymap.c **** };
+  46               		.loc 1 85 1 view .LVU6
+  47               	/* epilogue start */
+  48 0000 0895      		ret
+  49               		.cfi_endproc
+  50               	.LFE129:
+  52               		.section	.text.matrix_scan_user,"ax",@progbits
+  53               	.global	matrix_scan_user
+  55               	matrix_scan_user:
+  56               	.LFB130:
+  86:layouts/community/ergodox/alphadox/keymap.c **** 
+  87:layouts/community/ergodox/alphadox/keymap.c **** void matrix_scan_user(void) {
+  57               		.loc 1 87 29 view -0
+  58               		.cfi_startproc
+  59 0000 CF93      		push r28
+  60               	.LCFI0:
+  61               		.cfi_def_cfa_offset 3
+  62               		.cfi_offset 28, -2
+  63               	/* prologue: function */
+  64               	/* frame size = 0 */
+  65               	/* stack size = 1 */
+  66               	.L__stack_usage = 1
+  88:layouts/community/ergodox/alphadox/keymap.c ****     uint8_t layer = biton32(layer_state);
+  67               		.loc 1 88 5 view .LVU8
+  68               		.loc 1 88 21 is_stmt 0 view .LVU9
+  69 0002 6091 0000 		lds r22,layer_state
+  70 0006 7091 0000 		lds r23,layer_state+1
+  71 000a 8091 0000 		lds r24,layer_state+2
+  72 000e 9091 0000 		lds r25,layer_state+3
+  73 0012 0E94 0000 		call biton32
+  74               	.LVL2:
+  75 0016 C82F      		mov r28,r24
+  76               	.LVL3:
+  89:layouts/community/ergodox/alphadox/keymap.c **** 
+  90:layouts/community/ergodox/alphadox/keymap.c ****     ergodox_board_led_off();
+  77               		.loc 1 90 5 is_stmt 1 view .LVU10
+  78 0018 0E94 0000 		call ergodox_board_led_off
+  79               	.LVL4:
+  91:layouts/community/ergodox/alphadox/keymap.c ****     ergodox_right_led_1_off();
+  80               		.loc 1 91 5 view .LVU11
+  81 001c 0E94 0000 		call ergodox_right_led_1_off
+  82               	.LVL5:
+  92:layouts/community/ergodox/alphadox/keymap.c ****     ergodox_right_led_2_off();
+  83               		.loc 1 92 5 view .LVU12
+  84 0020 0E94 0000 		call ergodox_right_led_2_off
+  85               	.LVL6:
+  93:layouts/community/ergodox/alphadox/keymap.c ****     ergodox_right_led_3_off();
+  86               		.loc 1 93 5 view .LVU13
+  87 0024 0E94 0000 		call ergodox_right_led_3_off
+  88               	.LVL7:
+  94:layouts/community/ergodox/alphadox/keymap.c ****     switch (layer) {
+  89               		.loc 1 94 5 view .LVU14
+  90 0028 C130      		cpi r28,lo8(1)
+  91 002a 01F0      		breq .L4
+  92 002c C230      		cpi r28,lo8(2)
+  93 002e 01F0      		breq .L5
+  94               	/* epilogue start */
+  95:layouts/community/ergodox/alphadox/keymap.c ****         case 1:
+  96:layouts/community/ergodox/alphadox/keymap.c ****             ergodox_right_led_1_on();
+  97:layouts/community/ergodox/alphadox/keymap.c ****             break;
+  98:layouts/community/ergodox/alphadox/keymap.c ****         case 2:
+  99:layouts/community/ergodox/alphadox/keymap.c ****             ergodox_right_led_2_on();
+ 100:layouts/community/ergodox/alphadox/keymap.c ****             break;
+ 101:layouts/community/ergodox/alphadox/keymap.c ****         default:
+ 102:layouts/community/ergodox/alphadox/keymap.c ****             break;
+ 103:layouts/community/ergodox/alphadox/keymap.c ****     }
+ 104:layouts/community/ergodox/alphadox/keymap.c **** };
+  95               		.loc 1 104 1 is_stmt 0 view .LVU15
+  96 0030 CF91      		pop r28
+  97               	.LVL8:
+  98               		.loc 1 104 1 view .LVU16
+  99 0032 0895      		ret
+ 100               	.LVL9:
+ 101               	.L4:
+  96:layouts/community/ergodox/alphadox/keymap.c ****             break;
+ 102               		.loc 1 96 13 is_stmt 1 view .LVU17
+ 103               	/* epilogue start */
+ 104               		.loc 1 104 1 is_stmt 0 view .LVU18
+ 105 0034 CF91      		pop r28
+ 106               	.LVL10:
+  96:layouts/community/ergodox/alphadox/keymap.c ****             break;
+ 107               		.loc 1 96 13 view .LVU19
+ 108 0036 0C94 0000 		jmp ergodox_right_led_1_on
+ 109               	.LVL11:
+ 110               	.L5:
+  99:layouts/community/ergodox/alphadox/keymap.c ****             break;
+ 111               		.loc 1 99 13 is_stmt 1 view .LVU20
+ 112               	/* epilogue start */
+ 113               		.loc 1 104 1 is_stmt 0 view .LVU21
+ 114 003a CF91      		pop r28
+ 115               	.LVL12:
+  99:layouts/community/ergodox/alphadox/keymap.c ****             break;
+ 116               		.loc 1 99 13 view .LVU22
+ 117 003c 0C94 0000 		jmp ergodox_right_led_2_on
+ 118               	.LVL13:
+ 119               		.cfi_endproc
+ 120               	.LFE130:
+ 122               	.global	keymaps
+ 123               		.section	.progmem.data.keymaps,"a",@progbits
+ 126               	keymaps:
+ 127 0000 0000      		.word	0
+ 128 0002 2B00      		.word	43
+ 129 0004 2961      		.word	24873
+ 130 0006 E100      		.word	225
+ 131 0008 3500      		.word	53
+ 132 000a 0000      		.word	0
+ 133 000c 0000      		.word	0
+ 134 000e 1400      		.word	20
+ 135 0010 0442      		.word	16900
+ 136 0012 1D00      		.word	29
+ 137 0014 4C00      		.word	76
+ 138 0016 0000      		.word	0
+ 139 0018 0000      		.word	0
+ 140 001a 1A00      		.word	26
+ 141 001c 1600      		.word	22
+ 142 001e 1B00      		.word	27
+ 143 0020 4C00      		.word	76
+ 144 0022 2961      		.word	24873
+ 145 0024 0000      		.word	0
+ 146 0026 0700      		.word	7
+ 147 0028 0800      		.word	8
+ 148 002a 0600      		.word	6
+ 149 002c E200      		.word	226
+ 150 002e 2A41      		.word	16682
+ 151 0030 0000      		.word	0
+ 152 0032 0900      		.word	9
+ 153 0034 1700      		.word	23
+ 154 0036 1900      		.word	25
+ 155 0038 2B68      		.word	26667
+ 156 003a 0000      		.word	0
+ 157 003c 0000      		.word	0
+ 158 003e 0E00      		.word	14
+ 159 0040 0A00      		.word	10
+ 160 0042 0500      		.word	5
+ 161 0044 0000      		.word	0
+ 162 0046 0000      		.word	0
+ 163 0048 0000      		.word	0
+ 164 004a 4B00      		.word	75
+ 165 004c 0000      		.word	0
+ 166 004e 4E00      		.word	78
+ 167 0050 0000      		.word	0
+ 168 0052 0000      		.word	0
+ 169 0054 0000      		.word	0
+ 170 0056 A900      		.word	169
+ 171 0058 0000      		.word	0
+ 172 005a AA00      		.word	170
+ 173 005c 0000      		.word	0
+ 174 005e 0000      		.word	0
+ 175 0060 0000      		.word	0
+ 176 0062 0D00      		.word	13
+ 177 0064 1C00      		.word	28
+ 178 0066 1300      		.word	19
+ 179 0068 0000      		.word	0
+ 180 006a 0000      		.word	0
+ 181 006c 0000      		.word	0
+ 182 006e 1800      		.word	24
+ 183 0070 1100      		.word	17
+ 184 0072 1000      		.word	16
+ 185 0074 2B68      		.word	26667
+ 186 0076 0000      		.word	0
+ 187 0078 0000      		.word	0
+ 188 007a 1500      		.word	21
+ 189 007c 0C00      		.word	12
+ 190 007e 3600      		.word	54
+ 191 0080 5000      		.word	80
+ 192 0082 2C41      		.word	16684
+ 193 0084 0000      		.word	0
+ 194 0086 0F00      		.word	15
+ 195 0088 1200      		.word	18
+ 196 008a 3700      		.word	55
+ 197 008c 5100      		.word	81
+ 198 008e 2862      		.word	25128
+ 199 0090 0000      		.word	0
+ 200 0092 3300      		.word	51
+ 201 0094 0B00      		.word	11
+ 202 0096 3800      		.word	56
+ 203 0098 5200      		.word	82
+ 204 009a 0000      		.word	0
+ 205 009c 0000      		.word	0
+ 206 009e 3100      		.word	49
+ 207 00a0 3400      		.word	52
+ 208 00a2 E500      		.word	229
+ 209 00a4 4F6D      		.word	27983
+ 210 00a6 0000      		.word	0
+ 211 00a8 0000      		.word	0
+ 212 00aa 0100      		.word	1
+ 213 00ac 0100      		.word	1
+ 214 00ae 0100      		.word	1
+ 215 00b0 3502      		.word	565
+ 216 00b2 0000      		.word	0
+ 217 00b4 0000      		.word	0
+ 218 00b6 1E02      		.word	542
+ 219 00b8 2002      		.word	544
+ 220 00ba 2202      		.word	546
+ 221 00bc 2402      		.word	548
+ 222 00be 0100      		.word	1
+ 223 00c0 0000      		.word	0
+ 224 00c2 1F02      		.word	543
+ 225 00c4 2102      		.word	545
+ 226 00c6 2302      		.word	547
+ 227 00c8 2402      		.word	548
+ 228 00ca 0100      		.word	1
+ 229 00cc 0000      		.word	0
+ 230 00ce 2F02      		.word	559
+ 231 00d0 2602      		.word	550
+ 232 00d2 2F00      		.word	47
+ 233 00d4 0100      		.word	1
+ 234 00d6 0100      		.word	1
+ 235 00d8 0000      		.word	0
+ 236 00da 3002      		.word	560
+ 237 00dc 2702      		.word	551
+ 238 00de 3000      		.word	48
+ 239 00e0 0100      		.word	1
+ 240 00e2 0100      		.word	1
+ 241 00e4 0000      		.word	0
+ 242 00e6 3102      		.word	561
+ 243 00e8 3100      		.word	49
+ 244 00ea 2502      		.word	549
+ 245 00ec 0000      		.word	0
+ 246 00ee 0100      		.word	1
+ 247 00f0 0000      		.word	0
+ 248 00f2 0100      		.word	1
+ 249 00f4 0000      		.word	0
+ 250 00f6 0100      		.word	1
+ 251 00f8 0000      		.word	0
+ 252 00fa 0100      		.word	1
+ 253 00fc 0000      		.word	0
+ 254 00fe 0100      		.word	1
+ 255 0100 0000      		.word	0
+ 256 0102 0100      		.word	1
+ 257 0104 0000      		.word	0
+ 258 0106 0100      		.word	1
+ 259 0108 0000      		.word	0
+ 260 010a 2E00      		.word	46
+ 261 010c 2D00      		.word	45
+ 262 010e 2D02      		.word	557
+ 263 0110 0000      		.word	0
+ 264 0112 0100      		.word	1
+ 265 0114 0000      		.word	0
+ 266 0116 2400      		.word	36
+ 267 0118 2100      		.word	33
+ 268 011a 1E00      		.word	30
+ 269 011c 2700      		.word	39
+ 270 011e 0100      		.word	1
+ 271 0120 0000      		.word	0
+ 272 0122 2500      		.word	37
+ 273 0124 2200      		.word	34
+ 274 0126 1F00      		.word	31
+ 275 0128 0000      		.word	0
+ 276 012a 0100      		.word	1
+ 277 012c 0000      		.word	0
+ 278 012e 2600      		.word	38
+ 279 0130 2300      		.word	35
+ 280 0132 2000      		.word	32
+ 281 0134 3700      		.word	55
+ 282 0136 0100      		.word	1
+ 283 0138 0000      		.word	0
+ 284 013a 2E02      		.word	558
+ 285 013c 3400      		.word	52
+ 286 013e 3402      		.word	564
+ 287 0140 0100      		.word	1
+ 288 0142 0100      		.word	1
+ 289 0144 0000      		.word	0
+ 290 0146 0000      		.word	0
+ 291 0148 0000      		.word	0
+ 292 014a 0100      		.word	1
+ 293 014c 0100      		.word	1
+ 294 014e 0000      		.word	0
+ 295 0150 005C      		.word	23552
+ 296 0152 0100      		.word	1
+ 297 0154 0100      		.word	1
+ 298 0156 0100      		.word	1
+ 299 0158 0100      		.word	1
+ 300 015a 0000      		.word	0
+ 301 015c 0000      		.word	0
+ 302 015e 0000      		.word	0
+ 303 0160 0442      		.word	16900
+ 304 0162 0000      		.word	0
+ 305 0164 0100      		.word	1
+ 306 0166 0100      		.word	1
+ 307 0168 0000      		.word	0
+ 308 016a 0000      		.word	0
+ 309 016c 0000      		.word	0
+ 310 016e 0000      		.word	0
+ 311 0170 0000      		.word	0
+ 312 0172 0100      		.word	1
+ 313 0174 0000      		.word	0
+ 314 0176 0000      		.word	0
+ 315 0178 0000      		.word	0
+ 316 017a 0000      		.word	0
+ 317 017c 0100      		.word	1
+ 318 017e 0100      		.word	1
+ 319 0180 0000      		.word	0
+ 320 0182 0000      		.word	0
+ 321 0184 0000      		.word	0
+ 322 0186 0000      		.word	0
+ 323 0188 0100      		.word	1
+ 324 018a 0100      		.word	1
+ 325 018c 0000      		.word	0
+ 326 018e 4B00      		.word	75
+ 327 0190 4E00      		.word	78
+ 328 0192 4C00      		.word	76
+ 329 0194 0000      		.word	0
+ 330 0196 0100      		.word	1
+ 331 0198 0000      		.word	0
+ 332 019a 0100      		.word	1
+ 333 019c 0000      		.word	0
+ 334 019e 0100      		.word	1
+ 335 01a0 0000      		.word	0
+ 336 01a2 0100      		.word	1
+ 337 01a4 0000      		.word	0
+ 338 01a6 0100      		.word	1
+ 339 01a8 0000      		.word	0
+ 340 01aa 0100      		.word	1
+ 341 01ac 0000      		.word	0
+ 342 01ae 0100      		.word	1
+ 343 01b0 0000      		.word	0
+ 344 01b2 A900      		.word	169
+ 345 01b4 AA00      		.word	170
+ 346 01b6 A800      		.word	168
+ 347 01b8 0000      		.word	0
+ 348 01ba 0100      		.word	1
+ 349 01bc 0000      		.word	0
+ 350 01be 4000      		.word	64
+ 351 01c0 3D00      		.word	61
+ 352 01c2 3A00      		.word	58
+ 353 01c4 0000      		.word	0
+ 354 01c6 0100      		.word	1
+ 355 01c8 0000      		.word	0
+ 356 01ca 4100      		.word	65
+ 357 01cc 3E00      		.word	62
+ 358 01ce 3B00      		.word	59
+ 359 01d0 0000      		.word	0
+ 360 01d2 0100      		.word	1
+ 361 01d4 0000      		.word	0
+ 362 01d6 4200      		.word	66
+ 363 01d8 3F00      		.word	63
+ 364 01da 3C00      		.word	60
+ 365 01dc 0000      		.word	0
+ 366 01de 0100      		.word	1
+ 367 01e0 0000      		.word	0
+ 368 01e2 4A00      		.word	74
+ 369 01e4 4D00      		.word	77
+ 370 01e6 4900      		.word	73
+ 371 01e8 0000      		.word	0
+ 372 01ea 0100      		.word	1
+ 373 01ec 0000      		.word	0
+ 374 01ee 0000      		.word	0
+ 375 01f0 0000      		.word	0
+ 376 01f2 0100      		.word	1
+ 377 01f4 0000      		.word	0
+ 378 01f6 0000      		.word	0
+ 379               		.text
+ 380               	.Letext0:
+ 381               		.file 2 "/usr/local/Cellar/avr-gcc/8.1.0/avr/include/stdint.h"
+ 382               		.file 3 "/usr/local/Cellar/avr-gcc/8.1.0/lib/avr-gcc/8/gcc/avr/8.1.0/include/stddef.h"
+ 383               		.file 4 "tmk_core/common/keyboard.h"
+ 384               		.file 5 "tmk_core/common/keycode.h"
+ 385               		.file 6 "tmk_core/common/action_code.h"
+ 386               		.file 7 "tmk_core/common/action_macro.h"
+ 387               		.file 8 "tmk_core/common/action.h"
+ 388               		.file 9 "lib/lufa/LUFA/Drivers/USB/Core/AVR8/../StdRequestType.h"
+ 389               		.file 10 "lib/lufa/LUFA/Drivers/USB/Core/AVR8/../DeviceStandardReq.h"
+ 390               		.file 11 "lib/lufa/LUFA/Drivers/USB/Core/USBTask.h"
+ 391               		.file 12 "lib/lufa/LUFA/Drivers/USB/Core/HostStandardReq.h"
+ 392               		.file 13 "/usr/local/Cellar/avr-gcc/8.1.0/avr/include/stdio.h"
+ 393               		.file 14 "tmk_core/common/report.h"
+ 394               		.file 15 "tmk_core/common/host.h"
+ 395               		.file 16 "tmk_core/common/debug.h"
+ 396               		.file 17 "quantum/keycode_config.h"
+ 397               		.file 18 "quantum/quantum_keycodes.h"
+ 398               		.file 19 "quantum/keymap.h"
+ 399               		.file 20 "tmk_core/common/action_layer.h"
+ 400               		.file 21 "tmk_core/common/timer.h"
+ 401               		.file 22 "tmk_core/common/action_util.h"
+ 402               		.file 23 "/usr/local/Cellar/avr-gcc/8.1.0/avr/include/stdlib.h"
+ 403               		.file 24 "quantum/quantum.h"
+ 404               		.file 25 "drivers/avr/i2c_master.h"
+ 405               		.file 26 "keyboards/ergodox_ez/ergodox_ez.h"
+ 406               		.file 27 "tmk_core/common/util.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 keymap.c
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccsuNaXz.s:2      *ABS*:000000000000003e __SP_H__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccsuNaXz.s:3      *ABS*:000000000000003d __SP_L__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccsuNaXz.s:4      *ABS*:000000000000003f __SREG__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccsuNaXz.s:5      *ABS*:0000000000000000 __tmp_reg__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccsuNaXz.s:6      *ABS*:0000000000000001 __zero_reg__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccsuNaXz.s:13     .text.action_get_macro:0000000000000000 action_get_macro
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccsuNaXz.s:38     .text.matrix_init_user:0000000000000000 matrix_init_user
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccsuNaXz.s:55     .text.matrix_scan_user:0000000000000000 matrix_scan_user
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccsuNaXz.s:126    .progmem.data.keymaps:0000000000000000 keymaps
+
+UNDEFINED SYMBOLS
+layer_state
+biton32
+ergodox_board_led_off
+ergodox_right_led_1_off
+ergodox_right_led_2_off
+ergodox_right_led_3_off
+ergodox_right_led_1_on
+ergodox_right_led_2_on

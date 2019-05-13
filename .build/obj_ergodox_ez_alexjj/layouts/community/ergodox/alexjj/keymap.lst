@@ -1,0 +1,836 @@
+   1               		.file	"keymap.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.section	.text.action_get_macro,"ax",@progbits
+  11               	.global	action_get_macro
+  13               	action_get_macro:
+  14               	.LVL0:
+  15               	.LFB128:
+  16               		.file 1 "layouts/community/ergodox/alexjj/keymap.c"
+   1:layouts/community/ergodox/alexjj/keymap.c **** #include QMK_KEYBOARD_H
+   2:layouts/community/ergodox/alexjj/keymap.c **** #include "debug.h"
+   3:layouts/community/ergodox/alexjj/keymap.c **** #include "action_layer.h"
+   4:layouts/community/ergodox/alexjj/keymap.c **** 
+   5:layouts/community/ergodox/alexjj/keymap.c **** #define BASE 0 // default layer
+   6:layouts/community/ergodox/alexjj/keymap.c **** #define SYMB 1 // symbols
+   7:layouts/community/ergodox/alexjj/keymap.c **** #define MDIA 2 // media keys
+   8:layouts/community/ergodox/alexjj/keymap.c **** #define UNIC 3 // unicode entry layer
+   9:layouts/community/ergodox/alexjj/keymap.c **** 
+  10:layouts/community/ergodox/alexjj/keymap.c **** const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+  11:layouts/community/ergodox/alexjj/keymap.c **** /* Keymap 0: Basic layer
+  12:layouts/community/ergodox/alexjj/keymap.c ****  *
+  13:layouts/community/ergodox/alexjj/keymap.c ****  * ,--------------------------------------------------.           ,--------------------------------
+  14:layouts/community/ergodox/alexjj/keymap.c ****  * |   ESC  |  1!  |  2@  |  3#  |  4$  |  5%  |  6^  |           |  7&  |  8*  |  9(  |  0)  |  -_
+  15:layouts/community/ergodox/alexjj/keymap.c ****  * |--------+------+------+------+------+-------------|           |------+------+------+------+----
+  16:layouts/community/ergodox/alexjj/keymap.c ****  * | Tab    |   Q  |   W  |   E  |   R  |   T  |  {   |           |   }  |   Y  |   U  |   I  |   O
+  17:layouts/community/ergodox/alexjj/keymap.c ****  * |--------+------+------+------+------+------|  [   |           |   ]  |------+------+------+----
+  18:layouts/community/ergodox/alexjj/keymap.c ****  * | Win    |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L
+  19:layouts/community/ergodox/alexjj/keymap.c ****  * |--------+------+------+------+------+------| Home |           | End  |------+------+------+----
+  20:layouts/community/ergodox/alexjj/keymap.c ****  * | LShift |Z/Alt |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .
+  21:layouts/community/ergodox/alexjj/keymap.c ****  * `--------+------+------+------+------+-------------'           `-------------+------+------+----
+  22:layouts/community/ergodox/alexjj/keymap.c ****  *   |LCtrl | COPY | PASTE| Left | Right|                                       | Down |  Up  |Hype
+  23:layouts/community/ergodox/alexjj/keymap.c ****  *   `----------------------------------'                                       `------------------
+  24:layouts/community/ergodox/alexjj/keymap.c ****  *                                        ,-------------.       ,-------------.
+  25:layouts/community/ergodox/alexjj/keymap.c ****  *   Hyper = Ctrl+Super+Alt+Shift         | ~L3  |  F5  |       |  F2  | ~L2  |
+  26:layouts/community/ergodox/alexjj/keymap.c ****  *                                 ,------|------|------|       |------+------+------.
+  27:layouts/community/ergodox/alexjj/keymap.c ****  *                                 |      |      | PgUp |       | Ins  |      |      |
+  28:layouts/community/ergodox/alexjj/keymap.c ****  *                                 | Enter| BkSp |------|       |------| ~L1  |Space |
+  29:layouts/community/ergodox/alexjj/keymap.c ****  *                                 |      |      | PgDn |       | Del  |      |      |
+  30:layouts/community/ergodox/alexjj/keymap.c ****  *                                 `--------------------'       `--------------------'
+  31:layouts/community/ergodox/alexjj/keymap.c ****  */
+  32:layouts/community/ergodox/alexjj/keymap.c **** // If it accepts an argument (i.e, is a function), it doesn't need KC_.
+  33:layouts/community/ergodox/alexjj/keymap.c **** // Otherwise, it needs KC_*
+  34:layouts/community/ergodox/alexjj/keymap.c **** [BASE] = LAYOUT_ergodox(  // layer 0 : default
+  35:layouts/community/ergodox/alexjj/keymap.c ****         // left hand
+  36:layouts/community/ergodox/alexjj/keymap.c ****         KC_ESC,         KC_1,         KC_2,   KC_3,   KC_4,   KC_5,   KC_6,
+  37:layouts/community/ergodox/alexjj/keymap.c ****         KC_TAB,         KC_Q,         KC_W,   KC_E,   KC_R,   KC_T,   KC_LBRC,
+  38:layouts/community/ergodox/alexjj/keymap.c ****         KC_LGUI,        KC_A,         KC_S,   KC_D,   KC_F,   KC_G,
+  39:layouts/community/ergodox/alexjj/keymap.c ****         KC_LSFT,        ALT_T(KC_Z),  KC_X,   KC_C,   KC_V,   KC_B,   KC_HOME,
+  40:layouts/community/ergodox/alexjj/keymap.c ****         KC_LCTRL,       LCTL(KC_C), LCTL(KC_V),  KC_LEFT,KC_RGHT,
+  41:layouts/community/ergodox/alexjj/keymap.c ****                                                       TT(UNIC),  KC_F5,
+  42:layouts/community/ergodox/alexjj/keymap.c ****                                                               KC_PGUP,
+  43:layouts/community/ergodox/alexjj/keymap.c ****                                                KC_ENT,KC_BSPC,KC_PGDN,
+  44:layouts/community/ergodox/alexjj/keymap.c ****         // right hand
+  45:layouts/community/ergodox/alexjj/keymap.c ****              KC_7,     KC_8,   KC_9,   KC_0,   KC_MINS,   KC_EQL,        KC_BSPC,
+  46:layouts/community/ergodox/alexjj/keymap.c ****              KC_RBRC,  KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,             KC_BSLS,
+  47:layouts/community/ergodox/alexjj/keymap.c ****                        KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,
+  48:layouts/community/ergodox/alexjj/keymap.c ****              KC_END,   KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,   KC_RSFT,
+  49:layouts/community/ergodox/alexjj/keymap.c ****              KC_DOWN,KC_UP, ALL_T(KC_NO),KC_GRV,   KC_RCTRL,
+  50:layouts/community/ergodox/alexjj/keymap.c ****              KC_F2, TT(MDIA),
+  51:layouts/community/ergodox/alexjj/keymap.c ****              KC_INS,
+  52:layouts/community/ergodox/alexjj/keymap.c ****              KC_DELT,TT(SYMB), KC_SPC
+  53:layouts/community/ergodox/alexjj/keymap.c ****     ),
+  54:layouts/community/ergodox/alexjj/keymap.c **** /* Keymap 1: Symbol Layer
+  55:layouts/community/ergodox/alexjj/keymap.c ****  *
+  56:layouts/community/ergodox/alexjj/keymap.c ****  * ,--------------------------------------------------.           ,--------------------------------
+  57:layouts/community/ergodox/alexjj/keymap.c ****  * |        |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |           |  F7  |  F8  |  F9  |  F10 |  F1
+  58:layouts/community/ergodox/alexjj/keymap.c ****  * |--------+------+------+------+------+-------------|           |------+------+------+------+----
+  59:layouts/community/ergodox/alexjj/keymap.c ****  * |        |   !  |   @  |   {  |   }  |   |  |      |           |      |   Up |   7  |   8  |   9
+  60:layouts/community/ergodox/alexjj/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
+  61:layouts/community/ergodox/alexjj/keymap.c ****  * |        |   #  |   $  |   (  |   )  |   `  |------|           |------| Down |   4  |   5  |   6
+  62:layouts/community/ergodox/alexjj/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
+  63:layouts/community/ergodox/alexjj/keymap.c ****  * |        |   %  |   ^  |   [  |   ]  |   ~  |      |           |      |   &  |   1  |   2  |   3
+  64:layouts/community/ergodox/alexjj/keymap.c ****  * `--------+------+------+------+------+-------------'           `-------------+------+------+----
+  65:layouts/community/ergodox/alexjj/keymap.c ****  *   |      |   £  |      |      |      |                                       |      |    . |   
+  66:layouts/community/ergodox/alexjj/keymap.c ****  *   `----------------------------------'                                       `------------------
+  67:layouts/community/ergodox/alexjj/keymap.c ****  *              ↑                         ,-------------.       ,-------------.
+  68:layouts/community/ergodox/alexjj/keymap.c ****  *           THERE!                       |      |      |       |      |      |
+  69:layouts/community/ergodox/alexjj/keymap.c ****  *                                 ,------|------|------|       |------+------+------.
+  70:layouts/community/ergodox/alexjj/keymap.c ****  *    CAD = Ctrl + Alt + Delete    |      |      |      |       |      |      |      |
+  71:layouts/community/ergodox/alexjj/keymap.c ****  *                                 |      |      |------|       |------|      |      |
+  72:layouts/community/ergodox/alexjj/keymap.c ****  *                                 |      |      |      |       | CAD  |      |      |
+  73:layouts/community/ergodox/alexjj/keymap.c ****  *                                 `--------------------'       `--------------------'
+  74:layouts/community/ergodox/alexjj/keymap.c ****  */
+  75:layouts/community/ergodox/alexjj/keymap.c **** // SYMBOLS
+  76:layouts/community/ergodox/alexjj/keymap.c **** [SYMB] = LAYOUT_ergodox(
+  77:layouts/community/ergodox/alexjj/keymap.c ****        // left hand
+  78:layouts/community/ergodox/alexjj/keymap.c ****        KC_TRNS,KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,
+  79:layouts/community/ergodox/alexjj/keymap.c ****        KC_TRNS,KC_EXLM,KC_AT,  KC_LCBR,KC_RCBR,KC_PIPE,KC_TRNS,
+  80:layouts/community/ergodox/alexjj/keymap.c ****        KC_TRNS,KC_HASH,KC_DLR, KC_LPRN,KC_RPRN,KC_GRV,
+  81:layouts/community/ergodox/alexjj/keymap.c ****        KC_TRNS,KC_PERC,KC_CIRC,KC_LBRC,KC_RBRC,KC_TILD,KC_TRNS,
+  82:layouts/community/ergodox/alexjj/keymap.c ****        KC_TRNS,M(3),KC_TRNS,KC_TRNS,KC_TRNS,
+  83:layouts/community/ergodox/alexjj/keymap.c ****                                        KC_TRNS,KC_TRNS,
+  84:layouts/community/ergodox/alexjj/keymap.c ****                                                KC_TRNS,
+  85:layouts/community/ergodox/alexjj/keymap.c ****                                KC_TRNS,KC_TRNS,KC_TRNS,
+  86:layouts/community/ergodox/alexjj/keymap.c ****        // right hand
+  87:layouts/community/ergodox/alexjj/keymap.c ****        KC_F7, KC_F8,   KC_F9,  KC_F10,   KC_F11,   KC_F12,  KC_PSCR,
+  88:layouts/community/ergodox/alexjj/keymap.c ****        KC_TRNS, KC_UP,   KC_7,   KC_8,    KC_9,    KC_ASTR, KC_TRNS,
+  89:layouts/community/ergodox/alexjj/keymap.c ****                 KC_DOWN, KC_4,   KC_5,    KC_6,    KC_PLUS, KC_TRNS,
+  90:layouts/community/ergodox/alexjj/keymap.c ****        KC_TRNS, KC_AMPR, KC_1,   KC_2,    KC_3,    KC_BSLS, KC_TRNS,
+  91:layouts/community/ergodox/alexjj/keymap.c ****                          KC_TRNS,KC_DOT,  KC_0,    KC_EQL,  LALT(KC_F4),
+  92:layouts/community/ergodox/alexjj/keymap.c ****        KC_TRNS, KC_TRNS,
+  93:layouts/community/ergodox/alexjj/keymap.c ****        KC_TRNS,
+  94:layouts/community/ergodox/alexjj/keymap.c ****        LCTL(LALT(KC_DEL)), KC_TRNS, KC_TRNS
+  95:layouts/community/ergodox/alexjj/keymap.c **** ),
+  96:layouts/community/ergodox/alexjj/keymap.c **** /* Keymap 2: Media and mouse keys
+  97:layouts/community/ergodox/alexjj/keymap.c ****  *
+  98:layouts/community/ergodox/alexjj/keymap.c ****  * ,--------------------------------------------------.           ,--------------------------------
+  99:layouts/community/ergodox/alexjj/keymap.c ****  * | TEENSY |      |      |      |      |      |      |           |      |      |      |      |    
+ 100:layouts/community/ergodox/alexjj/keymap.c ****  * |--------+------+------+------+------+-------------|           |------+------+------+------+----
+ 101:layouts/community/ergodox/alexjj/keymap.c ****  * |        |      |      | MsUp |      |      |      |           |      |      |      |      |    
+ 102:layouts/community/ergodox/alexjj/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
+ 103:layouts/community/ergodox/alexjj/keymap.c ****  * |        |      |MsLeft|MsDown|MsRght|      |------|           |------|      |      |      |    
+ 104:layouts/community/ergodox/alexjj/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
+ 105:layouts/community/ergodox/alexjj/keymap.c ****  * |        |      |      |      |      |      |      |           |      |      |      | Prev | Nex
+ 106:layouts/community/ergodox/alexjj/keymap.c ****  * `--------+------+------+------+------+-------------'           `-------------+------+------+----
+ 107:layouts/community/ergodox/alexjj/keymap.c ****  *   |      |      |      | Lclk | Rclk |                                       |VolDn |VolUp | Mut
+ 108:layouts/community/ergodox/alexjj/keymap.c ****  *   `----------------------------------'                                       `------------------
+ 109:layouts/community/ergodox/alexjj/keymap.c ****  *                                        ,-------------.       ,-------------.
+ 110:layouts/community/ergodox/alexjj/keymap.c ****  *                                        |      |      |       |      |      |
+ 111:layouts/community/ergodox/alexjj/keymap.c ****  *                                 ,------|------|------|       |------+------+------.
+ 112:layouts/community/ergodox/alexjj/keymap.c ****  *                                 |      |      |      |       |      |      |Brwser|
+ 113:layouts/community/ergodox/alexjj/keymap.c ****  *                                 |      |      |------|       |------|      |Back  |
+ 114:layouts/community/ergodox/alexjj/keymap.c ****  *                                 |      |      |      |       |      |      |      |
+ 115:layouts/community/ergodox/alexjj/keymap.c ****  *                                 `--------------------'       `--------------------'
+ 116:layouts/community/ergodox/alexjj/keymap.c ****  */
+ 117:layouts/community/ergodox/alexjj/keymap.c **** // MEDIA AND MOUSE
+ 118:layouts/community/ergodox/alexjj/keymap.c **** [MDIA] = LAYOUT_ergodox(
+ 119:layouts/community/ergodox/alexjj/keymap.c ****        RESET, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 120:layouts/community/ergodox/alexjj/keymap.c ****        KC_TRNS, KC_TRNS, KC_TRNS, KC_MS_U, KC_TRNS, KC_TRNS, KC_TRNS,
+ 121:layouts/community/ergodox/alexjj/keymap.c ****        KC_TRNS, KC_TRNS, KC_MS_L, KC_MS_D, KC_MS_R, KC_TRNS,
+ 122:layouts/community/ergodox/alexjj/keymap.c ****        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 123:layouts/community/ergodox/alexjj/keymap.c ****        KC_TRNS, KC_TRNS, KC_TRNS, KC_BTN1, KC_BTN2,
+ 124:layouts/community/ergodox/alexjj/keymap.c ****                                            KC_TRNS, KC_TRNS,
+ 125:layouts/community/ergodox/alexjj/keymap.c ****                                                     KC_TRNS,
+ 126:layouts/community/ergodox/alexjj/keymap.c ****                                   KC_TRNS, KC_TRNS, KC_TRNS,
+ 127:layouts/community/ergodox/alexjj/keymap.c ****     // right hand
+ 128:layouts/community/ergodox/alexjj/keymap.c ****        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 129:layouts/community/ergodox/alexjj/keymap.c ****        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+ 130:layouts/community/ergodox/alexjj/keymap.c ****                  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_MPLY,
+ 131:layouts/community/ergodox/alexjj/keymap.c ****        KC_TRNS,  KC_TRNS, KC_TRNS, KC_MPRV, KC_MNXT, KC_TRNS, KC_TRNS,
+ 132:layouts/community/ergodox/alexjj/keymap.c ****                           KC_VOLD, KC_VOLU, KC_MUTE, KC_TRNS, KC_TRNS,
+ 133:layouts/community/ergodox/alexjj/keymap.c ****        KC_TRNS, KC_TRNS,
+ 134:layouts/community/ergodox/alexjj/keymap.c ****        KC_TRNS,
+ 135:layouts/community/ergodox/alexjj/keymap.c ****        KC_TRNS, KC_TRNS, KC_WBAK
+ 136:layouts/community/ergodox/alexjj/keymap.c **** ),
+ 137:layouts/community/ergodox/alexjj/keymap.c **** /* Keymap 3: Unicode Entry
+ 138:layouts/community/ergodox/alexjj/keymap.c ****  *
+ 139:layouts/community/ergodox/alexjj/keymap.c ****  * ,--------------------------------------------------.           ,--------------------------------
+ 140:layouts/community/ergodox/alexjj/keymap.c ****  * |  Alt   |  1   |   2  |  3   |  4   |   5  |  6   |           |   7  |  8   |   9  |  0   |  + 
+ 141:layouts/community/ergodox/alexjj/keymap.c ****  * |--------+------+------+------+------+-------------|           |------+------+------+------+----
+ 142:layouts/community/ergodox/alexjj/keymap.c ****  * |  Alt   |      |      |   E  |      |      |      |           |      |      |   7  |   8  |  9 
+ 143:layouts/community/ergodox/alexjj/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
+ 144:layouts/community/ergodox/alexjj/keymap.c ****  * |  Alt   |   A  |      |   D  |   F  |      |------|           |------|      |   4  |   5  |  6 
+ 145:layouts/community/ergodox/alexjj/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
+ 146:layouts/community/ergodox/alexjj/keymap.c ****  * |  Alt   |      |      |   C  |      |   B  |      |           |      |      |   1  |   2  |  3 
+ 147:layouts/community/ergodox/alexjj/keymap.c ****  * `--------+------+------+------+------+-------------'           `-------------+------+------+----
+ 148:layouts/community/ergodox/alexjj/keymap.c ****  *   | Alt  |  Alt | Alt  |      |      |                                       |   0  |   0  |  0 
+ 149:layouts/community/ergodox/alexjj/keymap.c ****  *   `----------------------------------'                                       `------------------
+ 150:layouts/community/ergodox/alexjj/keymap.c ****  *                                        ,-------------.       ,-------------.
+ 151:layouts/community/ergodox/alexjj/keymap.c ****  *      WINDOWS ONLY SETUP!!              | ~L3  |      |       |      |      |
+ 152:layouts/community/ergodox/alexjj/keymap.c ****  *                                 ,------|------|------|       |------+------+------.
+ 153:layouts/community/ergodox/alexjj/keymap.c ****  *                                 |      |      |      |       |      |      |      |
+ 154:layouts/community/ergodox/alexjj/keymap.c ****  *                                 |  Alt |  Alt |------|       |------|  Alt | Alt  |
+ 155:layouts/community/ergodox/alexjj/keymap.c ****  *                                 |      |      |      |       |      |      |      |
+ 156:layouts/community/ergodox/alexjj/keymap.c ****  *                                 `--------------------'       `--------------------'
+ 157:layouts/community/ergodox/alexjj/keymap.c ****  */
+ 158:layouts/community/ergodox/alexjj/keymap.c **** // If it accepts an argument (i.e, is a function), it doesn't need KC_.
+ 159:layouts/community/ergodox/alexjj/keymap.c **** // Otherwise, it needs KC_*
+ 160:layouts/community/ergodox/alexjj/keymap.c **** [UNIC] = LAYOUT_ergodox(  // layer 3 : Unicode Entry
+ 161:layouts/community/ergodox/alexjj/keymap.c ****         // left hand
+ 162:layouts/community/ergodox/alexjj/keymap.c ****        KC_LALT,       KC_P1,      KC_P2,      KC_P3,  KC_P4,     KC_P5,   KC_P6,
+ 163:layouts/community/ergodox/alexjj/keymap.c ****       KC_LALT,       KC_TRNS,    KC_TRNS,    KC_E,   KC_TRNS,   KC_TRNS, KC_TRNS,
+ 164:layouts/community/ergodox/alexjj/keymap.c ****       KC_LALT,       KC_A,       KC_TRNS,    KC_D,   KC_F,      KC_TRNS,
+ 165:layouts/community/ergodox/alexjj/keymap.c ****       KC_LALT,       KC_TRNS,    KC_TRNS,    KC_C,   KC_TRNS,   KC_B,    KC_TRNS,
+ 166:layouts/community/ergodox/alexjj/keymap.c ****       KC_LALT,       KC_LALT,    KC_LALT,    KC_TRNS,KC_TRNS,
+ 167:layouts/community/ergodox/alexjj/keymap.c ****                                                      KC_TRNS,   KC_TRNS,
+ 168:layouts/community/ergodox/alexjj/keymap.c ****                                                                 KC_TRNS,
+ 169:layouts/community/ergodox/alexjj/keymap.c ****                                              KC_LALT,KC_LALT,   KC_TRNS,
+ 170:layouts/community/ergodox/alexjj/keymap.c ****         // right hand
+ 171:layouts/community/ergodox/alexjj/keymap.c ****            KC_P7,    KC_P8,     KC_P9,   KC_P0,   KC_PPLS,KC_PPLS,      KC_TRNS,
+ 172:layouts/community/ergodox/alexjj/keymap.c ****            KC_TRNS,  KC_TRNS,   KC_P7,   KC_P8,   KC_P9,  KC_PPLS,      KC_TRNS,
+ 173:layouts/community/ergodox/alexjj/keymap.c ****                      KC_TRNS,   KC_P4,   KC_P5,   KC_P6,  KC_PPLS,      KC_TRNS,
+ 174:layouts/community/ergodox/alexjj/keymap.c ****            KC_TRNS,  KC_TRNS,   KC_P1,   KC_P2,   KC_P3,  KC_PPLS,      KC_TRNS,
+ 175:layouts/community/ergodox/alexjj/keymap.c ****                                 KC_P0,   KC_P0,   KC_P0,  KC_PPLS,      KC_TRNS,
+ 176:layouts/community/ergodox/alexjj/keymap.c ****            KC_TRNS, KC_TRNS,
+ 177:layouts/community/ergodox/alexjj/keymap.c ****            KC_TRNS,
+ 178:layouts/community/ergodox/alexjj/keymap.c ****            KC_TRNS,KC_LALT, KC_LALT
+ 179:layouts/community/ergodox/alexjj/keymap.c ****                   ),
+ 180:layouts/community/ergodox/alexjj/keymap.c **** };
+ 181:layouts/community/ergodox/alexjj/keymap.c **** 
+ 182:layouts/community/ergodox/alexjj/keymap.c **** const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
+ 183:layouts/community/ergodox/alexjj/keymap.c **** {
+  17               		.loc 1 183 1 view -0
+  18               		.cfi_startproc
+  19               		.loc 1 183 1 is_stmt 0 view .LVU1
+  20 0000 CF93      		push r28
+  21               	.LCFI0:
+  22               		.cfi_def_cfa_offset 3
+  23               		.cfi_offset 28, -2
+  24 0002 DF93      		push r29
+  25               	.LCFI1:
+  26               		.cfi_def_cfa_offset 4
+  27               		.cfi_offset 29, -3
+  28               	/* prologue: function */
+  29               	/* frame size = 0 */
+  30               	/* stack size = 2 */
+  31               	.L__stack_usage = 2
+  32 0004 EC01      		movw r28,r24
+ 184:layouts/community/ergodox/alexjj/keymap.c ****   // MACRODOWN only works in this function
+ 185:layouts/community/ergodox/alexjj/keymap.c ****       switch(id) {
+  33               		.loc 1 185 7 is_stmt 1 view .LVU2
+  34 0006 6623      		tst r22
+  35 0008 01F0      		breq .L2
+  36 000a 6330      		cpi r22,lo8(3)
+  37 000c 01F0      		breq .L3
+  38               	.LVL1:
+  39               	.L6:
+ 186:layouts/community/ergodox/alexjj/keymap.c ****         case 0:
+ 187:layouts/community/ergodox/alexjj/keymap.c ****         if (record->event.pressed) {
+ 188:layouts/community/ergodox/alexjj/keymap.c ****           register_code(KC_RSFT);
+ 189:layouts/community/ergodox/alexjj/keymap.c ****         } else {
+ 190:layouts/community/ergodox/alexjj/keymap.c ****           unregister_code(KC_RSFT);
+ 191:layouts/community/ergodox/alexjj/keymap.c ****         }
+ 192:layouts/community/ergodox/alexjj/keymap.c ****       case 3: // this would trigger when you hit a key mapped as M(3)
+ 193:layouts/community/ergodox/alexjj/keymap.c ****         if (record->event.pressed) {
+ 194:layouts/community/ergodox/alexjj/keymap.c ****           return MACRO( I(255), D(LALT), T(P1), T(P5), T(P6), U(LALT), END  );
+ 195:layouts/community/ergodox/alexjj/keymap.c ****       }
+ 196:layouts/community/ergodox/alexjj/keymap.c ****         break;
+ 197:layouts/community/ergodox/alexjj/keymap.c ****       }
+ 198:layouts/community/ergodox/alexjj/keymap.c ****     return MACRO_NONE;
+  40               		.loc 1 198 12 is_stmt 0 view .LVU3
+  41 000e 90E0      		ldi r25,0
+  42 0010 80E0      		ldi r24,0
+  43 0012 00C0      		rjmp .L1
+  44               	.LVL2:
+  45               	.L2:
+ 187:layouts/community/ergodox/alexjj/keymap.c ****           register_code(KC_RSFT);
+  46               		.loc 1 187 9 is_stmt 1 view .LVU4
+ 187:layouts/community/ergodox/alexjj/keymap.c ****           register_code(KC_RSFT);
+  47               		.loc 1 187 12 is_stmt 0 view .LVU5
+  48 0014 8A81      		ldd r24,Y+2
+  49               	.LVL3:
+ 187:layouts/community/ergodox/alexjj/keymap.c ****           register_code(KC_RSFT);
+  50               		.loc 1 187 12 view .LVU6
+  51 0016 8823      		tst r24
+  52 0018 01F0      		breq .L5
+ 188:layouts/community/ergodox/alexjj/keymap.c ****         } else {
+  53               		.loc 1 188 11 is_stmt 1 view .LVU7
+  54 001a 85EE      		ldi r24,lo8(-27)
+  55 001c 0E94 0000 		call register_code
+  56               	.LVL4:
+  57               	.L3:
+ 193:layouts/community/ergodox/alexjj/keymap.c ****           return MACRO( I(255), D(LALT), T(P1), T(P5), T(P6), U(LALT), END  );
+  58               		.loc 1 193 9 view .LVU8
+ 193:layouts/community/ergodox/alexjj/keymap.c ****           return MACRO( I(255), D(LALT), T(P1), T(P5), T(P6), U(LALT), END  );
+  59               		.loc 1 193 12 is_stmt 0 view .LVU9
+  60 0020 8A81      		ldd r24,Y+2
+  61 0022 8823      		tst r24
+  62 0024 01F0      		breq .L6
+ 194:layouts/community/ergodox/alexjj/keymap.c ****       }
+  63               		.loc 1 194 18 view .LVU10
+  64 0026 80E0      		ldi r24,lo8(__m.6056)
+  65 0028 90E0      		ldi r25,hi8(__m.6056)
+  66               	.L1:
+  67               	/* epilogue start */
+ 199:layouts/community/ergodox/alexjj/keymap.c **** };
+  68               		.loc 1 199 1 view .LVU11
+  69 002a DF91      		pop r29
+  70 002c CF91      		pop r28
+  71               	.LVL5:
+  72               		.loc 1 199 1 view .LVU12
+  73 002e 0895      		ret
+  74               	.LVL6:
+  75               	.L5:
+ 190:layouts/community/ergodox/alexjj/keymap.c ****         }
+  76               		.loc 1 190 11 is_stmt 1 view .LVU13
+  77 0030 85EE      		ldi r24,lo8(-27)
+  78 0032 0E94 0000 		call unregister_code
+  79               	.LVL7:
+ 190:layouts/community/ergodox/alexjj/keymap.c ****         }
+  80               		.loc 1 190 11 is_stmt 0 view .LVU14
+  81 0036 00C0      		rjmp .L3
+  82               		.cfi_endproc
+  83               	.LFE128:
+  85               		.section	.text.matrix_init_user,"ax",@progbits
+  86               	.global	matrix_init_user
+  88               	matrix_init_user:
+  89               	.LFB129:
+ 200:layouts/community/ergodox/alexjj/keymap.c **** 
+ 201:layouts/community/ergodox/alexjj/keymap.c **** // Runs just one time when the keyboard initializes.
+ 202:layouts/community/ergodox/alexjj/keymap.c **** void matrix_init_user(void) {
+  90               		.loc 1 202 29 is_stmt 1 view -0
+  91               		.cfi_startproc
+  92               	/* prologue: function */
+  93               	/* frame size = 0 */
+  94               	/* stack size = 0 */
+  95               	.L__stack_usage = 0
+ 203:layouts/community/ergodox/alexjj/keymap.c **** 
+ 204:layouts/community/ergodox/alexjj/keymap.c **** };
+  96               		.loc 1 204 1 view .LVU16
+  97               	/* epilogue start */
+  98 0000 0895      		ret
+  99               		.cfi_endproc
+ 100               	.LFE129:
+ 102               		.section	.text.matrix_scan_user,"ax",@progbits
+ 103               	.global	matrix_scan_user
+ 105               	matrix_scan_user:
+ 106               	.LFB130:
+ 205:layouts/community/ergodox/alexjj/keymap.c **** 
+ 206:layouts/community/ergodox/alexjj/keymap.c **** // Runs constantly in the background, in a loop.
+ 207:layouts/community/ergodox/alexjj/keymap.c **** void matrix_scan_user(void) {
+ 107               		.loc 1 207 29 view -0
+ 108               		.cfi_startproc
+ 109 0000 CF93      		push r28
+ 110               	.LCFI2:
+ 111               		.cfi_def_cfa_offset 3
+ 112               		.cfi_offset 28, -2
+ 113               	/* prologue: function */
+ 114               	/* frame size = 0 */
+ 115               	/* stack size = 1 */
+ 116               	.L__stack_usage = 1
+ 208:layouts/community/ergodox/alexjj/keymap.c **** 
+ 209:layouts/community/ergodox/alexjj/keymap.c ****     uint8_t layer = biton32(layer_state);
+ 117               		.loc 1 209 5 view .LVU18
+ 118               		.loc 1 209 21 is_stmt 0 view .LVU19
+ 119 0002 6091 0000 		lds r22,layer_state
+ 120 0006 7091 0000 		lds r23,layer_state+1
+ 121 000a 8091 0000 		lds r24,layer_state+2
+ 122 000e 9091 0000 		lds r25,layer_state+3
+ 123 0012 0E94 0000 		call biton32
+ 124               	.LVL8:
+ 125 0016 C82F      		mov r28,r24
+ 126               	.LVL9:
+ 210:layouts/community/ergodox/alexjj/keymap.c **** 
+ 211:layouts/community/ergodox/alexjj/keymap.c ****     ergodox_board_led_off();
+ 127               		.loc 1 211 5 is_stmt 1 view .LVU20
+ 128 0018 0E94 0000 		call ergodox_board_led_off
+ 129               	.LVL10:
+ 212:layouts/community/ergodox/alexjj/keymap.c ****     ergodox_right_led_1_off();
+ 130               		.loc 1 212 5 view .LVU21
+ 131 001c 0E94 0000 		call ergodox_right_led_1_off
+ 132               	.LVL11:
+ 213:layouts/community/ergodox/alexjj/keymap.c ****     ergodox_right_led_2_off();
+ 133               		.loc 1 213 5 view .LVU22
+ 134 0020 0E94 0000 		call ergodox_right_led_2_off
+ 135               	.LVL12:
+ 214:layouts/community/ergodox/alexjj/keymap.c ****     ergodox_right_led_3_off();
+ 136               		.loc 1 214 5 view .LVU23
+ 137 0024 0E94 0000 		call ergodox_right_led_3_off
+ 138               	.LVL13:
+ 215:layouts/community/ergodox/alexjj/keymap.c ****     switch (layer) {
+ 139               		.loc 1 215 5 view .LVU24
+ 140 0028 C230      		cpi r28,lo8(2)
+ 141 002a 01F0      		breq .L12
+ 142 002c C330      		cpi r28,lo8(3)
+ 143 002e 01F0      		breq .L13
+ 144 0030 C130      		cpi r28,lo8(1)
+ 145 0032 01F4      		brne .L11
+ 216:layouts/community/ergodox/alexjj/keymap.c ****       // TODO: Make this relevant to the ErgoDox EZ.
+ 217:layouts/community/ergodox/alexjj/keymap.c ****         case 1:
+ 218:layouts/community/ergodox/alexjj/keymap.c ****             ergodox_right_led_1_on();
+ 146               		.loc 1 218 13 view .LVU25
+ 147               	/* epilogue start */
+ 219:layouts/community/ergodox/alexjj/keymap.c ****             break;
+ 220:layouts/community/ergodox/alexjj/keymap.c ****         case 2:
+ 221:layouts/community/ergodox/alexjj/keymap.c ****             ergodox_right_led_2_on();
+ 222:layouts/community/ergodox/alexjj/keymap.c ****             break;
+ 223:layouts/community/ergodox/alexjj/keymap.c ****         case 3:
+ 224:layouts/community/ergodox/alexjj/keymap.c ****             ergodox_right_led_3_on();
+ 225:layouts/community/ergodox/alexjj/keymap.c ****             break;
+ 226:layouts/community/ergodox/alexjj/keymap.c ****         default:
+ 227:layouts/community/ergodox/alexjj/keymap.c ****             // none
+ 228:layouts/community/ergodox/alexjj/keymap.c ****             break;
+ 229:layouts/community/ergodox/alexjj/keymap.c ****     }
+ 230:layouts/community/ergodox/alexjj/keymap.c **** 
+ 231:layouts/community/ergodox/alexjj/keymap.c **** };
+ 148               		.loc 1 231 1 is_stmt 0 view .LVU26
+ 149 0034 CF91      		pop r28
+ 150               	.LVL14:
+ 218:layouts/community/ergodox/alexjj/keymap.c ****             break;
+ 151               		.loc 1 218 13 view .LVU27
+ 152 0036 0C94 0000 		jmp ergodox_right_led_1_on
+ 153               	.LVL15:
+ 154               	.L12:
+ 221:layouts/community/ergodox/alexjj/keymap.c ****             break;
+ 155               		.loc 1 221 13 is_stmt 1 view .LVU28
+ 156               	/* epilogue start */
+ 157               		.loc 1 231 1 is_stmt 0 view .LVU29
+ 158 003a CF91      		pop r28
+ 159               	.LVL16:
+ 221:layouts/community/ergodox/alexjj/keymap.c ****             break;
+ 160               		.loc 1 221 13 view .LVU30
+ 161 003c 0C94 0000 		jmp ergodox_right_led_2_on
+ 162               	.LVL17:
+ 163               	.L13:
+ 224:layouts/community/ergodox/alexjj/keymap.c ****             break;
+ 164               		.loc 1 224 13 is_stmt 1 view .LVU31
+ 165               	/* epilogue start */
+ 166               		.loc 1 231 1 is_stmt 0 view .LVU32
+ 167 0040 CF91      		pop r28
+ 168               	.LVL18:
+ 224:layouts/community/ergodox/alexjj/keymap.c ****             break;
+ 169               		.loc 1 224 13 view .LVU33
+ 170 0042 0C94 0000 		jmp ergodox_right_led_3_on
+ 171               	.LVL19:
+ 172               	.L11:
+ 173               	/* epilogue start */
+ 174               		.loc 1 231 1 view .LVU34
+ 175 0046 CF91      		pop r28
+ 176               	.LVL20:
+ 177               		.loc 1 231 1 view .LVU35
+ 178 0048 0895      		ret
+ 179               		.cfi_endproc
+ 180               	.LFE130:
+ 182               		.section	.progmem.data.__m.6056,"a",@progbits
+ 185               	__m.6056:
+ 186 0000 75        		.byte	117
+ 187 0001 FF        		.byte	-1
+ 188 0002 01        		.byte	1
+ 189 0003 E2        		.byte	-30
+ 190 0004 01        		.byte	1
+ 191 0005 59        		.byte	89
+ 192 0006 02        		.byte	2
+ 193 0007 59        		.byte	89
+ 194 0008 01        		.byte	1
+ 195 0009 5D        		.byte	93
+ 196 000a 02        		.byte	2
+ 197 000b 5D        		.byte	93
+ 198 000c 01        		.byte	1
+ 199 000d 5E        		.byte	94
+ 200 000e 02        		.byte	2
+ 201 000f 5E        		.byte	94
+ 202 0010 02        		.byte	2
+ 203 0011 E2        		.byte	-30
+ 204 0012 00        		.byte	0
+ 205               	.global	keymaps
+ 206               		.section	.progmem.data.keymaps,"a",@progbits
+ 209               	keymaps:
+ 210 0000 2900      		.word	41
+ 211 0002 2B00      		.word	43
+ 212 0004 E300      		.word	227
+ 213 0006 E100      		.word	225
+ 214 0008 E000      		.word	224
+ 215 000a 0000      		.word	0
+ 216 000c 1E00      		.word	30
+ 217 000e 1400      		.word	20
+ 218 0010 0400      		.word	4
+ 219 0012 1D64      		.word	25629
+ 220 0014 0601      		.word	262
+ 221 0016 4E00      		.word	78
+ 222 0018 1F00      		.word	31
+ 223 001a 1A00      		.word	26
+ 224 001c 1600      		.word	22
+ 225 001e 1B00      		.word	27
+ 226 0020 1901      		.word	281
+ 227 0022 2A00      		.word	42
+ 228 0024 2000      		.word	32
+ 229 0026 0800      		.word	8
+ 230 0028 0700      		.word	7
+ 231 002a 0600      		.word	6
+ 232 002c 5000      		.word	80
+ 233 002e 2800      		.word	40
+ 234 0030 2100      		.word	33
+ 235 0032 1500      		.word	21
+ 236 0034 0900      		.word	9
+ 237 0036 1900      		.word	25
+ 238 0038 4F00      		.word	79
+ 239 003a 4B00      		.word	75
+ 240 003c 2200      		.word	34
+ 241 003e 1700      		.word	23
+ 242 0040 0A00      		.word	10
+ 243 0042 0500      		.word	5
+ 244 0044 0000      		.word	0
+ 245 0046 0358      		.word	22531
+ 246 0048 2300      		.word	35
+ 247 004a 2F00      		.word	47
+ 248 004c 0000      		.word	0
+ 249 004e 4A00      		.word	74
+ 250 0050 0000      		.word	0
+ 251 0052 3E00      		.word	62
+ 252 0054 2400      		.word	36
+ 253 0056 3000      		.word	48
+ 254 0058 0000      		.word	0
+ 255 005a 4D00      		.word	77
+ 256 005c 0000      		.word	0
+ 257 005e 3B00      		.word	59
+ 258 0060 2500      		.word	37
+ 259 0062 1C00      		.word	28
+ 260 0064 0B00      		.word	11
+ 261 0066 1100      		.word	17
+ 262 0068 0000      		.word	0
+ 263 006a 0258      		.word	22530
+ 264 006c 2600      		.word	38
+ 265 006e 1800      		.word	24
+ 266 0070 0D00      		.word	13
+ 267 0072 1000      		.word	16
+ 268 0074 5100      		.word	81
+ 269 0076 4900      		.word	73
+ 270 0078 2700      		.word	39
+ 271 007a 0C00      		.word	12
+ 272 007c 0E00      		.word	14
+ 273 007e 3600      		.word	54
+ 274 0080 5200      		.word	82
+ 275 0082 2C00      		.word	44
+ 276 0084 2D00      		.word	45
+ 277 0086 1200      		.word	18
+ 278 0088 0F00      		.word	15
+ 279 008a 3700      		.word	55
+ 280 008c 006F      		.word	28416
+ 281 008e 0158      		.word	22529
+ 282 0090 2E00      		.word	46
+ 283 0092 1300      		.word	19
+ 284 0094 3300      		.word	51
+ 285 0096 3800      		.word	56
+ 286 0098 3500      		.word	53
+ 287 009a 4C00      		.word	76
+ 288 009c 2A00      		.word	42
+ 289 009e 3100      		.word	49
+ 290 00a0 3400      		.word	52
+ 291 00a2 E500      		.word	229
+ 292 00a4 E400      		.word	228
+ 293 00a6 0000      		.word	0
+ 294 00a8 0100      		.word	1
+ 295 00aa 0100      		.word	1
+ 296 00ac 0100      		.word	1
+ 297 00ae 0100      		.word	1
+ 298 00b0 0100      		.word	1
+ 299 00b2 0000      		.word	0
+ 300 00b4 3A00      		.word	58
+ 301 00b6 1E02      		.word	542
+ 302 00b8 2002      		.word	544
+ 303 00ba 2202      		.word	546
+ 304 00bc 0330      		.word	12291
+ 305 00be 0100      		.word	1
+ 306 00c0 3B00      		.word	59
+ 307 00c2 1F02      		.word	543
+ 308 00c4 2102      		.word	545
+ 309 00c6 2302      		.word	547
+ 310 00c8 0100      		.word	1
+ 311 00ca 0100      		.word	1
+ 312 00cc 3C00      		.word	60
+ 313 00ce 2F02      		.word	559
+ 314 00d0 2602      		.word	550
+ 315 00d2 2F00      		.word	47
+ 316 00d4 0100      		.word	1
+ 317 00d6 0100      		.word	1
+ 318 00d8 3D00      		.word	61
+ 319 00da 3002      		.word	560
+ 320 00dc 2702      		.word	551
+ 321 00de 3000      		.word	48
+ 322 00e0 0100      		.word	1
+ 323 00e2 0100      		.word	1
+ 324 00e4 3E00      		.word	62
+ 325 00e6 3102      		.word	561
+ 326 00e8 3500      		.word	53
+ 327 00ea 3502      		.word	565
+ 328 00ec 0000      		.word	0
+ 329 00ee 0100      		.word	1
+ 330 00f0 3F00      		.word	63
+ 331 00f2 0100      		.word	1
+ 332 00f4 0000      		.word	0
+ 333 00f6 0100      		.word	1
+ 334 00f8 0000      		.word	0
+ 335 00fa 0100      		.word	1
+ 336 00fc 4000      		.word	64
+ 337 00fe 0100      		.word	1
+ 338 0100 0000      		.word	0
+ 339 0102 0100      		.word	1
+ 340 0104 0000      		.word	0
+ 341 0106 0100      		.word	1
+ 342 0108 4100      		.word	65
+ 343 010a 5200      		.word	82
+ 344 010c 5100      		.word	81
+ 345 010e 2402      		.word	548
+ 346 0110 0000      		.word	0
+ 347 0112 0100      		.word	1
+ 348 0114 4200      		.word	66
+ 349 0116 2400      		.word	36
+ 350 0118 2100      		.word	33
+ 351 011a 1E00      		.word	30
+ 352 011c 0100      		.word	1
+ 353 011e 0100      		.word	1
+ 354 0120 4300      		.word	67
+ 355 0122 2500      		.word	37
+ 356 0124 2200      		.word	34
+ 357 0126 1F00      		.word	31
+ 358 0128 3700      		.word	55
+ 359 012a 0100      		.word	1
+ 360 012c 4400      		.word	68
+ 361 012e 2600      		.word	38
+ 362 0130 2300      		.word	35
+ 363 0132 2000      		.word	32
+ 364 0134 2700      		.word	39
+ 365 0136 0100      		.word	1
+ 366 0138 4500      		.word	69
+ 367 013a 2502      		.word	549
+ 368 013c 2E02      		.word	558
+ 369 013e 3100      		.word	49
+ 370 0140 2E00      		.word	46
+ 371 0142 4C05      		.word	1356
+ 372 0144 4600      		.word	70
+ 373 0146 0100      		.word	1
+ 374 0148 0100      		.word	1
+ 375 014a 0100      		.word	1
+ 376 014c 3D04      		.word	1085
+ 377 014e 0000      		.word	0
+ 378 0150 005C      		.word	23552
+ 379 0152 0100      		.word	1
+ 380 0154 0100      		.word	1
+ 381 0156 0100      		.word	1
+ 382 0158 0100      		.word	1
+ 383 015a 0000      		.word	0
+ 384 015c 0100      		.word	1
+ 385 015e 0100      		.word	1
+ 386 0160 0100      		.word	1
+ 387 0162 0100      		.word	1
+ 388 0164 0100      		.word	1
+ 389 0166 0100      		.word	1
+ 390 0168 0100      		.word	1
+ 391 016a 0100      		.word	1
+ 392 016c F200      		.word	242
+ 393 016e 0100      		.word	1
+ 394 0170 0100      		.word	1
+ 395 0172 0100      		.word	1
+ 396 0174 0100      		.word	1
+ 397 0176 F000      		.word	240
+ 398 0178 F100      		.word	241
+ 399 017a 0100      		.word	1
+ 400 017c F400      		.word	244
+ 401 017e 0100      		.word	1
+ 402 0180 0100      		.word	1
+ 403 0182 0100      		.word	1
+ 404 0184 F300      		.word	243
+ 405 0186 0100      		.word	1
+ 406 0188 F500      		.word	245
+ 407 018a 0100      		.word	1
+ 408 018c 0100      		.word	1
+ 409 018e 0100      		.word	1
+ 410 0190 0100      		.word	1
+ 411 0192 0100      		.word	1
+ 412 0194 0000      		.word	0
+ 413 0196 0100      		.word	1
+ 414 0198 0100      		.word	1
+ 415 019a 0100      		.word	1
+ 416 019c 0000      		.word	0
+ 417 019e 0100      		.word	1
+ 418 01a0 0000      		.word	0
+ 419 01a2 0100      		.word	1
+ 420 01a4 0100      		.word	1
+ 421 01a6 0100      		.word	1
+ 422 01a8 0000      		.word	0
+ 423 01aa 0100      		.word	1
+ 424 01ac 0000      		.word	0
+ 425 01ae 0100      		.word	1
+ 426 01b0 0100      		.word	1
+ 427 01b2 0100      		.word	1
+ 428 01b4 0100      		.word	1
+ 429 01b6 0100      		.word	1
+ 430 01b8 0000      		.word	0
+ 431 01ba 0100      		.word	1
+ 432 01bc 0100      		.word	1
+ 433 01be 0100      		.word	1
+ 434 01c0 0100      		.word	1
+ 435 01c2 0100      		.word	1
+ 436 01c4 AA00      		.word	170
+ 437 01c6 0100      		.word	1
+ 438 01c8 0100      		.word	1
+ 439 01ca 0100      		.word	1
+ 440 01cc 0100      		.word	1
+ 441 01ce AC00      		.word	172
+ 442 01d0 A900      		.word	169
+ 443 01d2 B600      		.word	182
+ 444 01d4 0100      		.word	1
+ 445 01d6 0100      		.word	1
+ 446 01d8 0100      		.word	1
+ 447 01da AB00      		.word	171
+ 448 01dc A800      		.word	168
+ 449 01de 0100      		.word	1
+ 450 01e0 0100      		.word	1
+ 451 01e2 0100      		.word	1
+ 452 01e4 0100      		.word	1
+ 453 01e6 0100      		.word	1
+ 454 01e8 0100      		.word	1
+ 455 01ea 0100      		.word	1
+ 456 01ec 0100      		.word	1
+ 457 01ee 0100      		.word	1
+ 458 01f0 AE00      		.word	174
+ 459 01f2 0100      		.word	1
+ 460 01f4 0100      		.word	1
+ 461 01f6 0000      		.word	0
+ 462 01f8 E200      		.word	226
+ 463 01fa E200      		.word	226
+ 464 01fc E200      		.word	226
+ 465 01fe E200      		.word	226
+ 466 0200 E200      		.word	226
+ 467 0202 0000      		.word	0
+ 468 0204 5900      		.word	89
+ 469 0206 0100      		.word	1
+ 470 0208 0400      		.word	4
+ 471 020a 0100      		.word	1
+ 472 020c E200      		.word	226
+ 473 020e 0100      		.word	1
+ 474 0210 5A00      		.word	90
+ 475 0212 0100      		.word	1
+ 476 0214 0100      		.word	1
+ 477 0216 0100      		.word	1
+ 478 0218 E200      		.word	226
+ 479 021a E200      		.word	226
+ 480 021c 5B00      		.word	91
+ 481 021e 0800      		.word	8
+ 482 0220 0700      		.word	7
+ 483 0222 0600      		.word	6
+ 484 0224 0100      		.word	1
+ 485 0226 E200      		.word	226
+ 486 0228 5C00      		.word	92
+ 487 022a 0100      		.word	1
+ 488 022c 0900      		.word	9
+ 489 022e 0100      		.word	1
+ 490 0230 0100      		.word	1
+ 491 0232 0100      		.word	1
+ 492 0234 5D00      		.word	93
+ 493 0236 0100      		.word	1
+ 494 0238 0100      		.word	1
+ 495 023a 0500      		.word	5
+ 496 023c 0000      		.word	0
+ 497 023e 0100      		.word	1
+ 498 0240 5E00      		.word	94
+ 499 0242 0100      		.word	1
+ 500 0244 0000      		.word	0
+ 501 0246 0100      		.word	1
+ 502 0248 0000      		.word	0
+ 503 024a 0100      		.word	1
+ 504 024c 5F00      		.word	95
+ 505 024e 0100      		.word	1
+ 506 0250 0000      		.word	0
+ 507 0252 0100      		.word	1
+ 508 0254 0000      		.word	0
+ 509 0256 0100      		.word	1
+ 510 0258 6000      		.word	96
+ 511 025a 0100      		.word	1
+ 512 025c 0100      		.word	1
+ 513 025e 0100      		.word	1
+ 514 0260 0000      		.word	0
+ 515 0262 0100      		.word	1
+ 516 0264 6100      		.word	97
+ 517 0266 5F00      		.word	95
+ 518 0268 5C00      		.word	92
+ 519 026a 5900      		.word	89
+ 520 026c 6200      		.word	98
+ 521 026e 0100      		.word	1
+ 522 0270 6200      		.word	98
+ 523 0272 6000      		.word	96
+ 524 0274 5D00      		.word	93
+ 525 0276 5A00      		.word	90
+ 526 0278 6200      		.word	98
+ 527 027a E200      		.word	226
+ 528 027c 5700      		.word	87
+ 529 027e 6100      		.word	97
+ 530 0280 5E00      		.word	94
+ 531 0282 5B00      		.word	91
+ 532 0284 6200      		.word	98
+ 533 0286 E200      		.word	226
+ 534 0288 5700      		.word	87
+ 535 028a 5700      		.word	87
+ 536 028c 5700      		.word	87
+ 537 028e 5700      		.word	87
+ 538 0290 5700      		.word	87
+ 539 0292 0100      		.word	1
+ 540 0294 0100      		.word	1
+ 541 0296 0100      		.word	1
+ 542 0298 0100      		.word	1
+ 543 029a 0100      		.word	1
+ 544 029c 0100      		.word	1
+ 545 029e 0000      		.word	0
+ 546               		.text
+ 547               	.Letext0:
+ 548               		.file 2 "/usr/local/Cellar/avr-gcc/8.1.0/avr/include/stdint.h"
+ 549               		.file 3 "/usr/local/Cellar/avr-gcc/8.1.0/lib/avr-gcc/8/gcc/avr/8.1.0/include/stddef.h"
+ 550               		.file 4 "tmk_core/common/keyboard.h"
+ 551               		.file 5 "tmk_core/common/keycode.h"
+ 552               		.file 6 "tmk_core/common/action_code.h"
+ 553               		.file 7 "tmk_core/common/action_macro.h"
+ 554               		.file 8 "tmk_core/common/action.h"
+ 555               		.file 9 "lib/lufa/LUFA/Drivers/USB/Core/AVR8/../StdRequestType.h"
+ 556               		.file 10 "lib/lufa/LUFA/Drivers/USB/Core/AVR8/../DeviceStandardReq.h"
+ 557               		.file 11 "lib/lufa/LUFA/Drivers/USB/Core/USBTask.h"
+ 558               		.file 12 "lib/lufa/LUFA/Drivers/USB/Core/HostStandardReq.h"
+ 559               		.file 13 "/usr/local/Cellar/avr-gcc/8.1.0/avr/include/stdio.h"
+ 560               		.file 14 "tmk_core/common/report.h"
+ 561               		.file 15 "tmk_core/common/host.h"
+ 562               		.file 16 "tmk_core/common/debug.h"
+ 563               		.file 17 "quantum/keycode_config.h"
+ 564               		.file 18 "quantum/quantum_keycodes.h"
+ 565               		.file 19 "quantum/keymap.h"
+ 566               		.file 20 "quantum/rgblight_types.h"
+ 567               		.file 21 "quantum/rgblight.h"
+ 568               		.file 22 "tmk_core/common/action_layer.h"
+ 569               		.file 23 "tmk_core/common/timer.h"
+ 570               		.file 24 "tmk_core/common/action_util.h"
+ 571               		.file 25 "/usr/local/Cellar/avr-gcc/8.1.0/avr/include/stdlib.h"
+ 572               		.file 26 "quantum/process_keycode/process_unicode_common.h"
+ 573               		.file 27 "quantum/quantum.h"
+ 574               		.file 28 "drivers/avr/i2c_master.h"
+ 575               		.file 29 "keyboards/ergodox_ez/ergodox_ez.h"
+ 576               		.file 30 "tmk_core/common/util.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 keymap.c
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccbvYLTh.s:2      *ABS*:000000000000003e __SP_H__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccbvYLTh.s:3      *ABS*:000000000000003d __SP_L__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccbvYLTh.s:4      *ABS*:000000000000003f __SREG__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccbvYLTh.s:5      *ABS*:0000000000000000 __tmp_reg__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccbvYLTh.s:6      *ABS*:0000000000000001 __zero_reg__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccbvYLTh.s:13     .text.action_get_macro:0000000000000000 action_get_macro
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccbvYLTh.s:185    .progmem.data.__m.6056:0000000000000000 __m.6056
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccbvYLTh.s:88     .text.matrix_init_user:0000000000000000 matrix_init_user
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccbvYLTh.s:105    .text.matrix_scan_user:0000000000000000 matrix_scan_user
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccbvYLTh.s:209    .progmem.data.keymaps:0000000000000000 keymaps
+
+UNDEFINED SYMBOLS
+register_code
+unregister_code
+layer_state
+biton32
+ergodox_board_led_off
+ergodox_right_led_1_off
+ergodox_right_led_2_off
+ergodox_right_led_3_off
+ergodox_right_led_1_on
+ergodox_right_led_2_on
+ergodox_right_led_3_on

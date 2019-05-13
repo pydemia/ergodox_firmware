@@ -1,0 +1,625 @@
+   1               		.file	"333fred.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.section	.text.tap_dance_sym_vim_finished,"ax",@progbits
+  11               	.global	tap_dance_sym_vim_finished
+  13               	tap_dance_sym_vim_finished:
+  14               	.LVL0:
+  15               	.LFB111:
+  16               		.file 1 "users/333fred/333fred.c"
+   1:users/333fred/333fred.c **** #include "333fred.h"
+   2:users/333fred/333fred.c **** #include "quantum.h"
+   3:users/333fred/333fred.c **** #include "action.h"
+   4:users/333fred/333fred.c **** 
+   5:users/333fred/333fred.c **** typedef enum {
+   6:users/333fred/333fred.c ****     SINGLE_TAP, SINGLE_HOLD, DOUBLE
+   7:users/333fred/333fred.c **** } tap_dance_state_enum;
+   8:users/333fred/333fred.c **** 
+   9:users/333fred/333fred.c **** static tap_dance_state_enum tap_dance_state;
+  10:users/333fred/333fred.c **** static bool tap_dance_active = false;
+  11:users/333fred/333fred.c **** 
+  12:users/333fred/333fred.c **** void tap_dance_sym_vim_finished(qk_tap_dance_state_t *state, void *user_data) {
+  17               		.loc 1 12 79 view -0
+  18               		.cfi_startproc
+  19               	/* prologue: function */
+  20               	/* frame size = 0 */
+  21               	/* stack size = 0 */
+  22               	.L__stack_usage = 0
+  23               		.loc 1 12 79 is_stmt 0 view .LVU1
+  24 0000 FC01      		movw r30,r24
+  13:users/333fred/333fred.c ****     // Determine the current state
+  14:users/333fred/333fred.c ****     if (state->count == 1) {
+  25               		.loc 1 14 5 is_stmt 1 view .LVU2
+  26               		.loc 1 14 8 is_stmt 0 view .LVU3
+  27 0002 8081      		ld r24,Z
+  28               	.LVL1:
+  29               		.loc 1 14 8 view .LVU4
+  30 0004 8130      		cpi r24,lo8(1)
+  31 0006 01F4      		brne .L2
+  15:users/333fred/333fred.c ****         if (state->interrupted || state->pressed == 0) tap_dance_state = SINGLE_TAP;
+  32               		.loc 1 15 9 is_stmt 1 view .LVU5
+  33               		.loc 1 15 12 is_stmt 0 view .LVU6
+  34 0008 9185      		ldd r25,Z+9
+  35 000a 9111      		cpse r25,__zero_reg__
+  36 000c 00C0      		rjmp .L3
+  37               		.loc 1 15 32 discriminator 2 view .LVU7
+  38 000e 9285      		ldd r25,Z+10
+  39 0010 9111      		cpse r25,__zero_reg__
+  40 0012 00C0      		rjmp .L4
+  41               	.L3:
+  42               		.loc 1 15 56 is_stmt 1 discriminator 3 view .LVU8
+  43               		.loc 1 15 72 is_stmt 0 discriminator 3 view .LVU9
+  44 0014 1092 0000 		sts tap_dance_state,__zero_reg__
+  16:users/333fred/333fred.c ****         else tap_dance_state = SINGLE_HOLD;
+  17:users/333fred/333fred.c ****     } else {
+  18:users/333fred/333fred.c ****         // Handle any number of other taps as a VIM movement hold
+  19:users/333fred/333fred.c ****         tap_dance_state = DOUBLE;
+  20:users/333fred/333fred.c ****     }
+  21:users/333fred/333fred.c **** 
+  22:users/333fred/333fred.c ****     switch (tap_dance_state) {
+  45               		.loc 1 22 5 is_stmt 1 discriminator 3 view .LVU10
+  23:users/333fred/333fred.c ****         case SINGLE_TAP:
+  24:users/333fred/333fred.c ****             if (tap_dance_active) {
+  46               		.loc 1 24 13 discriminator 3 view .LVU11
+  47               		.loc 1 24 16 is_stmt 0 discriminator 3 view .LVU12
+  48 0018 8091 0000 		lds r24,tap_dance_active
+  49 001c 8111      		cpse r24,__zero_reg__
+  50 001e 00C0      		rjmp .L5
+  25:users/333fred/333fred.c ****                 reset_oneshot_layer();
+  26:users/333fred/333fred.c ****                 tap_dance_active = false;
+  27:users/333fred/333fred.c ****             } else {
+  28:users/333fred/333fred.c ****                 set_oneshot_layer(SYMB, ONESHOT_START);
+  51               		.loc 1 28 17 is_stmt 1 view .LVU13
+  52 0020 63E0      		ldi r22,lo8(3)
+  53               	.LVL2:
+  54               		.loc 1 28 17 is_stmt 0 view .LVU14
+  55 0022 83E0      		ldi r24,lo8(3)
+  56 0024 0E94 0000 		call set_oneshot_layer
+  57               	.LVL3:
+  29:users/333fred/333fred.c ****                 tap_dance_active = true;
+  58               		.loc 1 29 17 is_stmt 1 view .LVU15
+  59               		.loc 1 29 34 is_stmt 0 view .LVU16
+  60 0028 81E0      		ldi r24,lo8(1)
+  61 002a 8093 0000 		sts tap_dance_active,r24
+  62               	/* epilogue start */
+  30:users/333fred/333fred.c ****             }
+  31:users/333fred/333fred.c ****             break;
+  32:users/333fred/333fred.c ****         case SINGLE_HOLD:
+  33:users/333fred/333fred.c ****             layer_on(SYMB);
+  34:users/333fred/333fred.c ****             break;
+  35:users/333fred/333fred.c ****         case DOUBLE:
+  36:users/333fred/333fred.c ****             layer_on(VIM);
+  37:users/333fred/333fred.c ****             break;
+  38:users/333fred/333fred.c ****     }
+  39:users/333fred/333fred.c **** }
+  63               		.loc 1 39 1 view .LVU17
+  64 002e 0895      		ret
+  65               	.LVL4:
+  66               	.L4:
+  16:users/333fred/333fred.c ****     } else {
+  67               		.loc 1 16 14 is_stmt 1 view .LVU18
+  16:users/333fred/333fred.c ****     } else {
+  68               		.loc 1 16 30 is_stmt 0 view .LVU19
+  69 0030 8093 0000 		sts tap_dance_state,r24
+  22:users/333fred/333fred.c ****         case SINGLE_TAP:
+  70               		.loc 1 22 5 is_stmt 1 view .LVU20
+  33:users/333fred/333fred.c ****             break;
+  71               		.loc 1 33 13 view .LVU21
+  72 0034 83E0      		ldi r24,lo8(3)
+  73               	.L9:
+  36:users/333fred/333fred.c ****             break;
+  74               		.loc 1 36 13 is_stmt 0 view .LVU22
+  75 0036 0C94 0000 		jmp layer_on
+  76               	.LVL5:
+  77               	.L2:
+  19:users/333fred/333fred.c ****     }
+  78               		.loc 1 19 9 is_stmt 1 view .LVU23
+  19:users/333fred/333fred.c ****     }
+  79               		.loc 1 19 25 is_stmt 0 view .LVU24
+  80 003a 82E0      		ldi r24,lo8(2)
+  81 003c 8093 0000 		sts tap_dance_state,r24
+  22:users/333fred/333fred.c ****         case SINGLE_TAP:
+  82               		.loc 1 22 5 is_stmt 1 view .LVU25
+  36:users/333fred/333fred.c ****             break;
+  83               		.loc 1 36 13 view .LVU26
+  84 0040 85E0      		ldi r24,lo8(5)
+  85 0042 00C0      		rjmp .L9
+  86               	.L5:
+  25:users/333fred/333fred.c ****                 tap_dance_active = false;
+  87               		.loc 1 25 17 view .LVU27
+  88 0044 0E94 0000 		call reset_oneshot_layer
+  89               	.LVL6:
+  26:users/333fred/333fred.c ****             } else {
+  90               		.loc 1 26 17 view .LVU28
+  26:users/333fred/333fred.c ****             } else {
+  91               		.loc 1 26 34 is_stmt 0 view .LVU29
+  92 0048 1092 0000 		sts tap_dance_active,__zero_reg__
+  93 004c 0895      		ret
+  94               		.cfi_endproc
+  95               	.LFE111:
+  97               		.section	.text.tap_dance_sym_vim_reset,"ax",@progbits
+  98               	.global	tap_dance_sym_vim_reset
+ 100               	tap_dance_sym_vim_reset:
+ 101               	.LVL7:
+ 102               	.LFB112:
+  40:users/333fred/333fred.c **** 
+  41:users/333fred/333fred.c **** void tap_dance_sym_vim_reset(qk_tap_dance_state_t *state, void *user_data) {
+ 103               		.loc 1 41 76 is_stmt 1 view -0
+ 104               		.cfi_startproc
+ 105               	/* prologue: function */
+ 106               	/* frame size = 0 */
+ 107               	/* stack size = 0 */
+ 108               	.L__stack_usage = 0
+  42:users/333fred/333fred.c ****     switch(tap_dance_state) {
+ 109               		.loc 1 42 5 view .LVU31
+ 110 0000 8091 0000 		lds r24,tap_dance_state
+ 111               	.LVL8:
+ 112               		.loc 1 42 5 is_stmt 0 view .LVU32
+ 113 0004 8130      		cpi r24,lo8(1)
+ 114 0006 01F0      		breq .L11
+ 115 0008 8823      		tst r24
+ 116 000a 01F0      		breq .L12
+ 117 000c 8230      		cpi r24,lo8(2)
+ 118 000e 01F0      		breq .L13
+ 119 0010 0895      		ret
+ 120               	.L12:
+  43:users/333fred/333fred.c ****         case SINGLE_TAP:
+  44:users/333fred/333fred.c ****             clear_oneshot_layer_state(ONESHOT_PRESSED);
+ 121               		.loc 1 44 13 is_stmt 1 view .LVU33
+ 122 0012 81E0      		ldi r24,lo8(1)
+ 123 0014 0C94 0000 		jmp clear_oneshot_layer_state
+ 124               	.LVL9:
+ 125               	.L11:
+  45:users/333fred/333fred.c ****             break;
+  46:users/333fred/333fred.c ****         case SINGLE_HOLD:
+  47:users/333fred/333fred.c ****             layer_off(SYMB);
+ 126               		.loc 1 47 13 view .LVU34
+ 127 0018 83E0      		ldi r24,lo8(3)
+ 128               	.L16:
+  48:users/333fred/333fred.c ****             break;
+  49:users/333fred/333fred.c ****         case DOUBLE:
+  50:users/333fred/333fred.c ****             layer_off(VIM);
+ 129               		.loc 1 50 13 is_stmt 0 view .LVU35
+ 130 001a 0C94 0000 		jmp layer_off
+ 131               	.LVL10:
+ 132               	.L13:
+ 133               		.loc 1 50 13 is_stmt 1 view .LVU36
+ 134 001e 85E0      		ldi r24,lo8(5)
+ 135 0020 00C0      		rjmp .L16
+ 136               		.cfi_endproc
+ 137               	.LFE112:
+ 139               		.section	.text.tap_dance_copy_paste_finished,"ax",@progbits
+ 140               	.global	tap_dance_copy_paste_finished
+ 142               	tap_dance_copy_paste_finished:
+ 143               	.LVL11:
+ 144               	.LFB113:
+  51:users/333fred/333fred.c ****             break;
+  52:users/333fred/333fred.c ****     }
+  53:users/333fred/333fred.c **** }
+  54:users/333fred/333fred.c **** 
+  55:users/333fred/333fred.c **** void tap_dance_copy_paste_finished(qk_tap_dance_state_t *state, void *user_data) {
+ 145               		.loc 1 55 82 view -0
+ 146               		.cfi_startproc
+ 147               		.loc 1 55 82 is_stmt 0 view .LVU38
+ 148 0000 CF93      		push r28
+ 149               	.LCFI0:
+ 150               		.cfi_def_cfa_offset 3
+ 151               		.cfi_offset 28, -2
+ 152 0002 DF93      		push r29
+ 153               	.LCFI1:
+ 154               		.cfi_def_cfa_offset 4
+ 155               		.cfi_offset 29, -3
+ 156               	/* prologue: function */
+ 157               	/* frame size = 0 */
+ 158               	/* stack size = 2 */
+ 159               	.L__stack_usage = 2
+  56:users/333fred/333fred.c ****     bool is_paste = state->count == 2;
+ 160               		.loc 1 56 5 is_stmt 1 view .LVU39
+ 161               		.loc 1 56 26 is_stmt 0 view .LVU40
+ 162 0004 FC01      		movw r30,r24
+ 163 0006 C081      		ld r28,Z
+ 164               	.LVL12:
+  57:users/333fred/333fred.c ****     // If either the one-shot shift is set, or if shift is being held, count as shift being held.
+  58:users/333fred/333fred.c ****     // We'll clear the one-shot shift if it was held
+  59:users/333fred/333fred.c ****     uint8_t one_shot_mods = get_oneshot_mods();
+ 165               		.loc 1 59 5 is_stmt 1 view .LVU41
+ 166               		.loc 1 59 29 is_stmt 0 view .LVU42
+ 167 0008 0E94 0000 		call get_oneshot_mods
+ 168               	.LVL13:
+ 169               		.loc 1 59 29 view .LVU43
+ 170 000c D82F      		mov r29,r24
+ 171               	.LVL14:
+  60:users/333fred/333fred.c ****     bool is_shift = false;
+ 172               		.loc 1 60 5 is_stmt 1 view .LVU44
+  61:users/333fred/333fred.c **** 
+  62:users/333fred/333fred.c ****     if (get_mods() & MOD_MASK_SHIFT) {
+ 173               		.loc 1 62 5 view .LVU45
+ 174               		.loc 1 62 9 is_stmt 0 view .LVU46
+ 175 000e 0E94 0000 		call get_mods
+ 176               	.LVL15:
+ 177               		.loc 1 62 8 view .LVU47
+ 178 0012 8272      		andi r24,lo8(34)
+ 179 0014 01F4      		brne .L29
+  63:users/333fred/333fred.c ****         is_shift = true;
+  64:users/333fred/333fred.c ****     } else if (one_shot_mods & MOD_MASK_SHIFT) {
+ 180               		.loc 1 64 12 is_stmt 1 view .LVU48
+ 181               		.loc 1 64 15 is_stmt 0 view .LVU49
+ 182 0016 8D2F      		mov r24,r29
+ 183 0018 8272      		andi r24,lo8(34)
+ 184 001a 01F0      		breq .L19
+  65:users/333fred/333fred.c ****         set_oneshot_mods(one_shot_mods & ~MOD_MASK_SHIFT);
+ 185               		.loc 1 65 9 is_stmt 1 view .LVU50
+ 186 001c 8D2F      		mov r24,r29
+ 187 001e 8D7D      		andi r24,lo8(-35)
+ 188 0020 0E94 0000 		call set_oneshot_mods
+ 189               	.LVL16:
+ 190               	.L29:
+  66:users/333fred/333fred.c ****         is_shift = true;
+ 191               		.loc 1 66 9 view .LVU51
+  67:users/333fred/333fred.c ****     }
+  68:users/333fred/333fred.c **** 
+  69:users/333fred/333fred.c ****     if (is_paste) {
+ 192               		.loc 1 69 5 view .LVU52
+  70:users/333fred/333fred.c ****         if (is_shift) {
+  71:users/333fred/333fred.c ****             SEND_STRING(SS_LSFT(SS_TAP(X_INSERT)));
+ 193               		.loc 1 71 13 is_stmt 0 view .LVU53
+ 194 0024 80E0      		ldi r24,lo8(__c.6100)
+ 195 0026 90E0      		ldi r25,hi8(__c.6100)
+  69:users/333fred/333fred.c ****         if (is_shift) {
+ 196               		.loc 1 69 8 view .LVU54
+ 197 0028 C230      		cpi r28,lo8(2)
+ 198 002a 01F0      		breq .L30
+  72:users/333fred/333fred.c ****         } else {
+  73:users/333fred/333fred.c ****             SEND_STRING(SS_LCTRL("v"));
+  74:users/333fred/333fred.c ****         }
+  75:users/333fred/333fred.c ****     } else {
+  76:users/333fred/333fred.c ****         if (is_shift) {
+  77:users/333fred/333fred.c ****             SEND_STRING(SS_LCTRL(SS_TAP(X_INSERT)));
+ 199               		.loc 1 77 13 is_stmt 1 view .LVU55
+ 200               	.LBB2:
+ 201               		.loc 1 77 13 view .LVU56
+ 202               		.loc 1 77 13 view .LVU57
+ 203               	.LBE2:
+ 204 002c 80E0      		ldi r24,lo8(__c.6104)
+ 205 002e 90E0      		ldi r25,hi8(__c.6104)
+ 206 0030 00C0      		rjmp .L30
+ 207               	.LVL17:
+ 208               	.L19:
+  69:users/333fred/333fred.c ****         if (is_shift) {
+ 209               		.loc 1 69 5 view .LVU58
+  73:users/333fred/333fred.c ****         }
+ 210               		.loc 1 73 13 is_stmt 0 view .LVU59
+ 211 0032 80E0      		ldi r24,lo8(__c.6102)
+ 212 0034 90E0      		ldi r25,hi8(__c.6102)
+  69:users/333fred/333fred.c ****         if (is_shift) {
+ 213               		.loc 1 69 8 view .LVU60
+ 214 0036 C230      		cpi r28,lo8(2)
+ 215 0038 01F0      		breq .L30
+  76:users/333fred/333fred.c ****             SEND_STRING(SS_LCTRL(SS_TAP(X_INSERT)));
+ 216               		.loc 1 76 9 is_stmt 1 view .LVU61
+  78:users/333fred/333fred.c ****         } else {
+  79:users/333fred/333fred.c ****             SEND_STRING(SS_LCTRL("c"));
+ 217               		.loc 1 79 13 view .LVU62
+ 218               	.LBB3:
+ 219               		.loc 1 79 13 view .LVU63
+ 220               		.loc 1 79 13 view .LVU64
+ 221               	.LBE3:
+ 222 003a 80E0      		ldi r24,lo8(__c.6106)
+ 223 003c 90E0      		ldi r25,hi8(__c.6106)
+ 224               	.LVL18:
+ 225               	.L30:
+ 226               	/* epilogue start */
+  80:users/333fred/333fred.c ****         }
+  81:users/333fred/333fred.c ****     }
+  82:users/333fred/333fred.c **** }
+ 227               		.loc 1 82 1 is_stmt 0 view .LVU65
+ 228 003e DF91      		pop r29
+ 229               	.LVL19:
+ 230               		.loc 1 82 1 view .LVU66
+ 231 0040 CF91      		pop r28
+ 232               	.LVL20:
+  77:users/333fred/333fred.c ****         } else {
+ 233               		.loc 1 77 13 view .LVU67
+ 234 0042 0C94 0000 		jmp send_string_P
+ 235               	.LVL21:
+ 236               		.cfi_endproc
+ 237               	.LFE113:
+ 239               		.section	.text.tap_dance_process_record,"ax",@progbits
+ 240               	.global	tap_dance_process_record
+ 242               	tap_dance_process_record:
+ 243               	.LVL22:
+ 244               	.LFB114:
+  83:users/333fred/333fred.c **** 
+  84:users/333fred/333fred.c **** qk_tap_dance_action_t tap_dance_actions[] = {
+  85:users/333fred/333fred.c ****     [TD_SYM_VIM] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, tap_dance_sym_vim_finished, tap_dance_sym_vim
+  86:users/333fred/333fred.c ****     [TD_COPY_PASTE] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, tap_dance_copy_paste_finished, NULL)
+  87:users/333fred/333fred.c **** };
+  88:users/333fred/333fred.c **** 
+  89:users/333fred/333fred.c **** void tap_dance_process_record(uint16_t keycode) {
+ 245               		.loc 1 89 49 is_stmt 1 view -0
+ 246               		.cfi_startproc
+ 247               	/* prologue: function */
+ 248               	/* frame size = 0 */
+ 249               	/* stack size = 0 */
+ 250               	.L__stack_usage = 0
+  90:users/333fred/333fred.c ****     if (tap_dance_state == SINGLE_TAP && keycode != TD(TD_SYM_VIM)) {
+ 251               		.loc 1 90 5 view .LVU69
+ 252               		.loc 1 90 8 is_stmt 0 view .LVU70
+ 253 0000 2091 0000 		lds r18,tap_dance_state
+ 254 0004 2111      		cpse r18,__zero_reg__
+ 255 0006 00C0      		rjmp .L31
+ 256               		.loc 1 90 39 discriminator 1 view .LVU71
+ 257 0008 8115      		cp r24,__zero_reg__
+ 258 000a 9745      		sbci r25,87
+ 259 000c 01F0      		breq .L31
+  91:users/333fred/333fred.c ****         tap_dance_active = false;
+ 260               		.loc 1 91 9 is_stmt 1 view .LVU72
+ 261               		.loc 1 91 26 is_stmt 0 view .LVU73
+ 262 000e 1092 0000 		sts tap_dance_active,__zero_reg__
+ 263               	.L31:
+ 264               	/* epilogue start */
+  92:users/333fred/333fred.c ****     }
+  93:users/333fred/333fred.c **** }
+ 265               		.loc 1 93 1 view .LVU74
+ 266 0012 0895      		ret
+ 267               		.cfi_endproc
+ 268               	.LFE114:
+ 270               		.section	.text.matrix_init_rgb,"ax",@progbits
+ 271               		.weak	matrix_init_rgb
+ 273               	matrix_init_rgb:
+ 274               	.LFB115:
+  94:users/333fred/333fred.c **** 
+  95:users/333fred/333fred.c **** __attribute__ ((weak))
+  96:users/333fred/333fred.c **** void matrix_init_rgb(void) {}
+ 275               		.loc 1 96 28 is_stmt 1 view -0
+ 276               		.cfi_startproc
+ 277               	/* prologue: function */
+ 278               	/* frame size = 0 */
+ 279               	/* stack size = 0 */
+ 280               	.L__stack_usage = 0
+ 281               		.loc 1 96 29 view .LVU76
+ 282               	/* epilogue start */
+ 283               		.loc 1 96 1 is_stmt 0 view .LVU77
+ 284 0000 0895      		ret
+ 285               		.cfi_endproc
+ 286               	.LFE115:
+ 288               		.set	matrix_init_rgb.localalias.0,matrix_init_rgb
+ 289               		.section	.text.layer_state_set_rgb,"ax",@progbits
+ 290               		.weak	layer_state_set_rgb
+ 292               	layer_state_set_rgb:
+ 293               	.LVL23:
+ 294               	.LFB116:
+  97:users/333fred/333fred.c **** 
+  98:users/333fred/333fred.c **** __attribute__ ((weak))
+  99:users/333fred/333fred.c **** void layer_state_set_rgb(uint32_t state) {}
+ 295               		.loc 1 99 42 is_stmt 1 view -0
+ 296               		.cfi_startproc
+ 297               	/* prologue: function */
+ 298               	/* frame size = 0 */
+ 299               	/* stack size = 0 */
+ 300               	.L__stack_usage = 0
+ 301               		.loc 1 99 43 view .LVU79
+ 302               	/* epilogue start */
+ 303               		.loc 1 99 1 is_stmt 0 view .LVU80
+ 304 0000 0895      		ret
+ 305               		.cfi_endproc
+ 306               	.LFE116:
+ 308               		.section	.text.matrix_scan_user_keyboard,"ax",@progbits
+ 309               		.weak	matrix_scan_user_keyboard
+ 311               	matrix_scan_user_keyboard:
+ 312               	.LFB121:
+ 313               		.cfi_startproc
+ 314               	/* prologue: function */
+ 315               	/* frame size = 0 */
+ 316               	/* stack size = 0 */
+ 317               	.L__stack_usage = 0
+ 318               	/* epilogue start */
+ 319 0000 0895      		ret
+ 320               		.cfi_endproc
+ 321               	.LFE121:
+ 323               		.section	.text.matrix_scan_user,"ax",@progbits
+ 324               	.global	matrix_scan_user
+ 326               	matrix_scan_user:
+ 327               	.LFB118:
+ 100:users/333fred/333fred.c **** 
+ 101:users/333fred/333fred.c **** __attribute__ ((weak))
+ 102:users/333fred/333fred.c **** void matrix_scan_user_keyboard(void) {}
+ 103:users/333fred/333fred.c **** 
+ 104:users/333fred/333fred.c **** void matrix_scan_user() {
+ 328               		.loc 1 104 25 is_stmt 1 view -0
+ 329               		.cfi_startproc
+ 330               	/* prologue: function */
+ 331               	/* frame size = 0 */
+ 332               	/* stack size = 0 */
+ 333               	.L__stack_usage = 0
+ 105:users/333fred/333fred.c ****   static bool first_run = true;
+ 334               		.loc 1 105 3 view .LVU82
+ 106:users/333fred/333fred.c ****   if (first_run) {
+ 335               		.loc 1 106 3 view .LVU83
+ 336               		.loc 1 106 6 is_stmt 0 view .LVU84
+ 337 0000 8091 0000 		lds r24,first_run.6123
+ 338 0004 8823      		tst r24
+ 339 0006 01F0      		breq .L40
+ 107:users/333fred/333fred.c ****     first_run = false;
+ 340               		.loc 1 107 5 is_stmt 1 view .LVU85
+ 341               		.loc 1 107 15 is_stmt 0 view .LVU86
+ 342 0008 1092 0000 		sts first_run.6123,__zero_reg__
+ 108:users/333fred/333fred.c ****     matrix_init_rgb();
+ 343               		.loc 1 108 5 is_stmt 1 view .LVU87
+ 344 000c 0E94 0000 		call matrix_init_rgb
+ 345               	.LVL24:
+ 346               	.L40:
+ 109:users/333fred/333fred.c ****   }
+ 110:users/333fred/333fred.c ****   matrix_scan_user_keyboard();
+ 347               		.loc 1 110 3 view .LVU88
+ 348 0010 0C94 0000 		jmp matrix_scan_user_keyboard
+ 349               	.LVL25:
+ 350               		.cfi_endproc
+ 351               	.LFE118:
+ 353               		.section	.text.layer_state_set_user,"ax",@progbits
+ 354               	.global	layer_state_set_user
+ 356               	layer_state_set_user:
+ 357               	.LVL26:
+ 358               	.LFB119:
+ 111:users/333fred/333fred.c **** }
+ 112:users/333fred/333fred.c **** 
+ 113:users/333fred/333fred.c **** uint32_t layer_state_set_user(uint32_t state) {
+ 359               		.loc 1 113 47 view -0
+ 360               		.cfi_startproc
+ 361               		.loc 1 113 47 is_stmt 0 view .LVU90
+ 362 0000 CF92      		push r12
+ 363               	.LCFI2:
+ 364               		.cfi_def_cfa_offset 3
+ 365               		.cfi_offset 12, -2
+ 366 0002 DF92      		push r13
+ 367               	.LCFI3:
+ 368               		.cfi_def_cfa_offset 4
+ 369               		.cfi_offset 13, -3
+ 370 0004 EF92      		push r14
+ 371               	.LCFI4:
+ 372               		.cfi_def_cfa_offset 5
+ 373               		.cfi_offset 14, -4
+ 374 0006 FF92      		push r15
+ 375               	.LCFI5:
+ 376               		.cfi_def_cfa_offset 6
+ 377               		.cfi_offset 15, -5
+ 378               	/* prologue: function */
+ 379               	/* frame size = 0 */
+ 380               	/* stack size = 4 */
+ 381               	.L__stack_usage = 4
+ 382 0008 6B01      		movw r12,r22
+ 383 000a 7C01      		movw r14,r24
+ 114:users/333fred/333fred.c ****   layer_state_set_rgb(state);
+ 384               		.loc 1 114 3 is_stmt 1 view .LVU91
+ 385 000c 0E94 0000 		call layer_state_set_rgb
+ 386               	.LVL27:
+ 115:users/333fred/333fred.c ****   return state;
+ 387               		.loc 1 115 3 view .LVU92
+ 116:users/333fred/333fred.c **** }
+ 388               		.loc 1 116 1 is_stmt 0 view .LVU93
+ 389 0010 C701      		movw r24,r14
+ 390 0012 B601      		movw r22,r12
+ 391               	/* epilogue start */
+ 392 0014 FF90      		pop r15
+ 393 0016 EF90      		pop r14
+ 394 0018 DF90      		pop r13
+ 395 001a CF90      		pop r12
+ 396 001c 0895      		ret
+ 397               		.cfi_endproc
+ 398               	.LFE119:
+ 400               		.section	.data.first_run.6123,"aw",@progbits
+ 403               	first_run.6123:
+ 404 0000 01        		.byte	1
+ 405               		.section	.progmem.data.__c.6106,"a",@progbits
+ 408               	__c.6106:
+ 409 0000 02E0 6303 		.string	"\002\340c\003\340"
+ 409      E000 
+ 410               		.section	.progmem.data.__c.6104,"a",@progbits
+ 413               	__c.6104:
+ 414 0000 02E0 0149 		.string	"\002\340\001I\003\340"
+ 414      03E0 00
+ 415               		.section	.progmem.data.__c.6102,"a",@progbits
+ 418               	__c.6102:
+ 419 0000 02E0 7603 		.string	"\002\340v\003\340"
+ 419      E000 
+ 420               		.section	.progmem.data.__c.6100,"a",@progbits
+ 423               	__c.6100:
+ 424 0000 02E1 0149 		.string	"\002\341\001I\003\341"
+ 424      03E1 00
+ 425               	.global	tap_dance_actions
+ 426               		.section	.data.tap_dance_actions,"aw",@progbits
+ 429               	tap_dance_actions:
+ 430 0000 0000      		.word	0
+ 431 0002 0000      		.word	gs(tap_dance_sym_vim_finished)
+ 432 0004 0000      		.word	gs(tap_dance_sym_vim_reset)
+ 433 0006 0000 0000 		.zero	14
+ 433      0000 0000 
+ 433      0000 0000 
+ 433      0000 
+ 434 0014 0000      		.word	0
+ 435 0016 0000      		.word	0
+ 436 0018 0000      		.word	gs(tap_dance_copy_paste_finished)
+ 437 001a 0000      		.word	0
+ 438 001c 0000 0000 		.zero	14
+ 438      0000 0000 
+ 438      0000 0000 
+ 438      0000 
+ 439 002a 0000      		.word	0
+ 440               		.section	.bss.tap_dance_active,"aw",@nobits
+ 443               	tap_dance_active:
+ 444 0000 00        		.zero	1
+ 445               		.section	.bss.tap_dance_state,"aw",@nobits
+ 448               	tap_dance_state:
+ 449 0000 00        		.zero	1
+ 450               		.text
+ 451               	.Letext0:
+ 452               		.file 2 "/usr/local/Cellar/avr-gcc/8.1.0/avr/include/stdint.h"
+ 453               		.file 3 "/usr/local/Cellar/avr-gcc/8.1.0/lib/avr-gcc/8/gcc/avr/8.1.0/include/stddef.h"
+ 454               		.file 4 "tmk_core/common/keyboard.h"
+ 455               		.file 5 "tmk_core/common/action.h"
+ 456               		.file 6 "lib/lufa/LUFA/Drivers/USB/Core/AVR8/../StdRequestType.h"
+ 457               		.file 7 "lib/lufa/LUFA/Drivers/USB/Core/AVR8/../DeviceStandardReq.h"
+ 458               		.file 8 "lib/lufa/LUFA/Drivers/USB/Core/USBTask.h"
+ 459               		.file 9 "lib/lufa/LUFA/Drivers/USB/Core/HostStandardReq.h"
+ 460               		.file 10 "/usr/local/Cellar/avr-gcc/8.1.0/avr/include/stdio.h"
+ 461               		.file 11 "tmk_core/common/report.h"
+ 462               		.file 12 "tmk_core/common/host.h"
+ 463               		.file 13 "tmk_core/common/debug.h"
+ 464               		.file 14 "quantum/keycode_config.h"
+ 465               		.file 15 "tmk_core/common/keycode.h"
+ 466               		.file 16 "quantum/quantum_keycodes.h"
+ 467               		.file 17 "quantum/keymap.h"
+ 468               		.file 18 "quantum/rgblight_types.h"
+ 469               		.file 19 "quantum/rgblight.h"
+ 470               		.file 20 "tmk_core/common/action_layer.h"
+ 471               		.file 21 "tmk_core/common/timer.h"
+ 472               		.file 22 "tmk_core/common/action_util.h"
+ 473               		.file 23 "/usr/local/Cellar/avr-gcc/8.1.0/avr/include/stdlib.h"
+ 474               		.file 24 "quantum/process_keycode/process_unicode_common.h"
+ 475               		.file 25 "quantum/process_keycode/process_tap_dance.h"
+ 476               		.file 26 "quantum/quantum.h"
+ 477               		.file 27 "users/333fred/333fred.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 333fred.c
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccYHmM8k.s:2      *ABS*:000000000000003e __SP_H__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccYHmM8k.s:3      *ABS*:000000000000003d __SP_L__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccYHmM8k.s:4      *ABS*:000000000000003f __SREG__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccYHmM8k.s:5      *ABS*:0000000000000000 __tmp_reg__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccYHmM8k.s:6      *ABS*:0000000000000001 __zero_reg__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccYHmM8k.s:13     .text.tap_dance_sym_vim_finished:0000000000000000 tap_dance_sym_vim_finished
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccYHmM8k.s:448    .bss.tap_dance_state:0000000000000000 tap_dance_state
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccYHmM8k.s:443    .bss.tap_dance_active:0000000000000000 tap_dance_active
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccYHmM8k.s:100    .text.tap_dance_sym_vim_reset:0000000000000000 tap_dance_sym_vim_reset
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccYHmM8k.s:142    .text.tap_dance_copy_paste_finished:0000000000000000 tap_dance_copy_paste_finished
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccYHmM8k.s:423    .progmem.data.__c.6100:0000000000000000 __c.6100
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccYHmM8k.s:413    .progmem.data.__c.6104:0000000000000000 __c.6104
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccYHmM8k.s:418    .progmem.data.__c.6102:0000000000000000 __c.6102
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccYHmM8k.s:408    .progmem.data.__c.6106:0000000000000000 __c.6106
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccYHmM8k.s:242    .text.tap_dance_process_record:0000000000000000 tap_dance_process_record
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccYHmM8k.s:273    .text.matrix_init_rgb:0000000000000000 matrix_init_rgb
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccYHmM8k.s:273    .text.matrix_init_rgb:0000000000000000 matrix_init_rgb.localalias.0
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccYHmM8k.s:292    .text.layer_state_set_rgb:0000000000000000 layer_state_set_rgb
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccYHmM8k.s:311    .text.matrix_scan_user_keyboard:0000000000000000 matrix_scan_user_keyboard
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccYHmM8k.s:326    .text.matrix_scan_user:0000000000000000 matrix_scan_user
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccYHmM8k.s:403    .data.first_run.6123:0000000000000000 first_run.6123
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccYHmM8k.s:356    .text.layer_state_set_user:0000000000000000 layer_state_set_user
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccYHmM8k.s:429    .data.tap_dance_actions:0000000000000000 tap_dance_actions
+
+UNDEFINED SYMBOLS
+set_oneshot_layer
+layer_on
+reset_oneshot_layer
+clear_oneshot_layer_state
+layer_off
+get_oneshot_mods
+get_mods
+set_oneshot_mods
+send_string_P
+__do_copy_data
+__do_clear_bss

@@ -43,585 +43,535 @@
   29:keyboards/ergodox/ez/ez.c **** 
   30:keyboards/ergodox/ez/ez.c **** void ergodox_blink_all_leds(void)
   31:keyboards/ergodox/ez/ez.c **** {
-  16               		.loc 1 31 0
+  16               		.loc 1 31 1 view -0
   17               		.cfi_startproc
   18               	/* prologue: function */
   19               	/* frame size = 0 */
   20               	/* stack size = 0 */
   21               	.L__stack_usage = 0
-  22               	.LBB68:
-  23               	.LBB69:
-  24               	.LBB70:
-  25               		.file 2 "keyboards/ergodox/ez/ez.h"
-   1:keyboards/ergodox/ez/ez.h **** #ifndef ERGODOX_EZ_H
-   2:keyboards/ergodox/ez/ez.h **** #define ERGODOX_EZ_H
-   3:keyboards/ergodox/ez/ez.h **** 
-   4:keyboards/ergodox/ez/ez.h **** #include "quantum.h"
-   5:keyboards/ergodox/ez/ez.h **** #include <stdint.h>
-   6:keyboards/ergodox/ez/ez.h **** #include <stdbool.h>
-   7:keyboards/ergodox/ez/ez.h **** #include "i2cmaster.h"
-   8:keyboards/ergodox/ez/ez.h **** #include <util/delay.h>
-   9:keyboards/ergodox/ez/ez.h **** 
-  10:keyboards/ergodox/ez/ez.h **** #define CPU_PRESCALE(n) (CLKPR = 0x80, CLKPR = (n))
-  11:keyboards/ergodox/ez/ez.h **** #define CPU_16MHz       0x00
-  12:keyboards/ergodox/ez/ez.h **** 
-  13:keyboards/ergodox/ez/ez.h **** // I2C aliases and register addresses (see "mcp23018.md")
-  14:keyboards/ergodox/ez/ez.h **** #define I2C_ADDR        0b0100000
-  15:keyboards/ergodox/ez/ez.h **** #define I2C_ADDR_WRITE  ( (I2C_ADDR<<1) | I2C_WRITE )
-  16:keyboards/ergodox/ez/ez.h **** #define I2C_ADDR_READ   ( (I2C_ADDR<<1) | I2C_READ  )
-  17:keyboards/ergodox/ez/ez.h **** #define IODIRA          0x00            // i/o direction register
-  18:keyboards/ergodox/ez/ez.h **** #define IODIRB          0x01
-  19:keyboards/ergodox/ez/ez.h **** #define GPPUA           0x0C            // GPIO pull-up resistor register
-  20:keyboards/ergodox/ez/ez.h **** #define GPPUB           0x0D
-  21:keyboards/ergodox/ez/ez.h **** #define GPIOA           0x12            // general purpose i/o port register (write modifies OLAT)
-  22:keyboards/ergodox/ez/ez.h **** #define GPIOB           0x13
-  23:keyboards/ergodox/ez/ez.h **** #define OLATA           0x14            // output latch register
-  24:keyboards/ergodox/ez/ez.h **** #define OLATB           0x15
-  25:keyboards/ergodox/ez/ez.h **** 
-  26:keyboards/ergodox/ez/ez.h **** extern uint8_t mcp23018_status;
-  27:keyboards/ergodox/ez/ez.h **** 
-  28:keyboards/ergodox/ez/ez.h **** void init_ergodox(void);
-  29:keyboards/ergodox/ez/ez.h **** void ergodox_blink_all_leds(void);
-  30:keyboards/ergodox/ez/ez.h **** uint8_t init_mcp23018(void);
-  31:keyboards/ergodox/ez/ez.h **** uint8_t ergodox_left_leds_update(void);
-  32:keyboards/ergodox/ez/ez.h **** 
-  33:keyboards/ergodox/ez/ez.h **** #define LED_BRIGHTNESS_LO       15
-  34:keyboards/ergodox/ez/ez.h **** #define LED_BRIGHTNESS_HI       255
-  35:keyboards/ergodox/ez/ez.h **** 
-  36:keyboards/ergodox/ez/ez.h **** 
-  37:keyboards/ergodox/ez/ez.h **** inline void ergodox_board_led_on(void)      { DDRD |=  (1<<6); PORTD |=  (1<<6); }
-  38:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_1_on(void)    { DDRB |=  (1<<5); PORTB |=  (1<<5); }
-  39:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_2_on(void)    { DDRB |=  (1<<6); PORTB |=  (1<<6); }
-  40:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_3_on(void)    { DDRB |=  (1<<7); PORTB |=  (1<<7); }
-  41:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_on(uint8_t led) { DDRB |= (1<<(led+4)); PORTB |= (1<<(led+4)); }
-  42:keyboards/ergodox/ez/ez.h **** 
-  43:keyboards/ergodox/ez/ez.h **** inline void ergodox_board_led_off(void)     { DDRD &= ~(1<<6); PORTD &= ~(1<<6); }
-  26               		.loc 2 43 0
-  27 0000 5698      		cbi 0xa,6
-  28 0002 5E98      		cbi 0xb,6
-  29               	.LBE70:
-  30               	.LBE69:
-  31               	.LBB71:
-  32               	.LBB72:
-  44:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_1_off(void)   { DDRB &= ~(1<<5); PORTB &= ~(1<<5); }
-  33               		.loc 2 44 0
-  34 0004 2598      		cbi 0x4,5
-  35 0006 2D98      		cbi 0x5,5
-  36               	.LBE72:
-  37               	.LBE71:
-  38               	.LBB73:
-  39               	.LBB74:
-  45:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_2_off(void)   { DDRB &= ~(1<<6); PORTB &= ~(1<<6); }
-  40               		.loc 2 45 0
-  41 0008 2698      		cbi 0x4,6
-  42 000a 2E98      		cbi 0x5,6
-  43               	.LBE74:
-  44               	.LBE73:
-  45               	.LBB75:
-  46               	.LBB76:
-  46:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_3_off(void)   { DDRB &= ~(1<<7); PORTB &= ~(1<<7); }
-  47               		.loc 2 46 0
-  48 000c 2798      		cbi 0x4,7
-  49 000e 2F98      		cbi 0x5,7
-  50               	.LVL0:
-  51               	.LBE76:
-  52               	.LBE75:
-  53               	.LBE68:
-  54               	.LBB77:
-  55               	.LBB78:
-  56               	.LBB79:
-  47:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_off(uint8_t led) { DDRB &= ~(1<<(led+4)); PORTB &= ~(1<<(led+4)); }
-  48:keyboards/ergodox/ez/ez.h **** 
-  49:keyboards/ergodox/ez/ez.h **** inline void ergodox_led_all_on(void)
-  50:keyboards/ergodox/ez/ez.h **** {
-  51:keyboards/ergodox/ez/ez.h ****     ergodox_board_led_on();
-  52:keyboards/ergodox/ez/ez.h ****     ergodox_right_led_1_on();
-  53:keyboards/ergodox/ez/ez.h ****     ergodox_right_led_2_on();
-  54:keyboards/ergodox/ez/ez.h ****     ergodox_right_led_3_on();
-  55:keyboards/ergodox/ez/ez.h **** }
-  56:keyboards/ergodox/ez/ez.h **** 
-  57:keyboards/ergodox/ez/ez.h **** inline void ergodox_led_all_off(void)
-  58:keyboards/ergodox/ez/ez.h **** {
-  59:keyboards/ergodox/ez/ez.h ****     ergodox_board_led_off();
-  60:keyboards/ergodox/ez/ez.h ****     ergodox_right_led_1_off();
-  61:keyboards/ergodox/ez/ez.h ****     ergodox_right_led_2_off();
-  62:keyboards/ergodox/ez/ez.h ****     ergodox_right_led_3_off();
-  63:keyboards/ergodox/ez/ez.h **** }
-  64:keyboards/ergodox/ez/ez.h **** 
-  65:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_1_set(uint8_t n)    { OCR1A = n; }
-  57               		.loc 2 65 0
-  58 0010 8FEF      		ldi r24,lo8(-1)
-  59 0012 90E0      		ldi r25,0
-  60 0014 9093 8900 		sts 136+1,r25
-  61 0018 8093 8800 		sts 136,r24
-  62               	.LVL1:
-  63               	.LBE79:
-  64               	.LBE78:
-  65               	.LBB80:
-  66               	.LBB81:
-  66:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_2_set(uint8_t n)    { OCR1B = n; }
-  67               		.loc 2 66 0
-  68 001c 9093 8B00 		sts 138+1,r25
-  69 0020 8093 8A00 		sts 138,r24
-  70               	.LVL2:
-  71               	.LBE81:
-  72               	.LBE80:
-  73               	.LBB82:
-  74               	.LBB83:
-  67:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_3_set(uint8_t n)    { OCR1C = n; }
-  75               		.loc 2 67 0
-  76 0024 9093 8D00 		sts 140+1,r25
-  77 0028 8093 8C00 		sts 140,r24
-  78               	.LBE83:
-  79               	.LBE82:
-  80               	.LBE77:
-  81               	.LBB84:
-  82               	.LBB85:
-  38:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_2_on(void)    { DDRB |=  (1<<6); PORTB |=  (1<<6); }
-  83               		.loc 2 38 0
-  84 002c 259A      		sbi 0x4,5
-  85 002e 2D9A      		sbi 0x5,5
-  86               	.LVL3:
-  87               	.LBE85:
-  88               	.LBE84:
-  89               	.LBB86:
-  90               	.LBB87:
-  91               		.file 3 "/usr/lib/avr/include/util/delay.h"
-   1:/usr/lib/avr/include/util/delay.h **** /* Copyright (c) 2002, Marek Michalkiewicz
-   2:/usr/lib/avr/include/util/delay.h ****    Copyright (c) 2004,2005,2007 Joerg Wunsch
-   3:/usr/lib/avr/include/util/delay.h ****    Copyright (c) 2007  Florin-Viorel Petrov
-   4:/usr/lib/avr/include/util/delay.h ****    All rights reserved.
-   5:/usr/lib/avr/include/util/delay.h **** 
-   6:/usr/lib/avr/include/util/delay.h ****    Redistribution and use in source and binary forms, with or without
-   7:/usr/lib/avr/include/util/delay.h ****    modification, are permitted provided that the following conditions are met:
-   8:/usr/lib/avr/include/util/delay.h **** 
-   9:/usr/lib/avr/include/util/delay.h ****    * Redistributions of source code must retain the above copyright
-  10:/usr/lib/avr/include/util/delay.h ****      notice, this list of conditions and the following disclaimer.
-  11:/usr/lib/avr/include/util/delay.h **** 
-  12:/usr/lib/avr/include/util/delay.h ****    * Redistributions in binary form must reproduce the above copyright
-  13:/usr/lib/avr/include/util/delay.h ****      notice, this list of conditions and the following disclaimer in
-  14:/usr/lib/avr/include/util/delay.h ****      the documentation and/or other materials provided with the
-  15:/usr/lib/avr/include/util/delay.h ****      distribution.
-  16:/usr/lib/avr/include/util/delay.h **** 
-  17:/usr/lib/avr/include/util/delay.h ****    * Neither the name of the copyright holders nor the names of
-  18:/usr/lib/avr/include/util/delay.h ****      contributors may be used to endorse or promote products derived
-  19:/usr/lib/avr/include/util/delay.h ****      from this software without specific prior written permission.
-  20:/usr/lib/avr/include/util/delay.h **** 
-  21:/usr/lib/avr/include/util/delay.h ****   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  22:/usr/lib/avr/include/util/delay.h ****   AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  23:/usr/lib/avr/include/util/delay.h ****   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-  24:/usr/lib/avr/include/util/delay.h ****   ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
-  25:/usr/lib/avr/include/util/delay.h ****   LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-  26:/usr/lib/avr/include/util/delay.h ****   CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-  27:/usr/lib/avr/include/util/delay.h ****   SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-  28:/usr/lib/avr/include/util/delay.h ****   INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-  29:/usr/lib/avr/include/util/delay.h ****   CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-  30:/usr/lib/avr/include/util/delay.h ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-  31:/usr/lib/avr/include/util/delay.h ****   POSSIBILITY OF SUCH DAMAGE. */
-  32:/usr/lib/avr/include/util/delay.h **** 
-  33:/usr/lib/avr/include/util/delay.h **** /* $Id$ */
-  34:/usr/lib/avr/include/util/delay.h **** 
-  35:/usr/lib/avr/include/util/delay.h **** #ifndef _UTIL_DELAY_H_
-  36:/usr/lib/avr/include/util/delay.h **** #define _UTIL_DELAY_H_ 1
-  37:/usr/lib/avr/include/util/delay.h **** 
-  38:/usr/lib/avr/include/util/delay.h **** #ifndef __HAS_DELAY_CYCLES
-  39:/usr/lib/avr/include/util/delay.h **** #define __HAS_DELAY_CYCLES 1
-  40:/usr/lib/avr/include/util/delay.h **** #endif
-  41:/usr/lib/avr/include/util/delay.h **** 
-  42:/usr/lib/avr/include/util/delay.h **** #include <inttypes.h>
-  43:/usr/lib/avr/include/util/delay.h **** #include <util/delay_basic.h>
-  44:/usr/lib/avr/include/util/delay.h **** #include <math.h>
-  45:/usr/lib/avr/include/util/delay.h **** 
-  46:/usr/lib/avr/include/util/delay.h **** /** \file */
-  47:/usr/lib/avr/include/util/delay.h **** /** \defgroup util_delay <util/delay.h>: Convenience functions for busy-wait delay loops
-  48:/usr/lib/avr/include/util/delay.h ****     \code
-  49:/usr/lib/avr/include/util/delay.h ****     #define F_CPU 1000000UL  // 1 MHz
-  50:/usr/lib/avr/include/util/delay.h ****     //#define F_CPU 14.7456E6
-  51:/usr/lib/avr/include/util/delay.h ****     #include <util/delay.h>
-  52:/usr/lib/avr/include/util/delay.h ****     \endcode
-  53:/usr/lib/avr/include/util/delay.h **** 
-  54:/usr/lib/avr/include/util/delay.h ****     \note As an alternative method, it is possible to pass the
-  55:/usr/lib/avr/include/util/delay.h ****     F_CPU macro down to the compiler from the Makefile.
-  56:/usr/lib/avr/include/util/delay.h ****     Obviously, in that case, no \c \#define statement should be
-  57:/usr/lib/avr/include/util/delay.h ****     used.
-  58:/usr/lib/avr/include/util/delay.h **** 
-  59:/usr/lib/avr/include/util/delay.h ****     The functions in this header file are wrappers around the basic
-  60:/usr/lib/avr/include/util/delay.h ****     busy-wait functions from <util/delay_basic.h>.  They are meant as
-  61:/usr/lib/avr/include/util/delay.h ****     convenience functions where actual time values can be specified
-  62:/usr/lib/avr/include/util/delay.h ****     rather than a number of cycles to wait for.  The idea behind is
-  63:/usr/lib/avr/include/util/delay.h ****     that compile-time constant expressions will be eliminated by
-  64:/usr/lib/avr/include/util/delay.h ****     compiler optimization so floating-point expressions can be used
-  65:/usr/lib/avr/include/util/delay.h ****     to calculate the number of delay cycles needed based on the CPU
-  66:/usr/lib/avr/include/util/delay.h ****     frequency passed by the macro F_CPU.
-  67:/usr/lib/avr/include/util/delay.h **** 
-  68:/usr/lib/avr/include/util/delay.h ****     \note In order for these functions to work as intended, compiler
-  69:/usr/lib/avr/include/util/delay.h ****     optimizations <em>must</em> be enabled, and the delay time
-  70:/usr/lib/avr/include/util/delay.h ****     <em>must</em> be an expression that is a known constant at
-  71:/usr/lib/avr/include/util/delay.h ****     compile-time.  If these requirements are not met, the resulting
-  72:/usr/lib/avr/include/util/delay.h ****     delay will be much longer (and basically unpredictable), and
-  73:/usr/lib/avr/include/util/delay.h ****     applications that otherwise do not use floating-point calculations
-  74:/usr/lib/avr/include/util/delay.h ****     will experience severe code bloat by the floating-point library
-  75:/usr/lib/avr/include/util/delay.h ****     routines linked into the application.
-  76:/usr/lib/avr/include/util/delay.h **** 
-  77:/usr/lib/avr/include/util/delay.h ****     The functions available allow the specification of microsecond, and
-  78:/usr/lib/avr/include/util/delay.h ****     millisecond delays directly, using the application-supplied macro
-  79:/usr/lib/avr/include/util/delay.h ****     F_CPU as the CPU clock frequency (in Hertz).
-  80:/usr/lib/avr/include/util/delay.h **** 
-  81:/usr/lib/avr/include/util/delay.h **** */
-  82:/usr/lib/avr/include/util/delay.h **** 
-  83:/usr/lib/avr/include/util/delay.h **** #if !defined(__DOXYGEN__)
-  84:/usr/lib/avr/include/util/delay.h **** static inline void _delay_us(double __us) __attribute__((always_inline));
-  85:/usr/lib/avr/include/util/delay.h **** static inline void _delay_ms(double __ms) __attribute__((always_inline));
-  86:/usr/lib/avr/include/util/delay.h **** #endif
-  87:/usr/lib/avr/include/util/delay.h **** 
-  88:/usr/lib/avr/include/util/delay.h **** #ifndef F_CPU
-  89:/usr/lib/avr/include/util/delay.h **** /* prevent compiler error by supplying a default */
-  90:/usr/lib/avr/include/util/delay.h **** # warning "F_CPU not defined for <util/delay.h>"
-  91:/usr/lib/avr/include/util/delay.h **** # define F_CPU 1000000UL
-  92:/usr/lib/avr/include/util/delay.h **** #endif
-  93:/usr/lib/avr/include/util/delay.h **** 
-  94:/usr/lib/avr/include/util/delay.h **** #ifndef __OPTIMIZE__
-  95:/usr/lib/avr/include/util/delay.h **** # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-  96:/usr/lib/avr/include/util/delay.h **** #endif
-  97:/usr/lib/avr/include/util/delay.h **** 
-  98:/usr/lib/avr/include/util/delay.h **** #if __HAS_DELAY_CYCLES && defined(__OPTIMIZE__) && \
-  99:/usr/lib/avr/include/util/delay.h ****   !defined(__DELAY_BACKWARD_COMPATIBLE__) &&	   \
- 100:/usr/lib/avr/include/util/delay.h ****   __STDC_HOSTED__
- 101:/usr/lib/avr/include/util/delay.h **** #  include <math.h>
- 102:/usr/lib/avr/include/util/delay.h **** #endif
- 103:/usr/lib/avr/include/util/delay.h **** 
- 104:/usr/lib/avr/include/util/delay.h **** /**
- 105:/usr/lib/avr/include/util/delay.h ****    \ingroup util_delay
- 106:/usr/lib/avr/include/util/delay.h **** 
- 107:/usr/lib/avr/include/util/delay.h ****    Perform a delay of \c __ms milliseconds, using _delay_loop_2().
- 108:/usr/lib/avr/include/util/delay.h **** 
- 109:/usr/lib/avr/include/util/delay.h ****    The macro F_CPU is supposed to be defined to a
- 110:/usr/lib/avr/include/util/delay.h ****    constant defining the CPU clock frequency (in Hertz).
- 111:/usr/lib/avr/include/util/delay.h **** 
- 112:/usr/lib/avr/include/util/delay.h ****    The maximal possible delay is 262.14 ms / F_CPU in MHz.
- 113:/usr/lib/avr/include/util/delay.h **** 
- 114:/usr/lib/avr/include/util/delay.h ****    When the user request delay which exceed the maximum possible one,
- 115:/usr/lib/avr/include/util/delay.h ****    _delay_ms() provides a decreased resolution functionality. In this
- 116:/usr/lib/avr/include/util/delay.h ****    mode _delay_ms() will work with a resolution of 1/10 ms, providing
- 117:/usr/lib/avr/include/util/delay.h ****    delays up to 6.5535 seconds (independent from CPU frequency).  The
- 118:/usr/lib/avr/include/util/delay.h ****    user will not be informed about decreased resolution.
- 119:/usr/lib/avr/include/util/delay.h **** 
- 120:/usr/lib/avr/include/util/delay.h ****    If the avr-gcc toolchain has __builtin_avr_delay_cycles(unsigned long)
- 121:/usr/lib/avr/include/util/delay.h ****    support, maximal possible delay is 4294967.295 ms/ F_CPU in MHz. For
- 122:/usr/lib/avr/include/util/delay.h ****    values greater than the maximal possible delay, overflows results in
- 123:/usr/lib/avr/include/util/delay.h ****    no delay i.e., 0ms.
- 124:/usr/lib/avr/include/util/delay.h **** 
- 125:/usr/lib/avr/include/util/delay.h ****    Conversion of __us into clock cycles may not always result in integer.
- 126:/usr/lib/avr/include/util/delay.h ****    By default, the clock cycles rounded up to next integer. This ensures that
- 127:/usr/lib/avr/include/util/delay.h ****    the user gets atleast __us microseconds of delay.
- 128:/usr/lib/avr/include/util/delay.h **** 
- 129:/usr/lib/avr/include/util/delay.h ****    Alternatively, user can define __DELAY_ROUND_DOWN__ and __DELAY_ROUND_CLOSEST__
- 130:/usr/lib/avr/include/util/delay.h ****    to round down and round to closest integer.
- 131:/usr/lib/avr/include/util/delay.h **** 
- 132:/usr/lib/avr/include/util/delay.h ****    Note: The new implementation of _delay_ms(double __ms) with 
- 133:/usr/lib/avr/include/util/delay.h ****     __builtin_avr_delay_cycles(unsigned long) support is not backward compatible. 
- 134:/usr/lib/avr/include/util/delay.h ****    User can define __DELAY_BACKWARD_COMPATIBLE__ to get a backward compatible delay.
- 135:/usr/lib/avr/include/util/delay.h ****    Also, the backward compatible
- 136:/usr/lib/avr/include/util/delay.h ****    algorithm will be chosen if the code is compiled in a <em>freestanding
- 137:/usr/lib/avr/include/util/delay.h ****    environment</em> (GCC option \c -ffreestanding), as the math functions
- 138:/usr/lib/avr/include/util/delay.h ****    required for rounding are not available to the compiler then.
- 139:/usr/lib/avr/include/util/delay.h **** 
- 140:/usr/lib/avr/include/util/delay.h ****  */
- 141:/usr/lib/avr/include/util/delay.h **** void
- 142:/usr/lib/avr/include/util/delay.h **** _delay_ms(double __ms)
- 143:/usr/lib/avr/include/util/delay.h **** {
- 144:/usr/lib/avr/include/util/delay.h **** 	double __tmp ; 
- 145:/usr/lib/avr/include/util/delay.h **** #if __HAS_DELAY_CYCLES && defined(__OPTIMIZE__) && \
- 146:/usr/lib/avr/include/util/delay.h ****   !defined(__DELAY_BACKWARD_COMPATIBLE__) &&	   \
- 147:/usr/lib/avr/include/util/delay.h ****   __STDC_HOSTED__
- 148:/usr/lib/avr/include/util/delay.h **** 	uint32_t __ticks_dc;
- 149:/usr/lib/avr/include/util/delay.h **** 	extern void __builtin_avr_delay_cycles(unsigned long);
- 150:/usr/lib/avr/include/util/delay.h **** 	__tmp = ((F_CPU) / 1e3) * __ms;
- 151:/usr/lib/avr/include/util/delay.h **** 
- 152:/usr/lib/avr/include/util/delay.h **** 	#if defined(__DELAY_ROUND_DOWN__)
- 153:/usr/lib/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)fabs(__tmp);
- 154:/usr/lib/avr/include/util/delay.h **** 
- 155:/usr/lib/avr/include/util/delay.h **** 	#elif defined(__DELAY_ROUND_CLOSEST__)
- 156:/usr/lib/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(fabs(__tmp)+0.5);
- 157:/usr/lib/avr/include/util/delay.h **** 
- 158:/usr/lib/avr/include/util/delay.h **** 	#else
- 159:/usr/lib/avr/include/util/delay.h **** 		//round up by default
- 160:/usr/lib/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
- 161:/usr/lib/avr/include/util/delay.h **** 	#endif
- 162:/usr/lib/avr/include/util/delay.h **** 
- 163:/usr/lib/avr/include/util/delay.h **** 	__builtin_avr_delay_cycles(__ticks_dc);
-  92               		.loc 3 163 0
-  93 0030 2FEF      		ldi r18,lo8(159999)
-  94 0032 80E7      		ldi r24,hi8(159999)
-  95 0034 92E0      		ldi r25,hlo8(159999)
-  96 0036 2150      	1:	subi r18,1
-  97 0038 8040      		sbci r24,0
-  98 003a 9040      		sbci r25,0
-  99 003c 01F4      		brne 1b
- 100 003e 00C0      		rjmp .
- 101 0040 0000      		nop
- 102               	.LBE87:
- 103               	.LBE86:
- 104               	.LBB88:
- 105               	.LBB89:
-  39:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_3_on(void)    { DDRB |=  (1<<7); PORTB |=  (1<<7); }
- 106               		.loc 2 39 0
- 107 0042 269A      		sbi 0x4,6
- 108 0044 2E9A      		sbi 0x5,6
- 109               	.LVL4:
- 110               	.LBE89:
- 111               	.LBE88:
- 112               	.LBB90:
- 113               	.LBB91:
- 114               		.loc 3 163 0
- 115 0046 2FEF      		ldi r18,lo8(159999)
- 116 0048 80E7      		ldi r24,hi8(159999)
- 117 004a 92E0      		ldi r25,hlo8(159999)
- 118 004c 2150      	1:	subi r18,1
- 119 004e 8040      		sbci r24,0
- 120 0050 9040      		sbci r25,0
- 121 0052 01F4      		brne 1b
- 122 0054 00C0      		rjmp .
- 123 0056 0000      		nop
- 124               	.LBE91:
- 125               	.LBE90:
- 126               	.LBB92:
- 127               	.LBB93:
-  40:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_on(uint8_t led) { DDRB |= (1<<(led+4)); PORTB |= (1<<(led+4)); }
- 128               		.loc 2 40 0
- 129 0058 279A      		sbi 0x4,7
- 130 005a 2F9A      		sbi 0x5,7
- 131               	.LVL5:
- 132               	.LBE93:
- 133               	.LBE92:
- 134               	.LBB94:
- 135               	.LBB95:
- 136               		.loc 3 163 0
- 137 005c 2FEF      		ldi r18,lo8(159999)
- 138 005e 80E7      		ldi r24,hi8(159999)
- 139 0060 92E0      		ldi r25,hlo8(159999)
- 140 0062 2150      	1:	subi r18,1
- 141 0064 8040      		sbci r24,0
- 142 0066 9040      		sbci r25,0
- 143 0068 01F4      		brne 1b
- 144 006a 00C0      		rjmp .
- 145 006c 0000      		nop
- 146               	.LBE95:
- 147               	.LBE94:
- 148               	.LBB96:
- 149               	.LBB97:
-  44:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_2_off(void)   { DDRB &= ~(1<<6); PORTB &= ~(1<<6); }
- 150               		.loc 2 44 0
- 151 006e 2598      		cbi 0x4,5
- 152 0070 2D98      		cbi 0x5,5
- 153               	.LVL6:
- 154               	.LBE97:
- 155               	.LBE96:
- 156               	.LBB98:
- 157               	.LBB99:
- 158               		.loc 3 163 0
- 159 0072 2FEF      		ldi r18,lo8(159999)
- 160 0074 80E7      		ldi r24,hi8(159999)
- 161 0076 92E0      		ldi r25,hlo8(159999)
- 162 0078 2150      	1:	subi r18,1
- 163 007a 8040      		sbci r24,0
- 164 007c 9040      		sbci r25,0
- 165 007e 01F4      		brne 1b
- 166 0080 00C0      		rjmp .
- 167 0082 0000      		nop
- 168               	.LBE99:
- 169               	.LBE98:
- 170               	.LBB100:
- 171               	.LBB101:
-  45:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_3_off(void)   { DDRB &= ~(1<<7); PORTB &= ~(1<<7); }
- 172               		.loc 2 45 0
- 173 0084 2698      		cbi 0x4,6
- 174 0086 2E98      		cbi 0x5,6
- 175               	.LVL7:
- 176               	.LBE101:
- 177               	.LBE100:
- 178               	.LBB102:
- 179               	.LBB103:
- 180               		.loc 3 163 0
- 181 0088 2FEF      		ldi r18,lo8(159999)
- 182 008a 80E7      		ldi r24,hi8(159999)
- 183 008c 92E0      		ldi r25,hlo8(159999)
- 184 008e 2150      	1:	subi r18,1
- 185 0090 8040      		sbci r24,0
- 186 0092 9040      		sbci r25,0
- 187 0094 01F4      		brne 1b
- 188 0096 00C0      		rjmp .
- 189 0098 0000      		nop
- 190               	.LBE103:
- 191               	.LBE102:
- 192               	.LBB104:
- 193               	.LBB105:
-  46:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_off(uint8_t led) { DDRB &= ~(1<<(led+4)); PORTB &= ~(1<<(led+4)); }
- 194               		.loc 2 46 0
- 195 009a 2798      		cbi 0x4,7
- 196 009c 2F98      		cbi 0x5,7
- 197               	.LBE105:
- 198               	.LBE104:
- 199               	.LBB106:
- 200               	.LBB107:
- 201               	.LBB108:
-  43:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_1_off(void)   { DDRB &= ~(1<<5); PORTB &= ~(1<<5); }
- 202               		.loc 2 43 0
- 203 009e 5698      		cbi 0xa,6
- 204 00a0 5E98      		cbi 0xb,6
- 205               	.LBE108:
- 206               	.LBE107:
- 207               	.LBB109:
- 208               	.LBB110:
-  44:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_2_off(void)   { DDRB &= ~(1<<6); PORTB &= ~(1<<6); }
- 209               		.loc 2 44 0
- 210 00a2 2598      		cbi 0x4,5
- 211 00a4 2D98      		cbi 0x5,5
- 212               	.LBE110:
- 213               	.LBE109:
- 214               	.LBB111:
- 215               	.LBB112:
-  45:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_3_off(void)   { DDRB &= ~(1<<7); PORTB &= ~(1<<7); }
- 216               		.loc 2 45 0
- 217 00a6 2698      		cbi 0x4,6
- 218 00a8 2E98      		cbi 0x5,6
- 219               	.LBE112:
- 220               	.LBE111:
- 221               	.LBB113:
- 222               	.LBB114:
-  46:keyboards/ergodox/ez/ez.h **** inline void ergodox_right_led_off(uint8_t led) { DDRB &= ~(1<<(led+4)); PORTB &= ~(1<<(led+4)); }
- 223               		.loc 2 46 0
- 224 00aa 2798      		cbi 0x4,7
- 225 00ac 2F98      		cbi 0x5,7
- 226 00ae 0895      		ret
- 227               	.LBE114:
- 228               	.LBE113:
- 229               	.LBE106:
- 230               		.cfi_endproc
- 231               	.LFE125:
- 233               		.section	.text.matrix_init_kb,"ax",@progbits
- 234               	.global	matrix_init_kb
- 236               	matrix_init_kb:
- 237               	.LFB124:
-   7:keyboards/ergodox/ez/ez.c ****    // keyboard LEDs (see "PWM on ports OC1(A|B|C)" in "teensy-2-0.md")
- 238               		.loc 1 7 0
- 239               		.cfi_startproc
- 240               	/* prologue: function */
- 241               	/* frame size = 0 */
- 242               	/* stack size = 0 */
- 243               	.L__stack_usage = 0
-   9:keyboards/ergodox/ez/ez.c ****     TCCR1B = 0b00001001;  // set and configure fast PWM
- 244               		.loc 1 9 0
- 245 0000 89EA      		ldi r24,lo8(-87)
- 246 0002 8093 8000 		sts 128,r24
-  10:keyboards/ergodox/ez/ez.c **** 
- 247               		.loc 1 10 0
- 248 0006 89E0      		ldi r24,lo8(9)
- 249 0008 8093 8100 		sts 129,r24
-  13:keyboards/ergodox/ez/ez.c ****     PORTB &= ~(1<<4);  // set B(4) internal pull-up disabled
- 250               		.loc 1 13 0
- 251 000c 2498      		cbi 0x4,4
-  14:keyboards/ergodox/ez/ez.c **** 
- 252               		.loc 1 14 0
- 253 000e 2C98      		cbi 0x5,4
-  18:keyboards/ergodox/ez/ez.c ****     DDRD  &= ~(1<<7 | 1<<5 | 1<<4);
- 254               		.loc 1 18 0
- 255 0010 3F98      		cbi 0x7,7
-  19:keyboards/ergodox/ez/ez.c ****     DDRE  &= ~(1<<6);
- 256               		.loc 1 19 0
- 257 0012 8AB1      		in r24,0xa
- 258 0014 8F74      		andi r24,lo8(79)
- 259 0016 8AB9      		out 0xa,r24
-  20:keyboards/ergodox/ez/ez.c ****     PORTC |=  (1<<7);
- 260               		.loc 1 20 0
- 261 0018 6E98      		cbi 0xd,6
-  21:keyboards/ergodox/ez/ez.c ****     PORTD |=  (1<<7 | 1<<5 | 1<<4);
- 262               		.loc 1 21 0
- 263 001a 479A      		sbi 0x8,7
-  22:keyboards/ergodox/ez/ez.c ****     PORTE |=  (1<<6);
- 264               		.loc 1 22 0
- 265 001c 8BB1      		in r24,0xb
- 266 001e 806B      		ori r24,lo8(-80)
- 267 0020 8BB9      		out 0xb,r24
-  23:keyboards/ergodox/ez/ez.c **** 
- 268               		.loc 1 23 0
- 269 0022 769A      		sbi 0xe,6
-  25:keyboards/ergodox/ez/ez.c **** 
- 270               		.loc 1 25 0
- 271 0024 0E94 0000 		call ergodox_blink_all_leds
- 272               	.LVL8:
-  27:keyboards/ergodox/ez/ez.c **** }
- 273               		.loc 1 27 0
- 274 0028 0C94 0000 		jmp matrix_init_user
- 275               	.LVL9:
- 276               		.cfi_endproc
- 277               	.LFE124:
- 279               		.section	.text.init_mcp23018,"ax",@progbits
- 280               	.global	init_mcp23018
- 282               	init_mcp23018:
- 283               	.LFB126:
   32:keyboards/ergodox/ez/ez.c ****     ergodox_led_all_off();
+  22               		.loc 1 32 5 view .LVU1
+  23 0000 0E94 0000 		call ergodox_led_all_off
+  24               	.LVL0:
   33:keyboards/ergodox/ez/ez.c ****     ergodox_led_all_set(LED_BRIGHTNESS_HI);
+  25               		.loc 1 33 5 view .LVU2
+  26 0004 8FEF      		ldi r24,lo8(-1)
+  27 0006 0E94 0000 		call ergodox_led_all_set
+  28               	.LVL1:
   34:keyboards/ergodox/ez/ez.c ****     ergodox_right_led_1_on();
+  29               		.loc 1 34 5 view .LVU3
+  30 000a 0E94 0000 		call ergodox_right_led_1_on
+  31               	.LVL2:
   35:keyboards/ergodox/ez/ez.c ****     _delay_ms(50);
+  32               		.loc 1 35 5 view .LVU4
+  33               	.LBB20:
+  34               	.LBI20:
+  35               		.file 2 "/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h"
+   1:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** /* Copyright (c) 2002, Marek Michalkiewicz
+   2:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    Copyright (c) 2004,2005,2007 Joerg Wunsch
+   3:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    Copyright (c) 2007  Florin-Viorel Petrov
+   4:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    All rights reserved.
+   5:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+   6:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    Redistribution and use in source and binary forms, with or without
+   7:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    modification, are permitted provided that the following conditions are met:
+   8:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+   9:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    * Redistributions of source code must retain the above copyright
+  10:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****      notice, this list of conditions and the following disclaimer.
+  11:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+  12:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    * Redistributions in binary form must reproduce the above copyright
+  13:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****      notice, this list of conditions and the following disclaimer in
+  14:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****      the documentation and/or other materials provided with the
+  15:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****      distribution.
+  16:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+  17:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    * Neither the name of the copyright holders nor the names of
+  18:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****      contributors may be used to endorse or promote products derived
+  19:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****      from this software without specific prior written permission.
+  20:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+  21:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  22:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****   AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  23:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  24:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****   ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+  25:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****   LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  26:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****   CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  27:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****   SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  28:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****   INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  29:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****   CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  30:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  31:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****   POSSIBILITY OF SUCH DAMAGE. */
+  32:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+  33:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** /* $Id: delay.h.in 2506 2016-02-08 10:05:45Z joerg_wunsch $ */
+  34:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+  35:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** #ifndef _UTIL_DELAY_H_
+  36:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** #define _UTIL_DELAY_H_ 1
+  37:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+  38:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** #ifndef __DOXYGEN__
+  39:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** #  ifndef __HAS_DELAY_CYCLES
+  40:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** #    define __HAS_DELAY_CYCLES 1
+  41:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** #  endif
+  42:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** #endif  /* __DOXYGEN__ */
+  43:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+  44:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** #include <inttypes.h>
+  45:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** #include <util/delay_basic.h>
+  46:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** #include <math.h>
+  47:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+  48:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** /** \file */
+  49:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** /** \defgroup util_delay <util/delay.h>: Convenience functions for busy-wait delay loops
+  50:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     \code
+  51:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     #define F_CPU 1000000UL  // 1 MHz
+  52:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     //#define F_CPU 14.7456E6
+  53:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     #include <util/delay.h>
+  54:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     \endcode
+  55:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+  56:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     \note As an alternative method, it is possible to pass the
+  57:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     F_CPU macro down to the compiler from the Makefile.
+  58:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     Obviously, in that case, no \c \#define statement should be
+  59:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     used.
+  60:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+  61:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     The functions in this header file are wrappers around the basic
+  62:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     busy-wait functions from <util/delay_basic.h>.  They are meant as
+  63:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     convenience functions where actual time values can be specified
+  64:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     rather than a number of cycles to wait for.  The idea behind is
+  65:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     that compile-time constant expressions will be eliminated by
+  66:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     compiler optimization so floating-point expressions can be used
+  67:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     to calculate the number of delay cycles needed based on the CPU
+  68:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     frequency passed by the macro F_CPU.
+  69:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+  70:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     \note In order for these functions to work as intended, compiler
+  71:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     optimizations <em>must</em> be enabled, and the delay time
+  72:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     <em>must</em> be an expression that is a known constant at
+  73:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     compile-time.  If these requirements are not met, the resulting
+  74:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     delay will be much longer (and basically unpredictable), and
+  75:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     applications that otherwise do not use floating-point calculations
+  76:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     will experience severe code bloat by the floating-point library
+  77:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     routines linked into the application.
+  78:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+  79:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     The functions available allow the specification of microsecond, and
+  80:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     millisecond delays directly, using the application-supplied macro
+  81:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     F_CPU as the CPU clock frequency (in Hertz).
+  82:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+  83:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** */
+  84:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+  85:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** #if !defined(__DOXYGEN__)
+  86:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** static __inline__ void _delay_us(double __us) __attribute__((__always_inline__));
+  87:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** static __inline__ void _delay_ms(double __ms) __attribute__((__always_inline__));
+  88:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** #endif
+  89:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+  90:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** #ifndef F_CPU
+  91:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** /* prevent compiler error by supplying a default */
+  92:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** # warning "F_CPU not defined for <util/delay.h>"
+  93:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** /** \ingroup util_delay
+  94:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     \def F_CPU
+  95:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     \brief CPU frequency in Hz
+  96:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+  97:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     The macro F_CPU specifies the CPU frequency to be considered by
+  98:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     the delay macros.  This macro is normally supplied by the
+  99:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     environment (e.g. from within a project header, or the project's
+ 100:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     Makefile).  The value 1 MHz here is only provided as a "vanilla"
+ 101:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     fallback if no such user-provided definition could be found.
+ 102:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+ 103:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     In terms of the delay functions, the CPU frequency can be given as
+ 104:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     a floating-point constant (e.g. 3.6864E6 for 3.6864 MHz).
+ 105:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     However, the macros in <util/setbaud.h> require it to be an
+ 106:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****     integer value.
+ 107:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****  */
+ 108:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** # define F_CPU 1000000UL
+ 109:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** #endif
+ 110:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+ 111:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** #ifndef __OPTIMIZE__
+ 112:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+ 113:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** #endif
+ 114:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+ 115:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** #if __HAS_DELAY_CYCLES && defined(__OPTIMIZE__) && \
+ 116:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****   !defined(__DELAY_BACKWARD_COMPATIBLE__) &&	   \
+ 117:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****   __STDC_HOSTED__
+ 118:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** #  include <math.h>
+ 119:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** #endif
+ 120:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+ 121:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** /**
+ 122:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    \ingroup util_delay
+ 123:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+ 124:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    Perform a delay of \c __ms milliseconds, using _delay_loop_2().
+ 125:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+ 126:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    The macro F_CPU is supposed to be defined to a
+ 127:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    constant defining the CPU clock frequency (in Hertz).
+ 128:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+ 129:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    The maximal possible delay is 262.14 ms / F_CPU in MHz.
+ 130:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+ 131:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    When the user request delay which exceed the maximum possible one,
+ 132:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    _delay_ms() provides a decreased resolution functionality. In this
+ 133:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    mode _delay_ms() will work with a resolution of 1/10 ms, providing
+ 134:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    delays up to 6.5535 seconds (independent from CPU frequency).  The
+ 135:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    user will not be informed about decreased resolution.
+ 136:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+ 137:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    If the avr-gcc toolchain has __builtin_avr_delay_cycles()
+ 138:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    support, maximal possible delay is 4294967.295 ms/ F_CPU in MHz. For
+ 139:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    values greater than the maximal possible delay, overflows results in
+ 140:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    no delay i.e., 0ms.
+ 141:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+ 142:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    Conversion of \c __ms into clock cycles may not always result in
+ 143:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    integer.  By default, the clock cycles rounded up to next
+ 144:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    integer. This ensures that the user gets at least \c __ms
+ 145:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    microseconds of delay.
+ 146:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+ 147:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    Alternatively, by defining the macro \c __DELAY_ROUND_DOWN__, or
+ 148:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    \c __DELAY_ROUND_CLOSEST__, before including this header file, the
+ 149:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    algorithm can be made to round down, or round to closest integer,
+ 150:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    respectively.
+ 151:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+ 152:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    \note
+ 153:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+ 154:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    The implementation of _delay_ms() based on
+ 155:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    __builtin_avr_delay_cycles() is not backward compatible with older
+ 156:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    implementations.  In order to get functionality backward compatible
+ 157:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    with previous versions, the macro \c "__DELAY_BACKWARD_COMPATIBLE__"
+ 158:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    must be defined before including this header file. Also, the
+ 159:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    backward compatible algorithm will be chosen if the code is
+ 160:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    compiled in a <em>freestanding environment</em> (GCC option
+ 161:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    \c -ffreestanding), as the math functions required for rounding are
+ 162:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****    not available to the compiler then.
+ 163:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+ 164:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****  */
+ 165:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** void
+ 166:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** _delay_ms(double __ms)
+  36               		.loc 2 166 1 view .LVU5
+  37               	.LBB21:
+ 167:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** {
+ 168:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 	double __tmp ;
+  38               		.loc 2 168 2 view .LVU6
+ 169:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** #if __HAS_DELAY_CYCLES && defined(__OPTIMIZE__) && \
+ 170:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****   !defined(__DELAY_BACKWARD_COMPATIBLE__) &&	   \
+ 171:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h ****   __STDC_HOSTED__
+ 172:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 	uint32_t __ticks_dc;
+  39               		.loc 2 172 2 view .LVU7
+ 173:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 	extern void __builtin_avr_delay_cycles(unsigned long);
+  40               		.loc 2 173 2 view .LVU8
+ 174:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 	__tmp = ((F_CPU) / 1e3) * __ms;
+  41               		.loc 2 174 2 view .LVU9
+ 175:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+ 176:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 	#if defined(__DELAY_ROUND_DOWN__)
+ 177:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)fabs(__tmp);
+ 178:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+ 179:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 	#elif defined(__DELAY_ROUND_CLOSEST__)
+ 180:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(fabs(__tmp)+0.5);
+ 181:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+ 182:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 	#else
+ 183:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 		//round up by default
+ 184:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+  42               		.loc 2 184 3 view .LVU10
+ 185:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 	#endif
+ 186:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+ 187:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 	__builtin_avr_delay_cycles(__ticks_dc);
+  43               		.loc 2 187 2 view .LVU11
+  44 000e 2FEF      		ldi r18,lo8(159999)
+  45 0010 80E7      		ldi r24,hi8(159999)
+  46 0012 92E0      		ldi r25,hlo8(159999)
+  47 0014 2150      	1:	subi r18,1
+  48 0016 8040      		sbci r24,0
+  49 0018 9040      		sbci r25,0
+  50 001a 01F4      		brne 1b
+  51 001c 00C0      		rjmp .
+  52 001e 0000      		nop
+  53               	.LVL3:
+  54               		.loc 2 187 2 is_stmt 0 view .LVU12
+  55               	.LBE21:
+  56               	.LBE20:
   36:keyboards/ergodox/ez/ez.c ****     ergodox_right_led_2_on();
+  57               		.loc 1 36 5 is_stmt 1 view .LVU13
+  58 0020 0E94 0000 		call ergodox_right_led_2_on
+  59               	.LVL4:
   37:keyboards/ergodox/ez/ez.c ****     _delay_ms(50);
+  60               		.loc 1 37 5 view .LVU14
+  61               	.LBB22:
+  62               	.LBI22:
+ 166:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** {
+  63               		.loc 2 166 1 view .LVU15
+  64               	.LBB23:
+ 168:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** #if __HAS_DELAY_CYCLES && defined(__OPTIMIZE__) && \
+  65               		.loc 2 168 2 view .LVU16
+ 172:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 	extern void __builtin_avr_delay_cycles(unsigned long);
+  66               		.loc 2 172 2 view .LVU17
+ 173:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 	__tmp = ((F_CPU) / 1e3) * __ms;
+  67               		.loc 2 173 2 view .LVU18
+ 174:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+  68               		.loc 2 174 2 view .LVU19
+ 184:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 	#endif
+  69               		.loc 2 184 3 view .LVU20
+  70               		.loc 2 187 2 view .LVU21
+  71 0024 2FEF      		ldi r18,lo8(159999)
+  72 0026 80E7      		ldi r24,hi8(159999)
+  73 0028 92E0      		ldi r25,hlo8(159999)
+  74 002a 2150      	1:	subi r18,1
+  75 002c 8040      		sbci r24,0
+  76 002e 9040      		sbci r25,0
+  77 0030 01F4      		brne 1b
+  78 0032 00C0      		rjmp .
+  79 0034 0000      		nop
+  80               	.LVL5:
+  81               		.loc 2 187 2 is_stmt 0 view .LVU22
+  82               	.LBE23:
+  83               	.LBE22:
   38:keyboards/ergodox/ez/ez.c ****     ergodox_right_led_3_on();
+  84               		.loc 1 38 5 is_stmt 1 view .LVU23
+  85 0036 0E94 0000 		call ergodox_right_led_3_on
+  86               	.LVL6:
   39:keyboards/ergodox/ez/ez.c ****     _delay_ms(50);
+  87               		.loc 1 39 5 view .LVU24
+  88               	.LBB24:
+  89               	.LBI24:
+ 166:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** {
+  90               		.loc 2 166 1 view .LVU25
+  91               	.LBB25:
+ 168:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** #if __HAS_DELAY_CYCLES && defined(__OPTIMIZE__) && \
+  92               		.loc 2 168 2 view .LVU26
+ 172:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 	extern void __builtin_avr_delay_cycles(unsigned long);
+  93               		.loc 2 172 2 view .LVU27
+ 173:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 	__tmp = ((F_CPU) / 1e3) * __ms;
+  94               		.loc 2 173 2 view .LVU28
+ 174:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+  95               		.loc 2 174 2 view .LVU29
+ 184:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 	#endif
+  96               		.loc 2 184 3 view .LVU30
+  97               		.loc 2 187 2 view .LVU31
+  98 003a 2FEF      		ldi r18,lo8(159999)
+  99 003c 80E7      		ldi r24,hi8(159999)
+ 100 003e 92E0      		ldi r25,hlo8(159999)
+ 101 0040 2150      	1:	subi r18,1
+ 102 0042 8040      		sbci r24,0
+ 103 0044 9040      		sbci r25,0
+ 104 0046 01F4      		brne 1b
+ 105 0048 00C0      		rjmp .
+ 106 004a 0000      		nop
+ 107               	.LVL7:
+ 108               		.loc 2 187 2 is_stmt 0 view .LVU32
+ 109               	.LBE25:
+ 110               	.LBE24:
   40:keyboards/ergodox/ez/ez.c ****     ergodox_right_led_1_off();
+ 111               		.loc 1 40 5 is_stmt 1 view .LVU33
+ 112 004c 0E94 0000 		call ergodox_right_led_1_off
+ 113               	.LVL8:
   41:keyboards/ergodox/ez/ez.c ****     _delay_ms(50);
+ 114               		.loc 1 41 5 view .LVU34
+ 115               	.LBB26:
+ 116               	.LBI26:
+ 166:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** {
+ 117               		.loc 2 166 1 view .LVU35
+ 118               	.LBB27:
+ 168:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** #if __HAS_DELAY_CYCLES && defined(__OPTIMIZE__) && \
+ 119               		.loc 2 168 2 view .LVU36
+ 172:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 	extern void __builtin_avr_delay_cycles(unsigned long);
+ 120               		.loc 2 172 2 view .LVU37
+ 173:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 	__tmp = ((F_CPU) / 1e3) * __ms;
+ 121               		.loc 2 173 2 view .LVU38
+ 174:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+ 122               		.loc 2 174 2 view .LVU39
+ 184:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 	#endif
+ 123               		.loc 2 184 3 view .LVU40
+ 124               		.loc 2 187 2 view .LVU41
+ 125 0050 2FEF      		ldi r18,lo8(159999)
+ 126 0052 80E7      		ldi r24,hi8(159999)
+ 127 0054 92E0      		ldi r25,hlo8(159999)
+ 128 0056 2150      	1:	subi r18,1
+ 129 0058 8040      		sbci r24,0
+ 130 005a 9040      		sbci r25,0
+ 131 005c 01F4      		brne 1b
+ 132 005e 00C0      		rjmp .
+ 133 0060 0000      		nop
+ 134               	.LVL9:
+ 135               		.loc 2 187 2 is_stmt 0 view .LVU42
+ 136               	.LBE27:
+ 137               	.LBE26:
   42:keyboards/ergodox/ez/ez.c ****     ergodox_right_led_2_off();
+ 138               		.loc 1 42 5 is_stmt 1 view .LVU43
+ 139 0062 0E94 0000 		call ergodox_right_led_2_off
+ 140               	.LVL10:
   43:keyboards/ergodox/ez/ez.c ****     _delay_ms(50);
+ 141               		.loc 1 43 5 view .LVU44
+ 142               	.LBB28:
+ 143               	.LBI28:
+ 166:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** {
+ 144               		.loc 2 166 1 view .LVU45
+ 145               	.LBB29:
+ 168:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** #if __HAS_DELAY_CYCLES && defined(__OPTIMIZE__) && \
+ 146               		.loc 2 168 2 view .LVU46
+ 172:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 	extern void __builtin_avr_delay_cycles(unsigned long);
+ 147               		.loc 2 172 2 view .LVU47
+ 173:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 	__tmp = ((F_CPU) / 1e3) * __ms;
+ 148               		.loc 2 173 2 view .LVU48
+ 174:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+ 149               		.loc 2 174 2 view .LVU49
+ 184:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 	#endif
+ 150               		.loc 2 184 3 view .LVU50
+ 151               		.loc 2 187 2 view .LVU51
+ 152 0066 2FEF      		ldi r18,lo8(159999)
+ 153 0068 80E7      		ldi r24,hi8(159999)
+ 154 006a 92E0      		ldi r25,hlo8(159999)
+ 155 006c 2150      	1:	subi r18,1
+ 156 006e 8040      		sbci r24,0
+ 157 0070 9040      		sbci r25,0
+ 158 0072 01F4      		brne 1b
+ 159 0074 00C0      		rjmp .
+ 160 0076 0000      		nop
+ 161               	.LVL11:
+ 162               		.loc 2 187 2 is_stmt 0 view .LVU52
+ 163               	.LBE29:
+ 164               	.LBE28:
   44:keyboards/ergodox/ez/ez.c ****     ergodox_right_led_3_off();
+ 165               		.loc 1 44 5 is_stmt 1 view .LVU53
+ 166 0078 0E94 0000 		call ergodox_right_led_3_off
+ 167               	.LVL12:
   45:keyboards/ergodox/ez/ez.c ****     //ergodox_led_all_on();
   46:keyboards/ergodox/ez/ez.c ****     //_delay_ms(333);
   47:keyboards/ergodox/ez/ez.c ****     ergodox_led_all_off();
+ 168               		.loc 1 47 5 view .LVU54
+ 169 007c 0C94 0000 		jmp ergodox_led_all_off
+ 170               	.LVL13:
+ 171               		.cfi_endproc
+ 172               	.LFE125:
+ 174               		.section	.text.matrix_init_kb,"ax",@progbits
+ 175               	.global	matrix_init_kb
+ 177               	matrix_init_kb:
+ 178               	.LFB124:
+   7:keyboards/ergodox/ez/ez.c ****    // keyboard LEDs (see "PWM on ports OC1(A|B|C)" in "teensy-2-0.md")
+ 179               		.loc 1 7 27 view -0
+ 180               		.cfi_startproc
+ 181               	/* prologue: function */
+ 182               	/* frame size = 0 */
+ 183               	/* stack size = 0 */
+ 184               	.L__stack_usage = 0
+   9:keyboards/ergodox/ez/ez.c ****     TCCR1B = 0b00001001;  // set and configure fast PWM
+ 185               		.loc 1 9 5 view .LVU56
+   9:keyboards/ergodox/ez/ez.c ****     TCCR1B = 0b00001001;  // set and configure fast PWM
+ 186               		.loc 1 9 12 is_stmt 0 view .LVU57
+ 187 0000 89EA      		ldi r24,lo8(-87)
+ 188 0002 8093 8000 		sts 128,r24
+  10:keyboards/ergodox/ez/ez.c **** 
+ 189               		.loc 1 10 5 is_stmt 1 view .LVU58
+  10:keyboards/ergodox/ez/ez.c **** 
+ 190               		.loc 1 10 12 is_stmt 0 view .LVU59
+ 191 0006 89E0      		ldi r24,lo8(9)
+ 192 0008 8093 8100 		sts 129,r24
+  13:keyboards/ergodox/ez/ez.c ****     PORTB &= ~(1<<4);  // set B(4) internal pull-up disabled
+ 193               		.loc 1 13 5 is_stmt 1 view .LVU60
+  13:keyboards/ergodox/ez/ez.c ****     PORTB &= ~(1<<4);  // set B(4) internal pull-up disabled
+ 194               		.loc 1 13 11 is_stmt 0 view .LVU61
+ 195 000c 2498      		cbi 0x4,4
+  14:keyboards/ergodox/ez/ez.c **** 
+ 196               		.loc 1 14 5 is_stmt 1 view .LVU62
+  14:keyboards/ergodox/ez/ez.c **** 
+ 197               		.loc 1 14 11 is_stmt 0 view .LVU63
+ 198 000e 2C98      		cbi 0x5,4
+  18:keyboards/ergodox/ez/ez.c ****     DDRD  &= ~(1<<7 | 1<<5 | 1<<4);
+ 199               		.loc 1 18 5 is_stmt 1 view .LVU64
+  18:keyboards/ergodox/ez/ez.c ****     DDRD  &= ~(1<<7 | 1<<5 | 1<<4);
+ 200               		.loc 1 18 11 is_stmt 0 view .LVU65
+ 201 0010 3F98      		cbi 0x7,7
+  19:keyboards/ergodox/ez/ez.c ****     DDRE  &= ~(1<<6);
+ 202               		.loc 1 19 5 is_stmt 1 view .LVU66
+  19:keyboards/ergodox/ez/ez.c ****     DDRE  &= ~(1<<6);
+ 203               		.loc 1 19 11 is_stmt 0 view .LVU67
+ 204 0012 8AB1      		in r24,0xa
+ 205 0014 8F74      		andi r24,lo8(79)
+ 206 0016 8AB9      		out 0xa,r24
+  20:keyboards/ergodox/ez/ez.c ****     PORTC |=  (1<<7);
+ 207               		.loc 1 20 5 is_stmt 1 view .LVU68
+  20:keyboards/ergodox/ez/ez.c ****     PORTC |=  (1<<7);
+ 208               		.loc 1 20 11 is_stmt 0 view .LVU69
+ 209 0018 6E98      		cbi 0xd,6
+  21:keyboards/ergodox/ez/ez.c ****     PORTD |=  (1<<7 | 1<<5 | 1<<4);
+ 210               		.loc 1 21 5 is_stmt 1 view .LVU70
+  21:keyboards/ergodox/ez/ez.c ****     PORTD |=  (1<<7 | 1<<5 | 1<<4);
+ 211               		.loc 1 21 11 is_stmt 0 view .LVU71
+ 212 001a 479A      		sbi 0x8,7
+  22:keyboards/ergodox/ez/ez.c ****     PORTE |=  (1<<6);
+ 213               		.loc 1 22 5 is_stmt 1 view .LVU72
+  22:keyboards/ergodox/ez/ez.c ****     PORTE |=  (1<<6);
+ 214               		.loc 1 22 11 is_stmt 0 view .LVU73
+ 215 001c 8BB1      		in r24,0xb
+ 216 001e 806B      		ori r24,lo8(-80)
+ 217 0020 8BB9      		out 0xb,r24
+  23:keyboards/ergodox/ez/ez.c **** 
+ 218               		.loc 1 23 5 is_stmt 1 view .LVU74
+  23:keyboards/ergodox/ez/ez.c **** 
+ 219               		.loc 1 23 11 is_stmt 0 view .LVU75
+ 220 0022 769A      		sbi 0xe,6
+  25:keyboards/ergodox/ez/ez.c **** 
+ 221               		.loc 1 25 5 is_stmt 1 view .LVU76
+ 222 0024 0E94 0000 		call ergodox_blink_all_leds
+ 223               	.LVL14:
+  27:keyboards/ergodox/ez/ez.c **** }
+ 224               		.loc 1 27 5 view .LVU77
+ 225 0028 0C94 0000 		jmp matrix_init_user
+ 226               	.LVL15:
+ 227               		.cfi_endproc
+ 228               	.LFE124:
+ 230               		.section	.text.init_mcp23018,"ax",@progbits
+ 231               	.global	init_mcp23018
+ 233               	init_mcp23018:
+ 234               	.LFB126:
   48:keyboards/ergodox/ez/ez.c **** }
   49:keyboards/ergodox/ez/ez.c **** 
   50:keyboards/ergodox/ez/ez.c **** uint8_t init_mcp23018(void) {
- 284               		.loc 1 50 0
- 285               		.cfi_startproc
- 286               	/* prologue: function */
- 287               	/* frame size = 0 */
- 288               	/* stack size = 0 */
- 289               	.L__stack_usage = 0
+ 235               		.loc 1 50 29 view -0
+ 236               		.cfi_startproc
+ 237               	/* prologue: function */
+ 238               	/* frame size = 0 */
+ 239               	/* stack size = 0 */
+ 240               	.L__stack_usage = 0
   51:keyboards/ergodox/ez/ez.c ****     mcp23018_status = 0x20;
- 290               		.loc 1 51 0
- 291 0000 80E2      		ldi r24,lo8(32)
- 292 0002 8093 0000 		sts mcp23018_status,r24
+ 241               		.loc 1 51 5 view .LVU79
+ 242               		.loc 1 51 21 is_stmt 0 view .LVU80
+ 243 0000 80E2      		ldi r24,lo8(32)
+ 244 0002 8093 0000 		sts mcp23018_status,r24
   52:keyboards/ergodox/ez/ez.c **** 
   53:keyboards/ergodox/ez/ez.c ****     // I2C subsystem
   54:keyboards/ergodox/ez/ez.c ****     if (i2c_initialized == 0) {
- 293               		.loc 1 54 0
- 294 0006 8091 0000 		lds r24,i2c_initialized
- 295 000a 8111      		cpse r24,__zero_reg__
- 296 000c 00C0      		rjmp .L4
+ 245               		.loc 1 54 5 is_stmt 1 view .LVU81
+ 246               		.loc 1 54 8 is_stmt 0 view .LVU82
+ 247 0006 8091 0000 		lds r24,i2c_initialized
+ 248 000a 8111      		cpse r24,__zero_reg__
+ 249 000c 00C0      		rjmp .L4
   55:keyboards/ergodox/ez/ez.c ****         i2c_init();  // on pins D(1,0)
- 297               		.loc 1 55 0
- 298 000e 0E94 0000 		call i2c_init
- 299               	.LVL10:
+ 250               		.loc 1 55 9 is_stmt 1 view .LVU83
+ 251 000e 0E94 0000 		call i2c_init
+ 252               	.LVL16:
   56:keyboards/ergodox/ez/ez.c ****         i2c_initialized++;
- 300               		.loc 1 56 0
- 301 0012 81E0      		ldi r24,lo8(1)
- 302 0014 8093 0000 		sts i2c_initialized,r24
- 303               	.LVL11:
- 304               	.LBB115:
- 305               	.LBB116:
- 306               		.loc 3 163 0
- 307 0018 2FEF      		ldi r18,lo8(3199999)
- 308 001a 83ED      		ldi r24,hi8(3199999)
- 309 001c 90E3      		ldi r25,hlo8(3199999)
- 310 001e 2150      	1:	subi r18,1
- 311 0020 8040      		sbci r24,0
- 312 0022 9040      		sbci r25,0
- 313 0024 01F4      		brne 1b
- 314 0026 00C0      		rjmp .
- 315 0028 0000      		nop
- 316               	.LVL12:
- 317               	.L4:
- 318               	.LBE116:
- 319               	.LBE115:
+ 253               		.loc 1 56 9 view .LVU84
+ 254               		.loc 1 56 24 is_stmt 0 view .LVU85
+ 255 0012 81E0      		ldi r24,lo8(1)
+ 256 0014 8093 0000 		sts i2c_initialized,r24
   57:keyboards/ergodox/ez/ez.c ****         _delay_ms(1000);
+ 257               		.loc 1 57 9 is_stmt 1 view .LVU86
+ 258               	.LVL17:
+ 259               	.LBB30:
+ 260               	.LBI30:
+ 166:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** {
+ 261               		.loc 2 166 1 view .LVU87
+ 262               	.LBB31:
+ 168:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** #if __HAS_DELAY_CYCLES && defined(__OPTIMIZE__) && \
+ 263               		.loc 2 168 2 view .LVU88
+ 172:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 	extern void __builtin_avr_delay_cycles(unsigned long);
+ 264               		.loc 2 172 2 view .LVU89
+ 173:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 	__tmp = ((F_CPU) / 1e3) * __ms;
+ 265               		.loc 2 173 2 view .LVU90
+ 174:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 
+ 266               		.loc 2 174 2 view .LVU91
+ 184:/usr/local/Cellar/avr-gcc/8.1.0/avr/include/util/delay.h **** 	#endif
+ 267               		.loc 2 184 3 view .LVU92
+ 268               		.loc 2 187 2 view .LVU93
+ 269 0018 2FEF      		ldi r18,lo8(3199999)
+ 270 001a 83ED      		ldi r24,hi8(3199999)
+ 271 001c 90E3      		ldi r25,hlo8(3199999)
+ 272 001e 2150      	1:	subi r18,1
+ 273 0020 8040      		sbci r24,0
+ 274 0022 9040      		sbci r25,0
+ 275 0024 01F4      		brne 1b
+ 276 0026 00C0      		rjmp .
+ 277 0028 0000      		nop
+ 278               	.LVL18:
+ 279               	.L4:
+ 280               		.loc 2 187 2 is_stmt 0 view .LVU94
+ 281               	.LBE31:
+ 282               	.LBE30:
   58:keyboards/ergodox/ez/ez.c ****     }
   59:keyboards/ergodox/ez/ez.c **** 
   60:keyboards/ergodox/ez/ez.c ****     // set pin direction
@@ -629,116 +579,175 @@
   62:keyboards/ergodox/ez/ez.c ****     // - input   : input  : 1
   63:keyboards/ergodox/ez/ez.c ****     // - driving : output : 0
   64:keyboards/ergodox/ez/ez.c ****     mcp23018_status = i2c_start(I2C_ADDR_WRITE);    if (mcp23018_status) goto out;
- 320               		.loc 1 64 0
- 321 002a 80E4      		ldi r24,lo8(64)
- 322 002c 0E94 0000 		call i2c_start
- 323               	.LVL13:
- 324 0030 8093 0000 		sts mcp23018_status,r24
- 325 0034 8111      		cpse r24,__zero_reg__
- 326 0036 00C0      		rjmp .L6
+ 283               		.loc 1 64 5 is_stmt 1 view .LVU95
+ 284               		.loc 1 64 23 is_stmt 0 view .LVU96
+ 285 002a 80E4      		ldi r24,lo8(64)
+ 286 002c 0E94 0000 		call i2c_start
+ 287               	.LVL19:
+ 288               		.loc 1 64 21 view .LVU97
+ 289 0030 8093 0000 		sts mcp23018_status,r24
+ 290               		.loc 1 64 53 is_stmt 1 view .LVU98
+ 291               		.loc 1 64 56 is_stmt 0 view .LVU99
+ 292 0034 8111      		cpse r24,__zero_reg__
+ 293 0036 00C0      		rjmp .L6
   65:keyboards/ergodox/ez/ez.c ****     mcp23018_status = i2c_write(IODIRA);            if (mcp23018_status) goto out;
- 327               		.loc 1 65 0
- 328 0038 0E94 0000 		call i2c_write
- 329               	.LVL14:
- 330 003c 8093 0000 		sts mcp23018_status,r24
- 331 0040 8111      		cpse r24,__zero_reg__
- 332 0042 00C0      		rjmp .L6
+ 294               		.loc 1 65 5 is_stmt 1 view .LVU100
+ 295               		.loc 1 65 23 is_stmt 0 view .LVU101
+ 296 0038 0E94 0000 		call i2c_write
+ 297               	.LVL20:
+ 298               		.loc 1 65 21 view .LVU102
+ 299 003c 8093 0000 		sts mcp23018_status,r24
+ 300               		.loc 1 65 53 is_stmt 1 view .LVU103
+ 301               		.loc 1 65 56 is_stmt 0 view .LVU104
+ 302 0040 8111      		cpse r24,__zero_reg__
+ 303 0042 00C0      		rjmp .L6
   66:keyboards/ergodox/ez/ez.c ****     mcp23018_status = i2c_write(0b00000000);        if (mcp23018_status) goto out;
- 333               		.loc 1 66 0
- 334 0044 0E94 0000 		call i2c_write
- 335               	.LVL15:
- 336 0048 8093 0000 		sts mcp23018_status,r24
- 337 004c 8111      		cpse r24,__zero_reg__
- 338 004e 00C0      		rjmp .L6
+ 304               		.loc 1 66 5 is_stmt 1 view .LVU105
+ 305               		.loc 1 66 23 is_stmt 0 view .LVU106
+ 306 0044 0E94 0000 		call i2c_write
+ 307               	.LVL21:
+ 308               		.loc 1 66 21 view .LVU107
+ 309 0048 8093 0000 		sts mcp23018_status,r24
+ 310               		.loc 1 66 53 is_stmt 1 view .LVU108
+ 311               		.loc 1 66 56 is_stmt 0 view .LVU109
+ 312 004c 8111      		cpse r24,__zero_reg__
+ 313 004e 00C0      		rjmp .L6
   67:keyboards/ergodox/ez/ez.c ****     mcp23018_status = i2c_write(0b00111111);        if (mcp23018_status) goto out;
- 339               		.loc 1 67 0
- 340 0050 8FE3      		ldi r24,lo8(63)
- 341 0052 0E94 0000 		call i2c_write
- 342               	.LVL16:
- 343 0056 8093 0000 		sts mcp23018_status,r24
- 344 005a 8111      		cpse r24,__zero_reg__
- 345 005c 00C0      		rjmp .L6
+ 314               		.loc 1 67 5 is_stmt 1 view .LVU110
+ 315               		.loc 1 67 23 is_stmt 0 view .LVU111
+ 316 0050 8FE3      		ldi r24,lo8(63)
+ 317 0052 0E94 0000 		call i2c_write
+ 318               	.LVL22:
+ 319               		.loc 1 67 21 view .LVU112
+ 320 0056 8093 0000 		sts mcp23018_status,r24
+ 321               		.loc 1 67 53 is_stmt 1 view .LVU113
+ 322               		.loc 1 67 56 is_stmt 0 view .LVU114
+ 323 005a 8111      		cpse r24,__zero_reg__
+ 324 005c 00C0      		rjmp .L6
   68:keyboards/ergodox/ez/ez.c ****     i2c_stop();
- 346               		.loc 1 68 0
- 347 005e 0E94 0000 		call i2c_stop
- 348               	.LVL17:
+ 325               		.loc 1 68 5 is_stmt 1 view .LVU115
+ 326 005e 0E94 0000 		call i2c_stop
+ 327               	.LVL23:
   69:keyboards/ergodox/ez/ez.c **** 
   70:keyboards/ergodox/ez/ez.c ****     // set pull-up
   71:keyboards/ergodox/ez/ez.c ****     // - unused  : on  : 1
   72:keyboards/ergodox/ez/ez.c ****     // - input   : on  : 1
   73:keyboards/ergodox/ez/ez.c ****     // - driving : off : 0
   74:keyboards/ergodox/ez/ez.c ****     mcp23018_status = i2c_start(I2C_ADDR_WRITE);    if (mcp23018_status) goto out;
- 349               		.loc 1 74 0
- 350 0062 80E4      		ldi r24,lo8(64)
- 351 0064 0E94 0000 		call i2c_start
- 352               	.LVL18:
- 353 0068 8093 0000 		sts mcp23018_status,r24
- 354 006c 8111      		cpse r24,__zero_reg__
- 355 006e 00C0      		rjmp .L6
+ 328               		.loc 1 74 5 view .LVU116
+ 329               		.loc 1 74 23 is_stmt 0 view .LVU117
+ 330 0062 80E4      		ldi r24,lo8(64)
+ 331 0064 0E94 0000 		call i2c_start
+ 332               	.LVL24:
+ 333               		.loc 1 74 21 view .LVU118
+ 334 0068 8093 0000 		sts mcp23018_status,r24
+ 335               		.loc 1 74 53 is_stmt 1 view .LVU119
+ 336               		.loc 1 74 56 is_stmt 0 view .LVU120
+ 337 006c 8111      		cpse r24,__zero_reg__
+ 338 006e 00C0      		rjmp .L6
   75:keyboards/ergodox/ez/ez.c ****     mcp23018_status = i2c_write(GPPUA);             if (mcp23018_status) goto out;
- 356               		.loc 1 75 0
- 357 0070 8CE0      		ldi r24,lo8(12)
- 358 0072 0E94 0000 		call i2c_write
- 359               	.LVL19:
- 360 0076 8093 0000 		sts mcp23018_status,r24
- 361 007a 8111      		cpse r24,__zero_reg__
- 362 007c 00C0      		rjmp .L6
+ 339               		.loc 1 75 5 is_stmt 1 view .LVU121
+ 340               		.loc 1 75 23 is_stmt 0 view .LVU122
+ 341 0070 8CE0      		ldi r24,lo8(12)
+ 342 0072 0E94 0000 		call i2c_write
+ 343               	.LVL25:
+ 344               		.loc 1 75 21 view .LVU123
+ 345 0076 8093 0000 		sts mcp23018_status,r24
+ 346               		.loc 1 75 53 is_stmt 1 view .LVU124
+ 347               		.loc 1 75 56 is_stmt 0 view .LVU125
+ 348 007a 8111      		cpse r24,__zero_reg__
+ 349 007c 00C0      		rjmp .L6
   76:keyboards/ergodox/ez/ez.c ****     mcp23018_status = i2c_write(0b00000000);        if (mcp23018_status) goto out;
- 363               		.loc 1 76 0
- 364 007e 0E94 0000 		call i2c_write
- 365               	.LVL20:
- 366 0082 8093 0000 		sts mcp23018_status,r24
- 367 0086 8111      		cpse r24,__zero_reg__
- 368 0088 00C0      		rjmp .L6
+ 350               		.loc 1 76 5 is_stmt 1 view .LVU126
+ 351               		.loc 1 76 23 is_stmt 0 view .LVU127
+ 352 007e 0E94 0000 		call i2c_write
+ 353               	.LVL26:
+ 354               		.loc 1 76 21 view .LVU128
+ 355 0082 8093 0000 		sts mcp23018_status,r24
+ 356               		.loc 1 76 53 is_stmt 1 view .LVU129
+ 357               		.loc 1 76 56 is_stmt 0 view .LVU130
+ 358 0086 8111      		cpse r24,__zero_reg__
+ 359 0088 00C0      		rjmp .L6
   77:keyboards/ergodox/ez/ez.c ****     mcp23018_status = i2c_write(0b00111111);        if (mcp23018_status) goto out;
- 369               		.loc 1 77 0
- 370 008a 8FE3      		ldi r24,lo8(63)
- 371 008c 0E94 0000 		call i2c_write
- 372               	.LVL21:
- 373 0090 8093 0000 		sts mcp23018_status,r24
- 374               	.L6:
+ 360               		.loc 1 77 5 is_stmt 1 view .LVU131
+ 361               		.loc 1 77 23 is_stmt 0 view .LVU132
+ 362 008a 8FE3      		ldi r24,lo8(63)
+ 363 008c 0E94 0000 		call i2c_write
+ 364               	.LVL27:
+ 365               		.loc 1 77 21 view .LVU133
+ 366 0090 8093 0000 		sts mcp23018_status,r24
+ 367               		.loc 1 77 53 is_stmt 1 view .LVU134
+ 368               	.L6:
   78:keyboards/ergodox/ez/ez.c **** 
   79:keyboards/ergodox/ez/ez.c **** out:
   80:keyboards/ergodox/ez/ez.c ****     i2c_stop();
- 375               		.loc 1 80 0
- 376 0094 0E94 0000 		call i2c_stop
- 377               	.LVL22:
+ 369               		.loc 1 80 5 view .LVU135
+ 370 0094 0E94 0000 		call i2c_stop
+ 371               	.LVL28:
   81:keyboards/ergodox/ez/ez.c **** 
   82:keyboards/ergodox/ez/ez.c ****     return mcp23018_status;
+ 372               		.loc 1 82 5 view .LVU136
   83:keyboards/ergodox/ez/ez.c **** }
- 378               		.loc 1 83 0
- 379 0098 8091 0000 		lds r24,mcp23018_status
- 380 009c 0895      		ret
- 381               		.cfi_endproc
- 382               	.LFE126:
- 384               	.global	mcp23018_status
- 385               		.section	.data.mcp23018_status,"aw",@progbits
- 388               	mcp23018_status:
- 389 0000 20        		.byte	32
- 390               	.global	i2c_initialized
- 391               		.section	.bss.i2c_initialized,"aw",@nobits
- 394               	i2c_initialized:
- 395 0000 00        		.zero	1
- 396               		.text
- 397               	.Letext0:
- 398               		.file 4 "/usr/lib/avr/include/stdint.h"
- 399               		.file 5 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.h"
- 400               		.file 6 "./quantum/quantum.h"
- 401               		.file 7 "keyboards/ergodox/ez/i2cmaster.h"
+ 373               		.loc 1 83 1 is_stmt 0 view .LVU137
+ 374 0098 8091 0000 		lds r24,mcp23018_status
+ 375               	/* epilogue start */
+ 376 009c 0895      		ret
+ 377               		.cfi_endproc
+ 378               	.LFE126:
+ 380               	.global	mcp23018_status
+ 381               		.section	.data.mcp23018_status,"aw",@progbits
+ 384               	mcp23018_status:
+ 385 0000 20        		.byte	32
+ 386               	.global	i2c_initialized
+ 387               		.section	.bss.i2c_initialized,"aw",@nobits
+ 390               	i2c_initialized:
+ 391 0000 00        		.zero	1
+ 392               		.text
+ 393               	.Letext0:
+ 394               		.file 3 "/usr/local/Cellar/avr-gcc/8.1.0/avr/include/stdint.h"
+ 395               		.file 4 "/usr/local/Cellar/avr-gcc/8.1.0/lib/avr-gcc/8/gcc/avr/8.1.0/include/stddef.h"
+ 396               		.file 5 "./tmk_core/common/keyboard.h"
+ 397               		.file 6 "./tmk_core/common/action.h"
+ 398               		.file 7 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../StdRequestType.h"
+ 399               		.file 8 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../DeviceStandardReq.h"
+ 400               		.file 9 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.h"
+ 401               		.file 10 "./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/HostStandardReq.h"
+ 402               		.file 11 "/usr/local/Cellar/avr-gcc/8.1.0/avr/include/stdio.h"
+ 403               		.file 12 "./tmk_core/common/report.h"
+ 404               		.file 13 "./tmk_core/common/host.h"
+ 405               		.file 14 "./tmk_core/common/debug.h"
+ 406               		.file 15 "./quantum/keycode_config.h"
+ 407               		.file 16 "./quantum/keymap.h"
+ 408               		.file 17 "./tmk_core/common/action_layer.h"
+ 409               		.file 18 "./tmk_core/common/timer.h"
+ 410               		.file 19 "./tmk_core/common/action_util.h"
+ 411               		.file 20 "/usr/local/Cellar/avr-gcc/8.1.0/avr/include/stdlib.h"
+ 412               		.file 21 "./quantum/process_keycode/process_tap_dance.h"
+ 413               		.file 22 "keyboards/ergodox/ez/ez.h"
+ 414               		.file 23 "keyboards/ergodox/ez/i2cmaster.h"
+ 415               		.file 24 "./quantum/quantum.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 ez.c
-     /tmp/ccz9IkVG.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccz9IkVG.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccz9IkVG.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccz9IkVG.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccz9IkVG.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccz9IkVG.s:13     .text.ergodox_blink_all_leds:0000000000000000 ergodox_blink_all_leds
-     /tmp/ccz9IkVG.s:236    .text.matrix_init_kb:0000000000000000 matrix_init_kb
-     /tmp/ccz9IkVG.s:282    .text.init_mcp23018:0000000000000000 init_mcp23018
-     /tmp/ccz9IkVG.s:388    .data.mcp23018_status:0000000000000000 mcp23018_status
-     /tmp/ccz9IkVG.s:394    .bss.i2c_initialized:0000000000000000 i2c_initialized
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccLaKnnL.s:2      *ABS*:000000000000003e __SP_H__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccLaKnnL.s:3      *ABS*:000000000000003d __SP_L__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccLaKnnL.s:4      *ABS*:000000000000003f __SREG__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccLaKnnL.s:5      *ABS*:0000000000000000 __tmp_reg__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccLaKnnL.s:6      *ABS*:0000000000000001 __zero_reg__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccLaKnnL.s:13     .text.ergodox_blink_all_leds:0000000000000000 ergodox_blink_all_leds
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccLaKnnL.s:177    .text.matrix_init_kb:0000000000000000 matrix_init_kb
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccLaKnnL.s:233    .text.init_mcp23018:0000000000000000 init_mcp23018
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccLaKnnL.s:384    .data.mcp23018_status:0000000000000000 mcp23018_status
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccLaKnnL.s:390    .bss.i2c_initialized:0000000000000000 i2c_initialized
 
 UNDEFINED SYMBOLS
+ergodox_led_all_off
+ergodox_led_all_set
+ergodox_right_led_1_on
+ergodox_right_led_2_on
+ergodox_right_led_3_on
+ergodox_right_led_1_off
+ergodox_right_led_2_off
+ergodox_right_led_3_off
 matrix_init_user
 i2c_init
 i2c_start

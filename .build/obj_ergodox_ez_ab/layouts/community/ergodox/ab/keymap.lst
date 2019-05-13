@@ -1,0 +1,644 @@
+   1               		.file	"keymap.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.section	.text.action_get_macro,"ax",@progbits
+  11               	.global	action_get_macro
+  13               	action_get_macro:
+  14               	.LVL0:
+  15               	.LFB128:
+  16               		.file 1 "layouts/community/ergodox/ab/keymap.c"
+   1:layouts/community/ergodox/ab/keymap.c **** #include QMK_KEYBOARD_H
+   2:layouts/community/ergodox/ab/keymap.c **** #include "debug.h"
+   3:layouts/community/ergodox/ab/keymap.c **** #include "action_layer.h"
+   4:layouts/community/ergodox/ab/keymap.c **** 
+   5:layouts/community/ergodox/ab/keymap.c **** #define BASE 0 // default layer
+   6:layouts/community/ergodox/ab/keymap.c **** #define FN1  1 // media layer
+   7:layouts/community/ergodox/ab/keymap.c **** 
+   8:layouts/community/ergodox/ab/keymap.c **** #define CAPS_CTL CTL_T(KC_CAPS)  // Caps on tap, Ctrl on hold.
+   9:layouts/community/ergodox/ab/keymap.c **** #define COPY     LCTL(KC_V)      // C-c Copy
+  10:layouts/community/ergodox/ab/keymap.c **** #define PASTE    LCTL(KC_V)      // C-v Paste
+  11:layouts/community/ergodox/ab/keymap.c **** #define ZM_NRM   LCTL(KC_0)      // C-0 Zoom Normal
+  12:layouts/community/ergodox/ab/keymap.c **** #define ZM_OUT   LCTL(KC_MINS)   // C-- Zoom Out
+  13:layouts/community/ergodox/ab/keymap.c **** #define ZM_IN    LCTL(KC_PLUS)   // C-+ Zoom In
+  14:layouts/community/ergodox/ab/keymap.c **** #define EM_UNDO  LCTL(KC_UNDS)   // C-_ Emacs Undo
+  15:layouts/community/ergodox/ab/keymap.c **** 
+  16:layouts/community/ergodox/ab/keymap.c **** #define _MOB  1 // Mobile#
+  17:layouts/community/ergodox/ab/keymap.c **** #define _CUS1 2 // Custom macro 1
+  18:layouts/community/ergodox/ab/keymap.c **** #define _CUS2 3 // Custom macro 2
+  19:layouts/community/ergodox/ab/keymap.c **** 
+  20:layouts/community/ergodox/ab/keymap.c **** 
+  21:layouts/community/ergodox/ab/keymap.c **** const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+  22:layouts/community/ergodox/ab/keymap.c **** /* Keymap 0: Basic layer
+  23:layouts/community/ergodox/ab/keymap.c ****  *
+  24:layouts/community/ergodox/ab/keymap.c ****  * ,--------------------------------------------------.           ,--------------------------------
+  25:layouts/community/ergodox/ab/keymap.c ****  * |   `    |   1  |   2  |   3  |   4  |   5  |  6   |           |   7  |   8  |   9  |   0  |   -
+  26:layouts/community/ergodox/ab/keymap.c ****  * |--------+------+------+------+------+------+------|           |------+------+------+------+----
+  27:layouts/community/ergodox/ab/keymap.c ****  * | Tab    |   Q  |   W  |   E  |   R  |   T  | Fwd  |           | Back |   Y  |   U  |   I  |   O
+  28:layouts/community/ergodox/ab/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
+  29:layouts/community/ergodox/ab/keymap.c ****  * |Caps/Ctl|   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L
+  30:layouts/community/ergodox/ab/keymap.c ****  * |--------+------+------+------+------+------| PgDn |           | PgUp |------+------+------+----
+  31:layouts/community/ergodox/ab/keymap.c ****  * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .
+  32:layouts/community/ergodox/ab/keymap.c ****  * `--------+------+------+------+------+-------------'           `-------------+------+------+----
+  33:layouts/community/ergodox/ab/keymap.c ****  *   | Ctrl |  Esc | LGui | Alt  | Alt  |                                       | Left |  Dn  |  Up
+  34:layouts/community/ergodox/ab/keymap.c ****  *   `----------------------------------'                                       `------------------
+  35:layouts/community/ergodox/ab/keymap.c ****  *                                        ,-------------.       ,-------------.
+  36:layouts/community/ergodox/ab/keymap.c ****  *                                        | Copy |  (   |       |   )  | Paste|
+  37:layouts/community/ergodox/ab/keymap.c ****  *                                 ,------|------+------|       |------+------+------.
+  38:layouts/community/ergodox/ab/keymap.c ****  *                                 |      |      |  [   |       |   ]  |      |      |
+  39:layouts/community/ergodox/ab/keymap.c ****  *                                 |Space | Del  |------|       |------| Enter|BSpace|
+  40:layouts/community/ergodox/ab/keymap.c ****  *                                 |      |      |  {   |       |   }  |      |      |
+  41:layouts/community/ergodox/ab/keymap.c ****  *                                 `--------------------'       `--------------------'
+  42:layouts/community/ergodox/ab/keymap.c ****  */
+  43:layouts/community/ergodox/ab/keymap.c **** // If it accepts an argument (i.e, is a function), it doesn't need KC_.
+  44:layouts/community/ergodox/ab/keymap.c **** // Otherwise, it needs KC_*
+  45:layouts/community/ergodox/ab/keymap.c ****     [BASE] = LAYOUT_ergodox(  // layer 0 : default
+  46:layouts/community/ergodox/ab/keymap.c **** 	// Left hand
+  47:layouts/community/ergodox/ab/keymap.c **** 	KC_GRV,   KC_1,    KC_2,    KC_3,     KC_4,     KC_5,    KC_6,
+  48:layouts/community/ergodox/ab/keymap.c **** 	KC_TAB,   KC_Q,    KC_W,    KC_E,     KC_R,     KC_T,    KC_WBAK,
+  49:layouts/community/ergodox/ab/keymap.c **** 	CAPS_CTL, KC_A,    KC_S,    KC_D,     KC_F,     KC_G,
+  50:layouts/community/ergodox/ab/keymap.c **** 	KC_LSFT,  KC_Z,    KC_X,    KC_C,     KC_V,     KC_B,    KC_PGDN,
+  51:layouts/community/ergodox/ab/keymap.c **** 	KC_LCTL,  KC_ESC,  KC_LGUI, KC_LALT,  KC_LALT,
+  52:layouts/community/ergodox/ab/keymap.c **** 	COPY,     KC_LCBR,
+  53:layouts/community/ergodox/ab/keymap.c **** 	KC_LPRN,
+  54:layouts/community/ergodox/ab/keymap.c **** 	KC_SPC,   KC_DEL,  KC_LBRC,
+  55:layouts/community/ergodox/ab/keymap.c **** 	// Right hand
+  56:layouts/community/ergodox/ab/keymap.c **** 	KC_7,     KC_8,    KC_9,    KC_0,     KC_MINS,  KC_EQL,  KC_BSPC,
+  57:layouts/community/ergodox/ab/keymap.c **** 	KC_WFWD,  KC_Y,    KC_U,    KC_I,     KC_O,     KC_P,    KC_BSLS,
+  58:layouts/community/ergodox/ab/keymap.c **** 	KC_H,     KC_J,    KC_K,    KC_L,     KC_SCLN,  KC_ENT,
+  59:layouts/community/ergodox/ab/keymap.c **** 	KC_PGUP,  KC_N,    KC_M,    KC_COMM,  KC_DOT,   KC_SLSH, KC_QUOT,
+  60:layouts/community/ergodox/ab/keymap.c **** 	KC_LEFT,  KC_DOWN, KC_UP,   KC_RIGHT, TG(FN1),
+  61:layouts/community/ergodox/ab/keymap.c **** 	KC_RCBR,  PASTE,
+  62:layouts/community/ergodox/ab/keymap.c **** 	KC_RPRN,
+  63:layouts/community/ergodox/ab/keymap.c **** 	KC_RBRC,  KC_ENT,  KC_BSPC),
+  64:layouts/community/ergodox/ab/keymap.c **** /* Keymap 1: Fn Keys, media and mouse keys
+  65:layouts/community/ergodox/ab/keymap.c ****  *
+  66:layouts/community/ergodox/ab/keymap.c ****  * ,--------------------------------------------------.           ,--------------------------------
+  67:layouts/community/ergodox/ab/keymap.c ****  * |  Esc   |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |           |  F7  |  F8  |  F9  |  F10 |  F1
+  68:layouts/community/ergodox/ab/keymap.c ****  * |--------+------+------+------+------+------+------|           |------+------+------+------+----
+  69:layouts/community/ergodox/ab/keymap.c ****  * |        |      |      | MsUp |      |      |      |           |      |      |      |      |    
+  70:layouts/community/ergodox/ab/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
+  71:layouts/community/ergodox/ab/keymap.c ****  * |        |      |MsLeft|MsDown|MsRght|      |------|           |------|      |      |      |    
+  72:layouts/community/ergodox/ab/keymap.c ****  * |--------+------+------+------+------+------|      |           |      |------+------+------+----
+  73:layouts/community/ergodox/ab/keymap.c ****  * |        |      | LClk | MClk | RClk |      |      |           |      |      |      |      |    
+  74:layouts/community/ergodox/ab/keymap.c ****  * `--------+------+------+------+------+-------------'           `-------------+------+------+----
+  75:layouts/community/ergodox/ab/keymap.c ****  *   |Teensy|      | ZmNrm| ZmOut| ZmIn |                                       | Undo |VolDn |VolU
+  76:layouts/community/ergodox/ab/keymap.c ****  *   `----------------------------------'                                       `------------------
+  77:layouts/community/ergodox/ab/keymap.c ****  *                                        ,-------------.       ,-------------.
+  78:layouts/community/ergodox/ab/keymap.c ****  *                                        |      |      |       |      |      |
+  79:layouts/community/ergodox/ab/keymap.c ****  *                                 ,------|------+------|       |------+------+------.
+  80:layouts/community/ergodox/ab/keymap.c ****  *                                 |      |      |      |       |      |      |      |
+  81:layouts/community/ergodox/ab/keymap.c ****  *                                 |      |      |------|       |------|      |      |
+  82:layouts/community/ergodox/ab/keymap.c ****  *                                 |      |      |      |       |      |      |      |
+  83:layouts/community/ergodox/ab/keymap.c ****  *                                 `--------------------'       `--------------------'
+  84:layouts/community/ergodox/ab/keymap.c ****  */
+  85:layouts/community/ergodox/ab/keymap.c **** // FN1 Layer
+  86:layouts/community/ergodox/ab/keymap.c ****     [FN1] = LAYOUT_ergodox(
+  87:layouts/community/ergodox/ab/keymap.c **** 	// Left hand
+  88:layouts/community/ergodox/ab/keymap.c **** 	KC_ESC,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,
+  89:layouts/community/ergodox/ab/keymap.c **** 	KC_TRNS, KC_TRNS, KC_TRNS, KC_MS_U, KC_TRNS, KC_TRNS, KC_TRNS,
+  90:layouts/community/ergodox/ab/keymap.c **** 	KC_TRNS, KC_TRNS, KC_MS_L, KC_MS_D, KC_MS_R, KC_TRNS,
+  91:layouts/community/ergodox/ab/keymap.c **** 	KC_TRNS, KC_TRNS, KC_BTN1, KC_BTN3, KC_BTN2, KC_TRNS, KC_TRNS,
+  92:layouts/community/ergodox/ab/keymap.c **** 	KC_TRNS, KC_TRNS, ZM_NRM,  ZM_OUT,  ZM_IN,
+  93:layouts/community/ergodox/ab/keymap.c **** 	KC_TRNS, KC_TRNS,
+  94:layouts/community/ergodox/ab/keymap.c **** 	KC_TRNS,
+  95:layouts/community/ergodox/ab/keymap.c **** 	RESET,   KC_TRNS, KC_TRNS,
+  96:layouts/community/ergodox/ab/keymap.c **** 	// Right hand
+  97:layouts/community/ergodox/ab/keymap.c **** 	KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_BSPC,
+  98:layouts/community/ergodox/ab/keymap.c **** 	KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+  99:layouts/community/ergodox/ab/keymap.c **** 	KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_MPLY,
+ 100:layouts/community/ergodox/ab/keymap.c **** 	KC_TRNS, M(_MOB), KC_TRNS, M(_CUS1),M(_CUS2),KC_TRNS, KC_TRNS,
+ 101:layouts/community/ergodox/ab/keymap.c **** 	EM_UNDO, KC_VOLD, KC_VOLU, KC_MUTE, KC_TRNS,
+ 102:layouts/community/ergodox/ab/keymap.c **** 	KC_TRNS, KC_TRNS,
+ 103:layouts/community/ergodox/ab/keymap.c **** 	KC_TRNS,
+ 104:layouts/community/ergodox/ab/keymap.c **** 	KC_TRNS, KC_TRNS, KC_TRNS
+ 105:layouts/community/ergodox/ab/keymap.c **** 	),
+ 106:layouts/community/ergodox/ab/keymap.c **** };
+ 107:layouts/community/ergodox/ab/keymap.c **** 
+ 108:layouts/community/ergodox/ab/keymap.c **** const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
+ 109:layouts/community/ergodox/ab/keymap.c **** {
+  17               		.loc 1 109 1 view -0
+  18               		.cfi_startproc
+  19               	/* prologue: function */
+  20               	/* frame size = 0 */
+  21               	/* stack size = 0 */
+  22               	.L__stack_usage = 0
+  23               		.loc 1 109 1 is_stmt 0 view .LVU1
+  24 0000 FC01      		movw r30,r24
+ 110:layouts/community/ergodox/ab/keymap.c ****     // MACRODOWN only works in this function
+ 111:layouts/community/ergodox/ab/keymap.c ****     switch(id) {
+  25               		.loc 1 111 5 is_stmt 1 view .LVU2
+  26 0002 6230      		cpi r22,lo8(2)
+  27 0004 01F0      		breq .L2
+  28 0006 6330      		cpi r22,lo8(3)
+  29 0008 01F0      		breq .L3
+  30 000a 6130      		cpi r22,lo8(1)
+  31 000c 01F4      		brne .L8
+ 112:layouts/community/ergodox/ab/keymap.c ****     case _MOB: // Your mobile# here.
+ 113:layouts/community/ergodox/ab/keymap.c **** 	return MACRODOWN(T(1), T(2), T(3), T(MINS),
+  32               		.loc 1 113 2 view .LVU3
+  33               		.loc 1 113 9 is_stmt 0 view .LVU4
+  34 000e 8281      		ldd r24,Z+2
+  35               	.LVL1:
+  36               		.loc 1 113 9 view .LVU5
+  37 0010 8823      		tst r24
+  38 0012 01F0      		breq .L8
+  39 0014 80E0      		ldi r24,lo8(__m.6055)
+  40 0016 90E0      		ldi r25,hi8(__m.6055)
+  41 0018 0895      		ret
+  42               	.LVL2:
+  43               	.L2:
+ 114:layouts/community/ergodox/ab/keymap.c **** 			 T(1), T(2), T(3), T(MINS),
+ 115:layouts/community/ergodox/ab/keymap.c **** 			 T(1), T(2), T(3), T(4),
+ 116:layouts/community/ergodox/ab/keymap.c **** 			 END);
+ 117:layouts/community/ergodox/ab/keymap.c ****     case _CUS1: // Your custom macro 1
+ 118:layouts/community/ergodox/ab/keymap.c **** 	return MACRODOWN(T(E), T(M), T(A), T(C), T(S), T(SPC), END);
+  44               		.loc 1 118 2 is_stmt 1 view .LVU6
+  45               		.loc 1 118 9 is_stmt 0 view .LVU7
+  46 001a 8281      		ldd r24,Z+2
+  47               	.LVL3:
+  48               		.loc 1 118 9 view .LVU8
+  49 001c 8823      		tst r24
+  50 001e 01F0      		breq .L8
+  51 0020 80E0      		ldi r24,lo8(__m.6058)
+  52 0022 90E0      		ldi r25,hi8(__m.6058)
+  53 0024 0895      		ret
+  54               	.LVL4:
+  55               	.L3:
+ 119:layouts/community/ergodox/ab/keymap.c ****     case _CUS2: // Your custom macro 2
+ 120:layouts/community/ergodox/ab/keymap.c **** 	return MACRODOWN(T(L), T(S), T(SPC), T(MINS), T(L), T(ENT), END);
+  56               		.loc 1 120 2 is_stmt 1 view .LVU9
+  57               		.loc 1 120 9 is_stmt 0 view .LVU10
+  58 0026 8281      		ldd r24,Z+2
+  59               	.LVL5:
+  60               		.loc 1 120 9 view .LVU11
+  61 0028 8823      		tst r24
+  62 002a 01F0      		breq .L8
+  63 002c 80E0      		ldi r24,lo8(__m.6061)
+  64 002e 90E0      		ldi r25,hi8(__m.6061)
+  65 0030 0895      		ret
+  66               	.L8:
+ 113:layouts/community/ergodox/ab/keymap.c **** 			 T(1), T(2), T(3), T(MINS),
+  67               		.loc 1 113 9 view .LVU12
+  68 0032 90E0      		ldi r25,0
+  69 0034 80E0      		ldi r24,0
+  70               	/* epilogue start */
+ 121:layouts/community/ergodox/ab/keymap.c ****     };
+ 122:layouts/community/ergodox/ab/keymap.c ****     return MACRO_NONE;
+ 123:layouts/community/ergodox/ab/keymap.c **** };
+  71               		.loc 1 123 1 view .LVU13
+  72 0036 0895      		ret
+  73               		.cfi_endproc
+  74               	.LFE128:
+  76               		.section	.text.matrix_init_user,"ax",@progbits
+  77               	.global	matrix_init_user
+  79               	matrix_init_user:
+  80               	.LFB129:
+ 124:layouts/community/ergodox/ab/keymap.c **** 
+ 125:layouts/community/ergodox/ab/keymap.c **** // Runs just one time when the keyboard initializes.
+ 126:layouts/community/ergodox/ab/keymap.c **** void matrix_init_user(void) {
+  81               		.loc 1 126 29 is_stmt 1 view -0
+  82               		.cfi_startproc
+  83               	/* prologue: function */
+  84               	/* frame size = 0 */
+  85               	/* stack size = 0 */
+  86               	.L__stack_usage = 0
+ 127:layouts/community/ergodox/ab/keymap.c **** 
+ 128:layouts/community/ergodox/ab/keymap.c **** };
+  87               		.loc 1 128 1 view .LVU15
+  88               	/* epilogue start */
+  89 0000 0895      		ret
+  90               		.cfi_endproc
+  91               	.LFE129:
+  93               		.section	.text.matrix_scan_user,"ax",@progbits
+  94               	.global	matrix_scan_user
+  96               	matrix_scan_user:
+  97               	.LFB130:
+ 129:layouts/community/ergodox/ab/keymap.c **** 
+ 130:layouts/community/ergodox/ab/keymap.c **** // Runs constantly in the background, in a loop.
+ 131:layouts/community/ergodox/ab/keymap.c **** void matrix_scan_user(void) {
+  98               		.loc 1 131 29 view -0
+  99               		.cfi_startproc
+ 100 0000 CF93      		push r28
+ 101               	.LCFI0:
+ 102               		.cfi_def_cfa_offset 3
+ 103               		.cfi_offset 28, -2
+ 104               	/* prologue: function */
+ 105               	/* frame size = 0 */
+ 106               	/* stack size = 1 */
+ 107               	.L__stack_usage = 1
+ 132:layouts/community/ergodox/ab/keymap.c **** 
+ 133:layouts/community/ergodox/ab/keymap.c ****     uint8_t layer = biton32(layer_state);
+ 108               		.loc 1 133 5 view .LVU17
+ 109               		.loc 1 133 21 is_stmt 0 view .LVU18
+ 110 0002 6091 0000 		lds r22,layer_state
+ 111 0006 7091 0000 		lds r23,layer_state+1
+ 112 000a 8091 0000 		lds r24,layer_state+2
+ 113 000e 9091 0000 		lds r25,layer_state+3
+ 114 0012 0E94 0000 		call biton32
+ 115               	.LVL6:
+ 116 0016 C82F      		mov r28,r24
+ 117               	.LVL7:
+ 134:layouts/community/ergodox/ab/keymap.c **** 
+ 135:layouts/community/ergodox/ab/keymap.c ****     ergodox_board_led_off();
+ 118               		.loc 1 135 5 is_stmt 1 view .LVU19
+ 119 0018 0E94 0000 		call ergodox_board_led_off
+ 120               	.LVL8:
+ 136:layouts/community/ergodox/ab/keymap.c ****     ergodox_right_led_1_off();
+ 121               		.loc 1 136 5 view .LVU20
+ 122 001c 0E94 0000 		call ergodox_right_led_1_off
+ 123               	.LVL9:
+ 137:layouts/community/ergodox/ab/keymap.c ****     ergodox_right_led_2_off();
+ 124               		.loc 1 137 5 view .LVU21
+ 125 0020 0E94 0000 		call ergodox_right_led_2_off
+ 126               	.LVL10:
+ 138:layouts/community/ergodox/ab/keymap.c ****     ergodox_right_led_3_off();
+ 127               		.loc 1 138 5 view .LVU22
+ 128 0024 0E94 0000 		call ergodox_right_led_3_off
+ 129               	.LVL11:
+ 139:layouts/community/ergodox/ab/keymap.c ****     switch (layer) {
+ 130               		.loc 1 139 5 view .LVU23
+ 131 0028 C130      		cpi r28,lo8(1)
+ 132 002a 01F0      		breq .L11
+ 133 002c C230      		cpi r28,lo8(2)
+ 134 002e 01F0      		breq .L12
+ 135               	/* epilogue start */
+ 140:layouts/community/ergodox/ab/keymap.c **** 	// TODO: Make this relevant to the ErgoDox EZ.
+ 141:layouts/community/ergodox/ab/keymap.c ****     case 1:
+ 142:layouts/community/ergodox/ab/keymap.c **** 	ergodox_right_led_1_on();
+ 143:layouts/community/ergodox/ab/keymap.c **** 	break;
+ 144:layouts/community/ergodox/ab/keymap.c ****     case 2:
+ 145:layouts/community/ergodox/ab/keymap.c **** 	ergodox_right_led_2_on();
+ 146:layouts/community/ergodox/ab/keymap.c **** 	break;
+ 147:layouts/community/ergodox/ab/keymap.c ****     default:
+ 148:layouts/community/ergodox/ab/keymap.c **** 	// none
+ 149:layouts/community/ergodox/ab/keymap.c **** 	break;
+ 150:layouts/community/ergodox/ab/keymap.c ****     }
+ 151:layouts/community/ergodox/ab/keymap.c **** 
+ 152:layouts/community/ergodox/ab/keymap.c **** };
+ 136               		.loc 1 152 1 is_stmt 0 view .LVU24
+ 137 0030 CF91      		pop r28
+ 138               	.LVL12:
+ 139               		.loc 1 152 1 view .LVU25
+ 140 0032 0895      		ret
+ 141               	.LVL13:
+ 142               	.L11:
+ 142:layouts/community/ergodox/ab/keymap.c **** 	break;
+ 143               		.loc 1 142 2 is_stmt 1 view .LVU26
+ 144               	/* epilogue start */
+ 145               		.loc 1 152 1 is_stmt 0 view .LVU27
+ 146 0034 CF91      		pop r28
+ 147               	.LVL14:
+ 142:layouts/community/ergodox/ab/keymap.c **** 	break;
+ 148               		.loc 1 142 2 view .LVU28
+ 149 0036 0C94 0000 		jmp ergodox_right_led_1_on
+ 150               	.LVL15:
+ 151               	.L12:
+ 145:layouts/community/ergodox/ab/keymap.c **** 	break;
+ 152               		.loc 1 145 2 is_stmt 1 view .LVU29
+ 153               	/* epilogue start */
+ 154               		.loc 1 152 1 is_stmt 0 view .LVU30
+ 155 003a CF91      		pop r28
+ 156               	.LVL16:
+ 145:layouts/community/ergodox/ab/keymap.c **** 	break;
+ 157               		.loc 1 145 2 view .LVU31
+ 158 003c 0C94 0000 		jmp ergodox_right_led_2_on
+ 159               	.LVL17:
+ 160               		.cfi_endproc
+ 161               	.LFE130:
+ 163               		.section	.progmem.data.__m.6061,"a",@progbits
+ 166               	__m.6061:
+ 167 0000 01        		.byte	1
+ 168 0001 0F        		.byte	15
+ 169 0002 02        		.byte	2
+ 170 0003 0F        		.byte	15
+ 171 0004 01        		.byte	1
+ 172 0005 16        		.byte	22
+ 173 0006 02        		.byte	2
+ 174 0007 16        		.byte	22
+ 175 0008 01        		.byte	1
+ 176 0009 2C        		.byte	44
+ 177 000a 02        		.byte	2
+ 178 000b 2C        		.byte	44
+ 179 000c 01        		.byte	1
+ 180 000d 2D        		.byte	45
+ 181 000e 02        		.byte	2
+ 182 000f 2D        		.byte	45
+ 183 0010 01        		.byte	1
+ 184 0011 0F        		.byte	15
+ 185 0012 02        		.byte	2
+ 186 0013 0F        		.byte	15
+ 187 0014 01        		.byte	1
+ 188 0015 28        		.byte	40
+ 189 0016 02        		.byte	2
+ 190 0017 28        		.byte	40
+ 191 0018 00        		.byte	0
+ 192               		.section	.progmem.data.__m.6058,"a",@progbits
+ 195               	__m.6058:
+ 196 0000 01        		.byte	1
+ 197 0001 08        		.byte	8
+ 198 0002 02        		.byte	2
+ 199 0003 08        		.byte	8
+ 200 0004 01        		.byte	1
+ 201 0005 10        		.byte	16
+ 202 0006 02        		.byte	2
+ 203 0007 10        		.byte	16
+ 204 0008 01        		.byte	1
+ 205 0009 04        		.byte	4
+ 206 000a 02        		.byte	2
+ 207 000b 04        		.byte	4
+ 208 000c 01        		.byte	1
+ 209 000d 06        		.byte	6
+ 210 000e 02        		.byte	2
+ 211 000f 06        		.byte	6
+ 212 0010 01        		.byte	1
+ 213 0011 16        		.byte	22
+ 214 0012 02        		.byte	2
+ 215 0013 16        		.byte	22
+ 216 0014 01        		.byte	1
+ 217 0015 2C        		.byte	44
+ 218 0016 02        		.byte	2
+ 219 0017 2C        		.byte	44
+ 220 0018 00        		.byte	0
+ 221               		.section	.progmem.data.__m.6055,"a",@progbits
+ 224               	__m.6055:
+ 225 0000 01        		.byte	1
+ 226 0001 1E        		.byte	30
+ 227 0002 02        		.byte	2
+ 228 0003 1E        		.byte	30
+ 229 0004 01        		.byte	1
+ 230 0005 1F        		.byte	31
+ 231 0006 02        		.byte	2
+ 232 0007 1F        		.byte	31
+ 233 0008 01        		.byte	1
+ 234 0009 20        		.byte	32
+ 235 000a 02        		.byte	2
+ 236 000b 20        		.byte	32
+ 237 000c 01        		.byte	1
+ 238 000d 2D        		.byte	45
+ 239 000e 02        		.byte	2
+ 240 000f 2D        		.byte	45
+ 241 0010 01        		.byte	1
+ 242 0011 1E        		.byte	30
+ 243 0012 02        		.byte	2
+ 244 0013 1E        		.byte	30
+ 245 0014 01        		.byte	1
+ 246 0015 1F        		.byte	31
+ 247 0016 02        		.byte	2
+ 248 0017 1F        		.byte	31
+ 249 0018 01        		.byte	1
+ 250 0019 20        		.byte	32
+ 251 001a 02        		.byte	2
+ 252 001b 20        		.byte	32
+ 253 001c 01        		.byte	1
+ 254 001d 2D        		.byte	45
+ 255 001e 02        		.byte	2
+ 256 001f 2D        		.byte	45
+ 257 0020 01        		.byte	1
+ 258 0021 1E        		.byte	30
+ 259 0022 02        		.byte	2
+ 260 0023 1E        		.byte	30
+ 261 0024 01        		.byte	1
+ 262 0025 1F        		.byte	31
+ 263 0026 02        		.byte	2
+ 264 0027 1F        		.byte	31
+ 265 0028 01        		.byte	1
+ 266 0029 20        		.byte	32
+ 267 002a 02        		.byte	2
+ 268 002b 20        		.byte	32
+ 269 002c 01        		.byte	1
+ 270 002d 21        		.byte	33
+ 271 002e 02        		.byte	2
+ 272 002f 21        		.byte	33
+ 273 0030 00        		.byte	0
+ 274               	.global	keymaps
+ 275               		.section	.progmem.data.keymaps,"a",@progbits
+ 278               	keymaps:
+ 279 0000 3500      		.word	53
+ 280 0002 2B00      		.word	43
+ 281 0004 3961      		.word	24889
+ 282 0006 E100      		.word	225
+ 283 0008 E000      		.word	224
+ 284 000a 0000      		.word	0
+ 285 000c 1E00      		.word	30
+ 286 000e 1400      		.word	20
+ 287 0010 0400      		.word	4
+ 288 0012 1D00      		.word	29
+ 289 0014 2900      		.word	41
+ 290 0016 2F00      		.word	47
+ 291 0018 1F00      		.word	31
+ 292 001a 1A00      		.word	26
+ 293 001c 1600      		.word	22
+ 294 001e 1B00      		.word	27
+ 295 0020 E300      		.word	227
+ 296 0022 4C00      		.word	76
+ 297 0024 2000      		.word	32
+ 298 0026 0800      		.word	8
+ 299 0028 0700      		.word	7
+ 300 002a 0600      		.word	6
+ 301 002c E200      		.word	226
+ 302 002e 2C00      		.word	44
+ 303 0030 2100      		.word	33
+ 304 0032 1500      		.word	21
+ 305 0034 0900      		.word	9
+ 306 0036 1900      		.word	25
+ 307 0038 E200      		.word	226
+ 308 003a 2602      		.word	550
+ 309 003c 2200      		.word	34
+ 310 003e 1700      		.word	23
+ 311 0040 0A00      		.word	10
+ 312 0042 0500      		.word	5
+ 313 0044 0000      		.word	0
+ 314 0046 1901      		.word	281
+ 315 0048 2300      		.word	35
+ 316 004a B600      		.word	182
+ 317 004c 0000      		.word	0
+ 318 004e 4E00      		.word	78
+ 319 0050 0000      		.word	0
+ 320 0052 2F02      		.word	559
+ 321 0054 2400      		.word	36
+ 322 0056 B700      		.word	183
+ 323 0058 0000      		.word	0
+ 324 005a 4B00      		.word	75
+ 325 005c 0000      		.word	0
+ 326 005e 3002      		.word	560
+ 327 0060 2500      		.word	37
+ 328 0062 1C00      		.word	28
+ 329 0064 0B00      		.word	11
+ 330 0066 1100      		.word	17
+ 331 0068 0000      		.word	0
+ 332 006a 1901      		.word	281
+ 333 006c 2600      		.word	38
+ 334 006e 1800      		.word	24
+ 335 0070 0D00      		.word	13
+ 336 0072 1000      		.word	16
+ 337 0074 5000      		.word	80
+ 338 0076 2702      		.word	551
+ 339 0078 2700      		.word	39
+ 340 007a 0C00      		.word	12
+ 341 007c 0E00      		.word	14
+ 342 007e 3600      		.word	54
+ 343 0080 5100      		.word	81
+ 344 0082 2A00      		.word	42
+ 345 0084 2D00      		.word	45
+ 346 0086 1200      		.word	18
+ 347 0088 0F00      		.word	15
+ 348 008a 3700      		.word	55
+ 349 008c 5200      		.word	82
+ 350 008e 2800      		.word	40
+ 351 0090 2E00      		.word	46
+ 352 0092 1300      		.word	19
+ 353 0094 3300      		.word	51
+ 354 0096 3800      		.word	56
+ 355 0098 4F00      		.word	79
+ 356 009a 3000      		.word	48
+ 357 009c 2A00      		.word	42
+ 358 009e 3100      		.word	49
+ 359 00a0 2800      		.word	40
+ 360 00a2 3400      		.word	52
+ 361 00a4 0153      		.word	21249
+ 362 00a6 0000      		.word	0
+ 363 00a8 2900      		.word	41
+ 364 00aa 0100      		.word	1
+ 365 00ac 0100      		.word	1
+ 366 00ae 0100      		.word	1
+ 367 00b0 0100      		.word	1
+ 368 00b2 0000      		.word	0
+ 369 00b4 3A00      		.word	58
+ 370 00b6 0100      		.word	1
+ 371 00b8 0100      		.word	1
+ 372 00ba 0100      		.word	1
+ 373 00bc 0100      		.word	1
+ 374 00be 0100      		.word	1
+ 375 00c0 3B00      		.word	59
+ 376 00c2 0100      		.word	1
+ 377 00c4 F200      		.word	242
+ 378 00c6 F400      		.word	244
+ 379 00c8 2701      		.word	295
+ 380 00ca 0100      		.word	1
+ 381 00cc 3C00      		.word	60
+ 382 00ce F000      		.word	240
+ 383 00d0 F100      		.word	241
+ 384 00d2 F600      		.word	246
+ 385 00d4 2D01      		.word	301
+ 386 00d6 005C      		.word	23552
+ 387 00d8 3D00      		.word	61
+ 388 00da 0100      		.word	1
+ 389 00dc F300      		.word	243
+ 390 00de F500      		.word	245
+ 391 00e0 2E03      		.word	814
+ 392 00e2 0100      		.word	1
+ 393 00e4 3E00      		.word	62
+ 394 00e6 0100      		.word	1
+ 395 00e8 0100      		.word	1
+ 396 00ea 0100      		.word	1
+ 397 00ec 0000      		.word	0
+ 398 00ee 0100      		.word	1
+ 399 00f0 3F00      		.word	63
+ 400 00f2 0100      		.word	1
+ 401 00f4 0000      		.word	0
+ 402 00f6 0100      		.word	1
+ 403 00f8 0000      		.word	0
+ 404 00fa 0100      		.word	1
+ 405 00fc 4000      		.word	64
+ 406 00fe 0100      		.word	1
+ 407 0100 0000      		.word	0
+ 408 0102 0100      		.word	1
+ 409 0104 0000      		.word	0
+ 410 0106 0100      		.word	1
+ 411 0108 4100      		.word	65
+ 412 010a 0100      		.word	1
+ 413 010c 0100      		.word	1
+ 414 010e 0130      		.word	12289
+ 415 0110 0000      		.word	0
+ 416 0112 0100      		.word	1
+ 417 0114 4200      		.word	66
+ 418 0116 0100      		.word	1
+ 419 0118 0100      		.word	1
+ 420 011a 0100      		.word	1
+ 421 011c 2D03      		.word	813
+ 422 011e 0100      		.word	1
+ 423 0120 4300      		.word	67
+ 424 0122 0100      		.word	1
+ 425 0124 0100      		.word	1
+ 426 0126 0230      		.word	12290
+ 427 0128 AA00      		.word	170
+ 428 012a 0100      		.word	1
+ 429 012c 4400      		.word	68
+ 430 012e 0100      		.word	1
+ 431 0130 0100      		.word	1
+ 432 0132 0330      		.word	12291
+ 433 0134 A900      		.word	169
+ 434 0136 0100      		.word	1
+ 435 0138 4500      		.word	69
+ 436 013a 0100      		.word	1
+ 437 013c 0100      		.word	1
+ 438 013e 0100      		.word	1
+ 439 0140 A800      		.word	168
+ 440 0142 0100      		.word	1
+ 441 0144 2A00      		.word	42
+ 442 0146 0100      		.word	1
+ 443 0148 AE00      		.word	174
+ 444 014a 0100      		.word	1
+ 445 014c 0100      		.word	1
+ 446 014e 0000      		.word	0
+ 447               		.text
+ 448               	.Letext0:
+ 449               		.file 2 "/usr/local/Cellar/avr-gcc/8.1.0/avr/include/stdint.h"
+ 450               		.file 3 "/usr/local/Cellar/avr-gcc/8.1.0/lib/avr-gcc/8/gcc/avr/8.1.0/include/stddef.h"
+ 451               		.file 4 "tmk_core/common/keyboard.h"
+ 452               		.file 5 "tmk_core/common/keycode.h"
+ 453               		.file 6 "tmk_core/common/action_code.h"
+ 454               		.file 7 "tmk_core/common/action_macro.h"
+ 455               		.file 8 "tmk_core/common/action.h"
+ 456               		.file 9 "lib/lufa/LUFA/Drivers/USB/Core/AVR8/../StdRequestType.h"
+ 457               		.file 10 "lib/lufa/LUFA/Drivers/USB/Core/AVR8/../DeviceStandardReq.h"
+ 458               		.file 11 "lib/lufa/LUFA/Drivers/USB/Core/USBTask.h"
+ 459               		.file 12 "lib/lufa/LUFA/Drivers/USB/Core/HostStandardReq.h"
+ 460               		.file 13 "/usr/local/Cellar/avr-gcc/8.1.0/avr/include/stdio.h"
+ 461               		.file 14 "tmk_core/common/report.h"
+ 462               		.file 15 "tmk_core/common/host.h"
+ 463               		.file 16 "tmk_core/common/debug.h"
+ 464               		.file 17 "quantum/keycode_config.h"
+ 465               		.file 18 "quantum/quantum_keycodes.h"
+ 466               		.file 19 "quantum/keymap.h"
+ 467               		.file 20 "quantum/rgblight_types.h"
+ 468               		.file 21 "quantum/rgblight.h"
+ 469               		.file 22 "tmk_core/common/action_layer.h"
+ 470               		.file 23 "tmk_core/common/timer.h"
+ 471               		.file 24 "tmk_core/common/action_util.h"
+ 472               		.file 25 "/usr/local/Cellar/avr-gcc/8.1.0/avr/include/stdlib.h"
+ 473               		.file 26 "quantum/process_keycode/process_unicode_common.h"
+ 474               		.file 27 "quantum/quantum.h"
+ 475               		.file 28 "drivers/avr/i2c_master.h"
+ 476               		.file 29 "keyboards/ergodox_ez/ergodox_ez.h"
+ 477               		.file 30 "tmk_core/common/util.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 keymap.c
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccKhsBPH.s:2      *ABS*:000000000000003e __SP_H__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccKhsBPH.s:3      *ABS*:000000000000003d __SP_L__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccKhsBPH.s:4      *ABS*:000000000000003f __SREG__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccKhsBPH.s:5      *ABS*:0000000000000000 __tmp_reg__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccKhsBPH.s:6      *ABS*:0000000000000001 __zero_reg__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccKhsBPH.s:13     .text.action_get_macro:0000000000000000 action_get_macro
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccKhsBPH.s:224    .progmem.data.__m.6055:0000000000000000 __m.6055
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccKhsBPH.s:195    .progmem.data.__m.6058:0000000000000000 __m.6058
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccKhsBPH.s:166    .progmem.data.__m.6061:0000000000000000 __m.6061
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccKhsBPH.s:79     .text.matrix_init_user:0000000000000000 matrix_init_user
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccKhsBPH.s:96     .text.matrix_scan_user:0000000000000000 matrix_scan_user
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccKhsBPH.s:278    .progmem.data.keymaps:0000000000000000 keymaps
+
+UNDEFINED SYMBOLS
+layer_state
+biton32
+ergodox_board_led_off
+ergodox_right_led_1_off
+ergodox_right_led_2_off
+ergodox_right_led_3_off
+ergodox_right_led_1_on
+ergodox_right_led_2_on
