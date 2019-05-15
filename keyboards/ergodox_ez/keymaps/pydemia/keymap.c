@@ -555,7 +555,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //Meh: MEH_T(KC_NO)
 [WKEY] = LAYOUT_ergodox(  // layer 0 : default
 // left hand
-KC_ESC,           KC_1,           KC_2,           KC_3,         KC_4,           KC_5,       LCTL(KC_F5), // TG(LKEY),
+KC_ESC,           KC_1,           KC_2,           KC_3,         KC_4,           KC_5,       LCTL(LSFT(KC_F5)), // TG(LKEY),
 KC_TAB,           KC_Q,           KC_W,           KC_E,         KC_R,           KC_T,       ASSIGN_TAP,
 KC_GRV,           KC_A,           KC_S,           KC_D,         KC_F,           KC_G,
 KC_LSFT,          KC_Z,           KC_X,           KC_C,         KC_V,           KC_B,        TT(NPAD),
@@ -684,7 +684,7 @@ KC_DOWN,          KC_DELT,          KC_ENT
 // ACTN
 [ACTN] = LAYOUT_ergodox(
 // left hand
-LCTL(LSFT(KC_F5)),   KC_F1,             KC_F2,          KC_F3,           KC_F4,           KC_F5,             KC_TRNS,
+LCTL(LSFT(KC_F4)),   KC_F1,             KC_F2,          KC_F3,           KC_F4,           KC_F5,             KC_TRNS,
 LCTL(LSFT(KC_F1)),   KC_F6,             KC_F7,          KC_F8,           KC_F9,           KC_F10,            KC_TRNS,
 LCTL(LSFT(KC_F2)),   KC_F11,            KC_F12,         KC_F13,          KC_F14,          KC_F15,
 LCTL(LSFT(KC_F3)),   KC_TRNS,           KC_TRNS,        KC_TRNS,         KC_TRNS,         KC_TRNS,           KC_TRNS,

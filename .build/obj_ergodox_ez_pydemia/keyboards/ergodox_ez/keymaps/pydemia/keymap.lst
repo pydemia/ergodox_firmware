@@ -1295,7 +1295,7 @@
  555:keyboards/ergodox_ez/keymaps/pydemia/keymap.c **** //Meh: MEH_T(KC_NO)
  556:keyboards/ergodox_ez/keymaps/pydemia/keymap.c **** [WKEY] = LAYOUT_ergodox(  // layer 0 : default
  557:keyboards/ergodox_ez/keymaps/pydemia/keymap.c **** // left hand
- 558:keyboards/ergodox_ez/keymaps/pydemia/keymap.c **** KC_ESC,           KC_1,           KC_2,           KC_3,         KC_4,           KC_5,       LCTL(KC
+ 558:keyboards/ergodox_ez/keymaps/pydemia/keymap.c **** KC_ESC,           KC_1,           KC_2,           KC_3,         KC_4,           KC_5,       LCTL(LS
  559:keyboards/ergodox_ez/keymaps/pydemia/keymap.c **** KC_TAB,           KC_Q,           KC_W,           KC_E,         KC_R,           KC_T,       ASSIGN_
  560:keyboards/ergodox_ez/keymaps/pydemia/keymap.c **** KC_GRV,           KC_A,           KC_S,           KC_D,         KC_F,           KC_G,
  561:keyboards/ergodox_ez/keymaps/pydemia/keymap.c **** KC_LSFT,          KC_Z,           KC_X,           KC_C,         KC_V,           KC_B,        TT(NPA
@@ -1424,7 +1424,7 @@
  684:keyboards/ergodox_ez/keymaps/pydemia/keymap.c **** // ACTN
  685:keyboards/ergodox_ez/keymaps/pydemia/keymap.c **** [ACTN] = LAYOUT_ergodox(
  686:keyboards/ergodox_ez/keymaps/pydemia/keymap.c **** // left hand
- 687:keyboards/ergodox_ez/keymaps/pydemia/keymap.c **** LCTL(LSFT(KC_F5)),   KC_F1,             KC_F2,          KC_F3,           KC_F4,           KC_F5,   
+ 687:keyboards/ergodox_ez/keymaps/pydemia/keymap.c **** LCTL(LSFT(KC_F4)),   KC_F1,             KC_F2,          KC_F3,           KC_F4,           KC_F5,   
  688:keyboards/ergodox_ez/keymaps/pydemia/keymap.c **** LCTL(LSFT(KC_F1)),   KC_F6,             KC_F7,          KC_F8,           KC_F9,           KC_F10,  
  689:keyboards/ergodox_ez/keymaps/pydemia/keymap.c **** LCTL(LSFT(KC_F2)),   KC_F11,            KC_F12,         KC_F13,          KC_F14,          KC_F15,
  690:keyboards/ergodox_ez/keymaps/pydemia/keymap.c **** LCTL(LSFT(KC_F3)),   KC_TRNS,           KC_TRNS,        KC_TRNS,         KC_TRNS,         KC_TRNS, 
@@ -2400,15 +2400,15 @@
  1236 0008 00        		.byte	0
  1237               		.section	.progmem.data.__c.6152,"a",@progbits
  1240               	__c.6152:
- 1241 0000 4D61 7920 		.string	"May 15 2019 17:20:27"
+ 1241 0000 4D61 7920 		.string	"May 15 2019 18:51:11"
  1241      3135 2032 
  1241      3031 3920 
- 1241      3137 3A32 
- 1241      303A 3237 
+ 1241      3138 3A35 
+ 1241      313A 3131 
  1242               		.section	.progmem.data.__c.6149,"a",@progbits
  1245               	__c.6149:
- 1246 0000 3137 3A32 		.string	"17:20:27"
- 1246      303A 3237 
+ 1246 0000 3138 3A35 		.string	"18:51:11"
+ 1246      313A 3131 
  1246      00
  1247               		.section	.progmem.data.__c.6146,"a",@progbits
  1250               	__c.6146:
@@ -2555,14 +2555,14 @@
  1377 000c 00        		.byte	0
  1378               		.section	.progmem.data.__c.6119,"a",@progbits
  1381               	__c.6119:
- 1382 0000 2320 2D2A 		.string	"# -*- coding: utf-8 -*- \n'''\nCreated  : May 15 2019 17:20:27\nModified : May 15 2019 17
+ 1382 0000 2320 2D2A 		.string	"# -*- coding: utf-8 -*- \n'''\nCreated  : May 15 2019 18:51:11\nModified : May 15 2019 18
  1382      2D20 636F 
  1382      6469 6E67 
  1382      3A20 7574 
  1382      662D 3820 
  1383               		.section	.progmem.data.__c.6115,"a",@progbits
  1386               	__c.6115:
- 1387 0000 6572 676F 		.string	"ergodox_ez/pydemia @ 5925b6-dirty"
+ 1387 0000 6572 676F 		.string	"ergodox_ez/pydemia @ b4fbb5-dirty"
  1387      646F 785F 
  1387      657A 2F70 
  1387      7964 656D 
@@ -2624,7 +2624,7 @@
  1444 0042 0500      		.word	5
  1445 0044 0000      		.word	0
  1446 0046 0258      		.word	22530
- 1447 0048 3E01      		.word	318
+ 1447 0048 3E03      		.word	830
  1448 004a 0057      		.word	22272
  1449 004c 0000      		.word	0
  1450 004e 0158      		.word	22529
@@ -2840,7 +2840,7 @@
  1660 01f2 0100      		.word	1
  1661 01f4 4F00      		.word	79
  1662 01f6 0000      		.word	0
- 1663 01f8 3E03      		.word	830
+ 1663 01f8 3D03      		.word	829
  1664 01fa 3A03      		.word	826
  1665 01fc 3B03      		.word	827
  1666 01fe 3C03      		.word	828
@@ -3546,68 +3546,68 @@
  2345               		.file 32 "/usr/local/Cellar/avr-gcc/8.1.0/avr/include/string.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 keymap.c
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:2      *ABS*:000000000000003e __SP_H__
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:3      *ABS*:000000000000003d __SP_L__
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:4      *ABS*:000000000000003f __SREG__
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:5      *ABS*:0000000000000000 __tmp_reg__
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:6      *ABS*:0000000000000001 __zero_reg__
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:13     .text.dance_press_equal:0000000000000000 dance_press_equal
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:50     .text.dance_press_rassign:0000000000000000 dance_press_rassign
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:102    .text.action_get_macro:0000000000000000 action_get_macro
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:1386   .progmem.data.__c.6115:0000000000000000 __c.6115
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:1381   .progmem.data.__c.6119:0000000000000000 __c.6119
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:1364   .progmem.data.__m.6122:0000000000000000 __m.6122
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:1359   .progmem.data.__c.6125:0000000000000000 __c.6125
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:1334   .progmem.data.__m.6128:0000000000000000 __m.6128
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:1277   .progmem.data.__m.6131:0000000000000000 __m.6131
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:1272   .progmem.data.__c.6134:0000000000000000 __c.6134
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:1267   .progmem.data.__c.6137:0000000000000000 __c.6137
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:1260   .progmem.data.__c.6140:0000000000000000 __c.6140
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:1255   .progmem.data.__c.6143:0000000000000000 __c.6143
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:1250   .progmem.data.__c.6146:0000000000000000 __c.6146
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:1245   .progmem.data.__c.6149:0000000000000000 __c.6149
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:1240   .progmem.data.__c.6152:0000000000000000 __c.6152
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:1227   .progmem.data.__m.6155:0000000000000000 __m.6155
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:1210   .progmem.data.__m.6158:0000000000000000 __m.6158
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:1189   .progmem.data.__m.6161:0000000000000000 __m.6161
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:1168   .progmem.data.__m.6164:0000000000000000 __m.6164
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:1155   .progmem.data.__m.6167:0000000000000000 __m.6167
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:1142   .progmem.data.__m.6170:0000000000000000 __m.6170
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:1101   .progmem.data.__m.6173:0000000000000000 __m.6173
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:392    .text.dance_press_t:0000000000000000 dance_press_t
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:428    .text.dance_dbrc:0000000000000000 dance_dbrc
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:480    .text.dance_press_home:0000000000000000 dance_press_home
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:516    .text.dance_press_shifthome:0000000000000000 dance_press_shifthome
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:560    .text.dance_press_end:0000000000000000 dance_press_end
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:596    .text.dance_press_shiftend:0000000000000000 dance_press_shiftend
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:645    .text.pre_macro_date_to_int:0000000000000000 pre_macro_date_to_int
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:829    .text.pre_macro_time_to_int:0000000000000000 pre_macro_time_to_int
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:970    .text.matrix_init_user:0000000000000000 matrix_init_user
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:987    .text.matrix_scan_user:0000000000000000 matrix_scan_user
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:1395   .data.date_str:0000000000000000 date_str
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:1404   .data.sql_query:0000000000000000 sql_query
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:1410   .progmem.data.keymaps:0000000000000000 keymaps
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:2087   .data.tap_dance_actions:0000000000000000 tap_dance_actions
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:2310   .data.__compound_literal.0:0000000000000000 __compound_literal.0
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:2304   .data.__compound_literal.1:0000000000000000 __compound_literal.1
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:2298   .data.__compound_literal.2:0000000000000000 __compound_literal.2
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:2292   .data.__compound_literal.3:0000000000000000 __compound_literal.3
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:2286   .data.__compound_literal.4:0000000000000000 __compound_literal.4
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:2280   .data.__compound_literal.5:0000000000000000 __compound_literal.5
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:2274   .data.__compound_literal.6:0000000000000000 __compound_literal.6
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:2268   .data.__compound_literal.7:0000000000000000 __compound_literal.7
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:2262   .data.__compound_literal.8:0000000000000000 __compound_literal.8
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:2256   .data.__compound_literal.9:0000000000000000 __compound_literal.9
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:2250   .data.__compound_literal.10:0000000000000000 __compound_literal.10
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:2244   .data.__compound_literal.11:0000000000000000 __compound_literal.11
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:2238   .data.__compound_literal.12:0000000000000000 __compound_literal.12
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:2232   .data.__compound_literal.13:0000000000000000 __compound_literal.13
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:2226   .data.__compound_literal.14:0000000000000000 __compound_literal.14
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:2220   .data.__compound_literal.15:0000000000000000 __compound_literal.15
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:2214   .data.__compound_literal.16:0000000000000000 __compound_literal.16
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:2208   .data.__compound_literal.17:0000000000000000 __compound_literal.17
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:2202   .data.__compound_literal.18:0000000000000000 __compound_literal.18
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccHfVpTs.s:2196   .data.__compound_literal.19:0000000000000000 __compound_literal.19
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:2      *ABS*:000000000000003e __SP_H__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:3      *ABS*:000000000000003d __SP_L__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:4      *ABS*:000000000000003f __SREG__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:5      *ABS*:0000000000000000 __tmp_reg__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:6      *ABS*:0000000000000001 __zero_reg__
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:13     .text.dance_press_equal:0000000000000000 dance_press_equal
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:50     .text.dance_press_rassign:0000000000000000 dance_press_rassign
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:102    .text.action_get_macro:0000000000000000 action_get_macro
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:1386   .progmem.data.__c.6115:0000000000000000 __c.6115
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:1381   .progmem.data.__c.6119:0000000000000000 __c.6119
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:1364   .progmem.data.__m.6122:0000000000000000 __m.6122
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:1359   .progmem.data.__c.6125:0000000000000000 __c.6125
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:1334   .progmem.data.__m.6128:0000000000000000 __m.6128
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:1277   .progmem.data.__m.6131:0000000000000000 __m.6131
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:1272   .progmem.data.__c.6134:0000000000000000 __c.6134
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:1267   .progmem.data.__c.6137:0000000000000000 __c.6137
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:1260   .progmem.data.__c.6140:0000000000000000 __c.6140
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:1255   .progmem.data.__c.6143:0000000000000000 __c.6143
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:1250   .progmem.data.__c.6146:0000000000000000 __c.6146
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:1245   .progmem.data.__c.6149:0000000000000000 __c.6149
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:1240   .progmem.data.__c.6152:0000000000000000 __c.6152
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:1227   .progmem.data.__m.6155:0000000000000000 __m.6155
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:1210   .progmem.data.__m.6158:0000000000000000 __m.6158
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:1189   .progmem.data.__m.6161:0000000000000000 __m.6161
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:1168   .progmem.data.__m.6164:0000000000000000 __m.6164
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:1155   .progmem.data.__m.6167:0000000000000000 __m.6167
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:1142   .progmem.data.__m.6170:0000000000000000 __m.6170
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:1101   .progmem.data.__m.6173:0000000000000000 __m.6173
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:392    .text.dance_press_t:0000000000000000 dance_press_t
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:428    .text.dance_dbrc:0000000000000000 dance_dbrc
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:480    .text.dance_press_home:0000000000000000 dance_press_home
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:516    .text.dance_press_shifthome:0000000000000000 dance_press_shifthome
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:560    .text.dance_press_end:0000000000000000 dance_press_end
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:596    .text.dance_press_shiftend:0000000000000000 dance_press_shiftend
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:645    .text.pre_macro_date_to_int:0000000000000000 pre_macro_date_to_int
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:829    .text.pre_macro_time_to_int:0000000000000000 pre_macro_time_to_int
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:970    .text.matrix_init_user:0000000000000000 matrix_init_user
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:987    .text.matrix_scan_user:0000000000000000 matrix_scan_user
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:1395   .data.date_str:0000000000000000 date_str
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:1404   .data.sql_query:0000000000000000 sql_query
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:1410   .progmem.data.keymaps:0000000000000000 keymaps
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:2087   .data.tap_dance_actions:0000000000000000 tap_dance_actions
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:2310   .data.__compound_literal.0:0000000000000000 __compound_literal.0
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:2304   .data.__compound_literal.1:0000000000000000 __compound_literal.1
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:2298   .data.__compound_literal.2:0000000000000000 __compound_literal.2
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:2292   .data.__compound_literal.3:0000000000000000 __compound_literal.3
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:2286   .data.__compound_literal.4:0000000000000000 __compound_literal.4
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:2280   .data.__compound_literal.5:0000000000000000 __compound_literal.5
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:2274   .data.__compound_literal.6:0000000000000000 __compound_literal.6
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:2268   .data.__compound_literal.7:0000000000000000 __compound_literal.7
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:2262   .data.__compound_literal.8:0000000000000000 __compound_literal.8
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:2256   .data.__compound_literal.9:0000000000000000 __compound_literal.9
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:2250   .data.__compound_literal.10:0000000000000000 __compound_literal.10
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:2244   .data.__compound_literal.11:0000000000000000 __compound_literal.11
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:2238   .data.__compound_literal.12:0000000000000000 __compound_literal.12
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:2232   .data.__compound_literal.13:0000000000000000 __compound_literal.13
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:2226   .data.__compound_literal.14:0000000000000000 __compound_literal.14
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:2220   .data.__compound_literal.15:0000000000000000 __compound_literal.15
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:2214   .data.__compound_literal.16:0000000000000000 __compound_literal.16
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:2208   .data.__compound_literal.17:0000000000000000 __compound_literal.17
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:2202   .data.__compound_literal.18:0000000000000000 __compound_literal.18
+/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccqxxENG.s:2196   .data.__compound_literal.19:0000000000000000 __compound_literal.19
 
 UNDEFINED SYMBOLS
 register_code
