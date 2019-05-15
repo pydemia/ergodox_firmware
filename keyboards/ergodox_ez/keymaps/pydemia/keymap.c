@@ -1,3 +1,4 @@
+
 #include QMK_KEYBOARD_H
 #include "version.h"
 #include "action_layer.h"
@@ -555,11 +556,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [WKEY] = LAYOUT_ergodox(  // layer 0 : default
 // left hand
 KC_ESC,           KC_1,           KC_2,           KC_3,         KC_4,           KC_5,       LCTL(KC_F5), // TG(LKEY),
-KC_TAB,           KC_Q,           KC_W,           KC_E,         KC_R,           KC_T,       TT(LCOM),
+KC_TAB,           KC_Q,           KC_W,           KC_E,         KC_R,           KC_T,       ASSIGN_TAP,
 KC_GRV,           KC_A,           KC_S,           KC_D,         KC_F,           KC_G,
 KC_LSFT,          KC_Z,           KC_X,           KC_C,         KC_V,           KC_B,        TT(NPAD),
-CTL_T(KC_LCTL),   KC_APP,         KC_LGUI,         TT(ACTN),       ALT_T(KC_LALT),
-                                                                         TT(MAGI),           LCTL(KC_ENT),
+LCTL(KC_LCTL),   KC_APP,         KC_LGUI,         TT(ACTN),       ALT_T(KC_LALT),
+                                                                         TT(MAGI),           TT(LCOM),
                                                                                           KC_HOME,
                                                       KC_SPC,           KC_BSPC,          KC_END,
 // right hand
@@ -665,9 +666,9 @@ KC_DOWN,          KC_DELT,          KC_ENT
  * ┌───────┬─────┬─────┬─────┬─────┬─────┬─────┐     ┌─────┬─────┬─────┬─────┬─────┬─────┬───────┐
  * │ QMKVer│ F1  │ F2  │ F3  │ F4  │ F5  │     │     │     │     │     │     │     │     │       │
  * ├───────┼─────┼─────┼─────┼─────┼─────┼─────┤     ├─────┼─────┼─────┼─────┼─────┼─────┼───────┤
- * │       │ F6  │ F7  │ F8  │ F9  │ F10 │     │     │     │     │     │     │     │     │       │
+ * │CtSfF1 | F6  │ F7  │ F8  │ F9  │ F10 │     │     │     │     │     │     │     │     │       │
  * ├───────┼─────┼─────┼─────┼─────┼─────┤     │     │     ├─────┼─────┼─────┼─────┼─────┼───────┤
- * │       │ F11 │ F12 │ F13 │ F14 │ F15 ├─────┤     ├─────┤     │     │     │     │     │       │
+ * │CtSfF2 │ F11 │ F12 │ F13 │ F14 │ F15 ├─────┤     ├─────┤     │     │     │     │     │       │
  * ├───────┼─────┼─────┼─────┼─────┼─────┤     │     │     ├─────┼─────┼─────┼─────┼─────┼───────┤
  * │       │     │     │     │     │     │     │     │     │     │     │     │     │     │       │
  * └─┬─────┼─────┼─────┼─────┼─────┼─────┴─────┘     └─────┴─────┼─────┼─────┼─────┼─────┼─────┬─┘
@@ -683,14 +684,14 @@ KC_DOWN,          KC_DELT,          KC_ENT
 // ACTN
 [ACTN] = LAYOUT_ergodox(
 // left hand
-QMK_VER_KEY,   KC_F1,             KC_F2,          KC_F3,           KC_F4,           KC_F5,             KC_TRNS,
-KC_TRNS,       KC_F6,             KC_F7,          KC_F8,           KC_F9,           KC_F10,            KC_TRNS,
-KC_TRNS,       KC_F11,            KC_F12,         KC_F13,          KC_F14,          KC_F15,
-KC_TRNS,       KC_TRNS,           KC_TRNS,        KC_TRNS,         KC_TRNS,         KC_TRNS,           KC_TRNS,
-KC_TRNS,       KC_TRNS,           KC_TRNS,        KC_TRNS,         KC_TRNS,
+LCTL(LSFT(KC_F5)),   KC_F1,             KC_F2,          KC_F3,           KC_F4,           KC_F5,             KC_TRNS,
+LCTL(LSFT(KC_F1)),   KC_F6,             KC_F7,          KC_F8,           KC_F9,           KC_F10,            KC_TRNS,
+LCTL(LSFT(KC_F2)),   KC_F11,            KC_F12,         KC_F13,          KC_F14,          KC_F15,
+LCTL(LSFT(KC_F3)),   KC_TRNS,           KC_TRNS,        KC_TRNS,         KC_TRNS,         KC_TRNS,           KC_TRNS,
+KC_TRNS,              KC_TRNS,           KC_TRNS,        KC_TRNS,         KC_TRNS,
                                	                                                    KC_TRNS,           KC_TRNS,
                                                                                                        KC_HOME,
-                                                                   CTL_T(KC_ENT),    ALT_T(KC_ENT),           KC_END,
+                                                                   LCTL(KC_ENT),    ALT_T(KC_ENT),           KC_END,
 // right hand
 KC_TRNS,   KC_TRNS,         KC_TRNS,        KC_PAUSE,   KC_TRNS,   KC_TRNS,   KC_TRNS,
 KC_TRNS, KC_TRNS,       KC_TRNS,      KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
@@ -704,7 +705,7 @@ KC_DOWN,     KC_DELT,  KC_ENT
 /* Keymap 4: Lcmd Layer
  *
  * ┌───────┬─────┬─────┬─────┬─────┬─────┬─────┐     ┌─────┬─────┬─────┬─────┬─────┬─────┬───────┐
- * │  Esc  │  1  │  2  │  3  │  4  │  5  │CtFn5│     │  6  │  7  │  8  │  9  │  0  │  -  │   +   │
+ * │  Esc  |CSF1 │  2  │  3  │  4  │  5  │CtFn5│     │  6  │  7  │  8  │  9  │  0  │  -  │   +   │
  * ├───────┼─────┼─────┼─────┼─────┼─────┼─────┤     ├─────┼─────┼─────┼─────┼─────┼─────┼───────┤
  * │  Tab  │  Q  │  W  │  E  │  R  │ T[] │  <- │     │ Tg  │  Y  │  U  │  I  │  O  │  P  │   \   │
  * ├───────┼─────┼─────┼─────┼─────┼─────┤  =  │     │ Mgc ├─────┼─────┼─────┼─────┼─────┼───────┤
@@ -724,11 +725,11 @@ KC_DOWN,     KC_DELT,  KC_ENT
 // LCMD
 [LCOM] = LAYOUT_ergodox(
 // left hand
-KC_ESC,           KC_1,           KC_2,           KC_3,         KC_4,           KC_5,       LSFT(KC_ENT), // TG(LKEY),
-KC_TAB,           KC_Q,           KC_W,           KC_E,         KC_R,           KC_T,       ASSIGN_TAP,
-KC_GRV,           KC_A,           KC_S,           KC_D,         KC_F,           KC_G,
-KC_LSFT,          KC_Z,           KC_X,           KC_C,         KC_V,           KC_B,        TT(NPAD),
-CTL_T(KC_LCTL),   KC_TRNS,        KC_LGUI,        KC_APP,       ALT_T(KC_LALT),
+KC_ESC,           LCTL(LSFT(KC_F1)), KC_2,           KC_3,         KC_4,           KC_5,       LSFT(KC_ENT), // TG(LKEY),
+KC_TAB,           KC_Q,               KC_W,           KC_E,         KC_R,           KC_T,       ASSIGN_TAP,
+KC_GRV,           KC_A,               KC_S,           KC_D,         KC_F,           KC_G,
+KC_LSFT,          KC_Z,               KC_X,           KC_C,         KC_V,           KC_B,        TT(NPAD),
+LCTL(KC_LCTL),   KC_TRNS,            KC_LGUI,        KC_APP,       ALT_T(KC_LALT),
                                                                          TT(ACTN),           LCTL(KC_ENT),
                                                                                           KC_HOME,
                                                       KC_SPC,           KC_BSPC,          KC_END,
@@ -769,7 +770,7 @@ TD(0),    KC_1,          KC_2,    KC_3,         KC_4,    KC_5,  LCTL(KC_F5),    
 KC_TAB,   KC_Q,          KC_W,    KC_E,         KC_R,    KC_T,  ASSIGN_R_KEY,
 KC_GRV,   KC_A,          KC_S,    KC_D,         KC_F,    KC_G,
 SFT_T(KC_CAPS),  KC_Z,          KC_X,    KC_C,         KC_V,    KC_B,   TT(NPAD),
-CTL_T(KC_LCTL),  TT(MAGI)/*LCTL(KC_LALT)*/, KC_LGUI, KC_APP,      ALT_T(KC_LALT),
+LCTL(KC_LCTL),  TT(MAGI)/*LCTL(KC_LALT)*/, KC_LGUI, KC_APP,      ALT_T(KC_LALT),
                                                 KC_PGUP, KC_PGDN,
                                                          KC_HOME,
                                        KC_SPC,  KC_BSPC, KC_END,
@@ -904,7 +905,7 @@ KC_DOWN,     KC_DELT,  KC_ENT
 // KC_TAB,           KC_Q,           KC_W,           KC_E,         KC_R,           KC_T,       ASSIGN_TAP,
 // KC_GRV,           KC_A,           KC_S,           KC_D,         KC_F,           KC_G,
 // KC_LSFT,          KC_Z,           KC_X,           KC_C,         KC_V,           KC_B,        TT(NPAD),
-// CTL_T(KC_LCTL),   KC_TRNS,        KC_LGUI,        KC_APP,       ALT_T(KC_LALT),
+// LCTL(KC_LCTL),   KC_TRNS,        KC_LGUI,        KC_APP,       ALT_T(KC_LALT),
 //                                                                          TT(ACTN),           LCTL(KC_ENT),
 //                                                                                           KC_HOME,
 //                                                       KC_SPC,           KC_BSPC,          KC_END,
