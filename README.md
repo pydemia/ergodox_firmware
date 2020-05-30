@@ -10,7 +10,14 @@ bash ~/git/Firmware/util/install_dependencies.sh
 In case of Error (with `shim-signed`):
 
 ```sh
-sudo apt-get install shim-signed
+sudo apt-get install shim-signed -y
+# libpng12.so.0: cannot open shared object file: No such file or directory
+wget -q -O /tmp/libpng12.deb http://mirrors.kernel.org/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1_amd64.deb \
+  && dpkg -i /tmp/libpng12.deb \
+  && rm /tmp/libpng12.deb
+
+# libusb-0.1.so.4: cannot open shared object file: No such file or directory
+sudo apt install libusb-dev -y
 ```
 
 Set teensy :
