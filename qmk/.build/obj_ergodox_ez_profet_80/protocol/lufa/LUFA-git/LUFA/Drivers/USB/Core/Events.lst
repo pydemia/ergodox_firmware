@@ -48,52 +48,48 @@
   34:./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c **** 
   35:./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c **** void USB_Event_Stub(void)
   36:./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c **** {
-  16               		.loc 1 36 1 view -0
+  16               		.loc 1 36 0
   17               		.cfi_startproc
   18               	/* prologue: function */
   19               	/* frame size = 0 */
   20               	/* stack size = 0 */
   21               	.L__stack_usage = 0
-  37:./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c **** 
-  38:./tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.c **** }
-  22               		.loc 1 38 1 view .LVU1
-  23               	/* epilogue start */
-  24 0000 0895      		ret
-  25               		.cfi_endproc
-  26               	.LFE16:
-  28               		.weak	EVENT_USB_Device_StartOfFrame
-  29               		.set	EVENT_USB_Device_StartOfFrame,USB_Event_Stub
-  30               		.weak	EVENT_USB_Device_Reset
-  31               		.set	EVENT_USB_Device_Reset,USB_Event_Stub
-  32               		.weak	EVENT_USB_Device_WakeUp
-  33               		.set	EVENT_USB_Device_WakeUp,USB_Event_Stub
-  34               		.weak	EVENT_USB_Device_Suspend
-  35               		.set	EVENT_USB_Device_Suspend,USB_Event_Stub
-  36               		.weak	EVENT_USB_Device_ConfigurationChanged
-  37               		.set	EVENT_USB_Device_ConfigurationChanged,USB_Event_Stub
-  38               		.weak	EVENT_USB_Device_ControlRequest
-  39               		.set	EVENT_USB_Device_ControlRequest,USB_Event_Stub
-  40               		.weak	EVENT_USB_Device_Disconnect
-  41               		.set	EVENT_USB_Device_Disconnect,USB_Event_Stub
-  42               		.weak	EVENT_USB_Device_Connect
-  43               		.set	EVENT_USB_Device_Connect,USB_Event_Stub
-  44               		.text
-  45               	.Letext0:
+  22 0000 0895      		ret
+  23               		.cfi_endproc
+  24               	.LFE16:
+  26               		.weak	EVENT_USB_Device_StartOfFrame
+  27               		.set	EVENT_USB_Device_StartOfFrame,USB_Event_Stub
+  28               		.weak	EVENT_USB_Device_Reset
+  29               		.set	EVENT_USB_Device_Reset,USB_Event_Stub
+  30               		.weak	EVENT_USB_Device_WakeUp
+  31               		.set	EVENT_USB_Device_WakeUp,USB_Event_Stub
+  32               		.weak	EVENT_USB_Device_Suspend
+  33               		.set	EVENT_USB_Device_Suspend,USB_Event_Stub
+  34               		.weak	EVENT_USB_Device_ConfigurationChanged
+  35               		.set	EVENT_USB_Device_ConfigurationChanged,USB_Event_Stub
+  36               		.weak	EVENT_USB_Device_ControlRequest
+  37               		.set	EVENT_USB_Device_ControlRequest,USB_Event_Stub
+  38               		.weak	EVENT_USB_Device_Disconnect
+  39               		.set	EVENT_USB_Device_Disconnect,USB_Event_Stub
+  40               		.weak	EVENT_USB_Device_Connect
+  41               		.set	EVENT_USB_Device_Connect,USB_Event_Stub
+  42               		.text
+  43               	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 Events.c
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccTeh3B6.s:2      *ABS*:000000000000003e __SP_H__
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccTeh3B6.s:3      *ABS*:000000000000003d __SP_L__
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccTeh3B6.s:4      *ABS*:000000000000003f __SREG__
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccTeh3B6.s:5      *ABS*:0000000000000000 __tmp_reg__
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccTeh3B6.s:6      *ABS*:0000000000000001 __zero_reg__
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccTeh3B6.s:13     .text.USB_Event_Stub:0000000000000000 USB_Event_Stub
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccTeh3B6.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_StartOfFrame
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccTeh3B6.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_Reset
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccTeh3B6.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_WakeUp
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccTeh3B6.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_Suspend
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccTeh3B6.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_ConfigurationChanged
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccTeh3B6.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_ControlRequest
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccTeh3B6.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_Disconnect
-/var/folders/_c/44sm70yj4mq2k0mvzts6tsbc0000gn/T//ccTeh3B6.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_Connect
+     /tmp/ccWWMvk5.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccWWMvk5.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccWWMvk5.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccWWMvk5.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccWWMvk5.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccWWMvk5.s:13     .text.USB_Event_Stub:0000000000000000 USB_Event_Stub
+     /tmp/ccWWMvk5.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_StartOfFrame
+     /tmp/ccWWMvk5.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_Reset
+     /tmp/ccWWMvk5.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_WakeUp
+     /tmp/ccWWMvk5.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_Suspend
+     /tmp/ccWWMvk5.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_ConfigurationChanged
+     /tmp/ccWWMvk5.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_ControlRequest
+     /tmp/ccWWMvk5.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_Disconnect
+     /tmp/ccWWMvk5.s:13     .text.USB_Event_Stub:0000000000000000 EVENT_USB_Device_Connect
 
 NO UNDEFINED SYMBOLS
