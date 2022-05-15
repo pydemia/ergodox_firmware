@@ -1952,23 +1952,23 @@
  914               		.file 14 "./tmk_core/common/keycode.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 command.c
-     /tmp/ccbL3cST.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccbL3cST.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccbL3cST.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccbL3cST.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccbL3cST.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccbL3cST.s:12     .text.mousekey_param_inc:0000000000000000 mousekey_param_inc
-     /tmp/ccbL3cST.s:182    .text.mousekey_param_dec:0000000000000000 mousekey_param_dec
-     /tmp/ccbL3cST.s:301    .text.switch_default_layer:0000000000000000 switch_default_layer
-     /tmp/ccbL3cST.s:350    .text.command_common:0000000000000000 command_common
-     /tmp/ccbL3cST.s:899    .bss.command_state:0000000000000000 command_state
-     /tmp/ccbL3cST.s:582    .text.command_console_extra:0000000000000000 command_console_extra
-     /tmp/ccbL3cST.s:582    .text.command_console_extra:0000000000000000 command_console_extra.localalias.0
-     /tmp/ccbL3cST.s:602    .text.command_extra:0000000000000000 command_extra
-     /tmp/ccbL3cST.s:616    .text.numkey2num:0000000000000000 numkey2num
-     /tmp/ccbL3cST.s:879    .rodata.CSWTCH.46:0000000000000000 CSWTCH.46
-     /tmp/ccbL3cST.s:647    .text.command_proc:0000000000000000 command_proc
-     /tmp/ccbL3cST.s:893    .bss.mousekey_param:0000000000000000 mousekey_param
+     /tmp/ccu35lq4.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccu35lq4.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccu35lq4.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccu35lq4.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccu35lq4.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccu35lq4.s:12     .text.mousekey_param_inc:0000000000000000 mousekey_param_inc
+     /tmp/ccu35lq4.s:182    .text.mousekey_param_dec:0000000000000000 mousekey_param_dec
+     /tmp/ccu35lq4.s:301    .text.switch_default_layer:0000000000000000 switch_default_layer
+     /tmp/ccu35lq4.s:350    .text.command_common:0000000000000000 command_common
+     /tmp/ccu35lq4.s:899    .bss.command_state:0000000000000000 command_state
+     /tmp/ccu35lq4.s:582    .text.command_console_extra:0000000000000000 command_console_extra
+     /tmp/ccu35lq4.s:582    .text.command_console_extra:0000000000000000 command_console_extra.localalias.0
+     /tmp/ccu35lq4.s:602    .text.command_extra:0000000000000000 command_extra
+     /tmp/ccu35lq4.s:616    .text.numkey2num:0000000000000000 numkey2num
+     /tmp/ccu35lq4.s:879    .rodata.CSWTCH.46:0000000000000000 CSWTCH.46
+     /tmp/ccu35lq4.s:647    .text.command_proc:0000000000000000 command_proc
+     /tmp/ccu35lq4.s:893    .bss.mousekey_param:0000000000000000 mousekey_param
 
 UNDEFINED SYMBOLS
 mk_delay

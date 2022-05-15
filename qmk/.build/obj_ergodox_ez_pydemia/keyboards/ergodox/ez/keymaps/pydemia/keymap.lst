@@ -1235,7 +1235,7 @@
  623:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ┌───────┬─────┬─────┬─────┬─────
  624:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │ SIGN  │  1  │  2  │  3  │  4  │  5  │     │     │Calc │     │     │   
  625:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ├───────┼─────┼─────┼─────┼─────
- 626:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │       │  6  │  7  │  8  │  9  │  0  │     │     │  +  │  7  │  8  │  9
+ 626:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │       │  6  │  7  │  8  │  9  │  0  │     │     │     │  7  │  8  │  9
  627:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ├───────┼─────┼─────┼─────┼─────
  628:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * │       │     │     │     │     │     ├─────┤     ├─────�
  629:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****  * ├───────┼─────┼─────┼─────┼─────
@@ -1263,9 +1263,9 @@
  651:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                                                                      KC_SPC,       KC_BSPC,        
  652:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** // right hand
  653:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** KC_CALC,          KC_TRNS,           KC_TRNS,        KC_TRNS,          KC_TRNS,         KC_TRNS,   
- 654:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** KC_PLUS,          KC_7,              KC_8,           KC_9,             KC_MINUS,        KC_SLSH,   
+ 654:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** KC_TRNS,          KC_7,              KC_8,           KC_9,             KC_MINUS,        KC_SLSH,   
  655:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                   KC_4,              KC_5,           KC_6,             KC_PLUS,         KC_ASTR,   
- 656:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** KC_MINUS,         KC_1,              KC_2,           KC_3,             KC_COMM,         KC_UP,     
+ 656:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** KC_TRNS,          KC_1,              KC_2,           KC_3,             KC_COMM,         KC_UP,     
  657:keyboards/ergodox/ez/keymaps/pydemia/keymap.c ****                   KC_0,              KC_DOT,         KC_LEFT,          KC_DOWN,         KC_RGHT,
  658:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** KC_LEFT,          KC_RGHT,
  659:keyboards/ergodox/ez/keymaps/pydemia/keymap.c **** KC_UP,
@@ -2289,15 +2289,15 @@
  1165 0008 00        		.byte	0
  1166               		.section	.progmem.data.__c.5453,"a",@progbits
  1169               	__c.5453:
- 1170 0000 4D61 7920 		.string	"May 16 2022 01:18:08"
+ 1170 0000 4D61 7920 		.string	"May 16 2022 01:32:41"
  1170      3136 2032 
  1170      3032 3220 
- 1170      3031 3A31 
- 1170      383A 3038 
+ 1170      3031 3A33 
+ 1170      323A 3431 
  1171               		.section	.progmem.data.__c.5450,"a",@progbits
  1174               	__c.5450:
- 1175 0000 3031 3A31 		.string	"01:18:08"
- 1175      383A 3038 
+ 1175 0000 3031 3A33 		.string	"01:32:41"
+ 1175      323A 3431 
  1175      00
  1176               		.section	.progmem.data.__c.5447,"a",@progbits
  1179               	__c.5447:
@@ -2444,18 +2444,18 @@
  1306 000c 00        		.byte	0
  1307               		.section	.progmem.data.__c.5420,"a",@progbits
  1310               	__c.5420:
- 1311 0000 2320 2D2A 		.string	"# -*- coding: utf-8 -*- \n'''\nCreated  : May 16 2022 01:18:08\nModified : May 16 2022 01
+ 1311 0000 2320 2D2A 		.string	"# -*- coding: utf-8 -*- \n'''\nCreated  : May 16 2022 01:32:41\nModified : May 16 2022 01
  1311      2D20 636F 
  1311      6469 6E67 
  1311      3A20 7574 
  1311      662D 3820 
  1312               		.section	.progmem.data.__c.5416,"a",@progbits
  1315               	__c.5416:
- 1316 0000 6572 676F 		.string	"ergodox/pydemia @ aa73d0"
+ 1316 0000 6572 676F 		.string	"ergodox/pydemia @ e01dbd-dirty"
  1316      646F 782F 
  1316      7079 6465 
  1316      6D69 6120 
- 1316      4020 6161 
+ 1316      4020 6530 
  1317               	.global	date_str
  1318               		.section	.rodata.str1.1
  1319               	.LC3:
@@ -2688,9 +2688,9 @@
  1548 01a0 0000      		.word	0
  1549 01a2 2804      		.word	1064
  1550 01a4 B200      		.word	178
- 1551 01a6 2E02      		.word	558
+ 1551 01a6 0100      		.word	1
  1552 01a8 0000      		.word	0
- 1553 01aa 2D00      		.word	45
+ 1553 01aa 0100      		.word	1
  1554 01ac 0000      		.word	0
  1555 01ae 5000      		.word	80
  1556 01b0 0100      		.word	1
@@ -3385,69 +3385,69 @@
  2268               		.file 15 "./tmk_core/common/util.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 keymap.c
-     /tmp/ccZ4yH1X.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccZ4yH1X.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccZ4yH1X.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccZ4yH1X.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccZ4yH1X.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccZ4yH1X.s:13     .text.dance_press_equal:0000000000000000 dance_press_equal
-     /tmp/ccZ4yH1X.s:47     .text.dance_press_rassign:0000000000000000 dance_press_rassign
-     /tmp/ccZ4yH1X.s:96     .text.action_get_macro:0000000000000000 action_get_macro
-     /tmp/ccZ4yH1X.s:1315   .progmem.data.__c.5416:0000000000000000 __c.5416
-     /tmp/ccZ4yH1X.s:1310   .progmem.data.__c.5420:0000000000000000 __c.5420
-     /tmp/ccZ4yH1X.s:1293   .progmem.data.__m.5423:0000000000000000 __m.5423
-     /tmp/ccZ4yH1X.s:1288   .progmem.data.__c.5426:0000000000000000 __c.5426
-     /tmp/ccZ4yH1X.s:1263   .progmem.data.__m.5429:0000000000000000 __m.5429
-     /tmp/ccZ4yH1X.s:1206   .progmem.data.__m.5432:0000000000000000 __m.5432
-     /tmp/ccZ4yH1X.s:1201   .progmem.data.__c.5435:0000000000000000 __c.5435
-     /tmp/ccZ4yH1X.s:1196   .progmem.data.__c.5438:0000000000000000 __c.5438
-     /tmp/ccZ4yH1X.s:1189   .progmem.data.__c.5441:0000000000000000 __c.5441
-     /tmp/ccZ4yH1X.s:1184   .progmem.data.__c.5444:0000000000000000 __c.5444
-     /tmp/ccZ4yH1X.s:1179   .progmem.data.__c.5447:0000000000000000 __c.5447
-     /tmp/ccZ4yH1X.s:1174   .progmem.data.__c.5450:0000000000000000 __c.5450
-     /tmp/ccZ4yH1X.s:1169   .progmem.data.__c.5453:0000000000000000 __c.5453
-     /tmp/ccZ4yH1X.s:1156   .progmem.data.__m.5456:0000000000000000 __m.5456
-     /tmp/ccZ4yH1X.s:1139   .progmem.data.__m.5459:0000000000000000 __m.5459
-     /tmp/ccZ4yH1X.s:1118   .progmem.data.__m.5462:0000000000000000 __m.5462
-     /tmp/ccZ4yH1X.s:1097   .progmem.data.__m.5465:0000000000000000 __m.5465
-     /tmp/ccZ4yH1X.s:1084   .progmem.data.__m.5468:0000000000000000 __m.5468
-     /tmp/ccZ4yH1X.s:1071   .progmem.data.__m.5471:0000000000000000 __m.5471
-     /tmp/ccZ4yH1X.s:1030   .progmem.data.__m.5474:0000000000000000 __m.5474
-     /tmp/ccZ4yH1X.s:331    .text.dance_press_t:0000000000000000 dance_press_t
-     /tmp/ccZ4yH1X.s:364    .text.dance_dbrc:0000000000000000 dance_dbrc
-     /tmp/ccZ4yH1X.s:413    .text.dance_press_home:0000000000000000 dance_press_home
-     /tmp/ccZ4yH1X.s:446    .text.dance_press_shifthome:0000000000000000 dance_press_shifthome
-     /tmp/ccZ4yH1X.s:487    .text.dance_press_end:0000000000000000 dance_press_end
-     /tmp/ccZ4yH1X.s:520    .text.dance_press_shiftend:0000000000000000 dance_press_shiftend
-     /tmp/ccZ4yH1X.s:566    .text.pre_macro_date_to_int:0000000000000000 pre_macro_date_to_int
-     /tmp/ccZ4yH1X.s:738    .text.pre_macro_time_to_int:0000000000000000 pre_macro_time_to_int
-     /tmp/ccZ4yH1X.s:866    .text.matrix_init_user:0000000000000000 matrix_init_user
-     /tmp/ccZ4yH1X.s:881    .text.matrix_scan_user:0000000000000000 matrix_scan_user
-     /tmp/ccZ4yH1X.s:1324   .data.date_str:0000000000000000 date_str
-     /tmp/ccZ4yH1X.s:1333   .data.sql_query:0000000000000000 sql_query
-     /tmp/ccZ4yH1X.s:1339   .progmem.data.keymaps:0000000000000000 keymaps
-     /tmp/ccZ4yH1X.s:2016   .data.tap_dance_actions:0000000000000000 tap_dance_actions
-     /tmp/ccZ4yH1X.s:2239   .data.__compound_literal.0:0000000000000000 __compound_literal.0
-     /tmp/ccZ4yH1X.s:2233   .data.__compound_literal.1:0000000000000000 __compound_literal.1
-     /tmp/ccZ4yH1X.s:2227   .data.__compound_literal.2:0000000000000000 __compound_literal.2
-     /tmp/ccZ4yH1X.s:2221   .data.__compound_literal.3:0000000000000000 __compound_literal.3
-     /tmp/ccZ4yH1X.s:2215   .data.__compound_literal.4:0000000000000000 __compound_literal.4
-     /tmp/ccZ4yH1X.s:2209   .data.__compound_literal.5:0000000000000000 __compound_literal.5
-     /tmp/ccZ4yH1X.s:2203   .data.__compound_literal.6:0000000000000000 __compound_literal.6
-     /tmp/ccZ4yH1X.s:2197   .data.__compound_literal.7:0000000000000000 __compound_literal.7
-     /tmp/ccZ4yH1X.s:2191   .data.__compound_literal.8:0000000000000000 __compound_literal.8
-     /tmp/ccZ4yH1X.s:2185   .data.__compound_literal.9:0000000000000000 __compound_literal.9
-     /tmp/ccZ4yH1X.s:2179   .data.__compound_literal.10:0000000000000000 __compound_literal.10
-     /tmp/ccZ4yH1X.s:2173   .data.__compound_literal.11:0000000000000000 __compound_literal.11
-     /tmp/ccZ4yH1X.s:2167   .data.__compound_literal.12:0000000000000000 __compound_literal.12
-     /tmp/ccZ4yH1X.s:2161   .data.__compound_literal.13:0000000000000000 __compound_literal.13
-     /tmp/ccZ4yH1X.s:2155   .data.__compound_literal.14:0000000000000000 __compound_literal.14
-     /tmp/ccZ4yH1X.s:2149   .data.__compound_literal.15:0000000000000000 __compound_literal.15
-     /tmp/ccZ4yH1X.s:2143   .data.__compound_literal.16:0000000000000000 __compound_literal.16
-     /tmp/ccZ4yH1X.s:2137   .data.__compound_literal.17:0000000000000000 __compound_literal.17
-     /tmp/ccZ4yH1X.s:2131   .data.__compound_literal.18:0000000000000000 __compound_literal.18
-     /tmp/ccZ4yH1X.s:2125   .data.__compound_literal.19:0000000000000000 __compound_literal.19
-     /tmp/ccZ4yH1X.s:2246   .progmem.data.fn_actions:0000000000000000 fn_actions
+     /tmp/ccfXORyO.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccfXORyO.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccfXORyO.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccfXORyO.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccfXORyO.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccfXORyO.s:13     .text.dance_press_equal:0000000000000000 dance_press_equal
+     /tmp/ccfXORyO.s:47     .text.dance_press_rassign:0000000000000000 dance_press_rassign
+     /tmp/ccfXORyO.s:96     .text.action_get_macro:0000000000000000 action_get_macro
+     /tmp/ccfXORyO.s:1315   .progmem.data.__c.5416:0000000000000000 __c.5416
+     /tmp/ccfXORyO.s:1310   .progmem.data.__c.5420:0000000000000000 __c.5420
+     /tmp/ccfXORyO.s:1293   .progmem.data.__m.5423:0000000000000000 __m.5423
+     /tmp/ccfXORyO.s:1288   .progmem.data.__c.5426:0000000000000000 __c.5426
+     /tmp/ccfXORyO.s:1263   .progmem.data.__m.5429:0000000000000000 __m.5429
+     /tmp/ccfXORyO.s:1206   .progmem.data.__m.5432:0000000000000000 __m.5432
+     /tmp/ccfXORyO.s:1201   .progmem.data.__c.5435:0000000000000000 __c.5435
+     /tmp/ccfXORyO.s:1196   .progmem.data.__c.5438:0000000000000000 __c.5438
+     /tmp/ccfXORyO.s:1189   .progmem.data.__c.5441:0000000000000000 __c.5441
+     /tmp/ccfXORyO.s:1184   .progmem.data.__c.5444:0000000000000000 __c.5444
+     /tmp/ccfXORyO.s:1179   .progmem.data.__c.5447:0000000000000000 __c.5447
+     /tmp/ccfXORyO.s:1174   .progmem.data.__c.5450:0000000000000000 __c.5450
+     /tmp/ccfXORyO.s:1169   .progmem.data.__c.5453:0000000000000000 __c.5453
+     /tmp/ccfXORyO.s:1156   .progmem.data.__m.5456:0000000000000000 __m.5456
+     /tmp/ccfXORyO.s:1139   .progmem.data.__m.5459:0000000000000000 __m.5459
+     /tmp/ccfXORyO.s:1118   .progmem.data.__m.5462:0000000000000000 __m.5462
+     /tmp/ccfXORyO.s:1097   .progmem.data.__m.5465:0000000000000000 __m.5465
+     /tmp/ccfXORyO.s:1084   .progmem.data.__m.5468:0000000000000000 __m.5468
+     /tmp/ccfXORyO.s:1071   .progmem.data.__m.5471:0000000000000000 __m.5471
+     /tmp/ccfXORyO.s:1030   .progmem.data.__m.5474:0000000000000000 __m.5474
+     /tmp/ccfXORyO.s:331    .text.dance_press_t:0000000000000000 dance_press_t
+     /tmp/ccfXORyO.s:364    .text.dance_dbrc:0000000000000000 dance_dbrc
+     /tmp/ccfXORyO.s:413    .text.dance_press_home:0000000000000000 dance_press_home
+     /tmp/ccfXORyO.s:446    .text.dance_press_shifthome:0000000000000000 dance_press_shifthome
+     /tmp/ccfXORyO.s:487    .text.dance_press_end:0000000000000000 dance_press_end
+     /tmp/ccfXORyO.s:520    .text.dance_press_shiftend:0000000000000000 dance_press_shiftend
+     /tmp/ccfXORyO.s:566    .text.pre_macro_date_to_int:0000000000000000 pre_macro_date_to_int
+     /tmp/ccfXORyO.s:738    .text.pre_macro_time_to_int:0000000000000000 pre_macro_time_to_int
+     /tmp/ccfXORyO.s:866    .text.matrix_init_user:0000000000000000 matrix_init_user
+     /tmp/ccfXORyO.s:881    .text.matrix_scan_user:0000000000000000 matrix_scan_user
+     /tmp/ccfXORyO.s:1324   .data.date_str:0000000000000000 date_str
+     /tmp/ccfXORyO.s:1333   .data.sql_query:0000000000000000 sql_query
+     /tmp/ccfXORyO.s:1339   .progmem.data.keymaps:0000000000000000 keymaps
+     /tmp/ccfXORyO.s:2016   .data.tap_dance_actions:0000000000000000 tap_dance_actions
+     /tmp/ccfXORyO.s:2239   .data.__compound_literal.0:0000000000000000 __compound_literal.0
+     /tmp/ccfXORyO.s:2233   .data.__compound_literal.1:0000000000000000 __compound_literal.1
+     /tmp/ccfXORyO.s:2227   .data.__compound_literal.2:0000000000000000 __compound_literal.2
+     /tmp/ccfXORyO.s:2221   .data.__compound_literal.3:0000000000000000 __compound_literal.3
+     /tmp/ccfXORyO.s:2215   .data.__compound_literal.4:0000000000000000 __compound_literal.4
+     /tmp/ccfXORyO.s:2209   .data.__compound_literal.5:0000000000000000 __compound_literal.5
+     /tmp/ccfXORyO.s:2203   .data.__compound_literal.6:0000000000000000 __compound_literal.6
+     /tmp/ccfXORyO.s:2197   .data.__compound_literal.7:0000000000000000 __compound_literal.7
+     /tmp/ccfXORyO.s:2191   .data.__compound_literal.8:0000000000000000 __compound_literal.8
+     /tmp/ccfXORyO.s:2185   .data.__compound_literal.9:0000000000000000 __compound_literal.9
+     /tmp/ccfXORyO.s:2179   .data.__compound_literal.10:0000000000000000 __compound_literal.10
+     /tmp/ccfXORyO.s:2173   .data.__compound_literal.11:0000000000000000 __compound_literal.11
+     /tmp/ccfXORyO.s:2167   .data.__compound_literal.12:0000000000000000 __compound_literal.12
+     /tmp/ccfXORyO.s:2161   .data.__compound_literal.13:0000000000000000 __compound_literal.13
+     /tmp/ccfXORyO.s:2155   .data.__compound_literal.14:0000000000000000 __compound_literal.14
+     /tmp/ccfXORyO.s:2149   .data.__compound_literal.15:0000000000000000 __compound_literal.15
+     /tmp/ccfXORyO.s:2143   .data.__compound_literal.16:0000000000000000 __compound_literal.16
+     /tmp/ccfXORyO.s:2137   .data.__compound_literal.17:0000000000000000 __compound_literal.17
+     /tmp/ccfXORyO.s:2131   .data.__compound_literal.18:0000000000000000 __compound_literal.18
+     /tmp/ccfXORyO.s:2125   .data.__compound_literal.19:0000000000000000 __compound_literal.19
+     /tmp/ccfXORyO.s:2246   .progmem.data.fn_actions:0000000000000000 fn_actions
 
 UNDEFINED SYMBOLS
 register_code

@@ -868,7 +868,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000     0x5494
+.text           0x0000000000000000     0x549a
  *(.vectors)
  .vectors       0x0000000000000000       0xac /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32u4.o
                 0x0000000000000000                __vectors
@@ -933,78 +933,78 @@ END GROUP
  .progmem.data.__c.5420
                 0x0000000000000544       0x79 .build/obj_ergodox_ez_pydemia/keyboards/ergodox/ez/keymaps/pydemia/keymap.o
  .progmem.data.__c.5416
-                0x00000000000005bd       0x19 .build/obj_ergodox_ez_pydemia/keyboards/ergodox/ez/keymaps/pydemia/keymap.o
+                0x00000000000005bd       0x1f .build/obj_ergodox_ez_pydemia/keyboards/ergodox/ez/keymaps/pydemia/keymap.o
  .progmem.data.keymaps
-                0x00000000000005d6      0x540 .build/obj_ergodox_ez_pydemia/keyboards/ergodox/ez/keymaps/pydemia/keymap.o
-                0x00000000000005d6                keymaps
+                0x00000000000005dc      0x540 .build/obj_ergodox_ez_pydemia/keyboards/ergodox/ez/keymaps/pydemia/keymap.o
+                0x00000000000005dc                keymaps
  .progmem.data.fn_actions
-                0x0000000000000b16        0xe .build/obj_ergodox_ez_pydemia/keyboards/ergodox/ez/keymaps/pydemia/keymap.o
-                0x0000000000000b16                fn_actions
+                0x0000000000000b1c        0xe .build/obj_ergodox_ez_pydemia/keyboards/ergodox/ez/keymaps/pydemia/keymap.o
+                0x0000000000000b1c                fn_actions
  .progmem.data.ascii_to_qwerty_keycode_lut
-                0x0000000000000b24       0x80 .build/obj_ergodox_ez_pydemia/quantum/quantum.o
-                0x0000000000000b24                ascii_to_qwerty_keycode_lut
+                0x0000000000000b2a       0x80 .build/obj_ergodox_ez_pydemia/quantum/quantum.o
+                0x0000000000000b2a                ascii_to_qwerty_keycode_lut
  .progmem.data.ascii_to_qwerty_shift_lut
-                0x0000000000000ba4       0x80 .build/obj_ergodox_ez_pydemia/quantum/quantum.o
-                0x0000000000000ba4                ascii_to_qwerty_shift_lut
+                0x0000000000000baa       0x80 .build/obj_ergodox_ez_pydemia/quantum/quantum.o
+                0x0000000000000baa                ascii_to_qwerty_shift_lut
  .progmem.data.ProductString
-                0x0000000000000c24       0x18 .build/obj_ergodox_ez_pydemia/descriptor.o
-                0x0000000000000c24                ProductString
+                0x0000000000000c2a       0x18 .build/obj_ergodox_ez_pydemia/descriptor.o
+                0x0000000000000c2a                ProductString
  .progmem.data.ManufacturerString
-                0x0000000000000c3c       0x18 .build/obj_ergodox_ez_pydemia/descriptor.o
-                0x0000000000000c3c                ManufacturerString
+                0x0000000000000c42       0x18 .build/obj_ergodox_ez_pydemia/descriptor.o
+                0x0000000000000c42                ManufacturerString
  .progmem.data.LanguageString
-                0x0000000000000c54        0x4 .build/obj_ergodox_ez_pydemia/descriptor.o
-                0x0000000000000c54                LanguageString
+                0x0000000000000c5a        0x4 .build/obj_ergodox_ez_pydemia/descriptor.o
+                0x0000000000000c5a                LanguageString
  .progmem.data.ConfigurationDescriptor
-                0x0000000000000c58       0x6d .build/obj_ergodox_ez_pydemia/descriptor.o
-                0x0000000000000c58                ConfigurationDescriptor
+                0x0000000000000c5e       0x6d .build/obj_ergodox_ez_pydemia/descriptor.o
+                0x0000000000000c5e                ConfigurationDescriptor
  .progmem.data.DeviceDescriptor
-                0x0000000000000cc5       0x12 .build/obj_ergodox_ez_pydemia/descriptor.o
-                0x0000000000000cc5                DeviceDescriptor
+                0x0000000000000ccb       0x12 .build/obj_ergodox_ez_pydemia/descriptor.o
+                0x0000000000000ccb                DeviceDescriptor
  .progmem.data.NKROReport
-                0x0000000000000cd7       0x39 .build/obj_ergodox_ez_pydemia/descriptor.o
-                0x0000000000000cd7                NKROReport
+                0x0000000000000cdd       0x39 .build/obj_ergodox_ez_pydemia/descriptor.o
+                0x0000000000000cdd                NKROReport
  .progmem.data.ExtrakeyReport
-                0x0000000000000d10       0x36 .build/obj_ergodox_ez_pydemia/descriptor.o
-                0x0000000000000d10                ExtrakeyReport
+                0x0000000000000d16       0x36 .build/obj_ergodox_ez_pydemia/descriptor.o
+                0x0000000000000d16                ExtrakeyReport
  .progmem.data.MouseReport
-                0x0000000000000d46       0x4d .build/obj_ergodox_ez_pydemia/descriptor.o
-                0x0000000000000d46                MouseReport
+                0x0000000000000d4c       0x4d .build/obj_ergodox_ez_pydemia/descriptor.o
+                0x0000000000000d4c                MouseReport
  .progmem.data.KeyboardReport
-                0x0000000000000d93       0x40 .build/obj_ergodox_ez_pydemia/descriptor.o
-                0x0000000000000d93                KeyboardReport
-                0x0000000000000dd4                . = ALIGN (0x2)
- *fill*         0x0000000000000dd3        0x1 
+                0x0000000000000d99       0x40 .build/obj_ergodox_ez_pydemia/descriptor.o
+                0x0000000000000d99                KeyboardReport
+                0x0000000000000dda                . = ALIGN (0x2)
+ *fill*         0x0000000000000dd9        0x1 
  *(.jumptables)
  *(.jumptables*)
  *(.lowtext)
  *(.lowtext*)
-                0x0000000000000dd4                __ctors_start = .
+                0x0000000000000dda                __ctors_start = .
  *(.ctors)
-                0x0000000000000dd4                __ctors_end = .
-                0x0000000000000dd4                __dtors_start = .
+                0x0000000000000dda                __ctors_end = .
+                0x0000000000000dda                __dtors_start = .
  *(.dtors)
-                0x0000000000000dd4                __dtors_end = .
+                0x0000000000000dda                __dtors_end = .
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x0000000000000dd4        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32u4.o
-                0x0000000000000dd4                __init
+ .init0         0x0000000000000dda        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32u4.o
+                0x0000000000000dda                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x0000000000000dd4        0xc /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32u4.o
+ .init2         0x0000000000000dda        0xc /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32u4.o
  *(.init2)
  *(.init3)
- .init3         0x0000000000000de0       0x54 .build/obj_ergodox_ez_pydemia/common/avr/bootloader.o
-                0x0000000000000de0                bootloader_jump_after_watchdog_reset
+ .init3         0x0000000000000de6       0x54 .build/obj_ergodox_ez_pydemia/common/avr/bootloader.o
+                0x0000000000000de6                bootloader_jump_after_watchdog_reset
  *(.init3)
  *(.init4)
- .init4         0x0000000000000e34       0x16 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
-                0x0000000000000e34                __do_copy_data
- .init4         0x0000000000000e4a       0x10 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
-                0x0000000000000e4a                __do_clear_bss
+ .init4         0x0000000000000e3a       0x16 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+                0x0000000000000e3a                __do_copy_data
+ .init4         0x0000000000000e50       0x10 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
+                0x0000000000000e50                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -1015,645 +1015,645 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x0000000000000e5a        0x8 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32u4.o
+ .init9         0x0000000000000e60        0x8 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32u4.o
  *(.init9)
  *(.text)
- .text          0x0000000000000e62        0x4 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32u4.o
-                0x0000000000000e62                __vector_38
-                0x0000000000000e62                __vector_22
-                0x0000000000000e62                __vector_28
-                0x0000000000000e62                __vector_1
-                0x0000000000000e62                __vector_32
-                0x0000000000000e62                __vector_34
-                0x0000000000000e62                __vector_24
-                0x0000000000000e62                __bad_interrupt
-                0x0000000000000e62                __vector_6
-                0x0000000000000e62                __vector_31
-                0x0000000000000e62                __vector_35
-                0x0000000000000e62                __vector_39
-                0x0000000000000e62                __vector_3
-                0x0000000000000e62                __vector_23
-                0x0000000000000e62                __vector_30
-                0x0000000000000e62                __vector_25
-                0x0000000000000e62                __vector_13
-                0x0000000000000e62                __vector_17
-                0x0000000000000e62                __vector_19
-                0x0000000000000e62                __vector_7
-                0x0000000000000e62                __vector_41
-                0x0000000000000e62                __vector_27
-                0x0000000000000e62                __vector_5
-                0x0000000000000e62                __vector_33
-                0x0000000000000e62                __vector_37
-                0x0000000000000e62                __vector_4
-                0x0000000000000e62                __vector_9
-                0x0000000000000e62                __vector_2
-                0x0000000000000e62                __vector_15
-                0x0000000000000e62                __vector_36
-                0x0000000000000e62                __vector_29
-                0x0000000000000e62                __vector_40
-                0x0000000000000e62                __vector_8
-                0x0000000000000e62                __vector_26
-                0x0000000000000e62                __vector_14
-                0x0000000000000e62                __vector_16
-                0x0000000000000e62                __vector_18
-                0x0000000000000e62                __vector_20
-                0x0000000000000e62                __vector_42
-                0x0000000000000e66                . = ALIGN (0x2)
+ .text          0x0000000000000e68        0x4 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32u4.o
+                0x0000000000000e68                __vector_38
+                0x0000000000000e68                __vector_22
+                0x0000000000000e68                __vector_28
+                0x0000000000000e68                __vector_1
+                0x0000000000000e68                __vector_32
+                0x0000000000000e68                __vector_34
+                0x0000000000000e68                __vector_24
+                0x0000000000000e68                __bad_interrupt
+                0x0000000000000e68                __vector_6
+                0x0000000000000e68                __vector_31
+                0x0000000000000e68                __vector_35
+                0x0000000000000e68                __vector_39
+                0x0000000000000e68                __vector_3
+                0x0000000000000e68                __vector_23
+                0x0000000000000e68                __vector_30
+                0x0000000000000e68                __vector_25
+                0x0000000000000e68                __vector_13
+                0x0000000000000e68                __vector_17
+                0x0000000000000e68                __vector_19
+                0x0000000000000e68                __vector_7
+                0x0000000000000e68                __vector_41
+                0x0000000000000e68                __vector_27
+                0x0000000000000e68                __vector_5
+                0x0000000000000e68                __vector_33
+                0x0000000000000e68                __vector_37
+                0x0000000000000e68                __vector_4
+                0x0000000000000e68                __vector_9
+                0x0000000000000e68                __vector_2
+                0x0000000000000e68                __vector_15
+                0x0000000000000e68                __vector_36
+                0x0000000000000e68                __vector_29
+                0x0000000000000e68                __vector_40
+                0x0000000000000e68                __vector_8
+                0x0000000000000e68                __vector_26
+                0x0000000000000e68                __vector_14
+                0x0000000000000e68                __vector_16
+                0x0000000000000e68                __vector_18
+                0x0000000000000e68                __vector_20
+                0x0000000000000e68                __vector_42
+                0x0000000000000e6c                . = ALIGN (0x2)
  *(.text.*)
  .text.i2c_init
-                0x0000000000000e66        0xc .build/obj_ergodox_ez_pydemia/twimaster.o
-                0x0000000000000e66                i2c_init
+                0x0000000000000e6c        0xc .build/obj_ergodox_ez_pydemia/twimaster.o
+                0x0000000000000e6c                i2c_init
  .text.i2c_start
-                0x0000000000000e72       0x44 .build/obj_ergodox_ez_pydemia/twimaster.o
-                0x0000000000000e72                i2c_start
+                0x0000000000000e78       0x44 .build/obj_ergodox_ez_pydemia/twimaster.o
+                0x0000000000000e78                i2c_start
  .text.i2c_stop
-                0x0000000000000eb6       0x10 .build/obj_ergodox_ez_pydemia/twimaster.o
-                0x0000000000000eb6                i2c_stop
+                0x0000000000000ebc       0x10 .build/obj_ergodox_ez_pydemia/twimaster.o
+                0x0000000000000ebc                i2c_stop
  .text.i2c_write
-                0x0000000000000ec6       0x22 .build/obj_ergodox_ez_pydemia/twimaster.o
-                0x0000000000000ec6                i2c_write
+                0x0000000000000ecc       0x22 .build/obj_ergodox_ez_pydemia/twimaster.o
+                0x0000000000000ecc                i2c_write
  .text.i2c_readNak
-                0x0000000000000ee8       0x14 .build/obj_ergodox_ez_pydemia/twimaster.o
-                0x0000000000000ee8                i2c_readNak
+                0x0000000000000eee       0x14 .build/obj_ergodox_ez_pydemia/twimaster.o
+                0x0000000000000eee                i2c_readNak
  .text.init_cols
-                0x0000000000000efc        0xe .build/obj_ergodox_ez_pydemia/matrix.o
+                0x0000000000000f02        0xe .build/obj_ergodox_ez_pydemia/matrix.o
  .text.unselect_rows
-                0x0000000000000f0a       0x50 .build/obj_ergodox_ez_pydemia/matrix.o
+                0x0000000000000f10       0x50 .build/obj_ergodox_ez_pydemia/matrix.o
  .text.matrix_scan_kb
-                0x0000000000000f5a        0x4 .build/obj_ergodox_ez_pydemia/matrix.o
-                0x0000000000000f5a                matrix_scan_kb
+                0x0000000000000f60        0x4 .build/obj_ergodox_ez_pydemia/matrix.o
+                0x0000000000000f60                matrix_scan_kb
  .text.matrix_init
-                0x0000000000000f5e       0x28 .build/obj_ergodox_ez_pydemia/matrix.o
-                0x0000000000000f5e                matrix_init
+                0x0000000000000f64       0x28 .build/obj_ergodox_ez_pydemia/matrix.o
+                0x0000000000000f64                matrix_init
  .text.matrix_power_up
-                0x0000000000000f86       0x26 .build/obj_ergodox_ez_pydemia/matrix.o
-                0x0000000000000f86                matrix_power_up
+                0x0000000000000f8c       0x26 .build/obj_ergodox_ez_pydemia/matrix.o
+                0x0000000000000f8c                matrix_power_up
  .text.matrix_scan
-                0x0000000000000fac      0x1f0 .build/obj_ergodox_ez_pydemia/matrix.o
-                0x0000000000000fac                matrix_scan
+                0x0000000000000fb2      0x1f0 .build/obj_ergodox_ez_pydemia/matrix.o
+                0x0000000000000fb2                matrix_scan
  .text.matrix_get_row
-                0x000000000000119c        0xc .build/obj_ergodox_ez_pydemia/matrix.o
-                0x000000000000119c                matrix_get_row
+                0x00000000000011a2        0xc .build/obj_ergodox_ez_pydemia/matrix.o
+                0x00000000000011a2                matrix_get_row
  .text.matrix_print
-                0x00000000000011a8        0x2 .build/obj_ergodox_ez_pydemia/matrix.o
-                0x00000000000011a8                matrix_print
+                0x00000000000011ae        0x2 .build/obj_ergodox_ez_pydemia/matrix.o
+                0x00000000000011ae                matrix_print
  .text.dance_press_equal
-                0x00000000000011aa       0x18 .build/obj_ergodox_ez_pydemia/keyboards/ergodox/ez/keymaps/pydemia/keymap.o
-                0x00000000000011aa                dance_press_equal
+                0x00000000000011b0       0x18 .build/obj_ergodox_ez_pydemia/keyboards/ergodox/ez/keymaps/pydemia/keymap.o
+                0x00000000000011b0                dance_press_equal
  .text.dance_press_rassign
-                0x00000000000011c2       0x30 .build/obj_ergodox_ez_pydemia/keyboards/ergodox/ez/keymaps/pydemia/keymap.o
-                0x00000000000011c2                dance_press_rassign
+                0x00000000000011c8       0x30 .build/obj_ergodox_ez_pydemia/keyboards/ergodox/ez/keymaps/pydemia/keymap.o
+                0x00000000000011c8                dance_press_rassign
  .text.action_get_macro
-                0x00000000000011f2       0xfe .build/obj_ergodox_ez_pydemia/keyboards/ergodox/ez/keymaps/pydemia/keymap.o
-                0x00000000000011f2                action_get_macro
+                0x00000000000011f8       0xfe .build/obj_ergodox_ez_pydemia/keyboards/ergodox/ez/keymaps/pydemia/keymap.o
+                0x00000000000011f8                action_get_macro
  .text.matrix_init_user
-                0x00000000000012f0        0x2 .build/obj_ergodox_ez_pydemia/keyboards/ergodox/ez/keymaps/pydemia/keymap.o
-                0x00000000000012f0                matrix_init_user
+                0x00000000000012f6        0x2 .build/obj_ergodox_ez_pydemia/keyboards/ergodox/ez/keymaps/pydemia/keymap.o
+                0x00000000000012f6                matrix_init_user
  .text.matrix_scan_user
-                0x00000000000012f2       0x6e .build/obj_ergodox_ez_pydemia/keyboards/ergodox/ez/keymaps/pydemia/keymap.o
-                0x00000000000012f2                matrix_scan_user
+                0x00000000000012f8       0x6e .build/obj_ergodox_ez_pydemia/keyboards/ergodox/ez/keymaps/pydemia/keymap.o
+                0x00000000000012f8                matrix_scan_user
  .text.do_code16
-                0x0000000000001360       0x8e .build/obj_ergodox_ez_pydemia/quantum/quantum.o
+                0x0000000000001366       0x8e .build/obj_ergodox_ez_pydemia/quantum/quantum.o
  .text.register_code16
-                0x00000000000013ee       0x14 .build/obj_ergodox_ez_pydemia/quantum/quantum.o
-                0x00000000000013ee                register_code16
+                0x00000000000013f4       0x14 .build/obj_ergodox_ez_pydemia/quantum/quantum.o
+                0x00000000000013f4                register_code16
  .text.unregister_code16
-                0x0000000000001402       0x18 .build/obj_ergodox_ez_pydemia/quantum/quantum.o
-                0x0000000000001402                unregister_code16
+                0x0000000000001408       0x18 .build/obj_ergodox_ez_pydemia/quantum/quantum.o
+                0x0000000000001408                unregister_code16
  .text.process_action_kb
-                0x000000000000141a        0x4 .build/obj_ergodox_ez_pydemia/quantum/quantum.o
-                0x000000000000141a                process_action_kb
+                0x0000000000001420        0x4 .build/obj_ergodox_ez_pydemia/quantum/quantum.o
+                0x0000000000001420                process_action_kb
  .text.process_record_user
-                0x000000000000141e        0x4 .build/obj_ergodox_ez_pydemia/quantum/quantum.o
-                0x000000000000141e                process_record_user
+                0x0000000000001424        0x4 .build/obj_ergodox_ez_pydemia/quantum/quantum.o
+                0x0000000000001424                process_record_user
  .text.process_record_kb
-                0x0000000000001422        0x4 .build/obj_ergodox_ez_pydemia/quantum/quantum.o
-                0x0000000000001422                process_record_kb
+                0x0000000000001428        0x4 .build/obj_ergodox_ez_pydemia/quantum/quantum.o
+                0x0000000000001428                process_record_kb
  .text.reset_keyboard
-                0x0000000000001426       0x1a .build/obj_ergodox_ez_pydemia/quantum/quantum.o
-                0x0000000000001426                reset_keyboard
+                0x000000000000142c       0x1a .build/obj_ergodox_ez_pydemia/quantum/quantum.o
+                0x000000000000142c                reset_keyboard
  .text.process_record_quantum
-                0x0000000000001440      0x1c6 .build/obj_ergodox_ez_pydemia/quantum/quantum.o
-                0x0000000000001440                process_record_quantum
+                0x0000000000001446      0x1c6 .build/obj_ergodox_ez_pydemia/quantum/quantum.o
+                0x0000000000001446                process_record_quantum
  .text.send_string
-                0x0000000000001606       0x56 .build/obj_ergodox_ez_pydemia/quantum/quantum.o
-                0x0000000000001606                send_string
+                0x000000000000160c       0x56 .build/obj_ergodox_ez_pydemia/quantum/quantum.o
+                0x000000000000160c                send_string
  .text.matrix_scan_quantum
-                0x000000000000165c        0x8 .build/obj_ergodox_ez_pydemia/quantum/quantum.o
-                0x000000000000165c                matrix_scan_quantum
+                0x0000000000001662        0x8 .build/obj_ergodox_ez_pydemia/quantum/quantum.o
+                0x0000000000001662                matrix_scan_quantum
  .text.led_set_user
-                0x0000000000001664        0x2 .build/obj_ergodox_ez_pydemia/quantum/quantum.o
-                0x0000000000001664                led_set_user
+                0x000000000000166a        0x2 .build/obj_ergodox_ez_pydemia/quantum/quantum.o
+                0x000000000000166a                led_set_user
  .text.led_set_kb
-                0x0000000000001666        0x4 .build/obj_ergodox_ez_pydemia/quantum/quantum.o
-                0x0000000000001666                led_set_kb
- .text.led_set  0x000000000000166a        0x4 .build/obj_ergodox_ez_pydemia/quantum/quantum.o
-                0x000000000000166a                led_set
+                0x000000000000166c        0x4 .build/obj_ergodox_ez_pydemia/quantum/quantum.o
+                0x000000000000166c                led_set_kb
+ .text.led_set  0x0000000000001670        0x4 .build/obj_ergodox_ez_pydemia/quantum/quantum.o
+                0x0000000000001670                led_set
  .text.action_for_key
-                0x000000000000166e      0x322 .build/obj_ergodox_ez_pydemia/quantum/keymap_common.o
-                0x000000000000166e                action_for_key
+                0x0000000000001674      0x322 .build/obj_ergodox_ez_pydemia/quantum/keymap_common.o
+                0x0000000000001674                action_for_key
  .text.action_function
-                0x0000000000001990        0x2 .build/obj_ergodox_ez_pydemia/quantum/keymap_common.o
-                0x0000000000001990                action_function
+                0x0000000000001996        0x2 .build/obj_ergodox_ez_pydemia/quantum/keymap_common.o
+                0x0000000000001996                action_function
  .text.keymap_key_to_keycode
-                0x0000000000001992       0x26 .build/obj_ergodox_ez_pydemia/quantum/keymap_common.o
-                0x0000000000001992                keymap_key_to_keycode
+                0x0000000000001998       0x26 .build/obj_ergodox_ez_pydemia/quantum/keymap_common.o
+                0x0000000000001998                keymap_key_to_keycode
  .text.keycode_config
-                0x00000000000019b8       0xf8 .build/obj_ergodox_ez_pydemia/quantum/keycode_config.o
-                0x00000000000019b8                keycode_config
+                0x00000000000019be       0xf8 .build/obj_ergodox_ez_pydemia/quantum/keycode_config.o
+                0x00000000000019be                keycode_config
  .text.leader_start
-                0x0000000000001ab0        0x2 .build/obj_ergodox_ez_pydemia/quantum/process_keycode/process_leader.o
-                0x0000000000001ab0                leader_start
+                0x0000000000001ab6        0x2 .build/obj_ergodox_ez_pydemia/quantum/process_keycode/process_leader.o
+                0x0000000000001ab6                leader_start
  .text.process_leader
-                0x0000000000001ab2       0x9e .build/obj_ergodox_ez_pydemia/quantum/process_keycode/process_leader.o
-                0x0000000000001ab2                process_leader
+                0x0000000000001ab8       0x9e .build/obj_ergodox_ez_pydemia/quantum/process_keycode/process_leader.o
+                0x0000000000001ab8                process_leader
  .text.ergodox_blink_all_leds
-                0x0000000000001b50       0xb0 .build/obj_ergodox_ez_pydemia/keyboards/ergodox/ez/ez.o
-                0x0000000000001b50                ergodox_blink_all_leds
+                0x0000000000001b56       0xb0 .build/obj_ergodox_ez_pydemia/keyboards/ergodox/ez/ez.o
+                0x0000000000001b56                ergodox_blink_all_leds
  .text.matrix_init_kb
-                0x0000000000001c00       0x2c .build/obj_ergodox_ez_pydemia/keyboards/ergodox/ez/ez.o
-                0x0000000000001c00                matrix_init_kb
+                0x0000000000001c06       0x2c .build/obj_ergodox_ez_pydemia/keyboards/ergodox/ez/ez.o
+                0x0000000000001c06                matrix_init_kb
  .text.init_mcp23018
-                0x0000000000001c2c       0x9e .build/obj_ergodox_ez_pydemia/keyboards/ergodox/ez/ez.o
-                0x0000000000001c2c                init_mcp23018
+                0x0000000000001c32       0x9e .build/obj_ergodox_ez_pydemia/keyboards/ergodox/ez/ez.o
+                0x0000000000001c32                init_mcp23018
  .text.hex_to_keycode
-                0x0000000000001cca       0x18 .build/obj_ergodox_ez_pydemia/quantum/process_keycode/process_unicode.o
-                0x0000000000001cca                hex_to_keycode
+                0x0000000000001cd0       0x18 .build/obj_ergodox_ez_pydemia/quantum/process_keycode/process_unicode.o
+                0x0000000000001cd0                hex_to_keycode
  .text.unicode_input_start
-                0x0000000000001ce2       0x58 .build/obj_ergodox_ez_pydemia/quantum/process_keycode/process_unicode.o
-                0x0000000000001ce2                unicode_input_start
+                0x0000000000001ce8       0x58 .build/obj_ergodox_ez_pydemia/quantum/process_keycode/process_unicode.o
+                0x0000000000001ce8                unicode_input_start
  .text.unicode_input_finish
-                0x0000000000001d3a       0x20 .build/obj_ergodox_ez_pydemia/quantum/process_keycode/process_unicode.o
-                0x0000000000001d3a                unicode_input_finish
+                0x0000000000001d40       0x20 .build/obj_ergodox_ez_pydemia/quantum/process_keycode/process_unicode.o
+                0x0000000000001d40                unicode_input_finish
  .text.register_hex
-                0x0000000000001d5a       0x4c .build/obj_ergodox_ez_pydemia/quantum/process_keycode/process_unicode.o
-                0x0000000000001d5a                register_hex
+                0x0000000000001d60       0x4c .build/obj_ergodox_ez_pydemia/quantum/process_keycode/process_unicode.o
+                0x0000000000001d60                register_hex
  .text.process_unicode
-                0x0000000000001da6       0x2e .build/obj_ergodox_ez_pydemia/quantum/process_keycode/process_unicode.o
-                0x0000000000001da6                process_unicode
+                0x0000000000001dac       0x2e .build/obj_ergodox_ez_pydemia/quantum/process_keycode/process_unicode.o
+                0x0000000000001dac                process_unicode
  .text.process_tap_dance_action_on_dance_finished
-                0x0000000000001dd4       0x30 .build/obj_ergodox_ez_pydemia/quantum/process_keycode/process_tap_dance.o
+                0x0000000000001dda       0x30 .build/obj_ergodox_ez_pydemia/quantum/process_keycode/process_tap_dance.o
  .text.qk_tap_dance_pair_finished
-                0x0000000000001e04       0x20 .build/obj_ergodox_ez_pydemia/quantum/process_keycode/process_tap_dance.o
-                0x0000000000001e04                qk_tap_dance_pair_finished
+                0x0000000000001e0a       0x20 .build/obj_ergodox_ez_pydemia/quantum/process_keycode/process_tap_dance.o
+                0x0000000000001e0a                qk_tap_dance_pair_finished
  .text.qk_tap_dance_pair_reset
-                0x0000000000001e24       0x20 .build/obj_ergodox_ez_pydemia/quantum/process_keycode/process_tap_dance.o
-                0x0000000000001e24                qk_tap_dance_pair_reset
+                0x0000000000001e2a       0x20 .build/obj_ergodox_ez_pydemia/quantum/process_keycode/process_tap_dance.o
+                0x0000000000001e2a                qk_tap_dance_pair_reset
  .text.reset_tap_dance
-                0x0000000000001e44       0x52 .build/obj_ergodox_ez_pydemia/quantum/process_keycode/process_tap_dance.o
-                0x0000000000001e44                reset_tap_dance
+                0x0000000000001e4a       0x52 .build/obj_ergodox_ez_pydemia/quantum/process_keycode/process_tap_dance.o
+                0x0000000000001e4a                reset_tap_dance
  .text.process_tap_dance
-                0x0000000000001e96      0x138 .build/obj_ergodox_ez_pydemia/quantum/process_keycode/process_tap_dance.o
-                0x0000000000001e96                process_tap_dance
+                0x0000000000001e9c      0x138 .build/obj_ergodox_ez_pydemia/quantum/process_keycode/process_tap_dance.o
+                0x0000000000001e9c                process_tap_dance
  .text.matrix_scan_tap_dance
-                0x0000000000001fce       0x5c .build/obj_ergodox_ez_pydemia/quantum/process_keycode/process_tap_dance.o
-                0x0000000000001fce                matrix_scan_tap_dance
+                0x0000000000001fd4       0x5c .build/obj_ergodox_ez_pydemia/quantum/process_keycode/process_tap_dance.o
+                0x0000000000001fd4                matrix_scan_tap_dance
  .text.host_set_driver
-                0x000000000000202a        0xa .build/obj_ergodox_ez_pydemia/common/host.o
-                0x000000000000202a                host_set_driver
+                0x0000000000002030        0xa .build/obj_ergodox_ez_pydemia/common/host.o
+                0x0000000000002030                host_set_driver
  .text.host_keyboard_leds
-                0x0000000000002034       0x18 .build/obj_ergodox_ez_pydemia/common/host.o
-                0x0000000000002034                host_keyboard_leds
+                0x000000000000203a       0x18 .build/obj_ergodox_ez_pydemia/common/host.o
+                0x000000000000203a                host_keyboard_leds
  .text.host_keyboard_send
-                0x000000000000204c       0x16 .build/obj_ergodox_ez_pydemia/common/host.o
-                0x000000000000204c                host_keyboard_send
+                0x0000000000002052       0x16 .build/obj_ergodox_ez_pydemia/common/host.o
+                0x0000000000002052                host_keyboard_send
  .text.host_mouse_send
-                0x0000000000002062       0x16 .build/obj_ergodox_ez_pydemia/common/host.o
-                0x0000000000002062                host_mouse_send
+                0x0000000000002068       0x16 .build/obj_ergodox_ez_pydemia/common/host.o
+                0x0000000000002068                host_mouse_send
  .text.host_system_send
-                0x0000000000002078       0x2c .build/obj_ergodox_ez_pydemia/common/host.o
-                0x0000000000002078                host_system_send
+                0x000000000000207e       0x2c .build/obj_ergodox_ez_pydemia/common/host.o
+                0x000000000000207e                host_system_send
  .text.host_consumer_send
-                0x00000000000020a4       0x2c .build/obj_ergodox_ez_pydemia/common/host.o
-                0x00000000000020a4                host_consumer_send
+                0x00000000000020aa       0x2c .build/obj_ergodox_ez_pydemia/common/host.o
+                0x00000000000020aa                host_consumer_send
  .text.matrix_setup
-                0x00000000000020d0        0x2 .build/obj_ergodox_ez_pydemia/common/keyboard.o
-                0x00000000000020d0                matrix_setup
+                0x00000000000020d6        0x2 .build/obj_ergodox_ez_pydemia/common/keyboard.o
+                0x00000000000020d6                matrix_setup
  .text.keyboard_setup
-                0x00000000000020d2        0x4 .build/obj_ergodox_ez_pydemia/common/keyboard.o
-                0x00000000000020d2                keyboard_setup
+                0x00000000000020d8        0x4 .build/obj_ergodox_ez_pydemia/common/keyboard.o
+                0x00000000000020d8                keyboard_setup
  .text.keyboard_init
-                0x00000000000020d6        0xc .build/obj_ergodox_ez_pydemia/common/keyboard.o
-                0x00000000000020d6                keyboard_init
+                0x00000000000020dc        0xc .build/obj_ergodox_ez_pydemia/common/keyboard.o
+                0x00000000000020dc                keyboard_init
  .text.keyboard_task
-                0x00000000000020e2      0x148 .build/obj_ergodox_ez_pydemia/common/keyboard.o
-                0x00000000000020e2                keyboard_task
+                0x00000000000020e8      0x148 .build/obj_ergodox_ez_pydemia/common/keyboard.o
+                0x00000000000020e8                keyboard_task
  .text.process_hand_swap
-                0x000000000000222a       0x78 .build/obj_ergodox_ez_pydemia/common/action.o
-                0x000000000000222a                process_hand_swap
+                0x0000000000002230       0x78 .build/obj_ergodox_ez_pydemia/common/action.o
+                0x0000000000002230                process_hand_swap
  .text.action_exec
-                0x00000000000022a2       0x86 .build/obj_ergodox_ez_pydemia/common/action.o
-                0x00000000000022a2                action_exec
+                0x00000000000022a8       0x86 .build/obj_ergodox_ez_pydemia/common/action.o
+                0x00000000000022a8                action_exec
  .text.register_code
-                0x0000000000002328      0x1a6 .build/obj_ergodox_ez_pydemia/common/action.o
-                0x0000000000002328                register_code
+                0x000000000000232e      0x1a6 .build/obj_ergodox_ez_pydemia/common/action.o
+                0x000000000000232e                register_code
  .text.unregister_code
-                0x00000000000024ce       0x9e .build/obj_ergodox_ez_pydemia/common/action.o
-                0x00000000000024ce                unregister_code
+                0x00000000000024d4       0x9e .build/obj_ergodox_ez_pydemia/common/action.o
+                0x00000000000024d4                unregister_code
  .text.register_mods
-                0x000000000000256c        0xe .build/obj_ergodox_ez_pydemia/common/action.o
-                0x000000000000256c                register_mods
+                0x0000000000002572        0xe .build/obj_ergodox_ez_pydemia/common/action.o
+                0x0000000000002572                register_mods
  .text.unregister_mods
-                0x000000000000257a        0xe .build/obj_ergodox_ez_pydemia/common/action.o
-                0x000000000000257a                unregister_mods
+                0x0000000000002580        0xe .build/obj_ergodox_ez_pydemia/common/action.o
+                0x0000000000002580                unregister_mods
  .text.process_action
-                0x0000000000002588      0x46e .build/obj_ergodox_ez_pydemia/common/action.o
-                0x0000000000002588                process_action
+                0x000000000000258e      0x46e .build/obj_ergodox_ez_pydemia/common/action.o
+                0x000000000000258e                process_action
  .text.process_record
-                0x00000000000029f6       0x5c .build/obj_ergodox_ez_pydemia/common/action.o
-                0x00000000000029f6                process_record
+                0x00000000000029fc       0x5c .build/obj_ergodox_ez_pydemia/common/action.o
+                0x00000000000029fc                process_record
  .text.clear_keyboard_but_mods
-                0x0000000000002a52       0x28 .build/obj_ergodox_ez_pydemia/common/action.o
-                0x0000000000002a52                clear_keyboard_but_mods
+                0x0000000000002a58       0x28 .build/obj_ergodox_ez_pydemia/common/action.o
+                0x0000000000002a58                clear_keyboard_but_mods
  .text.clear_keyboard
-                0x0000000000002a7a        0x8 .build/obj_ergodox_ez_pydemia/common/action.o
-                0x0000000000002a7a                clear_keyboard
+                0x0000000000002a80        0x8 .build/obj_ergodox_ez_pydemia/common/action.o
+                0x0000000000002a80                clear_keyboard
  .text.is_tap_key
-                0x0000000000002a82       0x4c .build/obj_ergodox_ez_pydemia/common/action.o
-                0x0000000000002a82                is_tap_key
+                0x0000000000002a88       0x4c .build/obj_ergodox_ez_pydemia/common/action.o
+                0x0000000000002a88                is_tap_key
  .text.debug_event
-                0x0000000000002ace       0x1e .build/obj_ergodox_ez_pydemia/common/action.o
-                0x0000000000002ace                debug_event
+                0x0000000000002ad4       0x1e .build/obj_ergodox_ez_pydemia/common/action.o
+                0x0000000000002ad4                debug_event
  .text.debug_record
-                0x0000000000002aec       0x20 .build/obj_ergodox_ez_pydemia/common/action.o
-                0x0000000000002aec                debug_record
+                0x0000000000002af2       0x20 .build/obj_ergodox_ez_pydemia/common/action.o
+                0x0000000000002af2                debug_record
  .text.debug_waiting_buffer
-                0x0000000000002b0c       0x42 .build/obj_ergodox_ez_pydemia/common/action_tapping.o
+                0x0000000000002b12       0x42 .build/obj_ergodox_ez_pydemia/common/action_tapping.o
  .text.debug_tapping_key
-                0x0000000000002b4e       0x1c .build/obj_ergodox_ez_pydemia/common/action_tapping.o
+                0x0000000000002b54       0x1c .build/obj_ergodox_ez_pydemia/common/action_tapping.o
  .text.waiting_buffer_scan_tap
-                0x0000000000002b6a       0xd0 .build/obj_ergodox_ez_pydemia/common/action_tapping.o
+                0x0000000000002b70       0xd0 .build/obj_ergodox_ez_pydemia/common/action_tapping.o
  .text.process_tapping
-                0x0000000000002c3a      0x3c0 .build/obj_ergodox_ez_pydemia/common/action_tapping.o
+                0x0000000000002c40      0x3c0 .build/obj_ergodox_ez_pydemia/common/action_tapping.o
  .text.action_tapping_process
-                0x0000000000002ffa      0x15c .build/obj_ergodox_ez_pydemia/common/action_tapping.o
-                0x0000000000002ffa                action_tapping_process
+                0x0000000000003000      0x15c .build/obj_ergodox_ez_pydemia/common/action_tapping.o
+                0x0000000000003000                action_tapping_process
  .text.action_macro_play
-                0x0000000000003156       0xfa .build/obj_ergodox_ez_pydemia/common/action_macro.o
-                0x0000000000003156                action_macro_play
+                0x000000000000315c       0xfa .build/obj_ergodox_ez_pydemia/common/action_macro.o
+                0x000000000000315c                action_macro_play
  .text.default_layer_debug
-                0x0000000000003250        0x2 .build/obj_ergodox_ez_pydemia/common/action_layer.o
-                0x0000000000003250                default_layer_debug
+                0x0000000000003256        0x2 .build/obj_ergodox_ez_pydemia/common/action_layer.o
+                0x0000000000003256                default_layer_debug
  .text.default_layer_set
-                0x0000000000003252       0x14 .build/obj_ergodox_ez_pydemia/common/action_layer.o
-                0x0000000000003252                default_layer_set
+                0x0000000000003258       0x14 .build/obj_ergodox_ez_pydemia/common/action_layer.o
+                0x0000000000003258                default_layer_set
  .text.default_layer_or
-                0x0000000000003266       0x38 .build/obj_ergodox_ez_pydemia/common/action_layer.o
-                0x0000000000003266                default_layer_or
+                0x000000000000326c       0x38 .build/obj_ergodox_ez_pydemia/common/action_layer.o
+                0x000000000000326c                default_layer_or
  .text.default_layer_and
-                0x000000000000329e       0x38 .build/obj_ergodox_ez_pydemia/common/action_layer.o
-                0x000000000000329e                default_layer_and
+                0x00000000000032a4       0x38 .build/obj_ergodox_ez_pydemia/common/action_layer.o
+                0x00000000000032a4                default_layer_and
  .text.default_layer_xor
-                0x00000000000032d6       0x38 .build/obj_ergodox_ez_pydemia/common/action_layer.o
-                0x00000000000032d6                default_layer_xor
+                0x00000000000032dc       0x38 .build/obj_ergodox_ez_pydemia/common/action_layer.o
+                0x00000000000032dc                default_layer_xor
  .text.layer_clear
-                0x000000000000330e       0x14 .build/obj_ergodox_ez_pydemia/common/action_layer.o
-                0x000000000000330e                layer_clear
+                0x0000000000003314       0x14 .build/obj_ergodox_ez_pydemia/common/action_layer.o
+                0x0000000000003314                layer_clear
  .text.layer_move
-                0x0000000000003322       0x2a .build/obj_ergodox_ez_pydemia/common/action_layer.o
-                0x0000000000003322                layer_move
+                0x0000000000003328       0x2a .build/obj_ergodox_ez_pydemia/common/action_layer.o
+                0x0000000000003328                layer_move
  .text.layer_on
-                0x000000000000334c       0x42 .build/obj_ergodox_ez_pydemia/common/action_layer.o
-                0x000000000000334c                layer_on
+                0x0000000000003352       0x42 .build/obj_ergodox_ez_pydemia/common/action_layer.o
+                0x0000000000003352                layer_on
  .text.layer_off
-                0x000000000000338e       0x4a .build/obj_ergodox_ez_pydemia/common/action_layer.o
-                0x000000000000338e                layer_off
+                0x0000000000003394       0x4a .build/obj_ergodox_ez_pydemia/common/action_layer.o
+                0x0000000000003394                layer_off
  .text.layer_invert
-                0x00000000000033d8       0x42 .build/obj_ergodox_ez_pydemia/common/action_layer.o
-                0x00000000000033d8                layer_invert
+                0x00000000000033de       0x42 .build/obj_ergodox_ez_pydemia/common/action_layer.o
+                0x00000000000033de                layer_invert
  .text.layer_or
-                0x000000000000341a       0x38 .build/obj_ergodox_ez_pydemia/common/action_layer.o
-                0x000000000000341a                layer_or
+                0x0000000000003420       0x38 .build/obj_ergodox_ez_pydemia/common/action_layer.o
+                0x0000000000003420                layer_or
  .text.layer_and
-                0x0000000000003452       0x38 .build/obj_ergodox_ez_pydemia/common/action_layer.o
-                0x0000000000003452                layer_and
+                0x0000000000003458       0x38 .build/obj_ergodox_ez_pydemia/common/action_layer.o
+                0x0000000000003458                layer_and
  .text.layer_xor
-                0x000000000000348a       0x38 .build/obj_ergodox_ez_pydemia/common/action_layer.o
-                0x000000000000348a                layer_xor
+                0x0000000000003490       0x38 .build/obj_ergodox_ez_pydemia/common/action_layer.o
+                0x0000000000003490                layer_xor
  .text.layer_debug
-                0x00000000000034c2        0x2 .build/obj_ergodox_ez_pydemia/common/action_layer.o
-                0x00000000000034c2                layer_debug
+                0x00000000000034c8        0x2 .build/obj_ergodox_ez_pydemia/common/action_layer.o
+                0x00000000000034c8                layer_debug
  .text.layer_switch_get_layer
-                0x00000000000034c4       0x7e .build/obj_ergodox_ez_pydemia/common/action_layer.o
-                0x00000000000034c4                layer_switch_get_layer
+                0x00000000000034ca       0x7e .build/obj_ergodox_ez_pydemia/common/action_layer.o
+                0x00000000000034ca                layer_switch_get_layer
  .text.layer_switch_get_action
-                0x0000000000003542       0x16 .build/obj_ergodox_ez_pydemia/common/action_layer.o
-                0x0000000000003542                layer_switch_get_action
+                0x0000000000003548       0x16 .build/obj_ergodox_ez_pydemia/common/action_layer.o
+                0x0000000000003548                layer_switch_get_action
  .text.store_or_get_action
-                0x0000000000003558        0x8 .build/obj_ergodox_ez_pydemia/common/action_layer.o
-                0x0000000000003558                store_or_get_action
+                0x000000000000355e        0x8 .build/obj_ergodox_ez_pydemia/common/action_layer.o
+                0x000000000000355e                store_or_get_action
  .text.get_oneshot_layer
-                0x0000000000003560        0xc .build/obj_ergodox_ez_pydemia/common/action_util.o
-                0x0000000000003560                get_oneshot_layer
+                0x0000000000003566        0xc .build/obj_ergodox_ez_pydemia/common/action_util.o
+                0x0000000000003566                get_oneshot_layer
  .text.get_oneshot_layer_state
-                0x000000000000356c        0x8 .build/obj_ergodox_ez_pydemia/common/action_util.o
-                0x000000000000356c                get_oneshot_layer_state
+                0x0000000000003572        0x8 .build/obj_ergodox_ez_pydemia/common/action_util.o
+                0x0000000000003572                get_oneshot_layer_state
  .text.set_oneshot_layer
-                0x0000000000003574       0x12 .build/obj_ergodox_ez_pydemia/common/action_util.o
-                0x0000000000003574                set_oneshot_layer
+                0x000000000000357a       0x12 .build/obj_ergodox_ez_pydemia/common/action_util.o
+                0x000000000000357a                set_oneshot_layer
  .text.clear_oneshot_layer_state
-                0x0000000000003586       0x2e .build/obj_ergodox_ez_pydemia/common/action_util.o
-                0x0000000000003586                clear_oneshot_layer_state
+                0x000000000000358c       0x2e .build/obj_ergodox_ez_pydemia/common/action_util.o
+                0x000000000000358c                clear_oneshot_layer_state
  .text.is_oneshot_layer_active
-                0x00000000000035b4        0xe .build/obj_ergodox_ez_pydemia/common/action_util.o
-                0x00000000000035b4                is_oneshot_layer_active
- .text.add_key  0x00000000000035c2       0x7e .build/obj_ergodox_ez_pydemia/common/action_util.o
-                0x00000000000035c2                add_key
- .text.del_key  0x0000000000003640       0x66 .build/obj_ergodox_ez_pydemia/common/action_util.o
-                0x0000000000003640                del_key
+                0x00000000000035ba        0xe .build/obj_ergodox_ez_pydemia/common/action_util.o
+                0x00000000000035ba                is_oneshot_layer_active
+ .text.add_key  0x00000000000035c8       0x7e .build/obj_ergodox_ez_pydemia/common/action_util.o
+                0x00000000000035c8                add_key
+ .text.del_key  0x0000000000003646       0x66 .build/obj_ergodox_ez_pydemia/common/action_util.o
+                0x0000000000003646                del_key
  .text.clear_keys
-                0x00000000000036a6       0x1c .build/obj_ergodox_ez_pydemia/common/action_util.o
-                0x00000000000036a6                clear_keys
+                0x00000000000036ac       0x1c .build/obj_ergodox_ez_pydemia/common/action_util.o
+                0x00000000000036ac                clear_keys
  .text.add_mods
-                0x00000000000036c2        0xc .build/obj_ergodox_ez_pydemia/common/action_util.o
-                0x00000000000036c2                add_mods
+                0x00000000000036c8        0xc .build/obj_ergodox_ez_pydemia/common/action_util.o
+                0x00000000000036c8                add_mods
  .text.del_mods
-                0x00000000000036ce        0xe .build/obj_ergodox_ez_pydemia/common/action_util.o
-                0x00000000000036ce                del_mods
+                0x00000000000036d4        0xe .build/obj_ergodox_ez_pydemia/common/action_util.o
+                0x00000000000036d4                del_mods
  .text.clear_mods
-                0x00000000000036dc        0x6 .build/obj_ergodox_ez_pydemia/common/action_util.o
-                0x00000000000036dc                clear_mods
+                0x00000000000036e2        0x6 .build/obj_ergodox_ez_pydemia/common/action_util.o
+                0x00000000000036e2                clear_mods
  .text.add_weak_mods
-                0x00000000000036e2        0xc .build/obj_ergodox_ez_pydemia/common/action_util.o
-                0x00000000000036e2                add_weak_mods
+                0x00000000000036e8        0xc .build/obj_ergodox_ez_pydemia/common/action_util.o
+                0x00000000000036e8                add_weak_mods
  .text.del_weak_mods
-                0x00000000000036ee        0xe .build/obj_ergodox_ez_pydemia/common/action_util.o
-                0x00000000000036ee                del_weak_mods
+                0x00000000000036f4        0xe .build/obj_ergodox_ez_pydemia/common/action_util.o
+                0x00000000000036f4                del_weak_mods
  .text.clear_weak_mods
-                0x00000000000036fc        0x6 .build/obj_ergodox_ez_pydemia/common/action_util.o
-                0x00000000000036fc                clear_weak_mods
+                0x0000000000003702        0x6 .build/obj_ergodox_ez_pydemia/common/action_util.o
+                0x0000000000003702                clear_weak_mods
  .text.add_macro_mods
-                0x0000000000003702        0xc .build/obj_ergodox_ez_pydemia/common/action_util.o
-                0x0000000000003702                add_macro_mods
+                0x0000000000003708        0xc .build/obj_ergodox_ez_pydemia/common/action_util.o
+                0x0000000000003708                add_macro_mods
  .text.del_macro_mods
-                0x000000000000370e        0xe .build/obj_ergodox_ez_pydemia/common/action_util.o
-                0x000000000000370e                del_macro_mods
+                0x0000000000003714        0xe .build/obj_ergodox_ez_pydemia/common/action_util.o
+                0x0000000000003714                del_macro_mods
  .text.clear_macro_mods
-                0x000000000000371c        0x6 .build/obj_ergodox_ez_pydemia/common/action_util.o
-                0x000000000000371c                clear_macro_mods
- .text.set_oneshot_mods
                 0x0000000000003722        0x6 .build/obj_ergodox_ez_pydemia/common/action_util.o
-                0x0000000000003722                set_oneshot_mods
- .text.clear_oneshot_mods
+                0x0000000000003722                clear_macro_mods
+ .text.set_oneshot_mods
                 0x0000000000003728        0x6 .build/obj_ergodox_ez_pydemia/common/action_util.o
-                0x0000000000003728                clear_oneshot_mods
+                0x0000000000003728                set_oneshot_mods
+ .text.clear_oneshot_mods
+                0x000000000000372e        0x6 .build/obj_ergodox_ez_pydemia/common/action_util.o
+                0x000000000000372e                clear_oneshot_mods
  .text.has_anykey
-                0x000000000000372e       0x22 .build/obj_ergodox_ez_pydemia/common/action_util.o
-                0x000000000000372e                has_anykey
+                0x0000000000003734       0x22 .build/obj_ergodox_ez_pydemia/common/action_util.o
+                0x0000000000003734                has_anykey
  .text.send_keyboard_report
-                0x0000000000003750       0x5e .build/obj_ergodox_ez_pydemia/common/action_util.o
-                0x0000000000003750                send_keyboard_report
- .text.biton32  0x00000000000037ae       0xa0 .build/obj_ergodox_ez_pydemia/common/util.o
-                0x00000000000037ae                biton32
+                0x0000000000003756       0x5e .build/obj_ergodox_ez_pydemia/common/action_util.o
+                0x0000000000003756                send_keyboard_report
+ .text.biton32  0x00000000000037b4       0xa0 .build/obj_ergodox_ez_pydemia/common/util.o
+                0x00000000000037b4                biton32
  .text.eeconfig_init
-                0x000000000000384e       0x34 .build/obj_ergodox_ez_pydemia/common/eeconfig.o
-                0x000000000000384e                eeconfig_init
+                0x0000000000003854       0x34 .build/obj_ergodox_ez_pydemia/common/eeconfig.o
+                0x0000000000003854                eeconfig_init
  .text.eeconfig_is_enabled
-                0x0000000000003882       0x16 .build/obj_ergodox_ez_pydemia/common/eeconfig.o
-                0x0000000000003882                eeconfig_is_enabled
+                0x0000000000003888       0x16 .build/obj_ergodox_ez_pydemia/common/eeconfig.o
+                0x0000000000003888                eeconfig_is_enabled
  .text.eeconfig_read_debug
-                0x0000000000003898        0x8 .build/obj_ergodox_ez_pydemia/common/eeconfig.o
-                0x0000000000003898                eeconfig_read_debug
+                0x000000000000389e        0x8 .build/obj_ergodox_ez_pydemia/common/eeconfig.o
+                0x000000000000389e                eeconfig_read_debug
  .text.eeconfig_read_default_layer
-                0x00000000000038a0        0x8 .build/obj_ergodox_ez_pydemia/common/eeconfig.o
-                0x00000000000038a0                eeconfig_read_default_layer
+                0x00000000000038a6        0x8 .build/obj_ergodox_ez_pydemia/common/eeconfig.o
+                0x00000000000038a6                eeconfig_read_default_layer
  .text.eeconfig_read_keymap
-                0x00000000000038a8        0x8 .build/obj_ergodox_ez_pydemia/common/eeconfig.o
-                0x00000000000038a8                eeconfig_read_keymap
+                0x00000000000038ae        0x8 .build/obj_ergodox_ez_pydemia/common/eeconfig.o
+                0x00000000000038ae                eeconfig_read_keymap
  .text.eeconfig_update_keymap
-                0x00000000000038b0        0xa .build/obj_ergodox_ez_pydemia/common/eeconfig.o
-                0x00000000000038b0                eeconfig_update_keymap
+                0x00000000000038b6        0xa .build/obj_ergodox_ez_pydemia/common/eeconfig.o
+                0x00000000000038b6                eeconfig_update_keymap
  .text.suspend_power_down
-                0x00000000000038ba       0x58 .build/obj_ergodox_ez_pydemia/common/avr/suspend.o
-                0x00000000000038ba                suspend_power_down
+                0x00000000000038c0       0x58 .build/obj_ergodox_ez_pydemia/common/avr/suspend.o
+                0x00000000000038c0                suspend_power_down
  .text.matrix_power_down
-                0x0000000000003912        0x2 .build/obj_ergodox_ez_pydemia/common/avr/suspend.o
-                0x0000000000003912                matrix_power_down
+                0x0000000000003918        0x2 .build/obj_ergodox_ez_pydemia/common/avr/suspend.o
+                0x0000000000003918                matrix_power_down
  .text.suspend_wakeup_condition
-                0x0000000000003914       0x28 .build/obj_ergodox_ez_pydemia/common/avr/suspend.o
-                0x0000000000003914                suspend_wakeup_condition
+                0x000000000000391a       0x28 .build/obj_ergodox_ez_pydemia/common/avr/suspend.o
+                0x000000000000391a                suspend_wakeup_condition
  .text.suspend_wakeup_init
-                0x000000000000393c        0xc .build/obj_ergodox_ez_pydemia/common/avr/suspend.o
-                0x000000000000393c                suspend_wakeup_init
+                0x0000000000003942        0xc .build/obj_ergodox_ez_pydemia/common/avr/suspend.o
+                0x0000000000003942                suspend_wakeup_init
  .text.__vector_12
-                0x0000000000003948       0x52 .build/obj_ergodox_ez_pydemia/common/avr/suspend.o
-                0x0000000000003948                __vector_12
+                0x000000000000394e       0x52 .build/obj_ergodox_ez_pydemia/common/avr/suspend.o
+                0x000000000000394e                __vector_12
  .text.timer_init
-                0x000000000000399a       0x12 .build/obj_ergodox_ez_pydemia/common/avr/timer.o
-                0x000000000000399a                timer_init
+                0x00000000000039a0       0x12 .build/obj_ergodox_ez_pydemia/common/avr/timer.o
+                0x00000000000039a0                timer_init
  .text.timer_read
-                0x00000000000039ac       0x18 .build/obj_ergodox_ez_pydemia/common/avr/timer.o
-                0x00000000000039ac                timer_read
+                0x00000000000039b2       0x18 .build/obj_ergodox_ez_pydemia/common/avr/timer.o
+                0x00000000000039b2                timer_read
  .text.timer_elapsed
-                0x00000000000039c4       0x54 .build/obj_ergodox_ez_pydemia/common/avr/timer.o
-                0x00000000000039c4                timer_elapsed
+                0x00000000000039ca       0x54 .build/obj_ergodox_ez_pydemia/common/avr/timer.o
+                0x00000000000039ca                timer_elapsed
  .text.__vector_21
-                0x0000000000003a18       0x4a .build/obj_ergodox_ez_pydemia/common/avr/timer.o
-                0x0000000000003a18                __vector_21
+                0x0000000000003a1e       0x4a .build/obj_ergodox_ez_pydemia/common/avr/timer.o
+                0x0000000000003a1e                __vector_21
  .text.bootloader_jump
-                0x0000000000003a62       0x44 .build/obj_ergodox_ez_pydemia/common/avr/bootloader.o
-                0x0000000000003a62                bootloader_jump
- .text.magic    0x0000000000003aa6       0x32 .build/obj_ergodox_ez_pydemia/common/magic.o
-                0x0000000000003aa6                magic
+                0x0000000000003a68       0x44 .build/obj_ergodox_ez_pydemia/common/avr/bootloader.o
+                0x0000000000003a68                bootloader_jump
+ .text.magic    0x0000000000003aac       0x32 .build/obj_ergodox_ez_pydemia/common/magic.o
+                0x0000000000003aac                magic
  .text.move_unit
-                0x0000000000003ad8       0x92 .build/obj_ergodox_ez_pydemia/common/mousekey.o
+                0x0000000000003ade       0x92 .build/obj_ergodox_ez_pydemia/common/mousekey.o
  .text.wheel_unit
-                0x0000000000003b6a       0x72 .build/obj_ergodox_ez_pydemia/common/mousekey.o
+                0x0000000000003b70       0x72 .build/obj_ergodox_ez_pydemia/common/mousekey.o
  .text.mousekey_on
-                0x0000000000003bdc       0xd0 .build/obj_ergodox_ez_pydemia/common/mousekey.o
-                0x0000000000003bdc                mousekey_on
+                0x0000000000003be2       0xd0 .build/obj_ergodox_ez_pydemia/common/mousekey.o
+                0x0000000000003be2                mousekey_on
  .text.mousekey_off
-                0x0000000000003cac      0x10a .build/obj_ergodox_ez_pydemia/common/mousekey.o
-                0x0000000000003cac                mousekey_off
+                0x0000000000003cb2      0x10a .build/obj_ergodox_ez_pydemia/common/mousekey.o
+                0x0000000000003cb2                mousekey_off
  .text.mousekey_send
-                0x0000000000003db6       0x16 .build/obj_ergodox_ez_pydemia/common/mousekey.o
-                0x0000000000003db6                mousekey_send
+                0x0000000000003dbc       0x16 .build/obj_ergodox_ez_pydemia/common/mousekey.o
+                0x0000000000003dbc                mousekey_send
  .text.mousekey_task
-                0x0000000000003dcc      0x14a .build/obj_ergodox_ez_pydemia/common/mousekey.o
-                0x0000000000003dcc                mousekey_task
+                0x0000000000003dd2      0x14a .build/obj_ergodox_ez_pydemia/common/mousekey.o
+                0x0000000000003dd2                mousekey_task
  .text.mousekey_clear
-                0x0000000000003f16       0x18 .build/obj_ergodox_ez_pydemia/common/mousekey.o
-                0x0000000000003f16                mousekey_clear
+                0x0000000000003f1c       0x18 .build/obj_ergodox_ez_pydemia/common/mousekey.o
+                0x0000000000003f1c                mousekey_clear
  .text.mousekey_param_inc
-                0x0000000000003f2e       0xec .build/obj_ergodox_ez_pydemia/common/command.o
+                0x0000000000003f34       0xec .build/obj_ergodox_ez_pydemia/common/command.o
  .text.mousekey_param_dec
-                0x000000000000401a       0xa0 .build/obj_ergodox_ez_pydemia/common/command.o
+                0x0000000000004020       0xa0 .build/obj_ergodox_ez_pydemia/common/command.o
  .text.switch_default_layer
-                0x00000000000040ba       0x2e .build/obj_ergodox_ez_pydemia/common/command.o
+                0x00000000000040c0       0x2e .build/obj_ergodox_ez_pydemia/common/command.o
  .text.command_common
-                0x00000000000040e8      0x142 .build/obj_ergodox_ez_pydemia/common/command.o
+                0x00000000000040ee      0x142 .build/obj_ergodox_ez_pydemia/common/command.o
  .text.command_console_extra
-                0x000000000000422a        0x4 .build/obj_ergodox_ez_pydemia/common/command.o
-                0x000000000000422a                command_console_extra
+                0x0000000000004230        0x4 .build/obj_ergodox_ez_pydemia/common/command.o
+                0x0000000000004230                command_console_extra
  .text.command_extra
-                0x000000000000422e        0x4 .build/obj_ergodox_ez_pydemia/common/command.o
-                0x000000000000422e                command_extra
+                0x0000000000004234        0x4 .build/obj_ergodox_ez_pydemia/common/command.o
+                0x0000000000004234                command_extra
  .text.numkey2num
-                0x0000000000004232       0x16 .build/obj_ergodox_ez_pydemia/common/command.o
-                0x0000000000004232                numkey2num
+                0x0000000000004238       0x16 .build/obj_ergodox_ez_pydemia/common/command.o
+                0x0000000000004238                numkey2num
  .text.command_proc
-                0x0000000000004248      0x134 .build/obj_ergodox_ez_pydemia/common/command.o
-                0x0000000000004248                command_proc
+                0x000000000000424e      0x134 .build/obj_ergodox_ez_pydemia/common/command.o
+                0x000000000000424e                command_proc
  .text.keyboard_leds
-                0x000000000000437c        0x6 .build/obj_ergodox_ez_pydemia/lufa.o
+                0x0000000000004382        0x6 .build/obj_ergodox_ez_pydemia/lufa.o
  .text.send_consumer
-                0x0000000000004382       0x68 .build/obj_ergodox_ez_pydemia/lufa.o
+                0x0000000000004388       0x68 .build/obj_ergodox_ez_pydemia/lufa.o
  .text.send_system
-                0x00000000000043ea       0x68 .build/obj_ergodox_ez_pydemia/lufa.o
+                0x00000000000043f0       0x68 .build/obj_ergodox_ez_pydemia/lufa.o
  .text.send_mouse
-                0x0000000000004452       0x46 .build/obj_ergodox_ez_pydemia/lufa.o
+                0x0000000000004458       0x46 .build/obj_ergodox_ez_pydemia/lufa.o
  .text.send_keyboard
-                0x0000000000004498       0xa2 .build/obj_ergodox_ez_pydemia/lufa.o
+                0x000000000000449e       0xa2 .build/obj_ergodox_ez_pydemia/lufa.o
  .text.EVENT_USB_Device_Connect
-                0x000000000000453a       0x1c .build/obj_ergodox_ez_pydemia/lufa.o
-                0x000000000000453a                EVENT_USB_Device_Connect
+                0x0000000000004540       0x1c .build/obj_ergodox_ez_pydemia/lufa.o
+                0x0000000000004540                EVENT_USB_Device_Connect
  .text.EVENT_USB_Device_Disconnect
-                0x0000000000004556        0x6 .build/obj_ergodox_ez_pydemia/lufa.o
-                0x0000000000004556                EVENT_USB_Device_Disconnect
+                0x000000000000455c        0x6 .build/obj_ergodox_ez_pydemia/lufa.o
+                0x000000000000455c                EVENT_USB_Device_Disconnect
  .text.EVENT_USB_Device_Reset
-                0x000000000000455c        0x2 .build/obj_ergodox_ez_pydemia/lufa.o
-                0x000000000000455c                EVENT_USB_Device_Reset
+                0x0000000000004562        0x2 .build/obj_ergodox_ez_pydemia/lufa.o
+                0x0000000000004562                EVENT_USB_Device_Reset
  .text.EVENT_USB_Device_Suspend
-                0x000000000000455e        0x2 .build/obj_ergodox_ez_pydemia/lufa.o
-                0x000000000000455e                EVENT_USB_Device_Suspend
+                0x0000000000004564        0x2 .build/obj_ergodox_ez_pydemia/lufa.o
+                0x0000000000004564                EVENT_USB_Device_Suspend
  .text.EVENT_USB_Device_WakeUp
-                0x0000000000004560        0x4 .build/obj_ergodox_ez_pydemia/lufa.o
-                0x0000000000004560                EVENT_USB_Device_WakeUp
+                0x0000000000004566        0x4 .build/obj_ergodox_ez_pydemia/lufa.o
+                0x0000000000004566                EVENT_USB_Device_WakeUp
  .text.EVENT_USB_Device_ConfigurationChanged
-                0x0000000000004564       0x28 .build/obj_ergodox_ez_pydemia/lufa.o
-                0x0000000000004564                EVENT_USB_Device_ConfigurationChanged
+                0x000000000000456a       0x28 .build/obj_ergodox_ez_pydemia/lufa.o
+                0x000000000000456a                EVENT_USB_Device_ConfigurationChanged
  .text.EVENT_USB_Device_ControlRequest
-                0x000000000000458c      0x164 .build/obj_ergodox_ez_pydemia/lufa.o
-                0x000000000000458c                EVENT_USB_Device_ControlRequest
+                0x0000000000004592      0x164 .build/obj_ergodox_ez_pydemia/lufa.o
+                0x0000000000004592                EVENT_USB_Device_ControlRequest
  .text.startup.main
-                0x00000000000046f0       0x76 .build/obj_ergodox_ez_pydemia/lufa.o
-                0x00000000000046f0                main
+                0x00000000000046f6       0x76 .build/obj_ergodox_ez_pydemia/lufa.o
+                0x00000000000046f6                main
  .text.CALLBACK_USB_GetDescriptor
-                0x0000000000004766       0xac .build/obj_ergodox_ez_pydemia/descriptor.o
-                0x0000000000004766                CALLBACK_USB_GetDescriptor
+                0x000000000000476c       0xac .build/obj_ergodox_ez_pydemia/descriptor.o
+                0x000000000000476c                CALLBACK_USB_GetDescriptor
  .text.USB_Device_SendRemoteWakeup
-                0x0000000000004812       0x2c .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.o
-                0x0000000000004812                USB_Device_SendRemoteWakeup
+                0x0000000000004818       0x2c .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.o
+                0x0000000000004818                USB_Device_SendRemoteWakeup
  .text.Endpoint_Write_Stream_LE
-                0x000000000000483e       0x96 .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
-                0x000000000000483e                Endpoint_Write_Stream_LE
+                0x0000000000004844       0x96 .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
+                0x0000000000004844                Endpoint_Write_Stream_LE
  .text.Endpoint_Write_Control_Stream_LE
-                0x00000000000048d4       0xbc .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
-                0x00000000000048d4                Endpoint_Write_Control_Stream_LE
+                0x00000000000048da       0xbc .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
+                0x00000000000048da                Endpoint_Write_Control_Stream_LE
  .text.Endpoint_Write_Control_PStream_LE
-                0x0000000000004990       0xc2 .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
-                0x0000000000004990                Endpoint_Write_Control_PStream_LE
+                0x0000000000004996       0xc2 .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
+                0x0000000000004996                Endpoint_Write_Control_PStream_LE
  .text.Endpoint_ConfigureEndpoint_Prv
-                0x0000000000004a52       0x6a .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
-                0x0000000000004a52                Endpoint_ConfigureEndpoint_Prv
+                0x0000000000004a58       0x6a .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
+                0x0000000000004a58                Endpoint_ConfigureEndpoint_Prv
  .text.Endpoint_ClearStatusStage
-                0x0000000000004abc       0x3e .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
-                0x0000000000004abc                Endpoint_ClearStatusStage
+                0x0000000000004ac2       0x3e .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
+                0x0000000000004ac2                Endpoint_ClearStatusStage
  .text.Endpoint_WaitUntilReady
-                0x0000000000004afa       0x66 .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
-                0x0000000000004afa                Endpoint_WaitUntilReady
+                0x0000000000004b00       0x66 .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
+                0x0000000000004b00                Endpoint_WaitUntilReady
  .text.USB_Disable
-                0x0000000000004b60       0x34 .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
-                0x0000000000004b60                USB_Disable
+                0x0000000000004b66       0x34 .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
+                0x0000000000004b66                USB_Disable
  .text.USB_ResetInterface
-                0x0000000000004b94       0x86 .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
-                0x0000000000004b94                USB_ResetInterface
+                0x0000000000004b9a       0x86 .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
+                0x0000000000004b9a                USB_ResetInterface
  .text.USB_Init
-                0x0000000000004c1a       0x22 .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
-                0x0000000000004c1a                USB_Init
+                0x0000000000004c20       0x22 .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
+                0x0000000000004c20                USB_Init
  .text.USB_INT_DisableAllInterrupts
-                0x0000000000004c3c       0x10 .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
-                0x0000000000004c3c                USB_INT_DisableAllInterrupts
+                0x0000000000004c42       0x10 .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+                0x0000000000004c42                USB_INT_DisableAllInterrupts
  .text.USB_INT_ClearAllInterrupts
-                0x0000000000004c4c        0xa .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
-                0x0000000000004c4c                USB_INT_ClearAllInterrupts
+                0x0000000000004c52        0xa .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+                0x0000000000004c52                USB_INT_ClearAllInterrupts
  .text.__vector_10
-                0x0000000000004c56      0x1a4 .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
-                0x0000000000004c56                __vector_10
+                0x0000000000004c5c      0x1a4 .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+                0x0000000000004c5c                __vector_10
  .text.__vector_11
-                0x0000000000004dfa       0x88 .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
-                0x0000000000004dfa                __vector_11
+                0x0000000000004e00       0x88 .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+                0x0000000000004e00                __vector_11
  .text.USB_Device_ProcessControlRequest
-                0x0000000000004e82      0x2ac .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.o
-                0x0000000000004e82                USB_Device_ProcessControlRequest
+                0x0000000000004e88      0x2ac .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.o
+                0x0000000000004e88                USB_Device_ProcessControlRequest
  .text.USB_Event_Stub
-                0x000000000000512e        0x2 .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.o
-                0x000000000000512e                USB_Event_Stub
-                0x000000000000512e                EVENT_USB_Device_StartOfFrame
+                0x0000000000005134        0x2 .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.o
+                0x0000000000005134                USB_Event_Stub
+                0x0000000000005134                EVENT_USB_Device_StartOfFrame
  .text.USB_USBTask
-                0x0000000000005130       0x36 .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
-                0x0000000000005130                USB_USBTask
+                0x0000000000005136       0x36 .build/obj_ergodox_ez_pydemia/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
+                0x0000000000005136                USB_USBTask
  .text.avr-libc.fplib
-                0x0000000000005166        0xe /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fixsfsi.o)
-                0x0000000000005166                __fixsfsi
+                0x000000000000516c        0xe /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fixsfsi.o)
+                0x000000000000516c                __fixsfsi
  .text.avr-libc.fplib
-                0x0000000000005174       0x5e /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fixunssfsi.o)
-                0x0000000000005174                __fixunssfsi
+                0x000000000000517a       0x5e /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fixunssfsi.o)
+                0x000000000000517a                __fixunssfsi
  .text.avr-libc.fplib
-                0x00000000000051d2       0x7a /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(floatsisf.o)
-                0x00000000000051d2                __floatunsisf
-                0x00000000000051d6                __floatsisf
+                0x00000000000051d8       0x7a /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(floatsisf.o)
+                0x00000000000051d8                __floatunsisf
+                0x00000000000051dc                __floatsisf
  .text.avr-libc.fplib
-                0x000000000000524c       0x44 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fp_split3.o)
-                0x000000000000524c                __fp_split3
-                0x000000000000525c                __fp_splitA
+                0x0000000000005252       0x44 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fp_split3.o)
+                0x0000000000005252                __fp_split3
+                0x0000000000005262                __fp_splitA
  .text.avr-libc.fplib
-                0x0000000000005290        0xe /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fp_zero.o)
-                0x0000000000005290                __fp_zero
-                0x0000000000005292                __fp_szero
+                0x0000000000005296        0xe /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fp_zero.o)
+                0x0000000000005296                __fp_zero
+                0x0000000000005298                __fp_szero
  .text.avr-libc.fplib
-                0x000000000000529e        0x8 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(mulsf3.o)
-                0x000000000000529e                __mulsf3
+                0x00000000000052a4        0x8 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(mulsf3.o)
+                0x00000000000052a4                __mulsf3
  .text.avr-libc.fplib
-                0x00000000000052a6       0xd2 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(mulsf3x.o)
-                0x00000000000052c4                __mulsf3x
-                0x00000000000052ca                __mulsf3_pse
+                0x00000000000052ac       0xd2 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(mulsf3x.o)
+                0x00000000000052ca                __mulsf3x
+                0x00000000000052d0                __mulsf3_pse
  .text.avr-libc.fplib
-                0x0000000000005378        0xc /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fp_inf.o)
-                0x0000000000005378                __fp_inf
+                0x000000000000537e        0xc /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fp_inf.o)
+                0x000000000000537e                __fp_inf
  .text.avr-libc.fplib
-                0x0000000000005384        0x6 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fp_nan.o)
-                0x0000000000005384                __fp_nan
+                0x000000000000538a        0x6 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fp_nan.o)
+                0x000000000000538a                __fp_nan
  .text.avr-libc.fplib
-                0x000000000000538a        0xe /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fp_pscA.o)
-                0x000000000000538a                __fp_pscA
+                0x0000000000005390        0xe /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fp_pscA.o)
+                0x0000000000005390                __fp_pscA
  .text.avr-libc.fplib
-                0x0000000000005398        0xe /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fp_pscB.o)
-                0x0000000000005398                __fp_pscB
+                0x000000000000539e        0xe /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fp_pscB.o)
+                0x000000000000539e                __fp_pscB
  .text.avr-libc.fplib
-                0x00000000000053a6       0x22 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fp_round.o)
-                0x00000000000053a6                __fp_round
+                0x00000000000053ac       0x22 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fp_round.o)
+                0x00000000000053ac                __fp_round
  .text.libgcc.div
-                0x00000000000053c8       0x28 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodhi4.o)
-                0x00000000000053c8                __divmodhi4
-                0x00000000000053c8                _div
- .text.libgcc   0x00000000000053f0        0xc /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
-                0x00000000000053f0                __tablejump2__
+                0x00000000000053ce       0x28 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodhi4.o)
+                0x00000000000053ce                __divmodhi4
+                0x00000000000053ce                _div
+ .text.libgcc   0x00000000000053f6        0xc /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
+                0x00000000000053f6                __tablejump2__
  .text.libgcc.div
-                0x00000000000053fc       0x28 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodhi4.o)
-                0x00000000000053fc                __udivmodhi4
+                0x0000000000005402       0x28 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodhi4.o)
+                0x0000000000005402                __udivmodhi4
  .text.avr-libc
-                0x0000000000005424       0x10 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libatmega32u4.a(eerd_byte.o)
-                0x0000000000005424                eeprom_read_byte
+                0x000000000000542a       0x10 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libatmega32u4.a(eerd_byte.o)
+                0x000000000000542a                eeprom_read_byte
  .text.avr-libc
-                0x0000000000005434        0xc /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libatmega32u4.a(eerd_word.o)
-                0x0000000000005434                eeprom_read_word
+                0x000000000000543a        0xc /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libatmega32u4.a(eerd_word.o)
+                0x000000000000543a                eeprom_read_word
  .text.avr-libc
-                0x0000000000005440       0x24 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libatmega32u4.a(eeupd_byte.o)
-                0x0000000000005440                eeprom_update_byte
-                0x0000000000005442                eeprom_update_r18
+                0x0000000000005446       0x24 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libatmega32u4.a(eeupd_byte.o)
+                0x0000000000005446                eeprom_update_byte
+                0x0000000000005448                eeprom_update_r18
  .text.avr-libc
-                0x0000000000005464        0xc /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libatmega32u4.a(eeupd_word.o)
-                0x0000000000005464                eeprom_update_word
+                0x000000000000546a        0xc /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libatmega32u4.a(eeupd_word.o)
+                0x000000000000546a                eeprom_update_word
  .text.avr-libc
-                0x0000000000005470       0x20 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libatmega32u4.a(eerd_block.o)
-                0x0000000000005470                eeprom_read_block
-                0x0000000000005474                eeprom_read_blraw
-                0x0000000000005490                . = ALIGN (0x2)
+                0x0000000000005476       0x20 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libatmega32u4.a(eerd_block.o)
+                0x0000000000005476                eeprom_read_block
+                0x000000000000547a                eeprom_read_blraw
+                0x0000000000005496                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000000000005490        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
-                0x0000000000005490                exit
-                0x0000000000005490                _exit
+ .fini9         0x0000000000005496        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+                0x0000000000005496                exit
+                0x0000000000005496                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -1672,11 +1672,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000000000005490        0x4 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+ .fini0         0x0000000000005496        0x4 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
  *(.fini0)
-                0x0000000000005494                _etext = .
+                0x000000000000549a                _etext = .
 
-.data           0x0000000000800100      0x27c load address 0x0000000000005494
+.data           0x0000000000800100      0x27c load address 0x000000000000549a
                 0x0000000000800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -1884,8 +1884,8 @@ END GROUP
                 0x000000000080046f                USB_DeviceState
                 0x0000000000800470                USB_ControlRequest
                 0x0000000000800478                PROVIDE (__bss_end, .)
-                0x0000000000005494                __data_load_start = LOADADDR (.data)
-                0x0000000000005710                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000000000000549a                __data_load_start = LOADADDR (.data)
+                0x0000000000005716                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x0000000000800478        0x4
                 [!provide]                        PROVIDE (__noinit_start, .)

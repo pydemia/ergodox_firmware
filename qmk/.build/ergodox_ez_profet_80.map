@@ -751,7 +751,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000     0x484e
+.text           0x0000000000000000     0x4854
  *(.vectors)
  .vectors       0x0000000000000000       0xac /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32u4.o
                 0x0000000000000000                __vectors
@@ -776,77 +776,77 @@ END GROUP
  *libc.a:*(.progmem.data)
  *(.progmem*)
  .progmem.data.__c.5379
-                0x000000000000014a       0x1b .build/obj_ergodox_ez_profet_80/keyboards/ergodox/ez/keymaps/profet_80/keymap.o
+                0x000000000000014a       0x21 .build/obj_ergodox_ez_profet_80/keyboards/ergodox/ez/keymaps/profet_80/keymap.o
  .progmem.data.fn_actions
-                0x0000000000000165        0x4 .build/obj_ergodox_ez_profet_80/keyboards/ergodox/ez/keymaps/profet_80/keymap.o
-                0x0000000000000165                fn_actions
+                0x000000000000016b        0x4 .build/obj_ergodox_ez_profet_80/keyboards/ergodox/ez/keymaps/profet_80/keymap.o
+                0x000000000000016b                fn_actions
  .progmem.data.keymaps
-                0x0000000000000169      0x1f8 .build/obj_ergodox_ez_profet_80/keyboards/ergodox/ez/keymaps/profet_80/keymap.o
-                0x0000000000000169                keymaps
+                0x000000000000016f      0x1f8 .build/obj_ergodox_ez_profet_80/keyboards/ergodox/ez/keymaps/profet_80/keymap.o
+                0x000000000000016f                keymaps
  .progmem.data.ascii_to_qwerty_keycode_lut
-                0x0000000000000361       0x80 .build/obj_ergodox_ez_profet_80/quantum/quantum.o
-                0x0000000000000361                ascii_to_qwerty_keycode_lut
+                0x0000000000000367       0x80 .build/obj_ergodox_ez_profet_80/quantum/quantum.o
+                0x0000000000000367                ascii_to_qwerty_keycode_lut
  .progmem.data.ascii_to_qwerty_shift_lut
-                0x00000000000003e1       0x80 .build/obj_ergodox_ez_profet_80/quantum/quantum.o
-                0x00000000000003e1                ascii_to_qwerty_shift_lut
+                0x00000000000003e7       0x80 .build/obj_ergodox_ez_profet_80/quantum/quantum.o
+                0x00000000000003e7                ascii_to_qwerty_shift_lut
  .progmem.data.ProductString
-                0x0000000000000461       0x18 .build/obj_ergodox_ez_profet_80/descriptor.o
-                0x0000000000000461                ProductString
+                0x0000000000000467       0x18 .build/obj_ergodox_ez_profet_80/descriptor.o
+                0x0000000000000467                ProductString
  .progmem.data.ManufacturerString
-                0x0000000000000479       0x18 .build/obj_ergodox_ez_profet_80/descriptor.o
-                0x0000000000000479                ManufacturerString
+                0x000000000000047f       0x18 .build/obj_ergodox_ez_profet_80/descriptor.o
+                0x000000000000047f                ManufacturerString
  .progmem.data.LanguageString
-                0x0000000000000491        0x4 .build/obj_ergodox_ez_profet_80/descriptor.o
-                0x0000000000000491                LanguageString
+                0x0000000000000497        0x4 .build/obj_ergodox_ez_profet_80/descriptor.o
+                0x0000000000000497                LanguageString
  .progmem.data.ConfigurationDescriptor
-                0x0000000000000495       0x6d .build/obj_ergodox_ez_profet_80/descriptor.o
-                0x0000000000000495                ConfigurationDescriptor
+                0x000000000000049b       0x6d .build/obj_ergodox_ez_profet_80/descriptor.o
+                0x000000000000049b                ConfigurationDescriptor
  .progmem.data.DeviceDescriptor
-                0x0000000000000502       0x12 .build/obj_ergodox_ez_profet_80/descriptor.o
-                0x0000000000000502                DeviceDescriptor
+                0x0000000000000508       0x12 .build/obj_ergodox_ez_profet_80/descriptor.o
+                0x0000000000000508                DeviceDescriptor
  .progmem.data.NKROReport
-                0x0000000000000514       0x39 .build/obj_ergodox_ez_profet_80/descriptor.o
-                0x0000000000000514                NKROReport
+                0x000000000000051a       0x39 .build/obj_ergodox_ez_profet_80/descriptor.o
+                0x000000000000051a                NKROReport
  .progmem.data.ExtrakeyReport
-                0x000000000000054d       0x36 .build/obj_ergodox_ez_profet_80/descriptor.o
-                0x000000000000054d                ExtrakeyReport
+                0x0000000000000553       0x36 .build/obj_ergodox_ez_profet_80/descriptor.o
+                0x0000000000000553                ExtrakeyReport
  .progmem.data.MouseReport
-                0x0000000000000583       0x4d .build/obj_ergodox_ez_profet_80/descriptor.o
-                0x0000000000000583                MouseReport
+                0x0000000000000589       0x4d .build/obj_ergodox_ez_profet_80/descriptor.o
+                0x0000000000000589                MouseReport
  .progmem.data.KeyboardReport
-                0x00000000000005d0       0x40 .build/obj_ergodox_ez_profet_80/descriptor.o
-                0x00000000000005d0                KeyboardReport
-                0x0000000000000610                . = ALIGN (0x2)
+                0x00000000000005d6       0x40 .build/obj_ergodox_ez_profet_80/descriptor.o
+                0x00000000000005d6                KeyboardReport
+                0x0000000000000616                . = ALIGN (0x2)
  *(.jumptables)
  *(.jumptables*)
  *(.lowtext)
  *(.lowtext*)
-                0x0000000000000610                __ctors_start = .
+                0x0000000000000616                __ctors_start = .
  *(.ctors)
-                0x0000000000000610                __ctors_end = .
-                0x0000000000000610                __dtors_start = .
+                0x0000000000000616                __ctors_end = .
+                0x0000000000000616                __dtors_start = .
  *(.dtors)
-                0x0000000000000610                __dtors_end = .
+                0x0000000000000616                __dtors_end = .
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x0000000000000610        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32u4.o
-                0x0000000000000610                __init
+ .init0         0x0000000000000616        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32u4.o
+                0x0000000000000616                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x0000000000000610        0xc /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32u4.o
+ .init2         0x0000000000000616        0xc /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32u4.o
  *(.init2)
  *(.init3)
- .init3         0x000000000000061c       0x54 .build/obj_ergodox_ez_profet_80/common/avr/bootloader.o
-                0x000000000000061c                bootloader_jump_after_watchdog_reset
+ .init3         0x0000000000000622       0x54 .build/obj_ergodox_ez_profet_80/common/avr/bootloader.o
+                0x0000000000000622                bootloader_jump_after_watchdog_reset
  *(.init3)
  *(.init4)
- .init4         0x0000000000000670       0x16 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
-                0x0000000000000670                __do_copy_data
- .init4         0x0000000000000686       0x10 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
-                0x0000000000000686                __do_clear_bss
+ .init4         0x0000000000000676       0x16 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+                0x0000000000000676                __do_copy_data
+ .init4         0x000000000000068c       0x10 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
+                0x000000000000068c                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -857,614 +857,614 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x0000000000000696        0x8 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32u4.o
+ .init9         0x000000000000069c        0x8 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32u4.o
  *(.init9)
  *(.text)
- .text          0x000000000000069e        0x4 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32u4.o
-                0x000000000000069e                __vector_38
-                0x000000000000069e                __vector_22
-                0x000000000000069e                __vector_28
-                0x000000000000069e                __vector_1
-                0x000000000000069e                __vector_32
-                0x000000000000069e                __vector_34
-                0x000000000000069e                __vector_24
-                0x000000000000069e                __bad_interrupt
-                0x000000000000069e                __vector_6
-                0x000000000000069e                __vector_31
-                0x000000000000069e                __vector_35
-                0x000000000000069e                __vector_39
-                0x000000000000069e                __vector_3
-                0x000000000000069e                __vector_23
-                0x000000000000069e                __vector_30
-                0x000000000000069e                __vector_25
-                0x000000000000069e                __vector_13
-                0x000000000000069e                __vector_17
-                0x000000000000069e                __vector_19
-                0x000000000000069e                __vector_7
-                0x000000000000069e                __vector_41
-                0x000000000000069e                __vector_27
-                0x000000000000069e                __vector_5
-                0x000000000000069e                __vector_33
-                0x000000000000069e                __vector_37
-                0x000000000000069e                __vector_4
-                0x000000000000069e                __vector_9
-                0x000000000000069e                __vector_2
-                0x000000000000069e                __vector_15
-                0x000000000000069e                __vector_36
-                0x000000000000069e                __vector_29
-                0x000000000000069e                __vector_40
-                0x000000000000069e                __vector_8
-                0x000000000000069e                __vector_26
-                0x000000000000069e                __vector_14
-                0x000000000000069e                __vector_16
-                0x000000000000069e                __vector_18
-                0x000000000000069e                __vector_20
-                0x000000000000069e                __vector_42
-                0x00000000000006a2                . = ALIGN (0x2)
+ .text          0x00000000000006a4        0x4 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32u4.o
+                0x00000000000006a4                __vector_38
+                0x00000000000006a4                __vector_22
+                0x00000000000006a4                __vector_28
+                0x00000000000006a4                __vector_1
+                0x00000000000006a4                __vector_32
+                0x00000000000006a4                __vector_34
+                0x00000000000006a4                __vector_24
+                0x00000000000006a4                __bad_interrupt
+                0x00000000000006a4                __vector_6
+                0x00000000000006a4                __vector_31
+                0x00000000000006a4                __vector_35
+                0x00000000000006a4                __vector_39
+                0x00000000000006a4                __vector_3
+                0x00000000000006a4                __vector_23
+                0x00000000000006a4                __vector_30
+                0x00000000000006a4                __vector_25
+                0x00000000000006a4                __vector_13
+                0x00000000000006a4                __vector_17
+                0x00000000000006a4                __vector_19
+                0x00000000000006a4                __vector_7
+                0x00000000000006a4                __vector_41
+                0x00000000000006a4                __vector_27
+                0x00000000000006a4                __vector_5
+                0x00000000000006a4                __vector_33
+                0x00000000000006a4                __vector_37
+                0x00000000000006a4                __vector_4
+                0x00000000000006a4                __vector_9
+                0x00000000000006a4                __vector_2
+                0x00000000000006a4                __vector_15
+                0x00000000000006a4                __vector_36
+                0x00000000000006a4                __vector_29
+                0x00000000000006a4                __vector_40
+                0x00000000000006a4                __vector_8
+                0x00000000000006a4                __vector_26
+                0x00000000000006a4                __vector_14
+                0x00000000000006a4                __vector_16
+                0x00000000000006a4                __vector_18
+                0x00000000000006a4                __vector_20
+                0x00000000000006a4                __vector_42
+                0x00000000000006a8                . = ALIGN (0x2)
  *(.text.*)
  .text.i2c_init
-                0x00000000000006a2        0xc .build/obj_ergodox_ez_profet_80/twimaster.o
-                0x00000000000006a2                i2c_init
+                0x00000000000006a8        0xc .build/obj_ergodox_ez_profet_80/twimaster.o
+                0x00000000000006a8                i2c_init
  .text.i2c_start
-                0x00000000000006ae       0x44 .build/obj_ergodox_ez_profet_80/twimaster.o
-                0x00000000000006ae                i2c_start
+                0x00000000000006b4       0x44 .build/obj_ergodox_ez_profet_80/twimaster.o
+                0x00000000000006b4                i2c_start
  .text.i2c_stop
-                0x00000000000006f2       0x10 .build/obj_ergodox_ez_profet_80/twimaster.o
-                0x00000000000006f2                i2c_stop
+                0x00000000000006f8       0x10 .build/obj_ergodox_ez_profet_80/twimaster.o
+                0x00000000000006f8                i2c_stop
  .text.i2c_write
-                0x0000000000000702       0x22 .build/obj_ergodox_ez_profet_80/twimaster.o
-                0x0000000000000702                i2c_write
+                0x0000000000000708       0x22 .build/obj_ergodox_ez_profet_80/twimaster.o
+                0x0000000000000708                i2c_write
  .text.i2c_readNak
-                0x0000000000000724       0x14 .build/obj_ergodox_ez_profet_80/twimaster.o
-                0x0000000000000724                i2c_readNak
+                0x000000000000072a       0x14 .build/obj_ergodox_ez_profet_80/twimaster.o
+                0x000000000000072a                i2c_readNak
  .text.init_cols
-                0x0000000000000738        0xe .build/obj_ergodox_ez_profet_80/matrix.o
+                0x000000000000073e        0xe .build/obj_ergodox_ez_profet_80/matrix.o
  .text.unselect_rows
-                0x0000000000000746       0x50 .build/obj_ergodox_ez_profet_80/matrix.o
+                0x000000000000074c       0x50 .build/obj_ergodox_ez_profet_80/matrix.o
  .text.matrix_scan_kb
-                0x0000000000000796        0x4 .build/obj_ergodox_ez_profet_80/matrix.o
-                0x0000000000000796                matrix_scan_kb
+                0x000000000000079c        0x4 .build/obj_ergodox_ez_profet_80/matrix.o
+                0x000000000000079c                matrix_scan_kb
  .text.matrix_init
-                0x000000000000079a       0x28 .build/obj_ergodox_ez_profet_80/matrix.o
-                0x000000000000079a                matrix_init
+                0x00000000000007a0       0x28 .build/obj_ergodox_ez_profet_80/matrix.o
+                0x00000000000007a0                matrix_init
  .text.matrix_power_up
-                0x00000000000007c2       0x26 .build/obj_ergodox_ez_profet_80/matrix.o
-                0x00000000000007c2                matrix_power_up
+                0x00000000000007c8       0x26 .build/obj_ergodox_ez_profet_80/matrix.o
+                0x00000000000007c8                matrix_power_up
  .text.matrix_scan
-                0x00000000000007e8      0x1f0 .build/obj_ergodox_ez_profet_80/matrix.o
-                0x00000000000007e8                matrix_scan
+                0x00000000000007ee      0x1f0 .build/obj_ergodox_ez_profet_80/matrix.o
+                0x00000000000007ee                matrix_scan
  .text.matrix_get_row
-                0x00000000000009d8        0xc .build/obj_ergodox_ez_profet_80/matrix.o
-                0x00000000000009d8                matrix_get_row
+                0x00000000000009de        0xc .build/obj_ergodox_ez_profet_80/matrix.o
+                0x00000000000009de                matrix_get_row
  .text.matrix_print
-                0x00000000000009e4        0x2 .build/obj_ergodox_ez_profet_80/matrix.o
-                0x00000000000009e4                matrix_print
+                0x00000000000009ea        0x2 .build/obj_ergodox_ez_profet_80/matrix.o
+                0x00000000000009ea                matrix_print
  .text.action_get_macro
-                0x00000000000009e6       0x1a .build/obj_ergodox_ez_profet_80/keyboards/ergodox/ez/keymaps/profet_80/keymap.o
-                0x00000000000009e6                action_get_macro
+                0x00000000000009ec       0x1a .build/obj_ergodox_ez_profet_80/keyboards/ergodox/ez/keymaps/profet_80/keymap.o
+                0x00000000000009ec                action_get_macro
  .text.matrix_init_user
-                0x0000000000000a00        0x2 .build/obj_ergodox_ez_profet_80/keyboards/ergodox/ez/keymaps/profet_80/keymap.o
-                0x0000000000000a00                matrix_init_user
+                0x0000000000000a06        0x2 .build/obj_ergodox_ez_profet_80/keyboards/ergodox/ez/keymaps/profet_80/keymap.o
+                0x0000000000000a06                matrix_init_user
  .text.matrix_scan_user
-                0x0000000000000a02       0x3a .build/obj_ergodox_ez_profet_80/keyboards/ergodox/ez/keymaps/profet_80/keymap.o
-                0x0000000000000a02                matrix_scan_user
+                0x0000000000000a08       0x3a .build/obj_ergodox_ez_profet_80/keyboards/ergodox/ez/keymaps/profet_80/keymap.o
+                0x0000000000000a08                matrix_scan_user
  .text.process_action_kb
-                0x0000000000000a3c        0x4 .build/obj_ergodox_ez_profet_80/quantum/quantum.o
-                0x0000000000000a3c                process_action_kb
+                0x0000000000000a42        0x4 .build/obj_ergodox_ez_profet_80/quantum/quantum.o
+                0x0000000000000a42                process_action_kb
  .text.process_record_user
-                0x0000000000000a40        0x4 .build/obj_ergodox_ez_profet_80/quantum/quantum.o
-                0x0000000000000a40                process_record_user
+                0x0000000000000a46        0x4 .build/obj_ergodox_ez_profet_80/quantum/quantum.o
+                0x0000000000000a46                process_record_user
  .text.process_record_kb
-                0x0000000000000a44        0x4 .build/obj_ergodox_ez_profet_80/quantum/quantum.o
-                0x0000000000000a44                process_record_kb
+                0x0000000000000a4a        0x4 .build/obj_ergodox_ez_profet_80/quantum/quantum.o
+                0x0000000000000a4a                process_record_kb
  .text.reset_keyboard
-                0x0000000000000a48       0x1a .build/obj_ergodox_ez_profet_80/quantum/quantum.o
-                0x0000000000000a48                reset_keyboard
+                0x0000000000000a4e       0x1a .build/obj_ergodox_ez_profet_80/quantum/quantum.o
+                0x0000000000000a4e                reset_keyboard
  .text.process_record_quantum
-                0x0000000000000a62      0x1b8 .build/obj_ergodox_ez_profet_80/quantum/quantum.o
-                0x0000000000000a62                process_record_quantum
+                0x0000000000000a68      0x1b8 .build/obj_ergodox_ez_profet_80/quantum/quantum.o
+                0x0000000000000a68                process_record_quantum
  .text.send_string
-                0x0000000000000c1a       0x56 .build/obj_ergodox_ez_profet_80/quantum/quantum.o
-                0x0000000000000c1a                send_string
+                0x0000000000000c20       0x56 .build/obj_ergodox_ez_profet_80/quantum/quantum.o
+                0x0000000000000c20                send_string
  .text.matrix_scan_quantum
-                0x0000000000000c70        0x4 .build/obj_ergodox_ez_profet_80/quantum/quantum.o
-                0x0000000000000c70                matrix_scan_quantum
- .text.led_set_user
-                0x0000000000000c74        0x2 .build/obj_ergodox_ez_profet_80/quantum/quantum.o
-                0x0000000000000c74                led_set_user
- .text.led_set_kb
                 0x0000000000000c76        0x4 .build/obj_ergodox_ez_profet_80/quantum/quantum.o
-                0x0000000000000c76                led_set_kb
- .text.led_set  0x0000000000000c7a        0x4 .build/obj_ergodox_ez_profet_80/quantum/quantum.o
-                0x0000000000000c7a                led_set
+                0x0000000000000c76                matrix_scan_quantum
+ .text.led_set_user
+                0x0000000000000c7a        0x2 .build/obj_ergodox_ez_profet_80/quantum/quantum.o
+                0x0000000000000c7a                led_set_user
+ .text.led_set_kb
+                0x0000000000000c7c        0x4 .build/obj_ergodox_ez_profet_80/quantum/quantum.o
+                0x0000000000000c7c                led_set_kb
+ .text.led_set  0x0000000000000c80        0x4 .build/obj_ergodox_ez_profet_80/quantum/quantum.o
+                0x0000000000000c80                led_set
  .text.action_for_key
-                0x0000000000000c7e      0x322 .build/obj_ergodox_ez_profet_80/quantum/keymap_common.o
-                0x0000000000000c7e                action_for_key
+                0x0000000000000c84      0x322 .build/obj_ergodox_ez_profet_80/quantum/keymap_common.o
+                0x0000000000000c84                action_for_key
  .text.action_function
-                0x0000000000000fa0        0x2 .build/obj_ergodox_ez_profet_80/quantum/keymap_common.o
-                0x0000000000000fa0                action_function
+                0x0000000000000fa6        0x2 .build/obj_ergodox_ez_profet_80/quantum/keymap_common.o
+                0x0000000000000fa6                action_function
  .text.keymap_key_to_keycode
-                0x0000000000000fa2       0x26 .build/obj_ergodox_ez_profet_80/quantum/keymap_common.o
-                0x0000000000000fa2                keymap_key_to_keycode
+                0x0000000000000fa8       0x26 .build/obj_ergodox_ez_profet_80/quantum/keymap_common.o
+                0x0000000000000fa8                keymap_key_to_keycode
  .text.keycode_config
-                0x0000000000000fc8       0xf8 .build/obj_ergodox_ez_profet_80/quantum/keycode_config.o
-                0x0000000000000fc8                keycode_config
+                0x0000000000000fce       0xf8 .build/obj_ergodox_ez_profet_80/quantum/keycode_config.o
+                0x0000000000000fce                keycode_config
  .text.leader_start
-                0x00000000000010c0        0x2 .build/obj_ergodox_ez_profet_80/quantum/process_keycode/process_leader.o
-                0x00000000000010c0                leader_start
+                0x00000000000010c6        0x2 .build/obj_ergodox_ez_profet_80/quantum/process_keycode/process_leader.o
+                0x00000000000010c6                leader_start
  .text.process_leader
-                0x00000000000010c2       0x9e .build/obj_ergodox_ez_profet_80/quantum/process_keycode/process_leader.o
-                0x00000000000010c2                process_leader
+                0x00000000000010c8       0x9e .build/obj_ergodox_ez_profet_80/quantum/process_keycode/process_leader.o
+                0x00000000000010c8                process_leader
  .text.ergodox_blink_all_leds
-                0x0000000000001160       0xb0 .build/obj_ergodox_ez_profet_80/keyboards/ergodox/ez/ez.o
-                0x0000000000001160                ergodox_blink_all_leds
+                0x0000000000001166       0xb0 .build/obj_ergodox_ez_profet_80/keyboards/ergodox/ez/ez.o
+                0x0000000000001166                ergodox_blink_all_leds
  .text.matrix_init_kb
-                0x0000000000001210       0x2c .build/obj_ergodox_ez_profet_80/keyboards/ergodox/ez/ez.o
-                0x0000000000001210                matrix_init_kb
+                0x0000000000001216       0x2c .build/obj_ergodox_ez_profet_80/keyboards/ergodox/ez/ez.o
+                0x0000000000001216                matrix_init_kb
  .text.init_mcp23018
-                0x000000000000123c       0x9e .build/obj_ergodox_ez_profet_80/keyboards/ergodox/ez/ez.o
-                0x000000000000123c                init_mcp23018
+                0x0000000000001242       0x9e .build/obj_ergodox_ez_profet_80/keyboards/ergodox/ez/ez.o
+                0x0000000000001242                init_mcp23018
  .text.hex_to_keycode
-                0x00000000000012da       0x18 .build/obj_ergodox_ez_profet_80/quantum/process_keycode/process_unicode.o
-                0x00000000000012da                hex_to_keycode
+                0x00000000000012e0       0x18 .build/obj_ergodox_ez_profet_80/quantum/process_keycode/process_unicode.o
+                0x00000000000012e0                hex_to_keycode
  .text.unicode_input_start
-                0x00000000000012f2       0x58 .build/obj_ergodox_ez_profet_80/quantum/process_keycode/process_unicode.o
-                0x00000000000012f2                unicode_input_start
+                0x00000000000012f8       0x58 .build/obj_ergodox_ez_profet_80/quantum/process_keycode/process_unicode.o
+                0x00000000000012f8                unicode_input_start
  .text.unicode_input_finish
-                0x000000000000134a       0x20 .build/obj_ergodox_ez_profet_80/quantum/process_keycode/process_unicode.o
-                0x000000000000134a                unicode_input_finish
+                0x0000000000001350       0x20 .build/obj_ergodox_ez_profet_80/quantum/process_keycode/process_unicode.o
+                0x0000000000001350                unicode_input_finish
  .text.register_hex
-                0x000000000000136a       0x4c .build/obj_ergodox_ez_profet_80/quantum/process_keycode/process_unicode.o
-                0x000000000000136a                register_hex
+                0x0000000000001370       0x4c .build/obj_ergodox_ez_profet_80/quantum/process_keycode/process_unicode.o
+                0x0000000000001370                register_hex
  .text.process_unicode
-                0x00000000000013b6       0x2e .build/obj_ergodox_ez_profet_80/quantum/process_keycode/process_unicode.o
-                0x00000000000013b6                process_unicode
+                0x00000000000013bc       0x2e .build/obj_ergodox_ez_profet_80/quantum/process_keycode/process_unicode.o
+                0x00000000000013bc                process_unicode
  .text.host_set_driver
-                0x00000000000013e4        0xa .build/obj_ergodox_ez_profet_80/common/host.o
-                0x00000000000013e4                host_set_driver
+                0x00000000000013ea        0xa .build/obj_ergodox_ez_profet_80/common/host.o
+                0x00000000000013ea                host_set_driver
  .text.host_keyboard_leds
-                0x00000000000013ee       0x18 .build/obj_ergodox_ez_profet_80/common/host.o
-                0x00000000000013ee                host_keyboard_leds
+                0x00000000000013f4       0x18 .build/obj_ergodox_ez_profet_80/common/host.o
+                0x00000000000013f4                host_keyboard_leds
  .text.host_keyboard_send
-                0x0000000000001406       0x16 .build/obj_ergodox_ez_profet_80/common/host.o
-                0x0000000000001406                host_keyboard_send
+                0x000000000000140c       0x16 .build/obj_ergodox_ez_profet_80/common/host.o
+                0x000000000000140c                host_keyboard_send
  .text.host_mouse_send
-                0x000000000000141c       0x16 .build/obj_ergodox_ez_profet_80/common/host.o
-                0x000000000000141c                host_mouse_send
+                0x0000000000001422       0x16 .build/obj_ergodox_ez_profet_80/common/host.o
+                0x0000000000001422                host_mouse_send
  .text.host_system_send
-                0x0000000000001432       0x2c .build/obj_ergodox_ez_profet_80/common/host.o
-                0x0000000000001432                host_system_send
+                0x0000000000001438       0x2c .build/obj_ergodox_ez_profet_80/common/host.o
+                0x0000000000001438                host_system_send
  .text.host_consumer_send
-                0x000000000000145e       0x2c .build/obj_ergodox_ez_profet_80/common/host.o
-                0x000000000000145e                host_consumer_send
+                0x0000000000001464       0x2c .build/obj_ergodox_ez_profet_80/common/host.o
+                0x0000000000001464                host_consumer_send
  .text.matrix_setup
-                0x000000000000148a        0x2 .build/obj_ergodox_ez_profet_80/common/keyboard.o
-                0x000000000000148a                matrix_setup
+                0x0000000000001490        0x2 .build/obj_ergodox_ez_profet_80/common/keyboard.o
+                0x0000000000001490                matrix_setup
  .text.keyboard_setup
-                0x000000000000148c        0x4 .build/obj_ergodox_ez_profet_80/common/keyboard.o
-                0x000000000000148c                keyboard_setup
+                0x0000000000001492        0x4 .build/obj_ergodox_ez_profet_80/common/keyboard.o
+                0x0000000000001492                keyboard_setup
  .text.keyboard_init
-                0x0000000000001490        0xc .build/obj_ergodox_ez_profet_80/common/keyboard.o
-                0x0000000000001490                keyboard_init
+                0x0000000000001496        0xc .build/obj_ergodox_ez_profet_80/common/keyboard.o
+                0x0000000000001496                keyboard_init
  .text.keyboard_task
-                0x000000000000149c      0x148 .build/obj_ergodox_ez_profet_80/common/keyboard.o
-                0x000000000000149c                keyboard_task
+                0x00000000000014a2      0x148 .build/obj_ergodox_ez_profet_80/common/keyboard.o
+                0x00000000000014a2                keyboard_task
  .text.process_hand_swap
-                0x00000000000015e4       0x78 .build/obj_ergodox_ez_profet_80/common/action.o
-                0x00000000000015e4                process_hand_swap
+                0x00000000000015ea       0x78 .build/obj_ergodox_ez_profet_80/common/action.o
+                0x00000000000015ea                process_hand_swap
  .text.action_exec
-                0x000000000000165c       0x86 .build/obj_ergodox_ez_profet_80/common/action.o
-                0x000000000000165c                action_exec
+                0x0000000000001662       0x86 .build/obj_ergodox_ez_profet_80/common/action.o
+                0x0000000000001662                action_exec
  .text.register_code
-                0x00000000000016e2      0x1a6 .build/obj_ergodox_ez_profet_80/common/action.o
-                0x00000000000016e2                register_code
+                0x00000000000016e8      0x1a6 .build/obj_ergodox_ez_profet_80/common/action.o
+                0x00000000000016e8                register_code
  .text.unregister_code
-                0x0000000000001888       0x9e .build/obj_ergodox_ez_profet_80/common/action.o
-                0x0000000000001888                unregister_code
+                0x000000000000188e       0x9e .build/obj_ergodox_ez_profet_80/common/action.o
+                0x000000000000188e                unregister_code
  .text.register_mods
-                0x0000000000001926        0xe .build/obj_ergodox_ez_profet_80/common/action.o
-                0x0000000000001926                register_mods
+                0x000000000000192c        0xe .build/obj_ergodox_ez_profet_80/common/action.o
+                0x000000000000192c                register_mods
  .text.unregister_mods
-                0x0000000000001934        0xe .build/obj_ergodox_ez_profet_80/common/action.o
-                0x0000000000001934                unregister_mods
+                0x000000000000193a        0xe .build/obj_ergodox_ez_profet_80/common/action.o
+                0x000000000000193a                unregister_mods
  .text.process_action
-                0x0000000000001942      0x46e .build/obj_ergodox_ez_profet_80/common/action.o
-                0x0000000000001942                process_action
+                0x0000000000001948      0x46e .build/obj_ergodox_ez_profet_80/common/action.o
+                0x0000000000001948                process_action
  .text.process_record
-                0x0000000000001db0       0x5c .build/obj_ergodox_ez_profet_80/common/action.o
-                0x0000000000001db0                process_record
+                0x0000000000001db6       0x5c .build/obj_ergodox_ez_profet_80/common/action.o
+                0x0000000000001db6                process_record
  .text.clear_keyboard_but_mods
-                0x0000000000001e0c       0x28 .build/obj_ergodox_ez_profet_80/common/action.o
-                0x0000000000001e0c                clear_keyboard_but_mods
+                0x0000000000001e12       0x28 .build/obj_ergodox_ez_profet_80/common/action.o
+                0x0000000000001e12                clear_keyboard_but_mods
  .text.clear_keyboard
-                0x0000000000001e34        0x8 .build/obj_ergodox_ez_profet_80/common/action.o
-                0x0000000000001e34                clear_keyboard
+                0x0000000000001e3a        0x8 .build/obj_ergodox_ez_profet_80/common/action.o
+                0x0000000000001e3a                clear_keyboard
  .text.is_tap_key
-                0x0000000000001e3c       0x4c .build/obj_ergodox_ez_profet_80/common/action.o
-                0x0000000000001e3c                is_tap_key
+                0x0000000000001e42       0x4c .build/obj_ergodox_ez_profet_80/common/action.o
+                0x0000000000001e42                is_tap_key
  .text.debug_event
-                0x0000000000001e88       0x1e .build/obj_ergodox_ez_profet_80/common/action.o
-                0x0000000000001e88                debug_event
+                0x0000000000001e8e       0x1e .build/obj_ergodox_ez_profet_80/common/action.o
+                0x0000000000001e8e                debug_event
  .text.debug_record
-                0x0000000000001ea6       0x20 .build/obj_ergodox_ez_profet_80/common/action.o
-                0x0000000000001ea6                debug_record
+                0x0000000000001eac       0x20 .build/obj_ergodox_ez_profet_80/common/action.o
+                0x0000000000001eac                debug_record
  .text.debug_waiting_buffer
-                0x0000000000001ec6       0x42 .build/obj_ergodox_ez_profet_80/common/action_tapping.o
+                0x0000000000001ecc       0x42 .build/obj_ergodox_ez_profet_80/common/action_tapping.o
  .text.debug_tapping_key
-                0x0000000000001f08       0x1c .build/obj_ergodox_ez_profet_80/common/action_tapping.o
+                0x0000000000001f0e       0x1c .build/obj_ergodox_ez_profet_80/common/action_tapping.o
  .text.waiting_buffer_scan_tap
-                0x0000000000001f24       0xd0 .build/obj_ergodox_ez_profet_80/common/action_tapping.o
+                0x0000000000001f2a       0xd0 .build/obj_ergodox_ez_profet_80/common/action_tapping.o
  .text.process_tapping
-                0x0000000000001ff4      0x3c0 .build/obj_ergodox_ez_profet_80/common/action_tapping.o
+                0x0000000000001ffa      0x3c0 .build/obj_ergodox_ez_profet_80/common/action_tapping.o
  .text.action_tapping_process
-                0x00000000000023b4      0x15c .build/obj_ergodox_ez_profet_80/common/action_tapping.o
-                0x00000000000023b4                action_tapping_process
+                0x00000000000023ba      0x15c .build/obj_ergodox_ez_profet_80/common/action_tapping.o
+                0x00000000000023ba                action_tapping_process
  .text.action_macro_play
-                0x0000000000002510       0xfa .build/obj_ergodox_ez_profet_80/common/action_macro.o
-                0x0000000000002510                action_macro_play
+                0x0000000000002516       0xfa .build/obj_ergodox_ez_profet_80/common/action_macro.o
+                0x0000000000002516                action_macro_play
  .text.default_layer_debug
-                0x000000000000260a        0x2 .build/obj_ergodox_ez_profet_80/common/action_layer.o
-                0x000000000000260a                default_layer_debug
+                0x0000000000002610        0x2 .build/obj_ergodox_ez_profet_80/common/action_layer.o
+                0x0000000000002610                default_layer_debug
  .text.default_layer_set
-                0x000000000000260c       0x14 .build/obj_ergodox_ez_profet_80/common/action_layer.o
-                0x000000000000260c                default_layer_set
+                0x0000000000002612       0x14 .build/obj_ergodox_ez_profet_80/common/action_layer.o
+                0x0000000000002612                default_layer_set
  .text.default_layer_or
-                0x0000000000002620       0x38 .build/obj_ergodox_ez_profet_80/common/action_layer.o
-                0x0000000000002620                default_layer_or
+                0x0000000000002626       0x38 .build/obj_ergodox_ez_profet_80/common/action_layer.o
+                0x0000000000002626                default_layer_or
  .text.default_layer_and
-                0x0000000000002658       0x38 .build/obj_ergodox_ez_profet_80/common/action_layer.o
-                0x0000000000002658                default_layer_and
+                0x000000000000265e       0x38 .build/obj_ergodox_ez_profet_80/common/action_layer.o
+                0x000000000000265e                default_layer_and
  .text.default_layer_xor
-                0x0000000000002690       0x38 .build/obj_ergodox_ez_profet_80/common/action_layer.o
-                0x0000000000002690                default_layer_xor
+                0x0000000000002696       0x38 .build/obj_ergodox_ez_profet_80/common/action_layer.o
+                0x0000000000002696                default_layer_xor
  .text.layer_clear
-                0x00000000000026c8       0x14 .build/obj_ergodox_ez_profet_80/common/action_layer.o
-                0x00000000000026c8                layer_clear
+                0x00000000000026ce       0x14 .build/obj_ergodox_ez_profet_80/common/action_layer.o
+                0x00000000000026ce                layer_clear
  .text.layer_move
-                0x00000000000026dc       0x2a .build/obj_ergodox_ez_profet_80/common/action_layer.o
-                0x00000000000026dc                layer_move
+                0x00000000000026e2       0x2a .build/obj_ergodox_ez_profet_80/common/action_layer.o
+                0x00000000000026e2                layer_move
  .text.layer_on
-                0x0000000000002706       0x42 .build/obj_ergodox_ez_profet_80/common/action_layer.o
-                0x0000000000002706                layer_on
+                0x000000000000270c       0x42 .build/obj_ergodox_ez_profet_80/common/action_layer.o
+                0x000000000000270c                layer_on
  .text.layer_off
-                0x0000000000002748       0x4a .build/obj_ergodox_ez_profet_80/common/action_layer.o
-                0x0000000000002748                layer_off
+                0x000000000000274e       0x4a .build/obj_ergodox_ez_profet_80/common/action_layer.o
+                0x000000000000274e                layer_off
  .text.layer_invert
-                0x0000000000002792       0x42 .build/obj_ergodox_ez_profet_80/common/action_layer.o
-                0x0000000000002792                layer_invert
+                0x0000000000002798       0x42 .build/obj_ergodox_ez_profet_80/common/action_layer.o
+                0x0000000000002798                layer_invert
  .text.layer_or
-                0x00000000000027d4       0x38 .build/obj_ergodox_ez_profet_80/common/action_layer.o
-                0x00000000000027d4                layer_or
+                0x00000000000027da       0x38 .build/obj_ergodox_ez_profet_80/common/action_layer.o
+                0x00000000000027da                layer_or
  .text.layer_and
-                0x000000000000280c       0x38 .build/obj_ergodox_ez_profet_80/common/action_layer.o
-                0x000000000000280c                layer_and
+                0x0000000000002812       0x38 .build/obj_ergodox_ez_profet_80/common/action_layer.o
+                0x0000000000002812                layer_and
  .text.layer_xor
-                0x0000000000002844       0x38 .build/obj_ergodox_ez_profet_80/common/action_layer.o
-                0x0000000000002844                layer_xor
+                0x000000000000284a       0x38 .build/obj_ergodox_ez_profet_80/common/action_layer.o
+                0x000000000000284a                layer_xor
  .text.layer_debug
-                0x000000000000287c        0x2 .build/obj_ergodox_ez_profet_80/common/action_layer.o
-                0x000000000000287c                layer_debug
+                0x0000000000002882        0x2 .build/obj_ergodox_ez_profet_80/common/action_layer.o
+                0x0000000000002882                layer_debug
  .text.layer_switch_get_layer
-                0x000000000000287e       0x7e .build/obj_ergodox_ez_profet_80/common/action_layer.o
-                0x000000000000287e                layer_switch_get_layer
+                0x0000000000002884       0x7e .build/obj_ergodox_ez_profet_80/common/action_layer.o
+                0x0000000000002884                layer_switch_get_layer
  .text.layer_switch_get_action
-                0x00000000000028fc       0x16 .build/obj_ergodox_ez_profet_80/common/action_layer.o
-                0x00000000000028fc                layer_switch_get_action
+                0x0000000000002902       0x16 .build/obj_ergodox_ez_profet_80/common/action_layer.o
+                0x0000000000002902                layer_switch_get_action
  .text.store_or_get_action
-                0x0000000000002912        0x8 .build/obj_ergodox_ez_profet_80/common/action_layer.o
-                0x0000000000002912                store_or_get_action
+                0x0000000000002918        0x8 .build/obj_ergodox_ez_profet_80/common/action_layer.o
+                0x0000000000002918                store_or_get_action
  .text.get_oneshot_layer
-                0x000000000000291a        0xc .build/obj_ergodox_ez_profet_80/common/action_util.o
-                0x000000000000291a                get_oneshot_layer
+                0x0000000000002920        0xc .build/obj_ergodox_ez_profet_80/common/action_util.o
+                0x0000000000002920                get_oneshot_layer
  .text.get_oneshot_layer_state
-                0x0000000000002926        0x8 .build/obj_ergodox_ez_profet_80/common/action_util.o
-                0x0000000000002926                get_oneshot_layer_state
+                0x000000000000292c        0x8 .build/obj_ergodox_ez_profet_80/common/action_util.o
+                0x000000000000292c                get_oneshot_layer_state
  .text.set_oneshot_layer
-                0x000000000000292e       0x12 .build/obj_ergodox_ez_profet_80/common/action_util.o
-                0x000000000000292e                set_oneshot_layer
+                0x0000000000002934       0x12 .build/obj_ergodox_ez_profet_80/common/action_util.o
+                0x0000000000002934                set_oneshot_layer
  .text.clear_oneshot_layer_state
-                0x0000000000002940       0x2e .build/obj_ergodox_ez_profet_80/common/action_util.o
-                0x0000000000002940                clear_oneshot_layer_state
+                0x0000000000002946       0x2e .build/obj_ergodox_ez_profet_80/common/action_util.o
+                0x0000000000002946                clear_oneshot_layer_state
  .text.is_oneshot_layer_active
-                0x000000000000296e        0xe .build/obj_ergodox_ez_profet_80/common/action_util.o
-                0x000000000000296e                is_oneshot_layer_active
- .text.add_key  0x000000000000297c       0x7e .build/obj_ergodox_ez_profet_80/common/action_util.o
-                0x000000000000297c                add_key
- .text.del_key  0x00000000000029fa       0x66 .build/obj_ergodox_ez_profet_80/common/action_util.o
-                0x00000000000029fa                del_key
+                0x0000000000002974        0xe .build/obj_ergodox_ez_profet_80/common/action_util.o
+                0x0000000000002974                is_oneshot_layer_active
+ .text.add_key  0x0000000000002982       0x7e .build/obj_ergodox_ez_profet_80/common/action_util.o
+                0x0000000000002982                add_key
+ .text.del_key  0x0000000000002a00       0x66 .build/obj_ergodox_ez_profet_80/common/action_util.o
+                0x0000000000002a00                del_key
  .text.clear_keys
-                0x0000000000002a60       0x1c .build/obj_ergodox_ez_profet_80/common/action_util.o
-                0x0000000000002a60                clear_keys
+                0x0000000000002a66       0x1c .build/obj_ergodox_ez_profet_80/common/action_util.o
+                0x0000000000002a66                clear_keys
  .text.add_mods
-                0x0000000000002a7c        0xc .build/obj_ergodox_ez_profet_80/common/action_util.o
-                0x0000000000002a7c                add_mods
+                0x0000000000002a82        0xc .build/obj_ergodox_ez_profet_80/common/action_util.o
+                0x0000000000002a82                add_mods
  .text.del_mods
-                0x0000000000002a88        0xe .build/obj_ergodox_ez_profet_80/common/action_util.o
-                0x0000000000002a88                del_mods
+                0x0000000000002a8e        0xe .build/obj_ergodox_ez_profet_80/common/action_util.o
+                0x0000000000002a8e                del_mods
  .text.clear_mods
-                0x0000000000002a96        0x6 .build/obj_ergodox_ez_profet_80/common/action_util.o
-                0x0000000000002a96                clear_mods
+                0x0000000000002a9c        0x6 .build/obj_ergodox_ez_profet_80/common/action_util.o
+                0x0000000000002a9c                clear_mods
  .text.add_weak_mods
-                0x0000000000002a9c        0xc .build/obj_ergodox_ez_profet_80/common/action_util.o
-                0x0000000000002a9c                add_weak_mods
+                0x0000000000002aa2        0xc .build/obj_ergodox_ez_profet_80/common/action_util.o
+                0x0000000000002aa2                add_weak_mods
  .text.del_weak_mods
-                0x0000000000002aa8        0xe .build/obj_ergodox_ez_profet_80/common/action_util.o
-                0x0000000000002aa8                del_weak_mods
+                0x0000000000002aae        0xe .build/obj_ergodox_ez_profet_80/common/action_util.o
+                0x0000000000002aae                del_weak_mods
  .text.clear_weak_mods
-                0x0000000000002ab6        0x6 .build/obj_ergodox_ez_profet_80/common/action_util.o
-                0x0000000000002ab6                clear_weak_mods
+                0x0000000000002abc        0x6 .build/obj_ergodox_ez_profet_80/common/action_util.o
+                0x0000000000002abc                clear_weak_mods
  .text.add_macro_mods
-                0x0000000000002abc        0xc .build/obj_ergodox_ez_profet_80/common/action_util.o
-                0x0000000000002abc                add_macro_mods
+                0x0000000000002ac2        0xc .build/obj_ergodox_ez_profet_80/common/action_util.o
+                0x0000000000002ac2                add_macro_mods
  .text.del_macro_mods
-                0x0000000000002ac8        0xe .build/obj_ergodox_ez_profet_80/common/action_util.o
-                0x0000000000002ac8                del_macro_mods
+                0x0000000000002ace        0xe .build/obj_ergodox_ez_profet_80/common/action_util.o
+                0x0000000000002ace                del_macro_mods
  .text.clear_macro_mods
-                0x0000000000002ad6        0x6 .build/obj_ergodox_ez_profet_80/common/action_util.o
-                0x0000000000002ad6                clear_macro_mods
- .text.set_oneshot_mods
                 0x0000000000002adc        0x6 .build/obj_ergodox_ez_profet_80/common/action_util.o
-                0x0000000000002adc                set_oneshot_mods
- .text.clear_oneshot_mods
+                0x0000000000002adc                clear_macro_mods
+ .text.set_oneshot_mods
                 0x0000000000002ae2        0x6 .build/obj_ergodox_ez_profet_80/common/action_util.o
-                0x0000000000002ae2                clear_oneshot_mods
+                0x0000000000002ae2                set_oneshot_mods
+ .text.clear_oneshot_mods
+                0x0000000000002ae8        0x6 .build/obj_ergodox_ez_profet_80/common/action_util.o
+                0x0000000000002ae8                clear_oneshot_mods
  .text.has_anykey
-                0x0000000000002ae8       0x22 .build/obj_ergodox_ez_profet_80/common/action_util.o
-                0x0000000000002ae8                has_anykey
+                0x0000000000002aee       0x22 .build/obj_ergodox_ez_profet_80/common/action_util.o
+                0x0000000000002aee                has_anykey
  .text.send_keyboard_report
-                0x0000000000002b0a       0x5e .build/obj_ergodox_ez_profet_80/common/action_util.o
-                0x0000000000002b0a                send_keyboard_report
- .text.biton32  0x0000000000002b68       0xa0 .build/obj_ergodox_ez_profet_80/common/util.o
-                0x0000000000002b68                biton32
+                0x0000000000002b10       0x5e .build/obj_ergodox_ez_profet_80/common/action_util.o
+                0x0000000000002b10                send_keyboard_report
+ .text.biton32  0x0000000000002b6e       0xa0 .build/obj_ergodox_ez_profet_80/common/util.o
+                0x0000000000002b6e                biton32
  .text.eeconfig_init
-                0x0000000000002c08       0x34 .build/obj_ergodox_ez_profet_80/common/eeconfig.o
-                0x0000000000002c08                eeconfig_init
+                0x0000000000002c0e       0x34 .build/obj_ergodox_ez_profet_80/common/eeconfig.o
+                0x0000000000002c0e                eeconfig_init
  .text.eeconfig_is_enabled
-                0x0000000000002c3c       0x16 .build/obj_ergodox_ez_profet_80/common/eeconfig.o
-                0x0000000000002c3c                eeconfig_is_enabled
+                0x0000000000002c42       0x16 .build/obj_ergodox_ez_profet_80/common/eeconfig.o
+                0x0000000000002c42                eeconfig_is_enabled
  .text.eeconfig_read_debug
-                0x0000000000002c52        0x8 .build/obj_ergodox_ez_profet_80/common/eeconfig.o
-                0x0000000000002c52                eeconfig_read_debug
+                0x0000000000002c58        0x8 .build/obj_ergodox_ez_profet_80/common/eeconfig.o
+                0x0000000000002c58                eeconfig_read_debug
  .text.eeconfig_read_default_layer
-                0x0000000000002c5a        0x8 .build/obj_ergodox_ez_profet_80/common/eeconfig.o
-                0x0000000000002c5a                eeconfig_read_default_layer
+                0x0000000000002c60        0x8 .build/obj_ergodox_ez_profet_80/common/eeconfig.o
+                0x0000000000002c60                eeconfig_read_default_layer
  .text.eeconfig_read_keymap
-                0x0000000000002c62        0x8 .build/obj_ergodox_ez_profet_80/common/eeconfig.o
-                0x0000000000002c62                eeconfig_read_keymap
+                0x0000000000002c68        0x8 .build/obj_ergodox_ez_profet_80/common/eeconfig.o
+                0x0000000000002c68                eeconfig_read_keymap
  .text.eeconfig_update_keymap
-                0x0000000000002c6a        0xa .build/obj_ergodox_ez_profet_80/common/eeconfig.o
-                0x0000000000002c6a                eeconfig_update_keymap
+                0x0000000000002c70        0xa .build/obj_ergodox_ez_profet_80/common/eeconfig.o
+                0x0000000000002c70                eeconfig_update_keymap
  .text.suspend_power_down
-                0x0000000000002c74       0x58 .build/obj_ergodox_ez_profet_80/common/avr/suspend.o
-                0x0000000000002c74                suspend_power_down
+                0x0000000000002c7a       0x58 .build/obj_ergodox_ez_profet_80/common/avr/suspend.o
+                0x0000000000002c7a                suspend_power_down
  .text.matrix_power_down
-                0x0000000000002ccc        0x2 .build/obj_ergodox_ez_profet_80/common/avr/suspend.o
-                0x0000000000002ccc                matrix_power_down
+                0x0000000000002cd2        0x2 .build/obj_ergodox_ez_profet_80/common/avr/suspend.o
+                0x0000000000002cd2                matrix_power_down
  .text.suspend_wakeup_condition
-                0x0000000000002cce       0x28 .build/obj_ergodox_ez_profet_80/common/avr/suspend.o
-                0x0000000000002cce                suspend_wakeup_condition
+                0x0000000000002cd4       0x28 .build/obj_ergodox_ez_profet_80/common/avr/suspend.o
+                0x0000000000002cd4                suspend_wakeup_condition
  .text.suspend_wakeup_init
-                0x0000000000002cf6        0xc .build/obj_ergodox_ez_profet_80/common/avr/suspend.o
-                0x0000000000002cf6                suspend_wakeup_init
+                0x0000000000002cfc        0xc .build/obj_ergodox_ez_profet_80/common/avr/suspend.o
+                0x0000000000002cfc                suspend_wakeup_init
  .text.__vector_12
-                0x0000000000002d02       0x52 .build/obj_ergodox_ez_profet_80/common/avr/suspend.o
-                0x0000000000002d02                __vector_12
+                0x0000000000002d08       0x52 .build/obj_ergodox_ez_profet_80/common/avr/suspend.o
+                0x0000000000002d08                __vector_12
  .text.timer_init
-                0x0000000000002d54       0x12 .build/obj_ergodox_ez_profet_80/common/avr/timer.o
-                0x0000000000002d54                timer_init
+                0x0000000000002d5a       0x12 .build/obj_ergodox_ez_profet_80/common/avr/timer.o
+                0x0000000000002d5a                timer_init
  .text.timer_read
-                0x0000000000002d66       0x18 .build/obj_ergodox_ez_profet_80/common/avr/timer.o
-                0x0000000000002d66                timer_read
+                0x0000000000002d6c       0x18 .build/obj_ergodox_ez_profet_80/common/avr/timer.o
+                0x0000000000002d6c                timer_read
  .text.timer_elapsed
-                0x0000000000002d7e       0x54 .build/obj_ergodox_ez_profet_80/common/avr/timer.o
-                0x0000000000002d7e                timer_elapsed
+                0x0000000000002d84       0x54 .build/obj_ergodox_ez_profet_80/common/avr/timer.o
+                0x0000000000002d84                timer_elapsed
  .text.__vector_21
-                0x0000000000002dd2       0x4a .build/obj_ergodox_ez_profet_80/common/avr/timer.o
-                0x0000000000002dd2                __vector_21
+                0x0000000000002dd8       0x4a .build/obj_ergodox_ez_profet_80/common/avr/timer.o
+                0x0000000000002dd8                __vector_21
  .text.bootloader_jump
-                0x0000000000002e1c       0x44 .build/obj_ergodox_ez_profet_80/common/avr/bootloader.o
-                0x0000000000002e1c                bootloader_jump
- .text.magic    0x0000000000002e60       0x32 .build/obj_ergodox_ez_profet_80/common/magic.o
-                0x0000000000002e60                magic
+                0x0000000000002e22       0x44 .build/obj_ergodox_ez_profet_80/common/avr/bootloader.o
+                0x0000000000002e22                bootloader_jump
+ .text.magic    0x0000000000002e66       0x32 .build/obj_ergodox_ez_profet_80/common/magic.o
+                0x0000000000002e66                magic
  .text.move_unit
-                0x0000000000002e92       0x92 .build/obj_ergodox_ez_profet_80/common/mousekey.o
+                0x0000000000002e98       0x92 .build/obj_ergodox_ez_profet_80/common/mousekey.o
  .text.wheel_unit
-                0x0000000000002f24       0x72 .build/obj_ergodox_ez_profet_80/common/mousekey.o
+                0x0000000000002f2a       0x72 .build/obj_ergodox_ez_profet_80/common/mousekey.o
  .text.mousekey_on
-                0x0000000000002f96       0xd0 .build/obj_ergodox_ez_profet_80/common/mousekey.o
-                0x0000000000002f96                mousekey_on
+                0x0000000000002f9c       0xd0 .build/obj_ergodox_ez_profet_80/common/mousekey.o
+                0x0000000000002f9c                mousekey_on
  .text.mousekey_off
-                0x0000000000003066      0x10a .build/obj_ergodox_ez_profet_80/common/mousekey.o
-                0x0000000000003066                mousekey_off
+                0x000000000000306c      0x10a .build/obj_ergodox_ez_profet_80/common/mousekey.o
+                0x000000000000306c                mousekey_off
  .text.mousekey_send
-                0x0000000000003170       0x16 .build/obj_ergodox_ez_profet_80/common/mousekey.o
-                0x0000000000003170                mousekey_send
+                0x0000000000003176       0x16 .build/obj_ergodox_ez_profet_80/common/mousekey.o
+                0x0000000000003176                mousekey_send
  .text.mousekey_task
-                0x0000000000003186      0x14a .build/obj_ergodox_ez_profet_80/common/mousekey.o
-                0x0000000000003186                mousekey_task
+                0x000000000000318c      0x14a .build/obj_ergodox_ez_profet_80/common/mousekey.o
+                0x000000000000318c                mousekey_task
  .text.mousekey_clear
-                0x00000000000032d0       0x18 .build/obj_ergodox_ez_profet_80/common/mousekey.o
-                0x00000000000032d0                mousekey_clear
+                0x00000000000032d6       0x18 .build/obj_ergodox_ez_profet_80/common/mousekey.o
+                0x00000000000032d6                mousekey_clear
  .text.mousekey_param_inc
-                0x00000000000032e8       0xec .build/obj_ergodox_ez_profet_80/common/command.o
+                0x00000000000032ee       0xec .build/obj_ergodox_ez_profet_80/common/command.o
  .text.mousekey_param_dec
-                0x00000000000033d4       0xa0 .build/obj_ergodox_ez_profet_80/common/command.o
+                0x00000000000033da       0xa0 .build/obj_ergodox_ez_profet_80/common/command.o
  .text.switch_default_layer
-                0x0000000000003474       0x2e .build/obj_ergodox_ez_profet_80/common/command.o
+                0x000000000000347a       0x2e .build/obj_ergodox_ez_profet_80/common/command.o
  .text.command_common
-                0x00000000000034a2      0x142 .build/obj_ergodox_ez_profet_80/common/command.o
+                0x00000000000034a8      0x142 .build/obj_ergodox_ez_profet_80/common/command.o
  .text.command_console_extra
-                0x00000000000035e4        0x4 .build/obj_ergodox_ez_profet_80/common/command.o
-                0x00000000000035e4                command_console_extra
+                0x00000000000035ea        0x4 .build/obj_ergodox_ez_profet_80/common/command.o
+                0x00000000000035ea                command_console_extra
  .text.command_extra
-                0x00000000000035e8        0x4 .build/obj_ergodox_ez_profet_80/common/command.o
-                0x00000000000035e8                command_extra
+                0x00000000000035ee        0x4 .build/obj_ergodox_ez_profet_80/common/command.o
+                0x00000000000035ee                command_extra
  .text.numkey2num
-                0x00000000000035ec       0x16 .build/obj_ergodox_ez_profet_80/common/command.o
-                0x00000000000035ec                numkey2num
+                0x00000000000035f2       0x16 .build/obj_ergodox_ez_profet_80/common/command.o
+                0x00000000000035f2                numkey2num
  .text.command_proc
-                0x0000000000003602      0x134 .build/obj_ergodox_ez_profet_80/common/command.o
-                0x0000000000003602                command_proc
+                0x0000000000003608      0x134 .build/obj_ergodox_ez_profet_80/common/command.o
+                0x0000000000003608                command_proc
  .text.keyboard_leds
-                0x0000000000003736        0x6 .build/obj_ergodox_ez_profet_80/lufa.o
+                0x000000000000373c        0x6 .build/obj_ergodox_ez_profet_80/lufa.o
  .text.send_consumer
-                0x000000000000373c       0x68 .build/obj_ergodox_ez_profet_80/lufa.o
+                0x0000000000003742       0x68 .build/obj_ergodox_ez_profet_80/lufa.o
  .text.send_system
-                0x00000000000037a4       0x68 .build/obj_ergodox_ez_profet_80/lufa.o
+                0x00000000000037aa       0x68 .build/obj_ergodox_ez_profet_80/lufa.o
  .text.send_mouse
-                0x000000000000380c       0x46 .build/obj_ergodox_ez_profet_80/lufa.o
+                0x0000000000003812       0x46 .build/obj_ergodox_ez_profet_80/lufa.o
  .text.send_keyboard
-                0x0000000000003852       0xa2 .build/obj_ergodox_ez_profet_80/lufa.o
+                0x0000000000003858       0xa2 .build/obj_ergodox_ez_profet_80/lufa.o
  .text.EVENT_USB_Device_Connect
-                0x00000000000038f4       0x1c .build/obj_ergodox_ez_profet_80/lufa.o
-                0x00000000000038f4                EVENT_USB_Device_Connect
+                0x00000000000038fa       0x1c .build/obj_ergodox_ez_profet_80/lufa.o
+                0x00000000000038fa                EVENT_USB_Device_Connect
  .text.EVENT_USB_Device_Disconnect
-                0x0000000000003910        0x6 .build/obj_ergodox_ez_profet_80/lufa.o
-                0x0000000000003910                EVENT_USB_Device_Disconnect
+                0x0000000000003916        0x6 .build/obj_ergodox_ez_profet_80/lufa.o
+                0x0000000000003916                EVENT_USB_Device_Disconnect
  .text.EVENT_USB_Device_Reset
-                0x0000000000003916        0x2 .build/obj_ergodox_ez_profet_80/lufa.o
-                0x0000000000003916                EVENT_USB_Device_Reset
+                0x000000000000391c        0x2 .build/obj_ergodox_ez_profet_80/lufa.o
+                0x000000000000391c                EVENT_USB_Device_Reset
  .text.EVENT_USB_Device_Suspend
-                0x0000000000003918        0x2 .build/obj_ergodox_ez_profet_80/lufa.o
-                0x0000000000003918                EVENT_USB_Device_Suspend
+                0x000000000000391e        0x2 .build/obj_ergodox_ez_profet_80/lufa.o
+                0x000000000000391e                EVENT_USB_Device_Suspend
  .text.EVENT_USB_Device_WakeUp
-                0x000000000000391a        0x4 .build/obj_ergodox_ez_profet_80/lufa.o
-                0x000000000000391a                EVENT_USB_Device_WakeUp
+                0x0000000000003920        0x4 .build/obj_ergodox_ez_profet_80/lufa.o
+                0x0000000000003920                EVENT_USB_Device_WakeUp
  .text.EVENT_USB_Device_ConfigurationChanged
-                0x000000000000391e       0x28 .build/obj_ergodox_ez_profet_80/lufa.o
-                0x000000000000391e                EVENT_USB_Device_ConfigurationChanged
+                0x0000000000003924       0x28 .build/obj_ergodox_ez_profet_80/lufa.o
+                0x0000000000003924                EVENT_USB_Device_ConfigurationChanged
  .text.EVENT_USB_Device_ControlRequest
-                0x0000000000003946      0x164 .build/obj_ergodox_ez_profet_80/lufa.o
-                0x0000000000003946                EVENT_USB_Device_ControlRequest
+                0x000000000000394c      0x164 .build/obj_ergodox_ez_profet_80/lufa.o
+                0x000000000000394c                EVENT_USB_Device_ControlRequest
  .text.startup.main
-                0x0000000000003aaa       0x76 .build/obj_ergodox_ez_profet_80/lufa.o
-                0x0000000000003aaa                main
+                0x0000000000003ab0       0x76 .build/obj_ergodox_ez_profet_80/lufa.o
+                0x0000000000003ab0                main
  .text.CALLBACK_USB_GetDescriptor
-                0x0000000000003b20       0xac .build/obj_ergodox_ez_profet_80/descriptor.o
-                0x0000000000003b20                CALLBACK_USB_GetDescriptor
+                0x0000000000003b26       0xac .build/obj_ergodox_ez_profet_80/descriptor.o
+                0x0000000000003b26                CALLBACK_USB_GetDescriptor
  .text.USB_Device_SendRemoteWakeup
-                0x0000000000003bcc       0x2c .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.o
-                0x0000000000003bcc                USB_Device_SendRemoteWakeup
+                0x0000000000003bd2       0x2c .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.o
+                0x0000000000003bd2                USB_Device_SendRemoteWakeup
  .text.Endpoint_Write_Stream_LE
-                0x0000000000003bf8       0x96 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
-                0x0000000000003bf8                Endpoint_Write_Stream_LE
+                0x0000000000003bfe       0x96 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
+                0x0000000000003bfe                Endpoint_Write_Stream_LE
  .text.Endpoint_Write_Control_Stream_LE
-                0x0000000000003c8e       0xbc .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
-                0x0000000000003c8e                Endpoint_Write_Control_Stream_LE
+                0x0000000000003c94       0xbc .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
+                0x0000000000003c94                Endpoint_Write_Control_Stream_LE
  .text.Endpoint_Write_Control_PStream_LE
-                0x0000000000003d4a       0xc2 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
-                0x0000000000003d4a                Endpoint_Write_Control_PStream_LE
+                0x0000000000003d50       0xc2 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
+                0x0000000000003d50                Endpoint_Write_Control_PStream_LE
  .text.Endpoint_ConfigureEndpoint_Prv
-                0x0000000000003e0c       0x6a .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
-                0x0000000000003e0c                Endpoint_ConfigureEndpoint_Prv
+                0x0000000000003e12       0x6a .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
+                0x0000000000003e12                Endpoint_ConfigureEndpoint_Prv
  .text.Endpoint_ClearStatusStage
-                0x0000000000003e76       0x3e .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
-                0x0000000000003e76                Endpoint_ClearStatusStage
+                0x0000000000003e7c       0x3e .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
+                0x0000000000003e7c                Endpoint_ClearStatusStage
  .text.Endpoint_WaitUntilReady
-                0x0000000000003eb4       0x66 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
-                0x0000000000003eb4                Endpoint_WaitUntilReady
+                0x0000000000003eba       0x66 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
+                0x0000000000003eba                Endpoint_WaitUntilReady
  .text.USB_Disable
-                0x0000000000003f1a       0x34 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
-                0x0000000000003f1a                USB_Disable
+                0x0000000000003f20       0x34 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
+                0x0000000000003f20                USB_Disable
  .text.USB_ResetInterface
-                0x0000000000003f4e       0x86 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
-                0x0000000000003f4e                USB_ResetInterface
+                0x0000000000003f54       0x86 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
+                0x0000000000003f54                USB_ResetInterface
  .text.USB_Init
-                0x0000000000003fd4       0x22 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
-                0x0000000000003fd4                USB_Init
+                0x0000000000003fda       0x22 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
+                0x0000000000003fda                USB_Init
  .text.USB_INT_DisableAllInterrupts
-                0x0000000000003ff6       0x10 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
-                0x0000000000003ff6                USB_INT_DisableAllInterrupts
+                0x0000000000003ffc       0x10 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+                0x0000000000003ffc                USB_INT_DisableAllInterrupts
  .text.USB_INT_ClearAllInterrupts
-                0x0000000000004006        0xa .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
-                0x0000000000004006                USB_INT_ClearAllInterrupts
+                0x000000000000400c        0xa .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+                0x000000000000400c                USB_INT_ClearAllInterrupts
  .text.__vector_10
-                0x0000000000004010      0x1a4 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
-                0x0000000000004010                __vector_10
+                0x0000000000004016      0x1a4 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+                0x0000000000004016                __vector_10
  .text.__vector_11
-                0x00000000000041b4       0x88 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
-                0x00000000000041b4                __vector_11
+                0x00000000000041ba       0x88 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+                0x00000000000041ba                __vector_11
  .text.USB_Device_ProcessControlRequest
-                0x000000000000423c      0x2ac .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.o
-                0x000000000000423c                USB_Device_ProcessControlRequest
+                0x0000000000004242      0x2ac .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.o
+                0x0000000000004242                USB_Device_ProcessControlRequest
  .text.USB_Event_Stub
-                0x00000000000044e8        0x2 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.o
-                0x00000000000044e8                USB_Event_Stub
-                0x00000000000044e8                EVENT_USB_Device_StartOfFrame
+                0x00000000000044ee        0x2 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.o
+                0x00000000000044ee                USB_Event_Stub
+                0x00000000000044ee                EVENT_USB_Device_StartOfFrame
  .text.USB_USBTask
-                0x00000000000044ea       0x36 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
-                0x00000000000044ea                USB_USBTask
+                0x00000000000044f0       0x36 .build/obj_ergodox_ez_profet_80/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
+                0x00000000000044f0                USB_USBTask
  .text.avr-libc.fplib
-                0x0000000000004520        0xe /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fixsfsi.o)
-                0x0000000000004520                __fixsfsi
+                0x0000000000004526        0xe /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fixsfsi.o)
+                0x0000000000004526                __fixsfsi
  .text.avr-libc.fplib
-                0x000000000000452e       0x5e /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fixunssfsi.o)
-                0x000000000000452e                __fixunssfsi
+                0x0000000000004534       0x5e /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fixunssfsi.o)
+                0x0000000000004534                __fixunssfsi
  .text.avr-libc.fplib
-                0x000000000000458c       0x7a /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(floatsisf.o)
-                0x000000000000458c                __floatunsisf
-                0x0000000000004590                __floatsisf
+                0x0000000000004592       0x7a /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(floatsisf.o)
+                0x0000000000004592                __floatunsisf
+                0x0000000000004596                __floatsisf
  .text.avr-libc.fplib
-                0x0000000000004606       0x44 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fp_split3.o)
-                0x0000000000004606                __fp_split3
-                0x0000000000004616                __fp_splitA
+                0x000000000000460c       0x44 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fp_split3.o)
+                0x000000000000460c                __fp_split3
+                0x000000000000461c                __fp_splitA
  .text.avr-libc.fplib
-                0x000000000000464a        0xe /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fp_zero.o)
-                0x000000000000464a                __fp_zero
-                0x000000000000464c                __fp_szero
+                0x0000000000004650        0xe /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fp_zero.o)
+                0x0000000000004650                __fp_zero
+                0x0000000000004652                __fp_szero
  .text.avr-libc.fplib
-                0x0000000000004658        0x8 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(mulsf3.o)
-                0x0000000000004658                __mulsf3
+                0x000000000000465e        0x8 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(mulsf3.o)
+                0x000000000000465e                __mulsf3
  .text.avr-libc.fplib
-                0x0000000000004660       0xd2 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(mulsf3x.o)
-                0x000000000000467e                __mulsf3x
-                0x0000000000004684                __mulsf3_pse
+                0x0000000000004666       0xd2 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(mulsf3x.o)
+                0x0000000000004684                __mulsf3x
+                0x000000000000468a                __mulsf3_pse
  .text.avr-libc.fplib
-                0x0000000000004732        0xc /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fp_inf.o)
-                0x0000000000004732                __fp_inf
+                0x0000000000004738        0xc /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fp_inf.o)
+                0x0000000000004738                __fp_inf
  .text.avr-libc.fplib
-                0x000000000000473e        0x6 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fp_nan.o)
-                0x000000000000473e                __fp_nan
+                0x0000000000004744        0x6 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fp_nan.o)
+                0x0000000000004744                __fp_nan
  .text.avr-libc.fplib
-                0x0000000000004744        0xe /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fp_pscA.o)
-                0x0000000000004744                __fp_pscA
+                0x000000000000474a        0xe /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fp_pscA.o)
+                0x000000000000474a                __fp_pscA
  .text.avr-libc.fplib
-                0x0000000000004752        0xe /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fp_pscB.o)
-                0x0000000000004752                __fp_pscB
+                0x0000000000004758        0xe /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fp_pscB.o)
+                0x0000000000004758                __fp_pscB
  .text.avr-libc.fplib
-                0x0000000000004760       0x22 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fp_round.o)
-                0x0000000000004760                __fp_round
+                0x0000000000004766       0x22 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a(fp_round.o)
+                0x0000000000004766                __fp_round
  .text.libgcc.div
-                0x0000000000004782       0x28 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodhi4.o)
-                0x0000000000004782                __divmodhi4
-                0x0000000000004782                _div
- .text.libgcc   0x00000000000047aa        0xc /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
-                0x00000000000047aa                __tablejump2__
+                0x0000000000004788       0x28 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodhi4.o)
+                0x0000000000004788                __divmodhi4
+                0x0000000000004788                _div
+ .text.libgcc   0x00000000000047b0        0xc /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
+                0x00000000000047b0                __tablejump2__
  .text.libgcc.div
-                0x00000000000047b6       0x28 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodhi4.o)
-                0x00000000000047b6                __udivmodhi4
+                0x00000000000047bc       0x28 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodhi4.o)
+                0x00000000000047bc                __udivmodhi4
  .text.avr-libc
-                0x00000000000047de       0x10 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libatmega32u4.a(eerd_byte.o)
-                0x00000000000047de                eeprom_read_byte
+                0x00000000000047e4       0x10 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libatmega32u4.a(eerd_byte.o)
+                0x00000000000047e4                eeprom_read_byte
  .text.avr-libc
-                0x00000000000047ee        0xc /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libatmega32u4.a(eerd_word.o)
-                0x00000000000047ee                eeprom_read_word
+                0x00000000000047f4        0xc /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libatmega32u4.a(eerd_word.o)
+                0x00000000000047f4                eeprom_read_word
  .text.avr-libc
-                0x00000000000047fa       0x24 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libatmega32u4.a(eeupd_byte.o)
-                0x00000000000047fa                eeprom_update_byte
-                0x00000000000047fc                eeprom_update_r18
+                0x0000000000004800       0x24 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libatmega32u4.a(eeupd_byte.o)
+                0x0000000000004800                eeprom_update_byte
+                0x0000000000004802                eeprom_update_r18
  .text.avr-libc
-                0x000000000000481e        0xc /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libatmega32u4.a(eeupd_word.o)
-                0x000000000000481e                eeprom_update_word
+                0x0000000000004824        0xc /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libatmega32u4.a(eeupd_word.o)
+                0x0000000000004824                eeprom_update_word
  .text.avr-libc
-                0x000000000000482a       0x20 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libatmega32u4.a(eerd_block.o)
-                0x000000000000482a                eeprom_read_block
-                0x000000000000482e                eeprom_read_blraw
-                0x000000000000484a                . = ALIGN (0x2)
+                0x0000000000004830       0x20 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libatmega32u4.a(eerd_block.o)
+                0x0000000000004830                eeprom_read_block
+                0x0000000000004834                eeprom_read_blraw
+                0x0000000000004850                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000000000000484a        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
-                0x000000000000484a                exit
-                0x000000000000484a                _exit
+ .fini9         0x0000000000004850        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+                0x0000000000004850                exit
+                0x0000000000004850                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -1483,11 +1483,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000000000000484a        0x4 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+ .fini0         0x0000000000004850        0x4 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
  *(.fini0)
-                0x000000000000484e                _etext = .
+                0x0000000000004854                _etext = .
 
-.data           0x0000000000800100       0xdc load address 0x000000000000484e
+.data           0x0000000000800100       0xdc load address 0x0000000000004854
                 0x0000000000800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -1650,8 +1650,8 @@ END GROUP
                 0x00000000008002cd                USB_DeviceState
                 0x00000000008002ce                USB_ControlRequest
                 0x00000000008002d6                PROVIDE (__bss_end, .)
-                0x000000000000484e                __data_load_start = LOADADDR (.data)
-                0x000000000000492a                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x0000000000004854                __data_load_start = LOADADDR (.data)
+                0x0000000000004930                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00000000008002d6        0x4
                 [!provide]                        PROVIDE (__noinit_start, .)
