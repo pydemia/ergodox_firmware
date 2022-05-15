@@ -532,19 +532,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ┌───────┬─────┬─────┬─────┬─────┬─────┬─────┐     ┌─────┬─────┬─────┬─────┬─────┬─────┬───────┐
  * │  Esc  │  1  │  2  │  3  │  4  │  5  │CtFn5│     │  6  │  7  │  8  │  9  │  0  │  -  │   +   │
  * ├───────┼─────┼─────┼─────┼─────┼─────┼─────┤     ├─────┼─────┼─────┼─────┼─────┼─────┼───────┤
- * │  Tab  │  Q  │  W  │  E  │  R  │ T[] │ Tg  │     │  <- │  Y  │  U  │  I  │  O  │  P  │   \   │
- * ├───────┼─────┼─────┼─────┼─────┼─────┤ Lcm │     │  =  ├─────┼─────┼─────┼─────┼─────┼───────┤
+ * │  Tab  │  Q  │  W  │  E  │  R  │ T[] │ <-  │     │     │  Y  │  U  │  I  │  O  │  P  │   \   │
+ * ├───────┼─────┼─────┼─────┼─────┼─────┤ =   │     │ TgM ├─────┼─────┼─────┼─────┼─────┼───────┤
  * │   ~   │  A  │  S  │  D  │  F  │ G{} ├─────┤     ├─────┤  H  │ J[] │ K{} │ L() │  ;  │  ' "  │
  * ├───────┼─────┼─────┼─────┼─────┼─────┤ Tg  │     │     ├─────┼─────┼─────┼─────┼─────┼───────┤
  * │  Sft  │  Z  │  X  │  C  │  V  │ B() │ Npd │     │     │  N  │  M  │  ,  │  .  │  /  │ Shift │
  * └─┬─────┼─────┼─────┼─────┼─────┼─────┴─────┘     └─────┴─────┼─────┼─────┼─────┼─────┼─────┬─┘
  *   │ CTL │ App │Wn/Cd│ TgA │ ALT │                             │ RAt │ RCl │  [  │  ]  │ ( ) │
  *   └─────┴─────┴─────┴─────┴─────┘ ┌─────┬─────┐ ┌─────┬─────┐ └─────┴─────┴─────┴─────┴─────┘
- *                                   │ TgM │CtEnt│ │ Lft │ Rgt │
+ *                                   │ Hom │ End │ │ Lft │ Rgt │
  *                             ┌─────┼─────┼─────┤ ├─────┼─────┼─────┐
- *                             │     │     │ Hom │ │ Up  │     │     │
+ *                             │     │     │ PgU │ │ Up  │     │     │
  *                             │ Spc │ Bsp ├─────┤ ├─────┤ Del │ Ent │
- *                             │     │     │ End │ │ Dwn │     │     │
+ *                             │     │     │ PgD │ │ Dwn │     │     │
  *                             └─────┴─────┴─────┘ └─────┴─────┴─────┘
  */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
@@ -559,14 +559,14 @@ KC_TAB,           KC_Q,           KC_W,           KC_E,         KC_R,           
 KC_GRV,           KC_A,           KC_S,           KC_D,         KC_F,           KC_G,
 KC_LSFT,          KC_Z,           KC_X,           KC_C,         KC_V,           KC_B,       KC_FN1,
 CTL_T(KC_LCTL),   KC_APP,         KC_LGUI,        KC_FN3,       ALT_T(KC_LALT),
-                                                                        KC_FN2,           LCTL(KC_ENT),
-                                                                                          KC_HOME,
-                                                      KC_SPC,           KC_BSPC,          KC_END,
+                                                                        KC_HOME,           KC_END,
+                                                                                           KC_PGUP,
+                                                      KC_SPC,           KC_BSPC,           KC_PGDN,
 // right hand
 KC_6,             KC_7,       KC_8,       KC_9,         KC_0,             KC_MINUS,         KC_PLUS,
-ASSIGN_TAP,       KC_Y,       KC_U,       KC_I,         KC_O,             KC_P,             KC_BSLS,
+KC_FN2,           KC_Y,       KC_U,       KC_I,         KC_O,             KC_P,             KC_BSLS,
                   KC_H,       KC_J,       KC_K,         KC_L,             KC_SCLN,          D_QUOTE_TAP,
-KC_FN4,           KC_N,       KC_M,       KC_COMM,      KC_DOT,           KC_SLSH,          KC_RSFT,
+ASSIGN_TAP,       KC_N,       KC_M,       KC_COMM,      KC_DOT,           KC_SLSH,          KC_RSFT,
                   KC_RALT,    KC_RCTL,    KC_LBRC,      KC_RBRC,          M(16),//KC_FN3,
 KC_LEFT,          KC_RGHT,
 KC_UP,
@@ -623,9 +623,9 @@ KC_PGDN,          KC_DELT,           KC_ENT
  * ┌───────┬─────┬─────┬─────┬─────┬─────┬─────┐     ┌─────┬─────┬─────┬─────┬─────┬─────┬───────┐
  * │ SIGN  │  1  │  2  │  3  │  4  │  5  │     │     │Calc │     │     │     │     │     │ PrScr │
  * ├───────┼─────┼─────┼─────┼─────┼─────┼─────┤     ├─────┼─────┼─────┼─────┼─────┼─────┼───────┤
- * │       │  6  │  7  │  8  │  9  │  0  │     │     │  +  │  7  │  8  │  9  │  +  │  -  │ MyCom │
+ * │       │  6  │  7  │  8  │  9  │  0  │     │     │  +  │  7  │  8  │  9  │  -  │  /  │ MyCom │
  * ├───────┼─────┼─────┼─────┼─────┼─────┤     │     │     ├─────┼─────┼─────┼─────┼─────┼───────┤
- * │       │     │     │     │     │     ├─────┤     ├─────┤  4  │  5  │  6  │  *  │  /  │       │
+ * │       │     │     │     │     │     ├─────┤     ├─────┤  4  │  5  │  6  │  +  │  *  │       │
  * ├───────┼─────┼─────┼─────┼─────┼─────┤     │     │  -  ├─────┼─────┼─────┼─────┼─────┼───────┤
  * │       │     │     │     │     │     │     │     │     │  1  │  2  │  3  │  ,  │ Up  │       │
  * └─┬─────┼─────┼─────┼─────┼─────┼─────┴─────┘     └─────┴─────┼─────┼─────┼─────┼─────┼─────┬─┘
@@ -651,8 +651,8 @@ KC_TRNS,      KC_TRNS,       KC_TRNS,       KC_TRNS,       KC_TRNS,
                                                                      KC_SPC,       KC_BSPC,           KC_PGDN,
 // right hand
 KC_CALC,          KC_TRNS,           KC_TRNS,        KC_TRNS,          KC_TRNS,         KC_TRNS,         KC_PSCREEN,
-KC_PLUS,          KC_7,              KC_8,           KC_9,             KC_PLUS,         KC_MINUS,        KC_MYCM,
-                  KC_4,              KC_5,           KC_6,             KC_ASTR,         KC_SLSH,         KC_TRNS,
+KC_PLUS,          KC_7,              KC_8,           KC_9,             KC_MINUS,        KC_SLSH,        KC_MYCM,
+                  KC_4,              KC_5,           KC_6,             KC_PLUS,         KC_ASTR,         KC_TRNS,
 KC_MINUS,         KC_1,              KC_2,           KC_3,             KC_COMM,         KC_UP,           KC_TRNS,
                   KC_0,              KC_DOT,         KC_LEFT,          KC_DOWN,         KC_RGHT,
 KC_LEFT,          KC_RGHT,
@@ -669,7 +669,7 @@ KC_DOWN,          KC_DELT,          KC_ENT
  * ├───────┼─────┼─────┼─────┼─────┼─────┤     │     │     ├─────┼─────┼─────┼─────┼─────┼───────┤
  * │       │ F11 │ F12 │ F13 │ F14 │ F15 ├─────┤     ├─────┤     │     │     │     │     │       │
  * ├───────┼─────┼─────┼─────┼─────┼─────┤     │     │     ├─────┼─────┼─────┼─────┼─────┼───────┤
- * │       │     │     │     │     │     │     │     │     │     │     │     │     │     │       │
+ * │       │ F16 │ F17 │ F18 │ F19 │ F20 │     │     │     │     │     │     │     │     │       │
  * └─┬─────┼─────┼─────┼─────┼─────┼─────┴─────┘     └─────┴─────┼─────┼─────┼─────┼─────┼─────┬─┘
  *   │     │     │     │     │     │                             │     │     │     │     │     │
  *   └─────┴─────┴─────┴─────┴─────┘ ┌─────┬─────┐ ┌─────┬─────┐ └─────┴─────┴─────┴─────┴─────┘
@@ -686,7 +686,7 @@ KC_DOWN,          KC_DELT,          KC_ENT
 QMK_VER_KEY,   KC_F1,             KC_F2,          KC_F3,           KC_F4,           KC_F5,             KC_TRNS,
 KC_TRNS,       KC_F6,             KC_F7,          KC_F8,           KC_F9,           KC_F10,            KC_TRNS,
 KC_TRNS,       KC_F11,            KC_F12,         KC_F13,          KC_F14,          KC_F15,
-KC_TRNS,       KC_TRNS,           KC_TRNS,        KC_TRNS,         KC_TRNS,         KC_TRNS,           KC_TRNS,
+KC_TRNS,       KC_F16,            KC_F17,         KC_F18,          KC_F19,          KC_F20,           KC_TRNS,
 KC_TRNS,       KC_TRNS,           KC_TRNS,        KC_TRNS,         KC_TRNS,
                                	                                                    KC_TRNS,           KC_TRNS,
                                                                                                        KC_HOME,
