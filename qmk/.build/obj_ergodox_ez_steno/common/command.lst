@@ -1533,20 +1533,20 @@
  510               		.file 13 "./tmk_core/common/keycode.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 command.c
-     /tmp/ccuiKzUD.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccuiKzUD.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccuiKzUD.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccuiKzUD.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccuiKzUD.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccuiKzUD.s:12     .text.switch_default_layer:0000000000000000 switch_default_layer
-     /tmp/ccuiKzUD.s:62     .text.command_common:0000000000000000 command_common
-     /tmp/ccuiKzUD.s:496    .bss.command_state:0000000000000000 command_state
-     /tmp/ccuiKzUD.s:294    .text.command_console_extra:0000000000000000 command_console_extra
-     /tmp/ccuiKzUD.s:294    .text.command_console_extra:0000000000000000 command_console_extra.localalias.0
-     /tmp/ccuiKzUD.s:314    .text.command_extra:0000000000000000 command_extra
-     /tmp/ccuiKzUD.s:328    .text.command_proc:0000000000000000 command_proc
-     /tmp/ccuiKzUD.s:450    .text.numkey2num:0000000000000000 numkey2num
-     /tmp/ccuiKzUD.s:481    .rodata.CSWTCH.17:0000000000000000 CSWTCH.17
+     /tmp/cce9EVGY.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cce9EVGY.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cce9EVGY.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cce9EVGY.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cce9EVGY.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cce9EVGY.s:12     .text.switch_default_layer:0000000000000000 switch_default_layer
+     /tmp/cce9EVGY.s:62     .text.command_common:0000000000000000 command_common
+     /tmp/cce9EVGY.s:496    .bss.command_state:0000000000000000 command_state
+     /tmp/cce9EVGY.s:294    .text.command_console_extra:0000000000000000 command_console_extra
+     /tmp/cce9EVGY.s:294    .text.command_console_extra:0000000000000000 command_console_extra.localalias.0
+     /tmp/cce9EVGY.s:314    .text.command_extra:0000000000000000 command_extra
+     /tmp/cce9EVGY.s:328    .text.command_proc:0000000000000000 command_proc
+     /tmp/cce9EVGY.s:450    .text.numkey2num:0000000000000000 numkey2num
+     /tmp/cce9EVGY.s:481    .rodata.CSWTCH.17:0000000000000000 CSWTCH.17
 
 UNDEFINED SYMBOLS
 default_layer_set
